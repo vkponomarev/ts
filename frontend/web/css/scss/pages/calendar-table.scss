@@ -1,0 +1,89 @@
+
+
+.year-t{
+  width:100%;
+  text-align: center;
+  justify-content: center;
+  vertical-align: top;
+}
+
+.week-t {
+ //display: flex;
+  height: 40px;
+}
+
+.day-t, .day-off-t, .no-day-t, .no-day-off-t, .day-name-t{
+  //flex-grow: 1;
+  //flex-shrink: 1;
+  //flex-basis: 0;
+}
+
+.month-t {
+  min-width: 320px;
+  max-width: 400px;
+
+  //display: inline-block;
+  margin: 10px;
+
+
+  //border: 1px solid;
+  padding: 5px;
+  border-radius: 5px;
+  display: unset;
+
+}
+
+.month-name-t {
+  height: 50px;
+  padding-top: 5px;
+  font-size: 25px;
+  color: #828282;
+}
+
+.day-t {
+  color: #535353;
+  padding: 5px;
+  background-color: transparentize(white, 0.30);
+  box-shadow:
+          -1px -1px #e9e9e9,
+          inset -1px -1px 0 0 #e9e9e9;
+}
+
+
+.no-day-t {
+  color: #F98909;
+  padding: 5px;
+  background-color: transparentize(white, 0.30);
+
+}
+
+
+.day-off-t {
+  color: #ff0002;
+  padding: 5px;
+  background-color: #fff4f4;
+  box-shadow:
+          -1px -1px #e9e9e9,
+          inset -1px -1px 0 0 #e9e9e9;
+
+}
+
+
+.no-day-off-t {
+  color: #F98909;
+  padding: 5px;
+  background-color: transparentize(white, 0.30);
+
+}
+
+.day-name-t {
+  color: #000000;
+  font-weight: bold;
+  padding: 5px;
+  background-color: transparentize(white, 0.30);
+
+}
+
+tr {
+  vertical-align: top;
+}

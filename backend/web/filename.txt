@@ -1,0 +1,244 @@
+Array
+(
+    [language] => Array
+        (
+            [all] => Array
+                (
+                    [0] => Array
+                        (
+                            [id] => 1
+                            [name] => Русский
+                            [url] => ru
+                            [active] => 1
+                        )
+
+                    [1] => Array
+                        (
+                            [id] => 2
+                            [name] => English
+                            [url] => en
+                            [active] => 1
+                        )
+
+                    [2] => Array
+                        (
+                            [id] => 4
+                            [name] => Español
+                            [url] => es
+                            [active] => 1
+                        )
+
+                    [3] => Array
+                        (
+                            [id] => 6
+                            [name] => हिन्दी
+                            [url] => hi
+                            [active] => 1
+                        )
+
+                    [4] => Array
+                        (
+                            [id] => 7
+                            [name] => বাংলা Bāṇlā
+                            [url] => bn
+                            [active] => 1
+                        )
+
+                    [5] => Array
+                        (
+                            [id] => 8
+                            [name] => Português
+                            [url] => pt
+                            [active] => 1
+                        )
+
+                    [6] => Array
+                        (
+                            [id] => 9
+                            [name] => 日本語
+                            [url] => ja
+                            [active] => 1
+                        )
+
+                    [7] => Array
+                        (
+                            [id] => 10
+                            [name] => Deutsch
+                            [url] => de
+                            [active] => 1
+                        )
+
+                    [8] => Array
+                        (
+                            [id] => 11
+                            [name] => 한국어
+                            [url] => ko
+                            [active] => 1
+                        )
+
+                    [9] => Array
+                        (
+                            [id] => 12
+                            [name] => Français
+                            [url] => fr
+                            [active] => 1
+                        )
+
+                    [10] => Array
+                        (
+                            [id] => 13
+                            [name] => Basa Jawa
+                            [url] => jv
+                            [active] => 1
+                        )
+
+                    [11] => Array
+                        (
+                            [id] => 16
+                            [name] => Tiếng Việt
+                            [url] => vi
+                            [active] => 1
+                        )
+
+                    [12] => Array
+                        (
+                            [id] => 18
+                            [name] => Italiano
+                            [url] => it
+                            [active] => 1
+                        )
+
+                    [13] => Array
+                        (
+                            [id] => 19
+                            [name] => Türkçe
+                            [url] => tr
+                            [active] => 1
+                        )
+
+                    [14] => Array
+                        (
+                            [id] => 22
+                            [name] => Українська
+                            [url] => uk
+                            [active] => 1
+                        )
+
+                    [15] => Array
+                        (
+                            [id] => 24
+                            [name] => ภาษาไทย
+                            [url] => th
+                            [active] => 1
+                        )
+
+                    [16] => Array
+                        (
+                            [id] => 25
+                            [name] => Polszczyzna
+                            [url] => pl
+                            [active] => 1
+                        )
+
+                    [17] => Array
+                        (
+                            [id] => 30
+                            [name] => Azəri
+                            [url] => az
+                            [active] => 1
+                        )
+
+                    [18] => Array
+                        (
+                            [id] => 34
+                            [name] => Română
+                            [url] => ro
+                            [active] => 1
+                        )
+
+                    [19] => Array
+                        (
+                            [id] => 38
+                            [name] => O‘zbek tili
+                            [url] => uz
+                            [active] => 1
+                        )
+
+                    [20] => Array
+                        (
+                            [id] => 49
+                            [name] => Magyar nyelv
+                            [url] => hu
+                            [active] => 1
+                        )
+
+                    [21] => Array
+                        (
+                            [id] => 51
+                            [name] => Ελληνικά
+                            [url] => el
+                            [active] => 1
+                        )
+
+                    [22] => Array
+                        (
+                            [id] => 52
+                            [name] => Čeština
+                            [url] => cs
+                            [active] => 1
+                        )
+
+                    [23] => Array
+                        (
+                            [id] => 53
+                            [name] => 中文
+                            [url] => zh
+                            [active] => 1
+                        )
+
+                )
+
+            [current] => Array
+                (
+                    [id] => 1
+                    [name] => Русский
+                    [url] => ru
+                    [active] => 1
+                )
+
+            [id] => 1
+        )
+
+    [text] => Array
+        (
+            [title] => 2Pac тексты песен, переводы песен | Слушать музыку 2Pac онлайн
+            [h1] => 2Pac
+            [description] => Тексты песен исполненные артистом 2Pac, переводы слов песен. Популярные песни исполнителя 2Pac. Слушать музыку 2Pac бесплатно онлайн. Смотреть видео клипы 2Pac.
+            [text1] => 
+            [text2] => 
+        )
+
+    [canonical] => http://admin.flowlez.loc/en-US/artists/349/
+    [alternate] => artists/349/
+    [breadcrumbs] => Array
+        (
+            [urls] => Array
+                (
+                    [0] => Array
+                        (
+                            [url] => artists
+                            [text] => Artists
+                        )
+
+                    [2] => Array
+                        (
+                            [url] => artists/index/2-13
+                            [text] => 2
+                        )
+
+                )
+
+            [last] => 2Pac
+        )
+
+)

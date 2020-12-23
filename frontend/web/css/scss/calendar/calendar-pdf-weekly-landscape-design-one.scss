@@ -1,0 +1,170 @@
+//-cpdf-wl1- - calendar-pdf-weekly-landscape-design-one
+
+
+.cpdf-wl1-day-line{
+
+  height: 16px;
+  border-bottom: 1px solid #c8c5c1;
+  font-size: 5px;
+
+}
+
+.cpdf-wl1-day-line-no-line{
+
+  height: 16px;
+  font-size: 5px;
+
+}
+
+.cpdf-wl1-calendar-month {
+  /* align-content: center; */
+  text-align: center;
+}
+
+
+
+.cpdf-wlm1-year{
+  width:100%;
+  text-align: center;
+  justify-content: center;
+  vertical-align: top;
+}
+
+.cpdf-wlm1-week-border{
+
+  border: 1px solid black;
+
+}
+
+.cpdf-wlm1-week {
+  //height: 40px;
+}
+
+.cpdf-wlm1-td-month{
+  //padding-bottom: 10px;
+}
+.cpdf-wlm1-month {
+  min-width: 300px;
+  max-width: 320px;
+  margin: 10px;
+  padding: 5px;
+  display: unset;
+  text-align: center;
+
+}
+
+.cpdf-wlm1-month-name-line {
+  //height: 50px;
+  //padding-top: 5px;
+  font-size: 18px;
+  color: #828282;
+}
+
+.cpdf-wlm1-month-name-a {
+
+  font-size: 17px;
+  color: #434343;
+  //padding-bottom: 5px;
+}
+
+.cpdf-wlm1-month-name-line-td{
+  //padding-bottom: 5px;
+
+}
+
+.cpdf-wlm1-day {
+  color: #535353;
+  font-size: 14px;
+  //padding: 5px;
+  vertical-align: middle;
+}
+
+.cpdf-wlm1-day-holiday {
+  background-color: #ffd0d0;
+  color: #535353;
+  font-size: 15px;
+  //padding: 5px;
+}
+
+.cpdf-wlm1-no-day {
+  color: #F98909;
+  padding: 5px;
+  background-color: transparentize(white, 0.30);
+
+}
+
+.cpdf-wlm1-day-weekend{
+  color: #535353;
+  font-size: 14px;
+  padding: 1px;
+  background-color: #fff4f4;
+}
+
+
+.cpdf-wlm1-no-day-weekend {
+  color: #F98909;
+  padding: 1px;
+  background-color: transparentize(white, 0.30);
+
+}
+
+.cpdf-wlm1-day-name {
+  color: #000000;
+  font-weight: bold;
+  padding: 2px;
+  background-color: transparentize(white, 0.30);
+  width: 35px;
+  font-size: 10px;
+
+}
+
+tr {
+  vertical-align: top;
+}
+
+.cpdf-wlm1-week-line{
+  //background-color: #0a73bb;
+  border-top: 2px solid #0a73bb;
+
+}
+
+.cpdf-wlm1-holidays-table{
+
+  width:100%;
+  //text-align: center;
+  justify-content: center;
+  vertical-align: top;
+
+}
+
+
+.cpdf-wlm1-holidays-table-inside{
+
+  width:100%;
+  //text-align: center;
+  justify-content: center;
+  vertical-align: top;
+
+}
+
+.cpdf-wlm1-holidays-name{
+  text-align: left;
+  font-size: 10px;
+}
+
+.cpdf-wlm1-holidays-table-border{
+  border: 1px solid;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.cpdf-wlm1-holidays-rounded-mark {
+  background-color: #ffd0d0;
+  width: 5px;
+  height: 5px;
+
+  border-right:5px solid #ffffff;
+  border-bottom:2px solid #ffffff;
+}

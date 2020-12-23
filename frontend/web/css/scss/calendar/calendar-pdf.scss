@@ -1,0 +1,70 @@
+
+.calendar-pdf-header-table{
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+.calendar-pdf-header-table-left{
+  text-align: left;
+  width: 80% !important;
+}
+
+.calendar-pdf-header-table-right{
+  text-align: right;
+  width: 20% !important;
+
+  a{
+
+    text-decoration: none;
+
+  }
+}
+
+
+
+
+.calendar-pdf-header-h1{
+  text-align: left;
+  font-size: 20px;
+  color: #3b3b3b;
+}
+
+.calendar-pdf-header-h2{
+  text-align: left;
+  font-size: 18px;
+  color: #3b3b3b;
+}
+
+.calendar-pdf-header-h3{
+  text-align: right;
+  font-size: 14px;
+  color: #3b3b3b;
+}
+
+
+.week-line{
+  background-color: #0a73bb;
+  width: 4px;
+}
+
+
+.c-prev-next-left{
+  font-size: 30px;
+  text-align: left;
+}
+
+.c-prev-next-center{
+  font-size: 30px;
+  text-align: center;
+}
+.c-prev-next-right{
+  font-size: 30px;
+  text-align: right;
+}
+
+@media (max-width: 479px) {
+  .c-prev-next-right, .c-prev-next-left{
+    text-align: center;
+  }
+}

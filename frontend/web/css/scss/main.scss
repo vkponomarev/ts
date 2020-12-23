@@ -1,0 +1,61 @@
+
+
+@import "abstract/variables"; // Переменные
+@import "abstract/variables-calendar"; // Переменные
+
+@import "base/base"; // Основной css
+@import "base/buttons"; // Кнопки
+@import "base/images"; // Картинки
+@import "base/xxs"; // Дополненние для самого маленького размера
+
+
+@import "layout/header"; // Верняя часть сайта. Поиск. Логотип.
+@import "layout/menu"; // Меню сайта.
+@import "layout/breadcrumbs"; // Крошки.
+@import "layout/footer"; // Футер сайта.
+//@import "layout/modalYoutube"; // Модальное окно youtube.
+
+//@import "pages/artists"; // Страница артиста.
+//@import "pages/artistsIndex"; // Страницы индекса артиста по первой букве.
+//@import "pages/albums"; // Страница альбома.
+//@import "pages/songs"; // Страница песни.
+@import "pages/mainPages"; // Основные страницы.
+//@import "pages/genres"; // Страница жанров.
+@import "pages/years"; // Страница годов.
+//@import "pages/mLanguages"; // Страница языков.
+
+
+
+@import "calendar/calendar-yearly"; //
+@import "pages/calendar-table"; //
+
+@import "pages/calendar-year";
+
+
+
+
+
+@import "calendar/calendar-customization"; // Страница Кастомизации календаря.
+@import "calendar/calendar-pdf"; // Страница Кастомизации календаря.
+
+@import "calendar/calendar-pdf-yearly-portrait-design-one";
+@import "calendar/calendar-pdf-yearly-portrait-design-one-no-holidays";
+@import "calendar/calendar-pdf-yearly-landscape-design-one";
+@import "calendar/calendar-pdf-yearly-landscape-design-one-no-holidays";
+
+@import "calendar/calendar-pdf-monthly-portrait-design-one";
+@import "calendar/calendar-pdf-monthly-landscape-design-one";
+
+@import "calendar/calendar-pdf-2monthly-portrait-design-one";
+@import "calendar/calendar-pdf-2monthly-landscape-design-one";
+
+@import "calendar/calendar-pdf-weekly-landscape-design-one";
+@import "calendar/calendar-pdf-weekly-portrait-design-one";
+
+@import "calendar/calendar-pdf-daily-portrait-design-one";
+@import "calendar/calendar-pdf-daily-landscape-design-one";
+
+
+
+
+
