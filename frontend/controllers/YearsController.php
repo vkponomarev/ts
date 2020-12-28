@@ -65,9 +65,7 @@ class YearsController extends Controller
         $mainUrl = 'years'; // Основной урл
 
         $urlCheck = new UrlCheck();
-
         $urlCheckID = $urlCheck->year($url);
-
 
         $main = new Main();
         Yii::$app->params['language'] = $main->language(Yii::$app->language);
@@ -80,15 +78,16 @@ class YearsController extends Controller
         $year = $url;
         $language = Yii::$app->params['language']['current']['url'];
 
+        $holidays = new Holidays();
+        $holidaysRange = $holidays->range();
 
         $getParams = new GetParams();
-        $getParamsByCalendarYears = $getParams->byCalendarYears($countryID);
-
+        $getParamsByCalendarYears = $getParams->byCalendarYears($countryID, $year, $holidaysRange);
         $countryID = $getParamsByCalendarYears['country'];
 
-        $holidays = new Holidays();
         $holidaysData = $holidays->byCountryByYear($countryID, $year, $languageID);
         $holidaysData = $holidays->arrayReplace($holidaysData);
+
         //(new \common\components\dump\Dump())->printR($holidaysData);
         //die;
         //$holidaysTypes = new HolidaysTypes();
@@ -129,11 +128,13 @@ class YearsController extends Controller
             'countriesData' => $countriesData,
             'countryData' => $countryData,
             'holidaysData' => $holidaysData,
+            'holidaysRange' => $holidaysRange,
             'PDFCalendarsData' => $PDFCalendarsData,
             //'holidaysTypesData' => $holidaysTypesData,
             'calendarByYear' => $calendarByYear,
             'calendarNameOfMonths' => $calendarNameOfMonths,
             'calendarNameOfDaysInWeek' => $calendarNameOfDaysInWeek,
+            'getParamsByCalendarYears' => $getParamsByCalendarYears,
 
         ]);
 

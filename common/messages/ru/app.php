@@ -103,7 +103,19 @@ return [
     'Year {year} calendar.' => 'Календарь на {year} год.',
 
     'Calendar of holidays and weekends in {year} {country_for}' => 'Календарь праздников и выходных дней в {year} году {country_for}',
-    'Download and print the calendar with holidays and weekends for {year} {country_for}' => 'Скачать и распечатать календарь с праздниками и выходными на {year} год {country_for}',
-    'Download and print the calendar for {year}' => 'Скачать и распечатать календарь на {year} год',
+    'Download and print PDF calendar with holidays and weekends for {year} {country_for}' => 'Скачать и распечатать PDF календарь с праздниками и выходными на {year} год {country_for}',
+    'Download and print PDF calendar for {year}' => 'Скачать и распечатать PDF календарь на {year} год',
+
+    'Seasons' => 'Времена года',
+
+    'Print' => 'Распечатать',
+    'Download' => 'Скачать',
+
+    'Holidays portrait calendar' => 'Книжный календарь c праздниками',
+    'Holidays landscape calendar' => 'Альбомный календарь c праздниками',
+    'Portrait calendar without holidays' => 'Книжный календарь без праздников',
+    'Landscape calendar without holidays' => 'Альбомный календарь без праздников',
+
+
 
 ];

@@ -17,17 +17,10 @@ $this->params['breadcrumbs'][] = $this->title;
         <select id="cycle-length-from" name="name" class="form-control select-extended">
 
             <option value="---------------">---------------</option>
-            <option value="sitemap-artists-all">Карта сайта для артистов все языки</option>
-            <option value="sitemap-albums-all">Карта сайта для альбомов все языки</option>
-            <option value="sitemap-songs-all">Карта сайта для песен все языки</option>
+            <option value="sitemap-calendar-yearly-all">Карта сайта для календаря на год все языки</option>
+            <option value="sitemap-calendar-yearly-ru">Карта сайта для календаря на год только RU</option>
+
             <option value="sitemap-all">Карта сайта основной файл все языки</option>
-
-
-            <option value="sitemap-artists-ru">Карта сайта для артистов только RU</option>
-            <option value="sitemap-albums-ru">Карта сайта для альбомов только RU</option>
-            <option value="sitemap-songs-ru">Карта сайта для песен только RU</option>
-
-
             <option value="sitemap-ru">Карта сайта основной файл только RU</option>
 
 

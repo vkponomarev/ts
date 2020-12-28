@@ -1,5 +1,8 @@
 //-cpdf-yl1- - calendar-pdf-yearly-landscape-design-one
 
+$heightOne : 20px;
+$paddingOne : 4px;
+
 .cpdf-yl1-year{
   width:100%;
   text-align: center;
@@ -52,7 +55,8 @@
 .cpdf-yl1-day {
   color: $cDayNamesColorPDF;
   font-size: 14px;
-  //padding: 5px;
+  padding: $paddingOne;
+  height: $heightOne;
 
 }
 
@@ -61,12 +65,14 @@
   border-radius: 50%;
   color: $cDayNumbersColorPDF;
   font-size: 15px;
-  //padding: 5px;
+  padding: $paddingOne;
+  height: $heightOne;
 }
 
 .cpdf-yl1-no-day {
   color: $cDayNumbersColorPDF;
-  padding: 5px;
+  padding: $paddingOne;
+  height: $heightOne;
   background-color: white;
 
 }
@@ -74,14 +80,16 @@
 .cpdf-yl1-day-weekend{
   color: $cDayNumbersColorPDF;
   font-size: 14px;
-  padding: 5px;
+  padding: $paddingOne;
+  height: $heightOne;
   background-color: $cWeekendCellColor;
 }
 
 
 .cpdf-yl1-no-day-weekend {
   color: #F98909;
-  padding: 5px;
+  padding: $paddingOne;
+  height: $heightOne;
   background-color: $cWeekendCellColor;
 
 }

@@ -22,6 +22,7 @@ class CountriesData
             countries
             left join countries_text as ct on ct.countries_id = countries.id
             where ct.languages_id = :languageID
+            order by ct.name
             ', [':languageID' => $languageID])
             ->queryAll();
 

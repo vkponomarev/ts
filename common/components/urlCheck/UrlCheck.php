@@ -31,6 +31,18 @@ class UrlCheck
 
     }
 
+    /**
+     * Проверка URL на сезон года
+     * @param $season string
+     * @throws \yii\web\NotFoundHttpException
+     */
+    function season($season){
+
+        (new UrlCheckSeason())->season($season);
+
+    }
+
+
     function month($url){
 
         return (new UrlCheckMonth())->month($url);

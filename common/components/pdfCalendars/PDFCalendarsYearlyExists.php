@@ -49,15 +49,6 @@ class PDFCalendarsYearlyExists
 
         ];
 
-        $pdf['L'] = [
-            'pdfExists' => $calendarYearlyL,
-            'imgExists' => $calendarYearlyLImg,
-            'pdfPath' => $calendarYearlyLPath,
-            'imgPath' => $calendarYearlyLImgPath,
-            'pdfPathRelative' => $calendarYearlyLPathRelative,
-            'imgPathRelative' => $calendarYearlyLImgPathRelative,
-        ];
-
         $pdf['PNoHolidays'] = [
             'pdfExists' => $calendarYearlyPNoHolidays,
             'imgExists' => $calendarYearlyPNoHolidaysImg,
@@ -65,6 +56,15 @@ class PDFCalendarsYearlyExists
             'imgPath' => $calendarYearlyPNoHolidaysImgPath,
             'pdfPathRelative' => $calendarYearlyPNoHolidaysPathRelative,
             'imgPathRelative' => $calendarYearlyPNoHolidaysImgPathRelative,
+        ];
+
+        $pdf['L'] = [
+            'pdfExists' => $calendarYearlyL,
+            'imgExists' => $calendarYearlyLImg,
+            'pdfPath' => $calendarYearlyLPath,
+            'imgPath' => $calendarYearlyLImgPath,
+            'pdfPathRelative' => $calendarYearlyLPathRelative,
+            'imgPathRelative' => $calendarYearlyLImgPathRelative,
         ];
 
         $pdf['LNoHolidays'] = [

@@ -63,6 +63,13 @@ class Breadcrumbs
 
     }
 
+    public function calendarYear($languageData)
+    {
+
+        return (new BreadcrumbsCalendarYear())->breadcrumbs($languageData);
+
+    }
+
 
 }
 

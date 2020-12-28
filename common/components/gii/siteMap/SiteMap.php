@@ -21,41 +21,9 @@ class SiteMap
 
     }
 
-    function generateArtists($languagesData){
+    function generateCalendarYears($languagesData){
 
-        (new SiteMapGenerateArtists())->generate($languagesData);
-
-    }
-
-    function generateArtistsRU($languagesData){
-
-        (new SiteMapGenerateArtistsRU())->generate($languagesData);
-
-    }
-
-
-    function generateAlbums($start, $end, $languagesData){
-
-        (new SiteMapGenerateAlbums())->generate($start, $end, $languagesData);
-
-    }
-
-
-    function generateAlbumsRU($languagesData){
-
-        (new SiteMapGenerateAlbumsRU())->generate($languagesData);
-
-    }
-
-    function generateSongs($start, $end, $languagesData){
-
-        (new SiteMapGenerateSongs())->generate($start, $end, $languagesData);
-
-    }
-
-    function generateSongsRU($start, $end, $languagesData){
-
-        (new SiteMapGenerateSongsRU())->generate($start, $end, $languagesData);
+        (new SiteMapGenerateCalendarYears())->generate($languagesData);
 
     }
 

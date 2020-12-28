@@ -5,12 +5,13 @@ namespace common\components\countries;
 use Yii;
 
 /**
- * Выбираем все страны для PDF генерации календаря
- * Class CountriesByPDFGeneration
+ * Выбираем все страны для генерации карты сайта
+ * Class CountriesBySiteMapGeneration
  * @package common\components\countries
  */
-class CountriesByPDFGeneration
+class CountriesBySiteMapGeneration
 {
+
     /**
      * @return array
      * @throws \yii\db\Exception

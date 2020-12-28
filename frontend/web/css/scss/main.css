@@ -13,7 +13,7 @@ body {
 }
 
 .wrap > .container {
-  padding: 70px 10px 20px;
+  padding-top: 50px;
 }
 
 .container-fluid {
@@ -58,6 +58,10 @@ a:hover {
 
 .d-center {
   text-align: center;
+}
+
+.pdf-download {
+  padding-bottom: 10px;
 }
 
 .c-download-button {
@@ -691,9 +695,8 @@ footer div div div > a:hover {
 }
 
 .year {
-  width: 100%;
   text-align: center;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .week {
@@ -714,7 +717,6 @@ footer div div div > a:hover {
 
 .month {
   min-width: 220px;
-  max-width: 300px;
   display: inline-block;
   margin-bottom: 10px;
   border-radius: 5px;
@@ -724,7 +726,6 @@ footer div div div > a:hover {
 @media (max-width: 479px) {
   .month {
     min-width: 220px;
-    max-width: 400px;
   }
 }
 .month-name {
@@ -960,6 +961,10 @@ tr {
     text-align: center;
   }
 }
+.pdf-header {
+  margin-bottom: 5px;
+}
+
 .cpdf-yp1-year {
   width: 100%;
   text-align: center;
@@ -1205,6 +1210,8 @@ tr {
 .cpdf-yl1-day {
   color: #000000;
   font-size: 14px;
+  padding: 4px;
+  height: 20px;
 }
 
 .cpdf-yl1-day-holiday {
@@ -1212,24 +1219,29 @@ tr {
   border-radius: 50%;
   color: #000000;
   font-size: 15px;
+  padding: 4px;
+  height: 20px;
 }
 
 .cpdf-yl1-no-day {
   color: #000000;
-  padding: 5px;
+  padding: 4px;
+  height: 20px;
   background-color: white;
 }
 
 .cpdf-yl1-day-weekend {
   color: #000000;
   font-size: 14px;
-  padding: 5px;
+  padding: 4px;
+  height: 20px;
   background-color: #f5f5f5;
 }
 
 .cpdf-yl1-no-day-weekend {
   color: #F98909;
-  padding: 5px;
+  padding: 4px;
+  height: 20px;
   background-color: #f5f5f5;
 }
 

@@ -61,11 +61,14 @@ return [
                 '/calendar/months/<urlMonth>' => 'months/month-page',
                 '/calendar/days/<urlDay>' => 'days/day-page',
 
-                '/calendar/seasons/winter/<urlYear>' => 'seasons/winter',
+
+
+                '/calendar/seasons/<season:[\w_-]+>/<year:\d+>' => 'seasons/season',
+                /*'/calendar/seasons/winter/<urlYear>' => 'seasons/winter',
                 '/calendar/seasons/spring/<urlYear>' => 'seasons/spring',
                 '/calendar/seasons/summer/<urlYear>' => 'seasons/summer',
                 '/calendar/seasons/autumn/<urlYear>' => 'seasons/autumn',
-
+                */
 
 
 

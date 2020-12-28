@@ -112,7 +112,7 @@
                                         <?= $week[$i]['monthDay']; ?>
                                     </td>
                                 <?php else: ?>
-                                    <td class="cpdf-yp1-day cpdf-yp1-day">
+                                    <td class="cpdf-yp1-day">
                                         <?= $week[$i]['monthDay']; ?>
                                     </td>
                                 <?php endif; ?>
@@ -127,11 +127,18 @@
 
                         <?php for ($i = 6; $i <= 7; $i++): ?>
                             <?php if (isset($week[$i])): ?>
-                                <td class="cpdf-yp1-day-weekend">
-                            <span>
-                                <?= $week[$i]['monthDay']; ?>
-                            </span>
-                                </td>
+
+                                <?php $key = array_search($week[$i]['date'], array_column($holidaysData, 'date'));
+                                if (false !== $key): ?>
+                                    <td class="cpdf-yp1-day cpdf-yp1-day-holiday">
+                                        <?= $week[$i]['monthDay']; ?>
+                                    </td>
+                                <?php else: ?>
+                                    <td class="cpdf-yp1-day-weekend">
+                                        <?= $week[$i]['monthDay']; ?>
+                                    </td>
+                                <?php endif; ?>
+
                             <?php else: ?>
                                 <td class="cpdf-yp1-no-day">
                             <span>

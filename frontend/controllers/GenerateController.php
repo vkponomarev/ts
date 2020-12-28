@@ -7,6 +7,7 @@ use common\components\calendar\Calendar;
 use common\components\country\Country;
 use common\components\date\Date;
 use common\components\gii\Gii;
+use common\components\gii\giiPDF\GiiPDF;
 use common\components\holidays\Holidays;
 use common\components\main\Main;
 use Mpdf\Mpdf;
@@ -94,33 +95,36 @@ class GenerateController extends Controller
         $gii->generatePath($filePathNoHolidays);
 
         $doPDF = 1;
+        $doPDFNoHolidays = 1;
 
         if (!$holidaysData) {
             // Если нету праздников то значит календарь пустой и его можно записать один раз
-            $isHolidays = '-no-holidays';
-
+            $doPDF = 0;
             if (file_exists($filePathNoHolidays . $fileNameNoHolidays . '.pdf')) {
                 // Проверяем записан файл без праздников или еще нет
-                // Если записан то мы завершаем цикл без перезаписи календрая.
-                $doPDF = 0;
-
+                $doPDFNoHolidays = 0;
             } else {
                 // Если файла нет то мы его записывем.
-                // Присваивая значения с отсутствующими праздниками к значениям которые учавствуют в записи файла.
-                $fileName = $fileNameNoHolidays;
-                $filePath = $filePathNoHolidays;
-                $doPDF = 1;
+                $doPDFNoHolidays = 1;
             }
 
         } else {
 
-            $isHolidays = '';
             $doPDF = 1;
+
+            if (file_exists($filePathNoHolidays . $fileNameNoHolidays . '.pdf')) {
+                $doPDFNoHolidays = 0;
+            } else {
+                $doPDFNoHolidays = 1;
+            }
+
         }
+
+        $giiPDF = new GiiPDF();
 
         if ($doPDF) {
 
-            $render = $this->render('@frontend/views/print/' . $params['pageName'] . $isHolidays . '.min.php', [
+            $render = $this->render('@frontend/views/print/' . $params['pageName'] . '.min.php', [
                 'dateData' => $dateData,
                 'countryData' => $countryData,
                 'calendarByYear' => $calendarByYear,
@@ -130,48 +134,23 @@ class GenerateController extends Controller
                 'getParamsCustomize' => $getParamsCustomize,
             ]);
 
-            /** Создание PDF из конкретной скомпилированной страницы с подключением к ней стилей*/
-            $mpdf = new Mpdf(
-                [
-                    'mode' => '+aCJK',
-                    //"allowCJKoverflow" => true,
-                    "autoScriptToLang" => true,
-                    //"allow_charset_conversion" => false,
-                    "autoLangToFont" => true,
-                    'orientation' => $orientation,
-                    'marginFooter' => 0
-                ]
-            );
+            $giiPDF->generatePDF($dateData, $countryData, $render, $filePath, $fileName, $orientation, 0);
+        }
 
-            $mpdf->SetMargins(0, 0, 5);
-            $mpdf->SetDisplayMode('fullpage');
-            $mpdf->SetTitle(Yii::t('app', 'Year {year} calendar.', [
-                'year' => $dateData['year']['full'],
-                'country' => $countryData['name']
-            ]) );
 
-            $stylesheet = file_get_contents($gii->realPath() . '/frontend/web/css/scss/main.css'); // external css
-            $mpdf->WriteHTML($stylesheet, 1);
-            $mpdf->WriteHTML($render);
+        if ($doPDFNoHolidays) {
 
-            if (!Yii::$app->request->get('output')){
-                $mpdf->Output($filePath . $fileName . '.pdf', \Mpdf\Output\Destination::FILE);
-            } else {
-                $mpdf->Output($fileName . '.pdf', 'I');
-            }
+            $render = $this->render('@frontend/views/print/' . $params['pageName'] . '-no-holidays.min.php', [
+                'dateData' => $dateData,
+                'countryData' => $countryData,
+                'calendarByYear' => $calendarByYear,
+                'calendarNameOfMonths' => $calendarNameOfMonths,
+                'calendarNameOfDaysInWeek' => $calendarNameOfDaysInWeek,
+                'holidaysData' => [0,0],
+                'getParamsCustomize' => $getParamsCustomize,
+            ]);
 
-            /** Основной метод преобразовывания PDF в JPG*/
-            $imagick = new \Imagick();
-            $imagick->setResolution(100, 100);
-            $imagick->readImage($filePath . $fileName . '.pdf');
-            $imagick->setImageFormat('jpeg');
-            $imagick->writeImages($filePath . $fileName . '.jpg', false);
-
-            /* Дополнительный метод преобразования PDF в JPG
-            $pdfFile = escapeshellarg( "/var/www/timesles.loc/frontend/web/customize/customize.pdf[0]" );
-            $jpgFile = escapeshellarg( "/var/www/timesles.loc/frontend/web/customize/customize.jpg" );
-            exec( "convert -density 110 {$pdfFile} {$jpgFile}" );
-            */
+            $giiPDF->generatePDF($dateData, $countryData, $render, $filePathNoHolidays, $fileNameNoHolidays, $orientation, 1);
         }
 
     }

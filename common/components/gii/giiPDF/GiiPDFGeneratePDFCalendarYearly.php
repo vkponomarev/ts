@@ -8,9 +8,9 @@ use common\components\gii\Gii;
 use Yii;
 
 /**
+ * Класс отвечающий за генерацию PDF календаря на год
  * Class GiiPDFGeneratePDFCalendarYearly
  * @package common\components\gii\giiPDF
- * Класс отвечающий за генерацию PDF календаря на год
  */
 class GiiPDFGeneratePDFCalendarYearly
 {
@@ -40,7 +40,7 @@ class GiiPDFGeneratePDFCalendarYearly
         ];
 
         $count = 0;
-        foreach (range(1950, 1951) as $eachYear) {
+        foreach (range(2022, 2022) as $eachYear) {
 
             foreach ($languagesData as $language) {
                 //$count++;

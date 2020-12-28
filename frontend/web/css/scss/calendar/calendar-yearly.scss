@@ -1,8 +1,8 @@
 .year{
 
-  width:100%;
+  //width:100%;
   text-align: center;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .week {
@@ -23,7 +23,7 @@
 
 .month {
   min-width: 220px;
-  max-width: 300px;
+  //max-width: 300px;
   display: inline-block;
   margin-bottom: 10px;
   border-radius: 5px;
@@ -34,7 +34,7 @@
 @media (max-width: 479px) {
   .month {
     min-width: 220px;
-    max-width: 400px;
+    //max-width: 400px;
   }
 }
 

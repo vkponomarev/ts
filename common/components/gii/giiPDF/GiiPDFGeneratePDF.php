@@ -5,28 +5,91 @@ namespace common\components\gii\giiPDF;
 
 use common\components\bigData\BigData;
 use common\components\breadcrumbs\Breadcrumbs;
+use common\components\gii\Gii;
 use common\components\gii\view\View;
 use common\components\main\Main;
 use common\components\pageTexts\PageTexts;
 use common\components\urlCheck\UrlCheck;
+use Mpdf\Mpdf;
 use Yii;
 use yii\web\Controller;
 
 /**
+ * Генерация PDF файла и картинки предпросмотра.
  * Class GiiPDFGeneratePDF
  * @package common\components\gii\giiPDF
- * Класс для генерации всех PDF календарей одновременно
  */
 class GiiPDFGeneratePDF
 {
 
     /**
-     * @param $languagesData array Массив всех активных языков
+     * Здесь проиходит непосредственная генерация PDF файла и файла картинки этого PDF
+     * @param $dateData
+     * @param $countryData
+     * @param $render
+     * @param $filePath
+     * @param $fileName
+     * @param $orientation
+     * @param $noHolidays
+     * @throws \ImagickException
+     * @throws \Mpdf\MpdfException
      */
-    function generate($languagesData)
+    function generate($dateData, $countryData, $render, $filePath, $fileName, $orientation, $noHolidays)
     {
-        $view = new П();
-        $view->generatePagesIndex($languagesData);
+        $gii= new Gii();
+
+        /** Создание PDF из конкретной скомпилированной страницы с подключением к ней стилей*/
+        $mpdf = new Mpdf(
+            [
+                'mode' => '+aCJK',
+                //"allowCJKoverflow" => true,
+                "autoScriptToLang" => true,
+                //"allow_charset_conversion" => false,
+                "autoLangToFont" => true,
+                'orientation' => $orientation,
+                'marginFooter' => 0
+            ]
+        );
+
+        $mpdf->SetMargins(0, 0, 5);
+        $mpdf->SetDisplayMode('fullpage');
+
+        if ($noHolidays){
+            $mpdf->SetTitle(
+                Yii::t('app', 'Year {year} calendar.', [
+                    'year' => $dateData['year']['full'],
+                    'country' => $countryData['name']
+                ]) );
+        } else {
+            $mpdf->SetTitle(
+                Yii::t('app', 'Calendar of holidays and weekends in {year} {country_for}', [
+                    'year' => $dateData['year']['full'],
+                    'country_for' => $countryData['name_for']
+                ]) );
+        }
+
+        $stylesheet = file_get_contents($gii->realPath() . '/frontend/web/css/scss/main.css'); // external css
+        $mpdf->WriteHTML($stylesheet, 1);
+        $mpdf->WriteHTML($render);
+
+        if (!Yii::$app->request->get('output')){
+            $mpdf->Output($filePath . $fileName . '.pdf', \Mpdf\Output\Destination::FILE);
+        } else {
+            $mpdf->Output($fileName . '.pdf', 'I');
+        }
+
+        /** Основной метод преобразовывания PDF в JPG*/
+        $imagick = new \Imagick();
+        $imagick->setResolution(100, 100);
+        $imagick->readImage($filePath . $fileName . '.pdf');
+        $imagick->setImageFormat('jpeg');
+        $imagick->writeImages($filePath . $fileName . '.jpg', false);
+
+        /* Дополнительный метод преобразования PDF в JPG
+        $pdfFile = escapeshellarg( "/var/www/timesles.loc/frontend/web/customize/customize.pdf[0]" );
+        $jpgFile = escapeshellarg( "/var/www/timesles.loc/frontend/web/customize/customize.jpg" );
+        exec( "convert -density 110 {$pdfFile} {$jpgFile}" );
+        */
     }
 
 }

@@ -102,9 +102,18 @@ return [
     'Year {year} calendar.' => 'Year {year} calendar.',
 
     'Calendar of holidays and weekends in {year} {country_for}' => 'Calendar of holidays and weekends in {year} {country_for}',
-    'Download and print the calendar with holidays and weekends for {year} {country_for}' => 'Download and print the calendar with holidays and weekends for {year} {country_for}',
-    'Download and print the calendar for {year}' => 'Download and print the calendar for {year}',
+    'Download and print PDF calendar with holidays and weekends for {year} {country_for}' => 'Download and print PDF calendar with holidays and weekends for {year} {country_for}',
+    'Download and print PDF calendar for {year}' => 'Download and print PDF calendar for {year}',
 
+    'Seasons' => 'Seasons',
 
-];
+    'Print' => 'Print',
+    'Download' => 'Download',
+
+    'Holidays portrait calendar' => 'Holidays portrait calendar',
+    'Holidays landscape calendar' => 'Holidays landscape calendar',
+    'Portrait calendar without holidays' => 'Portrait calendar without holidays',
+    'Landscape calendar without holidays' => 'Landscape calendar without holidays',
+
+    ];
 

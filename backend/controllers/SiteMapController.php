@@ -33,18 +33,6 @@ class SiteMapController extends Controller
         $this->enableCsrfValidation = false;
         return parent::beforeAction($action);
     }
-
-    /*
-sitemap-artists-all
-sitemap-albums-all
-sitemap-songs-all
-sitemap-all
-
-sitemap-artists-ru
-sitemap-albums-ru
-sitemap-songs-ru
-sitemap-ru
-*/
     public function actionIndex()
     {
 
@@ -55,56 +43,10 @@ sitemap-ru
             $languages = new Languages();
             $languagesData = $languages->data();
 
-            if ($name == 'sitemap-artists-all') {
+            if ($name == 'sitemap-calendar-yearly-all') {
 
-                //$siteMap->cleanPath($siteMap->realPath() . '/gii/sitemap/all/');
-                //$siteMap->generateArtists($languagesData);
-
-            }
-
-            if ($name == 'sitemap-artists-ru') {
-
-                //(new \common\components\dump\Dump())->printR($name);
-                //$siteMap->cleanPath($siteMap->realPath() . '/gii/sitemap/ru/artists/');
-                //$siteMap->generateArtistsRU($languagesData);
-
-            }
-
-
-            if ($name == 'sitemap-albums-all') {
-
-                //$siteMap->cleanPath($siteMap->realPath() . '/gii/sitemap/albums/');
-                //$siteMap->generateAlbums(1, 85000, $languagesData);
-
-            }
-
-            if ($name == 'sitemap-albums-ru') {
-
-                //(new \common\components\dump\Dump())->printR($name);
-                //$siteMap->cleanPath($siteMap->realPath() . '/gii/sitemap/ru/albums/');
-                //$siteMap->generateAlbumsRU($languagesData);
-
-            }
-
-            if ($name == 'sitemap-songs-all') {
-
-                //$siteMap->cleanPath($siteMap->realPath() . '/gii/sitemap/songs/');
-                $siteMap->generateSongs(2200000, 2300000, $languagesData);
-
-            }
-
-            if ($name == 'sitemap-songs-ru') {
-
-                //(new \common\components\dump\Dump())->printR($name);
-                //$siteMap->cleanPath($siteMap->realPath() . '/gii/sitemap/ru/songs/');
-                //$siteMap->generateSongsRU(2200000, 2300000,$languagesData);
-
-            }
-
-            if (($name == 'sitemap-all') or ($name == 'sitemap-ru')) {
-
-               // $siteMap->cleanPath($siteMap->realPath() . '/gii/sitemap/all/');
-                $siteMap->generateMainFiles();
+                //$gii->cleanPath($gii->realPath() . '/gii/sitemap/artists/');
+                $siteMap->generateCalendarYears($languagesData);
 
             }
 

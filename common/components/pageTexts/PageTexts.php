@@ -31,5 +31,12 @@ class PageTexts
 
     }
 
+    function messagesByCalendarSeason($calendarChinese, $dateData)
+    {
+
+        return (new PageTextsMessagesByCalendarYear())->messages($calendarChinese, $dateData);
+
+    }
+
 }
 

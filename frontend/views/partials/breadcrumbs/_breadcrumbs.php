@@ -8,8 +8,6 @@
 <br><br>
 <?php if (isset(Yii::$app->params['breadcrumbs'])): ?>
     <ol class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
-
-
         <li class="breadcrumbs-item" itemprop="itemListElement" itemscope
             itemtype="http://schema.org/ListItem">
             <a href="/<?= Yii::$app->language ?>/" itemprop="item">

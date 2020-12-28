@@ -17,12 +17,20 @@ class GiiPDF
     }
 
     /**
-     * Генерация всех PDF файлов.
-     * @param $languagesData array
+     * Здесь происходит непосредственная генерация PDF файла и файла картинки для этого PDF
+     * @param $dateData array
+     * @param $countryData array
+     * @param $render string
+     * @param $filePath string
+     * @param $fileName string
+     * @param $orientation string
+     * @param $noHolidays integer
+     * @throws \ImagickException
+     * @throws \Mpdf\MpdfException
      */
-    function generatePDF($languagesData){
+    function generatePDF($dateData, $countryData, $render, $filePath, $fileName, $orientation, $noHolidays){
 
-        (new GiiPDFGeneratePDF())->generate($languagesData);
+        (new GiiPDFGeneratePDF())->generate($dateData, $countryData, $render, $filePath, $fileName, $orientation, $noHolidays);
 
     }
 

@@ -25,7 +25,7 @@
     <br><br>
 
     <div class="row">
-        <?php /** Сегодняшний год */ ?>
+        <?php /** Сегодняшний сезон */ ?>
         <div class="col-xxs-12 col-xs-6 current-date">
             <div class="current-date-div">
                 <div class="current-date-one">

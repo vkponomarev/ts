@@ -27,15 +27,21 @@ class GetParams
 
     }
 
+
     /**
      * Передача get параметров для страницы календаря на год.
      * Если параметров нет то присваиваем Дефолтный ID страны для этого языка.
-     * @return array
+     * Если парамет country есть а год не входит в holidaysRange то кидаем 404.
+     * @param $countriesID
+     * @param $year
+     * @param $holidaysRange
+     * @return mixed
+     * @throws \yii\web\NotFoundHttpException
      */
-    function byCalendarYears($countriesID)
+    function byCalendarYears($countriesID, $year, $holidaysRange)
     {
 
-        return (new GetParamsByCalendarYears())->params($countriesID);
+        return (new GetParamsByCalendarYears())->params($countriesID, $year, $holidaysRange);
 
     }
 

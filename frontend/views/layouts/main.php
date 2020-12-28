@@ -22,10 +22,6 @@ AppAsset::register($this);
     <?=$this->render('/partials/link-prev-next/_link-prev-next.min.php')?>
     <?php $this->registerCsrfMetaTags()?>
     <?php $this->head()?>
-
-
-
-
 </head>
 <body role="document">
 <?php $this->beginBody()?>
@@ -87,13 +83,13 @@ AppAsset::register($this);
 
     </nav>
 
-    <div class="container-fluid">
+    <div class="container">
 
         <?=$content?>
 
     </div>
 
-</div>
+
 
 
 <div class="container">
@@ -103,7 +99,7 @@ AppAsset::register($this);
 
     </div>
 </div>
-
+</div>
 <footer>
     <div class="container">
 
