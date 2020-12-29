@@ -47,6 +47,11 @@ return [
     'Summer' => 'Лето',
     'Autumn' => 'Осень',
 
+    'winter' => 'зима',
+    'spring' => 'весна',
+    'summer' => 'лето',
+    'autumn' => 'осень',
+
     'Printable calendar (PDF)' => 'Календарь для печати (PDF)',
     'Yearly' => 'На год',
     'Monthly' => 'На месяц',
@@ -102,11 +107,23 @@ return [
     'Year {year} calendar. ({country})' => 'Календарь на {year} год. ({country})',
     'Year {year} calendar.' => 'Календарь на {year} год.',
 
+    'Calendar {season} {year}. ({country})' => 'Календарь {season} {year} года. ({country})',
+    'Calendar {season} {year}.' => 'Календарь {season} {year} года.',
+
     'Calendar of holidays and weekends in {year} {country_for}' => 'Календарь праздников и выходных дней в {year} году {country_for}',
     'Download and print PDF calendar with holidays and weekends for {year} {country_for}' => 'Скачать и распечатать PDF календарь с праздниками и выходными на {year} год {country_for}',
     'Download and print PDF calendar for {year}' => 'Скачать и распечатать PDF календарь на {year} год',
 
     'Seasons' => 'Времена года',
+    'for the winter' => 'на зиму',
+    'for the summer' => 'на лето',
+    'for the spring' => 'на весну',
+    'for the autumn' => 'на осень',
+
+    'In the winter' => 'Зимой',
+    'In the summer' => 'Летом',
+    'In the spring' => 'Весной',
+    'In the autumn' => 'Осенью',
 
     'Print' => 'Распечатать',
     'Download' => 'Скачать',
@@ -116,6 +133,11 @@ return [
     'Portrait calendar without holidays' => 'Книжный календарь без праздников',
     'Landscape calendar without holidays' => 'Альбомный календарь без праздников',
 
+    'Calendar of holidays and weekends {season} of {year} {country_for}' => 'Календарь праздников и выходных дней {season} {year} года {country_for}',
+    'Download and print PDF calendar with holidays and weekends {season} of {year} {country_for}' => 'Скачать и распечатать PDF календарь с праздниками и выходными {season} {year} года {country_for}',
+    'Download and print PDF calendar {season} of {year}' => 'Скачать и распечатать PDF календарь {season} {year} года',
 
+    'PDF calendar of holidays and weekends {season} of {year} {country_for}' => 'PDF Календарь праздников и выходных дней {season} {year} года {country_for}',
+    'PDF calendar {season} {year}' => 'PDF календарь {season} {year} года',
 
 ];

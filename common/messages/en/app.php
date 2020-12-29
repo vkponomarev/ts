@@ -46,6 +46,11 @@ return [
     'Summer' => 'Summer',
     'Autumn' => 'Autumn',
 
+    'winter' => 'winter',
+    'spring' => 'spring',
+    'summer' => 'summer',
+    'autumn' => 'autumn',
+
     'Printable calendar (PDF)' => 'Printable calendar (PDF)',
     'Yearly' => 'Yearly',
     'Monthly' => 'Monthly',
@@ -101,11 +106,23 @@ return [
     'Year {year} calendar. ({country})' => 'Year {year} calendar. ({country})',
     'Year {year} calendar.' => 'Year {year} calendar.',
 
+    'Calendar {season} {year}. ({country})' => 'Calendar {season} {year}. ({country})',
+    'Calendar {season} {year}.' => 'Calendar {season} {year}.',
+
     'Calendar of holidays and weekends in {year} {country_for}' => 'Calendar of holidays and weekends in {year} {country_for}',
     'Download and print PDF calendar with holidays and weekends for {year} {country_for}' => 'Download and print PDF calendar with holidays and weekends for {year} {country_for}',
     'Download and print PDF calendar for {year}' => 'Download and print PDF calendar for {year}',
 
     'Seasons' => 'Seasons',
+    'for the winter' => 'for the winter',
+    'for the summer' => 'for the summer',
+    'for the spring' => 'for the spring',
+    'for the autumn' => 'for the autumn',
+
+    'In the winter' => 'In the winter',
+    'In the summer' => 'In the summer',
+    'In the spring' => 'In the spring',
+    'In the autumn' => 'In the autumn',
 
     'Print' => 'Print',
     'Download' => 'Download',
@@ -115,5 +132,16 @@ return [
     'Portrait calendar without holidays' => 'Portrait calendar without holidays',
     'Landscape calendar without holidays' => 'Landscape calendar without holidays',
 
-    ];
+    'Calendar of holidays and weekends {season} of {year} {country_for}' => 'Calendar of holidays and weekends {season} of {year} {country_for}',
+    'Download and print PDF calendar with holidays and weekends {season} of {year} {country_for}' => 'Download and print PDF calendar with holidays and weekends {season} of {year} {country_for}',
+    'Download and print PDF calendar {season} of {year}' => 'Download and print PDF calendar {season} of {year}',
+
+    'PDF calendar of holidays and weekends {season} of {year} {country_for}' => 'PDF Calendar of holidays and weekends {season} of {year} {country_for}',
+    'PDF calendar {season} {year}' => 'PDF calendar {season} {year}',
+
+
+
+
+
+];
 

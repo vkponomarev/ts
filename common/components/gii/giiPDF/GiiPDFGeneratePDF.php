@@ -31,11 +31,13 @@ class GiiPDFGeneratePDF
      * @param $fileName
      * @param $orientation
      * @param $noHolidays
+     * @param $PDFTitle
      * @throws \ImagickException
      * @throws \Mpdf\MpdfException
      */
-    function generate($dateData, $countryData, $render, $filePath, $fileName, $orientation, $noHolidays)
+    function generate($dateData, $countryData, $render, $filePath, $fileName, $orientation, $noHolidays, $PDFTitle)
     {
+
         $gii= new Gii();
 
         /** Создание PDF из конкретной скомпилированной страницы с подключением к ней стилей*/
@@ -55,17 +57,9 @@ class GiiPDFGeneratePDF
         $mpdf->SetDisplayMode('fullpage');
 
         if ($noHolidays){
-            $mpdf->SetTitle(
-                Yii::t('app', 'Year {year} calendar.', [
-                    'year' => $dateData['year']['full'],
-                    'country' => $countryData['name']
-                ]) );
+            $mpdf->SetTitle($PDFTitle['noHolidays']);
         } else {
-            $mpdf->SetTitle(
-                Yii::t('app', 'Calendar of holidays and weekends in {year} {country_for}', [
-                    'year' => $dateData['year']['full'],
-                    'country_for' => $countryData['name_for']
-                ]) );
+            $mpdf->SetTitle($PDFTitle['holidays']);
         }
 
         $stylesheet = file_get_contents($gii->realPath() . '/frontend/web/css/scss/main.css'); // external css

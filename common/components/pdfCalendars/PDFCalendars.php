@@ -30,5 +30,11 @@ class PDFCalendars
 
     }
 
+    function seasonsExists($year, $language, $countryURL, $season){
+
+        return (new PDFCalendarsSeasonsExists())->calendars($year, $language, $countryURL, $season);
+
+    }
+
 }
 

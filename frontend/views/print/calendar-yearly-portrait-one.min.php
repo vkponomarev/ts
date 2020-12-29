@@ -14,7 +14,7 @@
  */
 
 
-?><?php $this->beginPage() ?><!doctypehtml><html lang="<?= Yii::$app->language ?>"><link href=/favicon.ico rel="shortcut icon"type=image/x-icon><meta charset="<?= Yii::$app->charset ?>"><link href=/css/main.css rel=stylesheet><?php $this->registerCsrfMetaTags() ?><?php $this->head() ?><body style="width: 100%"><?php $this->beginBody() ?><div style="width: 100%"><table class=calendar-pdf-header-table><tr><td class=calendar-pdf-header-table-left><?php if (isset($getParamsCustomize['header']) && $getParamsCustomize['header'] <> ''): ?><h1 class=calendar-pdf-header-h1><?= $getParamsCustomize['header'] ?></h1><h2 class=calendar-pdf-header-h2><?= Yii::t('app', 'Year {year} calendar. ({country})', [
+?><div style="width: 100%"><table class=calendar-pdf-header-table><tr><td class=calendar-pdf-header-table-left><?php if (isset($getParamsCustomize['header']) && $getParamsCustomize['header'] <> ''): ?><h1 class=calendar-pdf-header-h1><?= $getParamsCustomize['header'] ?></h1><h2 class=calendar-pdf-header-h2><?= Yii::t('app', 'Year {year} calendar. ({country})', [
                         'year' => $dateData['year']['full'],
                         'country' => $countryData['name']
                     ]) ?></h2><?php else: ?><h1 class=calendar-pdf-header-h1><?= Yii::t('app', 'Year {year} calendar. ({country})', [
@@ -38,4 +38,4 @@
 
                     for ($i = $count; $i < $countHolidays; $i++) :
                         $dateFormat = new \DateTime($holidaysData[$i]['date']);
-                        ?><tr><td class=cpdf-yp1-holidays-name><?= Yii::$app->formatter->asDate($dateFormat, 'medium'); ?><td class=cpdf-yp1-holidays-rounded-mark><td class=cpdf-yp1-holidays-name><?= $holidaysData[$i]['name']; ?></tr><?php endfor; ?></table></table></div></div><?php $this->endBody() ?><?php $this->endPage() ?>
+                        ?><tr><td class=cpdf-yp1-holidays-name><?= Yii::$app->formatter->asDate($dateFormat, 'medium'); ?><td class=cpdf-yp1-holidays-rounded-mark><td class=cpdf-yp1-holidays-name><?= $holidaysData[$i]['name']; ?></tr><?php endfor; ?></table></table></div></div>

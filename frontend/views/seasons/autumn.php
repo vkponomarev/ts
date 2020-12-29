@@ -12,6 +12,7 @@
 
 ?>
 
+
 <a name="calendar-<?= $yearData['current'] ?>"></a><h1
         class="main-page-h1"><?= Yii::t('app', 'Календарь на 2020 год') ?></h1>
 <br><br>
@@ -66,7 +67,7 @@
             <span class="fa fa-calendar">
                 </span>
                 <a href="/">
-                    <?= $calendarNameOfMonths[$countMonths]; ?>
+                    <?= $calendarNameOfMonths[$calendarBySeasonsAutumn]; ?>
                 </a>
             </div>
 

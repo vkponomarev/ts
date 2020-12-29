@@ -45,6 +45,13 @@ class GetParams
 
     }
 
+    function byCalendarSeasons($country, $year, $holidaysRange)
+    {
+
+        return (new GetParamsByCalendarSeasons())->params($country, $year, $holidaysRange);
+
+    }
+
     /**
      * Передача get параметров относящихся к стрнаице тестирования PDF календаря
      * @return array

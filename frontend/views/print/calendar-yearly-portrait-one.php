@@ -16,18 +16,6 @@
 
 ?>
 
-<?php $this->beginPage() ?>
-<!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>">
-<head>
-    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <meta charset="<?= Yii::$app->charset ?>">
-    <link href="/css/main.css" rel="stylesheet">
-    <?php $this->registerCsrfMetaTags() ?>
-    <?php $this->head() ?>
-</head>
-<body style="width: 100%">
-<?php $this->beginBody() ?>
 <div style="width: 100%">
 <table class="calendar-pdf-header-table">
     <tr>
@@ -215,7 +203,3 @@
     </table>
 </div>
 </div>
-<?php $this->endBody() ?>
-</body>
-</html>
-<?php $this->endPage() ?>

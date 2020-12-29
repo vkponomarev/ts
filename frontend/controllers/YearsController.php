@@ -56,7 +56,7 @@ class YearsController extends Controller
 
     }
 
-    public function actionYearPage($url)
+    public function actionYearPage($yearURL, $countryURL)
     {
 
 
@@ -65,17 +65,17 @@ class YearsController extends Controller
         $mainUrl = 'years'; // Основной урл
 
         $urlCheck = new UrlCheck();
-        $urlCheckID = $urlCheck->year($url);
+        $urlCheckID = $urlCheck->year($yearURL);
 
         $main = new Main();
         Yii::$app->params['language'] = $main->language(Yii::$app->language);
         Yii::$app->params['language']['all'] = $main->languages();
-        Yii::$app->params['canonical'] = $main->Canonical($url, $mainUrl);
-        Yii::$app->params['alternate'] = $main->Alternate($url, $mainUrl);
+        Yii::$app->params['canonical'] = $main->Canonical($yearURL, $mainUrl);
+        Yii::$app->params['alternate'] = $main->Alternate($yearURL, $mainUrl);
 
         $languageID = Yii::$app->params['language']['current']['id'];
         $countryID = Yii::$app->params['language']['current']['countries_id'];
-        $year = $url;
+        $year = $yearURL;
         $language = Yii::$app->params['language']['current']['url'];
 
         $holidays = new Holidays();
@@ -94,7 +94,7 @@ class YearsController extends Controller
         //$holidaysTypesData = $holidaysTypes->data($countryID, $year, $languageID);
 
         $date = new Date();
-        $dateData = $date->data($url . '-01-01');
+        $dateData = $date->data($yearURL . '-01-01');
 
         $countries = new Countries();
         $countriesData = $countries->data($languageID);

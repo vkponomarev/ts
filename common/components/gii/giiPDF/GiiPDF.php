@@ -28,9 +28,9 @@ class GiiPDF
      * @throws \ImagickException
      * @throws \Mpdf\MpdfException
      */
-    function generatePDF($dateData, $countryData, $render, $filePath, $fileName, $orientation, $noHolidays){
+    function generatePDF($dateData, $countryData, $render, $filePath, $fileName, $orientation, $noHolidays, $PDFTitle){
 
-        (new GiiPDFGeneratePDF())->generate($dateData, $countryData, $render, $filePath, $fileName, $orientation, $noHolidays);
+        (new GiiPDFGeneratePDF())->generate($dateData, $countryData, $render, $filePath, $fileName, $orientation, $noHolidays, $PDFTitle);
 
     }
 
@@ -44,6 +44,15 @@ class GiiPDF
         (new GiiPDFGeneratePDFCalendarYearly())->generate($languagesData);
 
     }
+
+
+    function generatePDFCalendarSeasons($languagesData){
+
+        (new GiiPDFGeneratePDFCalendarSeasons())->generate($languagesData);
+
+    }
+
+
 
 
 }

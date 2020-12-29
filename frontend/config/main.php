@@ -57,26 +57,35 @@ return [
                 '/' => 'main-page/index',
                 '/calendar/customize/' => 'customize/customize-page',
 
-                '/calendar/years/<url>' => 'years/year-page',
-                '/calendar/months/<urlMonth>' => 'months/month-page',
-                '/calendar/days/<urlDay>' => 'days/day-page',
+                //'/calendar/years/<url>' => 'years/year-page',
+                //'/calendar/months/<urlMonth>' => 'months/month-page',
+                //'/calendar/days/<urlDay>' => 'days/day-page',
 
+                [
+                    'pattern' => '/calendar/years/<yearURL:\d{4}>/<countryURL:[\w_-]+>',
+                    'route' => 'years/year-page',
+                    'defaults' => ['yearURL' => '', 'countryURL' => ''],
+                ],
 
+                [
+                    'pattern' => '/calendar/seasons/<seasonURL:(winter|spring|summer|autumn)>/<yearURL:\d{4}>/<countryURL:[\w_-]+>',
+                    'route' => 'seasons/season',
+                    'defaults' => ['yearURL' => '', 'seasonURL' => '', 'countryURL' => ''],
+                ],
 
-                '/calendar/seasons/<season:[\w_-]+>/<year:\d+>' => 'seasons/season',
+                //'/calendar/seasons/<season:[\w_-]+>/<year:\d+>' => 'seasons/season',
                 /*'/calendar/seasons/winter/<urlYear>' => 'seasons/winter',
                 '/calendar/seasons/spring/<urlYear>' => 'seasons/spring',
                 '/calendar/seasons/summer/<urlYear>' => 'seasons/summer',
                 '/calendar/seasons/autumn/<urlYear>' => 'seasons/autumn',
                 */
 
-
-
                 /*'/seasons/winter/<urlYear>' => 'years/winter',
                 '/seasons/spring/<urlYear>' => 'years/spring',
                 '/seasons/summer/<urlYear>' => 'years/summer',
                 '/seasons/autumn/<urlYear>' => 'years/autumn',*/
 
+                '/gii/generate-seasons-pdf/' => 'generate-seasons/generate-pdf',
                 '/gii/generate-pdf/' => 'generate/generate-pdf',
                 '/print/calendar/' => 'print/print-calendar',
                 '/print/calendar-test/' => 'print/print-calendar-test',

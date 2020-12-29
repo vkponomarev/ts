@@ -31,6 +31,13 @@ class UrlCheck
 
     }
 
+    function country($countryURL){
+
+        return (new UrlCheckCountry())->check($countryURL);
+
+    }
+
+
     /**
      * Проверка URL на сезон года
      * @param $season string

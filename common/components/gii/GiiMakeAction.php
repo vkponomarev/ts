@@ -29,16 +29,21 @@ class GiiMakeAction
         //gii/generate-pdf
         \Yii::$app->controllerNamespace = $namespace;
         //создаем экземпляр контроллера
+
         $ca = Yii::$app->createController($controller);
+
         if ($ca !== false) {
 
             /* @var $controller \yii\base\Controller */
             list($controller, $actionID) = $ca;
+
             $action = $controller->createAction($actionID);
+
             if ($action !== null) {
                 //вызываем экшен
                 //(new \common\components\dump\Dump())->printR($params);
                 //die;
+                //(new \common\components\dump\Dump())->printR($params);die;
                 $action->runWithParams($params);
 
 

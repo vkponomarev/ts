@@ -10,7 +10,7 @@ use yii\web\AssetBundle;
 class AppAsset extends AssetBundle
 {
     public $js = [
-       // 'js/bootstrap.min.js',
+       'js/main.js',
         //'/assets/e00d61fc/js/bootstrap.js',
        // '/js/html2canvas.js',
     ];

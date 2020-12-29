@@ -12,83 +12,100 @@
  * @var $calendarNameOfMonths common\components\calendar\CalendarNameOfMonths
  * @var $calendarNameOfDaysInWeek common\components\calendar\CalendarNameOfDaysInWeek
  * @var $PDFCalendarsData common\components\PDFCalendars\PDFCalendarsYearlyExists
- * @var $getParamsByCalendarYears common\components\getParams\GetParamsByCalendarYears
  * @var $holidaysRange common\components\holidays\HolidaysRange
+ * @var $calendarBySeasons common\components\calendar\CalendarBySeasons
+ * @var $countryURL array [url, id, defaultID].
+ * @var $seasonURL string winter, summer, spring, autumn.
+ * @var $pageTextsMessages common\components\pageTexts\PageTextsMessagesByCalendarSeason
  */
-
 
 ?>
 
 
-    <a name="calendar-<?= $dateData['year']['current'] ?>"></a><h1
+<a name="calendar-<?= $dateData['year']['current'] ?>"></a><h1
         class="main-page-h1"><?= Yii::$app->params['text']['h1'] ?></h1>
-    <br><br>
+<br><br>
 
-    <div class="row">
-        <?php /** Сегодняшний сезон */ ?>
-        <div class="col-xxs-12 col-xs-6 current-date">
-            <div class="current-date-div">
-                <div class="current-date-one">
-                    <div class="current-date-year">
-                        <?= $dateData['year']['current'] ?>
-                        <br>
-                        <span class="current-date-month">
-                    <?= Yii::t('app', 'year'); ?>
-                </span>
-
-                    </div>
-                </div>
-                <div class="current-date-text">
-
-                    <?= Yii::$app->params['text']['text1'] ?>
+<div class="row">
+    <?php /** Сегодняшний сезон */ ?>
+    <div class="col-xxs-12 col-xs-6 current-date">
+        <div class="current-date-div">
+            <div class="current-date-one">
+                <div class="current-date-year">
+                    <?= $pageTextsMessages['seasonNow'] ?>
+                    <br>
+                    <span class="current-date-month">
+                        <?= $dateData['year']['current']; ?>&nbsp;<?= Yii::t('app', 'year'); ?>
+                    </span>
                 </div>
             </div>
-        </div>
-        <?php /** Выберите страну */ ?>
-        <div class="col-xxs-12 col-xs-6 c-links-mp">
-            <?php if ($dateData['year']['current'] >= 2000 && $dateData['year']['current'] <= 2030): ?>
-                <div class="c-links-block c-links-mp-header c-links-mp-header-link">
-                    <?= Yii::t('app', 'Choose the country'); ?>
-                </div>
-                <div class="c-links-block">
-                    <form method="get" id="form">
-                        <div class="form-group">
-                            <select name="country" class="form-control" onchange="$('#form').submit();">
-                                <option><?= $countryData['name'] ?></option>
-                                <?php foreach ($countriesData as $country) : ?>
-                                    <option value="<?= $country['id'] ?>"><?= $country['name'] ?></option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
-                    </form>
-                </div>
-                <div class="c-links-block">
-                    <hr>
-                </div>
-            <?php endif; ?>
-            <div class="c-links-block c-links-mp-header c-links-mp-header-link">
-                <?= Yii::t('app', 'Seasons'); ?>
-            </div>
-            <div class="c-links-block">
-                <div class="col-xs-6 c-links-mp-months">
-                    <a href="/<?= Yii::$app->language ?>/calendar/seasons/winter/<?= $dateData['year']['current'] ?>/"><?= Yii::t('app', 'Winter') ?></a><br>
-                    <a href="/<?= Yii::$app->language ?>/calendar/seasons/spring/<?= $dateData['year']['current'] ?>/"><?= Yii::t('app', 'Spring') ?></a><br>
-                </div>
-                <div class="col-xs-6 c-links-mp-months">
-                    <a href="/<?= Yii::$app->language ?>/calendar/seasons/summer/<?= $dateData['year']['current'] ?>/"><?= Yii::t('app', 'Summer') ?></a><br>
-                    <a href="/<?= Yii::$app->language ?>/calendar/seasons/autumn/<?= $dateData['year']['current'] ?>/"><?= Yii::t('app', 'Autumn') ?></a><br>
+            <div class="current-date-text">
 
-                </div>
+                <?= Yii::$app->params['text']['text1'] ?>
             </div>
-            <div class="c-links-block">
-                <hr class="hr-1">
-            </div>
-
-
         </div>
     </div>
-    <br><br>
-    <hr>
+    <?php /** Выберите страну */?>
+    <div class="col-xxs-12 col-xs-6 c-links-mp">
+        <?php if ($dateData['year']['current'] >= $holidaysRange['start'] && $dateData['year']['current'] <= $holidaysRange['end']): ?>
+            <div class="c-links-block c-links-mp-header c-links-mp-header-link">
+                <?= Yii::t('app', 'Choose the country'); ?>
+            </div>
+            <div class="c-links-block">
+                <form method="get" id="formSeasons">
+                    <div class="form-group">
+                        <script>
+                            let url = '<?php echo \yii\helpers\Url::home(true) . Yii::$app->language . '/calendar/seasons/' . $seasonURL . '/' . $dateData['year']['current'] . '/';?>';
+                        </script>
+
+                        <select id="selectCountrySeasons" class="form-control">
+                            <option><?= $countryData['name'] ?></option>
+                            <?php foreach ($countriesData as $country) : ?>
+                                <option value="<?= $country['url'] ?>"><?= $country['name'] ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="c-links-block">
+                <hr>
+            </div>
+        <?php endif; ?>
+        <div class="c-links-block c-links-mp-header c-links-mp-header-link">
+            <?= Yii::t('app', 'Seasons'); ?>
+        </div>
+        <div class="c-links-block">
+            <div class="col-xs-6 c-links-mp-months">
+                <a href="/<?= Yii::$app->language ?>/calendar/seasons/winter/<?= $dateData['year']['current'] ?>/
+                <?= ($countryURL['url'] <> '') ? $countryURL['url'] . '/' : '' ;?>">
+                    <?= Yii::t('app', 'Winter') ?>
+                </a><br>
+                <a href="/<?= Yii::$app->language ?>/calendar/seasons/spring/<?= $dateData['year']['current'] ?>/
+                <?= ($countryURL['url'] <> '') ? $countryURL['url'] . '/' : '' ;?>">
+                    <?= Yii::t('app', 'Spring') ?>
+                </a><br>
+            </div>
+            <div class="col-xs-6 c-links-mp-months">
+                <a href="/<?= Yii::$app->language ?>/calendar/seasons/summer/<?= $dateData['year']['current'] ?>/
+                <?= ($countryURL['url'] <> '') ? $countryURL['url'] . '/' : '' ;?>">
+                    <?= Yii::t('app', 'Summer') ?>
+                </a><br>
+                <a href="/<?= Yii::$app->language ?>/calendar/seasons/autumn/<?= $dateData['year']['current'] ?>/
+                <?= ($countryURL['url'] <> '') ? $countryURL['url'] . '/' : '' ;?>">
+                    <?= Yii::t('app', 'Autumn') ?>
+                </a><br>
+
+            </div>
+        </div>
+        <div class="c-links-block">
+            <hr class="hr-1">
+        </div>
+
+
+    </div>
+</div>
+<br><br>
+<hr>
 
 <?php
 /**
@@ -97,30 +114,30 @@
 
 ?>
 
-    <div class="row">
-        <div class="col-xxs-12 col-xs-4 c-prev-next-left">
-            <a href="/calendar/years/<?= $dateData['year']['previous'] ?>/
-            <?= (($getParamsByCalendarYears['countryGet'])
-                && ($dateData['year']['previous'] >= $holidaysRange['start'] && $dateData['year']['previous'] <= $holidaysRange['end']))
-                ? '?country=' . $countryData['id'] : '' ?>">
-                <?= $dateData['year']['previous'] ?>
-            </a>
-        </div>
-        <div class="col-xxs-12 col-xs-4 c-prev-next-center">
-
-            <?= $dateData['year']['current'] ?>
-
-        </div>
-        <div class="col-xxs-12 col-xs-4 c-prev-next-right">
-            <a href="/calendar/years/<?= $dateData['year']['next'] ?>/
-            <?= (($getParamsByCalendarYears['countryGet'])
-                && ($dateData['year']['next'] >= $holidaysRange['start'] && $dateData['year']['next'] <= $holidaysRange['end']))
-                ? '?country=' . $countryData['id'] : '' ?>">
-                <?= $dateData['year']['next'] ?>
-            </a>
-        </div>
+<div class="row">
+    <div class="col-xxs-12 col-xs-4 c-prev-next-left">
+        <a href="/<?= Yii::$app->language ?>/calendar/seasons/<?= $seasonURL ?>/<?= $dateData['year']['previous'] ?>/
+            <?= (($countryURL['url'] <> '')
+            && ($dateData['year']['previous'] >= $holidaysRange['start'] && $dateData['year']['previous'] <= $holidaysRange['end']))
+            ? $countryURL['url'] . '/' : '' ?>">
+            <?= $dateData['year']['previous'] ?>
+        </a>
     </div>
-    <hr>
+    <div class="col-xxs-12 col-xs-4 c-prev-next-center">
+
+        <?= $dateData['year']['current'] ?>
+
+    </div>
+    <div class="col-xxs-12 col-xs-4 c-prev-next-right">
+        <a href="/<?= Yii::$app->language ?>/calendar/seasons/<?= $seasonURL ?>/<?= $dateData['year']['next'] ?>/
+            <?= (($countryURL['url'] <> '')
+            && ($dateData['year']['next'] >= $holidaysRange['start'] && $dateData['year']['next'] <= $holidaysRange['end']))
+            ? $countryURL['url'] . '/' : '' ?>">
+            <?= $dateData['year']['next'] ?>
+        </a>
+    </div>
+</div>
+<hr>
 <?php if ($PDFCalendarsData['exists']): ?>
     <div class="row">
         <div class="col-xxs-12 c-prev-next-right">
@@ -137,95 +154,100 @@
  */
 ?>
 
-    <div class="row rflex year">
-        <?php
-        $countMonths = 0;
-        $countWeeks = 0;
-        foreach ($calendarByYear as $months) :?>
+<div class="row rflex year">
+    <?php
+    $countMonths = $calendarBySeasons['calendarStartMonth'] - 1;
+    $countWeeks = 0;
+    foreach ($calendarBySeasons['calendar'] as $months) :?>
 
-            <?php $countMonths++; ?>
-            <div class="month col-xxs-12 col-xs-6 col-sm-4 col-md-3">
-                <div class="month-name">
+        <?php $countMonths++; ?>
+        <div class="month col-xxs-12 col-xs-6 col-sm-4 col-md-3">
+            <div class="month-name">
             <span class="fa fa-calendar">
                 </span>
-                    <a href="/calendar/months/<?= $dateData['year']['current'] ?>-<?= str_pad($countMonths, 2, '0', STR_PAD_LEFT) ?>/">
-                        <?= $calendarNameOfMonths[$countMonths]; ?>
-                    </a>
-                </div>
+                <?php $countMonths = ($countMonths == 13) ? 1 : $countMonths; ?>
+                <?php $yearLink = ($countMonths == 12) ? $dateData['year']['previous'] : $dateData['year']['current']; ?>
 
-                <div class="week-name">
-                    <?php for ($i = 1; $i <= 7; $i++): ?>
-                        <div class="day-name">
-                            <?= $calendarNameOfDaysInWeek[$i]; ?>
-                        </div>
-                    <?php endfor; ?>
-                </div>
+                <a class="c-month-name"
+                   href="/<?= Yii::$app->language ?>/calendar/months/<?= $yearLink ?>-<?= str_pad($countMonths, 2, '0', STR_PAD_LEFT) ?>/">
+                    <?= $calendarNameOfMonths[$countMonths]; ?>
+                </a>
 
-
-                <?php foreach ($months as $week): ?>
-                    <div class="week">
-                        <?php for ($i = 1; $i <= 5; $i++): ?>
-
-                            <?php if (isset($week[$i]['monthDay'])): ?>
-
-                                <?php $key = array_search($week[$i]['date'], array_column($holidaysData, 'date'));
-                                if (false !== $key && $holidaysData[$key]['holiday'] == 1): ?>
-                                    <div class="day-holiday" data-title="<?= $holidaysData[$key]['name'] ?>">
-                                     <span>
-                                    <?= $week[$i]['monthDay']; ?>
-                                     </span>
-                                    </div>
-                                <?php else: ?>
-                                    <div class="day">
-                                    <span>
-                                    <?= $week[$i]['monthDay']; ?>
-                                    </span>
-                                    </div>
-                                <?php endif; ?>
-
-                            <?php else: ?>
-                                <div class="no-day">
-                            <span>
-
-                            </span>
-                                </div>
-                            <?php endif; ?>
-                        <?php endfor; ?>
-
-                        <?php for ($i = 6; $i <= 7; $i++): ?>
-                            <?php if (isset($week[$i]['monthDay'])): ?>
-                                <?php $key = array_search($week[$i]['date'], array_column($holidaysData, 'date'));
-                                if (false !== $key && $holidaysData[$key]['holiday'] == 1): ?>
-                                    <div class="day-holiday" data-title="<?= $holidaysData[$key]['name'] ?>">
-                                     <span>
-                                    <?= $week[$i]['monthDay']; ?>
-                                     </span>
-                                    </div>
-                                <?php else: ?>
-                                    <div class="day-off">
-                                    <span>
-                                    <?= $week[$i]['monthDay']; ?>
-                                    </span>
-                                    </div>
-                                <?php endif; ?>
-                            <?php else: ?>
-                                <div class="no-day">
-                            <span>
-
-                            </span>
-                                </div>
-                            <?php endif; ?>
-                        <?php endfor; ?>
-
-                    </div>
-                <?php endforeach; ?>
             </div>
-        <?php endforeach; ?>
 
-    </div>
-    <br>
-    <hr>
-    <br>
+            <div class="week-name">
+                <?php for ($i = 1; $i <= 7; $i++): ?>
+                    <div class="day-name">
+                        <?= $calendarNameOfDaysInWeek[$i]; ?>
+                    </div>
+                <?php endfor; ?>
+            </div>
+
+
+            <?php foreach ($months as $week): ?>
+                <div class="week">
+                    <?php for ($i = 1; $i <= 5; $i++): ?>
+
+                        <?php if (isset($week[$i]['monthDay'])): ?>
+
+                            <?php $key = array_search($week[$i]['date'], array_column($holidaysData, 'date'));
+                            if (false !== $key && $holidaysData[$key]['holiday'] == 1): ?>
+                                <div class="day-holiday" data-title="<?= $holidaysData[$key]['name'] ?>">
+                                     <span>
+                                    <?= $week[$i]['monthDay']; ?>
+                                     </span>
+                                </div>
+                            <?php else: ?>
+                                <div class="day">
+                                    <span>
+                                    <?= $week[$i]['monthDay']; ?>
+                                    </span>
+                                </div>
+                            <?php endif; ?>
+
+                        <?php else: ?>
+                            <div class="no-day">
+                            <span>
+
+                            </span>
+                            </div>
+                        <?php endif; ?>
+                    <?php endfor; ?>
+
+                    <?php for ($i = 6; $i <= 7; $i++): ?>
+                        <?php if (isset($week[$i]['monthDay'])): ?>
+                            <?php $key = array_search($week[$i]['date'], array_column($holidaysData, 'date'));
+                            if (false !== $key && $holidaysData[$key]['holiday'] == 1): ?>
+                                <div class="day-holiday" data-title="<?= $holidaysData[$key]['name'] ?>">
+                                     <span>
+                                    <?= $week[$i]['monthDay']; ?>
+                                     </span>
+                                </div>
+                            <?php else: ?>
+                                <div class="day-off">
+                                    <span>
+                                    <?= $week[$i]['monthDay']; ?>
+                                    </span>
+                                </div>
+                            <?php endif; ?>
+                        <?php else: ?>
+                            <div class="no-day">
+                            <span>
+
+                            </span>
+                            </div>
+                        <?php endif; ?>
+                    <?php endfor; ?>
+
+                </div>
+            <?php endforeach; ?>
+        </div>
+    <?php endforeach; ?>
+
+</div>
+<br>
+<hr>
+<br>
 
 <?php
 /**
@@ -236,9 +258,10 @@
 <?php if ($holidaysData): ?>
     <a name="calendar-of-holidays-and-weekends-in-<?= $dateData['year']['current'] ?>-<?= $countryData['name_en'] ?>"></a>
     <h2 class="main-page-h1">
-        <?= Yii::t('app', 'Calendar of holidays and weekends in {year} {country_for}', [
+        <?= Yii::t('app', 'Calendar of holidays and weekends {season} of {year} {country_for}', [
             'country_for' => $countryData['name_for'],
             'year' => $dateData['year']['current'],
+            'season' => $pageTextsMessages['seasonOn'],
         ]) ?>
     </h2>
 
@@ -254,8 +277,6 @@
                 <?= Yii::$app->formatter->asDate($dateFormat, 'medium'); ?>
                 &nbsp;
                 <?= $holiday['name']; ?>
-                <?php //(new \common\components\dump\Dump())->printR($holiday['holiday_types']);?>
-
             </div>
         <?php endforeach; ?>
     </div>
@@ -274,16 +295,18 @@
     <?php if ($holidaysData): ?>
         <a name="download-calendar-<?= $dateData['year']['current'] ?>"></a>
         <h2 class="main-page-h1">
-            <?= Yii::t('app', 'Download and print PDF calendar with holidays and weekends for {year} {country_for}', [
+            <?= Yii::t('app', 'Download and print PDF calendar with holidays and weekends {season} of {year} {country_for}', [
                 'country_for' => $countryData['name_for'],
                 'year' => $dateData['year']['current'],
+                'season' => $pageTextsMessages['seasonOn'],
             ]) ?>
         </h2>
     <?php else: ?>
         <a name="download-calendar-<?= $dateData['year']['current'] ?>"></a>
         <h2 class="main-page-h1">
-            <?= Yii::t('app', 'Download and print PDF calendar for {year}', [
+            <?= Yii::t('app', 'Download and print PDF calendar {season} of {year}', [
                 'year' => $dateData['year']['current'],
+                'season' => $pageTextsMessages['seasonOn'],
             ]) ?>
         </h2>
     <?php endif; ?>
@@ -308,7 +331,8 @@
                     <img class="c-download-img" alt="" src="<?= $pdf['imgPathRelative'] ?>" width="100%">
 
 
-                    <a href="<?= $pdf['pdfPathRelative'] ?>" download class="btn btn-success c-download-button" target="_blank">
+                    <a href="<?= $pdf['pdfPathRelative'] ?>" download class="btn btn-success c-download-button"
+                       target="_blank">
                         <?= Yii::t('app', 'Download') ?>
                     </a>
                     <br>

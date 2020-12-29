@@ -22,7 +22,8 @@ class CountriesBySiteMapGeneration
         $data = Yii::$app->db
             ->createCommand('
             select
-            countries.id
+            countries.id,
+            countries.url
             from
             countries
             ')

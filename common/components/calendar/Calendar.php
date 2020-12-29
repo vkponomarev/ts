@@ -39,27 +39,9 @@ class Calendar
     }
 
 
-    function bySeasonsWinter($year){
+    function bySeasons($year, $season){
 
-        return (new CalendarBySeasonsWinter())->calendar($year);
-
-    }
-
-    function bySeasonsSpring($year){
-
-        return (new CalendarBySeasonsSpring())->calendar($year);
-
-    }
-
-    function bySeasonsSummer($year){
-
-        return (new CalendarBySeasonsSummer())->calendar($year);
-
-    }
-
-    function bySeasonsAutumn($year){
-
-        return (new CalendarBySeasonsAutumn())->calendar($year);
+        return (new CalendarBySeasons())->calendar($year, $season);
 
     }
 

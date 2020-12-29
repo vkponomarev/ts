@@ -21,7 +21,8 @@ class CountriesByPDFGeneration
         $data = Yii::$app->db
             ->createCommand('
             select
-            countries.id
+            countries.id,
+            countries.url
             from
             countries
             ')

@@ -1,0 +1,158 @@
+//-cpdf-sp1-nh-nh - calendar-pdf-seasons-portrait-design-one-no-holidays
+
+$heightSPOne : 42px;
+$paddingSPOne : 4px;
+$widthSPOne : 80px;
+
+.cpdf-sp1-nh-year{
+  width:100%;
+  text-align: center;
+  justify-content: center;
+  vertical-align: top;
+}
+
+.cpdf-sp1-nh-week {
+  height: 40px;
+}
+
+.cpdf-sp1-nh-td-month{
+  padding-bottom: 10px;
+}
+.cpdf-sp1-nh-month {
+  min-width: 320px;
+  max-width: 600px;
+  margin: 0px;
+  padding: 0px;
+  border-radius: 5px;
+  display: unset;
+  border-spacing: 5px;
+  border-collapse: separate;
+}
+
+.cpdf-sp1-nh-month-name-line {
+  height: 50px;
+  padding-top: 5px;
+  //font-size: 25px;
+  color: #828282;
+}
+
+.cpdf-sp1-nh-month-name-line-td{
+
+  font-size: 20px!important;
+  color: #434343!important;
+  padding-bottom: 5px!important;
+}
+
+
+.cpdf-sp1-nh-day {
+  color: $cDayNumbersColorPDF;
+  font-size: 17px;
+  padding: $paddingSPOne;
+  height: $heightSPOne;
+  width: $widthSPOne;
+  border-bottom: 1px solid #333333;
+}
+
+
+.cpdf-sp1-nh-day-holiday {
+  background-color: $cHolidaysCellColor;
+  border-radius: 50%;
+  color: $cDayNumbersColorPDF;
+  font-size: 17px;
+  padding: $paddingSPOne;
+  height: $heightSPOne;
+  width: $widthSPOne;
+  border-bottom: 1px solid #333333;
+}
+
+
+.cpdf-sp1-nh-no-day {
+
+  padding: $paddingSPOne;
+  height: $heightSPOne;
+  width: $widthSPOne;
+  background-color: white;
+
+}
+
+.cpdf-sp1-nh-day-weekend{
+  color: $cDayNumbersColorPDF;
+  font-size: 17px;
+  padding: $paddingSPOne;
+  height: $heightSPOne;
+  width: $widthSPOne;
+  background-color: $cWeekendCellColor;
+  border-bottom: 1px solid #333333;
+}
+
+
+.cpdf-sp1-nh-no-day-weekend {
+  padding: $paddingSPOne;
+  height: $heightSPOne;
+  width: $widthSPOne;
+  background-color: white;
+
+}
+
+.cpdf-sp1-nh-day-name {
+  color: $cDayNamesColorPDF;
+  padding: $paddingSPOne;
+  height: 30px;
+  width: $widthSPOne;
+  background-color: white;
+  font-weight: initial!important;
+
+}
+
+
+
+tr {
+  vertical-align: top;
+}
+
+.cpdf-sp1-nh-week-line{
+  //background-color: #0a73bb;
+  border-top: 2px solid $cDayNameLineColor;
+
+}
+
+.cpdf-sp1-nh-holidays-table{
+
+  width:100%;
+  //text-align: center;
+  justify-content: center;
+  vertical-align: top;
+
+}
+
+
+.cpdf-sp1-nh-holidays-table-inside{
+
+  width:100%;
+  //text-align: center;
+  justify-content: center;
+  vertical-align: top;
+
+}
+
+.cpdf-sp1-nh-holidays-name{
+  text-align: left;
+  font-size: 10px;
+}
+
+.cpdf-sp1-nh-holidays-table-border{
+  border: 1px solid;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.cpdf-sp1-nh-holidays-rounded-mark {
+  background-color: $cHolidaysCellColor;
+  width: 5px;
+  height: 5px;
+
+  border-right:5px solid #ffffff;
+  border-bottom:2px solid #ffffff;
+}

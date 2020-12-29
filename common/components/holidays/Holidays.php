@@ -31,6 +31,12 @@ class Holidays
 
     }
 
+    function byCountryBySeason($countryID, $yearID, $languageID, $season){
+
+        return (new HolidaysByCountryBySeason())->holidays($countryID, $yearID, $languageID, $season);
+
+    }
+
     /**
      * Список праздников и выходных дней специально для создания PDF файлов календаря на год
      * @param $countryID integer
@@ -41,6 +47,21 @@ class Holidays
     function byCountryByYearPDFGeneration($countryID, $yearID, $languageID){
 
         return (new HolidaysByCountryByYearPDFGeneration())->holidays($countryID, $yearID, $languageID);
+
+    }
+
+    /**
+     * Список праздников и выходных дней специально для создания PDF файлов календаря на сезон года
+     * @param $countryID integer
+     * @param $yearID integer
+     * @param $languageID integer
+     * @param $season string
+     * @return array
+     * @throws \yii\db\Exception
+     */
+    function byCountryBySeasonPDFGeneration($countryID, $yearID, $languageID, $season){
+
+        return (new HolidaysByCountryBySeasonPDFGeneration())->holidays($countryID, $yearID, $languageID, $season);
 
     }
 

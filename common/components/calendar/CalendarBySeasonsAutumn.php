@@ -31,7 +31,7 @@ class CalendarBySeasonsAutumn
             $eachDay->modify('+1 day');
 
 
-        } while (($eachDay->format('n') <= 11) and ($eachDay->format('n') >= 9));
+        } while (($eachDay->format('n') >= 9) and ($eachDay->format('n') <= 11));
 
         return $calendar;
     }
