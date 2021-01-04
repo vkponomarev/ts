@@ -65,7 +65,8 @@ class YearsController extends Controller
         $mainUrl = 'years'; // Основной урл
 
         $urlCheck = new UrlCheck();
-        $urlCheckID = $urlCheck->year($yearURL);
+        $urlCheck->year($yearURL);
+        $countryURL = $urlCheck->country($countryURL);
 
         $main = new Main();
         Yii::$app->params['language'] = $main->language(Yii::$app->language);
@@ -74,7 +75,7 @@ class YearsController extends Controller
         Yii::$app->params['alternate'] = $main->Alternate($yearURL, $mainUrl);
 
         $languageID = Yii::$app->params['language']['current']['id'];
-        $countryID = Yii::$app->params['language']['current']['countries_id'];
+        $countryURL['defaultID'] = Yii::$app->params['language']['current']['countries_id'];
         $year = $yearURL;
         $language = Yii::$app->params['language']['current']['url'];
 
@@ -82,10 +83,9 @@ class YearsController extends Controller
         $holidaysRange = $holidays->range();
 
         $getParams = new GetParams();
-        $getParamsByCalendarYears = $getParams->byCalendarYears($countryID, $year, $holidaysRange);
-        $countryID = $getParamsByCalendarYears['country'];
+        $countryURL = $getParams->byCalendarYears($countryURL, $year, $holidaysRange);
 
-        $holidaysData = $holidays->byCountryByYear($countryID, $year, $languageID);
+        $holidaysData = $holidays->byCountryByYear($countryURL['id'], $year, $languageID);
         $holidaysData = $holidays->arrayReplace($holidaysData);
 
         //(new \common\components\dump\Dump())->printR($holidaysData);
@@ -100,7 +100,7 @@ class YearsController extends Controller
         $countriesData = $countries->data($languageID);
 
         $country = new Country();
-        $countryData = $country->data($languageID, $getParamsByCalendarYears['country']);
+        $countryData = $country->data($languageID, $countryURL['id']);
 
         $calendar = new Calendar();
         $calendarByYear = $calendar->byYear($year);
@@ -134,7 +134,8 @@ class YearsController extends Controller
             'calendarByYear' => $calendarByYear,
             'calendarNameOfMonths' => $calendarNameOfMonths,
             'calendarNameOfDaysInWeek' => $calendarNameOfDaysInWeek,
-            'getParamsByCalendarYears' => $getParamsByCalendarYears,
+            'countryURL' => $countryURL,
+
 
         ]);
 

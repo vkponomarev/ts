@@ -328,8 +328,9 @@
                     <?php if ($key == 'LNoHolidays'): ?>
                         <div class="pdf-header"><?= Yii::t('app', 'Landscape calendar without holidays') ?></div>
                     <?php endif; ?>
+                    <a href="<?= $pdf['imgPathRelative'] ?>" class="lightzoom">
                     <img class="c-download-img" alt="" src="<?= $pdf['imgPathRelative'] ?>" width="100%">
-
+                    </a>
 
                     <a href="<?= $pdf['pdfPathRelative'] ?>" download class="btn btn-success c-download-button"
                        target="_blank">

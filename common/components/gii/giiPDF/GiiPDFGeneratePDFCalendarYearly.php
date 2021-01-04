@@ -15,10 +15,7 @@ use Yii;
 class GiiPDFGeneratePDFCalendarYearly
 {
 
-    /**
-     * @param $languagesData
-     * @throws \yii\base\InvalidConfigException
-     */
+
     function generate($languagesData)
     {
         set_time_limit(500000);
@@ -55,7 +52,7 @@ class GiiPDFGeneratePDFCalendarYearly
 
                         $params['languageID'] = $language['id'];
                         $params['countryID'] = $eachCountry['id'];
-                        $params['year'] = $eachYear;
+                        $params['yearURL'] = $eachYear;
                         $params['orientation'] = $orientation;
                         $params['language'] = $language['url'];
                         $params['pageName'] = $PDFCalendarYearlyPages[$orientation];

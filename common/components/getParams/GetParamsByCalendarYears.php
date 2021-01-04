@@ -23,22 +23,21 @@ class GetParamsByCalendarYears
      * @return mixed
      * @throws \yii\web\NotFoundHttpException
      */
-    public function params($countriesID, $year, $holidaysRange)
+    public function params($country, $year, $holidaysRange)
     {
 
-        if (Yii::$app->request->get('country')) {
+        if ($country['url'] <> '') {
 
             if ($year < $holidaysRange['start'] or $year > $holidaysRange['end'])
                 throw new NotFoundHttpException('404');
 
-            $params['country'] = Yii::$app->request->get('country');
-            $params['countryGet'] = 1;
-
-
         } else {
-            $params['country'] = $countriesID;
-            $params['countryGet'] = 0;
+
+            $country['id'] = $country['defaultID'];
+
         }
+
+        return $country;
 
 
         return $params;

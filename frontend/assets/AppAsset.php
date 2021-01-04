@@ -10,9 +10,10 @@ use yii\web\AssetBundle;
 class AppAsset extends AssetBundle
 {
     public $js = [
-       'js/main.js',
+        'js/main.js',
+        'js/lightzoom.js',
         //'/assets/e00d61fc/js/bootstrap.js',
-       // '/js/html2canvas.js',
+        // '/js/html2canvas.js',
     ];
 
     public $basePath = '@webroot';

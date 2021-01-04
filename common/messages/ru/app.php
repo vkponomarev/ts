@@ -140,4 +140,6 @@ return [
     'PDF calendar of holidays and weekends {season} of {year} {country_for}' => 'PDF Календарь праздников и выходных дней {season} {year} года {country_for}',
     'PDF calendar {season} {year}' => 'PDF календарь {season} {year} года',
 
+    'PDF Calendar of holidays and weekends in {year} {country_for}' => 'PDF календарь праздников и выходных дней в {year} году {country_for}',
+    'Year {year} PDF calendar' => 'PDF календарь на {year} год',
 ];

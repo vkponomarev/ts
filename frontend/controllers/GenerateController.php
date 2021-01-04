@@ -27,24 +27,17 @@ class GenerateController extends Controller
      * Генерирует PDF календраь на год с праздниками и без, горизонтальный и вертикальный.
      * @param $languageID integer ID текущего языка.
      * @param $countryID integer ID страны.
-     * @param $year integer Год.
+     * @param $yearURL integer Год.
      * @param $orientation string Ориентация календаря.
      * @param $language string Двух буквенное обозначение языка.
      * @param $pageName string Наименование страницы view календаря из папки frontend/views/print/ без -no-holidays.
      * @throws \ImagickException
      * @throws \Mpdf\MpdfException
      */
-    public function actionGeneratePdf($languageID, $countryID, $year, $orientation, $language, $pageName)
+    public function actionGeneratePdf($languageID, $countryID, $yearURL, $orientation, $language, $pageName)
     {
 
-        $params['languageID'] = $languageID;
-        $params['countryID'] = $countryID;
-        $params['year'] = $year;
-        $params['orientation'] = $orientation;
-        $params['language'] = $language;
-        $params['pageName'] = $pageName;
-
-        Yii::$app->language = $params['language'];
+        Yii::$app->language = $language;
         Yii::$app->formatter->locale = Yii::$app->language;
         $this->layout = "print";
 
@@ -60,13 +53,8 @@ class GenerateController extends Controller
         Yii::$app->params['canonical'] = $main->Canonical($url, $mainUrl);
         Yii::$app->params['alternate'] = $main->Alternate($url, $mainUrl);
 
-        $languageID = $params['languageID'];
-        $countryID = $params['countryID'];
-        $year = $params['year'];
-        $orientation = $params['orientation'];
-
         $date = new Date();
-        $dateData = $date->data($year . '-01-01');
+        $dateData = $date->data($yearURL . '-01-01');
 
         $country = new Country();
         $countryData = $country->data($languageID, $countryID);
@@ -77,8 +65,15 @@ class GenerateController extends Controller
         $calendarNameOfMonths = $calendar->nameOfMonths();
         $calendarNameOfDaysInWeek = $calendar->nameOfDaysInWeek();
 
+
         $holidays = new Holidays();
-        $holidaysData = $holidays->byCountryByYearPDFGeneration($countryData['id'], $year, $languageID);
+        $holidaysRange = $holidays->range();
+        $holidaysData = $holidays->byCountryByYearPDFGeneration($countryData['id'], $yearURL, $languageID);
+
+        if (!$holidaysData && $yearURL >= $holidaysRange['start'] && $yearURL <= $holidaysRange['end']){
+            $holidaysData = $holidays->byCountryByYear($countryData['id'], $yearURL, $languageID);
+        }
+        $holidaysData = $holidays->arrayReplace($holidaysData);
 
         if (!Yii::$app->request->get('title')){
             $getParamsCustomize['header'] = '';
@@ -86,11 +81,21 @@ class GenerateController extends Controller
             $getParamsCustomize['header'] = 'Тайтл';
         }
 
+        $PDFTitle['holidays'] = Yii::t('app', 'PDF Calendar of holidays and weekends in {year} {country_for}', [
+            'year' => $dateData['year']['full'],
+            'country_for' => $countryData['name_for'],
+        ]);
+
+        $PDFTitle['noHolidays'] = Yii::t('app', 'Year {year} PDF calendar', [
+            'year' => $dateData['year']['full'],
+        ]);
+
+
         $gii = New Gii();
-        $fileName = 'calendar-yearly-' . $year . '-' . $orientation . '-' . $params['language'] . '-' . $countryData['url'];
-        $fileNameNoHolidays = 'calendar-yearly-' . $year . '-' . $orientation . '-' . $params['language'];
-        $filePath = $gii->realPath() . '/frontend/web/calendars-pdf/' . $countryData['url'] . '/';
-        $filePathNoHolidays = $gii->realPath() . '/frontend/web/calendars-pdf/no-holidays/';
+        $fileName = 'calendar-yearly-' . $yearURL . '-' . $orientation . '-' . $language . '-' . $countryData['url'];
+        $fileNameNoHolidays = 'calendar-yearly-' . $yearURL . '-' . $orientation . '-' . $language;
+        $filePath = $gii->realPath() . '/frontend/web/calendars-pdf/' . $countryData['url'] . '/years/';
+        $filePathNoHolidays = $gii->realPath() . '/frontend/web/calendars-pdf/no-holidays/years/';
         $gii->generatePath($filePath);
         $gii->generatePath($filePathNoHolidays);
 
@@ -124,7 +129,7 @@ class GenerateController extends Controller
 
         if ($doPDF) {
 
-            $render = $this->render('@frontend/views/print/' . $params['pageName'] . '.min.php', [
+            $render = $this->render('@frontend/views/print/' . $pageName . '.min.php', [
                 'dateData' => $dateData,
                 'countryData' => $countryData,
                 'calendarByYear' => $calendarByYear,
@@ -134,13 +139,13 @@ class GenerateController extends Controller
                 'getParamsCustomize' => $getParamsCustomize,
             ]);
 
-            $giiPDF->generatePDF($dateData, $countryData, $render, $filePath, $fileName, $orientation, 0);
+            $giiPDF->generatePDF($dateData, $countryData, $render, $filePath, $fileName, $orientation, 0, $PDFTitle);
         }
 
 
         if ($doPDFNoHolidays) {
 
-            $render = $this->render('@frontend/views/print/' . $params['pageName'] . '-no-holidays.min.php', [
+            $render = $this->render('@frontend/views/print/' . $pageName . '-no-holidays.min.php', [
                 'dateData' => $dateData,
                 'countryData' => $countryData,
                 'calendarByYear' => $calendarByYear,
@@ -150,7 +155,7 @@ class GenerateController extends Controller
                 'getParamsCustomize' => $getParamsCustomize,
             ]);
 
-            $giiPDF->generatePDF($dateData, $countryData, $render, $filePathNoHolidays, $fileNameNoHolidays, $orientation, 1);
+            $giiPDF->generatePDF($dateData, $countryData, $render, $filePathNoHolidays, $fileNameNoHolidays, $orientation, 1, $PDFTitle);
         }
 
     }

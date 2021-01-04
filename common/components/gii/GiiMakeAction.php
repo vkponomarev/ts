@@ -44,6 +44,7 @@ class GiiMakeAction
                 //(new \common\components\dump\Dump())->printR($params);
                 //die;
                 //(new \common\components\dump\Dump())->printR($params);die;
+
                 $action->runWithParams($params);
 
 

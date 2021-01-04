@@ -53,6 +53,18 @@ class GiiPDF
     }
 
 
+    function generatePDFUniteSeasons($languageID, $countryURL, $year, $languageURL, $orientation){
+
+        (new GiiPDFGeneratePDFUniteSeasons())->generate($languageID, $countryURL, $year, $languageURL, $orientation);
+
+    }
+
+    function generatePDFUniteSeasonsNoHolidays($languageID, $countryURL, $year, $languageURL, $orientation){
+
+        (new GiiPDFGeneratePDFUniteSeasonsNoHolidays())->generate($languageID, $countryURL, $year, $languageURL, $orientation);
+
+    }
+
 
 
 }

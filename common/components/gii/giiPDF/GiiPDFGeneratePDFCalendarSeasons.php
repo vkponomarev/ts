@@ -16,6 +16,7 @@ class GiiPDFGeneratePDFCalendarSeasons
         set_time_limit(500000);
 
         $gii = new Gii();
+        $giiPDF = new GiiPDF();
         $bigData = new \common\components\bigData\BigData();
 
         $countries = new Countries();
@@ -40,7 +41,7 @@ class GiiPDFGeneratePDFCalendarSeasons
 
 
         $count = 0;
-        foreach (range(2023, 2023) as $eachYear) {
+        foreach (range(2024, 2024) as $eachYear) {
 
             foreach ($languagesData as $language) {
                 //$count++;
@@ -64,6 +65,9 @@ class GiiPDFGeneratePDFCalendarSeasons
 
                             $gii->makeAction($params, 'frontend\controllers', 'generate-seasons/generate-pdf');
                         }
+
+                        $giiPDF->generatePDFUniteSeasons($language['id'], $eachCountry['url'], $eachYear, $language['url'], $orientation);
+                        $giiPDF->generatePDFUniteSeasonsNoHolidays($language['id'], $eachCountry['url'], $eachYear, $language['url'], $orientation);
                     }
                 }
             }

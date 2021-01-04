@@ -8,6 +8,7 @@
 @import "base/images"; // Картинки
 @import "base/xxs"; // Дополненние для самого маленького размера
 
+@import "plugins/lightzoom"; // Дополненние для самого маленького размера
 
 @import "layout/header"; // Верняя часть сайта. Поиск. Логотип.
 @import "layout/menu"; // Меню сайта.
@@ -49,6 +50,10 @@
 @import "calendar/calendar-pdf-seasons-landscape-design-one";
 @import "calendar/calendar-pdf-seasons-portrait-design-one-no-holidays";
 @import "calendar/calendar-pdf-seasons-landscape-design-one-no-holidays";
+
+
+
+
 
 @import "calendar/calendar-pdf-monthly-portrait-design-one";
 @import "calendar/calendar-pdf-monthly-landscape-design-one";

@@ -139,7 +139,8 @@ return [
     'PDF calendar of holidays and weekends {season} of {year} {country_for}' => 'PDF Calendar of holidays and weekends {season} of {year} {country_for}',
     'PDF calendar {season} {year}' => 'PDF calendar {season} {year}',
 
-
+    'PDF Calendar of holidays and weekends in {year} {country_for}' => 'PDF Calendar of holidays and weekends in {year} {country_for}',
+    'Year {year} PDF calendar' => 'Year {year} PDF calendar',
 
 
 

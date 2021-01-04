@@ -192,8 +192,14 @@ AppAsset::register($this);
 <?php else: ?>
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5dbbf2586b540d45"></script>
 <?php endif; ?>
-
-
+<script type="text/javascript">
+    $('.lightzoom').lightzoom({
+        speed: 200,
+        viewTitle: false,
+        isOverlayClickClosing: true,
+        isWindowClickClosing:  true,
+        isEscClosing:          true
+    });</script>
 <?php $this->endBody() ?>
 
 </body>
