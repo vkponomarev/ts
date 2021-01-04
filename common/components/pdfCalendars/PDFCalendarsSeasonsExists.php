@@ -23,8 +23,6 @@ class PDFCalendarsSeasonsExists
         $calendarLImgPath = \Yii::getAlias('@frontend') . '/web/calendars-pdf/' . $countryURL . '/seasons/calendar-seasons-' . $season . '-' . $year . '-L-' . $language . '-' . $countryURL . '.jpg';
         $calendarLImgPathRelative = '/calendars-pdf/' . $countryURL . '/seasons/calendar-seasons-' . $season . '-' . $year . '-L-' . $language . '-' . $countryURL . '.jpg';
 
-
-
         $calendarPNoHolidays = file_exists(\Yii::getAlias('@frontend') . '/web/calendars-pdf/no-holidays/seasons/calendar-seasons-' . $season . '-' . $year . '-P-' . $language . '.pdf');
         $calendarPNoHolidaysImg = file_exists(\Yii::getAlias('@frontend') . '/web/calendars-pdf/no-holidays/seasons/calendar-seasons-' . $season . '-' . $year . '-P-' . $language . '.jpg');
         $calendarPNoHolidaysPath = \Yii::getAlias('@frontend') . '/web/calendars-pdf/no-holidays/seasons/calendar-seasons-' . $season . '-' . $year . '-P-' . $language . '.pdf';
@@ -38,6 +36,36 @@ class PDFCalendarsSeasonsExists
         $calendarLNoHolidaysPathRelative = '/calendars-pdf/no-holidays/seasons/calendar-seasons-' . $season . '-' . $year . '-L-' . $language . '.pdf';
         $calendarLNoHolidaysImgPath = \Yii::getAlias('@frontend') . '/web/calendars-pdf/no-holidays/seasons/calendar-seasons-' . $season . '-' . $year . '-L-' . $language . '.jpg';
         $calendarLNoHolidaysImgPathRelative = '/calendars-pdf/no-holidays/seasons/calendar-seasons-' . $season . '-' . $year . '-L-' . $language . '.jpg';
+
+
+        $calendarYearlySeasonsP = file_exists(\Yii::getAlias('@frontend') . '/web/calendars-pdf/' . $countryURL . '/seasons/calendar-seasons-' . $year . '-P-' . $language . '-' . $countryURL . '.pdf');
+        $calendarYearlySeasonsPPath = \Yii::getAlias('@frontend') . '/web/calendars-pdf/' . $countryURL . '/seasons/calendar-seasons-' . $year . '-P-' . $language . '-' . $countryURL . '.pdf';
+        $calendarYearlySeasonsPPathRelative = '/calendars-pdf/' . $countryURL . '/seasons/calendar-seasons-' . $year . '-P-' . $language . '-' . $countryURL . '.pdf';
+        $calendarYearlySeasonsPImg = file_exists(\Yii::getAlias('@frontend') . '/web/calendars-pdf/' . $countryURL . '/seasons/calendar-seasons-' . $year . '-P-' . $language . '-' . $countryURL . '.jpg');
+        $calendarYearlySeasonsPImgPath = \Yii::getAlias('@frontend') . '/web/calendars-pdf/' . $countryURL . '/seasons/calendar-seasons-' . $year . '-P-' . $language . '-' . $countryURL . '.jpg';
+        $calendarYearlySeasonsPImgPathRelative = '/calendars-pdf/' . $countryURL . '/seasons/calendar-seasons-' . $year . '-P-' . $language . '-' . $countryURL . '.jpg';
+
+        $calendarYearlySeasonsL = file_exists(\Yii::getAlias('@frontend') . '/web/calendars-pdf/' . $countryURL . '/seasons/calendar-seasons-' . $year . '-L-' . $language . '-' . $countryURL . '.pdf');
+        $calendarYearlySeasonsLImg = file_exists(\Yii::getAlias('@frontend') . '/web/calendars-pdf/' . $countryURL . '/seasons/calendar-seasons-' . $year . '-L-' . $language . '-' . $countryURL . '.jpg');
+        $calendarYearlySeasonsLPath = \Yii::getAlias('@frontend') . '/web/calendars-pdf/' . $countryURL . '/seasons/calendar-seasons-' . $year . '-L-' . $language . '-' . $countryURL . '.pdf';
+        $calendarYearlySeasonsLPathRelative = '/calendars-pdf/' . $countryURL . '/seasons/calendar-seasons-' . $year . '-L-' . $language . '-' . $countryURL . '.pdf';
+        $calendarYearlySeasonsLImgPath = \Yii::getAlias('@frontend') . '/web/calendars-pdf/' . $countryURL . '/seasons/calendar-seasons-' . $year . '-L-' . $language . '-' . $countryURL . '.jpg';
+        $calendarYearlySeasonsLImgPathRelative = '/calendars-pdf/' . $countryURL . '/seasons/calendar-seasons-' . $year . '-L-' . $language . '-' . $countryURL . '.jpg';
+
+        $calendarYearlySeasonsPNoHolidays = file_exists(\Yii::getAlias('@frontend') . '/web/calendars-pdf/no-holidays/seasons/calendar-seasons-' . $year . '-P-' . $language . '.pdf');
+        $calendarYearlySeasonsPNoHolidaysImg = file_exists(\Yii::getAlias('@frontend') . '/web/calendars-pdf/no-holidays/seasons/calendar-seasons-' . $year . '-P-' . $language . '.jpg');
+        $calendarYearlySeasonsPNoHolidaysPath = \Yii::getAlias('@frontend') . '/web/calendars-pdf/no-holidays/seasons/calendar-seasons-' . $year . '-P-' . $language . '.pdf';
+        $calendarYearlySeasonsPNoHolidaysPathRelative = '/calendars-pdf/no-holidays/seasons/calendar-seasons-' . $year . '-P-' . $language . '.pdf';
+        $calendarYearlySeasonsPNoHolidaysImgPath = \Yii::getAlias('@frontend') . '/web/calendars-pdf/no-holidays/seasons/calendar-seasons-' . $year . '-P-' . $language . '.jpg';
+        $calendarYearlySeasonsPNoHolidaysImgPathRelative = '/calendars-pdf/no-holidays/seasons/calendar-seasons-' . $year . '-P-' . $language . '.jpg';
+
+        $calendarYearlySeasonsLNoHolidays = file_exists(\Yii::getAlias('@frontend') . '/web/calendars-pdf/no-holidays/seasons/calendar-seasons-' . $year . '-L-' . $language . '.pdf');
+        $calendarYearlySeasonsLNoHolidaysImg = file_exists(\Yii::getAlias('@frontend') . '/web/calendars-pdf/no-holidays/seasons/calendar-seasons-' . $year . '-L-' . $language . '.jpg');
+        $calendarYearlySeasonsLNoHolidaysPath = \Yii::getAlias('@frontend') . '/web/calendars-pdf/no-holidays/seasons/calendar-seasons-' . $year . '-L-' . $language . '.pdf';
+        $calendarYearlySeasonsLNoHolidaysPathRelative = '/calendars-pdf/no-holidays/seasons/calendar-seasons-' . $year . '-L-' . $language . '.pdf';
+        $calendarYearlySeasonsLNoHolidaysImgPath = \Yii::getAlias('@frontend') . '/web/calendars-pdf/no-holidays/seasons/calendar-seasons-' . $year . '-L-' . $language . '.jpg';
+        $calendarYearlySeasonsLNoHolidaysImgPathRelative = '/calendars-pdf/no-holidays/seasons/calendar-seasons-' . $year . '-L-' . $language . '.jpg';
+
 
         $pdf['P'] = [
             'pdfExists' => $calendarP,
@@ -74,6 +102,44 @@ class PDFCalendarsSeasonsExists
             'imgPath' => $calendarLNoHolidaysImgPath,
             'pdfPathRelative' => $calendarLNoHolidaysPathRelative,
             'imgPathRelative' => $calendarLNoHolidaysImgPathRelative,
+        ];
+
+
+        $pdf['seasonsP'] = [
+            'pdfExists' => $calendarYearlySeasonsP,
+            'imgExists' => $calendarYearlySeasonsPImg,
+            'pdfPath' => $calendarYearlySeasonsPPath,
+            'imgPath' => $calendarYearlySeasonsPImgPath,
+            'pdfPathRelative' => $calendarYearlySeasonsPPathRelative,
+            'imgPathRelative' => $calendarYearlySeasonsPImgPathRelative,
+
+        ];
+
+        $pdf['seasonsPNoHolidays'] = [
+            'pdfExists' => $calendarYearlySeasonsPNoHolidays,
+            'imgExists' => $calendarYearlySeasonsPNoHolidaysImg,
+            'pdfPath' => $calendarYearlySeasonsPNoHolidaysPath,
+            'imgPath' => $calendarYearlySeasonsPNoHolidaysImgPath,
+            'pdfPathRelative' => $calendarYearlySeasonsPNoHolidaysPathRelative,
+            'imgPathRelative' => $calendarYearlySeasonsPNoHolidaysImgPathRelative,
+        ];
+
+        $pdf['seasonsL'] = [
+            'pdfExists' => $calendarYearlySeasonsL,
+            'imgExists' => $calendarYearlySeasonsLImg,
+            'pdfPath' => $calendarYearlySeasonsLPath,
+            'imgPath' => $calendarYearlySeasonsLImgPath,
+            'pdfPathRelative' => $calendarYearlySeasonsLPathRelative,
+            'imgPathRelative' => $calendarYearlySeasonsLImgPathRelative,
+        ];
+
+        $pdf['seasonsLNoHolidays'] = [
+            'pdfExists' => $calendarYearlySeasonsLNoHolidays,
+            'imgExists' => $calendarYearlySeasonsLNoHolidaysImg,
+            'pdfPath' => $calendarYearlySeasonsLNoHolidaysPath,
+            'imgPath' => $calendarYearlySeasonsLNoHolidaysImgPath,
+            'pdfPathRelative' => $calendarYearlySeasonsLNoHolidaysPathRelative,
+            'imgPathRelative' => $calendarYearlySeasonsLNoHolidaysImgPathRelative,
         ];
 
         $exists = 0;

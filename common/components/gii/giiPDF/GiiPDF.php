@@ -38,6 +38,7 @@ class GiiPDF
      * Генерация PDF календаря на год
      * @param $languagesData
      * @throws \yii\base\InvalidConfigException
+     * @throws \yii\db\Exception
      */
     function generatePDFCalendarYearly($languagesData){
 
@@ -45,23 +46,51 @@ class GiiPDF
 
     }
 
-
+    /**
+     * Генерация PDF календарей по сезонам с праздиками и без.
+     * @param $languagesData
+     */
     function generatePDFCalendarSeasons($languagesData){
 
         (new GiiPDFGeneratePDFCalendarSeasons())->generate($languagesData);
 
     }
 
-
+    /**
+     * Объединение PDF календарей с праздниками по сезонм в один каледарь
+     * @param $languageID
+     * @param $countryURL
+     * @param $year
+     * @param $languageURL
+     * @param $orientation
+     * @throws \ImagickException
+     * @throws \Mpdf\MpdfException
+     * @throws \setasign\Fpdi\PdfParser\CrossReference\CrossReferenceException
+     * @throws \setasign\Fpdi\PdfParser\PdfParserException
+     * @throws \setasign\Fpdi\PdfParser\Type\PdfTypeException
+     */
     function generatePDFUniteSeasons($languageID, $countryURL, $year, $languageURL, $orientation){
 
         (new GiiPDFGeneratePDFUniteSeasons())->generate($languageID, $countryURL, $year, $languageURL, $orientation);
 
     }
 
-    function generatePDFUniteSeasonsNoHolidays($languageID, $countryURL, $year, $languageURL, $orientation){
+    /**
+     * Объединение PDF календарей без праздников по сезонм в один каледарь
+     * @param $languageID
+     * @param $countryData
+     * @param $year
+     * @param $languageURL
+     * @param $orientation
+     * @throws \ImagickException
+     * @throws \Mpdf\MpdfException
+     * @throws \setasign\Fpdi\PdfParser\CrossReference\CrossReferenceException
+     * @throws \setasign\Fpdi\PdfParser\PdfParserException
+     * @throws \setasign\Fpdi\PdfParser\Type\PdfTypeException
+     */
+    function generatePDFUniteSeasonsNoHolidays($languageID, $countryData, $year, $languageURL, $orientation){
 
-        (new GiiPDFGeneratePDFUniteSeasonsNoHolidays())->generate($languageID, $countryURL, $year, $languageURL, $orientation);
+        (new GiiPDFGeneratePDFUniteSeasonsNoHolidays())->generate($languageID, $countryData, $year, $languageURL, $orientation);
 
     }
 

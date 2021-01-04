@@ -133,6 +133,13 @@ return [
     'Portrait calendar without holidays' => 'Книжный календарь без праздников',
     'Landscape calendar without holidays' => 'Альбомный календарь без праздников',
 
+    'Portrait calendar for the year by seasons with holidays' => 'Книжный календарь на год по сезонам c праздниками',
+    'landscape calendar for the year by seasons with holidays' => 'Альбомный календарь на год по сезонам c праздниками',
+    'Portrait calendar for the year by seasons' => 'Книжный календарь на год по сезонам',
+    'landscape calendar for the year by seasons' => 'Альбомный календарь на год по сезонам',
+
+
+
     'Calendar of holidays and weekends {season} of {year} {country_for}' => 'Календарь праздников и выходных дней {season} {year} года {country_for}',
     'Download and print PDF calendar with holidays and weekends {season} of {year} {country_for}' => 'Скачать и распечатать PDF календарь с праздниками и выходными {season} {year} года {country_for}',
     'Download and print PDF calendar {season} of {year}' => 'Скачать и распечатать PDF календарь {season} {year} года',
@@ -142,4 +149,8 @@ return [
 
     'PDF Calendar of holidays and weekends in {year} {country_for}' => 'PDF календарь праздников и выходных дней в {year} году {country_for}',
     'Year {year} PDF calendar' => 'PDF календарь на {year} год',
+
+    'PDF calendar of holidays and weekends for {year} by seasons {country_for}' => 'PDF календарь праздников и выходных дней на {year} год по сезонам {country_for}',
+    'PDF calendar for {year} by seasons' => 'PDF календарь на {year} год по сезонам',
+
 ];

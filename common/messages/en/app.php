@@ -132,6 +132,11 @@ return [
     'Portrait calendar without holidays' => 'Portrait calendar without holidays',
     'Landscape calendar without holidays' => 'Landscape calendar without holidays',
 
+    'Portrait calendar for the year by seasons with holidays' => 'Portrait calendar for the year by seasons with holidays',
+    'landscape calendar for the year by seasons with holidays' => 'landscape calendar for the year by seasons with holidays',
+    'Portrait calendar for the year by seasons' => 'Portrait calendar for the year by seasons with holidays',
+    'landscape calendar for the year by seasons' => 'landscape calendar for the year by seasons with holidays',
+
     'Calendar of holidays and weekends {season} of {year} {country_for}' => 'Calendar of holidays and weekends {season} of {year} {country_for}',
     'Download and print PDF calendar with holidays and weekends {season} of {year} {country_for}' => 'Download and print PDF calendar with holidays and weekends {season} of {year} {country_for}',
     'Download and print PDF calendar {season} of {year}' => 'Download and print PDF calendar {season} of {year}',
@@ -141,6 +146,11 @@ return [
 
     'PDF Calendar of holidays and weekends in {year} {country_for}' => 'PDF Calendar of holidays and weekends in {year} {country_for}',
     'Year {year} PDF calendar' => 'Year {year} PDF calendar',
+
+    'PDF calendar of holidays and weekends for {year} by seasons {country_for}' => 'PDF calendar of holidays and weekends for {year} by seasons {country_for}',
+    'PDF calendar for {year} by seasons' => 'PDF calendar for {year} by seasons',
+
+
 
 
 

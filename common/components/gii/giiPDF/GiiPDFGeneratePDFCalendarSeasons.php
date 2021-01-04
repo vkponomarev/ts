@@ -4,6 +4,7 @@ namespace common\components\gii\giiPDF;
 
 
 use common\components\countries\Countries;
+use common\components\country\Country;
 use common\components\gii\Gii;
 
 
@@ -21,6 +22,8 @@ class GiiPDFGeneratePDFCalendarSeasons
 
         $countries = new Countries();
         $countriesByPDFGeneration = $countries->byPDFGeneration();
+
+        $country = new Country();
 
         $PDFCalendarPages = [
             'P' => 'calendar-seasons-portrait-one',
@@ -49,6 +52,8 @@ class GiiPDFGeneratePDFCalendarSeasons
 
                 foreach ($countriesByPDFGeneration as $eachCountry) {
 
+                    $countryData = $country->data($language['id'], $eachCountry['id']);
+
                     foreach ($PDFCalendarOrientation as $orientation) {
 
                         foreach ($PDFCalendarSeasons as $season) {
@@ -64,10 +69,11 @@ class GiiPDFGeneratePDFCalendarSeasons
                             $params['seasonURL'] = $season;
 
                             $gii->makeAction($params, 'frontend\controllers', 'generate-seasons/generate-pdf');
+
                         }
 
-                        $giiPDF->generatePDFUniteSeasons($language['id'], $eachCountry['url'], $eachYear, $language['url'], $orientation);
-                        $giiPDF->generatePDFUniteSeasonsNoHolidays($language['id'], $eachCountry['url'], $eachYear, $language['url'], $orientation);
+                        $giiPDF->generatePDFUniteSeasons($language['id'], $countryData, $eachYear, $language['url'], $orientation);
+                        $giiPDF->generatePDFUniteSeasonsNoHolidays($language['id'], $countryData, $eachYear, $language['url'], $orientation);
                     }
                 }
             }

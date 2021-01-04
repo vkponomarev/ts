@@ -15,7 +15,12 @@ use Yii;
 class GiiPDFGeneratePDFCalendarYearly
 {
 
-
+    /**
+     * Генерация PDF календаря на год с праздниками и без
+     * @param $languagesData
+     * @throws \yii\base\InvalidConfigException
+     * @throws \yii\db\Exception
+     */
     function generate($languagesData)
     {
         set_time_limit(500000);
