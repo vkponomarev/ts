@@ -132,6 +132,16 @@ return [
     'Portrait calendar without holidays' => 'Portrait calendar without holidays',
     'Landscape calendar without holidays' => 'Landscape calendar without holidays',
 
+    'Portrait calendar with holidays for a month' => 'Portrait calendar with holidays for a month',
+    'Landscape calendar with holidays for a month' => 'Landscape calendar with holidays for a month',
+    'Portrait calendar without holidays for a month' => 'Portrait calendar without holidays for a month',
+    'Landscape calendar without holidays for a month' => 'Landscape calendar without holidays for a month',
+
+    'Portrait calendar with holidays for the year by months' => 'Portrait calendar with holidays for the year by months',
+    'Landscape calendar with holidays for the year by months' => 'Landscape calendar with holidays for the year by months',
+    'Portrait calendar without holidays for the year by months' => 'Portrait calendar without holidays for the year by months',
+    'Landscape calendar without holidays for the year by months' => 'Landscape calendar without holidays for the year by months',
+
     'Portrait calendar for the year by seasons with holidays' => 'Portrait calendar for the year by seasons with holidays',
     'landscape calendar for the year by seasons with holidays' => 'landscape calendar for the year by seasons with holidays',
     'Portrait calendar for the year by seasons' => 'Portrait calendar for the year by seasons with holidays',
@@ -162,6 +172,13 @@ return [
     '{n,plural, one{# holiday and day off} few{# holidays and days off} other{# holidays and days off}}' =>
     '{n,plural, one{# holiday and day off} few{# holidays and days off} other{# holidays and days off}}',
 
+    'PDF calendar of holidays and weekends for {month} {year} {country_for}' => 'PDF calendar of holidays and weekends for {month} {year} {country_for}',
+    'PDF calendar for {month} {year}' => 'PDF calendar for {month} {year}',
 
+    'Calendar for {month} {year}. ({country})' => 'Calendar for {month} {year}. ({country})',
+    'Calendar for {month} {year}' => 'Calendar for {month} {year}',
+
+    'PDF calendar of holidays and weekends for {year} by months {country_for}' => 'PDF calendar of holidays and weekends for {year} by months {country_for}',
+    'PDF calendar for {year} by months' => 'PDF calendar for {year} by months',
 ];
 

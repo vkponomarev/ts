@@ -91,6 +91,7 @@ return [
                 '/seasons/summer/<urlYear>' => 'years/summer',
                 '/seasons/autumn/<urlYear>' => 'years/autumn',*/
 
+                '/gii/generate-months-pdf/' => 'generate-months/generate-pdf',
                 '/gii/generate-seasons-pdf/' => 'generate-seasons/generate-pdf',
                 '/gii/generate-pdf/' => 'generate/generate-pdf',
                 '/print/calendar/' => 'print/print-calendar',

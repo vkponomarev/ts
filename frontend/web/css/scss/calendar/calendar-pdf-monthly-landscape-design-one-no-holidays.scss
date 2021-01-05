@@ -1,11 +1,11 @@
-//-cpdf-ml1- - calendar-pdf-monthly-landscape-design-one
+//-cpdf-ml1-nh- - calendar-pdf-monthly-landscape-design-one
 
 
-$heightMLOne : 25px;
+$heightMLOne : 35px;
 $paddingMLOne : 15px;
 $widthMLOne : 50px;
 
-.cpdf-ml1-year{
+.cpdf-ml1-nh-year{
   width:100%;
   text-align: center;
   justify-content: center;
@@ -14,17 +14,17 @@ $widthMLOne : 50px;
   margin: 0;
 }
 
-.cpdf-ml1-week-day-name {
+.cpdf-ml1-nh-week-day-name {
   height: 30px;
 }
-.cpdf-ml1-week {
+.cpdf-ml1-nh-week {
   height: 100px;
 }
-.cpdf-ml1-td-month{
+.cpdf-ml1-nh-td-month{
   padding-bottom: 10px;
 
 }
-.cpdf-ml1-month {
+.cpdf-ml1-nh-month {
   width: 100%;
   //margin: 10px;
   //padding: 5px;
@@ -34,27 +34,27 @@ $widthMLOne : 50px;
   border-collapse: separate;
 }
 
-.cpdf-ml1-month-name-line {
+.cpdf-ml1-nh-month-name-line {
   height: 35px;
   padding-top: 5px;
   font-size: 25px;
   color: #828282;
 }
 
-.cpdf-ml1-month-name-a {
+.cpdf-ml1-nh-month-name-a {
 
   font-size: 25px;
   color: #434343;
 
 }
 
-.cpdf-ml1-month-name-line-td{
+.cpdf-ml1-nh-month-name-line-td{
   text-align: left;
   padding-bottom: 20px;
   padding-left: 20px;
 }
 
-.cpdf-ml1-day {
+.cpdf-ml1-nh-day {
   color: $cDayNumbersColorPDF;
   font-size: 17px;
   padding: $heightMLOne;
@@ -65,7 +65,7 @@ $widthMLOne : 50px;
   border-bottom: 1px solid #333333;
 }
 
-.cpdf-ml1-day-holiday {
+.cpdf-ml1-nh-day-holiday {
   background-color: $cHolidaysCellColor;
   color: $cDayNumbersColorPDF;
   font-size: 17px;
@@ -76,14 +76,14 @@ $widthMLOne : 50px;
 }
 
 
-.cpdf-ml1-no-day {
+.cpdf-ml1-nh-no-day {
   padding: $heightMLOne;
   height: $paddingMLOne;
   width: $widthMLOne;
   background-color: white;
 }
 
-.cpdf-ml1-day-weekend{
+.cpdf-ml1-nh-day-weekend{
   color: $cDayNumbersColorPDF;
   font-size: 17px;
   border-bottom: 1px solid #333333;
@@ -94,7 +94,7 @@ $widthMLOne : 50px;
 }
 
 
-.cpdf-ml1-no-day-weekend {
+.cpdf-ml1-nh-no-day-weekend {
   padding: $heightMLOne;
   height: $paddingMLOne;
   width: $widthMLOne;
@@ -102,7 +102,7 @@ $widthMLOne : 50px;
 
 }
 
-.cpdf-ml1-day-name {
+.cpdf-ml1-nh-day-name {
   color: $cDayNamesColorPDF;
   padding: $paddingMLOne;
   height: 30px;
@@ -117,13 +117,13 @@ tr {
   vertical-align: top;
 }
 
-.cpdf-ml1-week-line{
+.cpdf-ml1-nh-week-line{
   //background-color: #0a73bb;
   border-top: 2px solid $cDayNameLineColor;
 
 }
 
-.cpdf-ml1-holidays-table{
+.cpdf-ml1-nh-holidays-table{
 
   width:100%;
   //text-align: center;
@@ -133,7 +133,7 @@ tr {
 }
 
 
-.cpdf-ml1-holidays-table-inside{
+.cpdf-ml1-nh-holidays-table-inside{
 
   width:100%;
   //text-align: center;
@@ -142,12 +142,12 @@ tr {
 
 }
 
-.cpdf-ml1-holidays-name{
+.cpdf-ml1-nh-holidays-name{
   text-align: left;
   font-size: 10px;
 }
 
-.cpdf-ml1-holidays-table-border{
+.cpdf-ml1-nh-holidays-table-border{
   border: 1px solid;
   padding-left: 10px;
   padding-right: 10px;
@@ -155,7 +155,7 @@ tr {
   padding-bottom: 5px;
 }
 
-.cpdf-ml1-holidays-rounded-mark {
+.cpdf-ml1-nh-holidays-rounded-mark {
   background-color: $cHolidaysCellColor;
   width: 5px;
   height: 5px;

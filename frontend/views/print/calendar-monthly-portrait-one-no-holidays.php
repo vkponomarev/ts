@@ -19,7 +19,7 @@
             <?php if (isset($getParamsCustomize['header']) && $getParamsCustomize['header'] <> ''): ?>
                 <h1 class="calendar-pdf-header-h1"><?= $getParamsCustomize['header'] ?></h1>
                 <h2 class="calendar-pdf-header-h2">
-                    <?= Yii::t('app', 'Calendar for {month} {year}. ({country})', [
+                    <?= Yii::t('app', 'Calendar for {month} {year}', [
                         'year' => $dateData['year']['full'],
                         'country' => $countryData['name'],
                         'month' => $calendarNameOfMonths[$dateData['month']['numberSimple']]
@@ -27,7 +27,7 @@
                 </h2>
             <?php else: ?>
                 <h1 class="calendar-pdf-header-h1">
-                    <?= Yii::t('app', 'Calendar for {month} {year}. ({country})', [
+                    <?= Yii::t('app', 'Calendar for {month} {year}', [
                         'year' => $dateData['year']['full'],
                         'country' => $countryData['name'],
                         'month' => $calendarNameOfMonths[$dateData['month']['numberSimple']]
@@ -43,7 +43,7 @@
     </tr>
 </table>
 <br>
-<table class="cpdf-mp1-year">
+<table class="cpdf-mp1-nh-year">
 
 
     <?php
@@ -55,42 +55,42 @@
             <tr>
 
 
-        <td class="cpdf-mp1-td-month">
-            <table class="cpdf-mp1-month">
+        <td class="cpdf-mp1-nh-td-month">
+            <table class="cpdf-mp1-nh-month">
 
-                <tr class="cpdf-mp1-week-day-name">
+                <tr class="cpdf-mp1-nh-week-day-name">
 
                     <?php for ($i = 1; $i <= 7; $i++): ?>
-                        <td class="cpdf-mp1-day-name">
+                        <td class="cpdf-mp1-nh-day-name">
                             <?= $calendarNameOfDaysInWeek[$i]; ?>
                         </td>
                     <?php endfor; ?>
 
                 </tr>
                 <tr>
-                    <td class="cpdf-mp1-week-line" colspan="7">
+                    <td class="cpdf-mp1-nh-week-line" colspan="7">
 
                     </td>
                 </tr>
                 <?php foreach ($months as $week): ?>
-                    <tr class="cpdf-mp1-week">
+                    <tr class="cpdf-mp1-nh-week">
 
                         <?php for ($i = 1; $i <= 5; $i++): ?>
                             <?php if (isset($week[$i])): ?>
 
                                 <?php $key = array_search($week[$i]['date'], array_column($holidaysData, 'date'));
                                 if (false !== $key): ?>
-                                    <td class="cpdf-mp1-day cpdf-mp1-day-holiday">
+                                    <td class="cpdf-mp1-nh-day cpdf-mp1-nh-day-holiday">
                                         <?= $week[$i]['monthDay']; ?>
                                     </td>
                                 <?php else: ?>
-                                    <td class="cpdf-mp1-day">
+                                    <td class="cpdf-mp1-nh-day cpdf-mp1-nh-day">
                                         <?= $week[$i]['monthDay']; ?>
                                     </td>
                                 <?php endif; ?>
 
                             <?php else: ?>
-                                <td class="cpdf-mp1-day cpdf-mp1-no-day">
+                                <td class="cpdf-mp1-nh-day cpdf-mp1-nh-no-day">
                             <span>
                             </span>
                                 </td>
@@ -102,17 +102,17 @@
 
                                 <?php $key = array_search($week[$i]['date'], array_column($holidaysData, 'date'));
                                 if (false !== $key): ?>
-                                    <td class="cpdf-mp1-day cpdf-mp1-day-holiday">
+                                    <td class="cpdf-mp1-nh-day cpdf-mp1-nh-day-holiday">
                                         <?= $week[$i]['monthDay']; ?>
                                     </td>
                                 <?php else: ?>
-                                    <td class="cpdf-mp1-day cpdf-mp1-day-weekend">
+                                    <td class="cpdf-mp1-nh-day cpdf-mp1-nh-day-weekend">
                                         <?= $week[$i]['monthDay']; ?>
                                     </td>
                                 <?php endif; ?>
 
                             <?php else: ?>
-                                <td class="cpdf-mp1-day cpdf-mp1-no-day">
+                                <td class="cpdf-mp1-nh-day cpdf-mp1-nh-no-day">
                             <span>
 
                             </span>
@@ -130,58 +130,3 @@
     <?php endforeach; ?>
 
 </table>
-<div class="cpdf-mp1-holidays-table-border">
-
-    <table class="cpdf-mp1-holidays-table">
-        <tr>
-            <td>
-                <table class="cpdf-mp1-holidays-table-inside">
-                    <?php
-                    $count = 0;
-                    $countHolidays = count($holidaysData);
-                    $countHolidaysHalf = ceil($countHolidays / 2);
-
-                    for ($i = $count; $i < $countHolidaysHalf; $i++) :
-                        $dateFormat = new \DateTime($holidaysData[$i]['date']);
-                        ?>
-                        <tr>
-                            <td class="cpdf-mp1-holidays-name">
-                                <?= Yii::$app->formatter->asDate($dateFormat, 'medium'); ?>
-                            </td>
-                            <td class="cpdf-mp1-holidays-rounded-mark">
-                            </td>
-                            <td class="cpdf-mp1-holidays-name">
-                                <?= $holidaysData[$i]['name']; ?>
-                            </td>
-
-
-                        </tr>
-                    <?php endfor; ?>
-                </table>
-            </td>
-
-
-            <td>
-                <table class="cpdf-mp1-holidays-table-inside">
-                        <?php
-                        $count = $countHolidaysHalf;
-
-                        for ($i = $count; $i < $countHolidays; $i++) :
-                        $dateFormat = new \DateTime($holidaysData[$i]['date']);
-                        ?>
-                    <tr>
-                        <td class="cpdf-mp1-holidays-name">
-                            <?= Yii::$app->formatter->asDate($dateFormat, 'medium'); ?>
-                        </td>
-                        <td class="cpdf-mp1-holidays-rounded-mark">
-                        </td>
-                        <td class="cpdf-mp1-holidays-name">
-                            <?= $holidaysData[$i]['name']; ?>
-                        </td>
-                    </tr>
-                        <?php endfor; ?>
-                </table>
-            </td>
-        </tr>
-    </table>
-</div>

@@ -146,7 +146,7 @@ class MonthsController extends Controller
         $calendarNameOfDaysInWeek = $calendar->nameOfDaysInWeek();
 
         $PDFCalendars = new PDFCalendars();
-        $PDFCalendarsData = $PDFCalendars->monthlyExists($monthURL['year'], $language, $countryData['url']);
+        $PDFCalendarsData = $PDFCalendars->monthlyExists($monthURL, $language, $countryData['url']);
 
         $pageTexts = new PageTexts();
         $pageTextsID = $pageTexts->defineIdByCalendarMonth($holidaysData, $PDFCalendarsData);
@@ -155,13 +155,10 @@ class MonthsController extends Controller
         $pageTextsMessages = $pageTexts->messagesByCalendarMonth($dateData, count($holidaysData));
         $pageTexts->updateByCalendarMonth($pageTextsMessages, $dateData, $countryData, count($holidaysData), $calendarNameOfMonths);
 
-
         /*
                 $breadCrumbs = new Breadcrumbs();
                 Yii::$app->params['breadcrumbs'] = $breadCrumbs->year($yearData);
         */
-
-
 
         return $this->render('month-page.min.php', [
 
@@ -171,7 +168,6 @@ class MonthsController extends Controller
             'holidaysData' => $holidaysData,
             'holidaysRange' => $holidaysRange,
             'PDFCalendarsData' => $PDFCalendarsData,
-            //'holidaysTypesData' => $holidaysTypesData,
             'calendarByMonth' => $calendarByMonth,
             'calendarNameOfMonths' => $calendarNameOfMonths,
             'calendarNameOfDaysInWeek' => $calendarNameOfDaysInWeek,

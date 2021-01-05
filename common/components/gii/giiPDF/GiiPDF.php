@@ -56,6 +56,12 @@ class GiiPDF
 
     }
 
+    function generatePDFCalendarMonths($languagesData){
+
+        (new GiiPDFGeneratePDFCalendarMonths())->generate($languagesData);
+
+    }
+
     /**
      * Объединение PDF календарей с праздниками по сезонм в один каледарь
      * @param $languageID
@@ -94,6 +100,16 @@ class GiiPDF
 
     }
 
+    function generatePDFUniteMonths($languageID, $countryData, $year, $languageURL, $orientation){
 
+        (new GiiPDFGeneratePDFUniteMonths())->generate($languageID, $countryData, $year, $languageURL, $orientation);
+
+    }
+
+    function generatePDFUniteMonthsNoHolidays($languageID, $countryData, $year, $languageURL, $orientation){
+
+        (new GiiPDFGeneratePDFUniteMonthsNoHolidays())->generate($languageID, $countryData, $year, $languageURL, $orientation);
+
+    }
 
 }

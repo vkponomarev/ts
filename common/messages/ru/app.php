@@ -133,6 +133,16 @@ return [
     'Portrait calendar without holidays' => 'Книжный календарь без праздников',
     'Landscape calendar without holidays' => 'Альбомный календарь без праздников',
 
+    'Portrait calendar with holidays for a month' => 'Книжный календарь c праздниками на месяц',
+    'Landscape calendar with holidays for a month' => 'Альбомный календарь c праздниками на месяц',
+    'Portrait calendar without holidays for a month' => 'Книжный календарь без праздников на месяц',
+    'Landscape calendar without holidays for a month' => 'Альбомный календарь без праздников на месяц',
+
+    'Portrait calendar with holidays for the year by months' => 'Книжный календарь c праздниками на год по месяцам',
+    'Landscape calendar with holidays for the year by months' => 'Альбомный календарь c праздниками на год по месяцам',
+    'Portrait calendar without holidays for the year by months' => 'Книжный календарь без праздников на год по месяцам',
+    'Landscape calendar without holidays for the year by months' => 'Альбомный календарь без праздников на год по месяцам',
+
     'Portrait calendar for the year by seasons with holidays' => 'Книжный календарь на год по сезонам c праздниками',
     'landscape calendar for the year by seasons with holidays' => 'Альбомный календарь на год по сезонам c праздниками',
     'Portrait calendar for the year by seasons' => 'Книжный календарь на год по сезонам',
@@ -157,10 +167,19 @@ return [
     '31 days' => '31 день',
 
     'Holidays and Weekends Calendar for {month} {year} {country_for}' => 'Календарь праздников и выходных дней на {month} {year} года {country_for}',
-    'Download and print PDF calendar with holidays and weekends for {month} {year} {country_for}' => 'Скачать и распечатать PDF календарь с праздниками и выходными длнями на {month} {year} года {country_for}',
+    'Download and print PDF calendar with holidays and weekends for {month} {year} {country_for}' => 'Скачать и распечатать PDF календарь с праздниками и выходными днями на {month} {year} года {country_for}',
     'Download and print PDF calendar for {month} {year}' => 'Скачать и распечатать PDF календарь на {month} {year} года',
 
     '{n,plural, one{# holiday and day off} few{# holidays and days off} other{# holidays and days off}}' =>
         '{n,plural, one{# праздничный и выходной день} few{# праздничных и выходных дня} other{# праздничных и выходных дней}}',
+
+    'PDF calendar of holidays and weekends for {month} {year} {country_for}' => 'PDF календарь праздников и выходных дней на {month} {year} года {country_for}',
+    'PDF calendar for {month} {year}' => 'PDF календарь на {month} {year} года',
+
+    'Calendar for {month} {year}. ({country})' => 'Календарь на {month} {year} года. ({country})',
+    'Calendar for {month} {year}' => 'Календарь {month} {year} года',
+
+    'PDF calendar of holidays and weekends for {year} by months {country_for}' => 'PDF календарь праздников и выходных дней на {year} год по месяцам {country_for}',
+    'PDF calendar for {year} by months' => 'PDF календарь на {year} год по месяцам',
 
 ];

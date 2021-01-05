@@ -72,6 +72,14 @@ class Holidays
 
     }
 
+
+    function byCountryByMonthPDFGeneration($countryID, $yearID, $languageID, $season){
+
+        return (new HolidaysByCountryByMonthPDFGeneration())->holidays($countryID, $yearID, $languageID, $season);
+
+    }
+
+
     /**
      * Заменяем ячейку выходной день с несколькими значениями пример (0,1) на одно значение здесь 1 (0,0) здесь 0
      * Такое получается когда у нас есть для одного праздника несколько типов праздника и нам нужно найти тип который официальный выходноой

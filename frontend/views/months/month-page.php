@@ -334,29 +334,29 @@
             <?php if ($pdf['pdfExists']): ?>
                 <div class="col-xxs-12 col-xs-6 col-md-4 col-lg-3 d-center pdf-download">
                     <?php if ($key == 'P'): ?>
-                        <div class="pdf-header"><?= Yii::t('app', 'Holidays portrait calendar') ?></div>
+                        <div class="pdf-header"><?= Yii::t('app', 'Portrait calendar with holidays for a month') ?></div>
                     <?php endif; ?>
                     <?php if ($key == 'L'): ?>
-                        <div class="pdf-header"><?= Yii::t('app', 'Holidays landscape calendar') ?></div>
+                        <div class="pdf-header"><?= Yii::t('app', 'Landscape calendar with holidays for a month') ?></div>
                     <?php endif; ?>
                     <?php if ($key == 'PNoHolidays'): ?>
-                        <div class="pdf-header"><?= Yii::t('app', 'Portrait calendar without holidays') ?></div>
+                        <div class="pdf-header"><?= Yii::t('app', 'Portrait calendar without holidays for a month') ?></div>
                     <?php endif; ?>
                     <?php if ($key == 'LNoHolidays'): ?>
-                        <div class="pdf-header"><?= Yii::t('app', 'Landscape calendar without holidays') ?></div>
+                        <div class="pdf-header"><?= Yii::t('app', 'Landscape calendar without holidays for a month') ?></div>
                     <?php endif; ?>
 
-                    <?php if ($key == 'seasonsP'): ?>
-                        <div class="pdf-header"><?= Yii::t('app', 'Portrait calendar for the year by seasons with holidays') ?></div>
+                    <?php if ($key == 'yearlyP'): ?>
+                        <div class="pdf-header"><?= Yii::t('app', 'Portrait calendar with holidays for the year by months') ?></div>
                     <?php endif; ?>
-                    <?php if ($key == 'seasonsL'): ?>
-                        <div class="pdf-header"><?= Yii::t('app', 'landscape calendar for the year by seasons with holidays') ?></div>
+                    <?php if ($key == 'yearlyL'): ?>
+                        <div class="pdf-header"><?= Yii::t('app', 'Landscape calendar with holidays for the year by months') ?></div>
                     <?php endif; ?>
-                    <?php if ($key == 'seasonsPNoHolidays'): ?>
-                        <div class="pdf-header"><?= Yii::t('app', 'Portrait calendar for the year by seasons') ?></div>
+                    <?php if ($key == 'yearlyPNoHolidays'): ?>
+                        <div class="pdf-header"><?= Yii::t('app', 'Portrait calendar without holidays for the year by months') ?></div>
                     <?php endif; ?>
-                    <?php if ($key == 'seasonsLNoHolidays'): ?>
-                        <div class="pdf-header"><?= Yii::t('app', 'landscape calendar for the year by seasons') ?></div>
+                    <?php if ($key == 'yearlyLNoHolidays'): ?>
+                        <div class="pdf-header"><?= Yii::t('app', 'Landscape calendar without holidays for the year by months') ?></div>
                     <?php endif; ?>
                     
                     <a href="<?= $pdf['imgPathRelative'] ?>" class="lightzoom">
