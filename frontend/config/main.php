@@ -73,6 +73,12 @@ return [
                     'defaults' => ['yearURL' => '', 'seasonURL' => '', 'countryURL' => ''],
                 ],
 
+                [
+                    'pattern' => '/calendar/months/<monthURL>/<countryURL:[\w_-]+>',
+                    'route' => 'months/month-page',
+                    'defaults' => ['monthURL' => '', 'countryURL' => ''],
+                ],
+
                 //'/calendar/seasons/<season:[\w_-]+>/<year:\d+>' => 'seasons/season',
                 /*'/calendar/seasons/winter/<urlYear>' => 'seasons/winter',
                 '/calendar/seasons/spring/<urlYear>' => 'seasons/spring',

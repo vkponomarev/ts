@@ -17,7 +17,7 @@ class GetParamsByCalendarYears
      * Выбираем Get параметры для календаря на год
      * Если get параметр country присутствует в годах до 2000 и после 2030 кидаем 404
      * Так как нет для таких годов у нас праздников и нет смысла делать страницы для стран
-     * @param $countriesID integer
+     * @param $country integer
      * @param $year integer
      * @param $holidaysRange array
      * @return mixed

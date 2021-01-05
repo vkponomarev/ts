@@ -150,8 +150,17 @@ return [
     'PDF calendar of holidays and weekends for {year} by seasons {country_for}' => 'PDF calendar of holidays and weekends for {year} by seasons {country_for}',
     'PDF calendar for {year} by seasons' => 'PDF calendar for {year} by seasons',
 
+    '28 days' => '28 days',
+    '29 days' => '29 days',
+    '30 days' => '30 days',
+    '31 days' => '31 days',
 
+    'Holidays and Weekends Calendar for {month} {year} {country_for}' => 'Holidays and Weekends Calendar for {month} {year} {country_for}',
+    'Download and print PDF calendar with holidays and weekends for {month} {year} {country_for}' => 'Download and print PDF calendar with holidays and weekends for {month} {year} {country_for}',
+    'Download and print PDF calendar for {month} {year}' => 'Download and print PDF calendar for {month} {year}',
 
+    '{n,plural, one{# holiday and day off} few{# holidays and days off} other{# holidays and days off}}' =>
+    '{n,plural, one{# holiday and day off} few{# holidays and days off} other{# holidays and days off}}',
 
 
 ];

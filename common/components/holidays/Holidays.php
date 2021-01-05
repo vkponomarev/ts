@@ -31,6 +31,13 @@ class Holidays
 
     }
 
+
+    function byCountryByMonth($countryID, $year, $month, $languageID){
+
+        return (new HolidaysByCountryByMonth())->holidays($countryID, $year, $month, $languageID);
+
+    }
+
     function byCountryBySeason($countryID, $yearID, $languageID, $season){
 
         return (new HolidaysByCountryBySeason())->holidays($countryID, $yearID, $languageID, $season);

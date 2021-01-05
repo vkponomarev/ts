@@ -138,8 +138,6 @@ return [
     'Portrait calendar for the year by seasons' => 'Книжный календарь на год по сезонам',
     'landscape calendar for the year by seasons' => 'Альбомный календарь на год по сезонам',
 
-
-
     'Calendar of holidays and weekends {season} of {year} {country_for}' => 'Календарь праздников и выходных дней {season} {year} года {country_for}',
     'Download and print PDF calendar with holidays and weekends {season} of {year} {country_for}' => 'Скачать и распечатать PDF календарь с праздниками и выходными {season} {year} года {country_for}',
     'Download and print PDF calendar {season} of {year}' => 'Скачать и распечатать PDF календарь {season} {year} года',
@@ -152,5 +150,17 @@ return [
 
     'PDF calendar of holidays and weekends for {year} by seasons {country_for}' => 'PDF календарь праздников и выходных дней на {year} год по сезонам {country_for}',
     'PDF calendar for {year} by seasons' => 'PDF календарь на {year} год по сезонам',
+
+    '28 days' => '28 дней',
+    '29 days' => '29 дней',
+    '30 days' => '30 дней',
+    '31 days' => '31 день',
+
+    'Holidays and Weekends Calendar for {month} {year} {country_for}' => 'Календарь праздников и выходных дней на {month} {year} года {country_for}',
+    'Download and print PDF calendar with holidays and weekends for {month} {year} {country_for}' => 'Скачать и распечатать PDF календарь с праздниками и выходными длнями на {month} {year} года {country_for}',
+    'Download and print PDF calendar for {month} {year}' => 'Скачать и распечатать PDF календарь на {month} {year} года',
+
+    '{n,plural, one{# holiday and day off} few{# holidays and days off} other{# holidays and days off}}' =>
+        '{n,plural, one{# праздничный и выходной день} few{# праздничных и выходных дня} other{# праздничных и выходных дней}}',
 
 ];

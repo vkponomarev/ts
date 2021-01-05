@@ -118,7 +118,7 @@
 
 <div class="row">
     <div class="col-xxs-12 col-xs-4 c-prev-next-left">
-        <a href="/calendar/years/<?= $dateData['year']['previous'] ?>/
+        <a href="/<?= Yii::$app->language ?>/calendar/years/<?= $dateData['year']['previous'] ?>/
             <?= (($countryURL['url'] <> '')
             && ($dateData['year']['previous'] >= $holidaysRange['start'] && $dateData['year']['previous'] <= $holidaysRange['end']))
             ? $countryURL['url'] . '/' : '' ?>">
@@ -131,7 +131,7 @@
 
     </div>
     <div class="col-xxs-12 col-xs-4 c-prev-next-right">
-        <a href="/calendar/years/<?= $dateData['year']['next'] ?>/
+        <a href="/<?= Yii::$app->language ?>/calendar/years/<?= $dateData['year']['next'] ?>/
             <?= (($countryURL['url'] <> '')
             && ($dateData['year']['next'] >= $holidaysRange['start'] && $dateData['year']['next'] <= $holidaysRange['end']))
             ? $countryURL['url'] . '/' : '' ?>">
@@ -167,9 +167,13 @@
             <div class="month-name">
             <span class="fa fa-calendar">
                 </span>
-                <a href="/calendar/months/<?= $dateData['year']['current'] ?>-<?= str_pad($countMonths, 2, '0', STR_PAD_LEFT) ?>/">
+                <a href="/<?= Yii::$app->language ?>/calendar/months/<?= $dateData['year']['current'] ?>-<?= str_pad($countMonths, 2, '0', STR_PAD_LEFT) ?>/
+                    <?= (($countryURL['url'] <> '')
+                    && ($dateData['year']['next'] >= $holidaysRange['start'] && $dateData['year']['next'] <= $holidaysRange['end']))
+                    ? $countryURL['url'] . '/' : '' ?>">
                     <?= $calendarNameOfMonths[$countMonths]; ?>
                 </a>
+
             </div>
 
             <div class="week-name">
@@ -337,9 +341,9 @@
                     <?php if ($key == 'seasonsLNoHolidays'): ?>
                         <div class="pdf-header"><?= Yii::t('app', 'landscape calendar for the year by seasons') ?></div>
                     <?php endif; ?>
-                    
+
                     <a href="<?= $pdf['imgPathRelative'] ?>" class="lightzoom">
-                    <img class="c-download-img " alt="" src="<?= $pdf['imgPathRelative'] ?>" width="100%">
+                        <img class="c-download-img " alt="" src="<?= $pdf['imgPathRelative'] ?>" width="100%">
                     </a>
 
                     <a href="<?= $pdf['pdfPathRelative'] ?>" download class="btn btn-success c-download-button"

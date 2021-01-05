@@ -31,6 +31,7 @@ class UrlCheckMonth
         return [
             'year' => $split[1],
             'month' => $split[2],
+            'url' => $url,
         ];
 
 

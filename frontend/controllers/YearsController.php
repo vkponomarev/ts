@@ -88,11 +88,6 @@ class YearsController extends Controller
         $holidaysData = $holidays->byCountryByYear($countryURL['id'], $year, $languageID);
         $holidaysData = $holidays->arrayReplace($holidaysData);
 
-        //(new \common\components\dump\Dump())->printR($holidaysData);
-        //die;
-        //$holidaysTypes = new HolidaysTypes();
-        //$holidaysTypesData = $holidaysTypes->data($countryID, $year, $languageID);
-
         $date = new Date();
         $dateData = $date->data($yearURL . '-01-01');
 

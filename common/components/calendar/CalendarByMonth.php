@@ -25,7 +25,15 @@ class CalendarByMonth
 
         do {
 
-            $calendar[$eachDay->format('n')][$eachDay->format('W')][$eachDay->format('N')] = $eachDay->format('j');
+            $calendar[$eachDay->format('n')][$eachDay->format('W')][$eachDay->format('N')] = [
+                'monthDay' => $eachDay->format('j'),
+                'date' => $eachDay->format('Y-m-d'),
+                'month' => $eachDay->format('n'),
+                'holiday' => 0,
+                'observance' => 0,
+                'muslim' => 0,
+                'orthodox' => 0,
+            ];
             $eachDay->modify('+1 day');
             $countDays++;
 

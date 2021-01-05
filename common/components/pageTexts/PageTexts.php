@@ -2,6 +2,8 @@
 
 namespace common\components\pageTexts;
 
+use Codeception\PHPUnit\Constraint\Page;
+
 class PageTexts
 {
 
@@ -24,12 +26,28 @@ class PageTexts
 
     }
 
+    function updateByCalendarMonth($pageTextsMessages, $dateData, $countryData, $holidaysCount, $calendarNameOfMonths)
+    {
+
+        (new PageTextsUpdateByCalendarMonth())->update($pageTextsMessages, $dateData, $countryData, $holidaysCount, $calendarNameOfMonths);
+
+    }
+
+
     function defineIdByCalendarYear($holidays, $calendarChinese)
     {
 
         return (new PageTextsDefineIdByCalendarYear())->define($holidays, $calendarChinese);
 
     }
+
+    function defineIdByCalendarMonth($holidays, $PDFCalendar)
+    {
+
+        return (new PageTextsDefineIdByCalendarMonth())->define($holidays, $PDFCalendar);
+
+    }
+
 
     function defineIdByCalendarSeason($holidays, $calendarChinese)
     {
@@ -50,6 +68,13 @@ class PageTexts
     {
 
         return (new PageTextsMessagesByCalendarSeason())->messages($dateData, $season);
+
+    }
+
+    function messagesByCalendarMonth($dateData, $countHolidays)
+    {
+
+        return (new PageTextsMessagesByCalendarMonth())->messages($dateData, $countHolidays);
 
     }
 

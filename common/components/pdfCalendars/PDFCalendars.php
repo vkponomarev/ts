@@ -30,6 +30,12 @@ class PDFCalendars
 
     }
 
+    function monthlyExists($year, $language, $countryURL){
+
+        return (new PDFCalendarsMonthlyExists())->calendars($year, $language, $countryURL);
+
+    }
+
     function seasonsExists($year, $language, $countryURL, $season){
 
         return (new PDFCalendarsSeasonsExists())->calendars($year, $language, $countryURL, $season);

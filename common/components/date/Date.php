@@ -26,7 +26,11 @@ class Date
 
     }
 
+    function byMonth($year){
 
+        return (new DateByMonth())->data($year);
+
+    }
 
 
 }

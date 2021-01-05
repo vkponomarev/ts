@@ -168,8 +168,10 @@
                 <?php $countMonths = ($countMonths == 13) ? 1 : $countMonths; ?>
                 <?php $yearLink = ($countMonths == 12) ? $dateData['year']['previous'] : $dateData['year']['current']; ?>
 
-                <a class="c-month-name"
-                   href="/<?= Yii::$app->language ?>/calendar/months/<?= $yearLink ?>-<?= str_pad($countMonths, 2, '0', STR_PAD_LEFT) ?>/">
+                <a class="c-month-name" href="/<?= Yii::$app->language ?>/calendar/months/<?= $yearLink ?>-<?= str_pad($countMonths, 2, '0', STR_PAD_LEFT) ?>/
+                    <?= (($countryURL['url'] <> '')
+                    && ($dateData['year']['next'] >= $holidaysRange['start'] && $dateData['year']['next'] <= $holidaysRange['end']))
+                    ? $countryURL['url'] . '/' : '' ?>">
                     <?= $calendarNameOfMonths[$countMonths]; ?>
                 </a>
 

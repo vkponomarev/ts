@@ -22,9 +22,9 @@
  * Верхняя плашка календаря с годами туда сюда
  */
 
-?><div class=row><div class="col-xxs-12 col-xs-4 c-prev-next-left"><a href="/calendar/years/<?= $dateData['year']['previous'] ?>/<?= (($countryURL['url'] <> '')
+?><div class=row><div class="col-xxs-12 col-xs-4 c-prev-next-left"><a href="/<?= Yii::$app->language ?>/calendar/years/<?= $dateData['year']['previous'] ?>/<?= (($countryURL['url'] <> '')
             && ($dateData['year']['previous'] >= $holidaysRange['start'] && $dateData['year']['previous'] <= $holidaysRange['end']))
-            ? $countryURL['url'] . '/' : '' ?>"><?= $dateData['year']['previous'] ?></a></div><div class="col-xxs-12 col-xs-4 c-prev-next-center"><?= $dateData['year']['current'] ?></div><div class="col-xxs-12 col-xs-4 c-prev-next-right"><a href="/calendar/years/<?= $dateData['year']['next'] ?>/<?= (($countryURL['url'] <> '')
+            ? $countryURL['url'] . '/' : '' ?>"><?= $dateData['year']['previous'] ?></a></div><div class="col-xxs-12 col-xs-4 c-prev-next-center"><?= $dateData['year']['current'] ?></div><div class="col-xxs-12 col-xs-4 c-prev-next-right"><a href="/<?= Yii::$app->language ?>/calendar/years/<?= $dateData['year']['next'] ?>/<?= (($countryURL['url'] <> '')
             && ($dateData['year']['next'] >= $holidaysRange['start'] && $dateData['year']['next'] <= $holidaysRange['end']))
             ? $countryURL['url'] . '/' : '' ?>"><?= $dateData['year']['next'] ?></a></div></div><hr><?php if ($PDFCalendarsData['exists']): ?><div class=row><div class="col-xxs-12 c-prev-next-right"><a href="#download-calendar-<?= $dateData['year']['current'] ?>"class="btn btn-default"><span class="fa fa-lg fa-print"></span>&nbsp;<?= Yii::t('app', 'Print'); ?></a></div></div><br><?php endif; ?><?php
 /**
@@ -33,7 +33,9 @@
 ?><div class="row rflex year"><?php
     $countMonths = 0;
     $countWeeks = 0;
-    foreach ($calendarByYear as $months) :?><?php $countMonths++; ?><div class="col-xxs-12 col-xs-6 col-md-3 col-sm-4 month"><div class=month-name><span class="fa fa-calendar"></span> <a href="/calendar/months/<?= $dateData['year']['current'] ?>-<?= str_pad($countMonths, 2, '0', STR_PAD_LEFT) ?>/"><?= $calendarNameOfMonths[$countMonths]; ?></a></div><div class=week-name><?php for ($i = 1; $i <= 7; $i++): ?><div class=day-name><?= $calendarNameOfDaysInWeek[$i]; ?></div><?php endfor; ?></div><?php foreach ($months as $week): ?><div class=week><?php for ($i = 1; $i <= 5; $i++): ?><?php if (isset($week[$i]['monthDay'])): ?><?php $key = array_search($week[$i]['date'], array_column($holidaysData, 'date'));
+    foreach ($calendarByYear as $months) :?><?php $countMonths++; ?><div class="col-xxs-12 col-xs-6 col-md-3 col-sm-4 month"><div class=month-name><span class="fa fa-calendar"></span> <a href="/<?= Yii::$app->language ?>/calendar/months/<?= $dateData['year']['current'] ?>-<?= str_pad($countMonths, 2, '0', STR_PAD_LEFT) ?>/<?= (($countryURL['url'] <> '')
+                    && ($dateData['year']['next'] >= $holidaysRange['start'] && $dateData['year']['next'] <= $holidaysRange['end']))
+                    ? $countryURL['url'] . '/' : '' ?>"><?= $calendarNameOfMonths[$countMonths]; ?></a></div><div class=week-name><?php for ($i = 1; $i <= 7; $i++): ?><div class=day-name><?= $calendarNameOfDaysInWeek[$i]; ?></div><?php endfor; ?></div><?php foreach ($months as $week): ?><div class=week><?php for ($i = 1; $i <= 5; $i++): ?><?php if (isset($week[$i]['monthDay'])): ?><?php $key = array_search($week[$i]['date'], array_column($holidaysData, 'date'));
                             if (false !== $key && $holidaysData[$key]['holiday'] == 1): ?><div class=day-holiday data-title="<?= $holidaysData[$key]['name'] ?>"><span><?= $week[$i]['monthDay']; ?></span></div><?php else: ?><div class=day><span><?= $week[$i]['monthDay']; ?></span></div><?php endif; ?><?php else: ?><div class=no-day><span></span></div><?php endif; ?><?php endfor; ?><?php for ($i = 6; $i <= 7; $i++): ?><?php if (isset($week[$i]['monthDay'])): ?><?php $key = array_search($week[$i]['date'], array_column($holidaysData, 'date'));
                             if (false !== $key && $holidaysData[$key]['holiday'] == 1): ?><div class=day-holiday data-title="<?= $holidaysData[$key]['name'] ?>"><span><?= $week[$i]['monthDay']; ?></span></div><?php else: ?><div class=day-off><span><?= $week[$i]['monthDay']; ?></span></div><?php endif; ?><?php else: ?><div class=no-day><span></span></div><?php endif; ?><?php endfor; ?></div><?php endforeach; ?></div><?php endforeach; ?></div><br><hr><br><?php
 /**
