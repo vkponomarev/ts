@@ -30,12 +30,13 @@
 @import "calendar/calendar-yearly"; //
 @import "calendar/calendar-seasonly"; //
 @import "calendar/calendar-monthly"; //
-
+@import "calendar/calendar-weekly"; //
+@import "calendar/calendar-weekly-one"; // Стили календрая на одну неделю (один или 2 месяца)
 
 @import "pages/calendar-table"; //
 
 @import "pages/calendar-year";
-
+@import "pages/calendar-weeks";
 
 
 
@@ -47,6 +48,9 @@
 @import "calendar/calendar-pdf-yearly-portrait-design-one-no-holidays";
 @import "calendar/calendar-pdf-yearly-landscape-design-one";
 @import "calendar/calendar-pdf-yearly-landscape-design-one-no-holidays";
+@import "calendar/calendar-pdf-yearly-with-weeks-portrait-design-one-no-holidays";
+@import "calendar/calendar-pdf-yearly-with-weeks-landscape-design-one-no-holidays";
+
 
 @import "calendar/calendar-pdf-seasons-portrait-design-one";
 @import "calendar/calendar-pdf-seasons-landscape-design-one";

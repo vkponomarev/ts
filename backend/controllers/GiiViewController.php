@@ -94,6 +94,12 @@ class GiiViewController extends Controller
                 $giiPDF->generatePDFCalendarYearly($languagesData);
             }
 
+            if ($name == 'PDF-calendar-yearly-with-weeks') {
+
+                $giiPDF->generatePDFCalendarYearlyWithWeeks($languagesData);
+            }
+
+
             if ($name == 'PDF-calendar-seasons') {
 
                 $giiPDF->generatePDFCalendarSeasons($languagesData);
@@ -103,6 +109,12 @@ class GiiViewController extends Controller
 
                 $giiPDF->generatePDFCalendarMonths($languagesData);
             }
+
+            if ($name == 'PDF-calendar-weekly') {
+
+                $giiPDF->generatePDFCalendarWeekly($languagesData);
+            }
+
 
         }
         return $this->render('index', [

@@ -180,5 +180,17 @@ return [
 
     'PDF calendar of holidays and weekends for {year} by months {country_for}' => 'PDF calendar of holidays and weekends for {year} by months {country_for}',
     'PDF calendar for {year} by months' => 'PDF calendar for {year} by months',
+    'week' => 'week',
+
+    'Calendar for {year} with week numbers' => 'Calendar for {year} with week numbers',
+    'PDF calendar for {year} with week numbers' => 'PDF calendar for {year} with week numbers',
+
+    'Portrait calendar for the year with weeks' => 'Portrait calendar for the year with weeks',
+    'Landscape calendar for the year with weeks' => 'Landscape calendar for the year with weeks',
+
+    'Download and print PDF calendar for {year} with week numbers' => 'Download and print PDF calendar for {year} with week numbers',
+
+    'PDF weekly for the {week} week of {year}' => 'PDF weekly for the {week} week of {year}',
+    'Calendar weekly for the {week} week of {year}' => 'Calendar weekly for the {week} week of {year}',
 ];
 

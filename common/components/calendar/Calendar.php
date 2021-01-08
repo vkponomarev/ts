@@ -26,9 +26,15 @@ class Calendar
 
     }
 
-    function byWeek($startDate, $endDate){
+    function byMonthWeek($year, $week, $weekCount){
 
-        return (new CalendarByWeek())->calendar($startDate, $endDate);
+        return (new CalendarByMonthWeek())->calendar($year, $week, $weekCount);
+
+    }
+
+    function byWeek($year, $week, $weekCount){
+
+        return (new CalendarByWeek())->calendar($year, $week, $weekCount);
 
     }
 

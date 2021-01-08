@@ -56,6 +56,19 @@ class UrlCheck
 
     }
 
+    /**
+     * Проверяем URL если в урл что то не так выдаем 404
+     * @param $year integer
+     * @param $week integer двузначное число номер недели например 05, 32
+     * @return array {foo: string, bar: int}
+     * @throws \yii\web\NotFoundHttpException
+     */
+    function week($year, $week){
+
+        return (new UrlCheckWeek())->check($year, $week);
+
+    }
+
     function day($url){
 
         return (new UrlCheckDay())->day($url);

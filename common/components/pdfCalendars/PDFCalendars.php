@@ -30,6 +30,12 @@ class PDFCalendars
 
     }
 
+    function yearlyWithWeeksExists($year, $language, $countryURL){
+
+        return (new PDFCalendarsYearlyWithWeeksExists())->calendars($year, $language, $countryURL);
+
+    }
+
     function monthlyExists($year, $language, $countryURL){
 
         return (new PDFCalendarsMonthlyExists())->calendars($year, $language, $countryURL);

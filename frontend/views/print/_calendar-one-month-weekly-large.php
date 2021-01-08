@@ -38,7 +38,6 @@
     <?php foreach ($calendarByYear[$month] as $key => $week): ?>
 
         <?php if ($key == $weekNumber): ?>
-
             <tr class="cpdf-wpm1-week-border">
         <?php else: ?>
             <tr class="cpdf-wpm1-week">

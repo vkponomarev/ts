@@ -46,6 +46,18 @@ class GiiPDF
 
     }
 
+    function generatePDFCalendarYearlyWithWeeks($languagesData){
+
+        (new GiiPDFGeneratePDFCalendarYearlyWithWeeks())->generate($languagesData);
+
+    }
+
+    function generatePDFCalendarWeekly($languagesData){
+
+        (new GiiPDFGeneratePDFCalendarWeekly())->generate($languagesData);
+
+    }
+
     /**
      * Генерация PDF календарей по сезонам с праздиками и без.
      * @param $languagesData

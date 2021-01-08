@@ -181,5 +181,17 @@ return [
 
     'PDF calendar of holidays and weekends for {year} by months {country_for}' => 'PDF календарь праздников и выходных дней на {year} год по месяцам {country_for}',
     'PDF calendar for {year} by months' => 'PDF календарь на {year} год по месяцам',
+    'week' => 'неделя',
 
-];
+    'Calendar for {year} with week numbers' => 'Календарь на {year} год с номерами недель',
+    'PDF calendar for {year} with week numbers' => 'PDF календарь на {year} год с номерами недель',
+
+    'Portrait calendar for the year with weeks' => 'Книжный календарь на год с номерами недель',
+    'Landscape calendar for the year with weeks' => 'Альбомный календарь на год с номерами недель',
+
+    'Download and print PDF calendar for {year} with week numbers' => 'Скачать и распечатать PDF календарь на {year} год с номерами недель',
+
+    'PDF weekly for the {week} week of {year}' => 'PDF еженедельник на {week} неделю {year} года',
+    'Calendar weekly for the {week} week of {year}' => 'Календаль еженедельник на {week} неделю {year} года',
+
+    ];

@@ -4,7 +4,7 @@ namespace common\components\date;
 
 use Yii;
 
-class DateData
+class DateByWeek
 {
 
     public function data($date)
@@ -41,10 +41,8 @@ class DateData
         $monthNumberSimple = $date->format('n');
         $monthCountDays = $date->format('t');
 
-        $weekCountNow = $date->format('W');
+        $weekCount = $date->format('W');
         $weekDayNumber = $date->format('N');
-        $weekCount = $yearLastDay->format('W');
-
 
         $dayName = Yii::$app->formatter->asDate($date, 'php:l');
         $dayNameShort = Yii::$app->formatter->asDate($date, 'php:D');
@@ -114,7 +112,7 @@ class DateData
         $dateData['week'] = [
             'count' => $weekCount,
             'dayNumber' => $weekDayNumber,
-            'now' => $weekCountNow,
+
         ];
 
         $dateData['day'] = [

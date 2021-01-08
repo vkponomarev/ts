@@ -19,6 +19,21 @@ class PageTexts
 
     }
 
+    function updateByCalendarYearWeeks($dateData)
+    {
+
+        (new PageTextsUpdateByCalendarYearWeeks())->update($dateData);
+
+    }
+
+
+    function updateByCalendarWeek($dateData, $calendar, $weekURL)
+    {
+
+        (new PageTextsUpdateByCalendarWeek())->update($dateData, $calendar, $weekURL);
+
+    }
+
     function updateByCalendarSeason($pageTextsMessages, $dateData, $countryData, $holidaysCount)
     {
 
@@ -77,6 +92,7 @@ class PageTexts
         return (new PageTextsMessagesByCalendarMonth())->messages($dateData, $countHolidays);
 
     }
+
 
 }
 

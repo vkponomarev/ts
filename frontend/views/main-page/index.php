@@ -18,7 +18,11 @@
 
 
 <div class="row">
-    <?php /** Сегодняшнее число */?>
+
+    <?php /***************************** */?>
+    <?php /***************************** Сегодняшнее число */?>
+    <?php /***************************** */?>
+
     <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4 current-date">
         <div class="current-date-div">
         <div class="current-date-one">
@@ -50,7 +54,11 @@
         </div>
         </div>
     </div>
-    <?php /** Календраь */?>
+
+    <?php /***************************** */?>
+    <?php /***************************** Календраь на год */?>
+    <?php /***************************** */?>
+
     <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4 c-links-mp">
         <div class="c-links-block c-links-mp-header">
             <a class="c-links-mp-header-link"
@@ -96,7 +104,56 @@
 
 
     </div>
-    <?php /** Календраь для печати */?>
+
+
+
+    <?php /***************************** */?>
+    <?php /***************************** Календраь на год с номерами недель*/?>
+    <?php /***************************** */?>
+
+    <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4 c-links-mp">
+        <div class="c-links-block c-links-mp-header">
+            <a class="c-links-mp-header-link"
+               href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $dateData['year']['full'] ?>/">
+                <?= Yii::t('app', 'Calendar for {year} with week numbers', ['year' => $dateData['year']['current']]); ?>
+            </a>
+        </div>
+        <div class="c-links-block">
+            <div class="col-xs-6 c-links-mp-months ">
+                <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $dateData['year']['current'] ?>/01/"><?= '01 ' . Yii::t('app', 'week') ?></a><br>
+                <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $dateData['year']['current'] ?>/02/"><?= '02 ' . Yii::t('app', 'week') ?></a><br>
+                <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $dateData['year']['current'] ?>/03/"><?= '03 ' . Yii::t('app', 'week') ?></a><br>
+                <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $dateData['year']['current'] ?>/04/"><?= '04 ' . Yii::t('app', 'week') ?></a><br>
+                <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $dateData['year']['current'] ?>/05/"><?= '05 ' . Yii::t('app', 'week') ?></a><br>
+                <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $dateData['year']['current'] ?>/06/"><?= '06 ' . Yii::t('app', 'week') ?></a><br>
+                <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $dateData['year']['current'] ?>/07/"><?= '07 ' . Yii::t('app', 'week') ?></a><br>
+            </div>
+            <div class="col-xs-6 c-links-mp-months">
+                <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $dateData['year']['current'] ?>/08/"><?= '08 ' . Yii::t('app', 'week') ?></a><br>
+                <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $dateData['year']['current'] ?>/09/"><?= '09 ' . Yii::t('app', 'week') ?></a><br>
+                <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $dateData['year']['current'] ?>/10/"><?= '10 ' . Yii::t('app', 'week') ?></a><br>
+                <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $dateData['year']['current'] ?>/11/"><?= '11 ' . Yii::t('app', 'week') ?></a><br>
+                <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $dateData['year']['current'] ?>/12/"><?= '12 ' . Yii::t('app', 'week') ?></a><br>
+                <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $dateData['year']['current'] ?>/13/"><?= '13 ' . Yii::t('app', 'week') ?></a><br>
+                <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $dateData['year']['current'] ?>/14/"><?= '14 ' . Yii::t('app', 'week') ?></a><br>
+            </div>
+        </div>
+        <div class="c-links-block">
+            <hr class="hr-1">
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+    <?php /***************************** */?>
+    <?php /***************************** Календраь для печати */?>
+    <?php /***************************** */?>
     <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4 c-links-mp">
         <div class="c-links-block c-links-mp-header">
             <a class="c-links-mp-header-link"
@@ -136,7 +193,9 @@
 
 
     </div>
-    <?php /** Праздники */?>
+    <?php /***************************** */?>
+    <?php /**************************** Праздники */?>
+    <?php /***************************** */?>
     <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4 c-links-mp">
         <div class="c-links-block c-links-mp-header">
             <a class="c-links-mp-header-link"
@@ -194,8 +253,10 @@
 
 
     </div>
+    <?php /***************************** */?>
+    <?php /***************************** Сегодня */?>
+    <?php /***************************** */?>
 
-    <?php /** Сегодня */?>
     <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4 c-links-mp">
         <div class="c-links-block c-links-mp-header">
             <a class="c-links-mp-header-link"
@@ -243,7 +304,10 @@
 
     </div>
 
-    <?php /** Производственный календарь */?>
+    <?php /***************************** */?>
+    <?php /***************************** Производственный календарь */?>
+    <?php /***************************** */?>
+
     <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4 c-links-mp">
         <div class="c-links-block c-links-mp-header">
 
@@ -298,7 +362,9 @@
 </div>
 <hr>
 
-
+<?php /***************************** */?>
+<?php /***************************** Календарь на год по месяцам */?>
+<?php /***************************** */?>
 <div class="rflex year">
     <?php
     $countMonths = 0;

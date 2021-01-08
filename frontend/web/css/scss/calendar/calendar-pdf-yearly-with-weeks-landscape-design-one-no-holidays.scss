@@ -1,0 +1,102 @@
+//-cpdf-ylww1-nh- - calendar-pdf-yearly-landscape-design-one
+
+.cpdf-ylww1-nh-year{
+  width:100%;
+  text-align: center;
+  justify-content: center;
+  vertical-align: top;
+}
+
+
+.cpdf-ylww1-nh-week-border{
+  border: 1px solid black;
+}
+
+
+.cpdf-ylww1-nh-month {
+  min-width: 300px;
+  max-width: 320px;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  display: unset;
+
+}
+
+.cpdf-ylww1-nh-month-name-line {
+  font-size: 20px;
+  color: $cDayNameLineColor;
+}
+
+.cpdf-ylww1-nh-month-name-a {
+  font-size: 20px;
+  color: $cDayNamesColorPDF;
+}
+
+.cpdf-ylww1-nh-month-name-line-td{
+  font-size: 20px!important;
+  color: #434343!important;
+  padding-bottom: 5px!important;
+
+}
+
+.cpdf-ylww1-nh-day {
+  color: $cDayNamesColorPDF;
+  font-size: 14px;
+  padding: 5px;
+  height: 30px;
+
+}
+
+.cpdf-ylww1-nh-day-holiday {
+  background-color: $cHolidaysCellColor;
+  border-radius: 50%;
+  color: $cDayNumbersColorPDF;
+  font-size: 15px;
+  padding: 5px;
+  height: 30px;
+}
+
+.cpdf-ylww1-nh-no-day {
+  color: $cDayNumbersColorPDF;
+  background-color: white;
+  padding: 5px;
+  height: 30px;
+
+}
+
+.cpdf-ylww1-nh-day-weekend{
+  color: $cDayNumbersColorPDF;
+  font-size: 14px;
+  padding: 5px;
+  height: 30px;
+  background-color: $cWeekendCellColor;
+}
+
+
+.cpdf-ylww1-nh-no-day-weekend {
+  color: #F98909;
+  padding: 5px;
+  height: 30px;
+  background-color: $cWeekendCellColor;
+
+}
+
+.cpdf-ylww1-nh-day-name {
+  color: $cDayNamesColorPDF;
+  padding: 5px;
+  background-color: white;
+  width: 40px;
+  font-size: 12px;
+
+}
+
+tr {
+  vertical-align: top;
+}
+
+.cpdf-ylww1-nh-week-line{
+  //background-color: #0a73bb;
+  border-top: 2px solid $cDayNameLineColor;
+
+}

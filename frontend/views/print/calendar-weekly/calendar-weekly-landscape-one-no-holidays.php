@@ -16,10 +16,22 @@
     <tr>
         <td class="calendar-pdf-header-table-left">
             <?php if (isset($getParamsCustomize['header']) && $getParamsCustomize['header'] <> ''): ?>
-                <h1 class="calendar-pdf-header-h1"><?= $getParamsCustomize['header'] ?></h1>
-                <h2 class="calendar-pdf-header-h2"><?= Yii::t('app', 'Календарь на 2020 год') ?></h2>
+                <h1 class="calendar-pdf-header-h1">
+                    <?= $getParamsCustomize['header'] ?>
+                </h1>
+                <h2 class="calendar-pdf-header-h2">
+                    <?= Yii::t('app', 'Calendar weekly for the {week} week of {year}', [
+                        'year' => $dateData['year']['full'],
+                        'week' => $weekURL['url']
+                    ]) ?>
+                </h2>
             <?php else: ?>
-                <h1 class="calendar-pdf-header-h1"><?= Yii::t('app', 'Календарь на 2020 год') ?></h1>
+                <h1 class="calendar-pdf-header-h1">
+                    <?= Yii::t('app', 'Calendar weekly for the {week} week of {year}', [
+                        'year' => $dateData['year']['full'],
+                        'week' => $weekURL['url']
+                    ]) ?>
+                </h1>
             <?php endif; ?>
 
         </td>
@@ -120,20 +132,7 @@
                                 <?php endfor; ?>
                                 <tr>
                                     <td colspan="2" class="cpdf-wl1-calendar-month">
-                                        <?php
-                                        echo $this->render('/print/_calendar-one-month', [
 
-                                            'yearData' => $yearData,
-                                            'calendarByYear' => $calendarByYear,
-                                            'calendarByWeek' => $calendarByWeek,
-                                            'calendarNameOfMonths' => $calendarNameOfMonths,
-                                            'calendarNameOfDaysInWeek' => $calendarNameOfDaysInWeek,
-                                            'holidaysByCountryByYear' => $holidaysByCountryByYear,
-                                            'month' => $month,
-                                            'weekNumber' => $weekNumber,
-
-                                        ])
-                                        ?>
                                     </td>
                                 </tr>
                             </table>

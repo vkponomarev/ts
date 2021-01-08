@@ -20,6 +20,12 @@ class Date
 
     }
 
+    function yearWeeks($year){
+
+        return (new DateByYearWeeks())->data($year);
+
+    }
+
     function bySeason($year){
 
         return (new DateBySeason())->data($year);

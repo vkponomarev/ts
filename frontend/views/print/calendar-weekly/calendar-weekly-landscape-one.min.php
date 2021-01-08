@@ -9,7 +9,13 @@
  * @var $calendarByYear common\components\calendar\CalendarByYear
  */
 
-?><table class=calendar-pdf-header-table><tr><td class=calendar-pdf-header-table-left><?php if (isset($getParamsCustomize['header']) && $getParamsCustomize['header'] <> ''): ?><h1 class=calendar-pdf-header-h1><?= $getParamsCustomize['header'] ?></h1><h2 class=calendar-pdf-header-h2><?= Yii::t('app', 'Календарь на 2020 год') ?></h2><?php else: ?><h1 class=calendar-pdf-header-h1><?= Yii::t('app', 'Календарь на 2020 год') ?></h1><?php endif; ?><td class=calendar-pdf-header-table-right><h3 class=calendar-pdf-header-h3><a href=https://timesles.com>timesles.com</a></h3></table><br><?php for ($z = 1; $z <= 2; $z++): ?><?php
+?><table class=calendar-pdf-header-table><tr><td class=calendar-pdf-header-table-left><?php if (isset($getParamsCustomize['header']) && $getParamsCustomize['header'] <> ''): ?><h1 class=calendar-pdf-header-h1><?= $getParamsCustomize['header'] ?></h1><h2 class=calendar-pdf-header-h2><?= Yii::t('app', 'Calendar weekly for the {week} week of {year}', [
+                        'year' => $dateData['year']['full'],
+                        'week' => $weekURL['url']
+                    ]) ?></h2><?php else: ?><h1 class=calendar-pdf-header-h1><?= Yii::t('app', 'Calendar weekly for the {week} week of {year}', [
+                        'year' => $dateData['year']['full'],
+                        'week' => $weekURL['url']
+                    ]) ?></h1><?php endif; ?><td class=calendar-pdf-header-table-right><h3 class=calendar-pdf-header-h3><a href=https://timesles.com>timesles.com</a></h3></table><br><?php for ($z = 1; $z <= 2; $z++): ?><?php
     $month = $calendarByWeek[str_pad($z, 2, '0', STR_PAD_LEFT)][3]['month'];
     $weekNumber = str_pad($z, 2, '0', STR_PAD_LEFT);
 

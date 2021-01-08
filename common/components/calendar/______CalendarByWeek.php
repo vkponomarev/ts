@@ -5,7 +5,7 @@ namespace common\components\calendar;
 class CalendarByWeek
 {
 
-    public function calendar($year, $week, $weekCount)
+    public function calendar($startDate, $endDate)
     {
         // format('n') - порядковый номер месяца
         // format('W') - порядковый номер недели
@@ -20,8 +20,8 @@ class CalendarByWeek
         //$startOfCalendar = new \DateTime('2020-01-01');
         $calendar = array();
 
-        $startOfCalendar = new \DateTime($year . '-01-01');
-        $startOfCalendar2 = new \DateTime($year . '-01-01');
+        $startOfCalendar = new \DateTime('2020-01-01');
+        $startOfCalendar2 = new \DateTime('2020-01-01');
 
         $daysInYear = $startOfCalendar->format('L') ? 366 : 365;
 

@@ -128,34 +128,35 @@
                 ? $countryURL['url'] . '/' : '' ?>">
                 <?= $calendarNameOfMonths[12] ?>
             </a>
-        <?php else:?>
-            <a href="/<?= Yii::$app->language ?>/calendar/months/<?= $dateData['year']['current'] ?>-<?= str_pad($dateData['month']['numberSimple']-1, 2, '0', STR_PAD_LEFT) ?>/
+        <?php else: ?>
+            <a href="/<?= Yii::$app->language ?>/calendar/months/<?= $dateData['year']['current'] ?>-<?= str_pad($dateData['month']['numberSimple'] - 1, 2, '0', STR_PAD_LEFT) ?>/
             <?= (($countryURL['url'] <> '')
                 && ($dateData['year']['current'] >= $holidaysRange['start'] && $dateData['year']['current'] <= $holidaysRange['end']))
                 ? $countryURL['url'] . '/' : '' ?>">
-                <?= $calendarNameOfMonths[$dateData['month']['numberSimple']-1] ?>
+                <?= $calendarNameOfMonths[$dateData['month']['numberSimple'] - 1] ?>
             </a>
-        <?php endif;?>
+        <?php endif; ?>
     </div>
     <div class="col-xxs-12 col-xs-4 c-prev-next-center">
         <?= $calendarNameOfMonths[$dateData['month']['numberSimple']] ?>
     </div>
+
     <div class="col-xxs-12 col-xs-4 c-prev-next-right">
-        <?php if ($dateData['month']['numberSimple'] == 12):?>
+        <?php if ($dateData['month']['numberSimple'] == 12): ?>
             <a href="/<?= Yii::$app->language ?>/calendar/months/<?= $dateData['year']['next'] ?>-<?= str_pad(1, 2, '0', STR_PAD_LEFT) ?>/
             <?= (($countryURL['url'] <> '')
                 && ($dateData['year']['next'] >= $holidaysRange['start'] && $dateData['year']['next'] <= $holidaysRange['end']))
                 ? $countryURL['url'] . '/' : '' ?>">
                 <?= $calendarNameOfMonths[1] ?>
             </a>
-        <?php else:?>
-            <a href="/<?= Yii::$app->language ?>/calendar/months/<?= $dateData['year']['current'] ?>-<?= str_pad($dateData['month']['numberSimple']+1, 2, '0', STR_PAD_LEFT) ?>/
+        <?php else: ?>
+            <a href="/<?= Yii::$app->language ?>/calendar/months/<?= $dateData['year']['current'] ?>-<?= str_pad($dateData['month']['numberSimple'] + 1, 2, '0', STR_PAD_LEFT) ?>/
             <?= (($countryURL['url'] <> '')
                 && ($dateData['year']['current'] >= $holidaysRange['start'] && $dateData['year']['current'] <= $holidaysRange['end']))
                 ? $countryURL['url'] . '/' : '' ?>">
-                <?= $calendarNameOfMonths[$dateData['month']['numberSimple']+1] ?>
+                <?= $calendarNameOfMonths[$dateData['month']['numberSimple'] + 1] ?>
             </a>
-        <?php endif;?>
+        <?php endif; ?>
     </div>
 </div>
 <hr>
@@ -177,7 +178,7 @@
 
 <div class="row rflex myear">
     <?php
-    $countMonths = $dateData['month']['numberSimple']-1;
+    $countMonths = $dateData['month']['numberSimple'] - 1;
     $countWeeks = 0;
     //(new \common\components\dump\Dump())->printR($calendarByMonth);die;
     foreach ($calendarByMonth as $months) :?>
@@ -186,7 +187,7 @@
         <div class="mmonth col-xxs-12">
             <div class="mmonth-name">
 
-                    <?= $calendarNameOfMonths[$countMonths]; ?>
+                <?= $calendarNameOfMonths[$countMonths]; ?>
 
             </div>
 
@@ -209,7 +210,13 @@
                             if (false !== $key && $holidaysData[$key]['holiday'] == 1): ?>
                                 <div class="mday-holiday" data-title="<?= $holidaysData[$key]['name'] ?>">
                                      <span>
-                                    <?= $week[$i]['monthDay']; ?>
+                                     <a href="/<?= Yii::$app->language ?>/calendar/days/<?= $dateData['year']['next'] ?>-<?= str_pad(1, 2, '0', STR_PAD_LEFT) ?>/
+            <?= (($countryURL['url'] <> '')
+                                         && ($dateData['year']['next'] >= $holidaysRange['start'] && $dateData['year']['next'] <= $holidaysRange['end']))
+                                         ? $countryURL['url'] . '/' : '' ?>">
+                <?= $week[$i]['monthDay']; ?>
+            </a>
+
                                      </span>
                                 </div>
                             <?php else: ?>
@@ -358,9 +365,9 @@
                     <?php if ($key == 'yearlyLNoHolidays'): ?>
                         <div class="pdf-header"><?= Yii::t('app', 'Landscape calendar without holidays for the year by months') ?></div>
                     <?php endif; ?>
-                    
+
                     <a href="<?= $pdf['imgPathRelative'] ?>" class="lightzoom">
-                    <img class="c-download-img " alt="" src="<?= $pdf['imgPathRelative'] ?>" width="100%">
+                        <img class="c-download-img " alt="" src="<?= $pdf['imgPathRelative'] ?>" width="100%">
                     </a>
 
                     <a href="<?= $pdf['pdfPathRelative'] ?>" download class="btn btn-success c-download-button"

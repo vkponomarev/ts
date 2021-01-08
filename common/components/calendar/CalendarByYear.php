@@ -40,6 +40,7 @@ class CalendarByYear
                 'monthDay' => $eachDay->format('j'),
                 'date' =>  $eachDay->format('Y-m-d'),
                 'month' => $eachDay->format('n'),
+                'week' => $eachDay->format('W'),
                 'holiday' => 0,
                 'observance' => 0,
                 'muslim' => 0,

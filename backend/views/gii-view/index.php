@@ -20,6 +20,8 @@ $this->params['breadcrumbs'][] = $this->title;
             <option value="PDF-calendar-yearly">Создание PDF Календаря на ГОД</option>
             <option value="PDF-calendar-seasons">Создание PDF Календаря на СЕЗОНЫ ГОДА</option>
             <option value="PDF-calendar-monthly">Создание PDF Календаря на МЕСЯЦЫ ГОДА</option>
+            <option value="PDF-calendar-yearly-with-weeks">Создание PDF Календаря на ГОД С НЕДЕЛЯМИ</option>
+            <option value="PDF-calendar-weekly">Создание PDF Календаря на НЕДЕЛИ</option>
         </select>
 
         <br>

@@ -79,6 +79,24 @@ return [
                     'defaults' => ['monthURL' => '', 'countryURL' => ''],
                 ],
 
+
+
+                '/calendar/weeks/<yearURL:\d{4}>' => 'weeks/year-weeks-page',
+                '/calendar/weeks/<yearURL:\d{4}>/<weekURL:\d{2}>' => 'weeks/week-page',
+
+
+                /*[
+                    'pattern' => '/calendar/weeks/<yearURL:\d{4}>/<weekURL:\d{2}>',
+                    'route' => 'weeks/week-page',
+                    'defaults' => ['yearURL' => '', 'weekURL' => ''],
+                ],*/
+
+                /*[
+                    'pattern' => '/calendar/months/<monthURL>/<countryURL:[\w_-]+>',
+                    'route' => 'months/month-page',
+                    'defaults' => ['monthURL' => '', 'countryURL' => ''],
+                ],*/
+
                 //'/calendar/seasons/<season:[\w_-]+>/<year:\d+>' => 'seasons/season',
                 /*'/calendar/seasons/winter/<urlYear>' => 'seasons/winter',
                 '/calendar/seasons/spring/<urlYear>' => 'seasons/spring',
@@ -91,6 +109,8 @@ return [
                 '/seasons/summer/<urlYear>' => 'years/summer',
                 '/seasons/autumn/<urlYear>' => 'years/autumn',*/
 
+                '/gii/generate-weeks-pdf/' => 'generate-weeks/generate-pdf',
+                '/gii/generate-years-with-weeks-pdf/' => 'generate-years-with-weeks/generate-pdf',
                 '/gii/generate-months-pdf/' => 'generate-months/generate-pdf',
                 '/gii/generate-seasons-pdf/' => 'generate-seasons/generate-pdf',
                 '/gii/generate-pdf/' => 'generate/generate-pdf',
