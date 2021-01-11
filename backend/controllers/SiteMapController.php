@@ -62,6 +62,20 @@ class SiteMapController extends Controller
 
              }
 
+            if ($name == 'sitemap-calendar-months-all') {
+
+                $siteMap->generateCalendarMonths($languagesData);
+
+            }
+
+            if ($name == 'sitemap-calendar-months-ru') {
+
+                $siteMap->generateCalendarMonthsRU($languagesData);
+
+            }
+
+
+
         }
 
         return $this->render('index', [

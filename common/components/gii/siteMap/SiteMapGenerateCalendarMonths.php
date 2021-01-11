@@ -7,7 +7,7 @@ use common\components\bigData\BigData;
 use common\components\countries\Countries;
 use common\components\gii\Gii;
 
-class SiteMapGenerateCalendarSeasons
+class SiteMapGenerateCalendarMonths
 {
 
     function generate($languagesData)
@@ -21,14 +21,7 @@ class SiteMapGenerateCalendarSeasons
         $countFiles = 0;
         $count = 0;
         $siteMapUrls = '';
-
-        $PDFCalendarSeasons = [
-            1 => 'winter',
-            2 => 'spring',
-            3 => 'summer',
-            4 => 'autumn',
-        ];
-
+        $countMonths = 0;
         // Проходим по всем годам.
         foreach (range(1, 9999) as $year) {
 
@@ -43,9 +36,9 @@ class SiteMapGenerateCalendarSeasons
             foreach ($languagesData as $language) {
                 $countLang++;
 
-                $countSeasons = 0;
-                foreach ($PDFCalendarSeasons as $season) {
-                    $countSeasons++;
+                $countMonths=0;
+                foreach (range(1, 12) as $month) {
+                    $countMonths++;
 
                     if ($year >= 2000 && $year <= 2030) {
 
@@ -55,18 +48,19 @@ class SiteMapGenerateCalendarSeasons
 
                             $countLimit++;
 
-                            $siteMapUrls .= \Yii::$app->view->render('@common/components/gii/siteMap/templates/_calendar-seasons-country.php', [
+                            $siteMapUrls .= \Yii::$app->view->render('@common/components/gii/siteMap/templates/_calendar-months-country.php', [
                                 'language' => $language,
                                 'year' => $year,
+                                'month' => str_pad($month, 2, '0', STR_PAD_LEFT),
                                 'country' => $country,
-                                'season' => $season,
                             ]);
 
                             if (($countLimit >= 49998) or
                                     (($year == 9999) and
                                     ($languagesDataCount == $countLang) and
                                     ($countriesDataCount == $countCountries) and
-                                    ($countSeasons == 4))) {
+                                    ($countMonths == 12))
+                            ) {
 
                                 $countFiles++;
 
@@ -76,7 +70,7 @@ class SiteMapGenerateCalendarSeasons
 
                                 // Создаем файл
                                 $gii = new Gii();
-                                $fileName = 'sitemap_calendar_seasons_' . $countFiles;
+                                $fileName = 'sitemap_calendar_months_' . $countFiles;
                                 //(new \common\components\dump\Dump())->printR($gii->realPath());
                                 $gii->generateFile($siteMapContent, $fileName . '.xml', $gii->realPath() . '/frontend/views/gii/sitemap/');
 
@@ -91,17 +85,17 @@ class SiteMapGenerateCalendarSeasons
 
                         $countLimit++;
 
-                        $siteMapUrls .= \Yii::$app->view->render('@common/components/gii/siteMap/templates/_calendar-seasons.php', [
+                        $siteMapUrls .= \Yii::$app->view->render('@common/components/gii/siteMap/templates/_calendar-months.php', [
                             'language' => $language,
                             'year' => $year,
-                            'season' => $season,
+                            'month' => str_pad($month, 2, '0', STR_PAD_LEFT),
                         ]);
 
                         if (($countLimit >= 49998) or
                                 (($year == 9999) and
                                 ($languagesDataCount == $countLang) and
-                                ($countSeasons == 4)
-                            )) {
+                                ($countMonths == 12))
+                        ) {
 
                             $countFiles++;
 
@@ -111,7 +105,7 @@ class SiteMapGenerateCalendarSeasons
 
                             // Создаем файл
                             $gii = new Gii();
-                            $fileName = 'sitemap_calendar_seasons_' . $countFiles;
+                            $fileName = 'sitemap_calendar_months_' . $countFiles;
                             $gii->generateFile($siteMapContent, $fileName . '.xml', $gii->realPath() . '/frontend/views/gii/sitemap/');
 
                             $siteMapContent = '';
@@ -119,9 +113,9 @@ class SiteMapGenerateCalendarSeasons
                             $fileName = '';
                             $countLimit = 0;
                         }
+
                     }
                 }
-
             }
 
         }

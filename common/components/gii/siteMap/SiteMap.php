@@ -27,6 +27,20 @@ class SiteMap
 
     }
 
+
+    function generateCalendarMonths($languagesData){
+
+        (new SiteMapGenerateCalendarMonths())->generate($languagesData);
+
+    }
+
+    function generateCalendarMonthsRU($languagesData){
+
+        (new SiteMapGenerateCalendarMonthsRU())->generate($languagesData);
+
+    }
+
+
     function generateCalendarSeasons($languagesData){
 
         (new SiteMapGenerateCalendarSeasons())->generate($languagesData);

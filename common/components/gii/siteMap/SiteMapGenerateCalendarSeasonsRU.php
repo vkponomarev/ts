@@ -30,7 +30,7 @@ class SiteMapGenerateCalendarSeasonsRU
         ];
 
         // Проходим по всем годам.
-        foreach (range(0, 9999) as $year) {
+        foreach (range(1, 9999) as $year) {
 
             if ($year < 1000) {
                 $year = str_pad($year, 4, '0', STR_PAD_LEFT);
@@ -66,10 +66,10 @@ class SiteMapGenerateCalendarSeasonsRU
                             ]);
 
                             if (($countLimit >= 49998) or
-                                    (($year == 9999) and
-                                    ($languagesDataCount == $countLang) and
-                                    ($countriesDataCount == $countCountries) and
-                                    ($countSeasons == 4))) {
+                                    (($year == 9999)
+                                        and ($countriesDataCount == $countCountries)
+                                        and ($countSeasons == 4)))
+                            {
 
                                 $countFiles++;
 
@@ -102,7 +102,6 @@ class SiteMapGenerateCalendarSeasonsRU
 
                         if (($countLimit >= 49998) or
                                 (($year == 9999) and
-                                ($languagesDataCount == $countLang) and
                                 ($countSeasons == 4)
                             )) {
 
