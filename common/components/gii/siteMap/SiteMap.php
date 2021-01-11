@@ -27,6 +27,17 @@ class SiteMap
 
     }
 
+    function generateCalendarYearsWithWeeks($languagesData){
+
+        (new SiteMapGenerateCalendarYearsWithWeeks())->generate($languagesData);
+
+    }
+
+    function generateCalendarYearsWithWeeksRU($languagesData){
+
+        (new SiteMapGenerateCalendarYearsWithWeeksRU())->generate($languagesData);
+
+    }
 
     function generateCalendarMonths($languagesData){
 
@@ -40,6 +51,18 @@ class SiteMap
 
     }
 
+
+    function generateCalendarWeeks($languagesData){
+
+        (new SiteMapGenerateCalendarWeeks())->generate($languagesData);
+
+    }
+
+    function generateCalendarWeeksRU($languagesData){
+
+        (new SiteMapGenerateCalendarWeeksRU())->generate($languagesData);
+
+    }
 
     function generateCalendarSeasons($languagesData){
 

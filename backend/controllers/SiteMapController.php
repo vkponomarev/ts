@@ -74,6 +74,29 @@ class SiteMapController extends Controller
 
             }
 
+            if ($name == 'sitemap-calendar-years-with-weeks-all') {
+
+                $siteMap->generateCalendarYearsWithWeeks($languagesData);
+
+            }
+
+            if ($name == 'sitemap-calendar-years-with-weeks-ru') {
+
+                $siteMap->generateCalendarYearsWithWeeksRU($languagesData);
+
+            }
+
+            if ($name == 'sitemap-calendar-weeks-all') {
+
+                $siteMap->generateCalendarWeeks($languagesData);
+
+            }
+
+            if ($name == 'sitemap-calendar-weeks-ru') {
+
+                $siteMap->generateCalendarWeeksRU($languagesData);
+
+            }
 
 
         }

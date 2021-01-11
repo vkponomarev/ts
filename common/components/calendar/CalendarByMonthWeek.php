@@ -22,8 +22,19 @@ class CalendarByMonthWeek
         //$startOfCalendar = new \DateTime('2020-01-01');
         $calendar = array();
 
-        $startOfCalendar = new \DateTime($year - 1 . '-12-01');
-        $endOfCalendar = new \DateTime($year + 1 . '-01-31');
+        $yearMinusOne = str_pad((int)$year - 1, 4, '0', STR_PAD_LEFT);
+        $yearPlusOne = str_pad((int)$year + 1, 4, '0', STR_PAD_LEFT);
+        if ($year <> '0001') {
+            $startOfCalendar = new \DateTime($yearMinusOne . '-12-01');
+        } else {
+            $startOfCalendar = new \DateTime($year . '-01-01');
+        }
+
+        if ($year <> '9999'){
+            $endOfCalendar = new \DateTime($yearPlusOne . '-01-31');
+        } else{
+            $endOfCalendar = new \DateTime($year . '-12-31');
+        }
 
         $eachDay = $startOfCalendar;
         $countDays = 0;
@@ -91,27 +102,28 @@ class CalendarByMonthWeek
 
         //$calendar['неделя']["год"]['месяц']['день недели'];
         //Если мы находимся на первой неделе
+        //$year = (int)$year;
         if ($week == '01') {
             //Если первый день недели в этом году не задан то
             if (!isset($calendarByWeek[$week][$year][1][1])) {
                 //то мы задаем начало даты от предыдущего года
-                $weekStart = $calendarByWeek[$week][$year - 1][12][1];
+                $weekStart = $calendarByWeek[$week][$yearMinusOne][12][1];
             } else {
                 //Если первый день текущего года задан то
                 $weekStart = $calendarByWeek[$week][$year][1][1];
             }
             // Если последний день недели в этом году не задан то
-            if (!isset($calendarByWeek[$week][$year - 1][12][7])) {
+            if (!isset($calendarByWeek[$week][$yearMinusOne][12][7])) {
                 $weekEnd = $calendarByWeek[$week][$year][1][7];
             } else {
-                $weekEnd = $calendarByWeek[$week][$year - 1][12][7];
+                $weekEnd = $calendarByWeek[$week][$yearMinusOne][12][7];
             }
 
         } elseif ($week == $weekCount) {
 
             $weekStart = $calendarByWeek[$week][$year][12][1];
             if (!isset($calendarByWeek[$week][$year][12][7])) {
-                $weekEnd = $calendarByWeek[$weekCount][$year + 1][1][7];
+                $weekEnd = $calendarByWeek[$weekCount][$yearPlusOne][1][7];
             } else {
                 $weekEnd = $calendarByWeek[$week][$year][12][7];
             }
@@ -124,7 +136,7 @@ class CalendarByMonthWeek
 
 
         if (($weekStart['year'] == $weekEnd['year']) &&
-            ($weekStart['month'] == $weekEnd['month'])){
+            ($weekStart['month'] == $weekEnd['month'])) {
 
             $monthByWeek[0]['year'] = $weekStart['year'];
             $monthByWeek[0]['month'] = $weekStart['month'];
@@ -143,7 +155,7 @@ class CalendarByMonthWeek
 
         }
 
-       // (new \common\components\dump\Dump())->printR($monthByWeek);die;
+        // (new \common\components\dump\Dump())->printR($monthByWeek);die;
 
 
         $weekStartDate = new \DateTime($weekStart['date']);
@@ -166,8 +178,6 @@ class CalendarByMonthWeek
             'weekEndDate' => $weekEnd['date'],
             'monthByWeek' => $monthByWeek,
             'lastWeekYearBefore' => $lastWeekYearBefore,
-
-
 
 
         ];

@@ -19,13 +19,18 @@ $this->params['breadcrumbs'][] = $this->title;
             <option value="---------------">---------------</option>
             <option value="sitemap-calendar-yearly-all">Карта сайта для календаря на ГОД все языки</option>
 
+            <option value="sitemap-calendar-years-with-weeks-all">Карта сайта для календаря на ГОД С НОМЕРАМИ НЕДЕЛЬ все языки</option>
+            <option value="sitemap-calendar-years-with-weeks-ru">Карта сайта для календаря на ГОД С НОМЕРАМИ НЕДЕЛЬ только RU</option>
+
+
             <option value="sitemap-calendar-seasons-all">Карта сайта для календаря на СЕЗОНЫ ГОДА все языки</option>
             <option value="sitemap-calendar-seasons-ru">Карта сайта для календаря на СЕЗОНЫ ГОДА только RU</option>
 
             <option value="sitemap-calendar-months-all">Карта сайта для календаря на МЕСЯЦ все языки</option>
             <option value="sitemap-calendar-months-ru">Карта сайта для календаря на МЕСЯЦ только RU</option>
 
-
+            <option value="sitemap-calendar-weeks-all">Карта сайта для календаря на НЕДЕЛЮ все языки</option>
+            <option value="sitemap-calendar-weeks-ru">Карта сайта для календаря на НЕДЕЛЮ только RU</option>
 
             <option value="sitemap-all">Карта сайта основной файл все языки</option>
 
