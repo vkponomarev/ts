@@ -6,7 +6,6 @@ use Yii;
 
 class DateByYearWeeks
 {
-
     public function data($date)
     {
 

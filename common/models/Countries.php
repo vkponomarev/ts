@@ -48,10 +48,6 @@ class Countries extends \yii\db\ActiveRecord
         ];
     }
 
-
-
-
-
     public function translateButtons($model){
 
         $text='';

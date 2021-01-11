@@ -4,10 +4,11 @@ namespace common\components\gii\giiPDF;
 
 
 use common\components\countries\Countries;
+use common\components\date\Date;
 use common\components\gii\Gii;
 
 /**
- * Класс отвечающий за генерацию PDF календаря на год с номерами недель, только без праздников
+ * Класс отвечающий за генерацию PDF календаря на неделю
  * Class GiiPDFGeneratePDFCalendarYearly
  * @package common\components\gii\giiPDF
  */
@@ -15,7 +16,7 @@ class GiiPDFGeneratePDFCalendarWeekly
 {
 
     /**
-     * Генерация PDF календаря на год с номерами недель, только без праздников
+     * Генерация PDF календаря на год на неделю
      * @param $languagesData
      * @throws \yii\base\InvalidConfigException
      * @throws \yii\db\Exception
@@ -31,8 +32,8 @@ class GiiPDFGeneratePDFCalendarWeekly
         $countriesByPDFGeneration = $countries->byPDFGeneration();
 
         $PDFCalendarYearlyPages = [
-            'P' => 'calendar-yearly-with-weeks-portrait-one',
-            'L' => 'calendar-yearly-with-weeks-landscape-one',
+            'P' => 'calendar-weekly-portrait-one',
+            'L' => 'calendar-weekly-landscape-one',
         ];
 
         $PDFCalendarYearlyOrientation = [
@@ -40,30 +41,40 @@ class GiiPDFGeneratePDFCalendarWeekly
             2 => 'L',
         ];
 
+        $date = new Date();
+
+
         $count = 0;
-        foreach (range(2025, 2025) as $eachYear) {
+        foreach (range(2026, 2026) as $eachYear) {
 
-            foreach ($languagesData as $language) {
-                //$count++;
-                //if ($count <= 11) {continue;};
+            $dateData = $date->yearWeeks($eachYear);
+            //(new \common\components\dump\Dump())->printR($dateData);die;
 
 
-                foreach ($PDFCalendarYearlyOrientation as $orientation) {
+            foreach (range(1, $dateData['week']['count']) as $week) {
 
-                    $count++;
-                    $bigData->saveData($count, 'work');
+                foreach ($languagesData as $language) {
+                    //$count++;
+                    //if ($count <= 11) {continue;};
 
-                    $params['languageID'] = $language['id'];
-                    $params['countryID'] = 171; // Указано просто как заглушка.
-                    $params['yearURL'] = $eachYear;
-                    $params['orientation'] = $orientation;
-                    $params['language'] = $language['url'];
-                    $params['pageName'] = $PDFCalendarYearlyPages[$orientation];
+                    foreach ($PDFCalendarYearlyOrientation as $orientation) {
 
-                    $gii->makeAction($params, 'frontend\controllers', 'generate-years-with-weeks/generate-pdf');
+                        $count++;
+                        $bigData->saveData($count, 'work');
+
+                        $params['languageID'] = $language['id'];
+                        $params['countryID'] = 171; // Указано просто как заглушка.
+                        $params['yearURL'] = $eachYear;
+                        $params['weekURL'] = str_pad($week, 2, '0', STR_PAD_LEFT);
+                        $params['orientation'] = $orientation;
+                        $params['language'] = $language['url'];
+                        $params['pageName'] = $PDFCalendarYearlyPages[$orientation];
+
+                        $gii->makeAction($params, 'frontend\controllers', 'generate-weeks/generate-pdf');
+
+                    }
 
                 }
-
             }
         }
     }

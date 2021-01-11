@@ -9,14 +9,18 @@
  * @var $calendarByYear common\components\calendar\CalendarByYear
  */
 ?>
-
-<table class="cpdf-wpm1-month">
+<?php //(new \common\components\dump\Dump())->printR($month);die;?>
+<table style="vertical-align: top;text-align: center">
+    <tr>
+        <?php foreach ($calendarByWeek['monthByWeek'] as $month): ?>
+        <td>
+            <table class="cpdf-wpm1-month">
     <tr class="cpdf-wpm1-month-name-line">
         <td class="cpdf-wpm1-month-name-line-td" colspan="7">
             <span class="fa fa-calendar">
                 </span>
             <a href="/" class="cpdf-wpm1-month-name-a">
-                <?= $calendarNameOfMonths[$month]; ?>
+                <?= $calendarNameOfMonths[$month['month']]; ?>
             </a>
         </td>
     </tr>
@@ -35,17 +39,17 @@
         </td>
     </tr>
     <?php $countWeeks = 0; ?>
-    <?php foreach ($calendarByYear[$month] as $key => $week): ?>
+    <?php foreach ($calendarByWeek['calendar'][$month['year']][$month['month']] as $keyMain => $week): ?>
 
-        <?php if ($key == $weekNumber): ?>
+        <?php if ($keyMain == $weekURL['simple']): ?>
             <tr class="cpdf-wpm1-week-border">
         <?php else: ?>
             <tr class="cpdf-wpm1-week">
-        <?php endif;?>
+        <?php endif; ?>
         <?php for ($i = 1; $i <= 5; $i++): ?>
             <?php if (isset($week[$i])): ?>
 
-                <?php $key = array_search($week[$i]['date'], array_column($holidaysByCountryByYear, 'date'));
+                <?php $key = array_search($week[$i]['date'], array_column($holidaysData, 'date'));
                 if (false !== $key): ?>
                     <td class="cpdf-wpm1-day cpdf-wpm1-day-holiday">
 
@@ -83,4 +87,10 @@
 
         </tr>
     <?php endforeach; ?>
+
+            </table>
+</td>
+<?php endforeach; ?>
+</tr>
 </table>
+

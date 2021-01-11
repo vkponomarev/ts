@@ -19,33 +19,35 @@
                     <?= $getParamsCustomize['header'] ?>
                 </h1>
                 <h2 class="calendar-pdf-header-h2">
-                    <?= Yii::t('app', 'Calendar weekly for the {week} week of {year}', [
-                        'year' => $dateData['year']['full'],
-                        'week' => $weekURL['url']
+                    <?= Yii::t('app', '{week} week from {from} to {to}', [
+                        'week' => $weekURL['url'],
+                        'from' => Yii::$app->formatter->asDate($calendarByWeek['weekStartDate'], 'long'),
+                        'to' => Yii::$app->formatter->asDate($calendarByWeek['weekEndDate'], 'long'),
                     ]) ?>
                 </h2>
             <?php else: ?>
                 <h1 class="calendar-pdf-header-h1">
-                    <?= Yii::t('app', 'Calendar weekly for the {week} week of {year}', [
-                        'year' => $dateData['year']['full'],
-                        'week' => $weekURL['url']
+                    <?= Yii::t('app', '{week} week from {from} to {to}', [
+                        'week' => $weekURL['url'],
+                        'from' => Yii::$app->formatter->asDate($calendarByWeek['weekStartDate'], 'long'),
+                        'to' => Yii::$app->formatter->asDate($calendarByWeek['weekEndDate'], 'long'),
                     ]) ?>
                 </h1>
             <?php endif; ?>
 
         </td>
         <td class="calendar-pdf-header-table-right">
-            <h3 class="calendar-pdf-header-h3"><a href="https://timesles.com">timesles.com</a></h3>
+            <h3 class="calendar-pdf-header-h3"><a href="https://timesles.com">TIMESLES.COM</a></h3>
         </td>
     </tr>
 </table>
 <br>
 
-<?php for ($z = 1; $z <= 2; $z++): ?>
+<?php for ($z = 1; $z <= 1; $z++): ?>
     <?php
-    $month = $calendarByWeek[str_pad($z, 2, '0', STR_PAD_LEFT)][3]['month'];
-    $weekNumber = str_pad($z, 2, '0', STR_PAD_LEFT);
-
+    //$month = $calendarByWeek[str_pad($z, 2, '0', STR_PAD_LEFT)][3]['month'];
+    $weekNumber = $weekURL['url'];
+    //(new \common\components\dump\Dump())->printR($calendarByWeek['weekDaysNumber']);die;
     ?>
     <?php //foreach ($calendarByWeek as $week): ?>
     <table style="width: 100%">
@@ -58,8 +60,8 @@
                                 <?php for ($c = 1; $c <= 4; $c++): ?>
                                     <tr style="width: 100%;">
                                         <td style="text-align: left;padding:10px; vertical-align: top; border-top: 2px solid black;font-size: 20px; color:#868686">
-                                            <?php if (isset($calendarByWeek[$weekNumber][$c])): ?>
-                                                <?= $calendarByWeek[$weekNumber][$c]['monthDay']; ?>
+                                            <?php if (isset($calendarByWeek['weekDaysNumber'][$c]['monthDay'])): ?>
+                                                <?= $calendarByWeek['weekDaysNumber'][$c]['monthDay']; ?>
                                                 <br>
                                                 <?= $calendarNameOfDaysInWeek[$c]; ?>
                                             <?php endif; ?>
@@ -95,9 +97,9 @@
                             <table style="width: 100%;">
                                 <?php for ($c = 5; $c <= 7; $c++): ?>
                                     <tr style="width: 100%;">
-                                        <td style="text-align: left;padding:10px; vertical-align: top; border-top: 2px solid black;font-size: 20px; color:#868686">
-                                            <?php if (isset($calendarByWeek[$weekNumber][$c])): ?>
-                                                <?= $calendarByWeek[$weekNumber][$c]['monthDay']; ?>
+                                        <td style="text-align: left;padding:8px; vertical-align: top; border-top: 2px solid black;font-size: 20px; color:#868686">
+                                            <?php if (isset($calendarByWeek['weekDaysNumber'][$c]['monthDay'])): ?>
+                                                <?= $calendarByWeek['weekDaysNumber'][$c]['monthDay']; ?>
                                                 <br>
                                                 <?= $calendarNameOfDaysInWeek[$c]; ?>
                                             <?php endif; ?>
@@ -129,16 +131,13 @@
                                 <tr>
                                     <td colspan="2" class="cpdf-wp1-calendar-month">
                                         <?php
-                                        echo $this->render('/print/_calendar-one-month-weekly-large', [
+                                        echo $this->render('@frontend/views/print/calendar-weekly/_calendar-one-month-weekly-large', [
 
-                                            'yearData' => $yearData,
-                                            'calendarByYear' => $calendarByYear,
                                             'calendarByWeek' => $calendarByWeek,
                                             'calendarNameOfMonths' => $calendarNameOfMonths,
                                             'calendarNameOfDaysInWeek' => $calendarNameOfDaysInWeek,
-                                            'holidaysByCountryByYear' => $holidaysByCountryByYear,
-                                            'month' => $month,
-                                            'weekNumber' => $weekNumber,
+                                            'holidaysData' => $holidaysData,
+                                            'weekURL' => $weekURL,
 
                                         ])
                                         ?>

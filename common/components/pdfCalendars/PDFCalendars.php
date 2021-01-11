@@ -48,5 +48,12 @@ class PDFCalendars
 
     }
 
+    function weeklyExists($year, $language, $weekURL){
+
+        return (new PDFCalendarsWeeklyExists())->calendars($year, $language, $weekURL);
+
+    }
+
+
 }
 

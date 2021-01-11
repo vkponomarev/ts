@@ -52,8 +52,10 @@ class GenerateWeeksController extends Controller
         $language = Yii::$app->params['language']['current']['url'];
 
         $holidays = new Holidays();
-        $holidaysData = $holidays->byCountryByYear($countryURL['defaultID'], $year, $languageID);
+        $holidaysData = $holidays->byCountryByYearPDFGeneration($countryURL['defaultID'], $year, $languageID);
         $holidaysData = $holidays->arrayReplace($holidaysData);
+        //(new \common\components\dump\Dump())->printR($holidaysData);die;
+
 
         $date = new Date();
         $dateData = $date->yearWeeks($yearURL . '-01-01');
@@ -62,7 +64,9 @@ class GenerateWeeksController extends Controller
         $countryData = $country->data($languageID, $countryURL['defaultID']);
 
         $calendar = new Calendar();
-        $calendarByWeek = $calendar->byWeek($yearURL, $weekURL['url'], 0);
+        //$calendarByWeek = $calendar->byWeek($yearURL, $weekURL['url'], 0);
+        $calendarByWeek = $calendar->byMonthWeek($yearURL, $weekURL['url'], $dateData['week']['count']);
+        $calendarByYear = $calendar->byYear($yearURL);
 
         $calendarNameOfMonths = $calendar->nameOfMonths();
         $calendarNameOfDaysInWeek = $calendar->nameOfDaysInWeek();
@@ -144,9 +148,10 @@ class GenerateWeeksController extends Controller
                 'calendarByWeek' => $calendarByWeek,
                 'calendarNameOfMonths' => $calendarNameOfMonths,
                 'calendarNameOfDaysInWeek' => $calendarNameOfDaysInWeek,
-                'holidaysData' => [0,0],
+                'holidaysData' => $holidaysData,
                 'getParamsCustomize' => $getParamsCustomize,
                 'weekURL' => $weekURL,
+                'calendarByYear' => $calendarByYear,
             ]);
 
             $giiPDF->generatePDF($dateData, $countryData, $render, $filePathNoHolidays, $fileNameNoHolidays, $orientation, 1, $PDFTitle);

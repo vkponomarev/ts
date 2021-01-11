@@ -19,11 +19,9 @@
 
 ?>
 
-
 <a name="calendar-<?= $dateData['year']['current'] ?>"></a><h1
         class="main-page-h1"><?= Yii::$app->params['text']['h1'] ?></h1>
-<br><br>
-
+<hr>
 <div class="row">
 
     <?php /***************************** */ ?>
@@ -153,7 +151,7 @@
 <div class="row rflex year">
 
     <?php foreach ($calendarByWeek['monthByWeek'] as $month): ?>
-<?php //(new \common\components\dump\Dump())->printR($calendarByWeek['monthByWeek']);die;?>
+<?php //(new \common\components\dump\Dump())->printR($month);die;?>
 
     <div class="owmonth col-xxs-12 col-xs-12 col-sm-6">
         <div class="owmonth-name">
@@ -175,10 +173,7 @@
                 </div>
             <?php endfor; ?>
         </div>
-        <?php
-        $countWeeks = 0;
-        ?>
-
+        <?php $countWeeks = 0; ?>
         <?php foreach ($calendarByWeek['calendar'][$month['year']][$month['month']] as $keyMain => $week): ?>
     <?php $countWeeks++ ?>
     <?php //(new \common\components\dump\Dump())->printR($key);
@@ -267,58 +262,34 @@
     <hr>
     <br>
 
-<?php /***************************** */ ?>
-<?php /***************************** Ссылки на PDF календари*/ ?>
-<?php /***************************** */ ?>
+    <?php /***************************** */ ?>
+    <?php /***************************** Ссылки на PDF календари*/ ?>
+    <?php /***************************** */ ?>
 
     <?php if ($PDFCalendarsData['exists']): ?>
         <br>
-        <?php if ($holidaysData): ?>
+
             <a name="download-calendar-<?= $dateData['year']['current'] ?>"></a>
             <h2 class="main-page-h1">
-                <?= Yii::t('app', 'Download and print PDF calendar with holidays and weekends for {year} {country_for}', [
-                    'country_for' => $countryData['name_for'],
+                <?= Yii::t('app', 'Download and print PDF calendar weekly for the {week} week of {year}, from {from} to {to}', [
+                    'week' => $weekURL['url'],
                     'year' => $dateData['year']['current'],
+                    'from' => Yii::$app->formatter->asDate($calendarByWeek['weekStartDate'], 'long'),
+                    'to' => Yii::$app->formatter->asDate($calendarByWeek['weekEndDate'], 'long'),
                 ]) ?>
             </h2>
-        <?php else: ?>
-            <a name="download-calendar-<?= $dateData['year']['current'] ?>"></a>
-            <h2 class="main-page-h1">
-                <?= Yii::t('app', 'Download and print PDF calendar for {year}', [
-                    'year' => $dateData['year']['current'],
-                ]) ?>
-            </h2>
-        <?php endif; ?>
+
         <br><br>
 
         <div class="row rflex">
             <?php foreach ($PDFCalendarsData['pdf'] as $key => $pdf): ?>
                 <?php if ($pdf['pdfExists']): ?>
                     <div class="col-xxs-12 col-xs-6 col-md-4 col-lg-3 d-center pdf-download">
-                        <?php if ($key == 'P'): ?>
-                            <div class="pdf-header"><?= Yii::t('app', 'Holidays portrait calendar') ?></div>
+                        <?php if ($key == 'weeklyPNoHolidays'): ?>
+                            <div class="pdf-header"><?= Yii::t('app', 'Portrait calendar weekly') ?></div>
                         <?php endif; ?>
-                        <?php if ($key == 'L'): ?>
-                            <div class="pdf-header"><?= Yii::t('app', 'Holidays landscape calendar') ?></div>
-                        <?php endif; ?>
-                        <?php if ($key == 'PNoHolidays'): ?>
-                            <div class="pdf-header"><?= Yii::t('app', 'Portrait calendar without holidays') ?></div>
-                        <?php endif; ?>
-                        <?php if ($key == 'LNoHolidays'): ?>
-                            <div class="pdf-header"><?= Yii::t('app', 'Landscape calendar without holidays') ?></div>
-                        <?php endif; ?>
-
-                        <?php if ($key == 'seasonsP'): ?>
-                            <div class="pdf-header"><?= Yii::t('app', 'Portrait calendar for the year by seasons with holidays') ?></div>
-                        <?php endif; ?>
-                        <?php if ($key == 'seasonsL'): ?>
-                            <div class="pdf-header"><?= Yii::t('app', 'landscape calendar for the year by seasons with holidays') ?></div>
-                        <?php endif; ?>
-                        <?php if ($key == 'seasonsPNoHolidays'): ?>
-                            <div class="pdf-header"><?= Yii::t('app', 'Portrait calendar for the year by seasons') ?></div>
-                        <?php endif; ?>
-                        <?php if ($key == 'seasonsLNoHolidays'): ?>
-                            <div class="pdf-header"><?= Yii::t('app', 'landscape calendar for the year by seasons') ?></div>
+                        <?php if ($key == 'weeklyLNoHolidays'): ?>
+                            <div class="pdf-header"><?= Yii::t('app', 'Landscape calendar weekly') ?></div>
                         <?php endif; ?>
 
                         <a href="<?= $pdf['imgPathRelative'] ?>" class="lightzoom">

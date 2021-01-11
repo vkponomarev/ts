@@ -69,6 +69,8 @@ class CalendarByMonthWeek
          * 'orthodox' => 1 - 0,
          * ]
          */
+
+        //$calendarByWeek[$key2][$key0][$key1][$key3]
         $calendarByWeek = Array();
         foreach ($calendar as $key0 => $value) {
             //$key0 год
@@ -80,6 +82,7 @@ class CalendarByMonthWeek
                         //$key3 день недели
                         $calendarByWeek[$key2][$key0][$key1][$key3] = $value3;
                         $calendarByWeekSecond[$key0][$key2][$key3] = $value3;
+                        //$calendarByWeekTwo[$key2][$key3] = $value3;
                     }
                 }
             }
@@ -140,13 +143,33 @@ class CalendarByMonthWeek
 
         }
 
+       // (new \common\components\dump\Dump())->printR($monthByWeek);die;
+
+
+        $weekStartDate = new \DateTime($weekStart['date']);
+        $weekEndDate = new \DateTime($weekEnd['date']);
+        $dayCount = 0;
+        do {
+            $dayCount++;
+            $weekDaysNumber[$dayCount] = [
+                'monthDay' => $weekStartDate->format('j'),
+            ];
+            $weekStartDate->modify('+1 day');
+
+        } while ($weekStartDate->format('Y-m-d') <= $weekEndDate->format('Y-m-d'));
+
 
         return [
             'calendar' => $calendar,
+            'weekDaysNumber' => $weekDaysNumber,
             'weekStartDate' => $weekStart['date'],
             'weekEndDate' => $weekEnd['date'],
             'monthByWeek' => $monthByWeek,
             'lastWeekYearBefore' => $lastWeekYearBefore,
+
+
+
+
         ];
     }
 

@@ -152,6 +152,8 @@ class WeeksController extends Controller
         $countryData = $country->data($languageID, $countryURL['defaultID']);
 
         $calendar = new Calendar();
+
+
         $calendarByWeek = $calendar->byMonthWeek($yearURL, $weekURL['url'], $dateData['week']['count']);
         //(new \common\components\dump\Dump())->printR($calendarByWeek);die;
 
@@ -168,7 +170,7 @@ class WeeksController extends Controller
         */
 
         $PDFCalendars = new PDFCalendars();
-        $PDFCalendarsData = $PDFCalendars->yearlyExists($year, $language, $countryData['url']);
+        $PDFCalendarsData = $PDFCalendars->weeklyExists($year, $language, $weekURL['url']);
 
 
         return $this->render('week-page.min.php', [

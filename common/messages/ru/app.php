@@ -194,4 +194,11 @@ return [
     'PDF weekly for the {week} week of {year}' => 'PDF еженедельник на {week} неделю {year} года',
     'Calendar weekly for the {week} week of {year}' => 'Календаль еженедельник на {week} неделю {year} года',
 
+    '{week} week from {from} to {to}' => '{week} неделя с {from} по {to}',
+
+    'Portrait calendar weekly' => 'Книжный календарь еженедельник',
+    'Landscape calendar weekly' => 'Альбомный календарь еженедельник',
+
+    'Download and print PDF calendar weekly for the {week} week of {year}, from {from} to {to}' => 'Скачать и распечатать PDF календарь, еженедельник на {week} неделю {year} года, с {from} по {to}',
+
     ];

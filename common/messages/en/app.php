@@ -192,5 +192,12 @@ return [
 
     'PDF weekly for the {week} week of {year}' => 'PDF weekly for the {week} week of {year}',
     'Calendar weekly for the {week} week of {year}' => 'Calendar weekly for the {week} week of {year}',
+
+    '{week} week from {from} to {to}' => '{week} week from {from} to {to}',
+
+    'Portrait calendar weekly' => 'Portrait calendar weekly',
+    'Landscape calendar weekly' => 'Landscape calendar weekly',
+
+    'Download and print PDF calendar weekly for the {week} week of {year}, from {from} to {to}' => 'Download and print PDF calendar weekly for the {week} week of {year}, from {from} to {to}',
 ];
 
