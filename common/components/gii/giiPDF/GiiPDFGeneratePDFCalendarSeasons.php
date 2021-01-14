@@ -7,11 +7,25 @@ use common\components\countries\Countries;
 use common\components\country\Country;
 use common\components\gii\Gii;
 
-
+/**
+ * Генерация PDF календаря по сезонам
+ * Class GiiPDFGeneratePDFCalendarSeasons
+ * @package common\components\gii\giiPDF
+ */
 class GiiPDFGeneratePDFCalendarSeasons
 {
 
-
+    /**
+     * Генерация PDF календаря по сезонам
+     * @param $languagesData
+     * @throws \ImagickException
+     * @throws \Mpdf\MpdfException
+     * @throws \setasign\Fpdi\PdfParser\CrossReference\CrossReferenceException
+     * @throws \setasign\Fpdi\PdfParser\PdfParserException
+     * @throws \setasign\Fpdi\PdfParser\Type\PdfTypeException
+     * @throws \yii\base\InvalidConfigException
+     * @throws \yii\db\Exception
+     */
     function generate($languagesData)
     {
         set_time_limit(500000);

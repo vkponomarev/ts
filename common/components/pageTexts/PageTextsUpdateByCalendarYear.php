@@ -34,7 +34,7 @@ class PageTextsUpdateByCalendarYear
         Yii::$app->params['text']['text1'] = str_replace('{year_day_begin}', $pageTextsMessages['firstDay'], Yii::$app->params['text']['text1']);
         Yii::$app->params['text']['text1'] = str_replace('{year_day_end}', $pageTextsMessages['lastDay'], Yii::$app->params['text']['text1']);
         Yii::$app->params['text']['text1'] = str_replace('{country_in}', $countryData['name_in'], Yii::$app->params['text']['text1']);
-        Yii::$app->params['text']['text1'] = str_replace('{holidays_count}', $holidaysCount, Yii::$app->params['text']['text1']);
+        Yii::$app->params['text']['text1'] = str_replace('{holidays_count}', $pageTextsMessages['countHolidaysText'], Yii::$app->params['text']['text1']);
         Yii::$app->params['text']['text1'] = str_replace('{animal}', $pageTextsMessages['animal'], Yii::$app->params['text']['text1']);
 
         /**

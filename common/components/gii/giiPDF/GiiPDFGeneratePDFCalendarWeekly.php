@@ -16,7 +16,7 @@ class GiiPDFGeneratePDFCalendarWeekly
 {
 
     /**
-     * Генерация PDF календаря на год на неделю
+     * Генерация PDF календаря на неделю
      * @param $languagesData
      * @throws \yii\base\InvalidConfigException
      * @throws \yii\db\Exception

@@ -22,11 +22,11 @@
  * Верхняя плашка календаря с годами туда сюда
  */
 
-?><div class=row><div class="col-xxs-12 col-xs-4 c-prev-next-left"><a href="/<?= Yii::$app->language ?>/calendar/years/<?= $dateData['year']['previous'] ?>/<?= (($countryURL['url'] <> '')
-            && ($dateData['year']['previous'] >= $holidaysRange['start'] && $dateData['year']['previous'] <= $holidaysRange['end']))
-            ? $countryURL['url'] . '/' : '' ?>"><?= $dateData['year']['previous'] ?></a></div><div class="col-xxs-12 col-xs-4 c-prev-next-center"><?= $dateData['year']['current'] ?></div><div class="col-xxs-12 col-xs-4 c-prev-next-right"><a href="/<?= Yii::$app->language ?>/calendar/years/<?= $dateData['year']['next'] ?>/<?= (($countryURL['url'] <> '')
+?><div class=row><div class="col-xxs-12 col-xs-4 c-prev-next-left"><?php if ($dateData['year']['previous'] == '0000'):?><?php else: ?><a href="/<?= Yii::$app->language ?>/calendar/years/<?= $dateData['year']['previous'] ?>/<?= (($countryURL['url'] <> '')
+                && ($dateData['year']['previous'] >= $holidaysRange['start'] && $dateData['year']['previous'] <= $holidaysRange['end']))
+                ? $countryURL['url'] . '/' : '' ?>"><?= $dateData['year']['previous'] ?></a><?php endif; ?></div><div class="col-xxs-12 col-xs-4 c-prev-next-center"><?= $dateData['year']['current'] ?></div><div class="col-xxs-12 col-xs-4 c-prev-next-right"><?php if ($dateData['year']['current'] == '9999'):?><?php else: ?><a href="/<?= Yii::$app->language ?>/calendar/years/<?= $dateData['year']['next'] ?>/<?= (($countryURL['url'] <> '')
             && ($dateData['year']['next'] >= $holidaysRange['start'] && $dateData['year']['next'] <= $holidaysRange['end']))
-            ? $countryURL['url'] . '/' : '' ?>"><?= $dateData['year']['next'] ?></a></div></div><hr><?php if ($PDFCalendarsData['exists']): ?><div class=row><div class="col-xxs-12 c-prev-next-right"><a href="#download-calendar-<?= $dateData['year']['current'] ?>"class="btn btn-default"><span class="fa fa-lg fa-print"></span>&nbsp;<?= Yii::t('app', 'Print'); ?></a></div></div><br><?php endif; ?><?php
+            ? $countryURL['url'] . '/' : '' ?>"><?= $dateData['year']['next'] ?></a><?php endif; ?></div></div><hr><?php if ($PDFCalendarsData['exists']): ?><div class=row><div class="col-xxs-12 c-prev-next-right"><a href="#download-calendar-<?= $dateData['year']['current'] ?>"class="btn btn-default"><span class="fa fa-lg fa-print"></span>&nbsp;<?= Yii::t('app', 'Print'); ?></a></div></div><br><?php endif; ?><?php
 /**
  * Календарь с отмеченными праздниками конкретнрой страны
  */

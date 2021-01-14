@@ -41,6 +41,13 @@ class PageTexts
 
     }
 
+    function updateByCalendarQuarter($pageTextsMessages, $dateData, $countryData, $holidaysCount, $quarterURL)
+    {
+
+        (new PageTextsUpdateByCalendarQuarter())->update($pageTextsMessages, $dateData, $countryData, $holidaysCount, $quarterURL);
+
+    }
+
     function updateByCalendarMonth($pageTextsMessages, $dateData, $countryData, $holidaysCount, $calendarNameOfMonths)
     {
 
@@ -72,10 +79,10 @@ class PageTexts
     }
 
 
-    function messagesByCalendarYear($calendarChinese, $dateData)
+    function messagesByCalendarYear($calendarChinese, $dateData, $countHolidays)
     {
 
-        return (new PageTextsMessagesByCalendarYear())->messages($calendarChinese, $dateData);
+        return (new PageTextsMessagesByCalendarYear())->messages($calendarChinese, $dateData, $countHolidays);
 
     }
 
@@ -85,6 +92,14 @@ class PageTexts
         return (new PageTextsMessagesByCalendarSeason())->messages($dateData, $season);
 
     }
+
+    function messagesByCalendarQuarter($dateData, $quarter, $countHolidays)
+    {
+
+        return (new PageTextsMessagesByCalendarQuarter())->messages($dateData, $quarter, $countHolidays);
+
+    }
+
 
     function messagesByCalendarMonth($dateData, $countHolidays)
     {

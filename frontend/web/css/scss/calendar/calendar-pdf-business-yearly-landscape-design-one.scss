@@ -1,0 +1,177 @@
+//-cpdf-byl1- - calendar-pdf-yearly-portrait-design-one
+
+$byl1Padding: 4px;
+$byl1FontSize: 10px;
+
+.cpdf-byl1-year{
+  width:100%;
+  text-align: center;
+  justify-content: center;
+  vertical-align: top;
+}
+
+.cpdf-byl1-week {
+  height: 20px;
+}
+
+.cpdf-byl1-td-month{
+  padding-bottom: 2px;
+}
+.cpdf-byl1-month {
+  min-width: 320px;
+  max-width: 400px;
+  margin-left: 6px;
+  margin-right: 6px;
+  //padding: $byl1Padding;
+  border-radius: 5px;
+  display: unset;
+
+}
+
+.cpdf-byl1-month-name-line {
+  height: 10px;
+  padding-top: 0px;
+
+  color: #828282;
+}
+
+.cpdf-byl1-month-name-line-td{
+
+  font-size: 15px!important;
+  color: #434343!important;
+  padding-bottom: 5px!important;
+}
+
+
+.cpdf-byl1-day {
+  color: $cDayNumbersColorPDF;
+  font-size: $byl1FontSize;
+  padding: $byl1Padding;
+}
+
+.cpdf-byl1-day-holiday {
+  background-color: $cHolidaysCellColor;
+  border-radius: 50%;
+  color: $cDayNumbersColorPDF;
+  font-size: $byl1FontSize;
+  padding: $byl1Padding;
+}
+
+
+.cpdf-byl1-no-day {
+
+  padding: $byp1Padding;
+  background-color: white;
+
+}
+
+.cpdf-byl1-day-weekend{
+  color: $cDayNumbersColorPDF;
+  font-size: $byl1FontSize;
+  padding: $byl1Padding;
+  background-color: $cWeekendCellColor;
+}
+
+
+.cpdf-byl1-no-day-weekend {
+  padding: $byl1Padding;
+  background-color: white;
+
+}
+
+.cpdf-byl1-day-name {
+  color: $cDayNamesColorPDF;
+  padding: $byl1Padding;
+  background-color: white;
+  width: 25px;
+  font-size: 10px;
+
+}
+
+
+
+tr {
+  vertical-align: top;
+}
+
+.cpdf-byl1-week-line{
+  //background-color: #0a73bb;
+  border-top: 2px solid $cDayNameLineColor;
+
+}
+
+.cpdf-byl1-table{
+
+
+  width: 99%;
+
+
+}
+.cpdf-byl1-left{
+
+  text-align: left;
+  padding-left: 1px;
+  padding-right: 1px;
+  padding-bottom: 1px;
+  padding-top: 1px;
+
+}
+
+.cpdf-byl1-right{
+
+  text-align: left;
+  padding-left: 1px;
+  padding-right: 1px;
+  padding-bottom: 1px;
+  padding-top: 1px;
+
+}
+
+.cpdf-byl1-td{
+
+  padding:3px 5px 3px 5px;
+  border: 1px solid #9c9c9c;
+
+}
+
+
+.cpdf-byl1-holidays-table{
+
+  width:100%;
+  //text-align: center;
+  justify-content: center;
+  vertical-align: top;
+
+}
+
+
+.cpdf-byl1-holidays-table-inside{
+
+  width:100%;
+  //text-align: center;
+  justify-content: center;
+  vertical-align: top;
+
+}
+
+.cpdf-byl1-holidays-name{
+  text-align: left;
+  font-size: 10px;
+}
+
+.cpdf-byl1-holidays-table-border{
+  border: 1px solid;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.cpdf-byl1-holidays-rounded-mark {
+  background-color: $cHolidaysCellColor;
+  width: 5px;
+  height: 5px;
+
+  border-right:5px solid #ffffff;
+  border-bottom:2px solid #ffffff;
+}

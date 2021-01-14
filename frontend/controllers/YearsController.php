@@ -73,6 +73,7 @@ class YearsController extends Controller
         Yii::$app->params['language']['all'] = $main->languages();
         Yii::$app->params['canonical'] = $main->Canonical($yearURL, $mainUrl);
         Yii::$app->params['alternate'] = $main->Alternate($yearURL, $mainUrl);
+        Yii::$app->params['menu'] = $main->menu();
 
         $languageID = Yii::$app->params['language']['current']['id'];
         $countryURL['defaultID'] = Yii::$app->params['language']['current']['countries_id'];
@@ -105,7 +106,7 @@ class YearsController extends Controller
 
         $pageTexts = new PageTexts();
         $pageTextsID = $pageTexts->defineIdByCalendarYear($holidaysData, $calendarChinese);
-        $pageTextsMessages = $pageTexts->messagesByCalendarYear($calendarChinese, $dateData);
+        $pageTextsMessages = $pageTexts->messagesByCalendarYear($calendarChinese, $dateData, count($holidaysData));
         Yii::$app->params['text'] = $main->text($pageTextsID, $languageID);
         $pageTexts->updateByCalendarYear($pageTextsMessages, $dateData, $countryData, count($holidaysData));
         /*

@@ -20,6 +20,12 @@ class Date
 
     }
 
+    function yearBusiness($year){
+
+        return (new DateByYearBusiness())->data($year);
+
+    }
+
     function yearWeeks($year){
 
         return (new DateByYearWeeks())->data($year);
@@ -32,9 +38,21 @@ class Date
 
     }
 
+    function byQuarter($year){
+
+        return (new DateByQuarter())->data($year);
+
+    }
+
     function byMonth($year){
 
         return (new DateByMonth())->data($year);
+
+    }
+
+    function byMonthBusiness($year){
+
+        return (new DateByMonthBusiness())->data($year);
 
     }
 

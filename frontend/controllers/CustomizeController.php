@@ -38,7 +38,7 @@ class CustomizeController extends Controller
         Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['current']['id']);
         Yii::$app->params['canonical'] = $main->Canonical($url, $mainUrl);
         Yii::$app->params['alternate'] = $main->Alternate($url, $mainUrl);
-
+        Yii::$app->params['menu'] = $main->menu();
 
         $year = new Year();
         $yearData = $year->data(0);
@@ -142,7 +142,7 @@ class CustomizeController extends Controller
         Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['current']['id']);
         Yii::$app->params['canonical'] = $main->Canonical($url, $mainUrl);
         Yii::$app->params['alternate'] = $main->Alternate($url, $mainUrl);
-
+        Yii::$app->params['menu'] = $main->menu();
 
         $year = new Year();
         $yearData = $year->data(0);

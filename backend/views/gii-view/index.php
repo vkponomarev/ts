@@ -17,11 +17,15 @@ $this->params['breadcrumbs'][] = $this->title;
         <select id="cycle-length-from" name="name" class="form-control select-extended">
 
             <option value="---------">-------------------</option>
+
             <option value="PDF-calendar-yearly">Создание PDF Календаря на ГОД</option>
+            <option value="PDF-calendar-yearly-with-weeks">Создание PDF Календаря на ГОД С НЕДЕЛЯМИ</option>
             <option value="PDF-calendar-seasons">Создание PDF Календаря на СЕЗОНЫ ГОДА</option>
             <option value="PDF-calendar-monthly">Создание PDF Календаря на МЕСЯЦЫ ГОДА</option>
-            <option value="PDF-calendar-yearly-with-weeks">Создание PDF Календаря на ГОД С НЕДЕЛЯМИ</option>
             <option value="PDF-calendar-weekly">Создание PDF Календаря на НЕДЕЛИ</option>
+
+            <option value="PDF-calendar-business-yearly">Создание PDF Производственного Календаря на ГОД</option>
+
         </select>
 
         <br>

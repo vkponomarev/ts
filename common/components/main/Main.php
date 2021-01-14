@@ -46,5 +46,10 @@ class Main
 
     }
 
+    function menu(){
+
+        return (new MainMenu())->menu();
+
+    }
 
 }

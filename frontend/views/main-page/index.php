@@ -311,7 +311,7 @@
         <div class="c-links-block c-links-mp-header">
 
             <a class="c-links-mp-header-link"
-               href="/<?= Yii::$app->language ?>/calendar/years/<?= $dateData['year']['current'] ?>/">
+               href="/<?= Yii::$app->language ?>/calendar/business/years/<?= $dateData['year']['current'] ?>/">
                 <?= Yii::t('app', 'Business days calendar {year}', ['year' => $dateData['year']['current']]); ?>
             </a>
         </div>

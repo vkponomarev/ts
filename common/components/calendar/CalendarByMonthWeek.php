@@ -30,9 +30,9 @@ class CalendarByMonthWeek
             $startOfCalendar = new \DateTime($year . '-01-01');
         }
 
-        if ($year <> '9999'){
+        if ($year <> '9999') {
             $endOfCalendar = new \DateTime($yearPlusOne . '-01-31');
-        } else{
+        } else {
             $endOfCalendar = new \DateTime($year . '-12-31');
         }
 
@@ -61,8 +61,11 @@ class CalendarByMonthWeek
                 'muslim' => 0,
                 'orthodox' => 0,
             ];
+
             $eachDay->modify('+1 day');
-            $countDays++;
+            if ($eachDay->format('Y') == 10000) {
+                break;
+            }
 
         } while ($eachDay->format('Y-m-d') <= $endOfCalendar->format('Y-m-d'));
 
@@ -122,10 +125,29 @@ class CalendarByMonthWeek
         } elseif ($week == $weekCount) {
 
             $weekStart = $calendarByWeek[$week][$year][12][1];
-            if (!isset($calendarByWeek[$week][$year][12][7])) {
-                $weekEnd = $calendarByWeek[$weekCount][$yearPlusOne][1][7];
+            if ($year == '9999') {
+                if (isset($calendarByWeek[$week][$year][12][7])) {
+                    $weekEnd = $calendarByWeek[$week][$year][12][7];
+                } elseif (isset($calendarByWeek[$week][$year][12][6])){
+                    $weekEnd = $calendarByWeek[$week][$year][12][6];
+                } elseif (isset($calendarByWeek[$week][$year][12][5])){
+                    $weekEnd = $calendarByWeek[$week][$year][12][5];
+                } elseif (isset($calendarByWeek[$week][$year][12][4])){
+                    $weekEnd = $calendarByWeek[$week][$year][12][4];
+                } elseif (isset($calendarByWeek[$week][$year][12][3])){
+                    $weekEnd = $calendarByWeek[$week][$year][12][3];
+                } elseif (isset($calendarByWeek[$week][$year][12][2])){
+                    $weekEnd = $calendarByWeek[$week][$year][12][2];
+                }
             } else {
-                $weekEnd = $calendarByWeek[$week][$year][12][7];
+
+
+                if (!isset($calendarByWeek[$week][$year][12][7])) {
+                    $weekEnd = $calendarByWeek[$weekCount][$yearPlusOne][1][7];
+                } else {
+                    $weekEnd = $calendarByWeek[$week][$year][12][7];
+                }
+
             }
         } else {
             //$calendarByWeekSecond['год']["неделя"]['день недели']
@@ -147,6 +169,8 @@ class CalendarByMonthWeek
             $monthByWeek[1]['month'] = $weekEnd['month'];
 
         }
+
+
         $lastWeekYearBefore = 0;
         if ($week == '01') {
             $lastWeekYearBefore = new \DateTime($weekStart['date']);
@@ -167,7 +191,9 @@ class CalendarByMonthWeek
                 'monthDay' => $weekStartDate->format('j'),
             ];
             $weekStartDate->modify('+1 day');
-
+            if ($eachDay->format('Y') == 10000) {
+                break;
+            }
         } while ($weekStartDate->format('Y-m-d') <= $weekEndDate->format('Y-m-d'));
 
 

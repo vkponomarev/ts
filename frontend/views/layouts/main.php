@@ -37,6 +37,7 @@ AppAsset::register($this);
     </div>
 
 
+
     <nav class="navbar-default header-nav-line">
 
         <div class="navbar-header">
@@ -56,9 +57,9 @@ AppAsset::register($this);
 
                 <li class="nav-link navbar-li">
 
-                    <a href="/calendar/years/2020/" class="dropdown-toggle navbar-a-link">
+                    <a href="/calendar/years/<?= Yii::$app->params['menu']['dateData']['year']['now']?>/" class="dropdown-toggle navbar-a-link">
 
-                        <?=Yii::t('app', '2020')?>
+                        <?= Yii::$app->params['menu']['dateData']['year']['now']?>
 
                     </a>
 

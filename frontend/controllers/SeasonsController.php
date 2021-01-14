@@ -61,6 +61,7 @@ class SeasonsController extends Controller
         Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['current']['id']);
         Yii::$app->params['canonical'] = $main->Canonical($yearURL, $mainUrl);
         Yii::$app->params['alternate'] = $main->Alternate($yearURL, $mainUrl);
+        Yii::$app->params['menu'] = $main->menu();
 
         $languageID = Yii::$app->params['language']['current']['id'];
         $countryURL['defaultID'] = Yii::$app->params['language']['current']['countries_id'];

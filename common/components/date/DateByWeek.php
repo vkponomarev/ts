@@ -112,7 +112,6 @@ class DateByWeek
         $dateData['week'] = [
             'count' => $weekCount,
             'dayNumber' => $weekDayNumber,
-
         ];
 
         $dateData['day'] = [

@@ -62,6 +62,25 @@ return [
                 //'/calendar/days/<urlDay>' => 'days/day-page',
 
                 [
+                    'pattern' => '/calendar/business/years/<yearURL:\d{4}>/<countryURL:[\w_-]+>',
+                    'route' => 'business/business-year-page',
+                    'defaults' => ['yearURL' => '', 'countryURL' => ''],
+                ],
+
+
+                [
+                    'pattern' => '/calendar/business/months/<monthURL>/<countryURL:[\w_-]+>',
+                    'route' => 'business-months/business-month-page',
+                    'defaults' => ['monthURL' => '', 'countryURL' => ''],
+                ],
+
+                [
+                    'pattern' => '/calendar/business/quarters/<yearURL:\d{4}>/<quarterURL:\d{1}>/<countryURL:[\w_-]+>',
+                    'route' => 'business-quarters/business-quarter-page',
+                    'defaults' => ['yearURL' => '', 'quarterURL' => '', 'countryURL' => ''],
+                ],
+
+                [
                     'pattern' => '/calendar/years/<yearURL:\d{4}>/<countryURL:[\w_-]+>',
                     'route' => 'years/year-page',
                     'defaults' => ['yearURL' => '', 'countryURL' => ''],
@@ -82,6 +101,7 @@ return [
 
 
                 '/calendar/weeks/<yearURL:\d{4}>' => 'weeks/year-weeks-page',
+                '/calendar/weeks/<yearURL:\d{4}>/week-now' => 'weeks/week-now',
                 '/calendar/weeks/<yearURL:\d{4}>/<weekURL:\d{2}>' => 'weeks/week-page',
 
 
@@ -109,6 +129,7 @@ return [
                 '/seasons/summer/<urlYear>' => 'years/summer',
                 '/seasons/autumn/<urlYear>' => 'years/autumn',*/
 
+                '/gii/generate-business-years-pdf/' => 'generate-business-years/generate-pdf',
                 '/gii/generate-weeks-pdf/' => 'generate-weeks/generate-pdf',
                 '/gii/generate-years-with-weeks-pdf/' => 'generate-years-with-weeks/generate-pdf',
                 '/gii/generate-months-pdf/' => 'generate-months/generate-pdf',

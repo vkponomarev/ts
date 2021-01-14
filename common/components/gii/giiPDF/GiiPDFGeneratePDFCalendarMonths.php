@@ -7,11 +7,20 @@ use common\components\countries\Countries;
 use common\components\country\Country;
 use common\components\gii\Gii;
 
-
+/**
+ * Генерация PDF календаря по месяцам
+ * Class GiiPDFGeneratePDFCalendarMonths
+ * @package common\components\gii\giiPDF
+ */
 class GiiPDFGeneratePDFCalendarMonths
 {
 
-
+    /**
+     * Генерация PDF календаря по месяцам
+     * @param $languagesData
+     * @throws \yii\base\InvalidConfigException
+     * @throws \yii\db\Exception
+     */
     function generate($languagesData)
     {
         set_time_limit(500000);

@@ -6,10 +6,27 @@ namespace common\components\gii\giiPDF;
 use common\components\gii\Gii;
 use Mpdf\Mpdf;
 
-
+/**
+ * Объединение PDF календаря на месяц в один год
+ * Class GiiPDFGeneratePDFUniteMonths
+ * @package common\components\gii\giiPDF
+ */
 class GiiPDFGeneratePDFUniteMonths
 {
 
+    /**
+     * Объединение PDF календаря на месяц в один год
+     * @param $languageID
+     * @param $countryData
+     * @param $year
+     * @param $languageURL
+     * @param $orientation
+     * @throws \ImagickException
+     * @throws \Mpdf\MpdfException
+     * @throws \setasign\Fpdi\PdfParser\CrossReference\CrossReferenceException
+     * @throws \setasign\Fpdi\PdfParser\PdfParserException
+     * @throws \setasign\Fpdi\PdfParser\Type\PdfTypeException
+     */
     function generate($languageID, $countryData, $year, $languageURL, $orientation)
     {
 

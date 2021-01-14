@@ -201,4 +201,46 @@ return [
 
     'Download and print PDF calendar weekly for the {week} week of {year}, from {from} to {to}' => 'Скачать и распечатать PDF календарь, еженедельник на {week} неделю {year} года, с {from} по {to}',
 
+    'quarter' => 'квартал',
+    'Quarters of the year' => 'Кварталы года',
+
+    'Business days calendar with holidays and weekends in {year} {country_for}' => 'Производственный календарь с праздниками и выходными днями в {year} году {country_for}',
+    'Download and print PDF business days calendar with holidays and weekends for {year} {country_for}' => 'Скачать и распечатать PDF производственный календарь с праздниками и выходными на {year} год {country_for}',
+
+    'Business days calendar with holidays and weekends for {month} {year} {country_for}' => 'Производственный календарь с праздниками и выходными днями на {month} {year} года {country_for}',
+    'Download and print PDF business days calendar with holidays and weekends for {month} {year} {country_for}' => 'Скачать и распечатать PDF производственный календарь с праздниками и выходными на {month} {year} года {country_for}',
+
+    'Business days calendar with holidays and weekends for the {quarter} quarter of {year} {country_for}' => 'Производственный календарь с праздниками и выходными днями на {quarter} квартал {year} года {country_for}',
+    'Download and print PDF business days calendar with holidays and weekends for the {quarter} quarter of {year} {country_for}' => 'Скачать и распечатать PDF производственный календарь с праздниками и выходными на {quarter} квартал {year} года {country_for}',
+
+    'PDF calendar of business days with holidays in {year} {country_for}' => 'PDF производственный календарь с праздниками на {year} год {country_for}',
+    'Business days calendar for {year}. ({country})' => 'Производственный календарь на {year} год. ({country})',
+
+    'half year' => 'полугодие',
+
+    'Period' => 'Период',
+    'Amount of days' => 'Количество дней',
+    'Working hours per week' => 'Рабочих часов при неделе',
+    'Calendar days' => 'Календарных дней',
+    'Working days' => 'Рабочих дней',
+    'Days off' => 'Выходных дней',
+    '40 hour week' => '40-часовая неделя',
+    '36 hour week' => '36-часовая неделя',
+    '24 hour week' => '24-часовая неделя',
+
+    'Portrait business calendar for the year' => 'Книжный производственный календарь на год',
+    'Landscape business calendar for the year' => 'Альбомный производственный календарь на год',
+
+
+
+
+
+
+
+
+
+
+
+
+
     ];

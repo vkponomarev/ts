@@ -31,6 +31,13 @@ class UrlCheck
 
     }
 
+    function yearBusiness($url, $holidaysRange){
+
+        (new UrlCheckYearBusiness())->year($url, $holidaysRange);
+
+    }
+
+
     function country($countryURL){
 
         return (new UrlCheckCountry())->check($countryURL);
@@ -49,12 +56,25 @@ class UrlCheck
 
     }
 
+    function quarter($quarter){
+
+        (new UrlCheckQuarter())->quarter($quarter);
+
+    }
+
 
     function month($url){
 
         return (new UrlCheckMonth())->month($url);
 
     }
+
+    function monthBusiness($url, $holidaysRange){
+
+        return (new UrlCheckMonthBusiness())->month($url, $holidaysRange);
+
+    }
+
 
     /**
      * Проверяем URL если в урл что то не так выдаем 404

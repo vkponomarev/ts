@@ -101,16 +101,19 @@
 <div class="row">
     <div class="col-xxs-12 col-xs-4 c-prev-next-left">
 
-        <?php if ($weekURL['simple'] == 1): ?>
-            <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $dateData['year']['previous'] ?>/<?= $calendarByWeek['lastWeekYearBefore'] ?>/">
-                <?= $calendarByWeek['lastWeekYearBefore'] . ' ' . Yii::t('app', 'week') . ' ' . $dateData['year']['previous'] ?>
-            </a>
-        <?php else: ?>
-            <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $dateData['year']['current'] ?>/<?= str_pad($weekURL['simple'] - 1, 2, '0', STR_PAD_LEFT) ?>/">
-                <?= str_pad($weekURL['simple'] - 1, 2, '0', STR_PAD_LEFT) . ' ' . Yii::t('app', 'week'); ?>
-            </a>
-        <?php endif; ?>
+        <?php if (($dateData['year']['previous'] == '0000') && ($weekURL['simple'] == 1)) : ?>
 
+        <?php else: ?>
+            <?php if ($weekURL['simple'] == 1): ?>
+                <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $dateData['year']['previous'] ?>/<?= $calendarByWeek['lastWeekYearBefore'] ?>/">
+                    <?= $calendarByWeek['lastWeekYearBefore'] . ' ' . Yii::t('app', 'week') . ' ' . $dateData['year']['previous'] ?>
+                </a>
+            <?php else: ?>
+                <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $dateData['year']['current'] ?>/<?= str_pad($weekURL['simple'] - 1, 2, '0', STR_PAD_LEFT) ?>/">
+                    <?= str_pad($weekURL['simple'] - 1, 2, '0', STR_PAD_LEFT) . ' ' . Yii::t('app', 'week'); ?>
+                </a>
+            <?php endif; ?>
+        <?php endif; ?>
 
     </div>
     <div class="col-xxs-12 col-xs-4 c-prev-next-center">
@@ -120,14 +123,18 @@
     </div>
     <div class="col-xxs-12 col-xs-4 c-prev-next-right">
 
-        <?php if ($weekURL['url'] == $dateData['week']['count']): ?>
-            <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $dateData['year']['next'] ?>/01/">
-                <?= '01 ' . Yii::t('app', 'week') . ' ' . $dateData['year']['next'] ?>
-            </a>
+        <?php if (($dateData['year']['next'] == '10000') && ($weekURL['simple'] == $dateData['week']['count'])) : ?>
+
         <?php else: ?>
-            <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $dateData['year']['current'] ?>/<?= str_pad($weekURL['simple'] + 1, 2, '0', STR_PAD_LEFT) ?>/">
-                <?= str_pad($weekURL['simple'] + 1, 2, '0', STR_PAD_LEFT) . ' ' . Yii::t('app', 'week'); ?>
-            </a>
+            <?php if ($weekURL['url'] == $dateData['week']['count']): ?>
+                <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $dateData['year']['next'] ?>/01/">
+                    <?= '01 ' . Yii::t('app', 'week') . ' ' . $dateData['year']['next'] ?>
+                </a>
+            <?php else: ?>
+                <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $dateData['year']['current'] ?>/<?= str_pad($weekURL['simple'] + 1, 2, '0', STR_PAD_LEFT) ?>/">
+                    <?= str_pad($weekURL['simple'] + 1, 2, '0', STR_PAD_LEFT) . ' ' . Yii::t('app', 'week'); ?>
+                </a>
+            <?php endif; ?>
         <?php endif; ?>
     </div>
 </div>
@@ -175,6 +182,8 @@
         </div>
         <?php $countWeeks = 0; ?>
         <?php foreach ($calendarByWeek['calendar'][$month['year']][$month['month']] as $keyMain => $week): ?>
+
+
     <?php $countWeeks++ ?>
     <?php //(new \common\components\dump\Dump())->printR($key);
     //(new \common\components\dump\Dump())->printR($weekURL['simple']);
@@ -187,7 +196,7 @@
 
                 <div class="owno-day <?= ($keyMain == $weekURL['simple']) ? ' wday-week-color' : '' ?> ">
                             <span>
-                                <?php if ($countWeeks == 1 && $keyMain > 1): ?>
+                                <?php if ($countWeeks == 1 && $keyMain > 50): ?>
                                     <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $dateData['year']['previous'] ?>/<?= $keyMain; ?>/">
                                         <?= $keyMain; ?>
                                     </a>
@@ -269,15 +278,15 @@
     <?php if ($PDFCalendarsData['exists']): ?>
         <br>
 
-            <a name="download-calendar-<?= $dateData['year']['current'] ?>"></a>
-            <h2 class="main-page-h1">
-                <?= Yii::t('app', 'Download and print PDF calendar weekly for the {week} week of {year}, from {from} to {to}', [
-                    'week' => $weekURL['url'],
-                    'year' => $dateData['year']['current'],
-                    'from' => Yii::$app->formatter->asDate($calendarByWeek['weekStartDate'], 'long'),
-                    'to' => Yii::$app->formatter->asDate($calendarByWeek['weekEndDate'], 'long'),
-                ]) ?>
-            </h2>
+        <a name="download-calendar-<?= $dateData['year']['current'] ?>"></a>
+        <h2 class="main-page-h1">
+            <?= Yii::t('app', 'Download and print PDF calendar weekly for the {week} week of {year}, from {from} to {to}', [
+                'week' => $weekURL['url'],
+                'year' => $dateData['year']['current'],
+                'from' => Yii::$app->formatter->asDate($calendarByWeek['weekStartDate'], 'long'),
+                'to' => Yii::$app->formatter->asDate($calendarByWeek['weekEndDate'], 'long'),
+            ]) ?>
+        </h2>
 
         <br><br>
 

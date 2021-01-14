@@ -8,7 +8,7 @@ class PageTextsMessagesByCalendarYear
 
 {
 
-    public function messages($calendarChinese, $dateData)
+    public function messages($calendarChinese, $dateData, $countHolidays)
     {
 
 
@@ -61,6 +61,8 @@ class PageTextsMessagesByCalendarYear
             'firstDay' => $nameOfDaysInWeek[$dateData['year']['firstDay']],
             'lastDay' => $nameOfDaysInWeek[$dateData['year']['lastDay']],
             'leapText' => $leapText,
+            'countHolidaysText' => Yii::t('app', '{n,plural, one{# holiday and day off} few{# holidays and days off} other{# holidays and days off}}', ['n' => $countHolidays]),
+
         ];
 
 

@@ -54,6 +54,11 @@ class PDFCalendars
 
     }
 
+    function businessExists($year, $language, $weekURL){
+
+        return (new PDFCalendarsBusinessYearlyExists())->calendars($year, $language, $weekURL);
+
+    }
 
 }
 

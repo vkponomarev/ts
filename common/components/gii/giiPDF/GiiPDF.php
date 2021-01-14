@@ -46,12 +46,24 @@ class GiiPDF
 
     }
 
+    /**
+     * Генерация PDF календаря на год с номерами недель, только без праздников
+     * @param $languagesData
+     * @throws \yii\base\InvalidConfigException
+     * @throws \yii\db\Exception
+     */
     function generatePDFCalendarYearlyWithWeeks($languagesData){
 
         (new GiiPDFGeneratePDFCalendarYearlyWithWeeks())->generate($languagesData);
 
     }
 
+    /**
+     * Генерация PDF календаря на неделю
+     * @param $languagesData
+     * @throws \yii\base\InvalidConfigException
+     * @throws \yii\db\Exception
+     */
     function generatePDFCalendarWeekly($languagesData){
 
         (new GiiPDFGeneratePDFCalendarWeekly())->generate($languagesData);
@@ -59,8 +71,15 @@ class GiiPDF
     }
 
     /**
-     * Генерация PDF календарей по сезонам с праздиками и без.
+     * Генерация PDF календаря по сезонам
      * @param $languagesData
+     * @throws \ImagickException
+     * @throws \Mpdf\MpdfException
+     * @throws \setasign\Fpdi\PdfParser\CrossReference\CrossReferenceException
+     * @throws \setasign\Fpdi\PdfParser\PdfParserException
+     * @throws \setasign\Fpdi\PdfParser\Type\PdfTypeException
+     * @throws \yii\base\InvalidConfigException
+     * @throws \yii\db\Exception
      */
     function generatePDFCalendarSeasons($languagesData){
 
@@ -68,6 +87,12 @@ class GiiPDF
 
     }
 
+    /**
+     * Генерация PDF календаря по месяцам
+     * @param $languagesData
+     * @throws \yii\base\InvalidConfigException
+     * @throws \yii\db\Exception
+     */
     function generatePDFCalendarMonths($languagesData){
 
         (new GiiPDFGeneratePDFCalendarMonths())->generate($languagesData);
@@ -112,16 +137,51 @@ class GiiPDF
 
     }
 
+    /**
+     * Объединение PDF календаря на месяц в один год
+     * @param $languageID
+     * @param $countryData
+     * @param $year
+     * @param $languageURL
+     * @param $orientation
+     * @throws \ImagickException
+     * @throws \Mpdf\MpdfException
+     * @throws \setasign\Fpdi\PdfParser\CrossReference\CrossReferenceException
+     * @throws \setasign\Fpdi\PdfParser\PdfParserException
+     * @throws \setasign\Fpdi\PdfParser\Type\PdfTypeException
+     */
     function generatePDFUniteMonths($languageID, $countryData, $year, $languageURL, $orientation){
 
         (new GiiPDFGeneratePDFUniteMonths())->generate($languageID, $countryData, $year, $languageURL, $orientation);
 
     }
 
+    /**
+     * Объединение PDF календаря без праздников по месяцам в одни год
+     * @param $languageID
+     * @param $countryData
+     * @param $year
+     * @param $languageURL
+     * @param $orientation
+     * @throws \ImagickException
+     * @throws \Mpdf\MpdfException
+     * @throws \setasign\Fpdi\PdfParser\CrossReference\CrossReferenceException
+     * @throws \setasign\Fpdi\PdfParser\PdfParserException
+     * @throws \setasign\Fpdi\PdfParser\Type\PdfTypeException\
+     */
     function generatePDFUniteMonthsNoHolidays($languageID, $countryData, $year, $languageURL, $orientation){
 
         (new GiiPDFGeneratePDFUniteMonthsNoHolidays())->generate($languageID, $countryData, $year, $languageURL, $orientation);
 
     }
+
+    function generatePDFCalendarBusinessYearly($languagesData){
+
+        (new GiiPDFGeneratePDFCalendarBusinessYearly())->generate($languagesData);
+
+    }
+
+
+
 
 }

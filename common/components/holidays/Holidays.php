@@ -44,6 +44,13 @@ class Holidays
 
     }
 
+    function byCountryByQuarter($countryID, $yearID, $languageID, $quarter){
+
+        return (new HolidaysByCountryByQuarter())->holidays($countryID, $yearID, $languageID, $quarter);
+
+    }
+
+
     /**
      * Список праздников и выходных дней специально для создания PDF файлов календаря на год
      * @param $countryID integer

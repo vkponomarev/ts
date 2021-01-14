@@ -96,11 +96,11 @@
                         <td class="cpdf-ypww1-nh-day">
                             <span>
                                 <?php if ($countWeeks == 1 && $key > 1): ?>
-                                    <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $dateData['year']['previous'] ?>/<?= $key; ?>/">
+                                    <a href="https://timesles.com/<?= Yii::$app->language ?>/calendar/weeks/<?= $dateData['year']['previous'] ?>/<?= $key; ?>/">
                                         <?= $key; ?>
                                     </a>
                                 <?php else: ?>
-                                    <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $dateData['year']['current'] ?>/<?= $key; ?>/">
+                                    <a href="https://timesles.com/<?= Yii::$app->language ?>/calendar/weeks/<?= $dateData['year']['current'] ?>/<?= $key; ?>/">
                                         <?= $key; ?>
                                     </a>
                                 <?php endif; ?>

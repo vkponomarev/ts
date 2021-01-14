@@ -102,9 +102,13 @@
 
 <div class="row">
     <div class="col-xxs-12 col-xs-4 c-prev-next-left">
+        <?php if ($dateData['year']['previous'] == '0000'):?>
+
+        <?php else: ?>
         <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $dateData['year']['previous'] ?>/">
             <?= $dateData['year']['previous'] ?>
         </a>
+        <?php endif; ?>
     </div>
     <div class="col-xxs-12 col-xs-4 c-prev-next-center">
 
@@ -112,9 +116,14 @@
 
     </div>
     <div class="col-xxs-12 col-xs-4 c-prev-next-right">
-        <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $dateData['year']['next'] ?>/">
-            <?= $dateData['year']['next'] ?>
-        </a>
+        <?php if ($dateData['year']['current'] == '9999'):?>
+
+        <?php else: ?>
+            <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $dateData['year']['next'] ?>/">
+                <?= $dateData['year']['next'] ?>
+            </a>
+        <?php endif; ?>
+
     </div>
 </div>
 <hr>
@@ -167,7 +176,7 @@
                 <div class="wweek">
                     <div class="wno-day">
                             <span>
-                                <?php if ($countWeeks == 1 && $key > 1): ?>
+                                <?php if ($countWeeks == 1 && $key > 50): ?>
                                     <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $dateData['year']['previous'] ?>/<?= $key; ?>/">
                                         <?= $key; ?>
                                     </a>

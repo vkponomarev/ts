@@ -199,5 +199,42 @@ return [
     'Landscape calendar weekly' => 'Landscape calendar weekly',
 
     'Download and print PDF calendar weekly for the {week} week of {year}, from {from} to {to}' => 'Download and print PDF calendar weekly for the {week} week of {year}, from {from} to {to}',
+
+    'quarter' => 'quarter',
+    'Quarters of the year' => 'Quarters of the year',
+
+    'Business days calendar with holidays and weekends in {year} {country_for}' => 'Business days calendar with holidays and weekends in {year} {country_for}',
+    'Download and print PDF business days calendar with holidays and weekends for {year} {country_for}' => 'Download and print PDF business days calendar with holidays and weekends for {year} {country_for}',
+
+    'Business days calendar with holidays and weekends for {month} {year} {country_for}' => 'Business days calendar with holidays and weekends for {month} {year} {country_for}',
+    'Download and print PDF business days calendar with holidays and weekends for {month} {year} {country_for}' => 'Download and print PDF business days calendar with holidays and weekends for {month} {year} {country_for}',
+
+    'Business days calendar with holidays and weekends for the {quarter} quarter of {year} {country_for}' => 'Business days calendar with holidays and weekends for the {quarter} quarter of {year} {country_for}',
+    'Download and print PDF business days calendar with holidays and weekends for the {quarter} quarter of {year} {country_for}' => 'Download and print PDF business days calendar with holidays and weekends for the {quarter} quarter of {year} {country_for}',
+
+    'PDF calendar of business days with holidays in {year} {country_for}' => 'PDF calendar of business days with holidays in {year} {country_for}',
+    'Business days calendar for {year}. ({country})' => 'Business days calendar for {year}. ({country})',
+
+     'half year' => 'half year',
+
+    'Period' => 'Period',
+    'Amount of days' => 'Amount of days',
+    'Working hours per week' => 'Working hours per week',
+    'Calendar days' => 'Calendar days',
+    'Working days' => 'Working days',
+    'Days off' => 'Days off',
+    '40 hour week' => '40 hour week',
+    '36 hour week' => '36 hour week',
+    '24 hour week' => '24 hour week',
+
+    'Portrait business calendar for the year' => 'Portrait business calendar for the year',
+    'Landscape business calendar for the year' => 'Landscape business calendar for the year',
+
+
+
+
+
+
+
 ];
 

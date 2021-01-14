@@ -115,6 +115,12 @@ class GiiViewController extends Controller
                 $giiPDF->generatePDFCalendarWeekly($languagesData);
             }
 
+            if ($name == 'PDF-calendar-business-yearly') {
+
+                $giiPDF->generatePDFCalendarBusinessYearly($languagesData);
+            }
+
+
 
         }
         return $this->render('index', [

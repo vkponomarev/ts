@@ -24,6 +24,8 @@
 //@import "pages/genres"; // Страница жанров.
 @import "pages/years"; // Страница годов.
 //@import "pages/mLanguages"; // Страница языков.
+@import "pages/calendar-year-business"; // Страница годов.
+@import "pages/calendar-month-business"; // Страница годов.
 
 
 
@@ -32,6 +34,7 @@
 @import "calendar/calendar-monthly"; //
 @import "calendar/calendar-weekly"; //
 @import "calendar/calendar-weekly-one"; // Стили календрая на одну неделю (один или 2 месяца)
+@import "calendar/calendar-monthly-business"; // Стили календрая на одну неделю (один или 2 месяца)
 
 @import "pages/calendar-table"; //
 
@@ -50,6 +53,8 @@
 @import "calendar/calendar-pdf-yearly-landscape-design-one-no-holidays";
 @import "calendar/calendar-pdf-yearly-with-weeks-portrait-design-one-no-holidays";
 @import "calendar/calendar-pdf-yearly-with-weeks-landscape-design-one-no-holidays";
+@import "calendar/calendar-pdf-business-yearly-portrait-design-one";
+@import "calendar/calendar-pdf-business-yearly-landscape-design-one";
 
 
 @import "calendar/calendar-pdf-seasons-portrait-design-one";

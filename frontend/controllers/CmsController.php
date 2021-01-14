@@ -31,7 +31,7 @@ class CmsController extends Controller
         Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['id']);
         Yii::$app->params['canonical'] = $main->Canonical($url, $mainUrl);
         Yii::$app->params['alternate'] = $main->Alternate($url, $mainUrl);
-
+        Yii::$app->params['menu'] = $main->menu();
 
         return $this->render('cookie-info', [
 
@@ -53,7 +53,7 @@ class CmsController extends Controller
         Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['id']);
         Yii::$app->params['canonical'] = $main->Canonical($url, $mainUrl);
         Yii::$app->params['alternate'] = $main->Alternate($url, $mainUrl);
-
+        Yii::$app->params['menu'] = $main->menu();
 
         return $this->render('policy', [
 
@@ -76,7 +76,7 @@ class CmsController extends Controller
         Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['id']);
         Yii::$app->params['canonical'] = $main->Canonical($url, $mainUrl);
         Yii::$app->params['alternate'] = $main->Alternate($url, $mainUrl);
-
+        Yii::$app->params['menu'] = $main->menu();
 
         return $this->render('policy', [
 
@@ -99,7 +99,7 @@ class CmsController extends Controller
         Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['id']);
         Yii::$app->params['canonical'] = $main->Canonical($url, $mainUrl);
         Yii::$app->params['alternate'] = $main->Alternate($url, $mainUrl);
-
+        Yii::$app->params['menu'] = $main->menu();
 
         return $this->render('policy', [
 

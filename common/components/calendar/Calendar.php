@@ -20,6 +20,12 @@ class Calendar
 
     }
 
+    function byYearBusiness($year, $holidaysData){
+
+        return (new CalendarByYearBusiness())->calendar($year, $holidaysData);
+
+    }
+
     function byMonth($date){
 
         return (new CalendarByMonth())->calendar($date);
@@ -29,6 +35,12 @@ class Calendar
     function byMonthWeek($year, $week, $weekCount){
 
         return (new CalendarByMonthWeek())->calendar($year, $week, $weekCount);
+
+    }
+
+    function byMonthBusiness($monthURL, $holidaysData){
+
+        return (new CalendarByMonthBusiness())->calendar($monthURL, $holidaysData);
 
     }
 
@@ -44,10 +56,15 @@ class Calendar
 
     }
 
-
     function bySeasons($year, $season){
 
         return (new CalendarBySeasons())->calendar($year, $season);
+
+    }
+
+    function byQuarters($year, $quarter, $holidaysData){
+
+        return (new CalendarByQuarters())->calendar($year, $quarter, $holidaysData);
 
     }
 
