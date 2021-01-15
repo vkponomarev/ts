@@ -393,51 +393,28 @@
 
 <?php if ($PDFCalendarsData['exists']): ?>
     <br>
-
-        <a name="download-calendar-<?= $dateData['year']['current'] ?>"></a>
-        <h2 class="main-page-h1">
-            <?= Yii::t('app', 'Download and print PDF business days calendar with holidays and weekends for the {quarter} quarter of {year} {country_for}', [
-                'country_for' => $countryData['name_for'],
-                'year' => $dateData['year']['current'],
-                'quarter' => $quarterURL,
-            ]) ?>
-        </h2>
-
+    <a name="download-calendar-<?= $dateData['year']['current'] ?>"></a>
+    <h2 class="main-page-h1">
+        <?= Yii::t('app', 'Download and print PDF business days calendar with holidays and weekends for the {quarter} quarter of {year} {country_for}', [
+            'country_for' => $countryData['name_for'],
+            'year' => $dateData['year']['current'],
+            'quarter' => $quarterURL,
+        ]) ?>
+    </h2>
     <br><br>
-
     <div class="row rflex">
         <?php foreach ($PDFCalendarsData['pdf'] as $key => $pdf): ?>
             <?php if ($pdf['pdfExists']): ?>
                 <div class="col-xxs-12 col-xs-6 col-md-4 col-lg-3 d-center pdf-download">
-                    <?php if ($key == 'P'): ?>
-                        <div class="pdf-header"><?= Yii::t('app', 'Holidays portrait calendar') ?></div>
+                    <?php if ($key == 'businessYearlyP'): ?>
+                        <div class="pdf-header"><?= Yii::t('app', 'Portrait business calendar for the year') ?></div>
                     <?php endif; ?>
-                    <?php if ($key == 'L'): ?>
-                        <div class="pdf-header"><?= Yii::t('app', 'Holidays landscape calendar') ?></div>
+                    <?php if ($key == 'businessYearlyL'): ?>
+                        <div class="pdf-header"><?= Yii::t('app', 'Landscape business calendar for the year') ?></div>
                     <?php endif; ?>
-                    <?php if ($key == 'PNoHolidays'): ?>
-                        <div class="pdf-header"><?= Yii::t('app', 'Portrait calendar without holidays') ?></div>
-                    <?php endif; ?>
-                    <?php if ($key == 'LNoHolidays'): ?>
-                        <div class="pdf-header"><?= Yii::t('app', 'Landscape calendar without holidays') ?></div>
-                    <?php endif; ?>
-
-                    <?php if ($key == 'seasonsP'): ?>
-                        <div class="pdf-header"><?= Yii::t('app', 'Portrait calendar for the year by seasons with holidays') ?></div>
-                    <?php endif; ?>
-                    <?php if ($key == 'seasonsL'): ?>
-                        <div class="pdf-header"><?= Yii::t('app', 'landscape calendar for the year by seasons with holidays') ?></div>
-                    <?php endif; ?>
-                    <?php if ($key == 'seasonsPNoHolidays'): ?>
-                        <div class="pdf-header"><?= Yii::t('app', 'Portrait calendar for the year by seasons') ?></div>
-                    <?php endif; ?>
-                    <?php if ($key == 'seasonsLNoHolidays'): ?>
-                        <div class="pdf-header"><?= Yii::t('app', 'landscape calendar for the year by seasons') ?></div>
-                    <?php endif; ?>
-
 
                     <a href="<?= $pdf['imgPathRelative'] ?>" class="lightzoom">
-                    <img class="c-download-img" alt="" src="<?= $pdf['imgPathRelative'] ?>" width="100%">
+                        <img class="c-download-img " alt="" src="<?= $pdf['imgPathRelative'] ?>" width="100%">
                     </a>
 
                     <a href="<?= $pdf['pdfPathRelative'] ?>" download class="btn btn-success c-download-button"
@@ -445,7 +422,8 @@
                         <?= Yii::t('app', 'Download') ?>
                     </a>
                     <br>
-                    <a href="<?= $pdf['pdfPathRelative'] ?>" class="btn btn-success c-download-button" target="_blank">
+                    <a href="<?= $pdf['pdfPathRelative'] ?>" class="btn btn-success c-download-button"
+                       target="_blank">
                         <?= Yii::t('app', 'Print') ?>
                     </a>
                 </div>
@@ -454,6 +432,5 @@
     </div>
 <?php else: ?>
 <?php endif; ?>
-
 
 

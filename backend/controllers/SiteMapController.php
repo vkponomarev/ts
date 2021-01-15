@@ -25,14 +25,15 @@ class SiteMapController extends Controller
     }
 
     /**
-     * / Без этого не будет работать
-     * /*/
+     * Без этого не будет работать
+     */
 
     public function beforeAction($action)
     {
         $this->enableCsrfValidation = false;
         return parent::beforeAction($action);
     }
+
     public function actionIndex()
     {
 
@@ -98,6 +99,41 @@ class SiteMapController extends Controller
 
             }
 
+            if ($name == 'sitemap-calendar-business-years-all') {
+
+                $siteMap->generateCalendarBusinessYears($languagesData);
+
+            }
+
+            if ($name == 'sitemap-calendar-business-years-ru') {
+
+                $siteMap->generateCalendarBusinessYearsRU($languagesData);
+
+            }
+
+            if ($name == 'sitemap-calendar-business-quarters-all') {
+
+                $siteMap->generateCalendarBusinessQuarters($languagesData);
+
+            }
+
+            if ($name == 'sitemap-calendar-business-quarters-ru') {
+
+                $siteMap->generateCalendarBusinessQuartersRU($languagesData);
+
+            }
+
+            if ($name == 'sitemap-calendar-business-months-all') {
+
+                $siteMap->generateCalendarBusinessMonths($languagesData);
+
+            }
+
+            if ($name == 'sitemap-calendar-business-months-ru') {
+
+                $siteMap->generateCalendarBusinessMonthsRU($languagesData);
+
+            }
 
         }
 
@@ -105,8 +141,6 @@ class SiteMapController extends Controller
 
         ]);
 
-
     }
-
 
 }

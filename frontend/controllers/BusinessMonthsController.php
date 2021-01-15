@@ -92,7 +92,7 @@ class BusinessMonthsController extends Controller
         $calendarNameOfDaysInWeek = $calendar->nameOfDaysInWeek();
 
         $PDFCalendars = new PDFCalendars();
-        $PDFCalendarsData = $PDFCalendars->monthlyExists($monthURL, $language, $countryData['url']);
+        $PDFCalendarsData = $PDFCalendars->businessExists($monthURL['year'], $language, $countryData['url']);
 
         $pageTexts = new PageTexts();
         //$pageTextsID = $pageTexts->defineIdByCalendarMonth($holidaysData, $PDFCalendarsData);

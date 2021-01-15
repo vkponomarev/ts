@@ -90,7 +90,7 @@ class BusinessQuartersController extends Controller
         */
 
         $PDFCalendars = new PDFCalendars();
-        $PDFCalendarsData = $PDFCalendars->seasonsExists($yearURL, $language, $countryData['url'], $quarterURL);
+        $PDFCalendarsData = $PDFCalendars->businessExists($yearURL, $language, $countryData['url']);
 
         return $this->render('business-quarter-page.min.php', [
 

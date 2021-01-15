@@ -2,5 +2,5 @@
 ?>
 
 <url>
-      <loc>https://timesles.com/<?= $language['url']?>/calendar/years/<?= $year?>/?country=<?= $country['id']?></loc>
+      <loc>https://timesles.com/<?= $language['url']?>/calendar/years/<?= $year?>/<?= $country['url']?>/</loc>
 </url>

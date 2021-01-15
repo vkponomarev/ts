@@ -388,52 +388,33 @@
     <hr>
 <?php endif; ?>
 
+<?php /***************************** */ ?>
+<?php /***************************** Ссылки на PDF календари*/ ?>
+<?php /***************************** */ ?>
 
-<?php
-/**
- * Ссылки на PDF календари
- */
-?>
 <?php if ($PDFCalendarsData['exists']): ?>
     <br>
-        <a name="download-calendar-<?= $dateData['year']['current'] ?>"></a>
-        <h2 class="main-page-h1">
-            <?= Yii::t('app', 'Download and print PDF business days calendar with holidays and weekends for {month} {year} {country_for}', [
-                'year' => $dateData['year']['current'],
-                'month' => $calendarNameOfMonths[$dateData['month']['numberSimple']],
-                'country_for' => $countryData['name_for'],
-            ]) ?>
-        </h2>
+
+    <a name="download-calendar-<?= $dateData['year']['current'] ?>"></a>
+    <h2 class="main-page-h1">
+        <?= Yii::t('app', 'Download and print PDF business days calendar with holidays and weekends for {month} {year} {country_for}', [
+            'country_for' => $countryData['name_for'],
+            'year' => $dateData['year']['current'],
+            'month' => $calendarNameOfMonths[$dateData['month']['numberSimple']],
+        ]) ?>
+    </h2>
+
     <br><br>
 
     <div class="row rflex">
         <?php foreach ($PDFCalendarsData['pdf'] as $key => $pdf): ?>
             <?php if ($pdf['pdfExists']): ?>
                 <div class="col-xxs-12 col-xs-6 col-md-4 col-lg-3 d-center pdf-download">
-                    <?php if ($key == 'P'): ?>
-                        <div class="pdf-header"><?= Yii::t('app', 'Portrait calendar with holidays for a month') ?></div>
+                    <?php if ($key == 'businessYearlyP'): ?>
+                        <div class="pdf-header"><?= Yii::t('app', 'Portrait business calendar for the year') ?></div>
                     <?php endif; ?>
-                    <?php if ($key == 'L'): ?>
-                        <div class="pdf-header"><?= Yii::t('app', 'Landscape calendar with holidays for a month') ?></div>
-                    <?php endif; ?>
-                    <?php if ($key == 'PNoHolidays'): ?>
-                        <div class="pdf-header"><?= Yii::t('app', 'Portrait calendar without holidays for a month') ?></div>
-                    <?php endif; ?>
-                    <?php if ($key == 'LNoHolidays'): ?>
-                        <div class="pdf-header"><?= Yii::t('app', 'Landscape calendar without holidays for a month') ?></div>
-                    <?php endif; ?>
-
-                    <?php if ($key == 'yearlyP'): ?>
-                        <div class="pdf-header"><?= Yii::t('app', 'Portrait calendar with holidays for the year by months') ?></div>
-                    <?php endif; ?>
-                    <?php if ($key == 'yearlyL'): ?>
-                        <div class="pdf-header"><?= Yii::t('app', 'Landscape calendar with holidays for the year by months') ?></div>
-                    <?php endif; ?>
-                    <?php if ($key == 'yearlyPNoHolidays'): ?>
-                        <div class="pdf-header"><?= Yii::t('app', 'Portrait calendar without holidays for the year by months') ?></div>
-                    <?php endif; ?>
-                    <?php if ($key == 'yearlyLNoHolidays'): ?>
-                        <div class="pdf-header"><?= Yii::t('app', 'Landscape calendar without holidays for the year by months') ?></div>
+                    <?php if ($key == 'businessYearlyL'): ?>
+                        <div class="pdf-header"><?= Yii::t('app', 'Landscape business calendar for the year') ?></div>
                     <?php endif; ?>
 
                     <a href="<?= $pdf['imgPathRelative'] ?>" class="lightzoom">
@@ -445,7 +426,8 @@
                         <?= Yii::t('app', 'Download') ?>
                     </a>
                     <br>
-                    <a href="<?= $pdf['pdfPathRelative'] ?>" class="btn btn-success c-download-button" target="_blank">
+                    <a href="<?= $pdf['pdfPathRelative'] ?>" class="btn btn-success c-download-button"
+                       target="_blank">
                         <?= Yii::t('app', 'Print') ?>
                     </a>
                 </div>

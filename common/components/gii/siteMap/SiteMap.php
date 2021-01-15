@@ -76,6 +76,43 @@ class SiteMap
 
     }
 
+    function generateCalendarBusinessYears($languagesData){
+
+        (new SiteMapGenerateCalendarBusinessYears())->generate($languagesData);
+
+    }
+
+    function generateCalendarBusinessYearsRU($languagesData){
+
+        (new SiteMapGenerateCalendarBusinessYearsRU())->generate($languagesData);
+
+    }
+
+    function generateCalendarBusinessMonths($languagesData){
+
+        (new SiteMapGenerateCalendarBusinessMonths())->generate($languagesData);
+
+    }
+
+    function generateCalendarBusinessMonthsRU($languagesData){
+
+        (new SiteMapGenerateCalendarBusinessMonthsRU())->generate($languagesData);
+
+    }
+
+    function generateCalendarBusinessQuarters($languagesData){
+
+        (new SiteMapGenerateCalendarBusinessQuarters())->generate($languagesData);
+
+    }
+
+    function generateCalendarBusinessQuartersRU($languagesData){
+
+        (new SiteMapGenerateCalendarBusinessQuartersRU())->generate($languagesData);
+
+    }
+
+
 
     function generateMainFiles(){
 
