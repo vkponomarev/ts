@@ -113,6 +113,18 @@ class SiteMap
     }
 
 
+    function generateCalendarMoonYears($languagesData){
+
+        (new SiteMapGenerateCalendarMoonYears())->generate($languagesData);
+
+    }
+
+    function generateCalendarMoonYearsRU($languagesData){
+
+        (new SiteMapGenerateCalendarMoonYearsRU())->generate($languagesData);
+
+    }
+
 
     function generateMainFiles(){
 

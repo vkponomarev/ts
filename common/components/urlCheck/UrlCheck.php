@@ -37,6 +37,12 @@ class UrlCheck
 
     }
 
+    function yearMoon($url){
+
+        (new UrlCheckYearMoon())->year($url);
+
+    }
+
 
     function country($countryURL){
 

@@ -136,7 +136,7 @@ $moon = new \common\components\moon\Moon();
 
 <div class="row">
     <div class="col-xxs-12 col-xs-4 c-prev-next-left">
-        <?php if ($dateData['year']['previous'] == '0000'): ?>
+        <?php if ($dateData['year']['previous'] == '0100'): ?>
 
         <?php else: ?>
             <a href="/<?= Yii::$app->language ?>/calendar/moon/years/<?= $dateData['year']['previous'] ?>/">
@@ -151,7 +151,7 @@ $moon = new \common\components\moon\Moon();
     </div>
     <div class="col-xxs-12 col-xs-4 c-prev-next-right">
 
-        <?php if ($dateData['year']['current'] == '9999'): ?>
+        <?php if ($dateData['year']['current'] == '9998'): ?>
 
         <?php else: ?>
             <a href="/<?= Yii::$app->language ?>/calendar/moon/years/<?= $dateData['year']['next'] ?>/">

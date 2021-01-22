@@ -31,7 +31,7 @@ class MoonYearsController extends Controller
         $mainUrl = 'years'; // Основной урл
 
         $urlCheck = new UrlCheck();
-        $urlCheck->year($yearURL);
+        $urlCheck->yearMoon($yearURL);
 
         $main = new Main();
         Yii::$app->params['language'] = $main->language(Yii::$app->language);

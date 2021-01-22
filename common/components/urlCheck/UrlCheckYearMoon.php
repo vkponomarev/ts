@@ -6,14 +6,14 @@ namespace common\components\urlCheck;
 use yii\web\NotFoundHttpException;
 
 
-class UrlCheckYear
+class UrlCheckYearMoon
 {
 
 
     function year($url)
     {
 
-        if (((int)$url < 1) or (((int)$url > 9999))){
+        if (((int)$url < 101) or (((int)$url > 9998))){
             throw new NotFoundHttpException('404');
         }
 
