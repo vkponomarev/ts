@@ -31,7 +31,7 @@ AppAsset::register($this);
 
     <div class="top">
 
-        <?=$this->render('/partials/search/_search-widget.min.php')?>
+        <?php //$this->render('/partials/search/_search-widget.min.php')?>
 
         <a href="/" rel="nofollow">TIMESLES</a>
     </div>

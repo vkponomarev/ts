@@ -32,6 +32,8 @@ return [
     'Songs' => 'Песни',
     // main menu
 
+    'Search ...' => 'Поиск ...',
+
     '{year} calendar' => 'Календарь на {year} год',
     '{day} day' => '{day} день',
     '{week} week' => '{week} неделя',
@@ -231,16 +233,28 @@ return [
     'Portrait business calendar for the year' => 'Книжный производственный календарь на год',
     'Landscape business calendar for the year' => 'Альбомный производственный календарь на год',
 
+    'lunar calendar for {year}' => 'Лунный календарь на {year} год',
 
+    'Moon phases for {year}' => 'Фазы луны на {year} год',
 
+    'Choose the city' => 'Выберите город',
 
+    'New moon' => 'Новолуние',
+    'Waxing crescent' => 'Растущий полумесяц',
+    'Moon first quarter' => 'Первая четверть луны',
+    'Growing moon' => 'Растущая луна',
+    'Full moon' => 'Полнолуние',
+    'Waning moon' => 'Убывающая Луна',
+    'Moon third quarter' => 'Третья четверть луны',
+    'Waning crescent' => 'Убывающий полумесяц',
 
+    'from' => 'с',
+    'to' => 'по',
 
+    'Year {year} PDF lunar calendar' => 'PDF лунный календарь на {year} год',
 
-
-
-
-
-
+    'Download and print PDF lunar calendar (moon phases) for {year}' => 'Скачать и распечатать PDF лунный календарь (фазы луны) на {year} год',
+    'Portrait lunar calendar for the year' => 'Книжный лунный календарь на год',
+    'Landscape lunar calendar for the year' => 'Альбомный лунный календарь на год',
 
     ];

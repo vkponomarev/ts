@@ -301,6 +301,13 @@
                             <div class="pdf-header"><?= Yii::t('app', 'Landscape calendar weekly') ?></div>
                         <?php endif; ?>
 
+                        <?php if ($key == 'yearlyWithWeeksPNoHolidays'): ?>
+                            <div class="pdf-header"><?= Yii::t('app', 'Portrait calendar for the year with weeks') ?></div>
+                        <?php endif; ?>
+                        <?php if ($key == 'yearlyWithWeeksLNoHolidays'): ?>
+                            <div class="pdf-header"><?= Yii::t('app', 'Landscape calendar for the year with weeks') ?></div>
+                        <?php endif; ?>
+
                         <a href="<?= $pdf['imgPathRelative'] ?>" class="lightzoom">
                             <img class="c-download-img " alt="" src="<?= $pdf['imgPathRelative'] ?>" width="100%">
                         </a>

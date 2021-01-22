@@ -19,7 +19,8 @@ class MainLanguage
             languages.name,
             languages.url,
             languages.active,
-            languages.countries_id
+            languages.countries_id,
+            languages.cities_id
             from
             languages
             where languages.url = :languageUrl'

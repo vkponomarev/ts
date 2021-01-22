@@ -910,6 +910,27 @@ footer div div div > a:hover {
   padding-top: 32px;
 }
 
+.moon-month {
+  padding: 5px;
+  padding-bottom: 15px;
+}
+
+.moon-phases-img {
+  display: flex;
+  margin: 5px;
+}
+
+.moon-phases-table {
+  width: 100%;
+}
+.moon-phases-table tr td {
+  vertical-align: middle;
+}
+
+.moon-phases-tr {
+  border-bottom: 1px solid #f1f1f1;
+}
+
 .year {
   text-align: center;
   justify-content: center;
@@ -2614,6 +2635,196 @@ tr {
   height: 5px;
   border-right: 5px solid #ffffff;
   border-bottom: 2px solid #ffffff;
+}
+
+td {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.cpdf-myp1-nh-moon-img {
+  width: 12px;
+  height: 12px;
+}
+
+.cpdf-myp1-nh-year {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  vertical-align: top;
+}
+
+.cpdf-myp1-nh-td-month {
+  padding-bottom: 20px;
+}
+
+.cpdf-myp1-nh-month {
+  min-width: 320px;
+  max-width: 400px;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  display: unset;
+}
+
+.cpdf-myp1-nh-month-name-a {
+  font-size: 20px;
+  color: #434343;
+  padding-bottom: 5px;
+}
+
+.cpdf-myp1-nh-month-name-line-td {
+  font-size: 25px !important;
+  color: #434343 !important;
+  padding-bottom: 5px !important;
+}
+
+.cpdf-myp1-nh-day {
+  color: #000000;
+  font-size: 17px;
+  padding: 1px;
+  height: 30px;
+}
+
+.cpdf-myp1-nh-day-holiday {
+  background-color: #99fa88;
+  color: #000000;
+  font-size: 17px;
+  padding: 1px;
+  height: 30px;
+}
+
+.cpdf-myp1-nh-no-day {
+  padding: 1px;
+  height: 30px;
+  background-color: white;
+}
+
+.cpdf-myp1-nh-day-weekend {
+  color: #000000;
+  font-size: 17px;
+  padding: 1px;
+  height: 30px;
+  background-color: #f5f5f5;
+}
+
+.cpdf-myp1-nh-no-day-weekend {
+  padding: 1px;
+  height: 30px;
+  background-color: white;
+}
+
+.cpdf-myp1-nh-day-name {
+  color: #000000;
+  padding: 7px;
+  height: 30px;
+  background-color: white;
+  width: 45px;
+  font-size: 17px;
+}
+
+tr {
+  vertical-align: top;
+}
+
+.cpdf-myp1-nh-week-line {
+  border-top: 2px solid #46648b;
+}
+
+.cpdf-myl1-nh-moon-img {
+  width: 10px;
+  height: 10px;
+}
+
+.cpdf-myl1-nh-year {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  vertical-align: top;
+}
+
+.cpdf-myl1-nh-week-border {
+  border: 1px solid black;
+}
+
+.cpdf-myl1-nh-month {
+  min-width: 300px;
+  max-width: 320px;
+  margin: 10px;
+  padding: 1px;
+  border-radius: 5px;
+  display: unset;
+}
+
+.cpdf-myl1-nh-month-name-line {
+  font-size: 20px;
+  color: #46648b;
+}
+
+.cpdf-myl1-nh-month-name-a {
+  font-size: 14px;
+  color: #000000;
+}
+
+.cpdf-myl1-nh-month-name-line-td {
+  font-size: 14px !important;
+  color: #434343 !important;
+  padding-bottom: 5px !important;
+}
+
+.cpdf-myl1-nh-day {
+  color: #000000;
+  font-size: 14px;
+  padding: 1px;
+  height: 20px;
+}
+
+.cpdf-myl1-nh-day-holiday {
+  background-color: #99fa88;
+  border-radius: 50%;
+  color: #000000;
+  font-size: 14px;
+  padding: 1px;
+  height: 20px;
+}
+
+.cpdf-myl1-nh-no-day {
+  color: #000000;
+  background-color: white;
+  padding: 1px;
+  height: 20px;
+}
+
+.cpdf-myl1-nh-day-weekend {
+  color: #000000;
+  font-size: 14px;
+  padding: 1px;
+  height: 20px;
+  background-color: #f5f5f5;
+}
+
+.cpdf-myl1-nh-no-day-weekend {
+  color: #F98909;
+  padding: 1px;
+  height: 20px;
+  background-color: #f5f5f5;
+}
+
+.cpdf-myl1-nh-day-name {
+  color: #000000;
+  padding: 1px;
+  background-color: white;
+  width: 40px;
+  font-size: 14px;
+}
+
+tr {
+  vertical-align: top;
+}
+
+.cpdf-myl1-nh-week-line {
+  border-top: 2px solid #46648b;
 }
 
 .cpdf-sp1-year {

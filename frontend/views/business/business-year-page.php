@@ -171,6 +171,7 @@
     $countWeeks = 0;
     foreach ($calendarByYear['calendar'] as $months) : ?>
 
+
         <?php $countMonths++; ?>
         <div class="month col-xxs-12 col-xs-6 col-sm-4 col-md-3">
 
@@ -421,12 +422,10 @@
 <hr>
 <br>
 
+<?php /***************************** */ ?>
+<?php /***************************** Список всех праздников конкретной страны*/ ?>
+<?php /***************************** */ ?>
 
-<?php
-/**
- * Список всех праздников конкретной страны
- */
-?>
 
 <?php if ($holidaysData): ?>
     <a name="business-days-calendar-of-holidays-and-weekends-in-<?= $dateData['year']['current'] ?>-<?= $countryData['name_en'] ?>"></a>

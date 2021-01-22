@@ -181,6 +181,11 @@ class GiiPDF
 
     }
 
+    function generatePDFCalendarMoonYearly($languagesData){
+
+        (new GiiPDFGeneratePDFCalendarMoonYearly())->generate($languagesData);
+
+    }
 
 
 

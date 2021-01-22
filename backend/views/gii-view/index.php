@@ -26,6 +26,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
             <option value="PDF-calendar-business-yearly">Создание PDF Производственного Календаря на ГОД</option>
 
+            <option value="PDF-calendar-moon-yearly">Создание PDF Лунного Календаря на ГОД</option>
+
         </select>
 
         <br>

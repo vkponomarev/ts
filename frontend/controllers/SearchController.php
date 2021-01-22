@@ -106,6 +106,38 @@ class SearchController extends Controller
                 'url' => $d['url'],
             ];
         }
+        $out[] = [
+            'value' => 'oneone',
+            'id' => 'oneone',
+        ];
+
+        echo Json::encode($out);
+
+    }
+
+
+    public function actionSearchCity($q = null)
+    {
+
+        $data = Yii::$app->db->createCommand('
+                    SELECT name, id, alternate_names
+                    FROM `cities`
+                    WHERE
+                    MATCH(`alternate_names`)
+                    AGAINST("*' . $q . '*"  IN BOOLEAN MODE)
+                    limit 20;
+                    ')
+            ->queryAll();
+
+        //$data = $dataArtists;
+        $out = [];
+        foreach ($data as $d) {
+            $out[] = [
+                'value' => $d['name'],
+                'id' => $d['id'],
+            ];
+        }
+
 
         echo Json::encode($out);
 

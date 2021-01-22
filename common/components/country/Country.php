@@ -26,6 +26,10 @@ class Country
 
     }
 
+    function byMoonCalendar($languageID, $citiesID){
 
+        return (new CountryByMoonCalendar())->data($languageID, $citiesID);
+
+    }
 }
 

@@ -68,6 +68,12 @@ class Calendar
 
     }
 
+    function byMoonYears($year, $cityData){
+
+        return (new CalendarByMoonYears())->calendar($year, $cityData);
+
+    }
+
     function chineseByYear($year){
 
         return (new CalendarChineseByYear())->calendar($year);

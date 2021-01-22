@@ -45,6 +45,7 @@ class GetParams
 
     }
 
+
     function byCalendarSeasons($country, $year, $holidaysRange)
     {
 
@@ -56,6 +57,14 @@ class GetParams
     {
 
         return (new GetParamsByCalendarMonths())->params($country, $year, $holidaysRange);
+
+    }
+
+
+    function byCalendarYearsMoon($cityDefaultID)
+    {
+
+        return (new GetParamsByCalendarYearsMoon())->params($cityDefaultID);
 
     }
 

@@ -144,8 +144,18 @@ class WeeksController extends Controller
                 Yii::$app->params['breadcrumbs'] = $breadCrumbs->year($yearData);
         */
 
+
         $PDFCalendars = new PDFCalendars();
         $PDFCalendarsData = $PDFCalendars->weeklyExists($year, $language, $weekURL['url']);
+        $PDFCalendarsDataYearly = $PDFCalendars->yearlyWithWeeksExists($yearURL, $language, $weekURL['url']);
+        $PDFCalendarsDataMerged = array_merge_recursive($PDFCalendarsData, $PDFCalendarsDataYearly);
+        if ($PDFCalendarsData['exists'] == 1 or $PDFCalendarsDataYearly['exists'] == 1){
+            $PDFCalendarsDataMerged['exists'] = 1;
+        }
+
+
+
+
 
 
         return $this->render('week-page.min.php', [
@@ -153,7 +163,7 @@ class WeeksController extends Controller
             'dateData' => $dateData,
             'countryData' => $countryData,
             'holidaysData' => $holidaysData,
-            'PDFCalendarsData' => $PDFCalendarsData,
+            'PDFCalendarsData' => $PDFCalendarsDataMerged,
             'calendarByWeek' => $calendarByWeek,
             'calendarNameOfMonths' => $calendarNameOfMonths,
             'calendarNameOfDaysInWeek' => $calendarNameOfDaysInWeek,

@@ -60,5 +60,13 @@ class PDFCalendars
 
     }
 
+    function yearlyMoonExists($year, $language){
+
+        return (new PDFCalendarsYearlyMoonExists())->calendars($year, $language);
+
+    }
+
+
+
 }
 

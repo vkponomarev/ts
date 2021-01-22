@@ -32,7 +32,7 @@ return [
         ],
         'session' => [
             // this is the name of the session cookie used for login on the frontend
-            'name' => 'flowlez',
+            'name' => 'timesles',
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
@@ -60,6 +60,14 @@ return [
                 //'/calendar/years/<url>' => 'years/year-page',
                 //'/calendar/months/<urlMonth>' => 'months/month-page',
                 //'/calendar/days/<urlDay>' => 'days/day-page',
+
+
+                [
+                    'pattern' => '/calendar/moon/years/<yearURL:\d{4}>',
+                    'route' => 'moon-years/moon-year-page',
+                    'defaults' => ['yearURL' => ''],
+                ],
+
 
                 [
                     'pattern' => '/calendar/business/years/<yearURL:\d{4}>/<countryURL:[\w_-]+>',
@@ -129,6 +137,7 @@ return [
                 '/seasons/summer/<urlYear>' => 'years/summer',
                 '/seasons/autumn/<urlYear>' => 'years/autumn',*/
 
+                '/gii/generate-moon-years-pdf/' => 'generate-moon-years/generate-pdf',
                 '/gii/generate-business-years-pdf/' => 'generate-business-years/generate-pdf',
                 '/gii/generate-weeks-pdf/' => 'generate-weeks/generate-pdf',
                 '/gii/generate-years-with-weeks-pdf/' => 'generate-years-with-weeks/generate-pdf',

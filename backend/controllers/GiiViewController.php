@@ -120,6 +120,10 @@ class GiiViewController extends Controller
                 $giiPDF->generatePDFCalendarBusinessYearly($languagesData);
             }
 
+            if ($name == 'PDF-calendar-moon-yearly') {
+
+                $giiPDF->generatePDFCalendarMoonYearly($languagesData);
+            }
 
 
         }

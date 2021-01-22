@@ -19,6 +19,14 @@ class PageTexts
 
     }
 
+    function updateByCalendarYearMoon($pageTextsMessages, $dateData)
+    {
+
+        (new PageTextsUpdateByCalendarYearMoon())->update($pageTextsMessages, $dateData);
+
+    }
+
+
     function updateByCalendarYearWeeks($dateData)
     {
 
@@ -85,6 +93,14 @@ class PageTexts
         return (new PageTextsMessagesByCalendarYear())->messages($calendarChinese, $dateData, $countHolidays);
 
     }
+
+    function messagesByCalendarYearMoon($calendarChinese, $dateData)
+    {
+
+        return (new PageTextsMessagesByCalendarYearMoon())->messages($calendarChinese, $dateData);
+
+    }
+
 
     function messagesByCalendarSeason($dateData, $season)
     {

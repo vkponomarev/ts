@@ -1,0 +1,30 @@
+.moon-month{
+  padding: 5px;
+  padding-bottom: 15px;
+  //border-bottom: 1px solid #ebebeb;
+  //border-radius: 5px;
+}
+
+.moon-phases-img {
+  display: flex;
+  margin: 5px;
+
+}
+
+.moon-phases-table{
+  width: 100%;
+
+  tr{
+    td{
+      vertical-align: middle;
+    }
+
+
+  }
+
+}
+
+.moon-phases-tr{
+  border-bottom: 1px solid #f1f1f1;
+}
+

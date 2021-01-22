@@ -30,6 +30,9 @@ return [
     'Translations' => 'Translations',
     // main menu
 
+    'Search ...' => 'Search ...',
+
+
     '{year} calendar' => '{year} calendar',
     '{day} day' => '{day} day',
     '{week} week' => '{week} week',
@@ -231,11 +234,29 @@ return [
     'Portrait business calendar for the year' => 'Portrait business calendar for the year',
     'Landscape business calendar for the year' => 'Landscape business calendar for the year',
 
+    'lunar calendar for {year}' => 'lunar calendar for {year}',
 
+    'Moon phases for {year}' => 'Moon phases for {year}',
 
+    'Choose the city' => 'Choose the city',
 
+    'New moon' => 'New moon',
+    'Waxing crescent' => 'Waxing crescent',
+    'Moon first quarter' => 'Moon first quarter',
+    'Growing moon' => 'Growing moon',
+    'Full moon' => 'Full moon',
+    'Waning moon' => 'Waning moon',
+    'Moon third quarter' => 'Moon third quarter',
+    'Waning crescent' => 'Waning crescent',
 
+    'from' => 'from',
+    'to' => 'to',
 
+    'Year {year} PDF lunar calendar' => 'Year {year} PDF lunar calendar',
+
+    'Download and print PDF lunar calendar (moon phases) for {year}' => 'Download and print PDF lunar calendar for {year}',
+    'Portrait lunar calendar for the year' => 'Portrait lunar calendar for the year',
+    'Landscape lunar calendar for the year' => 'Landscape lunar calendar for the year',
 
 ];
 
