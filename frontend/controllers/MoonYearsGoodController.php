@@ -41,7 +41,7 @@ class MoonYearsGoodController extends Controller
         Yii::$app->params['canonical'] = $main->Canonical($yearURL, $mainUrl);
         Yii::$app->params['alternate'] = $main->Alternate($yearURL, $mainUrl);
         Yii::$app->params['menu'] = $main->menu();
-        Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['current']['id']);
+
 
         $languageID = Yii::$app->params['language']['current']['id'];
         $citiesDefaultID = Yii::$app->params['language']['current']['cities_id'];
@@ -70,6 +70,9 @@ class MoonYearsGoodController extends Controller
         $calendarNameOfDaysInWeek = $calendar->nameOfDaysInWeek();
 
         $pageTexts = new PageTexts();
+        $pageTextsID = $pageTexts->defineIdByCalendarYearMoon($dayNameURL);
+        Yii::$app->params['text'] = $main->text($pageTextsID, $languageID);
+
         $pageTextsMessages = $pageTexts->messagesByCalendarYearMoon($calendarChinese, $dateData);
         $pageTexts->updateByCalendarYearMoon($pageTextsMessages, $dateData);
 

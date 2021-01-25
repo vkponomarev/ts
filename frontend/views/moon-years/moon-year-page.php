@@ -92,33 +92,11 @@ $moon = new \common\components\moon\Moon();
 
 
         </div>
+        <hr>
+        <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/">
+            <?= Yii::t('app', 'Auspicious days according to the lunar calendar') ?>
+        </a>
         <br>
-        <div class="c-links-block c-links-mp-header c-links-mp-header-link">
-            <?= Yii::t('app', 'Seasons'); ?>
-        </div>
-        <div class="c-links-block">
-            <div class="col-xs-6 c-links-mp-months">
-                <a href="/<?= Yii::$app->language ?>/calendar/seasons/winter/<?= $dateData['year']['current'] ?>/">
-                    <?= Yii::t('app', 'Winter') ?>
-                </a>
-                <br>
-                <a href="/<?= Yii::$app->language ?>/calendar/seasons/spring/<?= $dateData['year']['current'] ?>/">
-                    <?= Yii::t('app', 'Spring') ?>
-                </a>
-                <br>
-            </div>
-            <div class="col-xs-6 c-links-mp-months">
-                <a href="/<?= Yii::$app->language ?>/calendar/seasons/summer/<?= $dateData['year']['current'] ?>/">
-                    <?= Yii::t('app', 'Summer') ?>
-                </a>
-                <br>
-                <a href="/<?= Yii::$app->language ?>/calendar/seasons/autumn/<?= $dateData['year']['current'] ?>/">
-                    <?= Yii::t('app', 'Autumn') ?>
-                </a>
-                <br>
-
-            </div>
-        </div>
         <div class="c-links-block">
             <hr class="hr-1">
         </div>

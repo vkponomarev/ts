@@ -378,36 +378,6 @@ $moon = new \common\components\moon\Moon();
 <hr>
 <br>
 
-<?php /***************************** */ ?>
-<?php /***************************** Фазы луны*/ ?>
-<?php /***************************** */ ?>
-
-
-<a name="moon-phases-<?= $dateData['year']['current'] ?>"></a>
-<h2 class="main-page-h1">
-    <?= Yii::t('app', 'Moon phases for {year}', [
-        'year' => $dateData['year']['current'],
-    ]) ?>
-</h2>
-
-<br><br>
-<div class="row rflex">
-
-    <?php foreach ($calendarByYear['moonMonth'] as $moonMonth): ?>
-        <?php if (isset($moonMonth['start']) && isset($moonMonth['end'])) : ?>
-            <?php //$moonMonthStart = (new \DateTime($moonMonth['start']))->format('Y-m-d'); ?>
-            <?php //$moonMonthEnd = (new \DateTime($moonMonth['end']))->format('Y-m-d'); ?>
-
-            <div class="col-xxs-12 col-xs-6 col-md-6 moon-month">
-
-            </div>
-        <?php endif; ?>
-    <?php endforeach ?>
-
-
-</div>
-<br>
-<hr>
 
 <?php /***************************** */ ?>
 <?php /***************************** Ссылки на PDF календари*/ ?>

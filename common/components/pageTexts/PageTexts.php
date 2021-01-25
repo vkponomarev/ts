@@ -78,6 +78,14 @@ class PageTexts
 
     }
 
+    function defineIdByCalendarYearMoon($dayNameURL)
+    {
+
+        return (new PageTextsDefineIdByCalendarYearMoon())->define($dayNameURL);
+
+    }
+
+
     function defineIdByCalendarMonth($holidays, $PDFCalendar)
     {
 
