@@ -236,6 +236,7 @@ return [
     'lunar calendar for {year}' => 'Лунный календарь на {year} год',
 
     'Moon phases for {year}' => 'Фазы луны на {year} год',
+    'Moon phases for {month} {year}' => 'Фазы луны на {month} {year}',
 
     'Choose the city' => 'Выберите город',
 
@@ -254,7 +255,34 @@ return [
     'Year {year} PDF lunar calendar' => 'PDF лунный календарь на {year} год',
 
     'Download and print PDF lunar calendar (moon phases) for {year}' => 'Скачать и распечатать PDF лунный календарь (фазы луны) на {year} год',
+    'Download and print PDF lunar calendar (moon phases) for {month} {year}' => 'Скачать и распечатать PDF лунный календарь (фазы луны) на {month} {year} год',
     'Portrait lunar calendar for the year' => 'Книжный лунный календарь на год',
     'Landscape lunar calendar for the year' => 'Альбомный лунный календарь на год',
+
+    'Auspicious days according to the lunar calendar' => 'Благоприятные дни по лунному календарю',
+
+    'Communication' => 'Общение',
+    'Money' => 'Деньги',
+    'Bosses' => 'Начальство',
+    'Job change' => 'Смена работы',
+    'The property' => 'Недвижимость',
+    'Creation' => 'Творчество',
+    'The science' => 'Наука',
+    'Art' => 'Искусство',
+    'Education' => 'Обучение',
+    'Travels' => 'Путешествия',
+    'Relaxation' => 'Отдых',
+    'Celebration' => 'Праздники',
+    'Alcohol' => 'Алькоголь',
+    'Dispute' => 'Споры',
+    'Relations' => 'Отношения',
+    'Marriage' => 'Бракосочетание',
+    'Conception' => 'Зачатие',
+    'Trainings' => 'Треннировки',
+    'Housework' => 'Домашние дела',
+    'Interpretation of dreams' => 'Толкование снов',
+    'A haircut' => 'Стрижка',
+    'Work in the garden' => 'Работа в саду',
+    'Beginnings' => 'Начинания',
 
     ];

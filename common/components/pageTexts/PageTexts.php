@@ -63,6 +63,13 @@ class PageTexts
 
     }
 
+    function updateByCalendarMonthMoon($pageTextsMessages, $dateData, $calendarNameOfMonths)
+    {
+
+        (new PageTextsUpdateByCalendarMonthMoon())->update($pageTextsMessages, $dateData, $calendarNameOfMonths);
+
+    }
+
 
     function defineIdByCalendarYear($holidays, $calendarChinese)
     {
@@ -121,6 +128,13 @@ class PageTexts
     {
 
         return (new PageTextsMessagesByCalendarMonth())->messages($dateData, $countHolidays);
+
+    }
+
+    function messagesByCalendarMonthMoon($dateData)
+    {
+
+        return (new PageTextsMessagesByCalendarMonthMoon())->messages($dateData);
 
     }
 

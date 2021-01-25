@@ -44,6 +44,12 @@ class UrlCheck
     }
 
 
+    function moonGoodDay($dayName){
+
+        (new UrlCheckMoonGoodDay())->check($dayName);
+
+    }
+
     function country($countryURL){
 
         return (new UrlCheckCountry())->check($countryURL);

@@ -19,7 +19,11 @@ class Moon
 
     }
 
+    function days(){
 
+        return (new MoonDaysArray())->days();
+
+    }
 
 
 }

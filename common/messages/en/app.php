@@ -237,6 +237,8 @@ return [
     'lunar calendar for {year}' => 'lunar calendar for {year}',
 
     'Moon phases for {year}' => 'Moon phases for {year}',
+    'Moon phases for {month} {year}' => 'Moon phases for {month} {year}',
+
 
     'Choose the city' => 'Choose the city',
 
@@ -255,8 +257,34 @@ return [
     'Year {year} PDF lunar calendar' => 'Year {year} PDF lunar calendar',
 
     'Download and print PDF lunar calendar (moon phases) for {year}' => 'Download and print PDF lunar calendar for {year}',
+    'Download and print PDF lunar calendar (moon phases) for {month} {year}' => 'Download and print PDF lunar calendar (moon phases) for {month} {year}',
     'Portrait lunar calendar for the year' => 'Portrait lunar calendar for the year',
     'Landscape lunar calendar for the year' => 'Landscape lunar calendar for the year',
 
+    'Auspicious days according to the lunar calendar' => 'Auspicious days according to the lunar calendar',
+
+    'Communication' => 'Communication',
+    'Money' => 'Money',
+    'Bosses' => 'Bosses',
+    'Job change' => 'Job change',
+    'The property' => 'The property',
+    'Creation' => 'Creation',
+    'The science' => 'The science',
+    'Art' => 'Art',
+    'Education' => 'Education',
+    'Travels' => 'Travels',
+    'Relaxation' => 'Relaxation',
+    'Celebration' => 'Celebration',
+    'Alcohol' => 'Alcohol',
+    'Dispute' => 'Dispute',
+    'Relations' => 'Relations',
+    'Marriage' => 'Marriage',
+    'Conception' => 'Conception',
+    'Trainings' => 'Trainings',
+    'Housework' => 'Housework',
+    'Interpretation of dreams' => 'Interpretation of dreams',
+    'A haircut' => 'A haircut',
+    'Work in the garden' => 'Work in the garden',
+    'Beginnings' => 'Beginnings',
 ];
 

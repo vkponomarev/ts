@@ -1066,7 +1066,7 @@ footer div div div > a:hover {
 
 @media (max-width: 479px) {
   .mweek {
-    height: 50px;
+    height: 70px;
   }
 }
 @media (min-width: 479px) {
@@ -1681,6 +1681,41 @@ tr {
   background-color: white;
   border-radius: 50%;
   margin: 10px 0 0 0;
+}
+
+.md-one {
+  background-color: #48ff3d;
+}
+
+.md-two {
+  background-color: #46de30;
+}
+
+.md-three {
+  background-color: #e0dddd;
+}
+
+.md-four {
+  background-color: #ff9c90;
+}
+
+.md-five {
+  background-color: #cf7168;
+}
+
+.md-legend-color {
+  display: inline-block;
+  width: 20px;
+}
+
+.md-legend-text {
+  padding-left: 5px;
+  padding-right: 5px;
+  display: inline-block;
+}
+
+.legend-center {
+  text-align: center;
 }
 
 .calendar-preview {

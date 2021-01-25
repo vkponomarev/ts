@@ -68,6 +68,13 @@ class GetParams
 
     }
 
+    function byCalendarMonthsMoon($cityDefaultID)
+    {
+
+        return (new GetParamsByCalendarMonthsMoon())->params($cityDefaultID);
+
+    }
+
 
     /**
      * Передача get параметров относящихся к стрнаице тестирования PDF календаря

@@ -66,6 +66,11 @@ class PDFCalendars
 
     }
 
+    function monthlyMoonExists($monthURL, $language){
+
+        return (new PDFCalendarsMonthlyMoonExists())->calendars($monthURL, $language);
+
+    }
 
 
 }

@@ -62,11 +62,7 @@ return [
                 //'/calendar/days/<urlDay>' => 'days/day-page',
 
 
-                [
-                    'pattern' => '/calendar/moon/years/<yearURL:\d{4}>',
-                    'route' => 'moon-years/moon-year-page',
-                    'defaults' => ['yearURL' => ''],
-                ],
+
 
 
                 [
@@ -106,7 +102,28 @@ return [
                     'defaults' => ['monthURL' => '', 'countryURL' => ''],
                 ],
 
+                /*[
+                    'pattern' => '/calendar/moon/months/<yearURL:\d{4}>',
+                    'route' => 'moon-years/moon-year-page',
+                    'defaults' => ['yearURL' => ''],
+                ],*/
 
+                /*[
+                    'pattern' => '/calendar/moon/years/<yearURL:\d{4}>',
+                    'route' => 'moon-years/moon-year-page',
+                    'defaults' => ['yearURL' => ''],
+                ],*/
+
+                [
+                    'pattern' => '/calendar/moon/good/years/<yearURL:\d{4}>/<dayNameURL:[\w_-]+>',
+                    'route' => 'moon-years-good/moon-year-good-page',
+                    'defaults' => ['dayNameURL' => '', 'yearURL' => ''],
+                ],
+
+
+
+                '/calendar/moon/months/<monthURL>' => 'moon-months/moon-month-page',
+                '/calendar/moon/years/<yearURL:\d{4}>' => 'moon-years/moon-year-page',
 
                 '/calendar/weeks/<yearURL:\d{4}>' => 'weeks/year-weeks-page',
                 '/calendar/weeks/<yearURL:\d{4}>/week-now' => 'weeks/week-now',
