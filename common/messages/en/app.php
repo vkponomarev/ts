@@ -250,6 +250,7 @@ return [
     'Waning moon' => 'Waning moon',
     'Moon third quarter' => 'Moon third quarter',
     'Waning crescent' => 'Waning crescent',
+    'Waxing moon' => 'Waxing moon',
 
     'from' => 'from',
     'to' => 'to',
@@ -261,7 +262,7 @@ return [
     'Portrait lunar calendar for the year' => 'Portrait lunar calendar for the year',
     'Landscape lunar calendar for the year' => 'Landscape lunar calendar for the year',
 
-    'Auspicious days according to the lunar calendar' => 'Auspicious days according to the lunar calendar',
+    'Auspicious days' => 'Auspicious days',
 
     'Communication' => 'Communication',
     'Money' => 'Money',
@@ -286,5 +287,45 @@ return [
     'A haircut' => 'A haircut',
     'Work in the garden' => 'Work in the garden',
     'Beginnings' => 'Beginnings',
+
+    'Great days' => 'Great days',
+    'Good days' => 'Good days',
+    'Normal days' => 'Normal days',
+    'Bad days' => 'Bad days',
+    'Terrible days' => 'Terrible days',
+
+    'Sowing calendar' => 'Sowing calendar',
+
+    'Tomato' => 'Tomato',
+    'Cucumber' => 'Cucumber',
+    'Pepper' => 'Pepper',
+    'Onions on greens' => 'Onions on greens',
+    'Cabbage' => 'Cabbage',
+    'Asparagus' => 'Asparagus',
+    'Eggplant' => 'Eggplant',
+    'Zucchini' => 'Zucchini',
+    'Squash' => 'Squash',
+    'Pumpkin' => 'Pumpkin',
+    'Radish' => 'Radish',
+    'Daikon' => 'Daikon',
+    'Greens' => 'Greens',
+    'Potato' => 'Potato',
+    'Jerusalem artichoke' => 'Jerusalem artichoke',
+    'Strawberries' => 'Strawberries',
+    'Peas' => 'Peas',
+    'Beans' => 'Beans',
+    'Carrot' => 'Carrot',
+    'Beet' => 'Beet',
+    'Turnip' => 'Turnip',
+    'Celery' => 'Celery',
+    'Melons' => 'Turnip',
+    'Unfavorable days' => 'Unfavorable days',
+
+    'New moon phases for {year}' => 'New moon phases for {year}',
+    'Waxing moon phases for {year}' => 'Waxing moon phases for {year}',
+    'Full moon phases for {year}' => 'Full moon phases for {year}',
+    'Waning moon phases for {year}' => 'Waning moon phases for {year}',
+
+
 ];
 

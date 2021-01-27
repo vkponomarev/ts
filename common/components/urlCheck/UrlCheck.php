@@ -50,6 +50,18 @@ class UrlCheck
 
     }
 
+    function moonGardenerName($gardenerName){
+
+        (new UrlCheckMoonGardenerName())->check($gardenerName);
+
+    }
+
+    function moonPhaseName($phaseName){
+
+        (new UrlCheckMoonPhaseName())->check($phaseName);
+
+    }
+
     function country($countryURL){
 
         return (new UrlCheckCountry())->check($countryURL);

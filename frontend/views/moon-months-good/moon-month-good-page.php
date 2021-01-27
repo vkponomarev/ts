@@ -3,7 +3,7 @@
 /**
  * @var $this frontend\controllers\YearsController
  *
- * @var $calendarByYear common\components\calendar\CalendarByYear
+ * @var $calendarByMonth common\components\calendar\CalendarByMonth
  * @var $dateData common\components\date\DateData
  * @var $countriesData common\components\countries\CountriesData
  * @var $holidaysData common\components\holidays\HolidaysByCountryByYear array
@@ -14,11 +14,12 @@
  * @var $PDFCalendarsData common\components\PDFCalendars\PDFCalendarsYearlyExists
  * @var $getParamsByCalendarYears common\components\getParams\GetParamsByCalendarYears
  * @var $holidaysRange common\components\holidays\HolidaysRange
+ * @var $countryURL array ['url','id','defaultID']
+ *
+ *
  */
 
-
 $moon = new \common\components\moon\Moon();
-
 ?>
 
 
@@ -28,16 +29,18 @@ $moon = new \common\components\moon\Moon();
 
 <div class="row">
     <?php /***************************** */ ?>
-    <?php /***************************** Сегодняшний год*/ ?>
+    <?php /***************************** Сегодняшний месяц*/ ?>
     <?php /***************************** */ ?>
+
     <div class="col-xxs-12 col-xs-6 current-date">
         <div class="current-date-div">
             <div class="current-date-one">
                 <div class="current-date-year">
-                    <?= $dateData['year']['current'] ?>
+                    <?= $calendarNameOfMonths[$dateData['month']['numberSimple']] ?>
+
                     <br>
                     <span class="current-date-month">
-                    <?= Yii::t('app', 'year'); ?>
+                    <?= $dateData['year']['current'] ?>&nbsp;<?= Yii::t('app', 'year'); ?>
                 </span>
 
                 </div>
@@ -48,71 +51,71 @@ $moon = new \common\components\moon\Moon();
             </div>
         </div>
     </div>
-
     <?php /***************************** */ ?>
-    <?php /***************************** Ссылки на различеные направления благоприятных дней*/ ?>
+    <?php /***************************** Выберите страну*/ ?>
     <?php /***************************** */ ?>
 
     <div class="col-xxs-12 col-xs-6 c-links-mp">
 
+
         <div class="c-links-block">
             <div class="col-xs-6 c-links-mp-months">
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/communication/">
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/months/<?= $dateData['year']['current'] ?>-<?= $dateData['month']['number'] ?>/communication/">
                     <?= Yii::t('app', 'Communication') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/money/">
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/months/<?= $dateData['year']['current'] ?>-<?= $dateData['month']['number'] ?>/money/">
                     <?= Yii::t('app', 'Money') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/bosses/">
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/months/<?= $dateData['year']['current'] ?>-<?= $dateData['month']['number'] ?>/bosses/">
                     <?= Yii::t('app', 'Bosses') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/job-change/">
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/months/<?= $dateData['year']['current'] ?>-<?= $dateData['month']['number'] ?>/job-change/">
                     <?= Yii::t('app', 'Job change') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/property/">
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/months/<?= $dateData['year']['current'] ?>-<?= $dateData['month']['number'] ?>/property/">
                     <?= Yii::t('app', 'The property') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/creativity/">
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/months/<?= $dateData['year']['current'] ?>-<?= $dateData['month']['number'] ?>/creativity/">
                     <?= Yii::t('app', 'Creation') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/science/">
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/months/<?= $dateData['year']['current'] ?>-<?= $dateData['month']['number'] ?>/science/">
                     <?= Yii::t('app', 'The science') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/art/">
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/months/<?= $dateData['year']['current'] ?>-<?= $dateData['month']['number'] ?>/art/">
                     <?= Yii::t('app', 'Art') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/education/">
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/months/<?= $dateData['year']['current'] ?>-<?= $dateData['month']['number'] ?>/education/">
                     <?= Yii::t('app', 'Education') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/travel/">
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/months/<?= $dateData['year']['current'] ?>-<?= $dateData['month']['number'] ?>/travel/">
                     <?= Yii::t('app', 'Travels') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/vacation/">
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/months/<?= $dateData['year']['current'] ?>-<?= $dateData['month']['number'] ?>/vacation/">
                     <?= Yii::t('app', 'Relaxation') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/celebration/">
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/months/<?= $dateData['year']['current'] ?>-<?= $dateData['month']['number'] ?>/celebration/">
                     <?= Yii::t('app', 'Celebration') ?>
                 </a>
                 <br>
@@ -120,57 +123,57 @@ $moon = new \common\components\moon\Moon();
 
             </div>
             <div class="col-xs-6 c-links-mp-months">
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/alcohol/">
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/months/<?= $dateData['year']['current'] ?>-<?= $dateData['month']['number'] ?>/alcohol/">
                     <?= Yii::t('app', 'Alcohol') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/dispute/">
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/months/<?= $dateData['year']['current'] ?>-<?= $dateData['month']['number'] ?>/dispute/">
                     <?= Yii::t('app', 'Dispute') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/relations/">
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/months/<?= $dateData['year']['current'] ?>-<?= $dateData['month']['number'] ?>/relations/">
                     <?= Yii::t('app', 'Relations') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/marriage/">
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/months/<?= $dateData['year']['current'] ?>-<?= $dateData['month']['number'] ?>/marriage/">
                     <?= Yii::t('app', 'Marriage') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/conception/">
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/months/<?= $dateData['year']['current'] ?>-<?= $dateData['month']['number'] ?>/conception/">
                     <?= Yii::t('app', 'Conception') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/training/">
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/months/<?= $dateData['year']['current'] ?>-<?= $dateData['month']['number'] ?>/training/">
                     <?= Yii::t('app', 'Trainings') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/housework/">
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/months/<?= $dateData['year']['current'] ?>-<?= $dateData['month']['number'] ?>/housework/">
                     <?= Yii::t('app', 'Housework') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/dreams/">
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/months/<?= $dateData['year']['current'] ?>-<?= $dateData['month']['number'] ?>/dreams/">
                     <?= Yii::t('app', 'Interpretation of dreams') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/hair/">
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/months/<?= $dateData['year']['current'] ?>-<?= $dateData['month']['number'] ?>/hair/">
                     <?= Yii::t('app', 'A haircut') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/garden-work/">
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/months/<?= $dateData['year']['current'] ?>-<?= $dateData['month']['number'] ?>/garden-work/">
                     <?= Yii::t('app', 'Work in the garden') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/beginning/">
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/months/<?= $dateData['year']['current'] ?>-<?= $dateData['month']['number'] ?>/beginning/">
                     <?= Yii::t('app', 'Beginnings') ?>
                 </a>
                 <br>
@@ -187,37 +190,52 @@ $moon = new \common\components\moon\Moon();
 <br><br>
 <hr>
 
+<?php /***************************** */ ?>
+<?php /***************************** Верхняя плашка календаря с месяцами туда сюда*/ ?>
+<?php /***************************** */ ?>
 
-<?php /***************************** */ ?>
-<?php /***************************** Верхняя плашка календаря с годами туда сюда*/ ?>
-<?php /***************************** */ ?>
 
 <div class="row">
     <div class="col-xxs-12 col-xs-4 c-prev-next-left">
-        <?php if ($dateData['year']['previous'] == '0100'): ?>
+        <?php if ($dateData['year']['previous'] == '0000' && $dateData['month']['numberSimple'] == 1): ?>
 
         <?php else: ?>
-            <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['previous'] ?>/
+            <?php if ($dateData['month']['numberSimple'] == 1): ?>
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/months/<?= $dateData['year']['previous'] ?>-<?= str_pad(12, 2, '0', STR_PAD_LEFT) ?>/
             <?= ($dayNameURL <> '') ? $dayNameURL . '/' : '' ?>">
-                <?= $dateData['year']['previous'] ?>
-            </a>
+                    <?= $calendarNameOfMonths[12] ?>
+                </a>
+            <?php else: ?>
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/months/<?= $dateData['year']['current'] ?>-<?= str_pad($dateData['month']['numberSimple'] - 1, 2, '0', STR_PAD_LEFT) ?>/
+            <?= ($dayNameURL <> '') ? $dayNameURL . '/' : '' ?>">
+                    <?= $calendarNameOfMonths[$dateData['month']['numberSimple'] - 1] ?>
+                </a>
+            <?php endif; ?>
         <?php endif; ?>
     </div>
     <div class="col-xxs-12 col-xs-4 c-prev-next-center">
-
-        <?= $dateData['year']['current'] ?>
-
+        <?= $calendarNameOfMonths[$dateData['month']['numberSimple']] ?>
     </div>
+
     <div class="col-xxs-12 col-xs-4 c-prev-next-right">
 
-        <?php if ($dateData['year']['current'] == '9998'): ?>
+        <?php if ($dateData['year']['current'] == '9999' && $dateData['month']['numberSimple'] == 12): ?>
 
         <?php else: ?>
-            <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['next'] ?>/
+            <?php if ($dateData['month']['numberSimple'] == 12): ?>
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/months/<?= $dateData['year']['next'] ?>-<?= str_pad(1, 2, '0', STR_PAD_LEFT) ?>/
             <?= ($dayNameURL <> '') ? $dayNameURL . '/' : '' ?>">
-                <?= $dateData['year']['next'] ?>
-            </a>
+                    <?= $calendarNameOfMonths[1] ?>
+                </a>
+            <?php else: ?>
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/months/<?= $dateData['year']['current'] ?>-<?= str_pad($dateData['month']['numberSimple'] + 1, 2, '0', STR_PAD_LEFT) ?>/
+            <?= ($dayNameURL <> '') ? $dayNameURL . '/' : '' ?>">
+                    <?= $calendarNameOfMonths[$dateData['month']['numberSimple'] + 1] ?>
+                </a>
+            <?php endif; ?>
         <?php endif; ?>
+
+
     </div>
 </div>
 <hr>
@@ -231,38 +249,32 @@ $moon = new \common\components\moon\Moon();
     </div>
     <br>
 <?php endif; ?>
-
 <?php /***************************** */ ?>
-<?php /***************************** Лунный календарь*/ ?>
+<?php /***************************** Календарь с отмеченными праздниками конкретнрой страны*/ ?>
 <?php /***************************** */ ?>
 
-<div class="row rflex year">
+
+<div class="row rflex myear">
     <?php
-    $countMonths = 0;
+    $countMonths = $dateData['month']['numberSimple'] - 1;
     $countWeeks = 0;
-    $countMoonDay = 0;
-    //
-
-    //(new \common\components\dump\Dump())->printR($goodDays[$dayNameURL]);die;
+    //(new \common\components\dump\Dump())->printR($calendarByMonth);die;
 
 
-    //(new \common\components\dump\Dump())->printR($calendarByYear['moonPhases']['moonThirdQuarter']);
-    //number_format($week[$i]['moonPhase']['phase'], 2, '.', ' ');
-    foreach ($calendarByYear['calendar'] as $key => $months) :?>
+
+    foreach ($calendarByMonth['calendar'] as $months) :?>
+
         <?php $countMonths++; ?>
-        <div class="month col-xxs-12 col-xs-6 col-sm-4 col-md-3">
-            <div class="month-name">
-            <span class="fa fa-calendar">
-                </span>
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/months/<?= $dateData['year']['current'] ?>-<?= str_pad($countMonths, 2, '0', STR_PAD_LEFT) ?>/">
-                    <?= $calendarNameOfMonths[$countMonths]; ?>
-                </a>
+        <div class="mmonth col-xxs-12">
+            <div class="mmonth-name">
+
+                <?= $calendarNameOfMonths[$countMonths]; ?>
 
             </div>
 
-            <div class="week-name">
+            <div class="mweek-name">
                 <?php for ($i = 1; $i <= 7; $i++): ?>
-                    <div class="day-name">
+                    <div class="mday-name">
                         <?= $calendarNameOfDaysInWeek[$i]; ?>
                     </div>
                 <?php endfor; ?>
@@ -270,31 +282,30 @@ $moon = new \common\components\moon\Moon();
 
 
             <?php foreach ($months as $week): ?>
-                <?php $countWeeks++; ?>
-                <div class="week">
+                <div class="mweek">
                     <?php for ($i = 1; $i <= 5; $i++): ?>
 
                         <?php if (isset($week[$i]['monthDay'])): ?>
 
 
-                            <div class="day
-                            <?= ($goodDays[$dayNameURL][$calendarByYear['moonDay'][$week[$i]['date']]] == 1) ? ' md-one' : '' ?>
-                            <?= ($goodDays[$dayNameURL][$calendarByYear['moonDay'][$week[$i]['date']]] == 2) ? ' md-two' : '' ?>
-                            <?= ($goodDays[$dayNameURL][$calendarByYear['moonDay'][$week[$i]['date']]] == 3) ? ' md-three' : '' ?>
-                            <?= ($goodDays[$dayNameURL][$calendarByYear['moonDay'][$week[$i]['date']]] == 4) ? ' md-four' : '' ?>
-                            <?= ($goodDays[$dayNameURL][$calendarByYear['moonDay'][$week[$i]['date']]] == 5) ? ' md-five' : '' ?>
-                                        ">
+                            <div class="mday
+                            <?= ($goodDays[$dayNameURL][$calendarByMonth['moonDay'][$week[$i]['date']]] == 1) ? ' md-one' : '' ?>
+                            <?= ($goodDays[$dayNameURL][$calendarByMonth['moonDay'][$week[$i]['date']]] == 2) ? ' md-two' : '' ?>
+                            <?= ($goodDays[$dayNameURL][$calendarByMonth['moonDay'][$week[$i]['date']]] == 3) ? ' md-three' : '' ?>
+                            <?= ($goodDays[$dayNameURL][$calendarByMonth['moonDay'][$week[$i]['date']]] == 4) ? ' md-four' : '' ?>
+                            <?= ($goodDays[$dayNameURL][$calendarByMonth['moonDay'][$week[$i]['date']]] == 5) ? ' md-five' : '' ?>
+                            ">
                                     <span>
-                                    <?= $week[$i]['monthDay']; ?><br>
+                                   <?= $week[$i]['monthDay']; ?><br>
                                          <img width="18"
-                                              src="/pictures/moon-phases/<?= $moon->pictures($week[$i], $calendarByYear['moonPhases']) ?>"><br>
-                                    <?= $calendarByYear['moonDay'][$week[$i]['date']]; ?>
+                                              src="/pictures/moon-phases/<?= $moon->pictures($week[$i], $calendarByMonth['moonPhases']) ?>"><br>
+                                    <?= $calendarByMonth['moonDay'][$week[$i]['date']]; ?>
 
                                     </span>
                             </div>
 
                         <?php else: ?>
-                            <div class="no-day">
+                            <div class="mno-day">
                             <span>
 
                             </span>
@@ -305,22 +316,24 @@ $moon = new \common\components\moon\Moon();
                     <?php for ($i = 6; $i <= 7; $i++): ?>
                         <?php if (isset($week[$i]['monthDay'])): ?>
 
-                            <div class="day-off
-                            <?= ($goodDays[$dayNameURL][$calendarByYear['moonDay'][$week[$i]['date']]] == 1) ? ' md-one' : '' ?>
-                            <?= ($goodDays[$dayNameURL][$calendarByYear['moonDay'][$week[$i]['date']]] == 2) ? ' md-two' : '' ?>
-                            <?= ($goodDays[$dayNameURL][$calendarByYear['moonDay'][$week[$i]['date']]] == 3) ? ' md-three' : '' ?>
-                            <?= ($goodDays[$dayNameURL][$calendarByYear['moonDay'][$week[$i]['date']]] == 4) ? ' md-four' : '' ?>
-                            <?= ($goodDays[$dayNameURL][$calendarByYear['moonDay'][$week[$i]['date']]] == 5) ? ' md-five' : '' ?>
-                                        ">
+                            <div class="mday-off
+                            <?= ($goodDays[$dayNameURL][$calendarByMonth['moonDay'][$week[$i]['date']]] == 1) ? ' md-one' : '' ?>
+                            <?= ($goodDays[$dayNameURL][$calendarByMonth['moonDay'][$week[$i]['date']]] == 2) ? ' md-two' : '' ?>
+                            <?= ($goodDays[$dayNameURL][$calendarByMonth['moonDay'][$week[$i]['date']]] == 3) ? ' md-three' : '' ?>
+                            <?= ($goodDays[$dayNameURL][$calendarByMonth['moonDay'][$week[$i]['date']]] == 4) ? ' md-four' : '' ?>
+                            <?= ($goodDays[$dayNameURL][$calendarByMonth['moonDay'][$week[$i]['date']]] == 5) ? ' md-five' : '' ?>
+                            ">
                                     <span>
                                     <?= $week[$i]['monthDay']; ?><br>
                                          <img width="18"
-                                              src="/pictures/moon-phases/<?= $moon->pictures($week[$i], $calendarByYear['moonPhases']) ?>"><br>
-                                    <?= $calendarByYear['moonDay'][$week[$i]['date']]; ?>
+                                              src="/pictures/moon-phases/<?= $moon->pictures($week[$i], $calendarByMonth['moonPhases']) ?>"><br>
+                                    <?= $calendarByMonth['moonDay'][$week[$i]['date']]; ?>
+
                                     </span>
                             </div>
+
                         <?php else: ?>
-                            <div class="no-day">
+                            <div class="mno-day">
                             <span>
 
                             </span>
@@ -334,10 +347,8 @@ $moon = new \common\components\moon\Moon();
     <?php endforeach; ?>
 
 </div>
-
 <br>
 <br>
-
 <div class="legend-center">
 
     <div class="md-one md-legend-color">
@@ -376,25 +387,27 @@ $moon = new \common\components\moon\Moon();
     </div>
 
 </div>
-
 <hr>
 <br>
+
+
 
 
 <?php /***************************** */ ?>
 <?php /***************************** Ссылки на PDF календари*/ ?>
 <?php /***************************** */ ?>
 
-
 <?php if ($PDFCalendarsData['exists']): ?>
     <br>
 
     <a name="download-calendar-<?= $dateData['year']['current'] ?>"></a>
     <h2 class="main-page-h1">
-        <?= Yii::t('app', 'Download and print PDF lunar calendar (moon phases) for {year}', [
+        <?= Yii::t('app', 'Download and print PDF lunar calendar (moon phases) for {month} {year}', [
             'year' => $dateData['year']['current'],
+            'month' => $calendarNameOfMonths[$dateData['month']['numberSimple']],
         ]) ?>
     </h2>
+
     <br><br>
 
     <div class="row rflex">
@@ -407,7 +420,6 @@ $moon = new \common\components\moon\Moon();
                     <?php if ($key == 'moonLNoHolidays'): ?>
                         <div class="pdf-header"><?= Yii::t('app', 'Landscape lunar calendar for the year') ?></div>
                     <?php endif; ?>
-
 
                     <a href="<?= $pdf['imgPathRelative'] ?>" class="lightzoom">
                         <img class="c-download-img " alt="" src="<?= $pdf['imgPathRelative'] ?>" width="100%">

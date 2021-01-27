@@ -26,5 +26,17 @@ class Moon
     }
 
 
+    function gardener(){
+
+        return (new MoonGardenerArray())->gardener();
+
+    }
+
+    function phasesArray(){
+
+        return (new MoonPhasesArray())->phases();
+
+    }
+
 }
 

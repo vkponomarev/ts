@@ -85,6 +85,36 @@ class PageTexts
 
     }
 
+    function defineIdByCalendarMonthMoonGood($dayNameURL)
+    {
+
+        return (new PageTextsDefineIdByCalendarMonthMoonGood())->define($dayNameURL);
+
+    }
+
+    function defineIdByCalendarYearMoonGardener($gardenerNameURL)
+    {
+
+        return (new PageTextsDefineIdByCalendarYearMoonGardener())->define($gardenerNameURL);
+
+    }
+
+    function defineIdByCalendarMonthMoonGardener($gardenerNameURL)
+    {
+
+        return (new PageTextsDefineIdByCalendarMonthMoonGardener())->define($gardenerNameURL);
+
+    }
+
+
+    function defineIdByCalendarYearMoonPhases($phaseNameURL)
+    {
+
+        return (new PageTextsDefineIdByCalendarYearMoonPhases())->define($phaseNameURL);
+
+    }
+
+
 
     function defineIdByCalendarMonth($holidays, $PDFCalendar)
     {

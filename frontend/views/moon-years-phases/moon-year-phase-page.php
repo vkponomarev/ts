@@ -96,10 +96,9 @@ $moon = new \common\components\moon\Moon();
         <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/">
             <?= Yii::t('app', 'Auspicious days') ?>
         </a>
+
         <br>
         <hr>
-
-
         <div class="c-links-block">
             <div class="col-xs-6 c-links-mp-months">
                 <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/years/<?= $dateData['year']['current'] ?>/new-moon/">
@@ -123,7 +122,6 @@ $moon = new \common\components\moon\Moon();
             </div>
         </div>
 
-
         <div class="c-links-block">
             <hr class="hr-1">
         </div>
@@ -144,7 +142,8 @@ $moon = new \common\components\moon\Moon();
         <?php if ($dateData['year']['previous'] == '0100'): ?>
 
         <?php else: ?>
-            <a href="/<?= Yii::$app->language ?>/calendar/moon/years/<?= $dateData['year']['previous'] ?>/">
+            <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/years/<?= $dateData['year']['previous'] ?>/
+            <?= $phaseURL; ?>">
                 <?= $dateData['year']['previous'] ?>
             </a>
         <?php endif; ?>
@@ -159,7 +158,8 @@ $moon = new \common\components\moon\Moon();
         <?php if ($dateData['year']['current'] == '9998'): ?>
 
         <?php else: ?>
-            <a href="/<?= Yii::$app->language ?>/calendar/moon/years/<?= $dateData['year']['next'] ?>/">
+            <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/years/<?= $dateData['year']['next'] ?>/
+            <?= $phaseURL; ?>">
                 <?= $dateData['year']['next'] ?>
             </a>
         <?php endif; ?>
@@ -273,9 +273,31 @@ $moon = new \common\components\moon\Moon();
 
 <a name="moon-phases-<?= $dateData['year']['current'] ?>"></a>
 <h2 class="main-page-h1">
-    <?= Yii::t('app', 'Moon phases for {year}', [
-        'year' => $dateData['year']['current'],
-    ]) ?>
+
+    <?php if ($phaseURL == 'new-moon') : ?>
+        <?= Yii::t('app', 'New moon phases for {year}', [
+            'year' => $dateData['year']['current'],
+        ]) ?>
+    <?php endif; ?>
+
+    <?php if ($phaseURL == 'waxing-moon') : ?>
+        <?= Yii::t('app', 'Waxing moon phases for {year}', [
+            'year' => $dateData['year']['current'],
+        ]) ?>
+    <?php endif; ?>
+
+    <?php if ($phaseURL == 'full-moon') : ?>
+        <?= Yii::t('app', 'Full moon phases for {year}', [
+            'year' => $dateData['year']['current'],
+        ]) ?>
+    <?php endif; ?>
+
+    <?php if ($phaseURL == 'waning-moon') : ?>
+        <?= Yii::t('app', 'Waning moon phases for {year}', [
+            'year' => $dateData['year']['current'],
+        ]) ?>
+    <?php endif; ?>
+
 </h2>
 
 <br><br>
@@ -297,158 +319,166 @@ $moon = new \common\components\moon\Moon();
                             <?php if ($moonPhaseDate >= $moonMonth['start'] && $moonPhaseDate <= ($moonMonth['end'])) : ?>
                                 <?php $dateFormat = new \DateTime($moonPhaseDate) ?>
 
-                                <?php if ($moonPhaseName == 'newMoon') : ?>
-                                    <tr class="moon-phases-tr">
-                                        <td>
-                                            <?= Yii::t('app', 'New moon') ?>
+                                <?php if ($phaseURL == 'new-moon') : ?>
+                                    <?php if ($moonPhaseName == 'newMoon') : ?>
+                                        <tr class="moon-phases-tr">
+                                            <td>
+                                                <?= Yii::t('app', 'New moon') ?>
 
+                                            </td>
+                                            <td class="moon-phases-img">
+                                                <img width="18"
+                                                     src="/pictures/moon-phases/moon-0-1.png">
+                                            </td>
+                                            <td>
+                                                <?= Yii::$app->formatter->asDate($dateFormat, 'medium'); ?>
+                                            </td>
+                                        </tr>
+                                    <?php endif; ?>
+                                <?php endif; ?>
+
+                                <?php if ($phaseURL == 'waxing-moon') : ?>
+                                    <?php if ($moonPhaseName == 'waxingCrescentStart') : ?>
+                                        <tr class="moon-phases-tr">
+                                        <td>
+                                            <?= Yii::t('app', 'Waxing crescent') ?>
                                         </td>
                                         <td class="moon-phases-img">
                                             <img width="18"
-                                                 src="/pictures/moon-phases/moon-0-1.png">
+                                                 src="/pictures/moon-phases/moon-0-2.png">
+                                            <img width="18"
+                                                 src="/pictures/moon-phases/moon-0-4.png">
                                         </td>
                                         <td>
-                                            <?= Yii::$app->formatter->asDate($dateFormat, 'medium'); ?>
+                                        <?= Yii::t('app', 'from') . ' ' . Yii::$app->formatter->asDate($dateFormat, 'medium'); ?>
+                                    <?php endif; ?>
+
+                                    <?php if ($moonPhaseName == 'waxingCrescentEnd') : ?>
+                                        <?= ' ' . Yii::t('app', 'to') . ' ' . Yii::$app->formatter->asDate($dateFormat, 'medium'); ?>
+
                                         </td>
-                                    </tr>
-                                <?php endif; ?>
+                                        </tr>
+                                    <?php endif; ?>
 
+                                    <?php if ($moonPhaseName == 'moonFirstQuarter') : ?>
+                                        <tr class="moon-phases-tr">
+                                            <td>
+                                                <?= Yii::t('app', 'Moon first quarter') ?>
+                                            </td>
+                                            <td class="moon-phases-img">
+                                                <img width="18"
+                                                     src="/pictures/moon-phases/moon-0-5.png">
+                                            </td>
+                                            <td>
+                                                <?= Yii::$app->formatter->asDate($dateFormat, 'medium'); ?>
+                                            </td>
+                                        </tr>
+                                    <?php endif; ?>
 
-                                <?php if ($moonPhaseName == 'waxingCrescentStart') : ?>
-                                    <tr class="moon-phases-tr">
-                                    <td>
-                                        <?= Yii::t('app', 'Waxing crescent') ?>
-                                    </td>
-                                    <td class="moon-phases-img">
-                                        <img width="18"
-                                             src="/pictures/moon-phases/moon-0-2.png">
-                                        <img width="18"
-                                             src="/pictures/moon-phases/moon-0-4.png">
-                                    </td>
-                                    <td>
-                                    <?= Yii::t('app', 'from') . ' ' . Yii::$app->formatter->asDate($dateFormat, 'medium'); ?>
-                                <?php endif; ?>
-
-                                <?php if ($moonPhaseName == 'waxingCrescentEnd') : ?>
-                                    <?= ' ' . Yii::t('app', 'to') . ' ' . Yii::$app->formatter->asDate($dateFormat, 'medium'); ?>
-
-                                    </td>
-                                    </tr>
-                                <?php endif; ?>
-
-                                <?php if ($moonPhaseName == 'moonFirstQuarter') : ?>
-                                    <tr class="moon-phases-tr">
+                                    <?php if ($moonPhaseName == 'growingMoonStart') : ?>
+                                        <tr class="moon-phases-tr">
                                         <td>
-                                            <?= Yii::t('app', 'Moon first quarter') ?>
+                                            <?= Yii::t('app', 'Growing moon') ?>
                                         </td>
                                         <td class="moon-phases-img">
                                             <img width="18"
-                                                 src="/pictures/moon-phases/moon-0-5.png">
+                                                 src="/pictures/moon-phases/moon-0-6.png">
+                                            <img width="18"
+                                                 src="/pictures/moon-phases/moon-0-8.png">
                                         </td>
                                         <td>
-                                            <?= Yii::$app->formatter->asDate($dateFormat, 'medium'); ?>
+                                        <?= Yii::t('app', 'from') . ' ' . Yii::$app->formatter->asDate($dateFormat, 'medium'); ?>
+
+                                    <?php endif; ?>
+
+                                    <?php if ($moonPhaseName == 'growingMoonEnd') : ?>
+                                        <?= ' ' . Yii::t('app', 'to') . ' ' . Yii::$app->formatter->asDate($dateFormat, 'medium'); ?>
+
                                         </td>
-                                    </tr>
-                                <?php endif; ?>
-
-                                <?php if ($moonPhaseName == 'growingMoonStart') : ?>
-                                    <tr class="moon-phases-tr">
-                                    <td>
-                                        <?= Yii::t('app', 'Growing moon') ?>
-                                    </td>
-                                    <td class="moon-phases-img">
-                                        <img width="18"
-                                             src="/pictures/moon-phases/moon-0-6.png">
-                                        <img width="18"
-                                             src="/pictures/moon-phases/moon-0-8.png">
-                                    </td>
-                                    <td>
-                                    <?= Yii::t('app', 'from') . ' ' . Yii::$app->formatter->asDate($dateFormat, 'medium'); ?>
+                                        </tr>
+                                    <?php endif; ?>
 
                                 <?php endif; ?>
 
-                                <?php if ($moonPhaseName == 'growingMoonEnd') : ?>
-                                    <?= ' ' . Yii::t('app', 'to') . ' ' . Yii::$app->formatter->asDate($dateFormat, 'medium'); ?>
 
-                                    </td>
-                                    </tr>
+                                <?php if ($phaseURL == 'full-moon') : ?>
+                                    <?php if ($moonPhaseName == 'fullMoon') : ?>
+                                        <tr class="moon-phases-tr">
+                                            <td>
+                                                <?= Yii::t('app', 'Full moon') ?>
+
+                                            </td>
+                                            <td class="moon-phases-img">
+                                                <img width="18"
+                                                     src="/pictures/moon-phases/moon-1-0.png">
+                                            </td>
+                                            <td>
+                                                <?= Yii::$app->formatter->asDate($dateFormat, 'medium'); ?>
+                                            </td>
+                                        </tr>
+                                    <?php endif; ?>
                                 <?php endif; ?>
-
-                                <?php if ($moonPhaseName == 'fullMoon') : ?>
-                                    <tr class="moon-phases-tr">
+                                <?php if ($phaseURL == 'waning-moon') : ?>
+                                    <?php if ($moonPhaseName == 'waningMoonStart') : ?>
+                                        <tr class="moon-phases-tr">
                                         <td>
-                                            <?= Yii::t('app', 'Full moon') ?>
-
+                                            <?= Yii::t('app', 'Waning moon') ?>
                                         </td>
                                         <td class="moon-phases-img">
                                             <img width="18"
-                                                 src="/pictures/moon-phases/moon-1-0.png">
+                                                 src="/pictures/moon-phases/moon-1-1.png">
+                                            <img width="18"
+                                                 src="/pictures/moon-phases/moon-1-3.png">
                                         </td>
                                         <td>
-                                            <?= Yii::$app->formatter->asDate($dateFormat, 'medium'); ?>
+
+                                        <?= Yii::t('app', 'from') . ' ' . Yii::$app->formatter->asDate($dateFormat, 'medium'); ?>
+                                    <?php endif; ?>
+
+                                    <?php if ($moonPhaseName == 'waningMoonEnd') : ?>
+                                        <?= ' ' . Yii::t('app', 'to') . ' ' . Yii::$app->formatter->asDate($dateFormat, 'medium'); ?>
                                         </td>
-                                    </tr>
-                                <?php endif; ?>
-
-                                <?php if ($moonPhaseName == 'waningMoonStart') : ?>
-                                    <tr class="moon-phases-tr">
-                                    <td>
-                                        <?= Yii::t('app', 'Waning moon') ?>
-                                    </td>
-                                    <td class="moon-phases-img">
-                                        <img width="18"
-                                             src="/pictures/moon-phases/moon-1-1.png">
-                                        <img width="18"
-                                             src="/pictures/moon-phases/moon-1-3.png">
-                                    </td>
-                                    <td>
-
-                                    <?= Yii::t('app', 'from') . ' ' . Yii::$app->formatter->asDate($dateFormat, 'medium'); ?>
-                                <?php endif; ?>
-
-                                <?php if ($moonPhaseName == 'waningMoonEnd') : ?>
-                                    <?= ' ' . Yii::t('app', 'to') . ' ' . Yii::$app->formatter->asDate($dateFormat, 'medium'); ?>
-                                    </td>
-                                    </tr>
-                                <?php endif; ?>
+                                        </tr>
+                                    <?php endif; ?>
 
 
-                                <?php if ($moonPhaseName == 'moonThirdQuarter') : ?>
-                                    <tr class="moon-phases-tr">
+                                    <?php if ($moonPhaseName == 'moonThirdQuarter') : ?>
+                                        <tr class="moon-phases-tr">
+                                            <td>
+
+                                                <?= Yii::t('app', 'Moon third quarter') ?>
+                                            </td>
+                                            <td class="moon-phases-img">
+                                                <img width="18"
+                                                     src="/pictures/moon-phases/moon-1-4.png">
+                                            </td>
+                                            <td>
+                                                <?= Yii::$app->formatter->asDate($dateFormat, 'medium'); ?>
+                                            </td>
+                                        </tr>
+                                    <?php endif; ?>
+
+                                    <?php if ($moonPhaseName == 'waningCrescentStart') : ?>
+                                        <tr class="moon-phases-tr">
                                         <td>
-
-                                            <?= Yii::t('app', 'Moon third quarter') ?>
+                                            <?= Yii::t('app', 'Waning crescent') ?>
                                         </td>
                                         <td class="moon-phases-img">
                                             <img width="18"
-                                                 src="/pictures/moon-phases/moon-1-4.png">
+                                                 src="/pictures/moon-phases/moon-1-5.png">
+                                            <img width="18"
+                                                 src="/pictures/moon-phases/moon-1-7.png">
                                         </td>
                                         <td>
-                                            <?= Yii::$app->formatter->asDate($dateFormat, 'medium'); ?>
+
+                                        <?= Yii::t('app', 'from') . ' ' . Yii::$app->formatter->asDate($dateFormat, 'medium'); ?>
+                                    <?php endif; ?>
+
+                                    <?php if ($moonPhaseName == 'waningCrescentEnd') : ?>
+                                        <?= ' ' . Yii::t('app', 'to') . ' ' . Yii::$app->formatter->asDate($dateFormat, 'medium'); ?>
                                         </td>
-                                    </tr>
-                                <?php endif; ?>
-
-                                <?php if ($moonPhaseName == 'waningCrescentStart') : ?>
-                                    <tr class="moon-phases-tr">
-                                    <td>
-                                        <?= Yii::t('app', 'Waning crescent') ?>
-                                    </td>
-                                    <td class="moon-phases-img">
-                                        <img width="18"
-                                             src="/pictures/moon-phases/moon-1-5.png">
-                                        <img width="18"
-                                             src="/pictures/moon-phases/moon-1-7.png">
-                                    </td>
-                                    <td>
-
-                                    <?= Yii::t('app', 'from') . ' ' . Yii::$app->formatter->asDate($dateFormat, 'medium'); ?>
-                                <?php endif; ?>
-
-                                <?php if ($moonPhaseName == 'waningCrescentEnd') : ?>
-                                    <?= ' ' . Yii::t('app', 'to') . ' ' . Yii::$app->formatter->asDate($dateFormat, 'medium'); ?>
-                                    </td>
-                                    </tr>
+                                        </tr>
+                                    <?php endif; ?>
                                 <?php endif; ?>
 
                             <?php endif; ?>

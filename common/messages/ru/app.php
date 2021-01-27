@@ -248,6 +248,7 @@ return [
     'Waning moon' => 'Убывающая Луна',
     'Moon third quarter' => 'Третья четверть луны',
     'Waning crescent' => 'Убывающий полумесяц',
+    'Waxing moon' => 'Растущая луна',
 
     'from' => 'с',
     'to' => 'по',
@@ -259,7 +260,7 @@ return [
     'Portrait lunar calendar for the year' => 'Книжный лунный календарь на год',
     'Landscape lunar calendar for the year' => 'Альбомный лунный календарь на год',
 
-    'Auspicious days according to the lunar calendar' => 'Благоприятные дни по лунному календарю',
+    'Auspicious days' => 'Благоприятные дни',
 
     'Communication' => 'Общение',
     'Money' => 'Деньги',
@@ -285,4 +286,43 @@ return [
     'Work in the garden' => 'Работа в саду',
     'Beginnings' => 'Начинания',
 
-    ];
+    'Great days' => 'Отличные дни',
+    'Good days' => 'Хорошие дни',
+    'Normal days' => 'Нормальные дни',
+    'Bad days' => 'Плохие дни',
+    'Terrible days' => 'Ужасные дни',
+
+    'Sowing calendar' => 'Посевной календарь',
+
+    'Tomato' => 'Помидоры',
+    'Cucumber' => 'Огурцы',
+    'Pepper' => 'Перец',
+    'Onions on greens' => 'Лук на зелень',
+    'Cabbage' => 'Капуста',
+    'Asparagus' => 'Спаржа',
+    'Eggplant' => 'Баклажаны',
+    'Zucchini' => 'Кабачки',
+    'Squash' => 'Патисоны',
+    'Pumpkin' => 'Тыква',
+    'Radish' => 'Редька',
+    'Daikon' => 'Дайкон',
+    'Greens' => 'Зелень',
+    'Potato' => 'Картофель',
+    'Jerusalem artichoke' => 'Топинамбур',
+    'Strawberries' => 'Клубника',
+    'Peas' => 'Горох',
+    'Beans' => 'Бобы',
+    'Carrot' => 'Морковь',
+    'Beet' => 'Свекла',
+    'Turnip' => 'Репа',
+    'Celery' => 'Сельдерей',
+    'Melons' => 'Бахчевые',
+    'Unfavorable days' => 'Неблагоприятные дни',
+
+    'New moon phases for {year}' => 'Фазы новолуния на {year} год',
+    'Waxing moon phases for {year}' => 'Фазы растущей луны на {year} год',
+    'Full moon phases for {year}' => 'Фазы полнолуния на {year} год',
+    'Waning moon phases for {year}' => 'Фазы убывающей луны на {year} год',
+
+
+];

@@ -120,6 +120,37 @@ return [
                     'defaults' => ['dayNameURL' => '', 'yearURL' => ''],
                 ],
 
+                [
+                    'pattern' => '/calendar/moon/good/months/<monthURL>/<dayNameURL:[\w_-]+>',
+                    'route' => 'moon-months-good/moon-month-good-page',
+                    'defaults' => ['dayNameURL' => '', 'monthURL' => ''],
+                ],
+
+                [
+                    'pattern' => '/calendar/moon/gardener/years/<yearURL:\d{4}>/<gardenerNameURL:[\w_-]+>',
+                    'route' => 'moon-years-gardener/moon-year-gardener-page',
+                    'defaults' => ['gardenerNameURL' => '', 'yearURL' => ''],
+                ],
+
+                [
+                    'pattern' => '/calendar/moon/gardener/months/<monthURL>/<gardenerNameURL:[\w_-]+>',
+                    'route' => 'moon-months-gardener/moon-month-gardener-page',
+                    'defaults' => ['gardenerNameURL' => '', 'monthURL' => ''],
+                ],
+
+
+                [
+                    'pattern' => '/calendar/moon/phases/years/<yearURL:\d{4}>/<phaseURL:[\w_-]+>',
+                    'route' => 'moon-years-phases/moon-year-phase-page',
+                    'defaults' => ['phaseURL' => '', 'yearURL' => ''],
+                ],
+
+                [
+                    'pattern' => '/calendar/moon/phases/months/<monthURL>/<phaseURL:[\w_-]+>',
+                    'route' => 'moon-months-gardener/moon-month-gardener-page',
+                    'defaults' => ['phaseURL' => '', 'monthURL' => ''],
+                ],
+
 
 
                 '/calendar/moon/months/<monthURL>' => 'moon-months/moon-month-page',

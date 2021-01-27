@@ -378,9 +378,15 @@
         </div>
 
         <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/">
-            <?= Yii::t('app', 'Auspicious days according to the lunar calendar') ?>
+            <?= Yii::t('app', 'Auspicious days') ?>
         </a>
         <br>
+        <a href="/<?= Yii::$app->language ?>/calendar/moon/gardener/years/<?= $dateData['year']['current'] ?>/">
+            <?= Yii::t('app', 'Sowing calendar') ?>
+        </a>
+
+
+
 
         <div class="c-links-block">
             <hr class="hr-2">

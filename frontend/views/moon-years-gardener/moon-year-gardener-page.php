@@ -57,121 +57,126 @@ $moon = new \common\components\moon\Moon();
 
         <div class="c-links-block">
             <div class="col-xs-6 c-links-mp-months">
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/communication/">
-                    <?= Yii::t('app', 'Communication') ?>
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/gardener/years/<?= $dateData['year']['current'] ?>/tomato/">
+                    <?= Yii::t('app', 'Tomato') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/money/">
-                    <?= Yii::t('app', 'Money') ?>
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/gardener/years/<?= $dateData['year']['current'] ?>/cucumber/">
+                    <?= Yii::t('app', 'Cucumber') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/bosses/">
-                    <?= Yii::t('app', 'Bosses') ?>
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/gardener/years/<?= $dateData['year']['current'] ?>/pepper/">
+                    <?= Yii::t('app', 'Pepper') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/job-change/">
-                    <?= Yii::t('app', 'Job change') ?>
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/gardener/years/<?= $dateData['year']['current'] ?>/onions-on-greens/">
+                    <?= Yii::t('app', 'Onions on greens') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/property/">
-                    <?= Yii::t('app', 'The property') ?>
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/gardener/years/<?= $dateData['year']['current'] ?>/cabbage/">
+                    <?= Yii::t('app', 'Cabbage') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/creativity/">
-                    <?= Yii::t('app', 'Creation') ?>
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/gardener/years/<?= $dateData['year']['current'] ?>/asparagus/">
+                    <?= Yii::t('app', 'Asparagus') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/science/">
-                    <?= Yii::t('app', 'The science') ?>
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/gardener/years/<?= $dateData['year']['current'] ?>/eggplant/">
+                    <?= Yii::t('app', 'Eggplant') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/art/">
-                    <?= Yii::t('app', 'Art') ?>
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/gardener/years/<?= $dateData['year']['current'] ?>/zucchini/">
+                    <?= Yii::t('app', 'Zucchini') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/education/">
-                    <?= Yii::t('app', 'Education') ?>
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/gardener/years/<?= $dateData['year']['current'] ?>/squash/">
+                    <?= Yii::t('app', 'Squash') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/travel/">
-                    <?= Yii::t('app', 'Travels') ?>
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/gardener/years/<?= $dateData['year']['current'] ?>/pumpkin/">
+                    <?= Yii::t('app', 'Pumpkin') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/vacation/">
-                    <?= Yii::t('app', 'Relaxation') ?>
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/gardener/years/<?= $dateData['year']['current'] ?>/radish/">
+                    <?= Yii::t('app', 'Radish') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/celebration/">
-                    <?= Yii::t('app', 'Celebration') ?>
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/gardener/years/<?= $dateData['year']['current'] ?>/daikon/">
+                    <?= Yii::t('app', 'Daikon') ?>
+                </a>
+                <br>
+
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/gardener/years/<?= $dateData['year']['current'] ?>/greens/">
+                    <?= Yii::t('app', 'Greens') ?>
                 </a>
                 <br>
 
 
             </div>
             <div class="col-xs-6 c-links-mp-months">
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/alcohol/">
-                    <?= Yii::t('app', 'Alcohol') ?>
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/gardener/years/<?= $dateData['year']['current'] ?>/potatoes/">
+                    <?= Yii::t('app', 'Potato') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/dispute/">
-                    <?= Yii::t('app', 'Dispute') ?>
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/gardener/years/<?= $dateData['year']['current'] ?>/jerusalem-artichoke/">
+                    <?= Yii::t('app', 'Jerusalem artichoke') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/relations/">
-                    <?= Yii::t('app', 'Relations') ?>
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/gardener/years/<?= $dateData['year']['current'] ?>/strawberries/">
+                    <?= Yii::t('app', 'Strawberries') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/marriage/">
-                    <?= Yii::t('app', 'Marriage') ?>
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/gardener/years/<?= $dateData['year']['current'] ?>/peas/">
+                    <?= Yii::t('app', 'Peas') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/conception/">
-                    <?= Yii::t('app', 'Conception') ?>
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/gardener/years/<?= $dateData['year']['current'] ?>/beans/">
+                    <?= Yii::t('app', 'Beans') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/training/">
-                    <?= Yii::t('app', 'Trainings') ?>
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/gardener/years/<?= $dateData['year']['current'] ?>/carrot/">
+                    <?= Yii::t('app', 'Carrot') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/housework/">
-                    <?= Yii::t('app', 'Housework') ?>
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/gardener/years/<?= $dateData['year']['current'] ?>/beet/">
+                    <?= Yii::t('app', 'Beet') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/dreams/">
-                    <?= Yii::t('app', 'Interpretation of dreams') ?>
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/gardener/years/<?= $dateData['year']['current'] ?>/turnip/">
+                    <?= Yii::t('app', 'Turnip') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/hair/">
-                    <?= Yii::t('app', 'A haircut') ?>
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/gardener/years/<?= $dateData['year']['current'] ?>/celery/">
+                    <?= Yii::t('app', 'Celery') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/garden-work/">
-                    <?= Yii::t('app', 'Work in the garden') ?>
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/gardener/years/<?= $dateData['year']['current'] ?>/melons/">
+                    <?= Yii::t('app', 'Melons') ?>
                 </a>
                 <br>
 
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/beginning/">
-                    <?= Yii::t('app', 'Beginnings') ?>
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/gardener/years/<?= $dateData['year']['current'] ?>/unfavorable/">
+                    <?= Yii::t('app', 'Unfavorable days') ?>
                 </a>
                 <br>
 
@@ -197,8 +202,8 @@ $moon = new \common\components\moon\Moon();
         <?php if ($dateData['year']['previous'] == '0100'): ?>
 
         <?php else: ?>
-            <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['previous'] ?>/
-            <?= ($dayNameURL <> '') ? $dayNameURL . '/' : '' ?>">
+            <a href="/<?= Yii::$app->language ?>/calendar/moon/gardener/years/<?= $dateData['year']['previous'] ?>/
+            <?= ($gardenerName <> '') ? $gardenerName . '/' : '' ?>">
                 <?= $dateData['year']['previous'] ?>
             </a>
         <?php endif; ?>
@@ -213,8 +218,8 @@ $moon = new \common\components\moon\Moon();
         <?php if ($dateData['year']['current'] == '9998'): ?>
 
         <?php else: ?>
-            <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['next'] ?>/
-            <?= ($dayNameURL <> '') ? $dayNameURL . '/' : '' ?>">
+            <a href="/<?= Yii::$app->language ?>/calendar/moon/gardener/years/<?= $dateData['year']['next'] ?>/
+            <?= ($gardenerName <> '') ? $gardenerName . '/' : '' ?>">
                 <?= $dateData['year']['next'] ?>
             </a>
         <?php endif; ?>
@@ -243,7 +248,7 @@ $moon = new \common\components\moon\Moon();
     $countMoonDay = 0;
     //
 
-    //(new \common\components\dump\Dump())->printR($goodDays[$dayNameURL]);die;
+    //(new \common\components\dump\Dump())->printR($gardenerNames['tomato']);die;
 
 
     //(new \common\components\dump\Dump())->printR($calendarByYear['moonPhases']['moonThirdQuarter']);
@@ -254,7 +259,7 @@ $moon = new \common\components\moon\Moon();
             <div class="month-name">
             <span class="fa fa-calendar">
                 </span>
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/months/<?= $dateData['year']['current'] ?>-<?= str_pad($countMonths, 2, '0', STR_PAD_LEFT) ?>/">
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/gardener/months/<?= $dateData['year']['current'] ?>-<?= str_pad($countMonths, 2, '0', STR_PAD_LEFT) ?>/">
                     <?= $calendarNameOfMonths[$countMonths]; ?>
                 </a>
 
@@ -271,6 +276,7 @@ $moon = new \common\components\moon\Moon();
 
             <?php foreach ($months as $week): ?>
                 <?php $countWeeks++; ?>
+
                 <div class="week">
                     <?php for ($i = 1; $i <= 5; $i++): ?>
 
@@ -278,12 +284,9 @@ $moon = new \common\components\moon\Moon();
 
 
                             <div class="day
-                            <?= ($goodDays[$dayNameURL][$calendarByYear['moonDay'][$week[$i]['date']]] == 1) ? ' md-one' : '' ?>
-                            <?= ($goodDays[$dayNameURL][$calendarByYear['moonDay'][$week[$i]['date']]] == 2) ? ' md-two' : '' ?>
-                            <?= ($goodDays[$dayNameURL][$calendarByYear['moonDay'][$week[$i]['date']]] == 3) ? ' md-three' : '' ?>
-                            <?= ($goodDays[$dayNameURL][$calendarByYear['moonDay'][$week[$i]['date']]] == 4) ? ' md-four' : '' ?>
-                            <?= ($goodDays[$dayNameURL][$calendarByYear['moonDay'][$week[$i]['date']]] == 5) ? ' md-five' : '' ?>
-                                        ">
+                            <?= (isset($gardenerNames[$gardenerName][(int)$key][$calendarByYear['moonDay'][$week[$i]['date']]])) ? ' md-one' : '' ?>
+                            <?= (isset($gardenerNames['unfavorable'][(int)$key][$calendarByYear['moonDay'][$week[$i]['date']]])) ? ' md-five' : '' ?>
+                                    ">
                                     <span>
                                     <?= $week[$i]['monthDay']; ?><br>
                                          <img width="18"
@@ -306,11 +309,8 @@ $moon = new \common\components\moon\Moon();
                         <?php if (isset($week[$i]['monthDay'])): ?>
 
                             <div class="day-off
-                            <?= ($goodDays[$dayNameURL][$calendarByYear['moonDay'][$week[$i]['date']]] == 1) ? ' md-one' : '' ?>
-                            <?= ($goodDays[$dayNameURL][$calendarByYear['moonDay'][$week[$i]['date']]] == 2) ? ' md-two' : '' ?>
-                            <?= ($goodDays[$dayNameURL][$calendarByYear['moonDay'][$week[$i]['date']]] == 3) ? ' md-three' : '' ?>
-                            <?= ($goodDays[$dayNameURL][$calendarByYear['moonDay'][$week[$i]['date']]] == 4) ? ' md-four' : '' ?>
-                            <?= ($goodDays[$dayNameURL][$calendarByYear['moonDay'][$week[$i]['date']]] == 5) ? ' md-five' : '' ?>
+                            <?= (isset($gardenerNames[$gardenerName][(int)$key][$calendarByYear['moonDay'][$week[$i]['date']]])) ? ' md-one' : '' ?>
+                            <?= (isset($gardenerNames['unfavorable'][(int)$key][$calendarByYear['moonDay'][$week[$i]['date']]])) ? ' md-five' : '' ?>
                                         ">
                                     <span>
                                     <?= $week[$i]['monthDay']; ?><br>
@@ -344,35 +344,14 @@ $moon = new \common\components\moon\Moon();
         &nbsp;
     </div>
     <div class="md-legend-text">
-        <?= Yii::t('app', 'Great days') ?>
-    </div>
-
-    <div class="md-two md-legend-color">
-        &nbsp;
-    </div>
-    <div class="md-legend-text">
-        <?= Yii::t('app', 'Good days') ?>
-    </div>
-
-    <div class="md-three md-legend-color">
-        &nbsp;
-    </div>
-    <div class="md-legend-text">
-        <?= Yii::t('app', 'Normal days') ?>
-    </div>
-
-    <div class="md-four md-legend-color">
-        &nbsp;
-    </div>
-    <div class="md-legend-text">
-        <?= Yii::t('app', 'Bad days') ?>
+        <?= Yii::t('app', 'Auspicious days') ?>
     </div>
 
     <div class="md-five md-legend-color">
         &nbsp;
     </div>
     <div class="md-legend-text">
-        <?= Yii::t('app', 'Terrible days') ?>
+        <?= Yii::t('app', 'Unfavorable days') ?>
     </div>
 
 </div>
