@@ -43,6 +43,25 @@ $this->params['breadcrumbs'][] = $this->title;
             <option value="sitemap-calendar-moon-years-all">Карта сайта для ЛУННОГО календаря на ГОД все языки</option>
             <option value="sitemap-calendar-moon-years-ru">Карта сайта для ЛУННОГО календаря на ГОД только RU</option>
 
+            <option value="sitemap-calendar-moon-months-all">Карта сайта для ЛУННОГО календаря на МЕСЯЦ все языки</option>
+            <option value="sitemap-calendar-moon-months-ru">Карта сайта для ЛУННОГО календаря на МЕСЯЦ только RU</option>
+
+            <option value="sitemap-calendar-moon-good-years-all">Карта сайта для ЛУННОГО календаря БЛАГОПРИЯТНЫХ ДНЕЙ на ГОД все языки</option>
+            <option value="sitemap-calendar-moon-good-years-ru">Карта сайта для ЛУННОГО календаря БЛАГОПРИЯТНЫХ ДНЕЙ на ГОД только RU</option>
+            <option value="sitemap-calendar-moon-good-months-all">Карта сайта для ЛУННОГО календаря БЛАГОПРИЯТНЫХ ДНЕЙ на МЕСЯЦ все языки</option>
+            <option value="sitemap-calendar-moon-good-months-ru">Карта сайта для ЛУННОГО календаря БЛАГОПРИЯТНЫХ ДНЕЙ на МЕСЯЦ только RU</option>
+
+            <option value="sitemap-calendar-moon-gardener-years-all">Карта сайта для ЛУННОГО ПОСЕВНОГО календаря на ГОД все языки</option>
+            <option value="sitemap-calendar-moon-gardener-years-ru">Карта сайта для ЛУННОГО ПОСЕВНОГО календаря на ГОД только RU</option>
+            <option value="sitemap-calendar-moon-gardener-months-all">Карта сайта для ЛУННОГО ПОСЕВНОГО календаря на МЕСЯЦ все языки</option>
+            <option value="sitemap-calendar-moon-gardener-months-ru">Карта сайта для ЛУННОГО ПОСЕВНОГО календаря на МЕСЯЦ только RU</option>
+
+            <option value="sitemap-calendar-moon-phases-years-all">Карта сайта для ФАЗЫ ЛУНЫ на ГОД все языки</option>
+            <option value="sitemap-calendar-moon-phases-years-ru">Карта сайта для ФАЗЫ ЛУНЫ на ГОД только RU</option>
+            <option value="sitemap-calendar-moon-phases-months-all">Карта сайта для ФАЗЫ ЛУНЫ на МЕСЯЦ все языки</option>
+            <option value="sitemap-calendar-moon-phases-months-ru">Карта сайта для ФАЗЫ ЛУНЫ на МЕСЯЦ только RU</option>
+
+
             <option value="sitemap-all">Карта сайта основной файл все языки</option>
 
             <option value="sitemap-ru">Карта сайта основной файл только RU</option>

@@ -126,6 +126,95 @@ class SiteMap
     }
 
 
+    function generateCalendarMoonMonths($languagesData){
+
+        (new SiteMapGenerateCalendarMoonMonths())->generate($languagesData);
+
+    }
+
+    function generateCalendarMoonMonthsRU($languagesData){
+
+        (new SiteMapGenerateCalendarMoonMonthsRU())->generate($languagesData);
+
+    }
+
+
+    function generateCalendarMoonGardenerMonths($languagesData){
+
+        (new SiteMapGenerateCalendarMoonGardenerMonths())->generate($languagesData);
+
+    }
+
+    function generateCalendarMoonGardenerMonthsRU($languagesData){
+
+        (new SiteMapGenerateCalendarMoonGardenerMonthsRU())->generate($languagesData);
+
+    }
+
+    function generateCalendarMoonGardenerYears($languagesData){
+
+        (new SiteMapGenerateCalendarMoonGardenerYears())->generate($languagesData);
+
+    }
+
+    function generateCalendarMoonGardenerYearsRU($languagesData){
+
+        (new SiteMapGenerateCalendarMoonGardenerYearsRU())->generate($languagesData);
+
+    }
+
+    //
+
+    function generateCalendarMoonGoodMonths($languagesData){
+
+        (new SiteMapGenerateCalendarMoonGoodMonths())->generate($languagesData);
+
+    }
+
+    function generateCalendarMoonGoodMonthsRU($languagesData){
+
+        (new SiteMapGenerateCalendarMoonGoodMonthsRU())->generate($languagesData);
+
+    }
+
+    function generateCalendarMoonGoodYears($languagesData){
+
+        (new SiteMapGenerateCalendarMoonGoodYears())->generate($languagesData);
+
+    }
+
+    function generateCalendarMoonGoodYearsRU($languagesData){
+
+        (new SiteMapGenerateCalendarMoonGoodYearsRU())->generate($languagesData);
+
+    }
+
+
+    function generateCalendarMoonPhasesMonths($languagesData){
+
+        (new SiteMapGenerateCalendarMoonPhasesMonths())->generate($languagesData);
+
+    }
+
+    function generateCalendarMoonPhasesMonthsRU($languagesData){
+
+        (new SiteMapGenerateCalendarMoonPhasesMonthsRU())->generate($languagesData);
+
+    }
+
+    function generateCalendarMoonPhasesYears($languagesData){
+
+        (new SiteMapGenerateCalendarMoonPhasesYears())->generate($languagesData);
+
+    }
+
+    function generateCalendarMoonPhasesYearsRU($languagesData){
+
+        (new SiteMapGenerateCalendarMoonPhasesYearsRU())->generate($languagesData);
+
+    }
+
+
     function generateMainFiles(){
 
         (new SiteMapGenerateMainFiles())->generate();

@@ -141,9 +141,89 @@ class SiteMapController extends Controller
 
             }
 
+            if ($name == 'sitemap-calendar-moon-months-all') {
 
+                $siteMap->generateCalendarMoonMonths($languagesData);
 
+            }
 
+            if ($name == 'sitemap-calendar-moon-months-ru') {
+
+                $siteMap->generateCalendarMoonMonthsRU($languagesData);
+
+            }
+
+            if ($name == 'sitemap-calendar-moon-good-years-all') {
+
+                $siteMap->generateCalendarMoonGoodYears($languagesData);
+
+            }
+
+            if ($name == 'sitemap-calendar-moon-good-years-ru') {
+
+                $siteMap->generateCalendarMoonGoodYearsRU($languagesData);
+
+            }
+
+            if ($name == 'sitemap-calendar-moon-good-months-all') {
+
+                $siteMap->generateCalendarMoonGoodMonths($languagesData);
+
+            }
+
+            if ($name == 'sitemap-calendar-moon-good-months-ru') {
+
+                $siteMap->generateCalendarMoonGoodMonthsRU($languagesData);
+
+            }
+
+            if ($name == 'sitemap-calendar-moon-gardener-years-all') {
+
+                $siteMap->generateCalendarMoonGardenerYears($languagesData);
+
+            }
+
+            if ($name == 'sitemap-calendar-moon-gardener-years-ru') {
+
+                $siteMap->generateCalendarMoonGardenerYearsRU($languagesData);
+
+            }
+
+            if ($name == 'sitemap-calendar-moon-gardener-months-all') {
+
+                $siteMap->generateCalendarMoonGardenerMonths($languagesData);
+
+            }
+
+            if ($name == 'sitemap-calendar-moon-gardener-months-ru') {
+
+                $siteMap->generateCalendarMoonGardenerMonthsRU($languagesData);
+
+            }
+
+            if ($name == 'sitemap-calendar-moon-phases-years-all') {
+
+                $siteMap->generateCalendarMoonPhasesYears($languagesData);
+
+            }
+
+            if ($name == 'sitemap-calendar-moon-phases-years-ru') {
+
+                $siteMap->generateCalendarMoonPhasesYearsRU($languagesData);
+
+            }
+
+            if ($name == 'sitemap-calendar-moon-phases-months-all') {
+
+                $siteMap->generateCalendarMoonPhasesMonths($languagesData);
+
+            }
+
+            if ($name == 'sitemap-calendar-moon-phases-months-ru') {
+
+                $siteMap->generateCalendarMoonPhasesMonthsRU($languagesData);
+
+            }
         }
 
         return $this->render('index', [

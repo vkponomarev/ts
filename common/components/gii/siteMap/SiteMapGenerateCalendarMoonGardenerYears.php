@@ -6,8 +6,9 @@ namespace common\components\gii\siteMap;
 use common\components\bigData\BigData;
 use common\components\countries\Countries;
 use common\components\gii\Gii;
+use common\components\moon\Moon;
 
-class SiteMapGenerateCalendarMoonYears
+class SiteMapGenerateCalendarMoonGardenerYears
 {
 
     function generate($languagesData)
@@ -24,6 +25,10 @@ class SiteMapGenerateCalendarMoonYears
         // Проходим по всем годам.
 
 
+        $moon = new Moon();
+        $moonGardener = $moon->gardener();
+        $moonGardenerCount = count($moonGardener);
+
         foreach (range(101, 9998) as $year) {
 
             if ($year < 1000) {
@@ -38,14 +43,24 @@ class SiteMapGenerateCalendarMoonYears
             foreach ($languagesData as $language) {
                 $countLang++;
 
-                $countLimit++;
-
-                $siteMapUrls .= \Yii::$app->view->render('@common/components/gii/siteMap/templates/_calendar-moon-years.php',[
+                $siteMapUrls .= \Yii::$app->view->render('@common/components/gii/siteMap/templates/_calendar-moon-gardener-years.php',[
                     'language' => $language,
                     'year' => $year,
                 ]);
 
-                if (($countLimit >= 49998) or (($year == 9998) and ($languagesDataCount == $countLang))) {
+                $countGardener = 0;
+                foreach ($moonGardener as $gardenerURL => $gardener) {
+                    $countGardener++;
+
+                $countLimit++;
+
+                $siteMapUrls .= \Yii::$app->view->render('@common/components/gii/siteMap/templates/_calendar-moon-gardener-years-veggie.php',[
+                    'language' => $language,
+                    'year' => $year,
+                    'gardener' => $gardenerURL,
+                ]);
+
+                if (($countLimit >= 49998) or (($year == 9998) and ($languagesDataCount == $countLang) and ($countGardener == $moonGardenerCount))) {
 
                     $countFiles++;
 
@@ -55,13 +70,15 @@ class SiteMapGenerateCalendarMoonYears
 
                     // Создаем файл
                     $gii = new Gii();
-                    $fileName = 'sitemap_calendar_moon_years_' . $countFiles;
+                    $fileName = 'sitemap_calendar_moon_gardener_years_' . $countFiles;
                     $gii->generateFile($siteMapContent, $fileName . '.xml', $gii->realPath() . '/frontend/views/gii/sitemap/');
 
                     $siteMapContent = '';
                     $siteMapUrls = '';
                     $fileName = '';
                     $countLimit = 0;
+                }
+
                 }
             }
 
