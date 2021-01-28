@@ -326,6 +326,11 @@ return [
     'Full moon phases for {year}' => 'Full moon phases for {year}',
     'Waning moon phases for {year}' => 'Waning moon phases for {year}',
 
+    'New moon phases for {month} {year}' => 'New moon phases for {month} {year}',
+    'Waxing moon phases for {month} {year}' => 'Waxing moon phases for {month} {year}',
+    'Full moon phases for {month} {year}' => 'Full moon phases for {month} {year}',
+    'Waning moon phases for {month} {year}' => 'Waning moon phases for {month} {year}',
+
 
 ];
 

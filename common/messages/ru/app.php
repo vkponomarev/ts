@@ -324,5 +324,10 @@ return [
     'Full moon phases for {year}' => 'Фазы полнолуния на {year} год',
     'Waning moon phases for {year}' => 'Фазы убывающей луны на {year} год',
 
+    'New moon phases for {month} {year}' => 'Фазы новолуния на {month} {year} года',
+    'Waxing moon phases for {month} {year}' => 'Фазы растущей луны на {month} {year} года',
+    'Full moon phases for {month} {year}' => 'Фазы полнолуния на {month} {year} года',
+    'Waning moon phases for {month} {year}' => 'Фазы убывающей луны на {month} {year} года',
+
 
 ];

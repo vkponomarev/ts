@@ -33,7 +33,7 @@ use yii\web\Controller;
 class MoonMonthsPhasesController extends Controller
 {
 
-    public function actionMoonMonthGardenerPage($monthURL, $gardenerNameURL)
+    public function actionMoonMonthPhasePage($monthURL, $phaseURL)
     {
 
 
@@ -48,7 +48,7 @@ class MoonMonthsPhasesController extends Controller
          * $monthURL['url']
          */
         $monthURL = $urlCheck->month($monthURL);
-        $urlCheck->moonGardenerName($gardenerNameURL);
+        $urlCheck->moonPhaseName($phaseURL);
 
         $main = new Main();
         Yii::$app->params['language'] = $main->language(Yii::$app->language);
@@ -61,9 +61,6 @@ class MoonMonthsPhasesController extends Controller
         $languageID = Yii::$app->params['language']['current']['id'];
         $citiesDefaultID = Yii::$app->params['language']['current']['cities_id'];
         $language = Yii::$app->params['language']['current']['url'];
-
-        $gardenerNames = new Moon();
-        $gardenerNames = $gardenerNames->gardener();
 
         $getParams = new GetParams();
         $getParams = $getParams->byCalendarMonthsMoon($citiesDefaultID);
@@ -84,7 +81,7 @@ class MoonMonthsPhasesController extends Controller
         $PDFCalendarsData = $PDFCalendars->yearlyMoonExists($monthURL['year'], $language);
 
         $pageTexts = new PageTexts();
-        $pageTextsID = $pageTexts->defineIdByCalendarMonthMoonGardener($gardenerNameURL);
+        $pageTextsID = $pageTexts->defineIdByCalendarMonthMoonPhases($phaseURL);
         Yii::$app->params['text'] = $main->text($pageTextsID, $languageID);
 
         $pageTextsMessages = $pageTexts->messagesByCalendarMonthMoon($dateData);
@@ -95,12 +92,11 @@ class MoonMonthsPhasesController extends Controller
                 Yii::$app->params['breadcrumbs'] = $breadCrumbs->year($yearData);
         */
 
-        return $this->render('moon-month-gardener-page.min.php', [
+        return $this->render('moon-month-phase-page.min.php', [
 
             'dateData' => $dateData,
             'cityData' => $cityData,
-            'gardenerNames' => $gardenerNames,
-            'gardenerName' => $gardenerNameURL,
+            'phaseURL' => $phaseURL,
             'PDFCalendarsData' => $PDFCalendarsData,
             'calendarByMonth' => $calendarByMonth,
             'calendarNameOfMonths' => $calendarNameOfMonths,

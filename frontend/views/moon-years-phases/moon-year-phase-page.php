@@ -194,7 +194,7 @@ $moon = new \common\components\moon\Moon();
             <div class="month-name">
             <span class="fa fa-calendar">
                 </span>
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $dateData['year']['current'] ?>-<?= str_pad($countMonths, 2, '0', STR_PAD_LEFT) ?>/">
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/months/<?= $dateData['year']['current'] ?>-<?= str_pad($countMonths, 2, '0', STR_PAD_LEFT) ?>/<?= $phaseURL ?>/">
                     <?= $calendarNameOfMonths[$countMonths]; ?>
                 </a>
 
@@ -217,7 +217,16 @@ $moon = new \common\components\moon\Moon();
                         <?php if (isset($week[$i]['monthDay'])): ?>
 
 
-                            <div class="day">
+                            <div class="day
+                            <?= ($week[$i]['newMoon'] == 1 && $phaseURL == 'new-moon') ? ' md-one' : '' ?>
+                            <?= ($week[$i]['fullMoon'] == 1 && $phaseURL == 'full-moon') ? ' md-one' : '' ?>
+                            <?= ($week[$i]['waningCrescent'] == 1  && $phaseURL == 'waning-moon' && $week[$i]['newMoon'] == 0 && $week[$i]['fullMoon'] == 0) ? ' md-one' : '' ?>
+                            <?= ($week[$i]['waningMoon'] == 1  && $phaseURL == 'waning-moon' && $week[$i]['newMoon'] == 0 && $week[$i]['fullMoon'] == 0) ? ' md-one' : '' ?>
+                            <?= ($week[$i]['waxingCrescent'] == 1  && $phaseURL == 'waxing-moon' && $week[$i]['newMoon'] == 0 && $week[$i]['fullMoon'] == 0) ? ' md-one' : '' ?>
+                            <?= ($week[$i]['waxingMoon'] == 1  && $phaseURL == 'waxing-moon' && $week[$i]['newMoon'] == 0 && $week[$i]['fullMoon'] == 0) ? ' md-one' : '' ?>
+                            ">
+                                <?php //(new \common\components\dump\Dump())->printR($week[$i]['waningCrescent']);?>
+
                                     <span>
                                     <?= $week[$i]['monthDay']; ?><br>
                                          <img width="18"
@@ -239,7 +248,14 @@ $moon = new \common\components\moon\Moon();
                     <?php for ($i = 6; $i <= 7; $i++): ?>
                         <?php if (isset($week[$i]['monthDay'])): ?>
 
-                            <div class="day-off">
+                            <div class="day-off
+                            <?= ($week[$i]['newMoon'] == 1 && $phaseURL == 'new-moon') ? ' md-one' : '' ?>
+                            <?= ($week[$i]['fullMoon'] == 1 && $phaseURL == 'full-moon') ? ' md-one' : '' ?>
+                            <?= ($week[$i]['waningCrescent'] == 1  && $phaseURL == 'waning-moon' && $week[$i]['newMoon'] == 0 && $week[$i]['fullMoon'] == 0) ? ' md-one' : '' ?>
+                            <?= ($week[$i]['waningMoon'] == 1  && $phaseURL == 'waning-moon' && $week[$i]['newMoon'] == 0 && $week[$i]['fullMoon'] == 0) ? ' md-one' : '' ?>
+                            <?= ($week[$i]['waxingCrescent'] == 1  && $phaseURL == 'waxing-moon' && $week[$i]['newMoon'] == 0 && $week[$i]['fullMoon'] == 0) ? ' md-one' : '' ?>
+                            <?= ($week[$i]['waxingMoon'] == 1  && $phaseURL == 'waxing-moon' && $week[$i]['newMoon'] == 0 && $week[$i]['fullMoon'] == 0) ? ' md-one' : '' ?>
+                            ">
                                     <span>
                                     <?= $week[$i]['monthDay']; ?><br>
                                          <img width="18"
@@ -302,6 +318,7 @@ $moon = new \common\components\moon\Moon();
 
 <br><br>
 <div class="row rflex">
+
 
     <?php foreach ($calendarByYear['moonMonth'] as $moonMonth): ?>
         <?php if (isset($moonMonth['start']) && isset($moonMonth['end'])) : ?>

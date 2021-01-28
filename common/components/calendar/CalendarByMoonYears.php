@@ -34,7 +34,6 @@ class CalendarByMoonYears
         $daysInYear = ($startOfCalendar->format('L') ? 366 : 365);
 
 
-
         $eachDay = $startOfCalendar;
         $eachDayMoon = $startOfCalendarMoon;
         $eachDayMoonDay = $startOfCalendarMoonDay;
@@ -55,8 +54,10 @@ class CalendarByMoonYears
 
         // Нам нужно расчитать в какие дни у нас выпадают эти числа.
         // Новолуние 0
+        // Возрастающий полумесяц 0 - 0.25
         // Возрастающая луна 0.25 - 0.5
         // Убывающая луна 0.5 - 0.75
+        // Убывающий полумесяц 0.75 - 1
         // Полнолуние 0.5
 
         // Если сейчас меньше чем 0.25 и завтра больше чем 0.25
@@ -97,20 +98,6 @@ class CalendarByMoonYears
             (new \common\components\dump\Dump())->printR($moonPhaseTest);die;
         */
 
-        /*
-        $waxingCrescentStart = 0;           // Растущий полумесяц начало
-        $waxingCrescentEnd = 0;             // Растущий полумесяц конец
-        $waningCrescentStart = 0;           // Убывающий полумесяц начало
-        $waningCrescentEnd = 0;             // Убывающий полумесяц конец
-        $newMoon = 0;                       // Новолуние
-        $moonFirstQuarter = 0;              // Первая четверть
-        $growingMoonStart = 0;              // Растущая луна начало
-        $growingMoonEnd = 0;                // Растущая луна конец
-        $fullMoon = 0;                      // Полнолуние
-        $waningMoonStart = 0;               // Убывающая луна начало
-        $waningMoonEnd = 0;                 // Убывающая луна конец
-        $moonThirdQuarter = 0;              // Третья четверть
-        */
 
         $waxingCrescentStart = array();           // Растущий полумесяц начало
         $waxingCrescentEnd = array();             // Растущий полумесяц конец
@@ -127,17 +114,15 @@ class CalendarByMoonYears
 
         $moonMonth = array();
         $moonMonthCount = 0;
-
         $moonPositions = array();
-        //(new \common\components\dump\Dump())->printR($cityData['latitude']);
-        //(new \common\components\dump\Dump())->printR($cityData['longitude']);
 
         $count = 0;
         do {
+
+            $thisMoonDay = $eachDayMoon->format('Y-m-d');
             $moonDayCount++;
             $count++;
             $moonCalc = new SunCalc(new \DateTime($eachDayMoon->format('Y-m-d') . ' 00:00:00'), $cityData['latitude'], $cityData['longitude']);
-            //(new \common\components\dump\Dump())->printR($eachDayMoon->format('Y-m-d') . ' 00:01:01');die;
 
             $moonPhaseToday = $moonCalc->getMoonIllumination()['phase'];
 
@@ -146,19 +131,33 @@ class CalendarByMoonYears
                 $dateDayBeforeMinusOne = (new \DateTime($dateDayBefore))->modify('-1 day')->format('Y-m-d');
                 $dateDayBeforePlusOne = (new \DateTime($dateDayBefore))->modify('+1 day')->format('Y-m-d');
 
+                // Отмечаем все даты возрастающей и убвающей луны
+                // Возрастающий полумесяц 0 - 0.25
+                if ($moonPhaseToday >= 0 && $moonPhaseToday <= 0.25) {
+                    $waxingCrescent[$dateDayBefore] = 1;
+                }
+                // Возрастающая луна 0.25 - 0.5
+                if ($moonPhaseToday >= 0.25 && $moonPhaseToday <= 0.5) {
+                    $waxingMoon[$dateDayBefore] = 1;
+                }
+                // Убывающая луна 0.5 - 0.75
+                if ($moonPhaseToday >= 0.5 && $moonPhaseToday <= 0.75) {
+                    $waningMoon[$dateDayBefore] = 1;
+                }
+                // Убывающий полумесяц 0.75 - 1
+                if ($moonPhaseToday >= 0.75 && $moonPhaseToday <= 1) {
+                    $waningCrescent[$dateDayBefore] = 1;
+                }
+
                 if (($moonPhaseDayBefore > 0.8 && $moonPhaseDayBefore <= 0.999) && ($moonPhaseToday > 0 && $moonPhaseToday < 0.3)) {
                     //$newMoon[$count] = $dateDayBefore;
                     $newMoon[$dateDayBefore] = 1;
                     $waxingCrescentStart[$dateDayBeforePlusOne] = 1;
                     $waningCrescentEnd[$dateDayBeforeMinusOne] = 1;
-
-
                 }
 
                 if ($moonPhaseDayBefore < 0.25 && $moonPhaseToday > 0.25) {
                     $growingMoonCount++;
-                    //$moonFirstQuarter[$count] = $dateDayBefore;
-                    //$growingMoonStart[$count] = (new \DateTime($dateDayBefore))->modify('+1 day')->format('Y-m-d');
                     $moonFirstQuarter[$dateDayBefore] = 1;
                     $waxingCrescentEnd[$dateDayBeforeMinusOne] = 1;
                     $growingMoonStart[$dateDayBeforePlusOne] = 1;
@@ -167,28 +166,14 @@ class CalendarByMoonYears
 
                 if ($moonPhaseDayBefore < 0.5 && $moonPhaseToday > 0.5) {
                     $fullMoonCount++;
-
-                    //$growingMoonEnd[$count] = $growingMoonEndDate;
-                    //$waningMoonStart[$count] = $waningMoonStartDate;
-                    //$fullMoon[$count]['fullMoon'] = $dateDayBefore;
-
                     $growingMoonEnd[$dateDayBeforeMinusOne] = 1;
                     $waningMoonStart[$dateDayBeforePlusOne] = 1;
                     $fullMoon[$dateDayBefore] = 1;
-
-
-                    //$fullMoon[$count]['dateBefore'] = $dateDayBefore;
-                    //$fullMoon[$count]['moonPhaseDayBefore'] = $moonPhaseDayBefore;
-                    //$fullMoon[$count]['dateToday'] = $eachDayMoon->format('Y-m-d H:i:s');
-                    //$fullMoon[$count]['moonPhaseToday'] = $moonPhaseToday;
 
                 }
 
                 if ($moonPhaseDayBefore < 0.75 && $moonPhaseToday > 0.75) {
                     $waningMoonCount++;
-
-                    //$moonThirdQuarter[$count] = $dateDayBefore;
-                    //$waningMoonEnd[$count] = (new \DateTime($dateDayBefore))->modify('-1 day')->format('Y-m-d');
                     $moonThirdQuarter[$dateDayBefore] = 1;
                     $waningMoonEnd[$dateDayBeforeMinusOne] = 1;
                     $waningCrescentStart[$dateDayBeforePlusOne] = 1;
@@ -212,59 +197,28 @@ class CalendarByMoonYears
                 }
             }
 
-            if ($moonDayCount == 1){
+            if ($moonDayCount == 1) {
                 $moonMonthCount++;
 
-                //$moonMonth[$moonMonthCount-1]['end'] = $dateDayBefore;
-                //$moonMonth[$moonMonthCount]['start'] = $eachDayMoon->format('Y-m-d');
-
-
-                /*$moonPositions[$moonMonth] = [
-                    'newMoon' => $newMoonPositions,
-                    'moonFirstQuarter' => $moonFirstQuarterPositions,
-                    'growingMoonStart' => $growingMoonStartPositions,
-                    'growingMoonEnd' => $growingMoonEndPositions,
-                    'fullMoon' => $fullMoonPositions,
-                    'waningMoonStart' => $waningMoonStartPositions,
-                    'waningMoonEnd' => $waningMoonEndPositions,
-                    'moonThirdQuarter' => $moonThirdQuarterPositions,
-                    'waxingCrescentStart' => $waxingCrescentStartPositions,
-                    'waxingCrescentEnd' => $waxingCrescentEndPositions,
-                    'waningCrescentStart' => $waningCrescentStartPositions,
-                    'waningCrescentEnd' => $waningCrescentEndPositions,
-                ];*/
             };
 
-            $moonCalendar[$eachDayMoon->format('Y-m-d')] = [
+            $moonCalendar[$thisMoonDay] = [
                 'moonDay' => $moonDayCount,
                 'moonPhase' => $moonCalc->getMoonIllumination(),
-                /*'newMoon' => $newMoon,
-                'moonFirstQuarter' => $moonFirstQuarter,
-                'growingMoonStart' => $growingMoonStart,
-                'growingMoonEnd' => $growingMoonEnd,
-                'fullMoon' => $fullMoon,
-                'waningMoonStart' => $waningMoonStart,
-                'waningMoonEnd' => $waningMoonEnd,
-                'moonThirdQuarter' => $moonThirdQuarter,
-                'waxingCrescentStart' => $waxingCrescentStart,
-                'waxingCrescentEnd' => $waxingCrescentEnd,
-                'waningCrescentStart' => $waningCrescentStart,
-                'waningCrescentEnd' => $waningCrescentEnd,*/
             ];
 
             $moonPhaseDayBefore = $moonCalc->getMoonIllumination()['phase'];
-            $dateDayBefore = $eachDayMoon->format('Y-m-d');
+            $dateDayBefore = $thisMoonDay;
             $eachDayMoon->modify('+1 day');
 
-        } while ($eachDayMoon->format('Y-m-d') <= $endOfCalendarMoonFormatted);
+        } while ($thisMoonDay <= $endOfCalendarMoonFormatted);
 
+        //
         $moonDay = array();
         $moonDayCount = 0;
-
-
         do {
             $moonDayCount++;
-            if (isset($newMoon[$eachDayMoonDay->format('Y-m-d')])){
+            if (isset($newMoon[$eachDayMoonDay->format('Y-m-d')])) {
                 $moonDayCount = 1;
             }
             $moonDay[$eachDayMoonDay->format('Y-m-d')] = $moonDayCount;
@@ -272,10 +226,12 @@ class CalendarByMoonYears
 
         } while ($eachDayMoonDay->format('Y-m-d') <= $endOfCalendarMoonFormatted);
 
-
+        //Создаем стандартный календарь с данными для лунного календаря
         $moonDayCount = 0;
         $countDays = 0;
         do {
+
+            $thisDate = $eachDay->format('Y-m-d');
 
             $moonDayCount++;
             $calendar[$eachDay->format('n')][$eachDay->format('W')][$eachDay->format('N')] = [
@@ -283,32 +239,36 @@ class CalendarByMoonYears
                 'date' => $eachDay->format('Y-m-d'),
                 'month' => $eachDay->format('n'),
                 'week' => $eachDay->format('W'),
-                'moonPhase' => $moonCalendar[$eachDay->format('Y-m-d')]['moonPhase'],
+                'moonPhase' => $moonCalendar[$thisDate]['moonPhase'],
                 'moonDay' => $moonDayCount,
                 'holiday' => 0,
                 'observance' => 0,
                 'muslim' => 0,
                 'orthodox' => 0,
-
+                'newMoon' => (isset($newMoon[$thisDate]) ? 1 : 0),               // отмечаем дату новолуния
+                'fullMoon' => (isset($fullMoon[$thisDate]) ? 1 : 0),             // отмечаем дату полнолуния
+                'waningMoon' => (isset($waningMoon[$thisDate]) ? 1 : 0),         // убывающая луна
+                'waningCrescent' => (isset($waningCrescent[$thisDate]) ? 1 : 0), // убывающий полумесяц
+                'waxingMoon' => (isset($waxingMoon[$thisDate]) ? 1 : 0),         // Возрастающая луна
+                'waxingCrescent' => (isset($waxingCrescent[$thisDate]) ? 1 : 0), // Возрастающий полумесяц
             ];
             $eachDay->modify('+1 day');
             $countDays++;
 
         } while ($countDays < $daysInYear);
 
-        $moonMonthCount=0;
+        // Отмечаем начало и конец лунного месяца
+        $moonMonthCount = 0;
         foreach ($newMoon as $key => $one) {
             $moonMonthCount++;
 
             $moonMonth[$moonMonthCount]['start'] = $key;
-            $moonMonth[$moonMonthCount-1]['end'] = (new \DateTime($key))->modify('-1 day')->format('Y-m-d');
+            $moonMonth[$moonMonthCount - 1]['end'] = (new \DateTime($key))->modify('-1 day')->format('Y-m-d');
 
         }
 
-
         return [
             'calendar' => $calendar,
-            //'moonCalendar' => $moonCalendar,
             'moonMonth' => $moonMonth,
             'moonDay' => $moonDay,
             'moonPhases' => [

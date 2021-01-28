@@ -147,7 +147,7 @@ return [
 
                 [
                     'pattern' => '/calendar/moon/phases/months/<monthURL>/<phaseURL:[\w_-]+>',
-                    'route' => 'moon-months-gardener/moon-month-gardener-page',
+                    'route' => 'moon-months-phases/moon-month-phase-page',
                     'defaults' => ['phaseURL' => '', 'monthURL' => ''],
                 ],
 

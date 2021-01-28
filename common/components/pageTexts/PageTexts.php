@@ -114,6 +114,13 @@ class PageTexts
 
     }
 
+    function defineIdByCalendarMonthMoonPhases($phaseNameURL)
+    {
+
+        return (new PageTextsDefineIdByCalendarMonthMoonPhases())->define($phaseNameURL);
+
+    }
+
 
 
     function defineIdByCalendarMonth($holidays, $PDFCalendar)
