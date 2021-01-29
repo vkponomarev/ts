@@ -34,6 +34,7 @@ class SiteMapGenerateCalendarWorkingMonthsRU
                 if ($language['url'] <> 'ru'){
                     continue;
                 }
+
                 $countMonths = 0;
                 foreach (range(1, 12) as $month) {
                     $countMonths++;
@@ -55,6 +56,18 @@ class SiteMapGenerateCalendarWorkingMonthsRU
                         'year' => $year,
                         'month' => str_pad($month, 2, '0', STR_PAD_LEFT),
                     ]);
+                    $siteMapUrls .= \Yii::$app->view->render('@common/components/gii/siteMap/templates/_calendar-40-months.php', [
+                        'language' => $language,
+                        'year' => $year,
+                        'month' => str_pad($month, 2, '0', STR_PAD_LEFT),
+                    ]);
+                    $siteMapUrls .= \Yii::$app->view->render('@common/components/gii/siteMap/templates/_calendar-36-months.php', [
+                        'language' => $language,
+                        'year' => $year,
+                        'month' => str_pad($month, 2, '0', STR_PAD_LEFT),
+                    ]);
+                    $countLimit++;
+                    $countLimit++;
                     $countLimit++;
                     $countLimit++;
                     $countLimit++;
@@ -62,6 +75,8 @@ class SiteMapGenerateCalendarWorkingMonthsRU
                     foreach ($countriesData as $country) {
                         $countCountries++;
 
+                        $countLimit++;
+                        $countLimit++;
                         $countLimit++;
                         $countLimit++;
                         $countLimit++;
@@ -87,6 +102,19 @@ class SiteMapGenerateCalendarWorkingMonthsRU
                             'country' => $country,
                         ]);
 
+                        $siteMapUrls .= \Yii::$app->view->render('@common/components/gii/siteMap/templates/_calendar-40-months-country.php', [
+                            'language' => $language,
+                            'year' => $year,
+                            'month' => str_pad($month, 2, '0', STR_PAD_LEFT),
+                            'country' => $country,
+                        ]);
+
+                        $siteMapUrls .= \Yii::$app->view->render('@common/components/gii/siteMap/templates/_calendar-36-months-country.php', [
+                            'language' => $language,
+                            'year' => $year,
+                            'month' => str_pad($month, 2, '0', STR_PAD_LEFT),
+                            'country' => $country,
+                        ]);
                         if (($countLimit >= 49998) or
                             (($year == 2030) and
                                 ($countriesDataCount == $countCountries) and

@@ -51,7 +51,7 @@ return [
             'showScriptName' => false,
             'enableStrictParsing' => false,
             'class' => 'codemix\localeurls\UrlManager',
-            'languages' => ['en','ru','es','pt','ja','de','ko','fr','jv','vi','it','tr','uk','th','pl','az','ro','uz','hu','el','cs','zh','hi','bn'],
+            'languages' => ['en', 'ru', 'es', 'pt', 'ja', 'de', 'ko', 'fr', 'jv', 'vi', 'it', 'tr', 'uk', 'th', 'pl', 'az', 'ro', 'uz', 'hu', 'el', 'cs', 'zh', 'hi', 'bn'],
             'enableDefaultLanguageUrlCode' => true,
             'rules' => [
                 '/' => 'main-page/index',
@@ -75,7 +75,6 @@ return [
                 ],
 
 
-
                 [
                     'pattern' => '/calendar/working/years/<yearURL:\d{4}>/<countryURL:[\w_-]+>',
                     'route' => 'working-days-years/working-days-year-page',
@@ -95,12 +94,6 @@ return [
                     'defaults' => ['yearURL' => '', 'countryURL' => ''],
                 ],
 
-                [
-                    'pattern' => '/calendar/business/six-days/years/<yearURL:\d{4}>/<countryURL:[\w_-]+>',
-                    'route' => 'business-six-days/business-six-days-year-page',
-                    'defaults' => ['yearURL' => '', 'countryURL' => ''],
-                ],
-
 
                 [
                     'pattern' => '/calendar/business/months/<monthURL>/<countryURL:[\w_-]+>',
@@ -108,6 +101,33 @@ return [
                     'defaults' => ['monthURL' => '', 'countryURL' => ''],
                 ],
 
+
+                [
+                    'pattern' => '/calendar/business/forty/years/<yearURL:\d{4}>/<countryURL:[\w_-]+>',
+                    'route' => 'business-forty-years/business-forty-year-page',
+                    'defaults' => ['yearURL' => '', 'countryURL' => ''],
+                ],
+
+
+                [
+                    'pattern' => '/calendar/business/forty/months/<monthURL>/<countryURL:[\w_-]+>',
+                    'route' => 'business-forty-months/business-forty-month-page',
+                    'defaults' => ['monthURL' => '', 'countryURL' => ''],
+                ],
+
+
+                [
+                    'pattern' => '/calendar/business/thirty/years/<yearURL:\d{4}>/<countryURL:[\w_-]+>',
+                    'route' => 'business-thirty-years/business-thirty-year-page',
+                    'defaults' => ['yearURL' => '', 'countryURL' => ''],
+                ],
+
+
+                [
+                    'pattern' => '/calendar/business/thirty/months/<monthURL>/<countryURL:[\w_-]+>',
+                    'route' => 'business-thirty-months/business-thirty-month-page',
+                    'defaults' => ['monthURL' => '', 'countryURL' => ''],
+                ],
 
                 [
                     'pattern' => '/calendar/business/six-days/years/<yearURL:\d{4}>/<countryURL:[\w_-]+>',
@@ -197,7 +217,6 @@ return [
                 ],
 
 
-
                 '/calendar/moon/months/<monthURL>' => 'moon-months/moon-month-page',
                 '/calendar/moon/years/<yearURL:\d{4}>' => 'moon-years/moon-year-page',
 
@@ -269,7 +288,7 @@ return [
                     'class' => 'yii\i18n\PhpMessageSource',
                     'basePath' => '@common/messages',
                     'sourceLanguage' => 'en',
-                    
+
                 ],
             ],
         ],

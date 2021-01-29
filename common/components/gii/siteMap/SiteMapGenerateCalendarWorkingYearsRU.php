@@ -36,6 +36,7 @@ class SiteMapGenerateCalendarWorkingYearsRU
                     continue;
                 }
 
+
                 $siteMapUrls .= \Yii::$app->view->render('@common/components/gii/siteMap/templates/_calendar-working-years.php', [
                     'language' => $language,
                     'year' => $year,
@@ -50,14 +51,25 @@ class SiteMapGenerateCalendarWorkingYearsRU
                     'language' => $language,
                     'year' => $year,
                 ]);
+                $siteMapUrls .= \Yii::$app->view->render('@common/components/gii/siteMap/templates/_calendar-40-years.php', [
+                    'language' => $language,
+                    'year' => $year,
+                ]);
+                $siteMapUrls .= \Yii::$app->view->render('@common/components/gii/siteMap/templates/_calendar-36-years.php', [
+                    'language' => $language,
+                    'year' => $year,
+                ]);
                 $countLimit++;
                 $countLimit++;
                 $countLimit++;
-
+                $countLimit++;
+                $countLimit++;
                 $countCountries = 0;
                 foreach ($countriesData as $country) {
                     $countCountries++;
 
+                    $countLimit++;
+                    $countLimit++;
                     $countLimit++;
                     $countLimit++;
                     $countLimit++;
@@ -78,6 +90,19 @@ class SiteMapGenerateCalendarWorkingYearsRU
                         'year' => $year,
                         'country' => $country,
                     ]);
+
+                    $siteMapUrls .= \Yii::$app->view->render('@common/components/gii/siteMap/templates/_calendar-40-years-country.php', [
+                        'language' => $language,
+                        'year' => $year,
+                        'country' => $country,
+                    ]);
+
+                    $siteMapUrls .= \Yii::$app->view->render('@common/components/gii/siteMap/templates/_calendar-36-years-country.php', [
+                        'language' => $language,
+                        'year' => $year,
+                        'country' => $country,
+                    ]);
+
 
                     if (($countLimit >= 49998) or (($year == 2030) and ($countriesDataCount == $countCountries))) {
 

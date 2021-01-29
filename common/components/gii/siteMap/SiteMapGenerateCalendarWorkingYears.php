@@ -49,6 +49,16 @@ class SiteMapGenerateCalendarWorkingYears
                     'language' => $language,
                     'year' => $year,
                 ]);
+                $siteMapUrls .= \Yii::$app->view->render('@common/components/gii/siteMap/templates/_calendar-40-years.php', [
+                    'language' => $language,
+                    'year' => $year,
+                ]);
+                $siteMapUrls .= \Yii::$app->view->render('@common/components/gii/siteMap/templates/_calendar-36-years.php', [
+                    'language' => $language,
+                    'year' => $year,
+                ]);
+                $countLimit++;
+                $countLimit++;
                 $countLimit++;
                 $countLimit++;
                 $countLimit++;
@@ -56,6 +66,8 @@ class SiteMapGenerateCalendarWorkingYears
                 foreach ($countriesData as $country) {
                     $countCountries++;
 
+                    $countLimit++;
+                    $countLimit++;
                     $countLimit++;
                     $countLimit++;
                     $countLimit++;
@@ -76,6 +88,19 @@ class SiteMapGenerateCalendarWorkingYears
                         'year' => $year,
                         'country' => $country,
                     ]);
+
+                    $siteMapUrls .= \Yii::$app->view->render('@common/components/gii/siteMap/templates/_calendar-40-years-country.php', [
+                        'language' => $language,
+                        'year' => $year,
+                        'country' => $country,
+                    ]);
+
+                    $siteMapUrls .= \Yii::$app->view->render('@common/components/gii/siteMap/templates/_calendar-36-years-country.php', [
+                        'language' => $language,
+                        'year' => $year,
+                        'country' => $country,
+                    ]);
+
 
                     if (($countLimit >= 49998) or (($year == 2030) and ($languagesDataCount == $countLang) and ($countriesDataCount == $countCountries))) {
 

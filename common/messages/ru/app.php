@@ -355,6 +355,28 @@ return [
 
     'Six day work week' => '6 дневная рабочая неделя',
 
+    '40 hour work week' => '40 часовая рабочая неделя',
+    '36 hour work week' => '36 часовая рабочая неделя',
+
+    'Calendar for the 40 hour work week for {year} {country_for}' => 'Календарь на 40 часовую рабочую неделю на {year} год {country_for}',
+    'Download and print PDF calendar for the 40 hour work week for {year} {country_for}' => 'Скачать и распечатать календарь на 40 часовую рабочую неделю на {year} год {country_for}',
+
+    'Calendar for the 40 hour work week for {month} {year} {country_for}' => 'Календарь на 40 часовую рабочую неделю на {month} {year} года {country_for}',
+    'Download and print PDF calendar for the 40 hour work week for {month} {year} {country_for}' => 'Скачать и распечатать календарь на 40 часовую рабочую неделю на {month} {year} года {country_for}',
+
+    'Portrait calendar for the 40 hour work week for the year' => 'Книжный календарь на 40 часовую рабочую неделю на год',
+    'Landscape calendar for the 40 hour work week for the year' => 'Альбомный календарь на 40 часовую рабочую неделю на год',
+
+
+    'Calendar for the 36 hour work week for {year} {country_for}' => 'Календарь на 36 часовую рабочую неделю на {year} год {country_for}',
+    'Download and print PDF calendar for the 36 hour work week for {year} {country_for}' => 'Скачать и распечатать календарь на 36 часовую рабочую неделю на {year} год {country_for}',
+
+    'Calendar for the 36 hour work week for {month} {year} {country_for}' => 'Календарь на 36 часовую рабочую неделю на {month} {year} года {country_for}',
+    'Download and print PDF calendar for the 36 hour work week for {month} {year} {country_for}' => 'Скачать и распечатать календарь на 36 часовую рабочую неделю на {month} {year} года {country_for}',
+
+    'Portrait calendar for the 36 hour work week for the year' => 'Книжный календарь на 36 часовую рабочую неделю на год',
+    'Landscape calendar for the 36 hour work week for the year' => 'Альбомный календарь на 36 часовую рабочую неделю на год',
+
 
 
 ];

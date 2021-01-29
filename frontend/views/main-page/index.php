@@ -340,10 +340,14 @@
         <div class="c-links-block">
             <div class="col-xs-6 c-links-mp-months ">
                 <a href="/<?= Yii::$app->language ?>/calendar/working/years/<?= $dateData['year']['current'] ?>/"><?= Yii::t('app', 'Working days') ?></a><br>
+                <a href="/<?= Yii::$app->language ?>/calendar/business/forty/years/<?= $dateData['year']['current'] ?>/"><?= Yii::t('app', '40 hour work week') ?></a><br>
+
                 <a href="/<?= Yii::$app->language ?>/calendar/business/six-days/years/<?= $dateData['year']['current'] ?>/"><?= Yii::t('app', 'Six day work week') ?></a><br>
             </div>
             <div class="col-xs-6 c-links-mp-months">
                 <a href="/<?= Yii::$app->language ?>/calendar/days-off/years/<?= $dateData['year']['current'] ?>/"><?= Yii::t('app', 'Days off') ?></a><br>
+                <a href="/<?= Yii::$app->language ?>/calendar/business/thirty/years/<?= $dateData['year']['current'] ?>/"><?= Yii::t('app', '36 hour work week') ?></a><br>
+
             </div>
         </div>
 

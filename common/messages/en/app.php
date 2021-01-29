@@ -356,6 +356,27 @@ return [
 
     'Six day work week' => 'Six day work week',
 
+    '40 hour work week' => '40 hour work week',
+    '36 hour work week' => '36 hour work week',
+
+    'Calendar for the 40 hour work week for {year} {country_for}' => 'Calendar for the 40 hour work week for {year} {country_for}',
+    'Download and print PDF calendar for the 40 hour work week for {year} {country_for}' => 'Download and print PDF calendar for the 40 hour work week for {year} {country_for}',
+
+    'Calendar for the 40 hour work week for {month} {year} {country_for}' => 'Calendar for the 40 hour work week for {month} {year} {country_for}',
+    'Download and print PDF calendar for the 40 hour work week for {month} {year} {country_for}' => 'Download and print PDF calendar for the 40 hour work week for {month} {year} {country_for}',
+
+    'Portrait calendar for the 40 hour work week for the year' => 'Portrait calendar for the 40 hour work week for the year',
+    'Landscape calendar for the 40 hour work week for the year' => 'Landscape calendar for the 40 hour work week for the year',
+
+
+    'Calendar for the 36 hour work week for {year} {country_for}' => 'Calendar for the 36 hour work week for {year} {country_for}',
+    'Download and print PDF calendar for the 36 hour work week for {year} {country_for}' => 'Download and print PDF calendar for the 36 hour work week for {year} {country_for}',
+
+    'Calendar for the 36 hour work week for {month} {year} {country_for}' => 'Calendar for the 36 hour work week for {month} {year} {country_for}',
+    'Download and print PDF calendar for the 36 hour work week for {month} {year} {country_for}' => 'Download and print PDF calendar for the 36 hour work week for {month} {year} {country_for}',
+
+    'Portrait calendar for the 36 hour work week for the year' => 'Portrait calendar for the 36 hour work week for the year',
+    'Landscape calendar for the 36 hour work week for the year' => 'Landscape calendar for the 36 hour work week for the year',
 
 
 ];
