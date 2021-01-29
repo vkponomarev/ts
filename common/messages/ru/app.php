@@ -223,9 +223,9 @@ return [
     'Period' => 'Период',
     'Amount of days' => 'Количество дней',
     'Working hours per week' => 'Рабочих часов при неделе',
-    'Calendar days' => 'Календарных дней',
-    'Working days' => 'Рабочих дней',
-    'Days off' => 'Выходных дней',
+    'Calendar days' => 'Календарные дни',
+    'Working days' => 'Рабочие дни',
+    'Days off' => 'Выходные дни',
     '40 hour week' => '40-часовая неделя',
     '36 hour week' => '36-часовая неделя',
     '24 hour week' => '24-часовая неделя',
@@ -328,6 +328,26 @@ return [
     'Waxing moon phases for {month} {year}' => 'Фазы растущей луны на {month} {year} года',
     'Full moon phases for {month} {year}' => 'Фазы полнолуния на {month} {year} года',
     'Waning moon phases for {month} {year}' => 'Фазы убывающей луны на {month} {year} года',
+
+
+    'Working days calendar for {year} {country_for}' => 'Календарь рабочих дней на {year} год {country_for}',
+    'Download and print PDF working days calendar for {year} {country_for}' => 'Скачать и распечать PDF календарь рабочих дней на {year} год {country_for}',
+
+    'Working days calendar for {month} {year} {country_for}' => 'Календарь рабочих дней на {month} {year} года {country_for}',
+    'Download and print PDF working days calendar for {month} {year} {country_for}' => 'Скачать и распечатать PDF календарь рабочих дней на {month} {year} года {country_for}',
+
+    'Portrait working days calendar for the year' => 'Книжный календарь рабочих дней на год',
+    'Landscape working days calendar for the year' => 'Альбомный календарь рабочих дней на год',
+
+
+    'Days off calendar for {year} {country_for}' => 'Календарь выходных дней на {year} год {country_for}',
+    'Download and print PDF days off calendar for {year} {country_for}' => 'Скачать и распечать PDF календарь выходных дней на {year} год {country_for}',
+
+    'Days off calendar for {month} {year} {country_for}' => 'Календарь выходных дней на {month} {year} года {country_for}',
+    'Download and print PDF days off calendar for {month} {year} {country_for}' => 'Скачать и распечатать PDF календарь выходных дней на {month} {year} года {country_for}',
+
+    'Portrait days off calendar for the year' => 'Книжный календарь выходных дней на год',
+    'Landscape days off calendar for the year' => 'Альбомный календарь выходных дней на год',
 
 
 ];

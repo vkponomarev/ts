@@ -334,8 +334,23 @@
             </div>
         </div>
         <div class="c-links-block">
+            <hr>
+        </div>
+
+        <div class="c-links-block">
+            <div class="col-xs-6 c-links-mp-months ">
+                <a href="/<?= Yii::$app->language ?>/calendar/working/years/<?= $dateData['year']['current'] ?>/"><?= Yii::t('app', 'Working days') ?></a><br>
+             </div>
+            <div class="col-xs-6 c-links-mp-months">
+                <a href="/<?= Yii::$app->language ?>/calendar/days-off/years/<?= $dateData['year']['current'] ?>/"><?= Yii::t('app', 'Days off') ?></a><br>
+            </div>
+        </div>
+
+        <div class="c-links-block">
             <hr class="hr-2">
         </div>
+
+
 
 
     </div>

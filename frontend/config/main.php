@@ -62,7 +62,31 @@ return [
                 //'/calendar/days/<urlDay>' => 'days/day-page',
 
 
+                [
+                    'pattern' => '/calendar/days-off/years/<yearURL:\d{4}>/<countryURL:[\w_-]+>',
+                    'route' => 'days-off-years/days-off-year-page',
+                    'defaults' => ['yearURL' => '', 'countryURL' => ''],
+                ],
 
+                [
+                    'pattern' => '/calendar/days-off/months/<monthURL>/<countryURL:[\w_-]+>',
+                    'route' => 'days-off-months/days-off-month-page',
+                    'defaults' => ['monthURL' => '', 'countryURL' => ''],
+                ],
+
+
+
+                [
+                    'pattern' => '/calendar/working/years/<yearURL:\d{4}>/<countryURL:[\w_-]+>',
+                    'route' => 'working-days-years/working-days-year-page',
+                    'defaults' => ['yearURL' => '', 'countryURL' => ''],
+                ],
+
+                [
+                    'pattern' => '/calendar/working/months/<monthURL>/<countryURL:[\w_-]+>',
+                    'route' => 'working-days-months/working-days-month-page',
+                    'defaults' => ['monthURL' => '', 'countryURL' => ''],
+                ],
 
 
                 [

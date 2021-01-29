@@ -224,6 +224,31 @@ class SiteMapController extends Controller
                 $siteMap->generateCalendarMoonPhasesMonthsRU($languagesData);
 
             }
+
+
+            if ($name == 'sitemap-calendar-working-days-off-years-all') {
+
+                $siteMap->generateCalendarWorkingYears($languagesData);
+
+            }
+
+            if ($name == 'sitemap-calendar-working-days-off-years-ru') {
+
+                $siteMap->generateCalendarWorkingYearsRU($languagesData);
+
+            }
+            if ($name == 'sitemap-calendar-working-days-off-months-all') {
+
+                $siteMap->generateCalendarWorkingMonths($languagesData);
+
+            }
+            if ($name == 'sitemap-calendar-working-days-off-months-ru') {
+
+                $siteMap->generateCalendarWorkingMonthsRU($languagesData);
+
+            }
+
+
         }
 
         return $this->render('index', [

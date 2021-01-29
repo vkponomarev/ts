@@ -215,6 +215,30 @@ class SiteMap
     }
 
 
+    function generateCalendarWorkingYears($languagesData){
+
+        (new SiteMapGenerateCalendarWorkingYears())->generate($languagesData);
+
+    }
+
+    function generateCalendarWorkingYearsRU($languagesData){
+
+        (new SiteMapGenerateCalendarWorkingYearsRU())->generate($languagesData);
+
+    }
+
+    function generateCalendarWorkingMonths($languagesData){
+
+        (new SiteMapGenerateCalendarWorkingMonths())->generate($languagesData);
+
+    }
+
+    function generateCalendarWorkingMonthsRU($languagesData){
+
+        (new SiteMapGenerateCalendarWorkingMonthsRU())->generate($languagesData);
+
+    }
+
     function generateMainFiles(){
 
         (new SiteMapGenerateMainFiles())->generate();

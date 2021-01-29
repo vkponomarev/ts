@@ -61,6 +61,12 @@ $this->params['breadcrumbs'][] = $this->title;
             <option value="sitemap-calendar-moon-phases-months-all">Карта сайта для ФАЗЫ ЛУНЫ на МЕСЯЦ все языки</option>
             <option value="sitemap-calendar-moon-phases-months-ru">Карта сайта для ФАЗЫ ЛУНЫ на МЕСЯЦ только RU</option>
 
+            <option value="sitemap-calendar-working-days-off-years-all">Карта сайта для ВЫХОДНЫХ И РАБОЧИХ ДНЕЙ календаря на ГОД все языки</option>
+            <option value="sitemap-calendar-working-days-off-years-ru">Карта сайта для ВЫХОДНЫХ И РАБОЧИХ ДНЕЙ календаря на ГОД только RU</option>
+
+            <option value="sitemap-calendar-working-days-off-months-all">Карта сайта для ВЫХОДНЫХ И РАБОЧИХ ДНЕЙ календаря на МЕСЯЦ все языки</option>
+            <option value="sitemap-calendar-working-days-off-months-ru">Карта сайта для ВЫХОДНЫХ И РАБОЧИХ ДНЕЙ календаря на МЕСЯЦ только RU</option>
+
 
             <option value="sitemap-all">Карта сайта основной файл все языки</option>
 

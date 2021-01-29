@@ -219,7 +219,7 @@ return [
     'PDF calendar of business days with holidays in {year} {country_for}' => 'PDF calendar of business days with holidays in {year} {country_for}',
     'Business days calendar for {year}. ({country})' => 'Business days calendar for {year}. ({country})',
 
-     'half year' => 'half year',
+    'half year' => 'half year',
 
     'Period' => 'Period',
     'Amount of days' => 'Amount of days',
@@ -330,6 +330,26 @@ return [
     'Waxing moon phases for {month} {year}' => 'Waxing moon phases for {month} {year}',
     'Full moon phases for {month} {year}' => 'Full moon phases for {month} {year}',
     'Waning moon phases for {month} {year}' => 'Waning moon phases for {month} {year}',
+
+    //'Working days' => 'Waning moon phases for {month} {year}',
+    'Working days calendar for {year} {country_for}' => 'Working days calendar for {year} {country_for}',
+    'Download and print PDF working days calendar for {year} {country_for}' => 'Download and print PDF working days calendar for {year} {country_for}',
+
+    'Working days calendar for {month} {year} {country_for}' => 'Working days calendar for {month} {year} {country_for}',
+    'Download and print PDF working days calendar for {month} {year} {country_for}' => 'Download and print PDF working days calendar for {month} {year} {country_for}',
+
+    'Portrait working days calendar for the year' => 'Portrait working days calendar for the year',
+    'Landscape working days calendar for the year' => 'Landscape working days calendar for the year',
+
+
+    'Days off calendar for {year} {country_for}' => 'Days off calendar for {year} {country_for}',
+    'Download and print PDF days off calendar for {year} {country_for}' => 'Download and print PDF days off calendar for {year} {country_for}',
+
+    'Days off calendar for {month} {year} {country_for}' => 'Days off calendar for {month} {year} {country_for}',
+    'Download and print PDF days off calendar for {month} {year} {country_for}' => 'Download and print PDF days off calendar for {month} {year} {country_for}',
+
+    'Portrait days off calendar for the year' => 'Portrait days off calendar for the year',
+    'Landscape days off calendar for the year' => 'Landscape days off calendar for the year',
 
 
 ];

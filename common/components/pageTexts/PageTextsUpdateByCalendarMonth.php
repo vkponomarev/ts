@@ -26,6 +26,7 @@ class PageTextsUpdateByCalendarMonth
         Yii::$app->params['text']['title'] = str_replace('{year}', $dateData['year']['full'], Yii::$app->params['text']['title']);
         Yii::$app->params['text']['title'] = str_replace('{month}', $calendarNameOfMonths[$dateData['month']['numberSimple']], Yii::$app->params['text']['title']);
         Yii::$app->params['text']['title'] = str_replace('{country_in}', $countryData['name_in'], Yii::$app->params['text']['title']);
+        Yii::$app->params['text']['title'] = str_replace('{country_for}', $countryData['name_for'], Yii::$app->params['text']['title']);
 
         Yii::$app->params['text']['h1'] = str_replace('{year}', $dateData['year']['full'], Yii::$app->params['text']['h1']);
         Yii::$app->params['text']['h1'] = str_replace('{month}', $calendarNameOfMonths[$dateData['month']['numberSimple']], Yii::$app->params['text']['h1']);
