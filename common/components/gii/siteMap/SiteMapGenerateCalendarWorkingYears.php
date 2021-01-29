@@ -44,12 +44,19 @@ class SiteMapGenerateCalendarWorkingYears
                     'language' => $language,
                     'year' => $year,
                 ]);
+
+                $siteMapUrls .= \Yii::$app->view->render('@common/components/gii/siteMap/templates/_calendar-six-days-years.php', [
+                    'language' => $language,
+                    'year' => $year,
+                ]);
+                $countLimit++;
                 $countLimit++;
                 $countLimit++;
                 $countCountries = 0;
                 foreach ($countriesData as $country) {
                     $countCountries++;
 
+                    $countLimit++;
                     $countLimit++;
                     $countLimit++;
                     $siteMapUrls .= \Yii::$app->view->render('@common/components/gii/siteMap/templates/_calendar-working-years-country.php', [
@@ -59,6 +66,12 @@ class SiteMapGenerateCalendarWorkingYears
                     ]);
 
                     $siteMapUrls .= \Yii::$app->view->render('@common/components/gii/siteMap/templates/_calendar-days-off-years-country.php', [
+                        'language' => $language,
+                        'year' => $year,
+                        'country' => $country,
+                    ]);
+
+                    $siteMapUrls .= \Yii::$app->view->render('@common/components/gii/siteMap/templates/_calendar-six-days-years-country.php', [
                         'language' => $language,
                         'year' => $year,
                         'country' => $country,

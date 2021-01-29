@@ -5,7 +5,7 @@ namespace common\components\calendar;
 class CalendarByYearBusiness
 {
 
-    public function calendar($year, $holidaysData)
+    public function calendar($year, $holidaysData, $sixDays = 0)
     {
         // format('n') - порядковый номер месяца
         // format('W') - порядковый номер недели
@@ -132,8 +132,14 @@ class CalendarByYearBusiness
             $eachDay->modify('+1 day');
             $countDays++;
 
-            if ($weekDay == 6 or $weekDay == 7) {
-                $weekends[$month]++;
+            if ($sixDays == 0) {
+                if ($weekDay == 6 or $weekDay == 7) {
+                    $weekends[$month]++;
+                }
+            } else {
+                if ($weekDay == 7) {
+                    $weekends[$month]++;
+                }
             }
             // Ищем текущую дату в массиве праздников
             $key = array_search($date, array_column($holidaysData, 'date'));
@@ -141,10 +147,16 @@ class CalendarByYearBusiness
             // Если находим такую дату праздниках и эта дата выходной то
             if (false !== $key && $holidaysData[$key]['holiday'] == 1) {
 
-                if ($weekDay == 6 or $weekDay == 7) {
-
-                    $weekendsAndHolidays[$month]++;
+                if ($sixDays == 0) {
+                    if ($weekDay == 6 or $weekDay == 7) {
+                        $weekendsAndHolidays[$month]++;
+                    }
+                } else {
+                    if ($weekDay == 7) {
+                        $weekendsAndHolidays[$month]++;
+                    }
                 }
+
                 $countHolidays[$month]++;
                 //$monthHolidays[$month] = $countHolidays;
             }

@@ -95,12 +95,33 @@ return [
                     'defaults' => ['yearURL' => '', 'countryURL' => ''],
                 ],
 
+                [
+                    'pattern' => '/calendar/business/six-days/years/<yearURL:\d{4}>/<countryURL:[\w_-]+>',
+                    'route' => 'business-six-days/business-six-days-year-page',
+                    'defaults' => ['yearURL' => '', 'countryURL' => ''],
+                ],
+
 
                 [
                     'pattern' => '/calendar/business/months/<monthURL>/<countryURL:[\w_-]+>',
                     'route' => 'business-months/business-month-page',
                     'defaults' => ['monthURL' => '', 'countryURL' => ''],
                 ],
+
+
+                [
+                    'pattern' => '/calendar/business/six-days/years/<yearURL:\d{4}>/<countryURL:[\w_-]+>',
+                    'route' => 'business-six-days/business-six-days-year-page',
+                    'defaults' => ['yearURL' => '', 'countryURL' => ''],
+                ],
+
+
+                [
+                    'pattern' => '/calendar/business/six-days/months/<monthURL>/<countryURL:[\w_-]+>',
+                    'route' => 'business-six-days-months/business-six-days-month-page',
+                    'defaults' => ['monthURL' => '', 'countryURL' => ''],
+                ],
+
 
                 [
                     'pattern' => '/calendar/business/quarters/<yearURL:\d{4}>/<quarterURL:\d{1}>/<countryURL:[\w_-]+>',

@@ -20,9 +20,9 @@ class Calendar
 
     }
 
-    function byYearBusiness($year, $holidaysData){
+    function byYearBusiness($year, $holidaysData, $sixDays = 0){
 
-        return (new CalendarByYearBusiness())->calendar($year, $holidaysData);
+        return (new CalendarByYearBusiness())->calendar($year, $holidaysData, $sixDays);
 
     }
 
@@ -38,9 +38,9 @@ class Calendar
 
     }
 
-    function byMonthBusiness($monthURL, $holidaysData){
+    function byMonthBusiness($monthURL, $holidaysData, $sixDays = 0){
 
-        return (new CalendarByMonthBusiness())->calendar($monthURL, $holidaysData);
+        return (new CalendarByMonthBusiness())->calendar($monthURL, $holidaysData, $sixDays);
 
     }
 

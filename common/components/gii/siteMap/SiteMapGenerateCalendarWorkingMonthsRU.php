@@ -34,7 +34,6 @@ class SiteMapGenerateCalendarWorkingMonthsRU
                 if ($language['url'] <> 'ru'){
                     continue;
                 }
-
                 $countMonths = 0;
                 foreach (range(1, 12) as $month) {
                     $countMonths++;
@@ -50,12 +49,20 @@ class SiteMapGenerateCalendarWorkingMonthsRU
                         'year' => $year,
                         'month' => str_pad($month, 2, '0', STR_PAD_LEFT),
                     ]);
+
+                    $siteMapUrls .= \Yii::$app->view->render('@common/components/gii/siteMap/templates/_calendar-six-days-months.php', [
+                        'language' => $language,
+                        'year' => $year,
+                        'month' => str_pad($month, 2, '0', STR_PAD_LEFT),
+                    ]);
+                    $countLimit++;
                     $countLimit++;
                     $countLimit++;
                     $countCountries = 0;
                     foreach ($countriesData as $country) {
                         $countCountries++;
 
+                        $countLimit++;
                         $countLimit++;
                         $countLimit++;
                         $siteMapUrls .= \Yii::$app->view->render('@common/components/gii/siteMap/templates/_calendar-working-months-country.php', [
@@ -67,6 +74,13 @@ class SiteMapGenerateCalendarWorkingMonthsRU
 
 
                         $siteMapUrls .= \Yii::$app->view->render('@common/components/gii/siteMap/templates/_calendar-days-off-months-country.php', [
+                            'language' => $language,
+                            'year' => $year,
+                            'month' => str_pad($month, 2, '0', STR_PAD_LEFT),
+                            'country' => $country,
+                        ]);
+
+                        $siteMapUrls .= \Yii::$app->view->render('@common/components/gii/siteMap/templates/_calendar-six-days-months-country.php', [
                             'language' => $language,
                             'year' => $year,
                             'month' => str_pad($month, 2, '0', STR_PAD_LEFT),

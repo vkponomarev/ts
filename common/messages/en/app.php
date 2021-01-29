@@ -215,7 +215,6 @@ return [
     'Business days calendar with holidays and weekends for the {quarter} quarter of {year} {country_for}' => 'Business days calendar with holidays and weekends for the {quarter} quarter of {year} {country_for}',
     'Download and print PDF business days calendar with holidays and weekends for the {quarter} quarter of {year} {country_for}' => 'Download and print PDF business days calendar with holidays and weekends for the {quarter} quarter of {year} {country_for}',
 
-
     'PDF calendar of business days with holidays in {year} {country_for}' => 'PDF calendar of business days with holidays in {year} {country_for}',
     'Business days calendar for {year}. ({country})' => 'Business days calendar for {year}. ({country})',
 
@@ -350,6 +349,13 @@ return [
 
     'Portrait days off calendar for the year' => 'Portrait days off calendar for the year',
     'Landscape days off calendar for the year' => 'Landscape days off calendar for the year',
+
+
+    'Business days calendar with a six-day work week with holidays and weekends in {year} {country_for}' => 'Business days calendar with a six-day work week with holidays and weekends in {year} {country_for}',
+    'Business days calendar with a six-day work week with holidays and weekends for {month} {year} {country_for}' => 'Business days calendar with a six-day work week with holidays and weekends for {month} {year} {country_for}',
+
+    'Six day work week' => 'Six day work week',
+
 
 
 ];

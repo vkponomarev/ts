@@ -350,4 +350,11 @@ return [
     'Landscape days off calendar for the year' => 'Альбомный календарь выходных дней на год',
 
 
+    'Business days calendar with a six-day work week with holidays and weekends in {year} {country_for}' => 'Производственный календарь при шести дневной рабочей неделе с праздниками и выходными днями в {year} году {country_for}',
+    'Business days calendar with a six-day work week with holidays and weekends for {month} {year} {country_for}' => 'Производственный календарь при шести дневной рабочей неделе с праздниками и выходными днями на {month} {year} года {country_for}',
+
+    'Six day work week' => '6 дневная рабочая неделя',
+
+
+
 ];
