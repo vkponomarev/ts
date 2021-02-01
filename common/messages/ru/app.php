@@ -379,16 +379,23 @@ return [
 
     'Religious calendars for {year}' => 'Религиозные календари на {year} год',
 
-    'Orthodox calendar for {year}' => 'Православный календарь на {year} год',
-    'Catholic calendar for {year}' => 'Католический календарь на {year} год',
-    'Muslim calendar for {year}' => 'Мусульманский календарь на {year} год',
-    'Jewish calendar for {year}' => 'Еврейский календарь на {year} год',
-    'Hindu calendar for {year}' => 'Индуистский календарь на {year} год',
+    'Orthodox calendar' => 'Православный календарь',
+    'Catholic calendar' => 'Католический календарь',
+    'Muslim calendar' => 'Мусульманский календарь',
+    'Jewish calendar' => 'Еврейский календарь',
+    'Hindu calendar' => 'Индуистский календарь',
 
     'Calendar of Orthodox holidays and weekends for {year}' => 'Календарь православных праздников и выходных дней на {year} год',
     'Calendar of Catholic holidays and weekends for {year}' => 'Календарь католических праздников и выходных дней на {year} год',
     'Calendar of Muslim holidays and weekends for {year}' => 'Календарь мусульманских праздников и выходных дней на {year} год',
     'Calendar of Jewish holidays and weekends for {year}' => 'Календарь еврейских праздников и выходных дней на {year} год',
     'Calendar of Hindu holidays and weekends for {year}' => 'Календарь индуистских праздников и выходных дней на {year} год',
+
+    'Calendar of Orthodox holidays and weekends for {month} {year}' => 'Календарь православных праздников и выходных дней на {month} {year} года',
+    'Calendar of Catholic holidays and weekends for {month} {year}' => 'Календарь католических праздников и выходных дней на {month} {year} года',
+    'Calendar of Muslim holidays and weekends for {month} {year}' => 'Календарь мусульманских праздников и выходных дней на {month} {year} года',
+    'Calendar of Jewish holidays and weekends for {month} {year}' => 'Календарь еврейских праздников и выходных дней на {month} {year} года',
+    'Calendar of Hindu holidays and weekends for {month} {year}' => 'Календарь индуистских праздников и выходных дней на {month} {year} года',
+
 
 ];

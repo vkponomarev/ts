@@ -23,6 +23,9 @@ class SiteMapGenerateCalendarReligionMonths
         $siteMapUrls = '';
         $countMonths = 0;
         // Проходим по всем годам.
+
+        $religions = ['orthodox', 'catholic', 'muslim', 'jewish', 'hindu'];
+
         foreach (range(2000, 2030) as $year) {
 
             $count++;
@@ -37,30 +40,26 @@ class SiteMapGenerateCalendarReligionMonths
                 foreach (range(1, 12) as $month) {
                     $countMonths++;
 
-                    $siteMapUrls .= \Yii::$app->view->render('@common/components/gii/siteMap/templates/_calendar-business-months.php', [
-                        'language' => $language,
-                        'year' => $year,
-                        'month' => str_pad($month, 2, '0', STR_PAD_LEFT),
-                    ]);
+                    $countReligion = 0;
+                    foreach ($religions as $religion) {
+                        $countReligion++;
 
-                    $countCountries = 0;
-                    foreach ($countriesData as $country) {
-                        $countCountries++;
-
-                        $countLimit++;
-
-                        $siteMapUrls .= \Yii::$app->view->render('@common/components/gii/siteMap/templates/_calendar-business-months-country.php', [
+                        $siteMapUrls .= \Yii::$app->view->render('@common/components/gii/siteMap/templates/_calendar-religion-months.php', [
                             'language' => $language,
                             'year' => $year,
                             'month' => str_pad($month, 2, '0', STR_PAD_LEFT),
-                            'country' => $country,
+                            'religion' => $religion,
                         ]);
+
+
+                        $countLimit++;
+
 
                         if (($countLimit >= 49998) or
                             (($year == 2030) and
                                 ($languagesDataCount == $countLang) and
-                                ($countriesDataCount == $countCountries) and
-                                ($countMonths == 12))
+                                ($countMonths == 12) and
+                                ($countReligion == 5))
                         ) {
 
                             $countFiles++;
@@ -71,7 +70,7 @@ class SiteMapGenerateCalendarReligionMonths
 
                             // Создаем файл
                             $gii = new Gii();
-                            $fileName = 'sitemap_calendar_business_months_' . $countFiles;
+                            $fileName = 'sitemap_calendar_religion_months_' . $countFiles;
                             //(new \common\components\dump\Dump())->printR($gii->realPath());
                             $gii->generateFile($siteMapContent, $fileName . '.xml', $gii->realPath() . '/frontend/views/gii/sitemap/');
 
@@ -79,6 +78,7 @@ class SiteMapGenerateCalendarReligionMonths
                             $siteMapUrls = '';
                             $fileName = '';
                             $countLimit = 0;
+
                         }
                     }
 

@@ -11,19 +11,11 @@ class UrlCheckReligion
 {
 
 
-    function year($religion)
+    function religion($religion)
     {
 
         $religions = ['orthodox', 'catholic', 'muslim', 'jewish', 'hindu'];
 
-
-        if (($religion == '') or
-            ($religion == '') or
-            ($religion == '') or
-            ($religion == '') or
-            ($religion == '') or
-            ($religion == '')
-        )
 
         if ($religion <> ''){
 

@@ -381,16 +381,24 @@ return [
     'Religious calendars for {year}' => 'Religious calendars for {year}',
 
 
-    'Orthodox calendar for {year}' => 'Orthodox calendar for {year}',
-    'Catholic calendar for {year}' => 'Catholic calendar for {year}',
-    'Muslim calendar for {year}' => 'Muslim calendar for {year}',
-    'Jewish calendar for {year}' => 'Jewish calendar for {year}',
-    'Hindu calendar for {year}' => 'Hindu calendar for {year}',
+    'Orthodox calendar' => 'Orthodox calendar',
+    'Catholic calendar' => 'Catholic calendar',
+    'Muslim calendar' => 'Muslim calendar',
+    'Jewish calendar' => 'Jewish calendar',
+    'Hindu calendar' => 'Hindu calendar',
 
     'Calendar of Orthodox holidays and weekends for {year}' => 'Calendar of Orthodox holidays and weekends for {year}',
     'Calendar of Catholic holidays and weekends for {year}' => 'Calendar of Catholic holidays and weekends for {year}',
     'Calendar of Muslim holidays and weekends for {year}' => 'Calendar of Muslim holidays and weekends for {year}',
     'Calendar of Jewish holidays and weekends for {year}' => 'Calendar of Jewish holidays and weekends for {year}',
     'Calendar of Hindu holidays and weekends for {year}' => 'Calendar of Hindu holidays and weekends for {year}',
+
+    'Calendar of Orthodox holidays and weekends for {month} {year}' => 'Calendar of Orthodox holidays and weekends for {month} {year}',
+    'Calendar of Catholic holidays and weekends for {month} {year}' => 'Calendar of Catholic holidays and weekends for {month} {year}',
+    'Calendar of Muslim holidays and weekends for {month} {year}' => 'Calendar of Muslim holidays and weekends for {month} {year}',
+    'Calendar of Jewish holidays and weekends for {month} {year}' => 'Calendar of Jewish holidays and weekends for {month} {year}',
+    'Calendar of Hindu holidays and weekends for {month} {year}' => 'Calendar of Hindu holidays and weekends for {month} {year}',
+
+
 ];
 

@@ -427,28 +427,26 @@
 
         </div>
 
-
-
         <a href="/<?= Yii::$app->language ?>/calendar/religion/orthodox/years/<?= $dateData['year']['current'] ?>/">
-            <?= Yii::t('app', 'Orthodox calendar for {year}', ['year' => $dateData['year']['current']]) ?>
+            <?= Yii::t('app', 'Orthodox calendar') ?>
         </a>
         <br>
 
         <a href="/<?= Yii::$app->language ?>/calendar/religion/catholic/years/<?= $dateData['year']['current'] ?>/">
-            <?= Yii::t('app', 'Catholic calendar for {year}', ['year' => $dateData['year']['current']]) ?>
+            <?= Yii::t('app', 'Catholic calendar') ?>
         </a>
         <br>
         <a href="/<?= Yii::$app->language ?>/calendar/religion/muslim/years/<?= $dateData['year']['current'] ?>/">
-            <?= Yii::t('app', 'Muslim calendar for {year}', ['year' => $dateData['year']['current']]) ?>
+            <?= Yii::t('app', 'Muslim calendar') ?>
         </a>
         <br>
         <a href="/<?= Yii::$app->language ?>/calendar/religion/jewish/years/<?= $dateData['year']['current'] ?>/">
-            <?= Yii::t('app', 'Jewish calendar for {year}', ['year' => $dateData['year']['current']]) ?>
+            <?= Yii::t('app', 'Jewish calendar') ?>
         </a>
         <br>
 
         <a href="/<?= Yii::$app->language ?>/calendar/religion/hindu/years/<?= $dateData['year']['current'] ?>/">
-            <?= Yii::t('app', 'Hindu calendar for {year}', ['year' => $dateData['year']['current']]) ?>
+            <?= Yii::t('app', 'Hindu calendar') ?>
         </a>
 
         <div class="c-links-block">

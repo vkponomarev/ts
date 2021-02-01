@@ -27,6 +27,11 @@ class Date
     public $year;
 
     /**
+     * @var \common\componentsV2\date\DateMonth
+     */
+    public $month;
+
+    /**
      * Date constructor.
      * @param $date string format 'Y-m-d'
      * @throws \Exception
@@ -58,6 +63,16 @@ class Date
     function year(){
 
         $this->year = (new DateYear())->year($this->date);
+        return $this;
+
+    }
+
+    /**
+     * @throws \Exception
+     */
+    function month(){
+
+        $this->month = (new DateMonth())->month($this->date, $this->year);
         return $this;
 
     }

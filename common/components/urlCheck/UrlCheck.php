@@ -50,9 +50,9 @@ class UrlCheck
     }
 
 
-    function religion($url, $holidaysRange){
+    function religion($religion){
 
-        (new UrlCheckYearReligion())->year($url, $holidaysRange);
+        (new UrlCheckReligion())->religion($religion);
 
     }
 

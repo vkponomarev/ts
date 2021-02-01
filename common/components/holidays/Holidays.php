@@ -92,6 +92,13 @@ class Holidays
 
     }
 
+    function byReligionMonths($year, $month, $languageID, $religion){
+
+        return (new HolidaysByReligionMonths())->holidays($year, $month, $languageID, $religion);
+
+    }
+
+
 
     /**
      * Заменяем ячейку выходной день с несколькими значениями пример (0,1) на одно значение здесь 1 (0,0) здесь 0

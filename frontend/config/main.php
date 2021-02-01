@@ -174,11 +174,11 @@ return [
                     'defaults' => ['yearURL' => '', 'religionURL' => ''],
                 ],
 
-                /*[
-                    'pattern' => '/calendar/months/<monthURL>/<countryURL:[\w_-]+>',
-                    'route' => 'months/month-page',
-                    'defaults' => ['monthURL' => '', 'countryURL' => ''],
-                ],*/
+                [
+                    'pattern' => '/calendar/religion/<religionURL:[\w_-]+>/months/<monthURL>',
+                    'route' => 'religion-months/religion-month-page',
+                    'defaults' => ['monthURL' => '', 'religionURL' => ''],
+                ],
 
 
 
