@@ -33,14 +33,14 @@ body {
 }
 
 h1 {
-  font-size: 30px;
-  color: #255e62;
+  font-size: 35px;
+  color: #000000;
   word-break: break-word;
 }
 
 h2 {
-  font-size: 28px;
-  color: #255e62;
+  font-size: 30px;
+  color: #000000;
   word-break: break-word;
 }
 
@@ -651,6 +651,43 @@ a.lightzoom {
   background-color: #ebebeb !important;
 }
 
+.menu {
+  border-top: 4px solid #337ab7;
+}
+
+.navigation-container {
+  padding-top: 30px !important;
+}
+
+.navigation {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.navigation-header {
+  display: inline-block;
+  padding-right: 20px;
+  color: #59ac02;
+}
+
+.navigation-items {
+  display: inline-block;
+}
+
+.navigation-item {
+  display: inline-block;
+  padding-right: 20px;
+  text-decoration: overline;
+}
+.navigation-item a {
+  color: #416962;
+}
+.navigation-item a:hover {
+  color: #c20000;
+  cursor: pointer;
+}
+
 .breadcrumbs {
   color: #b2b2b2;
   padding-left: 0px;
@@ -773,16 +810,6 @@ footer div div div > a:hover {
     padding-left: 0px !important;
   }
 }
-.main-page-h1 {
-  font-size: 35px;
-  text-align: center;
-}
-
-.main-page-h2 {
-  font-size: 35px;
-  text-align: center;
-}
-
 .current-date-link {
   font-size: 50px;
   line-height: 30px;
@@ -832,10 +859,12 @@ footer div div div > a:hover {
 .c-links-mp-months {
   padding: 0;
   line-height: 24px;
+  font-size: 17px;
 }
 
 .c-links-block {
   display: flow-root;
+  font-size: 17px;
 }
 
 .hr-1 {

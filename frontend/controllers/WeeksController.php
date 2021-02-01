@@ -72,7 +72,7 @@ class WeeksController extends Controller
 
         $PDFCalendars = new PDFCalendars();
         $PDFCalendarsData = $PDFCalendars->yearlyWithWeeksExists($year, $language, $countryData['url']);
-
+        //$PDFCalendarsData = 0;
         return $this->render('year-weeks-page.min.php', [
 
             'dateData' => $dateData,

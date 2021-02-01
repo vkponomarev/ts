@@ -148,3 +148,70 @@
   background-color: #ebebeb!important;
 
 }
+
+
+
+.menu{
+
+  border-top: 4px solid #337ab7;
+
+}
+
+
+
+
+.navigation-container{
+
+  padding-top: 30px!important;
+
+}
+
+
+.navigation{
+
+  display: inline-block;
+  font-weight: bold;
+  font-size: 25px;
+
+}
+
+
+.navigation-header{
+
+
+  display: inline-block;
+  padding-right: 20px;
+  //color: #898989;
+  color: #59ac02
+}
+
+
+
+.navigation-items{
+  display: inline-block;
+
+}
+
+.navigation-item{
+   display: inline-block;
+   padding-right: 20px;
+   text-decoration: overline;
+
+  a{
+
+    color: #416962;
+
+    &:hover{
+
+      color:#c20000;
+      cursor: pointer;
+
+    }
+
+
+  }
+
+
+
+}
+

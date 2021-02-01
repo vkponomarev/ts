@@ -233,11 +233,37 @@ class SiteMap
 
     }
 
+    function generateCalendarReligionYears($languagesData){
+
+        (new SiteMapGenerateCalendarReligionYears())->generate($languagesData);
+
+    }
+
+    function generateCalendarReligionYearsRU($languagesData){
+
+        (new SiteMapGenerateCalendarReligionYearsRU())->generate($languagesData);
+
+    }
+
+    function generateCalendarReligionMonths($languagesData){
+
+        (new SiteMapGenerateCalendarReligionMonths())->generate($languagesData);
+
+    }
+
+    function generateCalendarReligionMonthsRU($languagesData){
+
+        (new SiteMapGenerateCalendarReligionMonthsRU())->generate($languagesData);
+
+    }
+
+
     function generateCalendarWorkingMonthsRU($languagesData){
 
         (new SiteMapGenerateCalendarWorkingMonthsRU())->generate($languagesData);
 
     }
+
 
     function generateMainFiles(){
 

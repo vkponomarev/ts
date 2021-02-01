@@ -1,94 +1,110 @@
 <?php
-
 use frontend\assets\AppAsset;
-
 AppAsset::register($this);
 ?>
-<?php $this->beginPage() ?>
+<?php $this->beginPage()?>
 <!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>">
+<html lang="<?=Yii::$app->language ?>">
 <head>
 
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
-    <meta charset="<?= Yii::$app->charset ?>">
+    <meta charset="<?=Yii::$app->charset?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?= Yii::$app->params['text']['title'] ?></title>
+    <title><?=Yii::$app->params['text']['title']?></title>
 
-    <meta name="description" content="<?= Yii::$app->params['text']['description'] ?>">
+    <meta name="description" content="<?=Yii::$app->params['text']['description']?>">
 
-    <?= $this->render('/partials/alternate/_alternate.min.php') ?>
+    <?=$this->render('/partials/alternate/_alternate.min.php')?>
 
-    <?= $this->render('/partials/canonical/_canonical.min.php') ?>
+    <?=$this->render('/partials/canonical/_canonical.min.php')?>
 
-    <?= $this->render('/partials/link-prev-next/_link-prev-next.min.php') ?>
-    <?php $this->registerCsrfMetaTags() ?>
-    <?php $this->head() ?>
+    <?=$this->render('/partials/link-prev-next/_link-prev-next.min.php')?>
+    <?php $this->registerCsrfMetaTags()?>
+    <?php $this->head()?>
 </head>
 <body role="document">
-<?php $this->beginBody() ?>
+<?php $this->beginBody()?>
 
 <div class="wrap">
-    <div class="menu">
-    <div class="container navigation-container">
 
-            <div class="navigation">
-                <div class="navigation-header">
-                    <a href="/" >
-                    TIMESLES
+
+    <div class="top">
+
+        <?php //$this->render('/partials/search/_search-widget.min.php')?>
+
+        <a href="/" rel="nofollow">TIMESLES</a>
+    </div>
+
+    
+
+    <nav class="navbar-default header-nav-line">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed nav-button" data-toggle="collapse"
+                    data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div id="navbar" class="navbar-collapse collapse nav-bar-collapsed ">
+
+            <ul class="nav navbar-nav nav-bar-collapsed-ul">
+
+                <li class="nav-link navbar-li">
+
+                    <a href="/calendar/years/<?= Yii::$app->params['menu']['dateData']['year']['now']?>/" class="dropdown-toggle navbar-a-link">
+
+                        <?= Yii::$app->params['menu']['dateData']['year']['now']?>
+
                     </a>
-                </div>
-                <div class="navigation-items">
-                    <div class="navigation-item">
-                        <a href="/calendar/years/<?= Yii::$app->params['menu']['dateData']['year']['now']?>/" >
 
-                            <?= Yii::$app->params['menu']['dateData']['year']['now']?>
+                </li>
 
-                        </a>
-                    </div>
-                    <div class="navigation-item">
-                        <a href="/calendar/years/<?= Yii::$app->params['menu']['dateData']['year']['now']?>/" >
-                            Сегодня</a>
-                    </div>
-                    <div class="navigation-item">
-                        <a href="/calendar/years/<?= Yii::$app->params['menu']['dateData']['year']['now']?>/" >
-                            Праздники</a>
-                    </div>
-                    <div class="navigation-item">
-                        <a href="/calendar/years/<?= Yii::$app->params['menu']['dateData']['year']['now']?>/" >
-                            Луна</a>
-                    </div>
-                    <div class="navigation-item">
-                        <a href="/calendar/years/<?= Yii::$app->params['menu']['dateData']['year']['now']?>/" >
-                            Солнце</a>
-                    </div>
-                </div>
-
-            </div>
-
-    </div>
-    </div>
+                <li class="navbar-separator">
+                    |
+                </li>
 
 
-    <div class="container">
+                <li class="dropdown navbar-li">
+                    <a href="/<?=Yii::$app->language?>/albums/" class="dropdown-toggle navbar-a-link">
 
-        <?= $content ?>
+                        <?=Yii::t('app', 'Сегодня')?>
 
-    </div>
+                    </a>
+                </li>
 
-
-    <div class="container">
-        <div class="rflex">
-
-            <?= $this->render('/partials/breadcrumbs/_breadcrumbs.min.php') ?>
+            </ul>
 
         </div>
+
+    </nav>
+
+    <div class="container">
+
+        <?=$content?>
+
     </div>
+
+
+
+
+<div class="container">
+    <div class="rflex">
+
+        <?=$this->render('/partials/breadcrumbs/_breadcrumbs.min.php')?>
+
+    </div>
+</div>
 </div>
 <footer>
     <div class="container">
 
-        <div class="rflex fmy">
+       <div class="rflex fmy">
 
             <div class="col-xs-12 col-sm-6">
                 <span class="cl">
@@ -96,22 +112,22 @@ AppAsset::register($this);
                    <span class="fa fa-globe">
                    </span>
 
-                        <?= Yii::$app->params['language']['current']['name'] ?>
+                        <?= Yii::$app->params['language']['current']['name']?>
 
                    <span class="fa fa-sort-down">
                    </span>
                    <ul>
 
 
-                       <?php foreach (Yii::$app->params['language']['all'] as $item): ?>
+                       <?php foreach (Yii::$app->params['language']['all'] as $item):?>
 
                            <li>
 
-                               <?= \yii\helpers\Html::a($item['name'], array_merge(Yii::$app->request->get(), [Yii::$app->controller->route, 'language' => $item['url']])) ?>
+                               <?= \yii\helpers\Html::a($item['name'], array_merge(Yii::$app->request->get(), [Yii::$app->controller->route, 'language' => $item['url']]))?>
 
                            </li>
 
-                       <?php endforeach ?>
+                       <?php endforeach?>
 
 
                    </ul>
@@ -168,6 +184,7 @@ AppAsset::register($this);
     <br><br><br>
 
 
+
 </footer>
 
 <?php if (Yii::$app->language == 'ru'): ?>
@@ -181,8 +198,8 @@ AppAsset::register($this);
         speed: 200,
         viewTitle: false,
         isOverlayClickClosing: true,
-        isWindowClickClosing: true,
-        isEscClosing: true
+        isWindowClickClosing:  true,
+        isEscClosing:          true
     });</script>
 <?php $this->endBody() ?>
 

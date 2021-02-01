@@ -68,6 +68,11 @@ $this->params['breadcrumbs'][] = $this->title;
             <option value="sitemap-calendar-working-days-off-months-ru">Карта сайта для ВЫХОДНЫХ И РАБОЧИХ ДНЕЙ календаря на МЕСЯЦ только RU</option>
 
 
+            <option value="sitemap-calendar-religion-years-all">Карта сайта для РЕЛИГИОЗНОГО календаря на ГОД все языки</option>
+            <option value="sitemap-calendar-religion-years-ru">Карта сайта для РЕЛИГИОЗНОГО календаря на ГОД только RU</option>
+            <option value="sitemap-calendar-religion-months-all">Карта сайта для РЕЛИГИОЗНОГО календаря на МЕСЯЦ все языки</option>
+            <option value="sitemap-calendar-religion-months-ru">Карта сайта для РЕЛИГИОЗНОГО календаря на МЕСЯЦ только RU</option>
+
             <option value="sitemap-all">Карта сайта основной файл все языки</option>
 
             <option value="sitemap-ru">Карта сайта основной файл только RU</option>

@@ -3,8 +3,12 @@
 /**
  * @var $this frontend\controllers\YearsController
  *
+ *
+ * @var $date common\components\date\Date
+ *
+ *
  * @var $calendarByYear common\components\calendar\CalendarByYear
- * @var $dateData common\components\date\DateData
+
  * @var $countriesData common\components\countries\CountriesData
  * @var $holidaysData common\components\holidays\HolidaysByCountryByYear array
  * @var $holidaysTypesData common\components\holidaysTypes\HolidaysTypesData
@@ -17,10 +21,11 @@
  */
 
 
+
 ?>
 
 
-<a name="calendar-<?= $dateData['year']['current'] ?>"></a><h1
+<a name="calendar-<?= $date->year->current ?>"></a><h1
         class="main-page-h1"><?= Yii::$app->params['text']['h1'] ?></h1>
 <hr>
 
@@ -33,7 +38,7 @@
         <div class="current-date-div">
             <div class="current-date-one">
                 <div class="current-date-year">
-                    <?= $dateData['year']['current'] ?>
+                    <?= $date->year->current ?>
                     <br>
                     <span class="current-date-month">
                     <?= Yii::t('app', 'year'); ?>
@@ -52,7 +57,7 @@
     <?php /***************************** */ ?>
 
     <div class="col-xxs-12 col-xs-6 c-links-mp">
-        <?php if ($dateData['year']['current'] >= 2000 && $dateData['year']['current'] <= 2030): ?>
+        <?php if ($date->year->current >= 2000 && $date->year->current <= 2030): ?>
             <div class="c-links-block c-links-mp-header c-links-mp-header-link">
                 <?= Yii::t('app', 'Choose the country'); ?>
             </div>
@@ -60,7 +65,7 @@
                 <form method="get" id="form">
                     <div class="form-group">
                         <script>
-                            let url = '<?php echo \yii\helpers\Url::home(true) . Yii::$app->language . '/calendar/business/years/' . $dateData['year']['current'] . '/';?>';
+                            let url = '<?php echo \yii\helpers\Url::home(true) . Yii::$app->language . '/calendar/business/years/' . $date->year->current . '/';?>';
                         </script>
                         <select id="selectCountry" class="form-control">
                             <option><?= $countryData['name'] ?></option>
@@ -80,24 +85,24 @@
         </div>
         <div class="c-links-block">
             <div class="col-xs-6 c-links-mp-months">
-                <a href="/<?= Yii::$app->language ?>/calendar/business/quarters/<?= $dateData['year']['current'] ?>/1/
+                <a href="/<?= Yii::$app->language ?>/calendar/business/quarters/<?= $date->year->current ?>/1/
                 <?= ($countryURL['url'] <> '') ? $countryURL['url'] . '/' : ''; ?>">
                     <?= '1 ' . Yii::t('app', 'quarter') ?>
                 </a>
                 <br>
-                <a href="/<?= Yii::$app->language ?>/calendar/business/quarters/<?= $dateData['year']['current'] ?>/2/
+                <a href="/<?= Yii::$app->language ?>/calendar/business/quarters/<?= $date->year->current ?>/2/
                 <?= ($countryURL['url'] <> '') ? $countryURL['url'] . '/' : ''; ?>">
                     <?= '2 ' . Yii::t('app', 'quarter') ?>
                 </a>
                 <br>
             </div>
             <div class="col-xs-6 c-links-mp-months">
-                <a href="/<?= Yii::$app->language ?>/calendar/business/quarters/<?= $dateData['year']['current'] ?>/3/
+                <a href="/<?= Yii::$app->language ?>/calendar/business/quarters/<?= $date->year->current ?>/3/
                 <?= ($countryURL['url'] <> '') ? $countryURL['url'] . '/' : ''; ?>">
                     <?= '3 ' . Yii::t('app', 'quarter') ?>
                 </a>
                 <br>
-                <a href="/<?= Yii::$app->language ?>/calendar/business/quarters/<?= $dateData['year']['current'] ?>/4/
+                <a href="/<?= Yii::$app->language ?>/calendar/business/quarters/<?= $date->year->current ?>/4/
                 <?= ($countryURL['url'] <> '') ? $countryURL['url'] . '/' : ''; ?>">
                     <?= '4 ' . Yii::t('app', 'quarter') ?>
                 </a>
@@ -120,29 +125,29 @@
 
 <div class="row">
     <div class="col-xxs-12 col-xs-4 c-prev-next-left">
-        <?php if ($dateData['year']['previous'] == $holidaysRange['start'] - 1): ?>
+        <?php if ($date->year->previous == $holidaysRange['start'] - 1): ?>
         <?php else: ?>
-            <a href="/<?= Yii::$app->language ?>/calendar/business/years/<?= $dateData['year']['previous'] ?>/
+            <a href="/<?= Yii::$app->language ?>/calendar/business/years/<?= $date->year->previous ?>/
             <?= (($countryURL['url'] <> '')
-                && ($dateData['year']['previous'] >= $holidaysRange['start'] && $dateData['year']['previous'] <= $holidaysRange['end']))
+                && ($date->year->previous >= $holidaysRange['start'] && $date->year->previous <= $holidaysRange['end']))
                 ? $countryURL['url'] . '/' : '' ?>">
-                <?= $dateData['year']['previous'] ?>
+                <?= $date->year->previous ?>
             </a>
         <?php endif; ?>
     </div>
     <div class="col-xxs-12 col-xs-4 c-prev-next-center">
-        <?= $dateData['year']['current'] ?>
+        <?= $date->year->current ?>
     </div>
     <div class="col-xxs-12 col-xs-4 c-prev-next-right">
 
-        <?php if ($dateData['year']['current'] == $holidaysRange['end']): ?>
+        <?php if ($date->year->current == $holidaysRange['end']): ?>
 
         <?php else: ?>
-            <a href="/<?= Yii::$app->language ?>/calendar/business/years/<?= $dateData['year']['next'] ?>/
+            <a href="/<?= Yii::$app->language ?>/calendar/business/years/<?= $date->year->next ?>/
             <?= (($countryURL['url'] <> '')
-                && ($dateData['year']['next'] >= $holidaysRange['start'] && $dateData['year']['next'] <= $holidaysRange['end']))
+                && ($date->year->next >= $holidaysRange['start'] && $date->year->next <= $holidaysRange['end']))
                 ? $countryURL['url'] . '/' : '' ?>">
-                <?= $dateData['year']['next'] ?>
+                <?= $date->year->next ?>
             </a>
         <?php endif; ?>
     </div>
@@ -151,7 +156,7 @@
 <?php if ($PDFCalendarsData['exists']): ?>
     <div class="row">
         <div class="col-xxs-12 c-prev-next-right">
-            <a href="#download-calendar-<?= $dateData['year']['current'] ?>" class="btn btn-default">
+            <a href="#download-calendar-<?= $date->year->current ?>" class="btn btn-default">
                 <span class="fa fa-print fa-lg"></span>&nbsp;<?= Yii::t('app', 'Print'); ?>
             </a>
         </div>
@@ -178,9 +183,9 @@
             <div class="month-name">
             <span class="fa fa-calendar">
                 </span>
-                <a href="/<?= Yii::$app->language ?>/calendar/business/months/<?= $dateData['year']['current'] ?>-<?= str_pad($countMonths, 2, '0', STR_PAD_LEFT) ?>/
+                <a href="/<?= Yii::$app->language ?>/calendar/business/months/<?= $date->year->current ?>-<?= str_pad($countMonths, 2, '0', STR_PAD_LEFT) ?>/
                     <?= (($countryURL['url'] <> '')
-                    && ($dateData['year']['next'] >= $holidaysRange['start'] && $dateData['year']['next'] <= $holidaysRange['end']))
+                    && ($date->year->next >= $holidaysRange['start'] && $date->year->next <= $holidaysRange['end']))
                     ? $countryURL['url'] . '/' : '' ?>">
                     <?= $calendarNameOfMonths[$countMonths]; ?>
                 </a>
@@ -205,11 +210,11 @@
                     <div class="wno-day">
                             <span>
                                 <?php if ($countWeeks == 1 && $key > 50): ?>
-                                    <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $dateData['year']['previous'] ?>/<?= $key; ?>/">
+                                    <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $date->year->previous ?>/<?= $key; ?>/">
                                         <?= $key; ?>
                                     </a>
                                 <?php else: ?>
-                                    <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $dateData['year']['current'] ?>/<?= $key; ?>/">
+                                    <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $date->year->current ?>/<?= $key; ?>/">
                                         <?= $key; ?>
                                     </a>
                                 <?php endif; ?>
@@ -356,7 +361,7 @@
     '6' => ['name' => '2 ' . Yii::t('app', 'half year'),
         'var' => $calendarByYear['halfYear'][2]],
     '7' => ['name' => '1 ' . Yii::t('app', 'year'),
-        'var' => $calendarByYear['businessYear'][$dateData['year']['current']]],
+        'var' => $calendarByYear['businessYear'][$date->year->current]],
 ]
 ?>
 <div class="row rflex">
@@ -428,11 +433,11 @@
 
 
 <?php if ($holidaysData): ?>
-    <a name="business-days-calendar-of-holidays-and-weekends-in-<?= $dateData['year']['current'] ?>-<?= $countryData['name_en'] ?>"></a>
+    <a name="business-days-calendar-of-holidays-and-weekends-in-<?= $date->year->current ?>-<?= $countryData['name_en'] ?>"></a>
     <h2 class="main-page-h1">
         <?= Yii::t('app', 'Business days calendar with holidays and weekends in {year} {country_for}', [
             'country_for' => $countryData['name_for'],
-            'year' => $dateData['year']['current'],
+            'year' => $date->year->current,
         ]) ?>
     </h2>
 
@@ -465,11 +470,11 @@
 <?php if ($PDFCalendarsData['exists']): ?>
     <br>
 
-    <a name="download-calendar-<?= $dateData['year']['current'] ?>"></a>
+    <a name="download-calendar-<?= $date->year->current ?>"></a>
     <h2 class="main-page-h1">
         <?= Yii::t('app', 'Download and print PDF business days calendar with holidays and weekends for {year} {country_for}', [
             'country_for' => $countryData['name_for'],
-            'year' => $dateData['year']['current'],
+            'year' => $date->year->current,
         ]) ?>
     </h2>
 

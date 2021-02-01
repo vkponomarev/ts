@@ -248,6 +248,29 @@ class SiteMapController extends Controller
 
             }
 
+            if ($name == 'sitemap-calendar-religion-years-all') {
+
+                $siteMap->generateCalendarReligionYears($languagesData);
+
+            }
+
+            if ($name == 'sitemap-calendar-religion-years-ru') {
+
+                $siteMap->generateCalendarReligionYearsRU($languagesData);
+
+            }
+
+            if ($name == 'sitemap-calendar-religion-months-all') {
+
+                $siteMap->generateCalendarReligionMonths($languagesData);
+
+            }
+
+            if ($name == 'sitemap-calendar-religion-months-ru') {
+
+                $siteMap->generateCalendarReligionMonthsRU($languagesData);
+
+            }
 
         }
 

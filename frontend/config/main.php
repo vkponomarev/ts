@@ -167,6 +167,21 @@ return [
                     'defaults' => ['monthURL' => '', 'countryURL' => ''],
                 ],
 
+
+                [
+                    'pattern' => '/calendar/religion/<religionURL:[\w_-]+>/years/<yearURL:\d{4}>',
+                    'route' => 'religion-years/religion-year-page',
+                    'defaults' => ['yearURL' => '', 'religionURL' => ''],
+                ],
+
+                /*[
+                    'pattern' => '/calendar/months/<monthURL>/<countryURL:[\w_-]+>',
+                    'route' => 'months/month-page',
+                    'defaults' => ['monthURL' => '', 'countryURL' => ''],
+                ],*/
+
+
+
                 /*[
                     'pattern' => '/calendar/moon/months/<yearURL:\d{4}>',
                     'route' => 'moon-years/moon-year-page',

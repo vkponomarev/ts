@@ -86,6 +86,12 @@ class Holidays
 
     }
 
+    function byReligion($year, $languageID, $religion){
+
+        return (new HolidaysByReligion())->holidays($year, $languageID, $religion);
+
+    }
+
 
     /**
      * Заменяем ячейку выходной день с несколькими значениями пример (0,1) на одно значение здесь 1 (0,0) здесь 0

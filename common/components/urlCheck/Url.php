@@ -9,14 +9,23 @@ use yii\web\NotFoundHttpException;
 
 
 
-class UrlCheck
+class Url
 {
 
 
-    function __construct(){
+    public $url;
+
+    public $id;
+
+    public $year;
+
+    public $this;
 
 
-    }
+
+    //function __construct($url){
+   //     $this->url = $url;
+    //}
 
 
     function id($url){
@@ -46,13 +55,6 @@ class UrlCheck
     function yearMoon($url){
 
         (new UrlCheckYearMoon())->year($url);
-
-    }
-
-
-    function religion($url, $holidaysRange){
-
-        (new UrlCheckYearReligion())->year($url, $holidaysRange);
 
     }
 

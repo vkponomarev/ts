@@ -27,6 +27,13 @@ class PageTexts
     }
 
 
+    function updateByCalendarYearBusiness($pageTextsMessages, $dateData, $countryData, $holidaysCount)
+    {
+
+        (new PageTextsUpdateByCalendarYearBusiness())->update($pageTextsMessages, $dateData, $countryData, $holidaysCount);
+
+    }
+
     function updateByCalendarYearWeeks($dateData)
     {
 
@@ -67,6 +74,13 @@ class PageTexts
     {
 
         (new PageTextsUpdateByCalendarMonthMoon())->update($pageTextsMessages, $dateData, $calendarNameOfMonths);
+
+    }
+
+    function updateByCalendarYearReligion($pageTextsMessages, $dateData, $holidaysCount)
+    {
+
+        (new PageTextsUpdateByCalendarYearReligion())->update($pageTextsMessages, $dateData, $holidaysCount);
 
     }
 
@@ -138,6 +152,13 @@ class PageTexts
 
     }
 
+    function defineIdByCalendarYearReligion($religion)
+    {
+
+        return (new PageTextsDefineIdByCalendarYearReligion())->define($religion);
+
+    }
+
 
     function messagesByCalendarYear($calendarChinese, $dateData, $countHolidays)
     {
@@ -183,6 +204,27 @@ class PageTexts
 
     }
 
+
+    /**
+     * @param $calendarChinese
+     * @param $date
+     * @param $countHolidays
+     * @return array
+     */
+
+    function messagesByCalendarYearBusiness($calendarChinese, $date, $countHolidays)
+    {
+
+        return (new PageTextsMessagesByCalendarYearBusiness())->messages($calendarChinese, $date, $countHolidays);
+
+    }
+
+    function messagesByCalendarYearReligion($calendarChinese, $date, $countHolidays)
+    {
+
+        return (new PageTextsMessagesByCalendarYearReligion())->messages($calendarChinese, $date, $countHolidays);
+
+    }
 
 }
 

@@ -378,6 +378,19 @@ return [
     'Portrait calendar for the 36 hour work week for the year' => 'Portrait calendar for the 36 hour work week for the year',
     'Landscape calendar for the 36 hour work week for the year' => 'Landscape calendar for the 36 hour work week for the year',
 
+    'Religious calendars for {year}' => 'Religious calendars for {year}',
 
+
+    'Orthodox calendar for {year}' => 'Orthodox calendar for {year}',
+    'Catholic calendar for {year}' => 'Catholic calendar for {year}',
+    'Muslim calendar for {year}' => 'Muslim calendar for {year}',
+    'Jewish calendar for {year}' => 'Jewish calendar for {year}',
+    'Hindu calendar for {year}' => 'Hindu calendar for {year}',
+
+    'Calendar of Orthodox holidays and weekends for {year}' => 'Calendar of Orthodox holidays and weekends for {year}',
+    'Calendar of Catholic holidays and weekends for {year}' => 'Calendar of Catholic holidays and weekends for {year}',
+    'Calendar of Muslim holidays and weekends for {year}' => 'Calendar of Muslim holidays and weekends for {year}',
+    'Calendar of Jewish holidays and weekends for {year}' => 'Calendar of Jewish holidays and weekends for {year}',
+    'Calendar of Hindu holidays and weekends for {year}' => 'Calendar of Hindu holidays and weekends for {year}',
 ];
 
