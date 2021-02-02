@@ -960,6 +960,23 @@ footer div div div > a:hover {
   border-bottom: 1px solid #f1f1f1;
 }
 
+.eastern-pic {
+  margin: 4px;
+}
+
+.eastern-year-link {
+  font-size: 18px;
+}
+
+.eastern-one-peace {
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.eastern-one-peace:hover {
+  background-color: #d4eaff;
+}
+
 .year {
   text-align: center;
   justify-content: center;

@@ -397,5 +397,21 @@ return [
     'Calendar of Jewish holidays and weekends for {month} {year}' => 'Календарь еврейских праздников и выходных дней на {month} {year} года',
     'Calendar of Hindu holidays and weekends for {month} {year}' => 'Календарь индуистских праздников и выходных дней на {month} {year} года',
 
+    'Eastern calendar' => 'Восточный календарь',
+
+
+    'Rat' => 'Крыса',
+    'Bull' => 'Бык',
+    'Tiger' => 'Тигр',
+    'Rabbit' => 'Кролик',
+    'Dragon' => 'Дракон',
+    'Snake' => 'Змея',
+    'Horse' => 'Лошадь',
+    'Sheep' => 'Овца',
+    'Monkey' => 'Обезьяна',
+    'Rooster' => 'Петух',
+    'Dog' => 'Собака',
+    'Pig' => 'Свинья',
+
 
 ];

@@ -400,5 +400,21 @@ return [
     'Calendar of Hindu holidays and weekends for {month} {year}' => 'Calendar of Hindu holidays and weekends for {month} {year}',
 
 
+    'Eastern calendar' => 'Eastern calendar',
+
+    'Rat' => 'Rat',
+    'Bull' => 'Bull',
+    'Tiger' => 'Tiger',
+    'Rabbit' => 'Rabbit',
+    'Dragon' => 'Dragon',
+    'Snake' => 'Snake',
+    'Horse' => 'Horse',
+    'Sheep' => 'Sheep',
+    'Monkey' => 'Monkey',
+    'Rooster' => 'Rooster',
+    'Dog' => 'Dog',
+    'Pig' => 'Pig',
+
+
 ];
 
