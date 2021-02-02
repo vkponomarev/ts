@@ -64,119 +64,119 @@ return [
 
                 [
                     'pattern' => '/calendar/days-off/years/<yearURL:\d{4}>/<countryURL:[\w_-]+>',
-                    'route' => 'days-off-years/days-off-year-page',
+                    'route' => 'business/business-days-off-years/business-days-off-year-page',
                     'defaults' => ['yearURL' => '', 'countryURL' => ''],
                 ],
 
                 [
                     'pattern' => '/calendar/days-off/months/<monthURL>/<countryURL:[\w_-]+>',
-                    'route' => 'days-off-months/days-off-month-page',
+                    'route' => 'business/business-days-off-months/business-days-off-month-page',
                     'defaults' => ['monthURL' => '', 'countryURL' => ''],
                 ],
 
 
                 [
                     'pattern' => '/calendar/working/years/<yearURL:\d{4}>/<countryURL:[\w_-]+>',
-                    'route' => 'working-days-years/working-days-year-page',
+                    'route' => 'business/business-working-days-years/business-working-days-year-page',
                     'defaults' => ['yearURL' => '', 'countryURL' => ''],
                 ],
 
                 [
                     'pattern' => '/calendar/working/months/<monthURL>/<countryURL:[\w_-]+>',
-                    'route' => 'working-days-months/working-days-month-page',
+                    'route' => 'business/business-working-days-months/business-working-days-month-page',
                     'defaults' => ['monthURL' => '', 'countryURL' => ''],
                 ],
 
 
                 [
                     'pattern' => '/calendar/business/years/<yearURL:\d{4}>/<countryURL:[\w_-]+>',
-                    'route' => 'business/business-year-page',
+                    'route' => 'business/business-years/business-year-page',
                     'defaults' => ['yearURL' => '', 'countryURL' => ''],
                 ],
 
 
                 [
                     'pattern' => '/calendar/business/months/<monthURL>/<countryURL:[\w_-]+>',
-                    'route' => 'business-months/business-month-page',
+                    'route' => 'business/business-months/business-month-page',
                     'defaults' => ['monthURL' => '', 'countryURL' => ''],
                 ],
 
 
                 [
                     'pattern' => '/calendar/business/forty/years/<yearURL:\d{4}>/<countryURL:[\w_-]+>',
-                    'route' => 'business-forty-years/business-forty-year-page',
+                    'route' => 'business/business-forty-years/business-forty-year-page',
                     'defaults' => ['yearURL' => '', 'countryURL' => ''],
                 ],
 
 
                 [
                     'pattern' => '/calendar/business/forty/months/<monthURL>/<countryURL:[\w_-]+>',
-                    'route' => 'business-forty-months/business-forty-month-page',
+                    'route' => 'business/business-forty-months/business-forty-month-page',
                     'defaults' => ['monthURL' => '', 'countryURL' => ''],
                 ],
 
 
                 [
                     'pattern' => '/calendar/business/thirty/years/<yearURL:\d{4}>/<countryURL:[\w_-]+>',
-                    'route' => 'business-thirty-years/business-thirty-year-page',
+                    'route' => 'business/business-thirty-years/business-thirty-year-page',
                     'defaults' => ['yearURL' => '', 'countryURL' => ''],
                 ],
 
 
                 [
                     'pattern' => '/calendar/business/thirty/months/<monthURL>/<countryURL:[\w_-]+>',
-                    'route' => 'business-thirty-months/business-thirty-month-page',
+                    'route' => 'business/business-thirty-months/business-thirty-month-page',
                     'defaults' => ['monthURL' => '', 'countryURL' => ''],
                 ],
 
                 [
                     'pattern' => '/calendar/business/six-days/years/<yearURL:\d{4}>/<countryURL:[\w_-]+>',
-                    'route' => 'business-six-days/business-six-days-year-page',
+                    'route' => 'business/business-six-days-years/business-six-days-year-page',
                     'defaults' => ['yearURL' => '', 'countryURL' => ''],
                 ],
 
 
                 [
                     'pattern' => '/calendar/business/six-days/months/<monthURL>/<countryURL:[\w_-]+>',
-                    'route' => 'business-six-days-months/business-six-days-month-page',
+                    'route' => 'business/business-six-days-months/business-six-days-month-page',
                     'defaults' => ['monthURL' => '', 'countryURL' => ''],
                 ],
 
 
                 [
                     'pattern' => '/calendar/business/quarters/<yearURL:\d{4}>/<quarterURL:\d{1}>/<countryURL:[\w_-]+>',
-                    'route' => 'business-quarters/business-quarter-page',
+                    'route' => 'business/business-quarters/business-quarter-page',
                     'defaults' => ['yearURL' => '', 'quarterURL' => '', 'countryURL' => ''],
                 ],
 
                 [
                     'pattern' => '/calendar/years/<yearURL:\d{4}>/<countryURL:[\w_-]+>',
-                    'route' => 'years/year-page',
+                    'route' => 'calendar/years/year-page',
                     'defaults' => ['yearURL' => '', 'countryURL' => ''],
                 ],
 
                 [
                     'pattern' => '/calendar/seasons/<seasonURL:(winter|spring|summer|autumn)>/<yearURL:\d{4}>/<countryURL:[\w_-]+>',
-                    'route' => 'seasons/season',
+                    'route' => 'calendar/seasons/season',
                     'defaults' => ['yearURL' => '', 'seasonURL' => '', 'countryURL' => ''],
                 ],
 
                 [
                     'pattern' => '/calendar/months/<monthURL>/<countryURL:[\w_-]+>',
-                    'route' => 'months/month-page',
+                    'route' => 'calendar/months/month-page',
                     'defaults' => ['monthURL' => '', 'countryURL' => ''],
                 ],
 
 
                 [
                     'pattern' => '/calendar/religion/<religionURL:[\w_-]+>/years/<yearURL:\d{4}>',
-                    'route' => 'religion-years/religion-year-page',
+                    'route' => 'religion/religion-years/religion-year-page',
                     'defaults' => ['yearURL' => '', 'religionURL' => ''],
                 ],
 
                 [
                     'pattern' => '/calendar/religion/<religionURL:[\w_-]+>/months/<monthURL>',
-                    'route' => 'religion-months/religion-month-page',
+                    'route' => 'religion/religion-months/religion-month-page',
                     'defaults' => ['monthURL' => '', 'religionURL' => ''],
                 ],
 
@@ -196,48 +196,48 @@ return [
 
                 [
                     'pattern' => '/calendar/moon/good/years/<yearURL:\d{4}>/<dayNameURL:[\w_-]+>',
-                    'route' => 'moon-years-good/moon-year-good-page',
+                    'route' => 'moon/moon-years-good/moon-year-good-page',
                     'defaults' => ['dayNameURL' => '', 'yearURL' => ''],
                 ],
 
                 [
                     'pattern' => '/calendar/moon/good/months/<monthURL>/<dayNameURL:[\w_-]+>',
-                    'route' => 'moon-months-good/moon-month-good-page',
+                    'route' => 'moon/moon-months-good/moon-month-good-page',
                     'defaults' => ['dayNameURL' => '', 'monthURL' => ''],
                 ],
 
                 [
                     'pattern' => '/calendar/moon/gardener/years/<yearURL:\d{4}>/<gardenerNameURL:[\w_-]+>',
-                    'route' => 'moon-years-gardener/moon-year-gardener-page',
+                    'route' => 'moon/moon-years-gardener/moon-year-gardener-page',
                     'defaults' => ['gardenerNameURL' => '', 'yearURL' => ''],
                 ],
 
                 [
                     'pattern' => '/calendar/moon/gardener/months/<monthURL>/<gardenerNameURL:[\w_-]+>',
-                    'route' => 'moon-months-gardener/moon-month-gardener-page',
+                    'route' => 'moon/moon-months-gardener/moon-month-gardener-page',
                     'defaults' => ['gardenerNameURL' => '', 'monthURL' => ''],
                 ],
 
 
                 [
                     'pattern' => '/calendar/moon/phases/years/<yearURL:\d{4}>/<phaseURL:[\w_-]+>',
-                    'route' => 'moon-years-phases/moon-year-phase-page',
+                    'route' => 'moon/moon-years-phases/moon-year-phase-page',
                     'defaults' => ['phaseURL' => '', 'yearURL' => ''],
                 ],
 
                 [
                     'pattern' => '/calendar/moon/phases/months/<monthURL>/<phaseURL:[\w_-]+>',
-                    'route' => 'moon-months-phases/moon-month-phase-page',
+                    'route' => 'moon/moon-months-phases/moon-month-phase-page',
                     'defaults' => ['phaseURL' => '', 'monthURL' => ''],
                 ],
 
 
-                '/calendar/moon/months/<monthURL>' => 'moon-months/moon-month-page',
-                '/calendar/moon/years/<yearURL:\d{4}>' => 'moon-years/moon-year-page',
+                '/calendar/moon/months/<monthURL>' => 'moon/moon-months/moon-month-page',
+                '/calendar/moon/years/<yearURL:\d{4}>' => 'moon/moon-years/moon-year-page',
 
-                '/calendar/weeks/<yearURL:\d{4}>' => 'weeks/year-weeks-page',
-                '/calendar/weeks/<yearURL:\d{4}>/week-now' => 'weeks/week-now',
-                '/calendar/weeks/<yearURL:\d{4}>/<weekURL:\d{2}>' => 'weeks/week-page',
+                '/calendar/weeks/<yearURL:\d{4}>' => 'calendar/weeks/year-weeks-page',
+                '/calendar/weeks/<yearURL:\d{4}>/week-now' => 'calendar/weeks/week-now',
+                '/calendar/weeks/<yearURL:\d{4}>/<weekURL:\d{2}>' => 'calendar/weeks/week-page',
 
 
                 /*[
