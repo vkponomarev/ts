@@ -49,6 +49,11 @@ class UrlCheck
 
     }
 
+    function yearEastern($url, $eastern){
+
+        (new UrlCheckYearEastern())->year($url, $eastern);
+
+    }
 
     function religion($religion){
 

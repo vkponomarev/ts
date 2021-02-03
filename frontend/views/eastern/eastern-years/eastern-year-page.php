@@ -4,7 +4,7 @@
  * @var $this frontend\controllers\YearsController
  *
  *
- * @var $date common\components\date\Date
+ * @var $date common\componentsV2\date\Date
  * @var $eastern common\componentsV2\eastern\Eastern
  *
  * @var $calendarByYear common\components\calendar\CalendarByYear
@@ -34,10 +34,21 @@
 
     <div class="col-xxs-12 col-xs-6 current-date">
         <div class="current-date-div">
+            <div class="current-date-one">
+                <div class="current-date-year">
+                    <img class="eastern-pic" width="80"
+                         src="/pictures/eastern-animals/<?= $eastern->text->pictures[$eastern->calendar->year['animal']]; ?>-green.png"
+                         alt="">
 
+                    <span class="current-date-month">
+
+                    </span>
+                </div>
+            </div>
             <div class="current-date-text">
 
                 <?= Yii::$app->params['text']['text1'] ?>
+
 
             </div>
         </div>
@@ -147,11 +158,29 @@
         </div>
     </div>
 </div>
-
 <hr>
 
+<div class="row rflex">
 
+    <div class="eastern-year col-xxs-12">
+        <h2>
+            <?= Yii::t('app', '{animal} according to the Eastern Chinese calendar for other years', [
+                'animal' => $eastern->text->names[$eastern->calendar->year['animal']],
+                '' => '',
+            ]); ?>:
+        </h2>
+        <br><br>
 
+        <?php foreach ($eastern->calendar->years as $year => $data): ?>
+            <?php if ($data['animal'] == $eastern->calendar->year['animal']) : ?>
+                <a class="eastern-year-link" href="/calendar/eastern/years/<?= $year ?>/"><?= $year ?></a><?= '  ' ?>
+            <?php endif; ?>
+        <?php endforeach ?>
+    </div>
+</div>
+<br><br>
+<hr>
+<br><br>
 <div class="row rflex year">
     <?php foreach ($eastern->calendar->years as $year => $data): ?>
         <div class="col-xxs-4 col-xs-2 col-sm-2 col-md-1 eastern-one-peace">

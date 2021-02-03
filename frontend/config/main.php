@@ -233,6 +233,7 @@ return [
 
 
                 '/calendar/eastern' => 'eastern/eastern/eastern-page',
+                '/calendar/eastern/years/<yearURL:\d{4}>' => 'eastern/eastern-years/eastern-year-page',
 
                 /*[
                     'pattern' => '/calendar/weeks/<yearURL:\d{4}>/<weekURL:\d{2}>',

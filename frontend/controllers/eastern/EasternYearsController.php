@@ -19,14 +19,14 @@ use Yii;
 use yii\web\Controller;
 
 
-class EasternController extends Controller
+class EasternYearsController extends Controller
 {
 
-    public function actionEasternPage()
+    public function actionEasternYearPage($yearURL)
     {
 
 
-        $textID = '229'; // ID из таблицы pages
+        $textID = '230'; // ID из таблицы pages
         $table = 'm_years'; // К какой таблице отностся данная страница
         $mainUrl = 'calendar/eastern'; // Основной урл
 
@@ -40,10 +40,13 @@ class EasternController extends Controller
         $url->year;*/
 
         $urlCheck = new UrlCheck();
-        //$urlCheck->yearBusiness($yearURL, $holidaysRange);
-        //$countryURL = $urlCheck->country($countryURL);
 
-        
+        ($eastern = new Eastern())->range();
+
+        $urlCheck->yearEastern($yearURL, $eastern);
+
+        $eastern->calendar($yearURL)->text();
+
         $main = new Main();
         Yii::$app->params['language'] = $main->language(Yii::$app->language);
         Yii::$app->params['language']['all'] = $main->languages();
@@ -51,33 +54,15 @@ class EasternController extends Controller
         Yii::$app->params['alternate'] = $main->Alternate('', $mainUrl);
         Yii::$app->params['menu'] = $main->menu();
 
-        $languageID = Yii::$app->params['language']['current']['id'];
-        $countryURL['defaultID'] = Yii::$app->params['language']['current']['countries_id'];
 
-        $language = Yii::$app->params['language']['current']['url'];
-
-
-        ($eastern = new Eastern())->range()->calendar()->animals();
-
-
-        //(new \common\components\dump\Dump())->printR($eastern->calendar->years);die;
-
-
-
-
-        
+        ($date = new Date($yearURL . '-01-01'))->date()->year();
 
         $calendar = new Calendar();
-        //$calendarByYear = $calendar->byYearBusiness($year, $holidaysData);
-        //$calendarChinese = $calendar->chineseByYear($year);
-        $calendarNameOfMonths = $calendar->nameOfMonths();
-        $calendarNameOfDaysInWeek = $calendar->nameOfDaysInWeek();
 
         $pageTexts = new PageTexts();
-        //$pageTextsID = $pageTexts->defineIdByCalendarYear($holidaysData, $calendarChinese);
-        //$pageTextsMessages = $pageTexts->messagesByCalendarYearBusiness($calendarChinese, $date, count($holidaysData));
-        Yii::$app->params['text'] = $main->text($textID, $languageID);
-        //$pageTexts->updateByCalendarYearBusiness($pageTextsMessages, $date, $countryData, count($holidaysData));
+        $pageTextsID = $pageTexts->defineIdByCalendarYearEastern($eastern);
+        Yii::$app->params['text'] = $main->text($pageTextsID, Yii::$app->params['language']['current']['id']);
+        $pageTexts->updateByCalendarEastern($date, $eastern);
 
         /*
                 $breadCrumbs = new Breadcrumbs();
@@ -88,14 +73,10 @@ class EasternController extends Controller
         //$PDFCalendarsData = $PDFCalendars->businessExists($year, $language, $countryData['url']);
 
 
-
-        return $this->render('eastern-page.min.php', [
-
+        return $this->render('eastern-year-page.min.php', [
 
             'eastern' => $eastern,
-            'calendarNameOfMonths' => $calendarNameOfMonths,
-            'calendarNameOfDaysInWeek' => $calendarNameOfDaysInWeek,
-            'countryURL' => $countryURL,
+            'date' => $date,
 
         ]);
 

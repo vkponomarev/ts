@@ -20,14 +20,10 @@ class Eastern
     public $calendar;
 
     /**
-     * @var \common\componentsV2\eastern\EasternAnimals
+     * Описание
+     * @var \common\componentsV2\eastern\EasternText
      */
-    public $animals;
-
-    /**
-     * @var \common\componentsV2\eastern\EasternElements
-     */
-    public $elements;
+    public $text;
 
     /**
      * @return $this
@@ -42,13 +38,8 @@ class Eastern
         return $this;
     }
 
-    function animals(){
-        $this->animals = new EasternAnimals();
-        return $this;
-    }
-
-    function elements(){
-        $this->elements = new EasternElements();
+    function text(){
+        $this->text = new EasternText();
         return $this;
     }
 

@@ -415,6 +415,11 @@ return [
     'Dog' => 'Dog',
     'Pig' => 'Pig',
 
+    '{animal} according to the Eastern Chinese calendar for other years' => '{animal} according to the Eastern Chinese calendar for other years',
+    'Color:' => 'Color:',
+    'Element:' => 'Element:',
+
+
 
 ];
 

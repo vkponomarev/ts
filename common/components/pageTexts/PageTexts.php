@@ -91,6 +91,12 @@ class PageTexts
 
     }
 
+    function updateByCalendarEastern($date, $eastern)
+    {
+
+        (new PageTextsUpdateByCalendarEastern())->update($date, $eastern);
+
+    }
 
     function defineIdByCalendarYear($holidays, $calendarChinese)
     {
@@ -173,6 +179,12 @@ class PageTexts
 
     }
 
+    function defineIdByCalendarYearEastern($eastern)
+    {
+
+        return (new PageTextsDefineIdByCalendarYearEastern())->define($eastern);
+
+    }
 
     function messagesByCalendarYear($calendarChinese, $dateData, $countHolidays)
     {

@@ -965,7 +965,7 @@ footer div div div > a:hover {
 }
 
 .eastern-year-link {
-  font-size: 18px;
+  font-size: 22px;
 }
 
 .eastern-one-peace {
@@ -975,6 +975,15 @@ footer div div div > a:hover {
 
 .eastern-one-peace:hover {
   background-color: #d4eaff;
+}
+
+.eastern-center {
+  text-align: center;
+}
+
+.eastern-year {
+  text-align: left;
+  font-size: 18px;
 }
 
 .year {

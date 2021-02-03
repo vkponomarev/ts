@@ -12,7 +12,11 @@ class EasternCalendar
 
     public $years;
     public $year;
-
+    public $animal;
+    public $color;
+    public $element;
+    public $startDate;
+    public $endDate;
     /**
      * @param $year
      * @return array|mixed
@@ -1493,10 +1497,25 @@ class EasternCalendar
 
         if ($year){
 
+
             $this->year = $calendar[$year];
+            $this->animal = $calendar[$year]['animal'];
+            $this->color = $calendar[$year]['color'];
+            $this->element = $calendar[$year]['element'];
+            $this->startDate = $calendar[$year]['startDate'];
+            $this->endDate = $calendar[$year]['endDate'];
+
+            ksort($calendar);
+            $this->years = $calendar;
             return $this;
 
         } else {
+            $this->year = 0;
+            $this->animal = 0;
+            $this->color = 0;
+            $this->element = 0;
+            $this->startDate = 0;
+            $this->endDate = 0;
             ksort($calendar);
             $this->years = $calendar;
             return $this;
