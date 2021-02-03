@@ -34,7 +34,14 @@
 
     <div class="col-xxs-12 col-xs-6 current-date">
         <div class="current-date-div">
+            <div class="current-date-one">
+                <div class="eastern-main-pic-div">
+                    <img class="eastern-pic" width="100"
+                         src="/pictures/chinese-new-year.png"
+                         alt="<?= Yii::$app->params['text']['h1'] ?>">
 
+                </div>
+            </div>
             <div class="current-date-text">
 
                 <?= Yii::$app->params['text']['text1'] ?>
@@ -150,9 +157,14 @@
 
 <hr>
 
-
-
+<br>
+<h2>
+    <?= Yii::t('app', 'Eastern Chinese calendar by years'); ?>
+</h2>
+<br><br>
 <div class="row rflex year">
+
+
     <?php foreach ($eastern->calendar->years as $year => $data): ?>
         <div class="col-xxs-4 col-xs-2 col-sm-2 col-md-1 eastern-one-peace">
             <div>

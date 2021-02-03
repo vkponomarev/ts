@@ -417,4 +417,9 @@ return [
     'Color:' => 'Цвет:',
     'Element:' => 'Элемент:',
 
+    'Eastern Chinese calendar by years' => 'Восточно китайский календарь по годам',
+
+
+
+
 ];

@@ -986,6 +986,15 @@ footer div div div > a:hover {
   font-size: 18px;
 }
 
+.eastern-main-pic-div {
+  font-size: 25px;
+  padding: 10px 0 10px;
+  width: 120px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin: 10px 0 0;
+}
+
 .year {
   text-align: center;
   justify-content: center;

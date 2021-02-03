@@ -419,7 +419,7 @@ return [
     'Color:' => 'Color:',
     'Element:' => 'Element:',
 
-
+    'Eastern Chinese calendar by years' => 'Eastern Chinese calendar by years',
 
 ];
 

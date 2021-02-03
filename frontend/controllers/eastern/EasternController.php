@@ -30,20 +30,6 @@ class EasternController extends Controller
         $table = 'm_years'; // К какой таблице отностся данная страница
         $mainUrl = 'calendar/eastern'; // Основной урл
 
-
-        $holidays = new Holidays();
-        $holidaysRange = $holidays->range();
-
-
-        /*$url = new Url($yearURL);
-        $url->yearURL($yearURL);
-        $url->year;*/
-
-        $urlCheck = new UrlCheck();
-        //$urlCheck->yearBusiness($yearURL, $holidaysRange);
-        //$countryURL = $urlCheck->country($countryURL);
-
-        
         $main = new Main();
         Yii::$app->params['language'] = $main->language(Yii::$app->language);
         Yii::$app->params['language']['all'] = $main->languages();
@@ -54,48 +40,22 @@ class EasternController extends Controller
         $languageID = Yii::$app->params['language']['current']['id'];
         $countryURL['defaultID'] = Yii::$app->params['language']['current']['countries_id'];
 
-        $language = Yii::$app->params['language']['current']['url'];
+        ($eastern = new Eastern())->range()->calendar()->text();
 
-
-        ($eastern = new Eastern())->range()->calendar()->animals();
-
-
-        //(new \common\components\dump\Dump())->printR($eastern->calendar->years);die;
-
-
-
-
-        
-
-        $calendar = new Calendar();
-        //$calendarByYear = $calendar->byYearBusiness($year, $holidaysData);
-        //$calendarChinese = $calendar->chineseByYear($year);
-        $calendarNameOfMonths = $calendar->nameOfMonths();
-        $calendarNameOfDaysInWeek = $calendar->nameOfDaysInWeek();
-
-        $pageTexts = new PageTexts();
-        //$pageTextsID = $pageTexts->defineIdByCalendarYear($holidaysData, $calendarChinese);
-        //$pageTextsMessages = $pageTexts->messagesByCalendarYearBusiness($calendarChinese, $date, count($holidaysData));
         Yii::$app->params['text'] = $main->text($textID, $languageID);
-        //$pageTexts->updateByCalendarYearBusiness($pageTextsMessages, $date, $countryData, count($holidaysData));
+
 
         /*
                 $breadCrumbs = new Breadcrumbs();
                 Yii::$app->params['breadcrumbs'] = $breadCrumbs->year($yearData);
         */
 
-        //$PDFCalendars = new PDFCalendars();
-        //$PDFCalendarsData = $PDFCalendars->businessExists($year, $language, $countryData['url']);
-
-
 
         return $this->render('eastern-page.min.php', [
 
 
             'eastern' => $eastern,
-            'calendarNameOfMonths' => $calendarNameOfMonths,
-            'calendarNameOfDaysInWeek' => $calendarNameOfDaysInWeek,
-            'countryURL' => $countryURL,
+
 
         ]);
 
