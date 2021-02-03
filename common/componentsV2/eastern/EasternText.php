@@ -24,11 +24,6 @@ class EasternText
 {
 
     /**
-     * @var array массив названий картинок животых
-     */
-    public $pictures;
-
-    /**
      * @var array массив названий животых
      */
     public $names;
@@ -48,13 +43,18 @@ class EasternText
      */
     public $yearsOf;
 
+    /**
+     * @var array массив названий животных года
+     */
+    public $yearsOfCapital;
+
     function __construct()
     {
-        $this->pictures = $this->pictures();
         $this->names = $this->names();
         $this->colors = $this->colors();
         $this->elements = $this->elements();
         $this->yearsOf = $this->yearsOf();
+        $this->yearsOfCapital = $this->yearsOfCapital();
     }
 
     function names(){
@@ -74,23 +74,6 @@ class EasternText
         return $this->names;
     }
 
-    function pictures(){
-
-        $this->pictures[1] = 'rat';
-        $this->pictures[2] = 'bull';
-        $this->pictures[3] = 'tiger';
-        $this->pictures[4] = 'rabbit';
-        $this->pictures[5] = 'dragon';
-        $this->pictures[6] = 'snake';
-        $this->pictures[7] = 'horse';
-        $this->pictures[8] = 'sheep';
-        $this->pictures[9] = 'monkey';
-        $this->pictures[10] = 'rooster';
-        $this->pictures[11] = 'dog';
-        $this->pictures[12] = 'pig';
-
-        return $this->pictures;
-    }
 
     function colors(){
 
@@ -132,6 +115,22 @@ class EasternText
         return $this->yearsOf;
     }
 
+    function yearsOfCapital(){
+
+        $this->yearsOfCapital[1] = Yii::t('app', 'Year of the rat');
+        $this->yearsOfCapital[2] = Yii::t('app', 'Year of the bull');
+        $this->yearsOfCapital[3] = Yii::t('app', 'Year of the tiger');
+        $this->yearsOfCapital[4] = Yii::t('app', 'Year of the rabbit');
+        $this->yearsOfCapital[5] = Yii::t('app', 'Year of the dragon');
+        $this->yearsOfCapital[6] = Yii::t('app', 'Year of the snake');
+        $this->yearsOfCapital[7] = Yii::t('app', 'Year of the horse');
+        $this->yearsOfCapital[8] = Yii::t('app', 'Year of the sheep');
+        $this->yearsOfCapital[9] = Yii::t('app', 'Year of the monkey');
+        $this->yearsOfCapital[10] = Yii::t('app', 'Year of the rooster');
+        $this->yearsOfCapital[11] = Yii::t('app', 'Year of the dog');
+        $this->yearsOfCapital[12] = Yii::t('app', 'Year of the pig');
+        return $this->yearsOfCapital;
+    }
 
 }
 

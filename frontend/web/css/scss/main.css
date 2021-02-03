@@ -974,7 +974,7 @@ footer div div div > a:hover {
 }
 
 .eastern-one-peace:hover {
-  background-color: #d4eaff;
+  background-color: #eef8ff;
 }
 
 .eastern-center {
@@ -984,6 +984,28 @@ footer div div div > a:hover {
 .eastern-year {
   text-align: left;
   font-size: 18px;
+}
+
+.eastern-years {
+  text-align: left;
+  font-size: 14px;
+  display: inline-block;
+  padding: 10px;
+  border-bottom: 1px solid #d1d1d1;
+}
+
+.eastern-years:hover {
+  background-color: #eef8ff;
+}
+
+.eastern-years-inside {
+  border-radius: 5px;
+}
+
+.eastern-years-div {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .eastern-main-pic-div {

@@ -26,6 +26,18 @@ class Eastern
     public $text;
 
     /**
+     * Описание
+     * @var \common\componentsV2\eastern\EasternAnimals
+     */
+    public $animals;
+
+    /**
+     * Описание
+     * @var \common\componentsV2\eastern\EasternAnimal
+     */
+    public $animal;
+
+    /**
      * @return $this
      */
     function range(){
@@ -43,6 +55,22 @@ class Eastern
         return $this;
     }
 
+    function animals(){
+        $this->animals = new EasternAnimals();
+        return $this;
+    }
+
+    function animal($animal){
+        $this->animal = new EasternAnimal(
+            $animal,
+            $this->text->yearsOf,
+            $this->text->yearsOfCapital,
+            $this->animals->urls,
+            $this->text->names,
+            $this->animals->pictures
+        );
+        return $this;
+    }
 
 
 }

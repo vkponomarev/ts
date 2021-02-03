@@ -84,6 +84,20 @@ return [
     'year of the dog' => 'год собаки',
     'year of the pig' => 'год свиньи',
 
+    'Year of the rat' => 'Год крысы',
+    'Year of the bull' => 'Год быка',
+    'Year of the tiger' => 'Год тигра',
+    'Year of the rabbit' => 'Год кролика',
+    'Year of the dragon' => 'Год дракона',
+    'Year of the snake' => 'Год змеи',
+    'Year of the horse' => 'Год лошади',
+    'Year of the sheep' => 'Год овцы',
+    'Year of the monkey' => 'Год обезьяны',
+    'Year of the rooster' => 'Год петуха',
+    'Year of the dog' => 'Год собаки',
+    'Year of the pig' => 'Год свиньи',
+
+
     'white' => 'белый',
     'black' => 'черный',
     'blue-green' => 'сине-зеленый',
@@ -399,7 +413,6 @@ return [
 
     'Eastern calendar' => 'Восточный календарь',
 
-
     'Rat' => 'Крыса',
     'Bull' => 'Бык',
     'Tiger' => 'Тигр',
@@ -419,7 +432,9 @@ return [
 
     'Eastern Chinese calendar by years' => 'Восточно китайский календарь по годам',
 
+    '{animal} by Years of the Eastern Chinese Calendar' => '{animal} по годам восточно китайского календаря',
 
-
+    'Year starts' => 'Год начинается',
+    'and ends' => 'и заканчивается',
 
 ];

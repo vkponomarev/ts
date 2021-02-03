@@ -45,7 +45,8 @@ class EasternYearsController extends Controller
 
         $urlCheck->yearEastern($yearURL, $eastern);
 
-        $eastern->calendar($yearURL)->text();
+        $eastern->calendar($yearURL)->text()->animals()->animal($eastern->animals->urls[$eastern->calendar->years[$yearURL]['animal']]);
+
 
         $main = new Main();
         Yii::$app->params['language'] = $main->language(Yii::$app->language);

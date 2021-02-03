@@ -4,7 +4,7 @@
  * @var $this frontend\controllers\YearsController
  *
  *
- * @var $date common\components\date\Date
+ * @var $date common\componentsV2\date\Date
  * @var $eastern common\componentsV2\eastern\Eastern
  *
  * @var $calendarByYear common\components\calendar\CalendarByYear
@@ -35,16 +35,21 @@
     <div class="col-xxs-12 col-xs-6 current-date">
         <div class="current-date-div">
             <div class="current-date-one">
-                <div class="eastern-main-pic-div">
-                    <img class="eastern-pic" width="100"
-                         src="/pictures/chinese-new-year.png"
+                <div class="current-date-year">
+
+                    <img class="eastern-pic" width="80"
+                         src="/pictures/eastern-animals/<?= $eastern->animal->picture; ?>-green.png"
                          alt="<?= Yii::$app->params['text']['h1'] ?>">
 
+                    <span class="current-date-month">
+
+                    </span>
                 </div>
             </div>
             <div class="current-date-text">
 
                 <?= Yii::$app->params['text']['text1'] ?>
+
 
             </div>
         </div>
@@ -154,17 +159,42 @@
         </div>
     </div>
 </div>
-
 <hr>
-
 <br>
-<h2>
-    <?= Yii::t('app', 'Eastern Chinese calendar by years'); ?>
-</h2>
+<div class="row rflex">
+
+    <div class="eastern-year col-xxs-12">
+        <h2>
+            <?= Yii::t('app', '{animal} by Years of the Eastern Chinese Calendar', [
+                'animal' => $eastern->animal->name,
+            ]); ?>
+        </h2>
+        <br><br>
+    </div>
+    <div class="eastern-years-div col-xxs-12">
+
+        <?php foreach ($eastern->calendar->years as $year => $data): ?>
+            <?php if ($data['animal'] == $eastern->animal->id) : ?>
+                <div class="eastern-years col-xxs-6 col-xs-6 col-xs-4 col-sm-3">
+                    <div class="eastern-years-inside">
+                        <a class="eastern-year-link" href="/calendar/eastern/years/<?= $year ?>/"><?= $year ?></a><br>
+                        <?= Yii::t('app', 'Color:') ?><?= ' ' . $eastern->text->colors[$data['color']] ?><br>
+                        <?= Yii::t('app', 'Element:') ?><?= ' ' . $eastern->text->elements[$data['element']] ?><br>
+                        <?php if ($data['startDate']) : ?>
+                            <br><?= Yii::t('app', 'Year starts') ?> <?= ' ' . Yii::$app->formatter->asDate($data['startDate'], 'medium') . ' '?>
+                            <?= Yii::t('app', 'and ends') ?> <?= ' ' . Yii::$app->formatter->asDate($data['endDate'], 'medium') ?><br>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            <?php endif; ?>
+        <?php endforeach ?>
+
+    </div>
+</div>
+<br><br>
+<hr>
 <br><br>
 <div class="row rflex year">
-
-
     <?php foreach ($eastern->calendar->years as $year => $data): ?>
         <div class="col-xxs-4 col-xs-2 col-sm-2 col-md-1 eastern-one-peace">
             <div>

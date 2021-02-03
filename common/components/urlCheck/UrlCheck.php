@@ -55,6 +55,12 @@ class UrlCheck
 
     }
 
+    function easternAnimal($animal, $eastern){
+
+        (new UrlCheckEasternAnimal())->animal($animal, $eastern);
+
+    }
+
     function religion($religion){
 
         (new UrlCheckReligion())->religion($religion);

@@ -40,7 +40,7 @@ class EasternController extends Controller
         $languageID = Yii::$app->params['language']['current']['id'];
         $countryURL['defaultID'] = Yii::$app->params['language']['current']['countries_id'];
 
-        ($eastern = new Eastern())->range()->calendar()->text();
+        ($eastern = new Eastern())->range()->calendar()->text()->animals();
 
         Yii::$app->params['text'] = $main->text($textID, $languageID);
 

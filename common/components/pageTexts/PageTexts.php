@@ -98,6 +98,13 @@ class PageTexts
 
     }
 
+    function updateByCalendarEasternAnimal($eastern)
+    {
+
+        (new PageTextsUpdateByCalendarEasternAnimal())->update($eastern);
+
+    }
+
     function defineIdByCalendarYear($holidays, $calendarChinese)
     {
 

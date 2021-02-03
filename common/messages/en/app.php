@@ -84,6 +84,20 @@ return [
     'year of the dog' => 'year of the dog',
     'year of the pig' => 'year of the pig',
 
+    'Year of the rat' => 'Year of the rat',
+    'Year of the bull' => 'Year of the bull',
+    'Year of the tiger' => 'Year of the tiger',
+    'Year of the rabbit' => 'Year of the rabbit',
+    'Year of the dragon' => 'Year of the dragon',
+    'Year of the snake' => 'Year of the snake',
+    'Year of the horse' => 'Year of the horse',
+    'Year of the sheep' => 'Year of the sheep',
+    'Year of the monkey' => 'Year of the monkey',
+    'Year of the rooster' => 'Year of the rooster',
+    'Year of the dog' => 'Year of the dog',
+    'Year of the pig' => 'Year of the pig',
+
+
     'white' => 'white',
     'black' => 'black',
     'blue-green' => 'blue-green',
@@ -173,7 +187,7 @@ return [
     'Download and print PDF calendar for {month} {year}' => 'Download and print PDF calendar for {month} {year}',
 
     '{n,plural, one{# holiday and day off} few{# holidays and days off} other{# holidays and days off}}' =>
-    '{n,plural, one{# holiday and day off} few{# holidays and days off} other{# holidays and days off}}',
+        '{n,plural, one{# holiday and day off} few{# holidays and days off} other{# holidays and days off}}',
 
     'PDF calendar of holidays and weekends for {month} {year} {country_for}' => 'PDF calendar of holidays and weekends for {month} {year} {country_for}',
     'PDF calendar for {month} {year}' => 'PDF calendar for {month} {year}',
@@ -420,6 +434,12 @@ return [
     'Element:' => 'Element:',
 
     'Eastern Chinese calendar by years' => 'Eastern Chinese calendar by years',
+
+    '{animal} by Years of the Eastern Chinese Calendar' => '{animal} by Years of the Eastern Chinese Calendar',
+
+    'Year starts' => 'Year starts',
+    'and ends' => 'and ends',
+
 
 ];
 
