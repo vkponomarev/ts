@@ -105,6 +105,27 @@ class PageTexts
 
     }
 
+    function updateByCalendarZodiacYear($date)
+    {
+
+        (new PageTextsUpdateByCalendarZodiacYear())->update($date);
+
+    }
+
+    function updateByCalendarZodiacMonth($date, $calendarNameOfMonths)
+    {
+
+        (new PageTextsUpdateByCalendarZodiacMonth())->update($date, $calendarNameOfMonths);
+
+    }
+
+    function updateByCalendarZodiacSign($zodiac)
+    {
+
+        (new PageTextsUpdateByCalendarZodiacSign())->update($zodiac);
+
+    }
+
     function defineIdByCalendarYear($holidays, $calendarChinese)
     {
 

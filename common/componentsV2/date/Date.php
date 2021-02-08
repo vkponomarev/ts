@@ -39,7 +39,6 @@ class Date
     function __construct($date)
     {
         $this->date = new \DateTime($date);
-
     }
 
     /**

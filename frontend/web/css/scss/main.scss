@@ -14,21 +14,18 @@
 @import "layout/menu"; // Меню сайта.
 @import "layout/breadcrumbs"; // Крошки.
 @import "layout/footer"; // Футер сайта.
-//@import "layout/modalYoutube"; // Модальное окно youtube.
 
-//@import "pages/artists"; // Страница артиста.
-//@import "pages/artistsIndex"; // Страницы индекса артиста по первой букве.
-//@import "pages/albums"; // Страница альбома.
-//@import "pages/songs"; // Страница песни.
 @import "pages/mainPages"; // Основные страницы.
-//@import "pages/genres"; // Страница жанров.
-@import "pages/years"; // Страница годов.
-//@import "pages/mLanguages"; // Страница языков.
-@import "pages/calendar-year-business"; // Страница годов.
-@import "pages/calendar-month-business"; // Страница годов.
-@import "pages/calendar-year-moon"; // Страница годов.
-@import "pages/eastern"; // Страница годов.
-
+@import "pages/years"; //
+@import "pages/calendar-year-business"; //
+@import "pages/calendar-month-business"; //
+@import "pages/calendar-year-moon"; //
+@import "pages/eastern"; //
+@import "pages/zodiac"; //
+@import "pages/calendar-table"; //
+@import "pages/calendar-year";
+@import "pages/calendar-weeks";
+@import "pages/calendar-year-moon-good";
 
 @import "calendar/calendar-yearly"; //
 @import "calendar/calendar-seasonly"; //
@@ -36,13 +33,9 @@
 @import "calendar/calendar-weekly"; //
 @import "calendar/calendar-weekly-one"; // Стили календрая на одну неделю (один или 2 месяца)
 @import "calendar/calendar-monthly-business"; // Стили календрая на одну неделю (один или 2 месяца)
+@import "calendar/calendar-zodiac";
 
-@import "pages/calendar-table"; //
 
-@import "pages/calendar-year";
-@import "pages/calendar-weeks";
-
-@import "pages/calendar-year-moon-good";
 
 
 @import "calendar/calendar-customization"; // Страница Кастомизации календаря.

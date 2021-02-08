@@ -2,6 +2,7 @@
 
 namespace common\components\calendar;
 
+use common\components\pageTexts\PageTextsUpdateByCalendarZodiacSign;
 use Yii;
 use yii\web\NotFoundHttpException;
 
@@ -77,6 +78,24 @@ class Calendar
     function byMoonMonths($date, $cityData){
 
         return (new CalendarByMoonMonths())->calendar($date, $cityData);
+
+    }
+
+    function byZodiacYear($year, $zodiacRange){
+
+        return (new CalendarByZodiacYear())->calendar($year, $zodiacRange);
+
+    }
+
+    function byZodiacSign($date, $zodiacs){
+
+        return (new CalendarByZodiacSign())->calendar($date, $zodiacs);
+
+    }
+
+    function byZodiacMonth($date, $zodiacRange){
+
+        return (new CalendarByZodiacMonth())->calendar($date, $zodiacRange);
 
     }
 

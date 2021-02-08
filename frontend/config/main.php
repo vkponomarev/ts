@@ -236,6 +236,12 @@ return [
                 '/calendar/eastern/years/<yearURL:\d{4}>' => 'eastern/eastern-years/eastern-year-page',
                 '/calendar/eastern/animals/<animalURL:[\w_-]+>' => 'eastern/eastern-animals/eastern-animal-page',
 
+                '/zodiac' => 'zodiac/zodiac/zodiac-page',
+                '/zodiac/<signURL:[\w_-]+>' => 'zodiac/zodiac-signs/zodiac-sign-page',
+                '/calendar/zodiac/years/<yearURL:\d{4}>' => 'zodiac/zodiac-years/zodiac-year-page',
+                '/calendar/zodiac/months/<monthURL>' => 'zodiac/zodiac-months/zodiac-month-page',
+                '/calendar/zodiac/days/<dayURL>' => 'zodiac/zodiac-days/zodiac-day-page',
+
                 /*[
                     'pattern' => '/calendar/weeks/<yearURL:\d{4}>/<weekURL:\d{2}>',
                     'route' => 'weeks/week-page',

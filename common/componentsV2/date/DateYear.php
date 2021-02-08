@@ -18,6 +18,7 @@ class DateYear
     public $days;
     public $firstDay;
     public $lastDay;
+    public $februaryDays;
 
 
     public function year($date)
@@ -48,6 +49,7 @@ class DateYear
         $this->days = $yearCountDays;
         $this->firstDay = $yearFirstDayNumber;
         $this->lastDay = $yearLastDayNumber;
+        $this->februaryDays = $februaryCountDays;
 
         return $this;
     }

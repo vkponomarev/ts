@@ -73,18 +73,18 @@ class EasternAnimals
 
     function pictures(){
 
-        $this->pictures[1] = 'rat';
-        $this->pictures[2] = 'bull';
-        $this->pictures[3] = 'tiger';
-        $this->pictures[4] = 'rabbit';
-        $this->pictures[5] = 'dragon';
-        $this->pictures[6] = 'snake';
-        $this->pictures[7] = 'horse';
-        $this->pictures[8] = 'sheep';
-        $this->pictures[9] = 'monkey';
-        $this->pictures[10] = 'rooster';
-        $this->pictures[11] = 'dog';
-        $this->pictures[12] = 'pig';
+        $this->pictures[1] = 'rat-01';
+        $this->pictures[2] = 'bull-01';
+        $this->pictures[3] = 'tiger-01';
+        $this->pictures[4] = 'rabbit-01';
+        $this->pictures[5] = 'dragon-01';
+        $this->pictures[6] = 'snake-01';
+        $this->pictures[7] = 'horse-01';
+        $this->pictures[8] = 'sheep-01';
+        $this->pictures[9] = 'monkey-01';
+        $this->pictures[10] = 'rooster-01';
+        $this->pictures[11] = 'dog-01';
+        $this->pictures[12] = 'pig-01';
 
         return $this->pictures;
     }

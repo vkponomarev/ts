@@ -52,104 +52,28 @@
     <div class="col-xxs-12 col-xs-6 c-links-mp">
         <div class="c-links-block">
             <div class="col-xs-6 c-links-mp-months">
-                <div>
-                    <img class="eastern-pic" width="20"
-                         src="/pictures/eastern-animals/<?= $eastern->animals->pictures[1]; ?>.png"
-                         alt="<?= $eastern->text->names[1]; ?>">
-                    <a href="/calendar/eastern/animals/<?= $eastern->animals->urls[1] ?>/">
-                        <?= $eastern->text->names[1]; ?>
-                    </a>
-                </div>
-                <div>
-                    <img class="eastern-pic" width="20"
-                         src="/pictures/eastern-animals/<?= $eastern->animals->pictures[2]; ?>.png"
-                         alt="<?= $eastern->text->names[2]; ?>">
-                    <a href="/calendar/eastern/animals/<?= $eastern->animals->urls[2] ?>/">
-                        <?= $eastern->text->names[2]; ?>
-                    </a>
-                </div>
-                <div>
-                    <img class="eastern-pic" width="20"
-                         src="/pictures/eastern-animals/<?= $eastern->animals->pictures[3]; ?>.png"
-                         alt="<?= $eastern->text->names[3]; ?>">
-                    <a href="/calendar/eastern/animals/<?= $eastern->animals->urls[3] ?>/">
-                        <?= $eastern->text->names[3]; ?>
-                    </a>
-                </div>
-                <div>
-                    <img class="eastern-pic" width="20"
-                         src="/pictures/eastern-animals/<?= $eastern->animals->pictures[4]; ?>.png"
-                         alt="<?= $eastern->text->names[4]; ?>">
-                    <a href="/calendar/eastern/animals/<?= $eastern->animals->urls[4] ?>/">
-                        <?= $eastern->text->names[4] ?>
-                    </a>
-                </div>
-                <div>
-                    <img class="eastern-pic" width="20"
-                         src="/pictures/eastern-animals/<?= $eastern->animals->pictures[5]; ?>.png"
-                         alt="<?= $eastern->text->names[5]; ?>">
-                    <a href="/calendar/eastern/animals/<?= $eastern->animals->urls[5] ?>/">
-                        <?= $eastern->text->names[5]; ?>
-                    </a>
-                </div>
-                <div>
-                    <img class="eastern-pic" width="20"
-                         src="/pictures/eastern-animals/<?= $eastern->animals->pictures[6]; ?>.png"
-                         alt="<?= $eastern->text->names[6]; ?>">
-                    <a href="/calendar/eastern/animals/<?= $eastern->animals->urls[6] ?>/">
-                        <?= $eastern->text->names[6]; ?>
-                    </a>
-                </div>
+                <?php foreach (range(1, 6) as $id): ?>
+                    <div>
+                        <img class="eastern-pic" width="30"
+                             src="/pictures/eastern-animals/<?= $eastern->animals->pictures[$id]; ?>.png"
+                             alt="<?= $eastern->text->names[$id]; ?>">
+                        <a href="/calendar/eastern/animals/<?= $eastern->animals->urls[$id] ?>/">
+                            <?= $eastern->text->names[$id]; ?>
+                        </a>
+                    </div>
+                <?php endforeach ?>
             </div>
             <div class="col-xs-6 c-links-mp-months">
-                <div>
-                    <img class="eastern-pic" width="20"
-                         src="/pictures/eastern-animals/<?= $eastern->animals->pictures[7]; ?>.png"
-                         alt="<?= $eastern->text->names[7]; ?>">
-                    <a href="/calendar/eastern/animals/<?= $eastern->animals->urls[7] ?>/">
-                        <?= $eastern->text->names[7]; ?>
-                    </a>
-                </div>
-                <div>
-                    <img class="eastern-pic" width="20"
-                         src="/pictures/eastern-animals/<?= $eastern->animals->pictures[8]; ?>.png"
-                         alt="<?= $eastern->text->names[8]; ?>">
-                    <a href="/calendar/eastern/animals/<?= $eastern->animals->urls[8] ?>/">
-                        <?= $eastern->text->names[8]; ?>
-                    </a>
-                </div>
-                <div>
-                    <img class="eastern-pic" width="20"
-                         src="/pictures/eastern-animals/<?= $eastern->animals->pictures[9]; ?>.png"
-                         alt="<?= $eastern->text->names[9]; ?>">
-                    <a href="/calendar/eastern/animals/<?= $eastern->animals->urls[9] ?>/">
-                        <?= $eastern->text->names[9]; ?>
-                    </a>
-                </div>
-                <div>
-                    <img class="eastern-pic" width="20"
-                         src="/pictures/eastern-animals/<?= $eastern->animals->pictures[10]; ?>.png"
-                         alt="<?= $eastern->text->names[10]; ?>">
-                    <a href="/calendar/eastern/animals/<?= $eastern->animals->urls[10] ?>/">
-                        <?= $eastern->text->names[10]; ?>
-                    </a>
-                </div>
-                <div>
-                    <img class="eastern-pic" width="20"
-                         src="/pictures/eastern-animals/<?= $eastern->animals->pictures[11]; ?>.png"
-                         alt="<?= $eastern->text->names[11]; ?>">
-                    <a href="/calendar/eastern/animals/<?= $eastern->animals->urls[11] ?>/">
-                        <?= $eastern->text->names[11]; ?>
-                    </a>
-                </div>
-                <div>
-                    <img class="eastern-pic" width="20"
-                         src="/pictures/eastern-animals/<?= $eastern->animals->pictures[12]; ?>.png"
-                         alt="<?= $eastern->text->names[12]; ?>">
-                    <a href="/calendar/eastern/animals/<?= $eastern->animals->urls[12] ?>/">
-                        <?= $eastern->text->names[12]; ?>
-                    </a>
-                </div>
+                <?php foreach (range(7, 12) as $id): ?>
+                    <div>
+                        <img class="eastern-pic" width="30"
+                             src="/pictures/eastern-animals/<?= $eastern->animals->pictures[$id]; ?>.png"
+                             alt="<?= $eastern->text->names[$id]; ?>">
+                        <a href="/calendar/eastern/animals/<?= $eastern->animals->urls[$id] ?>/">
+                            <?= $eastern->text->names[$id]; ?>
+                        </a>
+                    </div>
+                <?php endforeach ?>
             </div>
         </div>
     </div>
@@ -169,7 +93,7 @@
         <div class="col-xxs-4 col-xs-2 col-sm-2 col-md-1 eastern-one-peace">
             <div>
                 <img class="eastern-pic" width="40"
-                     src="/pictures/eastern-animals/<?= $eastern->animals->pictures[$data['animal']]; ?>-green.png"
+                     src="/pictures/eastern-animals/<?= $eastern->animals->pictures[$data['animal']]; ?>.png"
                      alt="">
                 <br>
                 <?= $eastern->text->colors[$data['color']] ?>

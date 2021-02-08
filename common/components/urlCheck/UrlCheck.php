@@ -61,6 +61,12 @@ class UrlCheck
 
     }
 
+    function zodiacSign($sign, $zodiac){
+
+        (new UrlCheckZodiacSign())->sign($sign, $zodiac);
+
+    }
+
     function religion($religion){
 
         (new UrlCheckReligion())->religion($religion);

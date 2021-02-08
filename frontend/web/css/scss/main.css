@@ -1017,6 +1017,169 @@ footer div div div > a:hover {
   margin: 10px 0 0;
 }
 
+.zodiac-pic {
+  float: left;
+  margin: 0 20px 0 0;
+}
+
+.zodiac-one-peace {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  text-align: left;
+}
+
+.zodiac-one-peace:hover {
+  background-color: #eef8ff;
+}
+
+.zodiac-link {
+  font-size: 20px;
+}
+
+.zodiac-text {
+  font-size: 20px;
+  display: inline-flex;
+}
+
+.year-t {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  vertical-align: top;
+}
+
+.week-t {
+  height: 40px;
+}
+
+.month-t {
+  min-width: 320px;
+  max-width: 400px;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  display: unset;
+}
+
+.month-name-t {
+  height: 50px;
+  padding-top: 5px;
+  font-size: 25px;
+  color: #828282;
+}
+
+.day-t {
+  color: #535353;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: -1px -1px #e9e9e9, inset -1px -1px 0 0 #e9e9e9;
+}
+
+.no-day-t {
+  color: #F98909;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.day-off-t {
+  color: #ff0002;
+  padding: 5px;
+  background-color: #fff4f4;
+  box-shadow: -1px -1px #e9e9e9, inset -1px -1px 0 0 #e9e9e9;
+}
+
+.no-day-off-t {
+  color: #F98909;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.day-name-t {
+  color: #000000;
+  font-weight: bold;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+tr {
+  vertical-align: top;
+}
+
+.current-date-year {
+  font-size: 25px;
+  padding: 30px 0 20px;
+  width: 120px;
+  background-color: white;
+  border-radius: 50%;
+  margin: 10px 0 0 0;
+}
+
+.holidays-color-square-gray {
+  margin-right: 5px;
+  width: 12px;
+  height: 12px;
+  background: #bec0bc;
+  display: inline-block;
+}
+
+.holidays-names-line {
+  border-bottom: 1px solid #eeeeee;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.holidays-color-square-green {
+  margin-right: 5px;
+  width: 12px;
+  height: 12px;
+  background: #99fa88;
+  display: inline-block;
+}
+
+.current-date-week {
+  font-size: 20px;
+  padding: 30px 0 20px;
+  width: 120px;
+  background-color: white;
+  border-radius: 50%;
+  margin: 10px 0 0 0;
+}
+
+.md-one {
+  background-color: #48ff3d;
+}
+
+.md-two {
+  background-color: #46de30;
+}
+
+.md-three {
+  background-color: #e0dddd;
+}
+
+.md-four {
+  background-color: #ffcac4;
+}
+
+.md-five {
+  background-color: #ffa387;
+}
+
+.md-legend-color {
+  display: inline-block;
+  width: 20px;
+}
+
+.md-legend-text {
+  padding-left: 5px;
+  padding-right: 5px;
+  display: inline-block;
+}
+
+.legend-center {
+  text-align: center;
+}
+
 .year {
   text-align: center;
   justify-content: center;
@@ -1665,145 +1828,49 @@ footer div div div > a:hover {
     height: 80px;
   }
 }
-.year-t {
-  width: 100%;
-  text-align: center;
-  justify-content: center;
-  vertical-align: top;
+.zweek {
+  display: flex;
+  font-size: 15px;
 }
 
-.week-t {
-  height: 40px;
-}
+@media (max-width: 479px) {
+  .zmonth {
+    min-width: 250px;
+  }
 
-.month-t {
-  min-width: 320px;
-  max-width: 400px;
-  margin: 10px;
-  padding: 5px;
-  border-radius: 5px;
-  display: unset;
+  .zweek {
+    height: 55px;
+  }
 }
+@media (min-width: 479px) {
+  .zmonth {
+    min-width: 310px;
+  }
 
-.month-name-t {
-  height: 50px;
-  padding-top: 5px;
-  font-size: 25px;
-  color: #828282;
+  .zweek {
+    height: 55px;
+  }
 }
-
-.day-t {
-  color: #535353;
-  padding: 5px;
-  background-color: rgba(255, 255, 255, 0.7);
-  box-shadow: -1px -1px #e9e9e9, inset -1px -1px 0 0 #e9e9e9;
+@media (min-width: 540px) {
+  .zweek {
+    height: 55px;
+  }
 }
-
-.no-day-t {
-  color: #F98909;
-  padding: 5px;
-  background-color: rgba(255, 255, 255, 0.7);
+@media (min-width: 720px) {
+  .zweek {
+    height: 65px;
+  }
 }
-
-.day-off-t {
-  color: #ff0002;
-  padding: 5px;
-  background-color: #fff4f4;
-  box-shadow: -1px -1px #e9e9e9, inset -1px -1px 0 0 #e9e9e9;
+@media (min-width: 960px) {
+  .zweek {
+    height: 75px;
+  }
 }
-
-.no-day-off-t {
-  color: #F98909;
-  padding: 5px;
-  background-color: rgba(255, 255, 255, 0.7);
+@media (min-width: 1140px) {
+  .zweek {
+    height: 80px;
+  }
 }
-
-.day-name-t {
-  color: #000000;
-  font-weight: bold;
-  padding: 5px;
-  background-color: rgba(255, 255, 255, 0.7);
-}
-
-tr {
-  vertical-align: top;
-}
-
-.current-date-year {
-  font-size: 25px;
-  padding: 30px 0 20px;
-  width: 120px;
-  background-color: white;
-  border-radius: 50%;
-  margin: 10px 0 0 0;
-}
-
-.holidays-color-square-gray {
-  margin-right: 5px;
-  width: 12px;
-  height: 12px;
-  background: #bec0bc;
-  display: inline-block;
-}
-
-.holidays-names-line {
-  border-bottom: 1px solid #eeeeee;
-  padding-top: 3px;
-  padding-bottom: 3px;
-}
-
-.holidays-color-square-green {
-  margin-right: 5px;
-  width: 12px;
-  height: 12px;
-  background: #99fa88;
-  display: inline-block;
-}
-
-.current-date-week {
-  font-size: 20px;
-  padding: 30px 0 20px;
-  width: 120px;
-  background-color: white;
-  border-radius: 50%;
-  margin: 10px 0 0 0;
-}
-
-.md-one {
-  background-color: #48ff3d;
-}
-
-.md-two {
-  background-color: #46de30;
-}
-
-.md-three {
-  background-color: #e0dddd;
-}
-
-.md-four {
-  background-color: #ffcac4;
-}
-
-.md-five {
-  background-color: #ffa387;
-}
-
-.md-legend-color {
-  display: inline-block;
-  width: 20px;
-}
-
-.md-legend-text {
-  padding-left: 5px;
-  padding-right: 5px;
-  display: inline-block;
-}
-
-.legend-center {
-  text-align: center;
-}
-
 .calendar-preview {
   text-align: center;
   padding: 5px;

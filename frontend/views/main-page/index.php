@@ -496,6 +496,44 @@
     </div>
 
 
+    <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4 c-links-mp">
+        <div class="c-links-block c-links-mp-header">
+
+            <a class="c-links-mp-header-link"
+               href="/<?= Yii::$app->language ?>/zodiac/">
+                <?= Yii::t('app', 'Zodiac signs'); ?>
+            </a>
+
+        </div>
+
+        <a href="/<?= Yii::$app->language ?>/calendar/zodiac/years/<?= $dateData['year']['current'] ?>/">
+            <?= Yii::t('app', 'Zodiac Signs Calendar'); ?>
+        </a>
+        <br>
+
+        <a href="/<?= Yii::$app->language ?>/calendar/religion/catholic/years/<?= $dateData['year']['current'] ?>/">
+            <?= Yii::t('app', 'Catholic calendar') ?>
+        </a>
+        <br>
+        <a href="/<?= Yii::$app->language ?>/calendar/religion/muslim/years/<?= $dateData['year']['current'] ?>/">
+            <?= Yii::t('app', 'Muslim calendar') ?>
+        </a>
+        <br>
+        <a href="/<?= Yii::$app->language ?>/calendar/religion/jewish/years/<?= $dateData['year']['current'] ?>/">
+            <?= Yii::t('app', 'Jewish calendar') ?>
+        </a>
+        <br>
+
+        <a href="/<?= Yii::$app->language ?>/calendar/religion/hindu/years/<?= $dateData['year']['current'] ?>/">
+            <?= Yii::t('app', 'Hindu calendar') ?>
+        </a>
+
+        <div class="c-links-block">
+            <hr class="hr-2">
+        </div>
+
+    </div>
+
 </div>
 
 
