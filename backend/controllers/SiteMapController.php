@@ -272,6 +272,23 @@ class SiteMapController extends Controller
 
             }
 
+            if ($name == 'sitemap-calendar-eastern-all') {
+                $siteMap->generateCalendarEastern($languagesData);
+                $siteMap->generateCalendarEasternAnimals($languagesData);
+                $siteMap->generateCalendarEasternYears($languagesData);
+            }
+
+            if ($name == 'sitemap-calendar-eastern-ru') {
+                $siteMap->generateCalendarEasternRU($languagesData);
+                $siteMap->generateCalendarEasternAnimalsRU($languagesData);
+                $siteMap->generateCalendarEasternYearsRU($languagesData);
+            }
+
+/*
+            <option value="">Карта сайта для ВОСТОЧНОГО календаря все языки</option>
+            <option value="sitemap-calendar-eastern-ru">Карта сайта для ВОСТОЧНОГО календаря только RU</option>
+            */
+
         }
 
         return $this->render('index', [

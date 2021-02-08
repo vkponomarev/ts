@@ -40,7 +40,7 @@ class EasternAnimals
 
     }
 
-    function urls(){
+    private function urls(){
 
         $this->urls[1] = 'rat';
         $this->urls[2] = 'bull';
@@ -71,7 +71,7 @@ class EasternAnimals
         return $this->urls;
     }
 
-    function pictures(){
+    private function pictures(){
 
         $this->pictures[1] = 'rat-01';
         $this->pictures[2] = 'bull-01';

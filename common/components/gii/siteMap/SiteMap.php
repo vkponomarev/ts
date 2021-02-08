@@ -264,6 +264,38 @@ class SiteMap
 
     }
 
+    function generateCalendarEastern($languagesData){
+
+        (new SiteMapGenerateCalendarEastern())->generate($languagesData);
+
+    }
+
+    function generateCalendarEasternRU($languagesData){
+
+        (new SiteMapGenerateCalendarEasternRU())->generate($languagesData);
+
+    }
+    function generateCalendarEasternAnimals($languagesData){
+
+        (new SiteMapGenerateCalendarEasternAnimals())->generate($languagesData);
+
+    }
+    function generateCalendarEasternAnimalsRU($languagesData){
+
+        (new SiteMapGenerateCalendarEasternAnimalsRU())->generate($languagesData);
+
+    }
+    function generateCalendarEasternYears($languagesData){
+
+        (new SiteMapGenerateCalendarEasternYears())->generate($languagesData);
+
+    }
+    function generateCalendarEasternYearsRU($languagesData){
+
+        (new SiteMapGenerateCalendarEasternYearsRU())->generate($languagesData);
+
+    }
+
 
     function generateMainFiles(){
 
