@@ -76,7 +76,8 @@ $this->params['breadcrumbs'][] = $this->title;
             <option value="sitemap-calendar-eastern-all">Карта сайта для ВОСТОЧНОГО календаря все языки</option>
             <option value="sitemap-calendar-eastern-ru">Карта сайта для ВОСТОЧНОГО календаря только RU</option>
 
-
+            <option value="sitemap-calendar-zodiac-all">Карта сайта для ЗОДИАКА календаря все языки</option>
+            <option value="sitemap-calendar-zodiac-ru">Карта сайта для ЗОДИАКА календаря только RU</option>
 
             <option value="sitemap-all">Карта сайта основной файл все языки</option>
 

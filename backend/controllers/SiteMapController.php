@@ -284,9 +284,21 @@ class SiteMapController extends Controller
                 $siteMap->generateCalendarEasternYearsRU($languagesData);
             }
 
+
+            if ($name == 'sitemap-calendar-zodiac-all') {
+                $siteMap->generateCalendarZodiacMonths($languagesData);
+                $siteMap->generateCalendarZodiacSigns($languagesData);
+                $siteMap->generateCalendarZodiacYears($languagesData);
+            }
+
+            if ($name == 'sitemap-calendar-zodiac-ru') {
+                $siteMap->generateCalendarZodiacMonthsRU($languagesData);
+                $siteMap->generateCalendarZodiacSignsRU($languagesData);
+                $siteMap->generateCalendarZodiacYearsRU($languagesData);
+            }
 /*
-            <option value="">Карта сайта для ВОСТОЧНОГО календаря все языки</option>
-            <option value="sitemap-calendar-eastern-ru">Карта сайта для ВОСТОЧНОГО календаря только RU</option>
+             <option value="">Карта сайта для ЗОДИАКА календаря все языки</option>
+            <option value="">Карта сайта для ЗОДИАКА календаря только RU</option>
             */
 
         }

@@ -296,6 +296,36 @@ class SiteMap
 
     }
 
+    function generateCalendarZodiacMonths($languagesData){
+
+        (new SiteMapGenerateCalendarZodiacMonths())->generate($languagesData);
+
+    }
+    function generateCalendarZodiacMonthsRU($languagesData){
+
+        (new SiteMapGenerateCalendarZodiacMonthsRU())->generate($languagesData);
+
+    }
+    function generateCalendarZodiacSigns($languagesData){
+
+        (new SiteMapGenerateCalendarZodiacSings())->generate($languagesData);
+
+    }
+    function generateCalendarZodiacSignsRU($languagesData){
+
+        (new SiteMapGenerateCalendarZodiacSingsRU())->generate($languagesData);
+
+    }
+    function generateCalendarZodiacYears($languagesData){
+
+        (new SiteMapGenerateCalendarZodiacYears())->generate($languagesData);
+
+    }
+    function generateCalendarZodiacYearsRU($languagesData){
+
+        (new SiteMapGenerateCalendarZodiacYearsRU())->generate($languagesData);
+
+    }
 
     function generateMainFiles(){
 
