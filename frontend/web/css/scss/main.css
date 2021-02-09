@@ -1146,23 +1146,23 @@ tr {
 }
 
 .md-one {
-  background-color: #48ff3d;
+  background-color: #48ff3d !important;
 }
 
 .md-two {
-  background-color: #46de30;
+  background-color: #46de30 !important;
 }
 
 .md-three {
-  background-color: #e0dddd;
+  background-color: #e0dddd !important;
 }
 
 .md-four {
-  background-color: #ffcac4;
+  background-color: #ffcac4 !important;
 }
 
 .md-five {
-  background-color: #ffa387;
+  background-color: #ffa387 !important;
 }
 
 .md-legend-color {
@@ -1178,6 +1178,42 @@ tr {
 
 .legend-center {
   text-align: center;
+}
+
+.h-table-line {
+  border-bottom: 1px solid #f1f1f1;
+  display: flex;
+  word-wrap: break-word;
+}
+
+.h-table-title-first {
+  padding: 5px;
+  font-size: 17px;
+  width: 25%;
+  font-weight: bold;
+}
+
+.h-table-td-first {
+  padding: 5px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.h-table-title {
+  padding: 5px;
+  font-size: 17px;
+  font-weight: bold;
+  width: 25%;
+}
+
+.h-table-td {
+  padding: 5px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.h-table {
+  width: 100%;
 }
 
 .year {

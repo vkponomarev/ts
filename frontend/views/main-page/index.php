@@ -105,7 +105,6 @@
     </div>
 
 
-
     <?php /***************************** */?>
     <?php /***************************** Календраь на год с номерами недель*/?>
     <?php /***************************** */?>
@@ -198,7 +197,7 @@
     <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4 c-links-mp">
         <div class="c-links-block c-links-mp-header">
             <a class="c-links-mp-header-link"
-               href="/<?= Yii::$app->language ?>/holidays/">
+               href="/<?= Yii::$app->language ?>/holidays/years/2021/">
                 <?= Yii::t('app', 'Holidays'); ?>
             </a>
         </div>

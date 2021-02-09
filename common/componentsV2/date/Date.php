@@ -19,8 +19,8 @@ class Date
     public $afterNext;
     public $previous;
     public $afterPrevious;
-
-
+    public $plusTwoMonths;
+    public $plusOneMonth;
     /**
      * @var \common\componentsV2\date\DateYear
      */
@@ -52,7 +52,8 @@ class Date
         $this->afterNext = $dateMain->modify('+1 day')->format('Y-m-d');
         $this->previous = $dateMain->modify('-3 day')->format('Y-m-d');
         $this->afterPrevious = $dateMain->modify('-1 day')->format('Y-m-d');
-
+        $this->plusTwoMonths = $dateMain->modify('+2 month')->format('Y-m-d');
+        $this->plusOneMonth = $dateMain->modify('-1 month')->format('Y-m-d');
         return $this;
     }
 

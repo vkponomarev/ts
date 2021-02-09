@@ -1,0 +1,36 @@
+.h-table-line {
+  border-bottom: 1px solid #f1f1f1;
+  display: flex;
+  word-wrap: break-word;
+}
+
+.h-table-title-first {
+  padding: 5px;
+  font-size: 17px;
+  width: 25%;
+  font-weight: bold;
+}
+
+.h-table-td-first {
+  padding: 5px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.h-table-title {
+  padding: 5px;
+  font-size: 17px;
+  font-weight: bold;
+  width: 25%;
+}
+
+.h-table-td {
+  padding: 5px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.h-table {
+  width:100%;
+
+}

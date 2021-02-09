@@ -98,6 +98,11 @@ class Holidays
 
     }
 
+    function world($date, $languageID, $countryID){
+
+        return (new HolidaysWorld())->holidays($date, $languageID, $countryID);
+
+    }
 
 
     /**

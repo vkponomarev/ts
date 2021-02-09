@@ -277,6 +277,7 @@ $moon = new \common\components\moon\Moon();
                         <?php if (isset($week[$i]['monthDay'])): ?>
 
 
+
                             <div class="day
                             <?= ($goodDays[$dayNameURL][$calendarByYear['moonDay'][$week[$i]['date']]] == 1) ? ' md-one' : '' ?>
                             <?= ($goodDays[$dayNameURL][$calendarByYear['moonDay'][$week[$i]['date']]] == 2) ? ' md-two' : '' ?>

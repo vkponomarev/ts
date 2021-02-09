@@ -61,7 +61,17 @@ return [
                 //'/calendar/months/<urlMonth>' => 'months/month-page',
                 //'/calendar/days/<urlDay>' => 'days/day-page',
 
+                [
+                    'pattern' => '/holidays/years/<yearURL:\d{4}>/<countryURL:[\w_-]+>',
+                    'route' => 'holidays/holidays-years/holidays-year-page',
+                    'defaults' => ['yearURL' => '', 'countryURL' => ''],
+                ],
 
+                [
+                    'pattern' => '/holidays/months/<yearURL:\d{4}>/<countryURL:[\w_-]+>',
+                    'route' => 'holidays/holidays-years/holidays-year-page',
+                    'defaults' => ['yearURL' => '', 'countryURL' => ''],
+                ],
 
 
 

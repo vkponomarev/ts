@@ -129,6 +129,12 @@ class UrlCheck
 
     }
 
+    function holidaysYear($year, $holidaysRange){
+
+        (new UrlCheckHolidaysYear())->year($year, $holidaysRange);
+
+    }
+
 
     /**
      * Проверяем URL если в урл что то не так выдаем 404

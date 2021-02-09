@@ -7,7 +7,7 @@ use yii\web\NotFoundHttpException;
 
 
 /**
- * Данный клас представляет собой объект праздники и все свой ства праздников.
+ * Данный клас представляет собой объект праздники и все свойства праздников.
  * Class Holidays
  * @package common\componentsV2\holidays
  */

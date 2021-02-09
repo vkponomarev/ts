@@ -88,8 +88,7 @@ class MoonYearsGoodController extends Controller
             $dayNameURL = 'daysByRatingCount';
         }
 
-
-        return $this->render('moon-year-good-page.min.php', [
+             return $this->render('moon-year-good-page.min.php', [
 
             'dateData' => $dateData,
             'cityData' => $cityData,
