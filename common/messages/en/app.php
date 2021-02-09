@@ -566,8 +566,9 @@ return [
     'Silver' => 'Silver',
     'White' => 'White',
 
-    'Upcoming holidays in the world in {year}' => 'Ближайшие праздники в мире в {year} году',
+    'Upcoming holidays in the world in {year}' => 'Upcoming holidays in the world in {year}',
     'Upcoming holidays {country_in} in {year}' => 'Upcoming holidays {country_in} in {year}',
+    'Upcoming holidays {country_in} for {month} {year}' => 'Upcoming holidays {country_in} for {month} {year}',
 
     'Date' => 'Date',
     'Title' => 'Title',

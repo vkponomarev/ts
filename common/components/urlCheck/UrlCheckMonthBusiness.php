@@ -13,9 +13,6 @@ class UrlCheckMonthBusiness
     function month($url, $holidaysRange)
     {
 
-
-
-
         $date = $url . '-01';
         $split = array();
 

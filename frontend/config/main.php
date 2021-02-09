@@ -68,11 +68,10 @@ return [
                 ],
 
                 [
-                    'pattern' => '/holidays/months/<yearURL:\d{4}>/<countryURL:[\w_-]+>',
-                    'route' => 'holidays/holidays-years/holidays-year-page',
-                    'defaults' => ['yearURL' => '', 'countryURL' => ''],
+                    'pattern' => '/holidays/months/<monthURL>/<countryURL:[\w_-]+>',
+                    'route' => 'holidays/holidays-months/holidays-month-page',
+                    'defaults' => ['monthURL' => '', 'countryURL' => ''],
                 ],
-
 
 
                 [

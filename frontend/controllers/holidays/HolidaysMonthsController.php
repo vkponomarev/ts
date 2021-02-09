@@ -22,7 +22,7 @@ class HolidaysMonthsController extends Controller
 {
 
 
-    public function actionHolidaysMonthPage($yearURL, $countryURL)
+    public function actionHolidaysMonthPage($monthURL, $countryURL)
     {
 
 
@@ -34,34 +34,34 @@ class HolidaysMonthsController extends Controller
         $holidaysRange = $holidays->range();
 
         $urlCheck = new UrlCheck();
-        $urlCheck->holidaysYear($yearURL, $holidaysRange);
+        $monthURL = $urlCheck->monthBusiness($monthURL, $holidaysRange);
         $countryURL = $urlCheck->country($countryURL);
 
         $main = new Main();
         Yii::$app->params['language'] = $main->language(Yii::$app->language);
         Yii::$app->params['language']['all'] = $main->languages();
-        Yii::$app->params['canonical'] = $main->Canonical($yearURL, $mainUrl);
-        Yii::$app->params['alternate'] = $main->Alternate($yearURL, $mainUrl);
+        Yii::$app->params['canonical'] = $main->Canonical($monthURL['url'], $mainUrl);
+        Yii::$app->params['alternate'] = $main->Alternate($monthURL['url'], $mainUrl);
         Yii::$app->params['menu'] = $main->menu();
 
         $languageID = Yii::$app->params['language']['current']['id'];
         $countryURL['defaultID'] = Yii::$app->params['language']['current']['countries_id'];
-        $year = $yearURL;
+        $year = $monthURL['year'];
         $language = Yii::$app->params['language']['current']['url'];
 
 
         $dateTmp = new \DateTime();
-        if ($yearURL <> $dateTmp->format('Y')){
-            $dateTmp = new \DateTime($yearURL . '-01-01');
+        if ($year <> $dateTmp->format('Y')){
+            $dateTmp = new \DateTime($monthURL['url'] . '-01');
         }
 
-        ($date = new Date($dateTmp->format('Y-m-d')))->date()->year()->month();
+        ($date = new Date((new \DateTime($monthURL['url'] . '-01'))->format('Y-m-d')))->date()->year()->month();
 
         $getParams = new GetParams();
 
         //$countryURL = $getParams->byCalendarYears($countryURL, $year, $holidaysRange);
 
-        $holidaysWorld = $holidays->world($date, $languageID, $countryURL['id']);
+        $holidaysWorld = $holidays->worldMonth($date, $languageID, $countryURL['id']);
 
         $countries = new Countries();
         $countriesData = $countries->data($languageID);
@@ -74,10 +74,10 @@ class HolidaysMonthsController extends Controller
         $calendarNameOfDaysInWeek = $calendar->nameOfDaysInWeek();
 
         $pageTexts = new PageTexts();
-        $pageTextsID = $pageTexts->defineIdByHolidaysWorld($countryURL['id']);
+        $pageTextsID = $pageTexts->defineIdByHolidaysWorldMonth($countryURL['id']);
         //$pageTextsMessages = $pageTexts->messagesByCalendarYear($calendarChinese, $dateData, count($holidaysData));
         Yii::$app->params['text'] = $main->text($pageTextsID, $languageID);
-        $pageTexts->updateByHolidaysWorld($date, $countryData);
+        $pageTexts->updateByHolidaysWorldMonth($date, $countryData, $calendarNameOfMonths);
         /*
                 $breadCrumbs = new Breadcrumbs();
                 Yii::$app->params['breadcrumbs'] = $breadCrumbs->year($yearData);

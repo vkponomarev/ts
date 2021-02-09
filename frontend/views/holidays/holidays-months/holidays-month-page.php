@@ -108,37 +108,66 @@
 <br><br>
 <hr>
 <?php /***************************** */ ?>
-<?php /***************************** Верхняя плашка календаря с годами туда сюда*/ ?>
+<?php /***************************** Верхняя плашка календаря с месяцами туда сюда*/ ?>
 <?php /***************************** */ ?>
-
 
 <div class="row">
     <div class="col-xxs-12 col-xs-4 c-prev-next-left">
-        <?php if ($date->year->previous == $holidaysRange['start'] - 1): ?>
+
+        <?php if ($date->year->current == $holidaysRange['start'] && $date->month->simple == 1) : ?>
+
         <?php else: ?>
-            <a href="/<?= Yii::$app->language ?>/holidays/years/<?= $date->year->previous ?>/
+
+            <?php if ($date->year->previous == '0000' && $date->month->simple == 1): ?>
+            <?php else: ?>
+                <?php if ($date->month->simple == 1): ?>
+                    <a href="/<?= Yii::$app->language ?>/holidays/months/<?= $date->year->previous ?>-<?= str_pad(12, 2, '0', STR_PAD_LEFT) ?>/
             <?= (($countryURL['url'] <> '')
-                && ($date->year->previous >= $holidaysRange['start'] && $date->year->previous <= $holidaysRange['end']))
-                ? $countryURL['url'] . '/' : '' ?>">
-                <?= $date->year->previous ?>
-            </a>
+                        && ($date->year->previous >= $holidaysRange['start'] && $date->year->previous <= $holidaysRange['end']))
+                        ? $countryURL['url'] . '/' : '' ?>">
+                        <?= $calendarNameOfMonths[12] ?>
+                    </a>
+                <?php else: ?>
+                    <a href="/<?= Yii::$app->language ?>/holidays/months/<?= $date->year->current ?>-<?= str_pad($date->month->simple - 1, 2, '0', STR_PAD_LEFT) ?>/
+            <?= (($countryURL['url'] <> '')
+                        && ($date->year->current >= $holidaysRange['start'] && $date->year->current <= $holidaysRange['end']))
+                        ? $countryURL['url'] . '/' : '' ?>">
+                        <?= $calendarNameOfMonths[$date->month->simple - 1] ?>
+                    </a>
+                <?php endif; ?>
+            <?php endif; ?>
         <?php endif; ?>
     </div>
     <div class="col-xxs-12 col-xs-4 c-prev-next-center">
-        <?= $date->year->current ?>
+        <?= $calendarNameOfMonths[$date->month->simple] ?>
     </div>
+
     <div class="col-xxs-12 col-xs-4 c-prev-next-right">
 
-        <?php if ($date->year->current == $holidaysRange['end']): ?>
+        <?php if ($date->year->current == $holidaysRange['end'] && $date->month->simple == 12) : ?>
 
         <?php else: ?>
-            <a href="/<?= Yii::$app->language ?>/holidays/years/<?= $date->year->next ?>/
+            <?php if ($date->year->current == '9999' && $date->month->simple == 12): ?>
+
+            <?php else: ?>
+                <?php if ($date->month->simple == 12): ?>
+                    <a href="/<?= Yii::$app->language ?>/holidays/months/<?= $date->year->next ?>-<?= str_pad(1, 2, '0', STR_PAD_LEFT) ?>/
             <?= (($countryURL['url'] <> '')
-                && ($date->year->next >= $holidaysRange['start'] && $date->year->next <= $holidaysRange['end']))
-                ? $countryURL['url'] . '/' : '' ?>">
-                <?= $date->year->next ?>
-            </a>
+                        && ($date->year->next >= $holidaysRange['start'] && $date->year->next <= $holidaysRange['end']))
+                        ? $countryURL['url'] . '/' : '' ?>">
+                        <?= $calendarNameOfMonths[1] ?>
+                    </a>
+                <?php else: ?>
+                    <a href="/<?= Yii::$app->language ?>/holidays/months/<?= $date->year->current ?>-<?= str_pad($date->month->simple + 1, 2, '0', STR_PAD_LEFT) ?>/
+            <?= (($countryURL['url'] <> '')
+                        && ($date->year->current >= $holidaysRange['start'] && $date->year->current <= $holidaysRange['end']))
+                        ? $countryURL['url'] . '/' : '' ?>">
+                        <?= $calendarNameOfMonths[$date->month->simple + 1] ?>
+                    </a>
+                <?php endif; ?>
+            <?php endif; ?>
         <?php endif; ?>
+
     </div>
 </div>
 <hr>
@@ -151,15 +180,17 @@
     <a name="calendar-of-holidays-and-weekends-in-<?= $date->year->current ?>-<?= $countryData['name_en'] ?>"></a>
     <?php if ($countryData) : ?>
         <h2 class="main-page-h1">
-            <?= Yii::t('app', 'Upcoming holidays {country_in} in {year}', [
+            <?= Yii::t('app', 'Upcoming holidays {country_in} for {month} {year}', [
                 'year' => $date->year->current,
                 'country_in' => $countryData['name_in'],
+                'month' => $calendarNameOfMonths[$date->month->simple],
             ]) ?>
         </h2>
     <?php else: ?>
         <h2 class="main-page-h1">
-            <?= Yii::t('app', 'Upcoming holidays in the world in {year}', [
+            <?= Yii::t('app', 'Upcoming holidays in the world for {month} {year}', [
                 'year' => $date->year->current,
+                'month' => $calendarNameOfMonths[$date->month->simple],
             ]) ?>
         </h2>
 
@@ -203,7 +234,7 @@
                     <?php if ($countryData) : ?>
                         <?= $holiday['countryName'] ?>
                     <?php else: ?>
-                        <a href="/<?= Yii::$app->language ?>/holidays/years/<?= $date->year->current ?>/<?= $holiday['countryUrl'] ?>/">
+                        <a href="/<?= Yii::$app->language ?>/holidays/months/<?= $date->year->current ?>-<?= $date->month->current ?>/<?= $holiday['countryUrl'] ?>/">
                             <?= $holiday['countryName'] ?>
                         </a>
 
