@@ -27,6 +27,7 @@ class HolidaysWorld
             ht.name as holidayName,
             ct.name as countryName,
             c.url as countryUrl,
+            h.url as holidayUrl,
             GROUP_CONCAT(`htst`.`name`) as `holidayTypeName`
             from
             holidays_date as hd
@@ -58,6 +59,7 @@ class HolidaysWorld
             ht.name as holidayName,
             ct.name as countryName,
             c.url as countryUrl,
+            h.url as holidayUrl,
             GROUP_CONCAT(`htst`.`name`) as `holidayTypeName`
             from
             holidays_date as hd

@@ -570,6 +570,10 @@ return [
     'Upcoming holidays {country_in} in {year}' => 'Upcoming holidays {country_in} in {year}',
     'Upcoming holidays {country_in} for {month} {year}' => 'Upcoming holidays {country_in} for {month} {year}',
 
+    '{holiday} upcoming holiday dates in the world in {year}' => '{holiday} upcoming holiday dates in the world in {year}',
+    '{holiday} upcoming holiday dates {country_in}' => '{holiday} upcoming holiday dates {country_in}',
+
+
     'Date' => 'Date',
     'Title' => 'Title',
     'Type' => 'Type',

@@ -4,7 +4,7 @@ namespace common\components\holidays;
 
 use Yii;
 
-class HolidaysWorldMonth
+class HolidaysByHolidayID
 {
 
     /**
@@ -14,7 +14,7 @@ class HolidaysWorldMonth
      * @return array
      * @throws \yii\db\Exception
      */
-    public function holidays($date, $languageID, $countryID)
+    public function holidays($date, $languageID, $countryID, $holidayID)
     {
 
         if (!$countryID) {
@@ -38,14 +38,15 @@ class HolidaysWorldMonth
             left join holidays_date_type as hdt on hdt.holidays_date_id = hd.id
             left join holidays_types as hts on hts.id = hdt.holidays_type_id  
             left join holidays_types_text as htst on htst.holidays_types_id = hts.id  
-            where hd.year = :year
-            and hd.month = :month
+            where 
+            hd.holidays_id = :holidayID
+            and hd.year = :year
             and ht.languages_id = :languageID
             and ct.languages_id = :languageID
             and htst.languages_id = :languageID
             GROUP BY hd.id
             order BY hd.date
-            ', [':languageID' => $languageID, ':year' => $date->year->current, ':month' => $date->month->current])
+            ', [':languageID' => $languageID, ':holidayID' => $holidayID, ':year' => $date->year->current])
                 ->queryAll();
 
             return $holidays;
@@ -70,15 +71,15 @@ class HolidaysWorldMonth
             left join holidays_date_type as hdt on hdt.holidays_date_id = hd.id
             left join holidays_types as hts on hts.id = hdt.holidays_type_id  
             left join holidays_types_text as htst on htst.holidays_types_id = hts.id  
-            where hd.year = :year
-            and hd.month = :month
+            where 
+            hd.holidays_id = :holidayID
             and hd.countries_id = :countryID
             and ht.languages_id = :languageID
             and ct.languages_id = :languageID
             and htst.languages_id = :languageID
             GROUP BY hd.id
             order BY hd.date
-            ', [':languageID' => $languageID, ':countryID' => $countryID, ':year' => $date->year->current, ':month' => $date->month->current])
+            ', [':languageID' => $languageID, ':countryID' => $countryID, ':holidayID' => $holidayID])
 
                 ->queryAll();
             return $holidays;

@@ -56,29 +56,14 @@
 
 
     <div class="col-xxs-12 col-xs-6 c-links-mp">
-        <?php if ($date->year->current >= 2000 && $date->year->current <= 2030): ?>
-            <div class="c-links-block c-links-mp-header c-links-mp-header-link">
-                <?= Yii::t('app', 'Choose the country'); ?>
-            </div>
-            <div class="c-links-block">
-                <form method="get" id="form">
-                    <div class="form-group">
-                        <script>
-                            let url = '<?php echo \yii\helpers\Url::home(true) . Yii::$app->language . '/holidays/years/' . $date->year->current . '/';?>';
-                        </script>
-                        <select id="selectCountry" class="form-control">
-                            <option><?= $countryData['name'] ?></option>
-                            <?php foreach ($countriesData as $country) : ?>
-                                <option value="<?= $country['url'] ?>"><?= $country['name'] ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                </form>
-            </div>
-            <div class="c-links-block">
-                <hr>
-            </div>
-        <?php endif; ?>
+
+
+        <div class="c-links-block c-links-mp-header">
+            <a class="c-links-mp-header-link"
+               href="/<?= Yii::$app->language ?>/holidays/years/<?= $date->year->current ?>/">
+                <?= Yii::t('app', 'Holidays'); ?>
+            </a>
+        </div>
         <div class="c-links-block">
             <div class="col-xs-6 c-links-mp-months ">
                 <a href="/<?= Yii::$app->language ?>/holidays/months/<?= $date->year->current ?>-01/<?= ($countryURL['url'] <> '') ? $countryURL['url'] . '/' : '' ?>"><?= $calendarNameOfMonths[1] ?>
@@ -99,13 +84,36 @@
             </div>
         </div>
         <div class="c-links-block">
-            <hr class="hr-1">
+            <hr>
         </div>
 
+        <?php if ($date->year->current >= 2000 && $date->year->current <= 2030): ?>
+            <div class="c-links-block c-links-mp-header c-links-mp-header-link">
+                <?= Yii::t('app', 'Choose the country'); ?>
+            </div>
+            <div class="c-links-block">
+                <form method="get" id="form">
+                    <div class="form-group">
+                        <script>
+                            let url = '<?php echo \yii\helpers\Url::home(true) . Yii::$app->language . '/holidays/months/' . $date->year->current . '-' . $date->month->current . '/';?>';
+                        </script>
+                        <select id="selectCountry" class="form-control">
+                            <option><?= $countryData['name'] ?></option>
+                            <?php foreach ($countriesData as $country) : ?>
+                                <option value="<?= $country['url'] ?>"><?= $country['name'] ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="c-links-block">
+                <hr class="hr-1">
+            </div>
 
+        <?php endif; ?>
     </div>
 </div>
-<br><br>
+
 <hr>
 <?php /***************************** */ ?>
 <?php /***************************** Верхняя плашка календаря с месяцами туда сюда*/ ?>
@@ -221,7 +229,7 @@
                     <?= Yii::$app->formatter->asDate($holiday['date'], 'medium'); ?>
                 </div>
                 <div class="h-table-td">
-                    <a href="/<?= Yii::$app->language ?>/holidays/names/<?= $holiday['holidayName'] ?>/">
+                    <a href="/<?= Yii::$app->language ?>/holidays/<?= $holiday['holidayUrl'] ?>/">
                         <?= $holiday['holidayName'] ?>
                     </a>
                 </div>

@@ -568,6 +568,10 @@ return [
     'Upcoming holidays in the world for {month} {year}' => 'Ближайшие праздники в мире на {month} {year} года',
     'Upcoming holidays {country_in} for {month} {year}' => 'Ближайшие праздники {country_in} на {month} {year} года',
 
+    '{holiday} upcoming holiday dates in the world in {year}' => '{holiday} ближайшие даты праздника в мире в {year} году',
+    '{holiday} upcoming holiday dates {country_in}' => '{holiday} ближайшие даты праздника {country_in}',
+
+
     'Date' => 'Дата',
     'Title' => 'Название',
     'Type' => 'Тип',

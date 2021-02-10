@@ -73,6 +73,11 @@ return [
                     'defaults' => ['monthURL' => '', 'countryURL' => ''],
                 ],
 
+                [
+                    'pattern' => '/holidays/<holidayNameURL>/<countryURL:[\w_-]+>',
+                    'route' => 'holidays/holidays-holiday/holidays-holiday-page',
+                    'defaults' => ['holidayNameURL' => '', 'countryURL' => ''],
+                ],
 
                 [
                     'pattern' => '/calendar/days-off/years/<yearURL:\d{4}>/<countryURL:[\w_-]+>',

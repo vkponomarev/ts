@@ -135,6 +135,11 @@ class UrlCheck
 
     }
 
+    function holidaysName($holidayName){
+
+        return (new UrlCheckHolidaysName())->name($holidayName);
+
+    }
 
     /**
      * Проверяем URL если в урл что то не так выдаем 404

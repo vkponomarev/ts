@@ -50,16 +50,10 @@
         </div>
     </div>
 
-    <?php /***************************** */ ?>
-    <?php /***************************** Выберите страну*/ ?>
-    <?php /***************************** */ ?>
-
-
     <div class="col-xxs-12 col-xs-6 c-links-mp">
-
         <div class="c-links-block c-links-mp-header">
             <a class="c-links-mp-header-link"
-               href="/<?= Yii::$app->language ?>/holidays/years/<?= $date->year->current ?>/">
+               href="/<?= Yii::$app->language ?>/holidays/years/<?= $date->year->current ?>/<?= ($countryURL['url'] <> '') ? $countryURL['url'] . '/' : '' ?>">
                 <?= Yii::t('app', 'Holidays'); ?>
             </a>
         </div>
@@ -83,70 +77,13 @@
             </div>
         </div>
         <div class="c-links-block">
-            <hr>
+            <hr class="hr-1">
         </div>
 
-        <?php if ($date->year->current >= 2000 && $date->year->current <= 2030): ?>
-            <div class="c-links-block c-links-mp-header c-links-mp-header-link">
-                <?= Yii::t('app', 'Choose the country'); ?>
-            </div>
-            <div class="c-links-block">
-                <form method="get" id="form">
-                    <div class="form-group">
-                        <script>
-                            let url = '<?php echo \yii\helpers\Url::home(true) . Yii::$app->language . '/holidays/years/' . $date->year->current . '/';?>';
-                        </script>
-                        <select id="selectCountry" class="form-control">
-                            <option><?= $countryData['name'] ?></option>
-                            <?php foreach ($countriesData as $country) : ?>
-                                <option value="<?= $country['url'] ?>"><?= $country['name'] ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                </form>
-            </div>
-            <div class="c-links-block">
-                <hr class="hr-1">
-            </div>
-        <?php endif; ?>
 
     </div>
 </div>
-<hr>
-<?php /***************************** */ ?>
-<?php /***************************** Верхняя плашка календаря с годами туда сюда*/ ?>
-<?php /***************************** */ ?>
-
-
-<div class="row">
-    <div class="col-xxs-12 col-xs-4 c-prev-next-left">
-        <?php if ($date->year->previous == $holidaysRange['start'] - 1): ?>
-        <?php else: ?>
-            <a href="/<?= Yii::$app->language ?>/holidays/years/<?= $date->year->previous ?>/
-            <?= (($countryURL['url'] <> '')
-                && ($date->year->previous >= $holidaysRange['start'] && $date->year->previous <= $holidaysRange['end']))
-                ? $countryURL['url'] . '/' : '' ?>">
-                <?= $date->year->previous ?>
-            </a>
-        <?php endif; ?>
-    </div>
-    <div class="col-xxs-12 col-xs-4 c-prev-next-center">
-        <?= $date->year->current ?>
-    </div>
-    <div class="col-xxs-12 col-xs-4 c-prev-next-right">
-
-        <?php if ($date->year->current == $holidaysRange['end']): ?>
-
-        <?php else: ?>
-            <a href="/<?= Yii::$app->language ?>/holidays/years/<?= $date->year->next ?>/
-            <?= (($countryURL['url'] <> '')
-                && ($date->year->next >= $holidaysRange['start'] && $date->year->next <= $holidaysRange['end']))
-                ? $countryURL['url'] . '/' : '' ?>">
-                <?= $date->year->next ?>
-            </a>
-        <?php endif; ?>
-    </div>
-</div>
+<br><br>
 <hr>
 <br>
 <?php /***************************** */ ?>
@@ -157,15 +94,16 @@
     <a name="calendar-of-holidays-and-weekends-in-<?= $date->year->current ?>-<?= $countryData['name_en'] ?>"></a>
     <?php if ($countryData) : ?>
         <h2 class="main-page-h1">
-            <?= Yii::t('app', 'Upcoming holidays {country_in} in {year}', [
-                'year' => $date->year->current,
+            <?= Yii::t('app', '{holiday} upcoming holiday dates {country_in}', [
                 'country_in' => $countryData['name_in'],
+                'holiday' => $holidayData['holidayName'],
             ]) ?>
         </h2>
     <?php else: ?>
         <h2 class="main-page-h1">
-            <?= Yii::t('app', 'Upcoming holidays in the world in {year}', [
+            <?= Yii::t('app', '{holiday} upcoming holiday dates in the world in {year}', [
                 'year' => $date->year->current,
+                'holiday' => $holidayData['holidayName'],
             ]) ?>
         </h2>
 
@@ -189,7 +127,6 @@
                 <?= Yii::t('app', 'Country') ?>
             </div>
         </div>
-
         <?php foreach ($holidaysData as $holiday) : ?>
             <?php $dateFormat = new \DateTime($holiday['date']) ?>
             <div class="h-table-line">
@@ -197,9 +134,13 @@
                     <?= Yii::$app->formatter->asDate($holiday['date'], 'medium'); ?>
                 </div>
                 <div class="h-table-td">
-                    <a href="/<?= Yii::$app->language ?>/holidays/<?= $holiday['holidayUrl'] ?>/">
+                    <?php if ($countryURL['url'] == '') : ?>
+                    <a href="/<?= Yii::$app->language ?>/holidays/<?= $holiday['holidayUrl'] ?>/<?= $holiday['countryUrl'] ?>/">
                         <?= $holiday['holidayName'] ?>
                     </a>
+                    <?php else: ?>
+                        <?= $holiday['holidayName'] ?>
+                    <?php endif; ?>
                 </div>
                 <div class="h-table-td">
 
