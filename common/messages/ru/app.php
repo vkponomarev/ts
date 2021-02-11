@@ -577,4 +577,6 @@ return [
     'Type' => 'Тип',
     'Country' => 'Страна',
 
+    'in the world' => 'в мире',
+
 ];

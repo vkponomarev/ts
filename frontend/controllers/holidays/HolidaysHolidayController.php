@@ -61,6 +61,7 @@ class HolidaysHolidayController extends Controller
 
         $holidaysData = $holidays->byHolidayID($date, $languageID, $countryURL['id'], $holidayData['id']);
 
+
         $countries = new Countries();
         $countriesData = $countries->data($languageID);
 
@@ -75,7 +76,7 @@ class HolidaysHolidayController extends Controller
         $pageTextsID = $pageTexts->defineIdByHolidaysHoliday($countryURL['id']);
         //$pageTextsMessages = $pageTexts->messagesByCalendarYear($calendarChinese, $dateData, count($holidaysData));
         Yii::$app->params['text'] = $main->text($pageTextsID, $languageID);
-        $pageTexts->updateByHolidaysWorldHoliday($date, $countryData, $holidayData);
+        $pageTexts->updateByHolidaysWorldHoliday($date, $countryData, $holidayData, $holidaysData);
         /*
                 $breadCrumbs = new Breadcrumbs();
                 Yii::$app->params['breadcrumbs'] = $breadCrumbs->year($yearData);

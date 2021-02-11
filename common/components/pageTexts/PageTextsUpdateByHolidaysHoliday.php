@@ -12,7 +12,7 @@ class PageTextsUpdateByHolidaysHoliday
      * @param $countryData
      * @param $holidayData
      */
-    public function update($date, $countryData, $holidayData)
+    public function update($date, $countryData, $holidayData, $holidaysData)
     {
 
         Yii::$app->params['text']['title'] = str_replace('{year}', $date->year->current, Yii::$app->params['text']['title']);
@@ -31,6 +31,7 @@ class PageTextsUpdateByHolidaysHoliday
         Yii::$app->params['text']['text1'] = str_replace('{year}', $date->year->current, Yii::$app->params['text']['text1']);
         Yii::$app->params['text']['text1'] = str_replace('{country_in}', $countryData['name_in'], Yii::$app->params['text']['text1']);
         Yii::$app->params['text']['text1'] = str_replace('{holiday}', $holidayData['holidayName'], Yii::$app->params['text']['text1']);
+        Yii::$app->params['text']['text1'] = str_replace('{holiday-type}', $holidaysData[0]['holidayTypeName'], Yii::$app->params['text']['text1']);
 
 
     }

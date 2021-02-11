@@ -140,10 +140,10 @@ class PageTexts
 
     }
 
-    function updateByHolidaysWorldHoliday($date, $countryData, $holidayData)
+    function updateByHolidaysWorldHoliday($date, $countryData, $holidayData, $holidaysData)
     {
 
-        (new PageTextsUpdateByHolidaysHoliday())->update($date, $countryData, $holidayData);
+        (new PageTextsUpdateByHolidaysHoliday())->update($date, $countryData, $holidayData, $holidaysData);
 
     }
 

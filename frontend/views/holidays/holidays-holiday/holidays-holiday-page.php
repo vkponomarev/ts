@@ -55,6 +55,7 @@
             <a class="c-links-mp-header-link"
                href="/<?= Yii::$app->language ?>/holidays/years/<?= $date->year->current ?>/<?= ($countryURL['url'] <> '') ? $countryURL['url'] . '/' : '' ?>">
                 <?= Yii::t('app', 'Holidays'); ?>
+                <?= ($countryURL['url'] <> '') ? ' ' . $countryData['name_in'] : ' ' . Yii::t('app', 'in the world'); ?>
             </a>
         </div>
         <div class="c-links-block">
