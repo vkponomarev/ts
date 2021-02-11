@@ -296,10 +296,18 @@ class SiteMapController extends Controller
                 $siteMap->generateCalendarZodiacSignsRU($languagesData);
                 $siteMap->generateCalendarZodiacYearsRU($languagesData);
             }
-/*
-             <option value="">Карта сайта для ЗОДИАКА календаря все языки</option>
-            <option value="">Карта сайта для ЗОДИАКА календаря только RU</option>
-            */
+
+            if ($name == 'sitemap-calendar-holidays-all') {
+                $siteMap->generateCalendarHolidays($languagesData); //долго делается
+                $siteMap->generateCalendarHolidaysMonths($languagesData);
+                $siteMap->generateCalendarHolidaysYears($languagesData);
+            }
+
+            if ($name == 'sitemap-calendar-holidays-ru') {
+                $siteMap->generateCalendarHolidaysRU($languagesData); //долго делается
+                $siteMap->generateCalendarHolidaysMonthsRU($languagesData);
+                $siteMap->generateCalendarHolidaysYearsRU($languagesData);
+            }
 
         }
 

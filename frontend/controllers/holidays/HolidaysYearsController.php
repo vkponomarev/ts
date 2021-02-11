@@ -25,7 +25,6 @@ class HolidaysYearsController extends Controller
     public function actionHolidaysYearPage($yearURL, $countryURL)
     {
 
-
         $textID = '238'; // ID из таблицы pages
         $table = 'm_years'; // К какой таблице отностся данная страница
         $mainUrl = 'years'; // Основной урл
@@ -36,6 +35,8 @@ class HolidaysYearsController extends Controller
         $urlCheck = new UrlCheck();
         $urlCheck->holidaysYear($yearURL, $holidaysRange);
         $countryURL = $urlCheck->country($countryURL);
+
+
 
         $main = new Main();
         Yii::$app->params['language'] = $main->language(Yii::$app->language);

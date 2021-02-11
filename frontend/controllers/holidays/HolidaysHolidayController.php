@@ -38,6 +38,9 @@ class HolidaysHolidayController extends Controller
         $url = $urlCheck->holidaysName($holidayNameURL);
         $countryURL = $urlCheck->country($countryURL);
 
+        $urlCheck->holidaysYearCountry($url['id'], $countryURL['id']);
+
+
         $main = new Main();
         Yii::$app->params['language'] = $main->language(Yii::$app->language);
         Yii::$app->params['language']['all'] = $main->languages();

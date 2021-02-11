@@ -141,6 +141,13 @@ class UrlCheck
 
     }
 
+    function holidaysYearCountry($holidayID, $countryID){
+
+        return (new UrlCheckHolidaysNameCountry())->check($holidayID, $countryID);
+
+    }
+
+
     /**
      * Проверяем URL если в урл что то не так выдаем 404
      * @param $year integer

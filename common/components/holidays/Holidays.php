@@ -116,6 +116,19 @@ class Holidays
 
     }
 
+    function bySitemapGeneration(){
+
+        return (new HolidaysBySitemapGenereation())->holidays();
+
+    }
+
+    function byHolidayAndCountryForSitemap($holidayID, $countryID){
+
+        return (new HolidaysByHolidayAndCountryForSitemap())->holidays($holidayID, $countryID);
+
+    }
+
+
     /**
      * Заменяем ячейку выходной день с несколькими значениями пример (0,1) на одно значение здесь 1 (0,0) здесь 0
      * Такое получается когда у нас есть для одного праздника несколько типов праздника и нам нужно найти тип который официальный выходноой

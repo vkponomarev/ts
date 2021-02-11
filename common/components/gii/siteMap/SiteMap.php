@@ -327,6 +327,39 @@ class SiteMap
 
     }
 
+    function generateCalendarHolidaysYears($languagesData){
+
+        (new SiteMapGenerateCalendarHolidaysYears())->generate($languagesData);
+
+    }
+    function generateCalendarHolidaysYearsRU($languagesData){
+
+        (new SiteMapGenerateCalendarHolidaysYearsRU())->generate($languagesData);
+
+    }
+
+    function generateCalendarHolidaysMonths($languagesData){
+
+        (new SiteMapGenerateCalendarHolidaysMonths())->generate($languagesData);
+
+    }
+    function generateCalendarHolidaysMonthsRU($languagesData){
+
+        (new SiteMapGenerateCalendarHolidaysMonthsRU())->generate($languagesData);
+
+    }
+    function generateCalendarHolidays($languagesData){
+
+        (new SiteMapGenerateCalendarHolidays())->generate($languagesData);
+
+    }
+    function generateCalendarHolidaysRU($languagesData){
+
+        (new SiteMapGenerateCalendarHolidaysRU())->generate($languagesData);
+
+    }
+
+
     function generateMainFiles(){
 
         (new SiteMapGenerateMainFiles())->generate();
