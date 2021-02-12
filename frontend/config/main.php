@@ -74,6 +74,18 @@ return [
                 ],
 
                 [
+                    'pattern' => '/holidays/days/<dayNameURL:(yesterday|today|tomorrow)>/<dayURL:(\d{4}-\d{2}-\d{2})>/<countryURL:[\w_-]+>',
+                    'route' => 'holidays/holidays-days/holidays-day-page',
+                    'defaults' => ['dayNameURL' => '', 'dayURL' => '', 'countryURL' => ''],
+                ],
+
+                /*[
+                    'pattern' => '/holidays/days/<dayURL>/',
+                    'route' => 'holidays/holidays-days/holidays-day-page',
+                    'defaults' => ['dayNameURL' => '', 'dayURL' => ''],
+                ],*/
+
+                [
                     'pattern' => '/holidays/<holidayNameURL>/<countryURL:[\w_-]+>',
                     'route' => 'holidays/holidays-holiday/holidays-holiday-page',
                     'defaults' => ['holidayNameURL' => '', 'countryURL' => ''],

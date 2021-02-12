@@ -203,8 +203,8 @@
         </div>
         <div class="c-links-block">
             <div class="col-xs-6 c-links-mp-months ">
-                <a href="/<?= Yii::$app->language ?>/holidays/">
-                    Страна 1
+                <a href="/<?= Yii::$app->language ?>/holidays/days/today/">
+                    Сегодня
                 </a><br>
                 <a href="/<?= Yii::$app->language ?>/holidays/">
                     Страна 1

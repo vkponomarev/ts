@@ -147,6 +147,12 @@ class UrlCheck
 
     }
 
+    function holidaysDays($dayNameURL, $dayURL, $countryURL, $holidaysRange){
+
+        return (new UrlCheckHolidaysDays())->check($dayNameURL, $dayURL, $countryURL, $holidaysRange);
+
+    }
+
 
     /**
      * Проверяем URL если в урл что то не так выдаем 404

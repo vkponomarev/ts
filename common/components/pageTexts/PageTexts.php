@@ -147,6 +147,13 @@ class PageTexts
 
     }
 
+    function updateByHolidaysDays($dayName, $date, $countryData)
+    {
+
+        (new PageTextsUpdateByHolidaysDays())->update($dayName, $date, $countryData);
+
+    }
+
 
     function defineIdByCalendarYear($holidays, $calendarChinese)
     {
@@ -254,6 +261,13 @@ class PageTexts
     {
 
         return (new PageTextsDefineIdByHolidaysHoliday())->define($countryID);
+
+    }
+
+    function defineIdByHolidaysDays($dayName, $day, $countryID)
+    {
+
+        return (new PageTextsDefineIdByHolidaysDays())->define($dayName, $day, $countryID);
 
     }
 
