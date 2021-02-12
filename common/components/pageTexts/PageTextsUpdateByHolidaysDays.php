@@ -8,7 +8,10 @@ class PageTextsUpdateByHolidaysDays
 
 {
     /**
+     * @param $dayName
      * @param $date \common\componentsV2\date\Date
+     * @param $countryData
+     * @throws \yii\base\InvalidConfigException
      */
     public function update($dayName, $date, $countryData)
     {

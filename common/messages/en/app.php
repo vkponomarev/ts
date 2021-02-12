@@ -580,5 +580,12 @@ return [
     'Country' => 'Country',
 
     'in the world' => 'in the world',
+    'What are the holidays today {date} in the world' => 'What are the holidays today {date} in the world',
+    'What are the holidays today {date} {country-in}' => 'What are the holidays today {date} {country-in}',
+    'What are the holidays will be tomorrow {date} in the world' => 'What are the holidays will be tomorrow {date} in the world',
+    'What are the holidays were yesterday {date} in the world' => 'What are the holidays were yesterday {date} in the world',
+    'What are the holidays on {date} in the world' => 'What are the holidays on {date} in the world',
+
+
 ];
 

@@ -7,15 +7,12 @@ use common\components\countries\Countries;
 use common\components\country\Country;
 use common\components\getParams\GetParams;
 use common\components\holidays\Holidays;
-use common\components\holidaysTypes\HolidaysTypes;
 use common\components\main\Main;
 use common\components\pageTexts\PageTexts;
-use common\components\pdfCalendars\PDFCalendars;
 use common\components\urlCheck\UrlCheck;
 use common\componentsV2\date\Date;
 use Yii;
 use yii\web\Controller;
-
 
 
 class HolidaysDaysController extends Controller
@@ -53,17 +50,19 @@ class HolidaysDaysController extends Controller
 
 
         $dateTmp = new \DateTime();
-        if ($yearURL <> $dateTmp->format('Y')){
+        if ($yearURL <> $dateTmp->format('Y')) {
             $dateTmp = new \DateTime($yearURL . '-01-01');
         }
 
         ($date = new Date($check['date']))->date()->year()->month();
-
+        ($dateToday = new Date((new \DateTime())->format('Y-m-d')))->date();
         $getParams = new GetParams();
 
-        //$countryURL = $getParams->byCalendarYears($countryURL, $year, $holidaysRange);
-
-        $holidaysWorld = $holidays->world($date, $languageID, $countryURL['id']);
+        $holidaysData = $holidays->byDay($date, $languageID, $countryURL['id']);
+        if (!$holidaysData && $countryURL['id'])
+            $holidaysNearest = $holidays->byDayByCountryByYear($date, $languageID, $countryURL['id']);
+        else
+            $holidaysNearest = 0;
 
         $countries = new Countries();
         $countriesData = $countries->data($languageID);
@@ -90,11 +89,16 @@ class HolidaysDaysController extends Controller
             'date' => $date,
             'countriesData' => $countriesData,
             'countryData' => $countryData,
-            'holidaysData' => $holidaysWorld,
+            'holidaysData' => $holidaysData,
+            'holidaysNearest' => $holidaysNearest,
             'countryURL' => $countryURL,
+            'dayNameURL' => $dayNameURL,
+            'dateToday' => $dateToday,
+            'dayURL' => $dayURL,
             'holidaysRange' => $holidaysRange,
             'calendarNameOfMonths' => $calendarNameOfMonths,
             'calendarNameOfDaysInWeek' => $calendarNameOfDaysInWeek,
+
 
         ]);
 

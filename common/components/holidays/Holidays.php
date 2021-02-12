@@ -116,6 +116,18 @@ class Holidays
 
     }
 
+    function byDay($date, $languageID, $countryID){
+
+        return (new HolidaysByDay())->holidays($date, $languageID, $countryID);
+
+    }
+
+    function byDayByCountryByYear($date, $languageID, $countryID){
+
+        return (new HolidaysByDayByCountryByYear())->holidays($date, $languageID, $countryID);
+
+    }
+
     function bySitemapGeneration(){
 
         return (new HolidaysBySitemapGenereation())->holidays();
