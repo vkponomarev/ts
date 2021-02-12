@@ -309,6 +309,15 @@ class SiteMapController extends Controller
                 $siteMap->generateCalendarHolidaysYearsRU($languagesData);
             }
 
+            if ($name == 'sitemap-calendar-holidays-days-all') {
+                $siteMap->generateCalendarHolidaysDays($languagesData);
+                $siteMap->generateCalendarHolidaysDaysRU($languagesData);
+                $siteMap->generateCalendarHolidaysDaysName($languagesData);
+                $siteMap->generateCalendarHolidaysDaysNameRU($languagesData);
+            }
+
+
+
         }
 
         return $this->render('index', [

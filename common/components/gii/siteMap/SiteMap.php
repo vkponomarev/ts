@@ -359,6 +359,27 @@ class SiteMap
 
     }
 
+    function generateCalendarHolidaysDays($languagesData){
+
+        (new SiteMapGenerateCalendarHolidaysDays())->generate($languagesData);
+
+    }
+    function generateCalendarHolidaysDaysRU($languagesData){
+
+        (new SiteMapGenerateCalendarHolidaysDaysRU())->generate($languagesData);
+
+    }
+    function generateCalendarHolidaysDaysName($languagesData){
+
+        (new SiteMapGenerateCalendarHolidaysDaysName())->generate($languagesData);
+
+    }
+    function generateCalendarHolidaysDaysNameRU($languagesData){
+
+        (new SiteMapGenerateCalendarHolidaysDaysNameRU())->generate($languagesData);
+
+    }
+
 
     function generateMainFiles(){
 
