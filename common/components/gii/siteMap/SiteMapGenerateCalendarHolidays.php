@@ -7,7 +7,6 @@ use common\components\bigData\BigData;
 use common\components\countries\Countries;
 use common\components\gii\Gii;
 use common\components\holidays\Holidays;
-use common\componentsV2\zodiacs\Zodiacs;
 
 
 class SiteMapGenerateCalendarHolidays
@@ -32,7 +31,7 @@ class SiteMapGenerateCalendarHolidays
         $countHolidays = 0;
 
         foreach ($holdaysSitemap as $holiday) {
-            $countHolidays ++;
+            $countHolidays++;
 
             $count++;
             $bigData = new BigData();
@@ -49,14 +48,25 @@ class SiteMapGenerateCalendarHolidays
                     'holiday' => $holiday['url'],
                 ]);
 
+                $countriesData = \Yii::$app->db
+                    ->createCommand('
+                        select
+                        distinct holidays_date.countries_id,
+                        c.url
+                        from
+                        holidays_date
+                        left join countries as c on c.id = holidays_date.countries_id
+                        where
+                        holidays_id = ' . $holiday['id'] . '
+                        ')
+                    ->queryAll();
+
+                //(new \common\components\dump\Dump())->printR($countriesData);die;
+
 
                 $countCountry = 0;
                 foreach ($countriesData as $country) {
                     $countCountry++;
-
-
-                    if (!$holidays->byHolidayAndCountryForSitemap($holiday['id'], $country['id']))
-                        continue;
 
                     $countLimit++;
 
@@ -66,7 +76,7 @@ class SiteMapGenerateCalendarHolidays
                         'country' => $country['url'],
                     ]);
 
-                    if (($countLimit >= 49998) or (($countHolidays == count($holdaysSitemap)) and ($languagesDataCount == $countLang) and ($countriesDataCount == $countCountry))) {
+                    if (($countLimit >= 49998) or (($countHolidays == count($holdaysSitemap)) and ($languagesDataCount == $countLang) and (count($countriesData) == $countCountry))) {
 
                         $countFiles++;
 

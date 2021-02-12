@@ -298,13 +298,13 @@ class SiteMapController extends Controller
             }
 
             if ($name == 'sitemap-calendar-holidays-all') {
-                $siteMap->generateCalendarHolidays($languagesData); //долго делается
+                $siteMap->generateCalendarHolidays($languagesData);
                 $siteMap->generateCalendarHolidaysMonths($languagesData);
                 $siteMap->generateCalendarHolidaysYears($languagesData);
             }
 
             if ($name == 'sitemap-calendar-holidays-ru') {
-                $siteMap->generateCalendarHolidaysRU($languagesData); //долго делается
+                $siteMap->generateCalendarHolidaysRU($languagesData);
                 $siteMap->generateCalendarHolidaysMonthsRU($languagesData);
                 $siteMap->generateCalendarHolidaysYearsRU($languagesData);
             }

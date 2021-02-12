@@ -7,7 +7,6 @@ use common\components\bigData\BigData;
 use common\components\countries\Countries;
 use common\components\gii\Gii;
 use common\components\holidays\Holidays;
-use common\componentsV2\zodiacs\Zodiacs;
 
 
 class SiteMapGenerateCalendarHolidaysRU
@@ -30,11 +29,13 @@ class SiteMapGenerateCalendarHolidaysRU
 
         // Проходим по всем праздникам.
         $countHolidays = 0;
+
         foreach ($holdaysSitemap as $holiday) {
-            $countHolidays ++;
+            $countHolidays++;
 
-
-
+            $count++;
+            $bigData = new BigData();
+            $bigData->saveData($count, 'sitemap');
 
             foreach ($languagesData as $language) {
                 if ($language['url'] <> 'ru'){
@@ -48,23 +49,27 @@ class SiteMapGenerateCalendarHolidaysRU
                     'holiday' => $holiday['url'],
                 ]);
 
+                $countriesData = \Yii::$app->db
+                    ->createCommand('
+                        select
+                        distinct holidays_date.countries_id,
+                        c.url
+                        from
+                        holidays_date
+                        left join countries as c on c.id = holidays_date.countries_id
+                        where
+                        holidays_id = ' . $holiday['id'] . '
+                        ')
+                    ->queryAll();
+
+                //(new \common\components\dump\Dump())->printR($countriesData);die;
+
 
                 $countCountry = 0;
                 foreach ($countriesData as $country) {
                     $countCountry++;
 
-
-
-
-                    if (!$holidays->byHolidayAndCountryForSitemap($holiday['id'], $country['id']))
-                        continue;
-
                     $countLimit++;
-
-
-                    $count++;
-                    $bigData = new BigData();
-                    $bigData->saveData($countLimit, 'sitemap');
 
                     $siteMapUrls .= \Yii::$app->view->render('@common/components/gii/siteMap/templates/_calendar-holidays-country.php', [
                         'language' => $language,
@@ -72,7 +77,7 @@ class SiteMapGenerateCalendarHolidaysRU
                         'country' => $country['url'],
                     ]);
 
-                    if (($countLimit >= 49998) or (($countHolidays == count($holdaysSitemap)) and ($countriesDataCount == $countCountry))) {
+                    if (($countLimit >= 49998) or (($countHolidays == count($holdaysSitemap)) and (count($countriesData) == $countCountry))) {
 
                         $countFiles++;
 
