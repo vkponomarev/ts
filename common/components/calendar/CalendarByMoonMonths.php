@@ -328,6 +328,7 @@ class CalendarByMoonMonths
         return [
             'calendar' => $calendar,
             'moonMonth' => $moonMonth,
+            'moonCalendar' => $moonCalendar,
             'moonDay' => $moonDay,
             'moonPhases' => [
                 'newMoon' => $newMoon,

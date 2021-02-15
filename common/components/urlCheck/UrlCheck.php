@@ -153,6 +153,12 @@ class UrlCheck
 
     }
 
+    function moonDays($dayNameURL, $dayURL, $holidaysRange){
+
+        return (new UrlCheckMoonDays())->check($dayNameURL, $dayURL, $holidaysRange);
+
+    }
+
 
     /**
      * Проверяем URL если в урл что то не так выдаем 404

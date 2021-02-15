@@ -154,6 +154,20 @@ class PageTexts
 
     }
 
+    function updateByMoonDays($dayName, $date, $moonDay)
+    {
+
+        (new PageTextsUpdateByMoonDays())->update($dayName, $date, $moonDay);
+
+    }
+
+    function updateByMoonDaysPhases($dayName, $date, $phase)
+    {
+
+        (new PageTextsUpdateByMoonDaysPhases())->update($dayName, $date, $phase);
+
+    }
+
 
     function defineIdByCalendarYear($holidays, $calendarChinese)
     {
@@ -271,6 +285,19 @@ class PageTexts
 
     }
 
+    function defineIdByMoonDays($dayName, $day)
+    {
+
+        return (new PageTextsDefineIdByMoonDays())->define($dayName, $day);
+
+    }
+
+    function defineIdByMoonDaysPhases($dayName, $day)
+    {
+
+        return (new PageTextsDefineIdByMoonDaysPhases())->define($dayName, $day);
+
+    }
 
     function messagesByCalendarYear($calendarChinese, $dateData, $countHolidays)
     {

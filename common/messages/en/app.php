@@ -586,6 +586,8 @@ return [
     'What are the holidays were yesterday {date} in the world' => 'What are the holidays were yesterday {date} in the world',
     'What are the holidays on {date} in the world' => 'What are the holidays on {date} in the world',
 
+    'Moon day today' => 'Moon day today',
+    'Moon phases today' => 'Moon phases today',
 
 ];
 

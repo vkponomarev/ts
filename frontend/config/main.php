@@ -79,12 +79,6 @@ return [
                     'defaults' => ['dayNameURL' => '', 'dayURL' => '', 'countryURL' => ''],
                 ],
 
-                /*[
-                    'pattern' => '/holidays/days/<dayURL>/',
-                    'route' => 'holidays/holidays-days/holidays-day-page',
-                    'defaults' => ['dayNameURL' => '', 'dayURL' => ''],
-                ],*/
-
                 [
                     'pattern' => '/holidays/<holidayNameURL>/<countryURL:[\w_-]+>',
                     'route' => 'holidays/holidays-holiday/holidays-holiday-page',
@@ -249,6 +243,17 @@ return [
                     'defaults' => ['phaseURL' => '', 'monthURL' => ''],
                 ],
 
+                [
+                    'pattern' => '/calendar/moon/days/<dayNameURL:(yesterday|today|tomorrow)>/<dayURL:(\d{4}-\d{2}-\d{2})>',
+                    'route' => 'moon/moon-days/moon-day-page',
+                    'defaults' => ['dayNameURL' => '', 'dayURL' => ''],
+                ],
+
+                [
+                    'pattern' => '/calendar/moon/phases/days/<dayNameURL:(yesterday|today|tomorrow)>/<dayURL:(\d{4}-\d{2}-\d{2})>',
+                    'route' => 'moon/moon-days-phases/moon-day-phase-page',
+                    'defaults' => ['dayNameURL' => '', 'dayURL' => ''],
+                ],
 
                 '/calendar/moon/months/<monthURL>' => 'moon/moon-months/moon-month-page',
                 '/calendar/moon/years/<yearURL:\d{4}>' => 'moon/moon-years/moon-year-page',

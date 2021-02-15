@@ -403,8 +403,14 @@
         <a href="/<?= Yii::$app->language ?>/calendar/moon/gardener/years/<?= $dateData['year']['current'] ?>/">
             <?= Yii::t('app', 'Sowing calendar') ?>
         </a>
-
-
+        <br>
+        <a href="/<?= Yii::$app->language ?>/calendar/moon/days/today/">
+            <?= Yii::t('app', 'Moon day today') ?>
+        </a>
+        <br>
+        <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/days/today/">
+            <?= Yii::t('app', 'Moon phases today') ?>
+        </a>
 
 
         <div class="c-links-block">

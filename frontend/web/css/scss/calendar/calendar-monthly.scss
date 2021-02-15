@@ -111,6 +111,16 @@
 }
 
 
+.mday-current {
+  padding: 5px;
+  color: #535353;
+  background-color: #7dff69!important;
+  box-shadow:
+          -1px -1px #e9e9e9,
+          inset -1px -1px 0 0 #e9e9e9;
+}
+
+
 .mday-holiday{
   padding: 5px;
   color: #535353;
