@@ -192,7 +192,7 @@
     </div>
     <div class="col-xxs-12 col-xs-4 c-prev-next-right">
 
-        <?php if ($date->current == '2029-12-31') : ?>
+        <?php if ($date->current == '2030-12-31') : ?>
         <?php else: ?>
             <a href="/<?= Yii::$app->language ?>/holidays/days/
             <?php if ($dayNameURL) : ?>

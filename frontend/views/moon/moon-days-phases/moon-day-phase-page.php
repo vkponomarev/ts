@@ -138,7 +138,7 @@ $moon = new \common\components\moon\Moon();
     </div>
     <div class="col-xxs-12 col-xs-4 c-prev-next-right">
 
-        <?php if ($date->current == '2029-12-31') : ?>
+        <?php if ($date->current == '2030-12-31') : ?>
         <?php else: ?>
             <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/days/
             <?php if ($dayNameURL) : ?>
