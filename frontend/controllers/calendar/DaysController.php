@@ -2,73 +2,90 @@
 
 namespace frontend\controllers\calendar;
 
-use common\components\breadcrumbs\Breadcrumbs;
 use common\components\calendar\Calendar;
-use common\components\day\Day;
+use common\components\city\City;
+use common\components\countries\Countries;
+use common\components\country\Country;
 use common\components\getParams\GetParams;
-use common\components\links\Links;
+use common\components\holidays\Holidays;
 use common\components\main\Main;
-use common\components\noDB\NoDB;
 use common\components\pageTexts\PageTexts;
-
 use common\components\urlCheck\UrlCheck;
-use common\components\year\Year;
-use common\components\years\Years;
+use common\componentsV2\date\Date;
+use common\componentsV2\zodiacs\Zodiacs;
 use Yii;
 use yii\web\Controller;
-
 
 
 class DaysController extends Controller
 {
 
 
-    public function actionIndex()
+    public function actionDayPage($dayNameURL, $dayURL)
     {
 
-    }
-
-    public function actionDayPage($urlDay)
-    {
-
-
-        $textID = '68'; // ID из таблицы pages
+        $yearURL = 2021;
+        $textID = '238'; // ID из таблицы pages
         $table = 'm_years'; // К какой таблице отностся данная страница
         $mainUrl = 'years'; // Основной урл
 
-        $urlCheck = new UrlCheck();
 
-        /**
-         * $urlCheckData['year']
-         * $urlCheckData['month']
-         * $urlCheckData['day']
-         */
-        $urlCheckData = $urlCheck->day($urlDay);
+        $holidays = new Holidays();
+        $holidaysRange = $holidays->range();
+
+        $urlCheck = new UrlCheck();
+        $check = $urlCheck->moonDays($dayNameURL, $dayURL, $holidaysRange);
+        $urlCheck->holidaysYear($yearURL, $holidaysRange);
 
         $main = new Main();
         Yii::$app->params['language'] = $main->language(Yii::$app->language);
         Yii::$app->params['language']['all'] = $main->languages();
-        Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['current']['id']);
-        Yii::$app->params['canonical'] = $main->Canonical($urlDay, $mainUrl);
-        Yii::$app->params['alternate'] = $main->Alternate($urlDay, $mainUrl);
+        Yii::$app->params['canonical'] = $main->Canonical($yearURL, $mainUrl);
+        Yii::$app->params['alternate'] = $main->Alternate($yearURL, $mainUrl);
         Yii::$app->params['menu'] = $main->menu();
 
-        $year = new Year();
-        $yearData = $year->data($urlCheckData['year']);
+        $languageID = Yii::$app->params['language']['current']['id'];
+        $countryURL['defaultID'] = Yii::$app->params['language']['current']['countries_id'];
+        $citiesDefaultID = Yii::$app->params['language']['current']['cities_id'];
+        $year = $yearURL;
+        $language = Yii::$app->params['language']['current']['url'];
 
-        $day = new Day();
-        $dayData = $day->data($urlDay);
+
+        ($date = new Date($check['date']))->date()->year()->month()->day();
+        ($dateToday = new Date((new \DateTime())->format('Y-m-d')))->date();
+
+        $zodiacs = new Zodiacs();
+        $zodiacs->zodiacByDay('2021-' . $date->month->current . '-' . $date->day->current);
+        $zodiacs->zodiac($zodiacs->zodiacByDay->url);
+
+        $monthURL['year'] = $date->year->current;
+        $monthURL['month'] = $date->month->current;
+
+        $getParams = new GetParams();
+        $getParams = $getParams->byCalendarMonthsMoon($citiesDefaultID);
 
         $calendar = new Calendar();
-
+        $calendarByMonth = $calendar->byZodiacMonth($monthURL, $zodiacs->ranges);
         $calendarNameOfMonths = $calendar->nameOfMonths();
         $calendarNameOfDaysInWeek = $calendar->nameOfDaysInWeek();
 
+        $pageTexts = new PageTexts();
+        $pageTextsID = $pageTexts->defineIdByCalendarDays($dayNameURL, $dayURL);
+
+        Yii::$app->params['text'] = $main->text($pageTextsID, $languageID);
+        $pageTexts->updateByCalendarDays($date, $calendarNameOfMonths);
+        /*
+                $breadCrumbs = new Breadcrumbs();
+                Yii::$app->params['breadcrumbs'] = $breadCrumbs->year($yearData);
+        */
+
         return $this->render('day-page.min.php', [
 
-            'yearData' => $yearData,
-            'dayData' => $dayData,
-            'monthData' => $urlCheckData['month'],
+            'date' => $date,
+            'zodiacs' => $zodiacs,
+            'dayNameURL' => $dayNameURL,
+            'dateToday' => $dateToday,
+            'calendarByMonth' => $calendarByMonth,
             'calendarNameOfMonths' => $calendarNameOfMonths,
             'calendarNameOfDaysInWeek' => $calendarNameOfDaysInWeek,
 

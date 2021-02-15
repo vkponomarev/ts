@@ -64,6 +64,7 @@ class ZodiacDaysController extends Controller
         $getParams = new GetParams();
         $getParams = $getParams->byCalendarMonthsMoon($citiesDefaultID);
 
+
         $calendar = new Calendar();
         $calendarByMonth = $calendar->byZodiacMonth($monthURL, $zodiacs->ranges);
         $calendarNameOfMonths = $calendar->nameOfMonths();
@@ -71,6 +72,7 @@ class ZodiacDaysController extends Controller
 
         $pageTexts = new PageTexts();
         $pageTextsID = $pageTexts->defineIdByZodiacDays($dayNameURL, $dayURL);
+        //$pageTextsMessages = $pageTexts->messagesByCalendarYear($calendarChinese, $dateData, count($holidaysData));
         Yii::$app->params['text'] = $main->text($pageTextsID, $languageID);
         $pageTexts->updateByZodiacDays($dayNameURL, $date, $zodiacs->zodiac->name);
         /*

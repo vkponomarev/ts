@@ -190,6 +190,11 @@ return [
                     'defaults' => ['monthURL' => '', 'countryURL' => ''],
                 ],
 
+                [
+                    'pattern' => '/calendar/days/<dayNameURL:(yesterday|today|tomorrow)>/<dayURL:(\d{4}-\d{2}-\d{2})>',
+                    'route' => 'calendar/days/day-page',
+                    'defaults' => ['dayNameURL' => '', 'dayURL' => ''],
+                ],
 
                 [
                     'pattern' => '/calendar/religion/<religionURL:[\w_-]+>/years/<yearURL:\d{4}>',
