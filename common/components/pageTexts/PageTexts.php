@@ -168,6 +168,13 @@ class PageTexts
 
     }
 
+    function updateByZodiacDays($dayName, $date, $zodiac)
+    {
+
+        (new PageTextsUpdateByZodiacDays())->update($dayName, $date, $zodiac);
+
+    }
+
 
     function defineIdByCalendarYear($holidays, $calendarChinese)
     {
@@ -296,6 +303,13 @@ class PageTexts
     {
 
         return (new PageTextsDefineIdByMoonDaysPhases())->define($dayName, $day);
+
+    }
+
+    function defineIdByZodiacDays($dayName, $day)
+    {
+
+        return (new PageTextsDefineIdByZodiacDays())->define($dayName, $day);
 
     }
 

@@ -588,6 +588,6 @@ return [
 
     'Moon day today' => 'Moon day today',
     'Moon phases today' => 'Moon phases today',
-
+    'Zodiac sign today' => 'Zodiac sign today',
 ];
 

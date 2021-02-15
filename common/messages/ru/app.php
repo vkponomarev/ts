@@ -588,5 +588,5 @@ return [
 
     'Moon day today' => 'Лунный день сегодня',
     'Moon phases today' => 'Фазы луны сегодня',
-
+    'Zodiac sign today' => 'Знак зодиака сегодня',
 ];

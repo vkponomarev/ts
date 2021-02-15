@@ -271,8 +271,12 @@ return [
                 '/zodiac/<signURL:[\w_-]+>' => 'zodiac/zodiac-signs/zodiac-sign-page',
                 '/calendar/zodiac/years/<yearURL:\d{4}>' => 'zodiac/zodiac-years/zodiac-year-page',
                 '/calendar/zodiac/months/<monthURL>' => 'zodiac/zodiac-months/zodiac-month-page',
-                '/calendar/zodiac/days/<dayURL>' => 'zodiac/zodiac-days/zodiac-day-page',
-
+                //'/calendar/zodiac/days/<dayURL>' => 'zodiac/zodiac-days/zodiac-day-page',
+                [
+                    'pattern' => '/calendar/zodiac/days/<dayNameURL:(yesterday|today|tomorrow)>/<dayURL:(\d{4}-\d{2}-\d{2})>',
+                    'route' => 'zodiac/zodiac-days/zodiac-day-page',
+                    'defaults' => ['dayNameURL' => '', 'dayURL' => ''],
+                ],
                 /*[
                     'pattern' => '/calendar/weeks/<yearURL:\d{4}>/<weekURL:\d{2}>',
                     'route' => 'weeks/week-page',

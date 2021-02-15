@@ -511,8 +511,8 @@
 
         </div>
 
-        <a href="/<?= Yii::$app->language ?>/calendar/zodiac/years/<?= $dateData['year']['current'] ?>/">
-            <?= Yii::t('app', 'Zodiac Signs Calendar'); ?>
+        <a href="/<?= Yii::$app->language ?>/calendar/zodiac/days/today/">
+            <?= Yii::t('app', 'Zodiac sign today'); ?>
         </a>
         <br>
 

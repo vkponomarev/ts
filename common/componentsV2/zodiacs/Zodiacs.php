@@ -36,6 +36,11 @@ class Zodiacs
      */
     public $has;
 
+    /**
+     * @var \common\componentsV2\zodiacs\ZodiacsZodiacDay
+     */
+    public $zodiacByDay;
+
 
     function __construct()
     {
@@ -85,6 +90,15 @@ class Zodiacs
             $this->pictures,
             $this->ranges,
             $this->has
+        );
+        return $this;
+    }
+
+    function zodiacByDay($day)
+    {
+        $this->zodiacByDay = new ZodiacsZodiacDay(
+            $day,
+            $this->urls
         );
         return $this;
     }
