@@ -590,4 +590,10 @@ return [
     'Moon phases today' => 'Фазы луны сегодня',
     'Zodiac sign today' => 'Знак зодиака сегодня',
     'Week today' => 'Неделя сегодня',
+
+    'Nearest winter holidays in the world in {year}' => 'Ближайшие зимние праздники в мире в {year} году',
+    'Nearest spring holidays in the world in {year}' => 'Ближайшие весенние праздники в мире в {year} году',
+    'Nearest summer holidays in the world in {year}' => 'Ближайшие летние праздники в мире в {year} году',
+    'Nearest autumn holidays in the world in {year}' => 'Ближайшие осенние праздники в мире в {year} году',
+
 ];

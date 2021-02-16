@@ -591,5 +591,10 @@ return [
     'Zodiac sign today' => 'Zodiac sign today',
     'Week today' => 'Week today',
 
+    'Nearest winter holidays in the world in {year}' => 'Nearest winter holidays in the world in {year}',
+    'Nearest spring holidays in the world in {year}' => 'Nearest spring holidays in the world in {year}',
+    'Nearest summer holidays in the world in {year}' => 'Nearest summer holidays in the world in {year}',
+    'Nearest autumn holidays in the world in {year}' => 'Nearest autumn holidays in the world in {year}',
+
 ];
 

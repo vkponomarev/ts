@@ -2,15 +2,17 @@
 
 namespace frontend\controllers\holidays;
 
+
 use common\components\calendar\Calendar;
 use common\components\countries\Countries;
 use common\components\country\Country;
+
 use common\components\getParams\GetParams;
 use common\components\holidays\Holidays;
-use common\components\holidaysTypes\HolidaysTypes;
 use common\components\main\Main;
 use common\components\pageTexts\PageTexts;
 use common\components\pdfCalendars\PDFCalendars;
+
 use common\components\urlCheck\UrlCheck;
 use common\componentsV2\date\Date;
 use Yii;
@@ -18,14 +20,14 @@ use yii\web\Controller;
 
 
 
-class HolidaysYearsController extends Controller
+class HolidaysSeasonsController extends Controller
 {
 
 
-    public function actionHolidaysYearPage($yearURL, $countryURL)
+    public function actionHolidaysSeasonPage($seasonURL, $yearURL)
     {
 
-        $textID = '238'; // ID из таблицы pages
+        $textID = '68'; // ID из таблицы pages
         $table = 'm_years'; // К какой таблице отностся данная страница
         $mainUrl = 'years'; // Основной урл
 
@@ -34,66 +36,59 @@ class HolidaysYearsController extends Controller
 
         $urlCheck = new UrlCheck();
         $urlCheck->holidaysYear($yearURL, $holidaysRange);
-        $countryURL = $urlCheck->country($countryURL);
-
-
 
         $main = new Main();
         Yii::$app->params['language'] = $main->language(Yii::$app->language);
         Yii::$app->params['language']['all'] = $main->languages();
+        Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['current']['id']);
         Yii::$app->params['canonical'] = $main->Canonical($yearURL, $mainUrl);
         Yii::$app->params['alternate'] = $main->Alternate($yearURL, $mainUrl);
         Yii::$app->params['menu'] = $main->menu();
 
         $languageID = Yii::$app->params['language']['current']['id'];
         $countryURL['defaultID'] = Yii::$app->params['language']['current']['countries_id'];
-        $year = $yearURL;
         $language = Yii::$app->params['language']['current']['url'];
 
 
-        $dateTmp = new \DateTime();
-        if ($yearURL <> $dateTmp->format('Y')){
-            $dateTmp = new \DateTime($yearURL . '-01-01');
-        }
-
-        ($date = new Date($dateTmp->format('Y-m-d')))->date()->year()->month();
 
         $getParams = new GetParams();
+        //$countryURL = $getParams->byCalendarSeasons($countryURL, $yearURL, $holidaysRange);
+        //$holidaysData = $holidays->byCountryBySeason($countryURL['id'], $yearURL, $languageID, $seasonURL);
+        //$holidaysData = $holidays->arrayReplace($holidaysData);
 
-        //$countryURL = $getParams->byCalendarYears($countryURL, $year, $holidaysRange);
+        ($date = new Date($yearURL .'-01-01'))->date()->year()->month();
 
-        $holidaysWorld = $holidays->world($date, $languageID, $countryURL['id'], 40);
-
-        $countries = new Countries();
-        $countriesData = $countries->data($languageID);
-
-        $country = new Country();
-        $countryData = $country->data($languageID, $countryURL['id']);
+        $holidaysData = $holidays->bySeason($date, $languageID, $seasonURL);
 
         $calendar = new Calendar();
+        $calendarChinese = $calendar->chineseByYear($yearURL);
         $calendarNameOfMonths = $calendar->nameOfMonths();
         $calendarNameOfDaysInWeek = $calendar->nameOfDaysInWeek();
 
+        $calendarBySeasons = $calendar->bySeasons($yearURL, $seasonURL);
+
         $pageTexts = new PageTexts();
-        $pageTextsID = $pageTexts->defineIdByHolidaysWorld($countryURL['id']);
-        //$pageTextsMessages = $pageTexts->messagesByCalendarYear($calendarChinese, $dateData, count($holidaysData));
+        $pageTextsID = $pageTexts->defineIdByHolidaysSeason($seasonURL);
+        //$pageTextsMessages = $pageTexts->messagesByCalendarSeason($dateData, $seasonURL);
         Yii::$app->params['text'] = $main->text($pageTextsID, $languageID);
-        $pageTexts->updateByHolidaysWorld($date, $countryData);
+        $pageTexts->updateByHolidaysSeason($date);
+
         /*
                 $breadCrumbs = new Breadcrumbs();
                 Yii::$app->params['breadcrumbs'] = $breadCrumbs->year($yearData);
         */
 
-        return $this->render('holidays-year-page.min.php', [
+        return $this->render('holidays-season-page.min.php', [
 
+            'seasonURL' => $seasonURL,
             'date' => $date,
-            'countriesData' => $countriesData,
-            'countryData' => $countryData,
-            'holidaysData' => $holidaysWorld,
-            'countryURL' => $countryURL,
+            'holidaysData' => $holidaysData,
             'holidaysRange' => $holidaysRange,
+            'calendarBySeasons' => $calendarBySeasons,
             'calendarNameOfMonths' => $calendarNameOfMonths,
             'calendarNameOfDaysInWeek' => $calendarNameOfDaysInWeek,
+            'countryURL' => $countryURL,
+            //'pageTextsMessages' => $pageTextsMessages,
 
         ]);
 

@@ -47,8 +47,8 @@ AppAsset::register($this);
                         </a>
                     </div>
                     <div class="navigation-item">
-                        <a href="/calendar/years/<?= Yii::$app->params['menu']['dateData']['year']['now']?>/" >
-                            Сегодня</a>
+                        <a href="/calendar/days/today/" >
+                            <?= Yii::t('app', 'Today') ?></a>
                     </div>
                     <div class="navigation-item">
                         <a href="/holidays/years/<?= Yii::$app->params['menu']['dateData']['year']['now']?>/" >

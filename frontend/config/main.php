@@ -85,6 +85,8 @@ return [
                     'defaults' => ['holidayNameURL' => '', 'countryURL' => ''],
                 ],
 
+                '/holidays/seasons/<seasonURL:(winter|spring|summer|autumn)>/<yearURL:\d{4}>' => 'holidays/holidays-seasons/holidays-season-page',
+
                 [
                     'pattern' => '/calendar/days-off/years/<yearURL:\d{4}>/<countryURL:[\w_-]+>',
                     'route' => 'business/business-days-off-years/business-days-off-year-page',

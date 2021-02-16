@@ -128,6 +128,12 @@ class Holidays
 
     }
 
+    function bySeason($date, $languageID, $season){
+
+        return (new HolidaysBySeason())->holidays($date, $languageID, $season);
+
+    }
+
     function bySitemapGeneration(){
 
         return (new HolidaysBySitemapGenereation())->holidays();

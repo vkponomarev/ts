@@ -6,7 +6,6 @@ use Yii;
 
 class HolidaysWorld
 {
-
     /**
      * @param $date \common\componentsV2\date\Date
      * @param $languageID
@@ -80,11 +79,10 @@ class HolidaysWorld
             order BY hd.date
             limit 100
             ', [':languageID' => $languageID, ':countryID' => $countryID, ':year' => $date->year->current,])
-
                 ->queryAll();
             return $holidays;
         }
-    }
 
+    }
 }
 

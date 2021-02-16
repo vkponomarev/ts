@@ -189,6 +189,13 @@ class PageTexts
 
     }
 
+    function updateByHolidaysSeason($date)
+    {
+
+        (new PageTextsUpdateByHolidaysSeason())->update($date);
+
+    }
+
 
     function defineIdByCalendarYear($holidays, $calendarChinese)
     {
@@ -341,6 +348,13 @@ class PageTexts
 
     }
 
+
+    function defineIdByHolidaysSeason($season)
+    {
+
+        return (new PageTextsDefineIdByHolidaysSeason())->define($season);
+
+    }
     function messagesByCalendarYear($calendarChinese, $dateData, $countHolidays)
     {
 
