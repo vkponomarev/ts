@@ -118,6 +118,7 @@
         </div>
         <div class="c-links-block">
             <div class="col-xs-6 c-links-mp-months ">
+                <a href="/<?= Yii::$app->language ?>/calendar/weeks/days/today/"><?= Yii::t('app', 'Week today') ?></a><br>
                 <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $dateData['year']['current'] ?>/01/"><?= '01 ' . Yii::t('app', 'week') ?></a><br>
                 <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $dateData['year']['current'] ?>/02/"><?= '02 ' . Yii::t('app', 'week') ?></a><br>
                 <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $dateData['year']['current'] ?>/03/"><?= '03 ' . Yii::t('app', 'week') ?></a><br>

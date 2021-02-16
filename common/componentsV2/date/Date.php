@@ -37,6 +37,11 @@ class Date
     public $day;
 
     /**
+     * @var \common\componentsV2\date\DateWeek
+     */
+    public $week;
+
+    /**
      * Date constructor.
      * @param $date string format 'Y-m-d'
      * @throws \Exception
@@ -92,6 +97,16 @@ class Date
 
     }
 
+    /**
+     * @return $this
+     * @throws \Exception
+     */
+    function week(){
+
+        $this->week = (new DateWeek($this->date));
+        return $this;
+
+    }
 
 
 }

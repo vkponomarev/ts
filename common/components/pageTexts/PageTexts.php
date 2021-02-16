@@ -182,6 +182,13 @@ class PageTexts
 
     }
 
+    function updateByWeekDays($date, $calendarNameOfDaysInWeek)
+    {
+
+        (new PageTextsUpdateByWeekDays())->update($date, $calendarNameOfDaysInWeek);
+
+    }
+
 
     function defineIdByCalendarYear($holidays, $calendarChinese)
     {
@@ -327,6 +334,12 @@ class PageTexts
 
     }
 
+    function defineIdByWeekDays($dayName, $day)
+    {
+
+        return (new PageTextsDefineIdByWeeksDays())->define($dayName, $day);
+
+    }
 
     function messagesByCalendarYear($calendarChinese, $dateData, $countHolidays)
     {

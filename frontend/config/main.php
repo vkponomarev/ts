@@ -264,9 +264,13 @@ return [
                 '/calendar/moon/years/<yearURL:\d{4}>' => 'moon/moon-years/moon-year-page',
 
                 '/calendar/weeks/<yearURL:\d{4}>' => 'calendar/weeks/year-weeks-page',
-                '/calendar/weeks/<yearURL:\d{4}>/week-now' => 'calendar/weeks/week-now',
                 '/calendar/weeks/<yearURL:\d{4}>/<weekURL:\d{2}>' => 'calendar/weeks/week-page',
 
+                [
+                    'pattern' => '/calendar/weeks/days/<dayNameURL:(yesterday|today|tomorrow)>/<dayURL:(\d{4}-\d{2}-\d{2})>',
+                    'route' => 'calendar/weeks-days/week-day-page',
+                    'defaults' => ['dayNameURL' => '', 'dayURL' => ''],
+                ],
 
                 '/calendar/eastern' => 'eastern/eastern/eastern-page',
                 '/calendar/eastern/years/<yearURL:\d{4}>' => 'eastern/eastern-years/eastern-year-page',
