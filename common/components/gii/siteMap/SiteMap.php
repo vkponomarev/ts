@@ -380,6 +380,54 @@ class SiteMap
 
     }
 
+    function generateCalendarMoonDays($languagesData){
+
+        (new SiteMapGenerateCalendarMoonDays())->generate($languagesData);
+
+    }
+
+    function generateCalendarMoonDaysRU($languagesData){
+
+        (new SiteMapGenerateCalendarMoonDaysRU())->generate($languagesData);
+
+    }
+
+    function generateCalendarMoonPhasesDays($languagesData){
+
+        (new SiteMapGenerateCalendarMoonPhasesDays())->generate($languagesData);
+
+    }
+
+    function generateCalendarMoonPhasesDaysRU($languagesData){
+
+        (new SiteMapGenerateCalendarMoonPhasesDaysRU())->generate($languagesData);
+
+    }
+
+    function generateCalendarWeeksDays($languagesData){
+
+        (new SiteMapGenerateCalendarWeeksDays())->generate($languagesData);
+
+    }
+
+    function generateCalendarWeeksDaysRU($languagesData){
+
+        (new SiteMapGenerateCalendarWeeksDaysRU())->generate($languagesData);
+
+    }
+
+    function generateCalendarZodiacDays($languagesData){
+
+        (new SiteMapGenerateCalendarZodiacDays())->generate($languagesData);
+
+    }
+
+    function generateCalendarZodiacDaysRU($languagesData){
+
+        (new SiteMapGenerateCalendarZodiacDaysRU())->generate($languagesData);
+
+    }
+
 
     function generateMainFiles(){
 

@@ -23,10 +23,10 @@ class ZodiacsZodiacDay
         $this->url = $zodiacURL->ids[$zodiacID];
     }
 
-
     private function zodiacByDay($day)
     {
         $ranges = $this->ranges();
+
         foreach ($ranges as $zodiacIDs => $range) {
 
             if ($day >= $range['start'] && $day <= $range['end']) {
@@ -34,6 +34,9 @@ class ZodiacsZodiacDay
                 $zodiacID = $zodiacIDs;
 
             }
+        }
+        if (!isset($zodiacID)){
+            $zodiacID = 10;
         }
         return $zodiacID;
     }
@@ -78,8 +81,8 @@ class ZodiacsZodiacDay
             'end' => '2021-12-22',
         ];
         $range[10] = [
-            'start' => '2020-12-23',
-            'end' => '2021-01-20',
+            'start' => '2021-12-23',
+            'end' => '2022-01-20',
         ];
         $range[11] = [
             'start' => '2021-01-21',

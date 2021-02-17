@@ -316,6 +316,18 @@ class SiteMapController extends Controller
                 $siteMap->generateCalendarHolidaysDaysNameRU($languagesData);
             }
 
+            if ($name == 'sitemap-calendar-days-all') {
+                $siteMap->generateCalendarMoonDays($languagesData);
+                $siteMap->generateCalendarMoonDaysRU($languagesData);
+                $siteMap->generateCalendarMoonPhasesDays($languagesData);
+                $siteMap->generateCalendarMoonPhasesDaysRU($languagesData);
+                $siteMap->generateCalendarWeeksDays($languagesData);
+                $siteMap->generateCalendarWeeksDaysRU($languagesData);
+                $siteMap->generateCalendarZodiacDays($languagesData);
+                $siteMap->generateCalendarZodiacDaysRU($languagesData);
+            }
+
+
 
 
         }
