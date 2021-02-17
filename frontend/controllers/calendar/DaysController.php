@@ -51,8 +51,11 @@ class DaysController extends Controller
         $language = Yii::$app->params['language']['current']['url'];
 
 
-        ($date = new Date($check['date']))->date()->year()->month()->day();
+        ($date = new Date($check['date']))->date()->year()->month()->day()->week();
         ($dateToday = new Date((new \DateTime())->format('Y-m-d')))->date();
+
+
+        $holidaysData = $holidays->byDay($date, $languageID, 0);
 
         $zodiacs = new Zodiacs();
         $zodiacs->zodiacByDay('2021-' . $date->month->current . '-' . $date->day->current);
@@ -61,13 +64,16 @@ class DaysController extends Controller
         $monthURL['year'] = $date->year->current;
         $monthURL['month'] = $date->month->current;
 
-        $getParams = new GetParams();
-        $getParams = $getParams->byCalendarMonthsMoon($citiesDefaultID);
+        $city = new City();
+        $cityData = $city->byMoonCalendar($languageID, $citiesDefaultID);
 
         $calendar = new Calendar();
-        $calendarByMonth = $calendar->byZodiacMonth($monthURL, $zodiacs->ranges);
+        $calendarByMonth = $calendar->byMonth($monthURL);
+        $calendarByMoonMonth = $calendar->byMoonMonths($monthURL, $cityData);
         $calendarNameOfMonths = $calendar->nameOfMonths();
         $calendarNameOfDaysInWeek = $calendar->nameOfDaysInWeek();
+
+        //$calendarBySeasons = $calendar->bySeasons($yearURL, $seasonURL);
 
         $pageTexts = new PageTexts();
         $pageTextsID = $pageTexts->defineIdByCalendarDays($dayNameURL, $dayURL);
@@ -82,9 +88,12 @@ class DaysController extends Controller
         return $this->render('day-page.min.php', [
 
             'date' => $date,
-            'zodiacs' => $zodiacs,
             'dayNameURL' => $dayNameURL,
+            'holidaysData' => $holidaysData,
             'dateToday' => $dateToday,
+            'zodiacs' => $zodiacs,
+
+            'calendarByMoonMonth' => $calendarByMoonMonth,
             'calendarByMonth' => $calendarByMonth,
             'calendarNameOfMonths' => $calendarNameOfMonths,
             'calendarNameOfDaysInWeek' => $calendarNameOfDaysInWeek,

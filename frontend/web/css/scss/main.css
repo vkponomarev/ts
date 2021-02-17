@@ -1216,6 +1216,32 @@ tr {
   width: 100%;
 }
 
+.day-plates {
+  padding: 5px;
+}
+
+.day-plate {
+  background-color: #ebf8ff;
+  border-radius: 10px;
+  padding: 8px;
+  font-size: 18px;
+}
+.day-plate a {
+  font-size: 16px;
+}
+
+.header-a {
+  font-size: 18px;
+}
+
+.day-month {
+  width: 100%;
+  display: inline-block;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 .year {
   text-align: center;
   justify-content: center;

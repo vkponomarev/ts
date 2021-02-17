@@ -67,6 +67,9 @@ return [
     'Day after tomorrow' => 'Послезавтра',
     'Yesterday' => 'Вчера',
     'Day before yesterday' => 'Позавчера',
+    'today' => 'сегодня',
+    'tomorrow' => 'завтра',
+    'yesterday' => 'вчера',
 
     'year' => 'год',
     'Choose the country' => 'Выберите страну',
@@ -595,5 +598,27 @@ return [
     'Nearest spring holidays in the world in {year}' => 'Ближайшие весенние праздники в мире в {year} году',
     'Nearest summer holidays in the world in {year}' => 'Ближайшие летние праздники в мире в {year} году',
     'Nearest autumn holidays in the world in {year}' => 'Ближайшие осенние праздники в мире в {year} году',
+
+    'What week is {date}' => 'Какая неделя на {date}',
+    '{week} week for {day-name}' => '{week} неделя на {day-name}',
+    '{week} week to {date}' => '{week} неделя на {date}',
+
+    'What day of the week is {date}' => 'Какой день недели на {date}',
+
+    'What are the holidays {day-name}' => 'Какие праздники на {day-name}',
+    'What are the holidays on {date}' => 'Какие праздники на {date}',
+
+    'What is the zodiac sign {day-name}' => 'Какой знак зодиака на {day-name}',
+    'What is the zodiac sign for {date}' => 'Какой знак зодиака на {date}',
+
+    'What lunar day {day-name}' => 'Какой лунный день на {day-name}',
+    'What lunar day on {date}' => 'Какой лунный день на {date}',
+    '{lunar-day} lunar day' => '{lunar-day} лунный день',
+
+    'What is the phase of the moon {day-name}' => 'Какая фаза луны на {day-name}',
+    'What is the phase of the moon on {date}' => 'Какая фаза луны на {date}',
+
+
+
 
 ];

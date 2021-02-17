@@ -67,6 +67,9 @@ return [
     'Day after tomorrow' => 'Day after tomorrow',
     'Yesterday' => 'Yesterday',
     'Day before yesterday' => 'Day before yesterday',
+    'today' => 'today',
+    'tomorrow' => 'tomorrow',
+    'yesterday' => 'yesterday',
 
     'year' => 'year',
     'Choose the country' => 'Choose the country',
@@ -595,6 +598,26 @@ return [
     'Nearest spring holidays in the world in {year}' => 'Nearest spring holidays in the world in {year}',
     'Nearest summer holidays in the world in {year}' => 'Nearest summer holidays in the world in {year}',
     'Nearest autumn holidays in the world in {year}' => 'Nearest autumn holidays in the world in {year}',
+
+    'What week is {date}' => 'What week is {date}',
+    '{week} week for {day-name}' => '{week} week for {day-name}',
+    '{week} week to {date}' => '{week} week to {date}',
+
+    'What day of the week is {date}' => 'What day of the week is {date}',
+
+    'What are the holidays {day-name}' => 'What are the holidays {day-name}',
+    'What are the holidays on {date}' => 'What are the holidays on {date}',
+
+    'What is the zodiac sign {day-name}' => 'What is the zodiac sign {day-name}',
+    'What is the zodiac sign for {date}' => 'What is the zodiac sign for {date}',
+
+    'What lunar day {day-name}' => 'What lunar day {day-name}',
+    'What lunar day on {date}' => 'What lunar day on {date}',
+    '{lunar-day} lunar day' => '{lunar-day} lunar day',
+
+    'What is the phase of the moon {day-name}' => 'What is the phase of the moon {day-name}',
+    'What is the phase of the moon on {date}' => 'What is the phase of the moon on {date}',
+
 
 ];
 

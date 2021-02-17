@@ -31,12 +31,6 @@ class SeasonsController extends Controller
 {
 
 
-    public function actionIndex()
-    {
-
-
-    }
-
     public function actionSeason($seasonURL, $yearURL, $countryURL)
     {
 
