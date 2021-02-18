@@ -247,7 +247,7 @@ $moon = new \common\components\moon\Moon();
 
     <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4 day-plates">
         <div class="day-plate">
-            <a href="/<?= Yii::$app->language ?>/calendar/weeks/days/<?= ($dayNameURL <> '') ? $dayNameURL : $date->current ?>/">
+            <a class="day-plate-header" href="/<?= Yii::$app->language ?>/calendar/weeks/days/<?= ($dayNameURL <> '') ? $dayNameURL : $date->current ?>/">
                 <?= Yii::t('app', 'What week is {date}', [
                     'date' => ($dayNameURL <> '') ? Yii::t('app', $dayNameURL) : Yii::$app->formatter->asDate($date->current, 'medium')
                 ]) ?>
@@ -264,7 +264,7 @@ $moon = new \common\components\moon\Moon();
 
     <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4 day-plates">
         <div class="day-plate">
-            <a href="/<?= Yii::$app->language ?>/calendar/weeks/days/<?= ($dayNameURL <> '') ? $dayNameURL : $date->current ?>/">
+            <a class="day-plate-header" href="/<?= Yii::$app->language ?>/calendar/weeks/days/<?= ($dayNameURL <> '') ? $dayNameURL : $date->current ?>/">
                 <?= Yii::t('app', 'What day of the week is {date}', [
                     'date' => ($dayNameURL <> '') ? Yii::t('app', $dayNameURL) : Yii::$app->formatter->asDate($date->current, 'medium')
                 ]) ?>
@@ -277,7 +277,7 @@ $moon = new \common\components\moon\Moon();
 
     <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4 day-plates">
         <div class="day-plate">
-            <a href="/<?= Yii::$app->language ?>/calendar/zodiac/days/<?= ($dayNameURL <> '') ? $dayNameURL : $date->current ?>/">
+            <a class="day-plate-header" href="/<?= Yii::$app->language ?>/calendar/zodiac/days/<?= ($dayNameURL <> '') ? $dayNameURL : $date->current ?>/">
                 <?= ($dayNameURL <> '')
                     ? Yii::t('app', 'What is the zodiac sign {day-name}', [
                         'day-name' => Yii::t('app', $dayNameURL)
@@ -295,7 +295,7 @@ $moon = new \common\components\moon\Moon();
 
     <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4 day-plates">
         <div class="day-plate">
-            <a href="/<?= Yii::$app->language ?>/calendar/moon/days/<?= ($dayNameURL <> '') ? $dayNameURL : $date->current ?>/">
+            <a class="day-plate-header" href="/<?= Yii::$app->language ?>/calendar/moon/days/<?= ($dayNameURL <> '') ? $dayNameURL : $date->current ?>/">
                 <?= ($dayNameURL <> '')
                     ? Yii::t('app', 'What lunar day {day-name}', [
                         'day-name' => Yii::t('app', $dayNameURL)
@@ -315,7 +315,7 @@ $moon = new \common\components\moon\Moon();
 
     <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4 day-plates">
         <div class="day-plate">
-            <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/days/<?= ($dayNameURL <> '') ? $dayNameURL : $date->current ?>/">
+            <a class="day-plate-header" href="/<?= Yii::$app->language ?>/calendar/moon/phases/days/<?= ($dayNameURL <> '') ? $dayNameURL : $date->current ?>/">
                 <?= ($dayNameURL <> '')
                     ? Yii::t('app', 'What is the phase of the moon {day-name}', [
                         'day-name' => Yii::t('app', $dayNameURL)
@@ -395,7 +395,7 @@ $moon = new \common\components\moon\Moon();
     <div class="col-xxs-12 col-xs-12">
         <?php if ($holidaysData): ?>
 
-            <a class="header-a"
+            <a class="header-a day-plate-header"
                href="/<?= Yii::$app->language ?>/holidays/days/<?= ($dayNameURL <> '') ? $dayNameURL : $date->current ?>/">
                 <?= ($dayNameURL <> '')
                     ? Yii::t('app', 'What are the holidays {day-name}', [

@@ -46,17 +46,29 @@ AppAsset::register($this);
 
                         </a>
                     </div>
+                    <div class="navigation-separator">
+                        |
+                    </div>
                     <div class="navigation-item">
                         <a href="/calendar/days/today/" >
                             <?= Yii::t('app', 'Today') ?></a>
+                    </div>
+                    <div class="navigation-separator">
+                        |
                     </div>
                     <div class="navigation-item">
                         <a href="/holidays/years/<?= Yii::$app->params['menu']['dateData']['year']['now']?>/" >
                             Праздники</a>
                     </div>
+                    <div class="navigation-separator">
+                        |
+                    </div>
                     <div class="navigation-item">
                         <a href="/calendar/years/<?= Yii::$app->params['menu']['dateData']['year']['now']?>/" >
                             Луна</a>
+                    </div>
+                    <div class="navigation-separator">
+                        |
                     </div>
                     <div class="navigation-item">
                         <a href="/calendar/years/<?= Yii::$app->params['menu']['dateData']['year']['now']?>/" >
