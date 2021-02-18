@@ -42,10 +42,13 @@ class MainPageController extends Controller
         Yii::$app->params['menu'] = $main->menu();
 
         $languageID = Yii::$app->params['language']['current']['id'];
+        $countryURL['id'] = Yii::$app->params['language']['current']['countries_id'];
 
         $date = (new Date((new \DateTime())->format('Y-m-d')))->date()->year()->month()->week()->day();
 
+
         $calendar = new Calendar();
+        $calendarByYear = $calendar->byYear($date->year->current);
         $calendarNameOfMonths = $calendar->nameOfMonths();
         $calendarNameOfDaysInWeek = $calendar->nameOfDaysInWeek();
 
@@ -55,11 +58,20 @@ class MainPageController extends Controller
         $countries = new Countries();
         $countries = $countries->byPopulation($languageID);
 
+
+
+        $holidays = new Holidays();
+        $holidaysRange = $holidays->range();
+        $holidaysData = $holidays->byCountryByYear($countryURL['id'], $date->year->current, $languageID);
+        $holidaysData = $holidays->arrayReplace($holidaysData);
+
         return $this->render('index.min.php', [
 
             'date' => $date,
             'holidays' => $holidays,
+            'holidaysData' => $holidaysData,
             'countries' => $countries,
+            'calendarByYear' => $calendarByYear,
             'calendarNameOfMonths' => $calendarNameOfMonths,
             'calendarNameOfDaysInWeek' => $calendarNameOfDaysInWeek,
 

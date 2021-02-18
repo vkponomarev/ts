@@ -622,5 +622,7 @@ return [
     'Business days calendar' => 'Производственный календаь',
     'Lunar Calendar' => 'Лунный календарь',
     'Zodiac signs calendar' => 'Календарь знаков зодиака',
+    'Other calendars' => 'Другие календари',
+    'Other' => 'Другое',
 
 ];

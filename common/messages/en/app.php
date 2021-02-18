@@ -622,5 +622,9 @@ return [
     'Business days calendar' => 'Business days calendar',
     'Lunar Calendar' => 'Lunar Calendar',
     'Zodiac signs calendar' => 'Zodiac signs calendar',
-];
+    'Other calendars' => 'Other calendars',
+    'Other' => 'Other',
+
+
+    ];
 
