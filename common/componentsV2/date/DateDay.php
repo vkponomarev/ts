@@ -14,6 +14,7 @@ class DateDay
     public $current;
     public $simple;
     public $weekDay;
+    public $count;
     /**
      * @param $date
      * @return $this
@@ -30,6 +31,7 @@ class DateDay
     private function day($date)
     {
 
+
         $dayName = Yii::$app->formatter->asDate($date, 'php:l');
         $dayNameShort = Yii::$app->formatter->asDate($date, 'php:D');
         $dayNumber = $date->format('d');
@@ -41,7 +43,7 @@ class DateDay
         $this->current = $dayNumber;
         $this->simple = $dayNumberSimple;
         $this->weekDay = $dayCount;
-
+        $this->count = $dayCount;
         return $this;
     }
 

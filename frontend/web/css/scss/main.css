@@ -925,6 +925,33 @@ footer div div div > a:hover {
   background: #be6178;
 }
 
+.plates {
+  padding: 10px;
+}
+
+.plate {
+  border-radius: 10px;
+  padding: 15px 20px 15px 20px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.11);
+  font-size: 18px;
+  min-height: 280px;
+}
+.plate .plate-header {
+  margin-bottom: 10px;
+}
+.plate .plate-header a {
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+}
+.plate .plate-header a:hover {
+  color: black;
+  text-decoration: underline;
+}
+.plate .plate-links {
+  font-size: 16px;
+}
+
 /*.business-month-summary {
   position: relative;
 }

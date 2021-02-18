@@ -3,13 +3,11 @@
 namespace frontend\controllers;
 
 
-use common\components\albums\Albums;
-use common\components\artists\Artists;
 use common\components\calendar\Calendar;
-use common\components\date\Date;
+use common\components\holidays\Holidays;
 use common\components\main\Main;
-use common\components\songs\Songs;
 use common\components\year\Year;
+use common\componentsV2\date\Date;
 use Yii;
 use yii\web\Controller;
 
@@ -41,9 +39,10 @@ class MainPageController extends Controller
         Yii::$app->params['canonical'] = $main->Canonical($url, $mainUrl);
         Yii::$app->params['alternate'] = $main->Alternate($url, $mainUrl);
         Yii::$app->params['menu'] = $main->menu();
-        
-        $date = new Date();
-        $dateData = $date->data(0);
+
+        $languageID = Yii::$app->params['language']['current']['id'];
+
+        $date = (new Date((new \DateTime())->format('Y-m-d')))->date()->year()->month()->week()->day();
 
         $year = new Year();
         $yearData = $year->data(0);
@@ -54,10 +53,13 @@ class MainPageController extends Controller
         $calendarNameOfMonths = $calendar->nameOfMonths();
         $calendarNameOfDaysInWeek = $calendar->nameOfDaysInWeek();
 
+        $holidays = new Holidays();
+        $holidays = $holidays->byDay($date, $languageID, 0);
+
         return $this->render('index.min.php', [
 
-            'yearData' => $yearData,
-            'dateData' => $dateData,
+            'date' => $date,
+            'holidays' => $holidays,
             'calendarByYear' => $calendarByYear,
             'calendarNameOfMonths' => $calendarNameOfMonths,
             'calendarNameOfDaysInWeek' => $calendarNameOfDaysInWeek,
