@@ -52,15 +52,14 @@ class MainPageController extends Controller
         $calendarNameOfMonths = $calendar->nameOfMonths();
         $calendarNameOfDaysInWeek = $calendar->nameOfDaysInWeek();
 
-        $holidays = new Holidays();
-        $holidays = $holidays->byDay($date, $languageID, 0);
+
+
 
         $countries = new Countries();
         $countries = $countries->byPopulation($languageID);
 
-
-
         $holidays = new Holidays();
+        $holidaysByDay = $holidays->byDay($date, $languageID, 0);
         $holidaysRange = $holidays->range();
         $holidaysData = $holidays->byCountryByYear($countryURL['id'], $date->year->current, $languageID);
         $holidaysData = $holidays->arrayReplace($holidaysData);
@@ -68,7 +67,7 @@ class MainPageController extends Controller
         return $this->render('index.min.php', [
 
             'date' => $date,
-            'holidays' => $holidays,
+            'holidays' => $holidaysByDay,
             'holidaysData' => $holidaysData,
             'countries' => $countries,
             'calendarByYear' => $calendarByYear,

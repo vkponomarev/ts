@@ -33,10 +33,10 @@ $moon = new \common\components\moon\Moon();
         <div class="current-date-div">
             <div class="current-date-one">
                 <div class="current-date-year">
-                    <?= $date->year->current ?>
+                    <?= $date->week->current ?>
                     <br>
                     <span class="current-date-month">
-                    <?= Yii::t('app', 'year'); ?>
+                    <?= Yii::t('app', 'week'); ?>
                 </span>
 
                 </div>
@@ -53,25 +53,74 @@ $moon = new \common\components\moon\Moon();
     <?php /***************************** */ ?>
 
 
-    <div class="col-xxs-12 col-xs-6 c-links-mp">
+    <div class="col-xxs-12 col-xs-6 plates">
 
-
-        <div class="c-links-block">
-            <div class="col-xs-6 c-links-mp-months ">
-
+        <div class="plate">
+            <div class="plate-header">
+                <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $date->year->current ?>/">
+                    <?= Yii::t('app', 'Calendar with week numbers'); ?>
+                </a>
             </div>
-            <div class="col-xs-6 c-links-mp-months">
-
+            <div class="plate-links">
+                <div class="col-xs-6 plate-links-col ">
+                    <a href="/<?= Yii::$app->language ?>/calendar/months/<?= $date->year->current ?>-01/"><?= $calendarNameOfMonths[1] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/months/<?= $date->year->current ?>-02/"><?= $calendarNameOfMonths[2] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/months/<?= $date->year->current ?>-03/"><?= $calendarNameOfMonths[3] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/months/<?= $date->year->current ?>-04/"><?= $calendarNameOfMonths[4] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/months/<?= $date->year->current ?>-05/"><?= $calendarNameOfMonths[5] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/months/<?= $date->year->current ?>-06/"><?= $calendarNameOfMonths[6] ?></a><br>
+                </div>
+                <div class="col-xs-6 plate-links-col">
+                    <a href="/<?= Yii::$app->language ?>/calendar/months/<?= $date->year->current ?>-07/"><?= $calendarNameOfMonths[7] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/months/<?= $date->year->current ?>-08/"><?= $calendarNameOfMonths[8] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/months/<?= $date->year->current ?>-09/"><?= $calendarNameOfMonths[9] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/months/<?= $date->year->current ?>-10/"><?= $calendarNameOfMonths[10] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/months/<?= $date->year->current ?>-11/"><?= $calendarNameOfMonths[11] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/months/<?= $date->year->current ?>-12/"><?= $calendarNameOfMonths[12] ?></a><br>
+                </div>
             </div>
+            <div class="plate-links">
+                <hr>
+            </div>
+
+            <div class="plate-links">
+                <div class="col-xs-6 plate-links-col">
+                    <a href="/<?= Yii::$app->language ?>/calendar/seasons/winter/<?= $date->year->current ?>/"><?= Yii::t('app', 'Winter') ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/seasons/spring/<?= $date->year->current ?>/"><?= Yii::t('app', 'Spring') ?></a><br>
+                </div>
+                <div class="col-xs-6 plate-links-col">
+                    <a href="/<?= Yii::$app->language ?>/calendar/seasons/summer/<?= $date->year->current ?>/"><?= Yii::t('app', 'Summer') ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/seasons/autumn/<?= $date->year->current ?>/"><?= Yii::t('app', 'Autumn') ?></a><br>
+
+                </div>
+            </div>
+
         </div>
-
-
-        <div class="c-links-block">
-            <hr class="hr-1">
-        </div>
-
     </div>
 </div>
+<div class="row rflex">
+    <div class="col-xxs-12 plates">
+        <div class="plate-long">
+            <?php foreach (range(1, $date->week->count) as $oneWeek): ?>
+                <?php if ($date->week->current == $oneWeek) : ?>
+                    <a class="plate-piece-current" href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $date->year->current ?>/
+                    <?= str_pad($oneWeek, 2, '0', STR_PAD_LEFT) ?>/
+                    ">
+                        <?= $oneWeek ?>
+                    </a>
+
+                <?php else: ?>
+                <a class="plate-a-margin" href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $date->year->current ?>/
+                    <?= str_pad($oneWeek, 2, '0', STR_PAD_LEFT) ?>/
+                    ">
+                    <?= $oneWeek ?>
+                </a>
+                <?php endif; ?>
+            <?php endforeach ?>
+        </div>
+    </div>
+</div>
+
 <hr>
 <?php /***************************** */ ?>
 <?php /***************************** Верхняя плашка календаря с годами туда сюда*/ ?>

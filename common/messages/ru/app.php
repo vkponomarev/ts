@@ -625,4 +625,6 @@ return [
     'Other calendars' => 'Другие календари',
     'Other' => 'Другое',
 
+    'moon day' => 'лунный день',
+
 ];

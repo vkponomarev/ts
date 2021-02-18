@@ -87,7 +87,7 @@
                         <hr>
                     </div>
                     <a href="/<?= Yii::$app->language ?>/calendar/weeks/days/today/">
-                        <?= Yii::t('app', 'What day of the week is {date}', [
+                        <?= Yii::t('app', 'What week is {date}', [
                             'date' => Yii::t('app', 'today')
                         ]) ?>
                     </a>

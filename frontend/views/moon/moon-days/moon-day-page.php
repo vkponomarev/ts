@@ -33,10 +33,13 @@ $moon = new \common\components\moon\Moon();
         <div class="current-date-div">
             <div class="current-date-one">
                 <div class="current-date-year">
-                    <?= $date->year->current ?>
+                    <span class="current-date-big">
+                    <?= $calendarByMonth['moonDay'][$date->current] ?>
+                        </span>
                     <br>
-                    <span class="current-date-month">
-                    <?= Yii::t('app', 'year'); ?>
+                    <span class="current-date-small">
+
+                    <?= Yii::t('app', 'moon day'); ?>
                 </span>
 
                 </div>
@@ -56,18 +59,53 @@ $moon = new \common\components\moon\Moon();
     <div class="col-xxs-12 col-xs-6 c-links-mp">
 
 
-        <div class="c-links-block">
-            <div class="col-xs-6 c-links-mp-months ">
-
+        <div class="plate">
+            <div class="plate-header">
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/years/<?= $date->year->current ?>/">
+                    <?= Yii::t('app', 'Lunar Calendar'); ?>
+                </a>
             </div>
-            <div class="col-xs-6 c-links-mp-months">
-
+            <div class="plate-links">
+                <div class="col-xs-6 plate-links-col ">
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $date->year->current ?>-01/"><?= $calendarNameOfMonths[1] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $date->year->current ?>-02/"><?= $calendarNameOfMonths[2] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $date->year->current ?>-03/"><?= $calendarNameOfMonths[3] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $date->year->current ?>-04/"><?= $calendarNameOfMonths[4] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $date->year->current ?>-05/"><?= $calendarNameOfMonths[5] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $date->year->current ?>-06/"><?= $calendarNameOfMonths[6] ?></a><br>
+                </div>
+                <div class="col-xs-6 plate-links-col">
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $date->year->current ?>-07/"><?= $calendarNameOfMonths[7] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $date->year->current ?>-08/"><?= $calendarNameOfMonths[8] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $date->year->current ?>-09/"><?= $calendarNameOfMonths[9] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $date->year->current ?>-10/"><?= $calendarNameOfMonths[10] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $date->year->current ?>-11/"><?= $calendarNameOfMonths[11] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $date->year->current ?>-12/"><?= $calendarNameOfMonths[12] ?></a><br>
+                </div>
             </div>
-        </div>
+            <div class="plate-links">
+                <hr>
+            </div>
 
+            <div class="plate-links">
+                <div class="col-xs-6 plate-links-col">
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $date->year->current ?>/">
+                        <?= Yii::t('app', 'Auspicious days') ?>
+                    </a>
+                    <br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/gardener/years/<?= $date->year->current ?>/">
+                        <?= Yii::t('app', 'Sowing calendar') ?>
+                    </a>
+                    <br>
 
-        <div class="c-links-block">
-            <hr class="hr-1">
+                   </div>
+                <div class="col-xs-6 plate-links-col">
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/days/today/">
+                        <?= Yii::t('app', 'Moon phases today') ?>
+                    </a>
+                </div>
+            </div>
+
         </div>
 
     </div>
@@ -233,6 +271,7 @@ $moon = new \common\components\moon\Moon();
 
                     <?php for ($i = 6; $i <= 7; $i++): ?>
                         <?php if (isset($week[$i]['monthDay'])): ?>
+
 
                             <div class="mday-off <?= ($week[$i]['date'] == $date->current)? ' mday-current' : '' ?>">
                                     <span>

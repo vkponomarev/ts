@@ -873,6 +873,14 @@ footer div div div > a:hover {
   font-size: 18px;
 }
 
+.current-date-small {
+  font-size: 14px;
+}
+
+.current-date-big {
+  font-size: 30px;
+}
+
 .c-links-mp {
   padding: 10px 20px;
 }
@@ -959,6 +967,45 @@ footer div div div > a:hover {
 }
 .plate .plate-links .plate-links-col {
   padding: 0;
+}
+
+.plate-long {
+  border-radius: 10px;
+  padding: 15px 20px 15px 20px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.11);
+  font-size: 18px;
+  word-break: break-word;
+}
+.plate-long .plate-header {
+  margin-bottom: 10px;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+}
+.plate-long .plate-header a {
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+}
+.plate-long .plate-header a:hover {
+  color: black;
+  text-decoration: underline;
+}
+.plate-long .plate-links {
+  font-size: 16px;
+  display: flow-root;
+}
+.plate-long .plate-links .plate-links-col {
+  padding: 0;
+}
+
+.plate-a-margin {
+  padding: 5px;
+}
+
+.plate-piece-current {
+  padding: 5px;
+  color: red;
 }
 
 /*.business-month-summary {

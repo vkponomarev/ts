@@ -6,6 +6,7 @@
  * @var $calendarByYear common\components\calendar\CalendarByYear
  * @var $dateData common\components\date\DateData
  * @var $date common\componentsV2\date\Date
+ * @var $zodiacs common\componentsV2\zodiacs\Zodiacs
  * @var $dateToday common\componentsV2\date\Date
  * @var $holidaysTypesData common\components\holidaysTypes\HolidaysTypesData
  * @var $calendarNameOfMonths common\components\calendar\CalendarNameOfMonths
@@ -33,10 +34,9 @@ $moon = new \common\components\moon\Moon();
         <div class="current-date-div">
             <div class="current-date-one">
                 <div class="current-date-year">
-                    <?= $date->year->current ?>
-                    <br>
-                    <span class="current-date-month">
-                    <?= Yii::t('app', 'year'); ?>
+                    <img class="eastern-pic" width="80"
+                         src="/pictures/zodiac/<?= $zodiacs->zodiac->picture; ?>.png"
+                         alt="<?= Yii::$app->params['text']['h1'] ?>">
                 </span>
 
                 </div>
@@ -53,25 +53,58 @@ $moon = new \common\components\moon\Moon();
     <?php /***************************** */ ?>
 
 
-    <div class="col-xxs-12 col-xs-6 c-links-mp">
+    <div class="col-xxs-12 col-xs-6 plates">
 
-
-        <div class="c-links-block">
-            <div class="col-xs-6 c-links-mp-months ">
-
+        <div class="plate">
+            <div class="plate-header">
+                <a href="/<?= Yii::$app->language ?>/calendar/zodiac/years/<?= $date->year->current ?>/">
+                    <?= Yii::t('app', 'Zodiac signs calendar'); ?>
+                </a>
             </div>
-            <div class="col-xs-6 c-links-mp-months">
-
+            <div class="plate-links">
+                <div class="col-xs-6 plate-links-col ">
+                    <a href="/<?= Yii::$app->language ?>/calendar/zodiac/months/<?= $date->year->current ?>-01/"><?= $calendarNameOfMonths[1] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/zodiac/months/<?= $date->year->current ?>-02/"><?= $calendarNameOfMonths[2] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/zodiac/months/<?= $date->year->current ?>-03/"><?= $calendarNameOfMonths[3] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/zodiac/months/<?= $date->year->current ?>-04/"><?= $calendarNameOfMonths[4] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/zodiac/months/<?= $date->year->current ?>-05/"><?= $calendarNameOfMonths[5] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/zodiac/months/<?= $date->year->current ?>-06/"><?= $calendarNameOfMonths[6] ?></a><br>
+                </div>
+                <div class="col-xs-6 plate-links-col">
+                    <a href="/<?= Yii::$app->language ?>/calendar/zodiac/months/<?= $date->year->current ?>-07/"><?= $calendarNameOfMonths[7] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/zodiac/months/<?= $date->year->current ?>-08/"><?= $calendarNameOfMonths[8] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/zodiac/months/<?= $date->year->current ?>-09/"><?= $calendarNameOfMonths[9] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/zodiac/months/<?= $date->year->current ?>-10/"><?= $calendarNameOfMonths[10] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/zodiac/months/<?= $date->year->current ?>-11/"><?= $calendarNameOfMonths[11] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/zodiac/months/<?= $date->year->current ?>-12/"><?= $calendarNameOfMonths[12] ?></a><br>
+                </div>
             </div>
+
         </div>
-
-
-        <div class="c-links-block">
-            <hr class="hr-1">
-        </div>
-
     </div>
 </div>
+<div class="row rflex">
+    <div class="col-xxs-12 plates">
+        <div class="plate-long">
+            <?php foreach (range(1, 12) as $zodiacID): ?>
+                <img class="eastern-pic" width="20"
+                     src="/pictures/zodiac/<?= $zodiacs->pictures[$zodiacID]; ?>.png"
+                     alt="<?= $zodiacs->texts->namesCapital[$zodiacID]; ?>">
+                <?php if ($zodiacs->zodiac->id == $zodiacID) : ?>
+                    <a class="plate-piece-current" href="/<?= Yii::$app->language ?>/zodiac/<?= $zodiacs->urls->ids[$zodiacID]; ?>/">
+                        <?= $zodiacs->texts->namesCapital[$zodiacID]; ?>
+                    </a>
+                <?php else: ?>
+
+                <a class="plate-a-margin" href="/<?= Yii::$app->language ?>/zodiac/<?= $zodiacs->urls->ids[$zodiacID]; ?>/">
+                    <?= $zodiacs->texts->namesCapital[$zodiacID]; ?>
+                </a>
+                <?php endif; ?>
+            <?php endforeach ?>
+        </div>
+    </div>
+</div>
+
 <hr>
 <?php /***************************** */ ?>
 <?php /***************************** Верхняя плашка календаря с годами туда сюда*/ ?>
@@ -212,7 +245,7 @@ $moon = new \common\components\moon\Moon();
                         <?php if (isset($week[$i]['monthDay'])): ?>
 
 
-                            <div class="mday  <?= ($week[$i]['date'] == $date->current)? ' mday-current' : '' ?>">
+                            <div class="mday  <?= ($week[$i]['date'] == $date->current) ? ' mday-current' : '' ?>">
                                     <span>
                                     <?= $week[$i]['monthDay']; ?>
                                         <br>
@@ -236,7 +269,7 @@ $moon = new \common\components\moon\Moon();
                     <?php for ($i = 6; $i <= 7; $i++): ?>
                         <?php if (isset($week[$i]['monthDay'])): ?>
 
-                            <div class="mday-off  <?= ($week[$i]['date'] == $date->current)? ' mday-current' : '' ?>">
+                            <div class="mday-off  <?= ($week[$i]['date'] == $date->current) ? ' mday-current' : '' ?>">
                                     <span>
                                     <?= $week[$i]['monthDay']; ?>
                                         <br>

@@ -50,7 +50,7 @@ class MoonDaysPhasesController extends Controller
         $language = Yii::$app->params['language']['current']['url'];
 
 
-        ($date = new Date($check['date']))->date()->year()->month();
+        ($date = new Date($check['date']))->date()->year()->month()->week();
         ($dateToday = new Date((new \DateTime())->format('Y-m-d')))->date();
 
         $monthURL['year'] = $date->year->current;

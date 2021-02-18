@@ -31,7 +31,7 @@ $moon = new \common\components\moon\Moon();
     <?php /***************************** Сегодняшний год*/ ?>
     <?php /***************************** */ ?>
 
-    <div class="col-xxs-12 col-xs-6 current-date">
+    <div class="col-xxs-12 col-xs-12 col-sm-6 current-date">
         <div class="current-date-div">
             <div class="current-date-one">
                 <div class="current-date-year">
@@ -51,87 +51,73 @@ $moon = new \common\components\moon\Moon();
     </div>
 
     <?php /***************************** */ ?>
-    <?php /***************************** Выберите страну*/ ?>
+    <?php /***************************** Календарь на месяц с отмеченным текущим днем*/ ?>
     <?php /***************************** */ ?>
+    <div class="col-xxs-12 col-xs-12 col-sm-6 plates">
+        <div class="plate">
+            <div class="plate-header">
+                <a class="c-month-name"
+                   href="/<?= Yii::$app->language ?>/calendar/months/<?= $date->year->current ?>-<?= $date->month->current ?>/">
+                    <?= $calendarNameOfMonths[$date->month->simple]; ?>
+                </a>
+            </div>
+            <div class="c-links-block">
+                <div class="col-xs-12 c-links-mp-months ">
+                    <div class="row rflex year">
+                        <?php
+                        $countMonths = $date->month->simple - 1;
+                        $countWeeks = 0;
+                        foreach ($calendarByMonth as $months) :?>
 
+                            <?php $countMonths++; ?>
+                            <div class="day-month col-xxs-12 col-xs-6 col-sm-4 col-md-3">
 
-    <div class="col-xxs-12 col-xs-6 c-links-mp">
-
-        <?php /***************************** */ ?>
-        <?php /***************************** Календарь на месяц с отмеченным текущим днем*/ ?>
-        <?php /***************************** */ ?>
-
-        <div class="c-links-block">
-            <div class="col-xs-12 c-links-mp-months ">
-                <div class="row rflex year">
-                    <?php
-                    $countMonths = $date->month->simple - 1;
-                    $countWeeks = 0;
-                    foreach ($calendarByMonth as $months) :?>
-
-                        <?php $countMonths++; ?>
-                        <div class="day-month col-xxs-12 col-xs-6 col-sm-4 col-md-3">
-                            <div class="month-name">
-                                <span class="fa fa-calendar">
-                                    </span>
-                                <?php $countMonths = ($countMonths == 13) ? 1 : $countMonths; ?>
-                                <?php $yearLink = ($countMonths == 12) ? $date->year->previous : $date->year->current; ?>
-                                <a class="c-month-name"
-                                   href="/<?= Yii::$app->language ?>/calendar/months/<?= $yearLink ?>-<?= str_pad($countMonths, 2, '0', STR_PAD_LEFT) ?>/">
-                                    <?= $calendarNameOfMonths[$countMonths]; ?>
-                                </a>
-                            </div>
-                            <div class="week-name">
-                                <?php for ($i = 1; $i <= 7; $i++): ?>
-                                    <div class="day-name">
-                                        <?= $calendarNameOfDaysInWeek[$i]; ?>
-                                    </div>
-                                <?php endfor; ?>
-                            </div>
-                            <?php foreach ($months as $week): ?>
-                                <div class="week">
-                                    <?php for ($i = 1; $i <= 5; $i++): ?>
-                                        <?php if (isset($week[$i]['monthDay'])): ?>
-                                            <div class="day  <?= ($week[$i]['date'] == $date->current) ? ' mday-current' : '' ?>">
+                                <div class="week-name">
+                                    <?php for ($i = 1; $i <= 7; $i++): ?>
+                                        <div class="day-name">
+                                            <?= $calendarNameOfDaysInWeek[$i]; ?>
+                                        </div>
+                                    <?php endfor; ?>
+                                </div>
+                                <?php foreach ($months as $week): ?>
+                                    <div class="week">
+                                        <?php for ($i = 1; $i <= 5; $i++): ?>
+                                            <?php if (isset($week[$i]['monthDay'])): ?>
+                                                <div class="day  <?= ($week[$i]['date'] == $date->current) ? ' mday-current' : '' ?>">
                                                 <span>
                                                     <?= $week[$i]['monthDay']; ?>
                                                 </span>
-                                            </div>
-                                        <?php else: ?>
-                                            <div class="no-day">
+                                                </div>
+                                            <?php else: ?>
+                                                <div class="no-day">
                                                 <span>
                                                 </span>
-                                            </div>
-                                        <?php endif; ?>
-                                    <?php endfor; ?>
+                                                </div>
+                                            <?php endif; ?>
+                                        <?php endfor; ?>
 
-                                    <?php for ($i = 6; $i <= 7; $i++): ?>
-                                        <?php if (isset($week[$i]['monthDay'])): ?>
-                                            <div class="day-off  <?= ($week[$i]['date'] == $date->current) ? ' mday-current' : '' ?>">
+                                        <?php for ($i = 6; $i <= 7; $i++): ?>
+                                            <?php if (isset($week[$i]['monthDay'])): ?>
+                                                <div class="day-off  <?= ($week[$i]['date'] == $date->current) ? ' mday-current' : '' ?>">
                                             <span>
                                                 <?= $week[$i]['monthDay']; ?>
                                             </span>
-                                            </div>
-                                        <?php else: ?>
-                                            <div class="no-day">
+                                                </div>
+                                            <?php else: ?>
+                                                <div class="no-day">
                                                 <span>
                                                 </span>
-                                            </div>
-                                        <?php endif; ?>
-                                    <?php endfor; ?>
-                                </div>
-                            <?php endforeach; ?>
-                        </div>
-                    <?php endforeach; ?>
+                                                </div>
+                                            <?php endif; ?>
+                                        <?php endfor; ?>
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
             </div>
         </div>
-
-
-        <div class="c-links-block">
-            <hr class="hr-1">
-        </div>
-
     </div>
 </div>
 <hr>
@@ -247,7 +233,8 @@ $moon = new \common\components\moon\Moon();
 
     <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4 day-plates">
         <div class="day-plate">
-            <a class="day-plate-header" href="/<?= Yii::$app->language ?>/calendar/weeks/days/<?= ($dayNameURL <> '') ? $dayNameURL : $date->current ?>/">
+            <a class="day-plate-header"
+               href="/<?= Yii::$app->language ?>/calendar/weeks/days/<?= ($dayNameURL <> '') ? $dayNameURL : $date->current ?>/">
                 <?= Yii::t('app', 'What week is {date}', [
                     'date' => ($dayNameURL <> '') ? Yii::t('app', $dayNameURL) : Yii::$app->formatter->asDate($date->current, 'medium')
                 ]) ?>
@@ -264,7 +251,8 @@ $moon = new \common\components\moon\Moon();
 
     <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4 day-plates">
         <div class="day-plate">
-            <a class="day-plate-header" href="/<?= Yii::$app->language ?>/calendar/weeks/days/<?= ($dayNameURL <> '') ? $dayNameURL : $date->current ?>/">
+            <a class="day-plate-header"
+               href="/<?= Yii::$app->language ?>/calendar/weeks/days/<?= ($dayNameURL <> '') ? $dayNameURL : $date->current ?>/">
                 <?= Yii::t('app', 'What day of the week is {date}', [
                     'date' => ($dayNameURL <> '') ? Yii::t('app', $dayNameURL) : Yii::$app->formatter->asDate($date->current, 'medium')
                 ]) ?>
@@ -277,7 +265,8 @@ $moon = new \common\components\moon\Moon();
 
     <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4 day-plates">
         <div class="day-plate">
-            <a class="day-plate-header" href="/<?= Yii::$app->language ?>/calendar/zodiac/days/<?= ($dayNameURL <> '') ? $dayNameURL : $date->current ?>/">
+            <a class="day-plate-header"
+               href="/<?= Yii::$app->language ?>/calendar/zodiac/days/<?= ($dayNameURL <> '') ? $dayNameURL : $date->current ?>/">
                 <?= ($dayNameURL <> '')
                     ? Yii::t('app', 'What is the zodiac sign {day-name}', [
                         'day-name' => Yii::t('app', $dayNameURL)
@@ -295,7 +284,8 @@ $moon = new \common\components\moon\Moon();
 
     <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4 day-plates">
         <div class="day-plate">
-            <a class="day-plate-header" href="/<?= Yii::$app->language ?>/calendar/moon/days/<?= ($dayNameURL <> '') ? $dayNameURL : $date->current ?>/">
+            <a class="day-plate-header"
+               href="/<?= Yii::$app->language ?>/calendar/moon/days/<?= ($dayNameURL <> '') ? $dayNameURL : $date->current ?>/">
                 <?= ($dayNameURL <> '')
                     ? Yii::t('app', 'What lunar day {day-name}', [
                         'day-name' => Yii::t('app', $dayNameURL)
@@ -315,7 +305,8 @@ $moon = new \common\components\moon\Moon();
 
     <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4 day-plates">
         <div class="day-plate">
-            <a class="day-plate-header" href="/<?= Yii::$app->language ?>/calendar/moon/phases/days/<?= ($dayNameURL <> '') ? $dayNameURL : $date->current ?>/">
+            <a class="day-plate-header"
+               href="/<?= Yii::$app->language ?>/calendar/moon/phases/days/<?= ($dayNameURL <> '') ? $dayNameURL : $date->current ?>/">
                 <?= ($dayNameURL <> '')
                     ? Yii::t('app', 'What is the phase of the moon {day-name}', [
                         'day-name' => Yii::t('app', $dayNameURL)
