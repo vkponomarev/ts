@@ -4,6 +4,7 @@
  * @var $this frontend\controllers\MainPageController
  *
  * @var $date common\componentsV2\date\Date
+ * @var $countries common\components\countries\CountriesByPopulation
  * @var $holidays common\components\holidays\HolidaysByDay
  * @var $calendarNameOfMonths common\components\calendar\CalendarNameOfMonths
  * @var $calendarByYear common\components\calendar\CalendarByYear
@@ -54,7 +55,6 @@
     </div>
 
 
-
     <?php /***************************** */ ?>
     <?php /***************************** Сегодня */ ?>
     <?php /***************************** */ ?>
@@ -69,20 +69,22 @@
             </div>
             <div class="plate-links">
                 <?php $holidaysCount = 0; ?>
-                <?php foreach($holidays as  $holiday): ?>
+                <?php foreach ($holidays as $holiday): ?>
                     <?php $holidaysCount++; ?>
                     <a href="/<?= Yii::$app->language ?>/holidays/<?= $holiday['holidayUrl'] ?>/">
                         <?= $holiday['holidayName'] ?>
                     </a>
-                    <?= ' / '?>
+                    <?= ' / ' ?>
                     <a href="/<?= Yii::$app->language ?>/holidays/years/<?= $date->year->current ?>/<?= $holiday['countryUrl'] ?>/">
                         <?= $holiday['countryName'] ?>
                     </a>
-                <?php if ($holidaysCount >=8) {break;} ?>
+                    <?php if ($holidaysCount >= 8) {
+                        break;
+                    } ?>
                 <?php endforeach ?>
                 <?php if ($holidaysCount < 8) : ?>
                     <br><br><br>
-                    <a href="/<?= Yii::$app->language ?>/calendar/weeks/days/">
+                    <a href="/<?= Yii::$app->language ?>/calendar/weeks/days/today/">
                         <?= Yii::t('app', 'What day of the week is {date}', [
                             'date' => Yii::t('app', 'today')
                         ]) ?>
@@ -90,28 +92,110 @@
                     <br>
                     <a href="/<?= Yii::$app->language ?>/calendar/zodiac/days/today/">
                         <?= Yii::t('app', 'What is the zodiac sign {day-name}', [
-                                'day-name' => Yii::t('app', 'today')
-                            ]) ?>
+                            'day-name' => Yii::t('app', 'today')
+                        ]) ?>
                     </a>
                     <br>
-                    <a href="/<?= Yii::$app->language ?>/calendar/moon/days/">
-                        <?=Yii::t('app', 'What lunar day {day-name}', [
-                                'day-name' => Yii::t('app', 'today')
-                            ]) ?>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/days/today/">
+                        <?= Yii::t('app', 'What lunar day {day-name}', [
+                            'day-name' => Yii::t('app', 'today')
+                        ]) ?>
                     </a>
                     <br>
-                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/days/">
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/days/today/">
                         <?= Yii::t('app', 'What is the phase of the moon {day-name}', [
-                                'day-name' => Yii::t('app', 'today')
-                            ])
-                          ?>
+                            'day-name' => Yii::t('app', 'today')
+                        ])
+                        ?>
                     </a>
                 <?php endif; ?>
-                
+
             </div>
 
         </div>
 
+    </div>
+
+    <?php /***************************** */ ?>
+    <?php /***************************** Ссылки на календари */ ?>
+    <?php /***************************** */ ?>
+
+
+    <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4 plates">
+
+        <div class="plate">
+            <div class="plate-header">
+                <a href="/<?= Yii::$app->language ?>/calendar/years/<?= $date->year->current ?>/">
+                    <?= Yii::t('app', '{year} calendar', ['year' => $date->year->current]); ?>
+                </a>
+            </div>
+            <div class="plate-links">
+                <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $date->year->current ?>/">
+                    <?= Yii::t('app', 'Calendar with week numbers'); ?>
+                </a>
+                <br>
+                <a href="/<?= Yii::$app->language ?>/calendar/business/years/<?= $date->year->current ?>/">
+                    <?= Yii::t('app', 'Business days calendar'); ?>
+                </a>
+                <br>
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/years/<?= $date->year->current ?>/">
+                    <?= Yii::t('app', 'Lunar Calendar'); ?>
+                </a>
+                <br>
+                <a href="/<?= Yii::$app->language ?>/calendar/eastern/years/<?= $date->year->current ?>/">
+                    <?= Yii::t('app', 'Eastern calendar'); ?>
+                </a>
+                <br>
+                <a href="/<?= Yii::$app->language ?>/calendar/zodiac/years/<?= $date->year->current ?>/">
+                    <?= Yii::t('app', 'Zodiac signs calendar'); ?>
+                </a>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <?php /***************************** */ ?>
+    <?php /**************************** Праздники */ ?>
+    <?php /***************************** */ ?>
+    <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4 plates">
+        <div class="plate">
+            <div class="plate-header">
+                <a href="/<?= Yii::$app->language ?>/holidays/years/2021/">
+                    <?= Yii::t('app', 'Holidays'); ?>
+                </a>
+            </div>
+            <div class="plate-links">
+                <div class="col-xs-6 plate-links-col">
+                    <?php $countriesCount=0 ?>
+                    <?php foreach($countries as  $country): ?>
+                        <?php $countriesCount++ ?>
+                        <a href="/<?= Yii::$app->language ?>/holidays/years/<?= $date->year->current ?>/<?= $country['url'] ?>/">
+                            <?= $country['name'] ?>
+                        </a><br>
+                    <?php if ($countriesCount == 8 ) break ?>
+                    <?php endforeach ?>
+
+                </div>
+                <div class="col-xs-6 plate-links-col">
+                    <?php $countriesCount=0 ?>
+                    <?php foreach($countries as  $country): ?>
+                        <?php $countriesCount++ ?>
+                        <?php if ($countriesCount <= 8 ) continue ?>
+                        <a href="/<?= Yii::$app->language ?>/holidays/years/<?= $date->year->current ?>/<?= $country['url'] ?>/">
+                            <?= $country['name'] ?>
+                        </a><br>
+
+                    <?php endforeach ?>
+
+                </div>
+            </div>
+            <div class="c-links-block">
+                <hr class="hr-4">
+            </div>
+
+        </div>
     </div>
 
 
@@ -244,65 +328,6 @@
         </div>
         <div class="c-links-block">
             <hr class="hr-3">
-        </div>
-
-
-    </div>
-    <?php /***************************** */ ?>
-    <?php /**************************** Праздники */ ?>
-    <?php /***************************** */ ?>
-    <div class="col-xxs-12 col-xs-6 col-sm-6 col-md-4 c-links-mp">
-        <div class="c-links-block c-links-mp-header">
-            <a class="c-links-mp-header-link"
-               href="/<?= Yii::$app->language ?>/holidays/years/2021/">
-                <?= Yii::t('app', 'Holidays'); ?>
-            </a>
-        </div>
-        <div class="c-links-block">
-            <div class="col-xs-6 c-links-mp-months ">
-                <a href="/<?= Yii::$app->language ?>/holidays/days/today/">
-                    Сегодня
-                </a><br>
-                <a href="/<?= Yii::$app->language ?>/holidays/">
-                    Страна 1
-                </a><br>
-                <a href="/<?= Yii::$app->language ?>/holidays/">
-                    Страна 1
-                </a><br>
-                <a href="/<?= Yii::$app->language ?>/holidays/">
-                    Страна 1
-                </a><br>
-                <a href="/<?= Yii::$app->language ?>/holidays/">
-                    Страна 1
-                </a><br>
-                <a href="/<?= Yii::$app->language ?>/holidays/">
-                    Страна 1
-                </a><br>
-            </div>
-            <div class="col-xs-6 c-links-mp-months">
-                <a href="/<?= Yii::$app->language ?>/holidays/">
-                    Страна 2
-                </a><br>
-                <a href="/<?= Yii::$app->language ?>/holidays/">
-                    Страна 2
-                </a><br>
-                <a href="/<?= Yii::$app->language ?>/holidays/">
-                    Страна 2
-                </a><br>
-                <a href="/<?= Yii::$app->language ?>/holidays/">
-                    Страна 2
-                </a><br>
-                <a href="/<?= Yii::$app->language ?>/holidays/">
-                    Страна 2
-                </a><br>
-                <a href="/<?= Yii::$app->language ?>/holidays/">
-                    Страна 2
-                </a><br>
-
-            </div>
-        </div>
-        <div class="c-links-block">
-            <hr class="hr-4">
         </div>
 
 

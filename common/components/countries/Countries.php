@@ -57,7 +57,11 @@ class Countries
 
     }
 
+    function byPopulation($languageID){
 
+        return (new CountriesByPopulation())->countries($languageID);
+
+    }
 
 
 

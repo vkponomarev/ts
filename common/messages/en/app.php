@@ -618,6 +618,9 @@ return [
     'What is the phase of the moon {day-name}' => 'What is the phase of the moon {day-name}',
     'What is the phase of the moon on {date}' => 'What is the phase of the moon on {date}',
 
-
+    'Calendar with week numbers' => 'Calendar with week numbers',
+    'Business days calendar' => 'Business days calendar',
+    'Lunar Calendar' => 'Lunar Calendar',
+    'Zodiac signs calendar' => 'Zodiac signs calendar',
 ];
 

@@ -951,6 +951,9 @@ footer div div div > a:hover {
 .plate .plate-links {
   font-size: 16px;
 }
+.plate .plate-links .plate-links-col {
+  padding: 0;
+}
 
 /*.business-month-summary {
   position: relative;

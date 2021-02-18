@@ -4,6 +4,7 @@ namespace frontend\controllers;
 
 
 use common\components\calendar\Calendar;
+use common\components\countries\Countries;
 use common\components\holidays\Holidays;
 use common\components\main\Main;
 use common\components\year\Year;
@@ -44,23 +45,21 @@ class MainPageController extends Controller
 
         $date = (new Date((new \DateTime())->format('Y-m-d')))->date()->year()->month()->week()->day();
 
-        $year = new Year();
-        $yearData = $year->data(0);
-
         $calendar = new Calendar();
-        $calendarByYear = $calendar->byYear($yearData['full']);
-
         $calendarNameOfMonths = $calendar->nameOfMonths();
         $calendarNameOfDaysInWeek = $calendar->nameOfDaysInWeek();
 
         $holidays = new Holidays();
         $holidays = $holidays->byDay($date, $languageID, 0);
 
+        $countries = new Countries();
+        $countries = $countries->byPopulation($languageID);
+
         return $this->render('index.min.php', [
 
             'date' => $date,
             'holidays' => $holidays,
-            'calendarByYear' => $calendarByYear,
+            'countries' => $countries,
             'calendarNameOfMonths' => $calendarNameOfMonths,
             'calendarNameOfDaysInWeek' => $calendarNameOfDaysInWeek,
 
