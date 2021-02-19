@@ -49,47 +49,50 @@
         </div>
     </div>
     <?php /***************************** */ ?>
-    <?php /***************************** Выберите страну */ ?>
+    <?php /***************************** Ссылки на основной календарь*/ ?>
     <?php /***************************** */ ?>
 
-    <div class="col-xxs-12 col-xs-6 c-links-mp">
-        <?php if ($dateData['year']['current'] >= 2000 && $dateData['year']['current'] <= 2030): ?>
-
-            <div class="c-links-block">
+    <div class="col-xxs-12 col-xs-6 plates">
+        <div class="plate">
+            <div class="plate-header">
+                <a href="/<?= Yii::$app->language ?>/calendar/years/<?= $dateData['year']['current'] ?>/">
+                    <?= Yii::t('app', 'Calendar'); ?>
+                </a>
+            </div>
+            <div class="plate-links">
+                <div class="col-xs-6 plate-links-col ">
+                    <a href="/<?= Yii::$app->language ?>/calendar/months/<?= $dateData['year']['current'] ?>-01/"><?= $calendarNameOfMonths[1] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/months/<?= $dateData['year']['current'] ?>-02/"><?= $calendarNameOfMonths[2] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/months/<?= $dateData['year']['current'] ?>-03/"><?= $calendarNameOfMonths[3] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/months/<?= $dateData['year']['current'] ?>-04/"><?= $calendarNameOfMonths[4] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/months/<?= $dateData['year']['current'] ?>-05/"><?= $calendarNameOfMonths[5] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/months/<?= $dateData['year']['current'] ?>-06/"><?= $calendarNameOfMonths[6] ?></a><br>
+                </div>
+                <div class="col-xs-6 plate-links-col">
+                    <a href="/<?= Yii::$app->language ?>/calendar/months/<?= $dateData['year']['current'] ?>-07/"><?= $calendarNameOfMonths[7] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/months/<?= $dateData['year']['current'] ?>-08/"><?= $calendarNameOfMonths[8] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/months/<?= $dateData['year']['current'] ?>-09/"><?= $calendarNameOfMonths[9] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/months/<?= $dateData['year']['current'] ?>-10/"><?= $calendarNameOfMonths[10] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/months/<?= $dateData['year']['current'] ?>-11/"><?= $calendarNameOfMonths[11] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/months/<?= $dateData['year']['current'] ?>-12/"><?= $calendarNameOfMonths[12] ?></a><br>
+                </div>
+            </div>
+            <div class="plate-links">
                 <hr>
             </div>
-        <?php endif; ?>
-        <div class="c-links-block c-links-mp-header c-links-mp-header-link">
-            <?= Yii::t('app', 'Seasons'); ?>
-        </div>
-        <div class="c-links-block">
-            <div class="col-xs-6 c-links-mp-months">
-                <a href="/<?= Yii::$app->language ?>/calendar/seasons/winter/<?= $dateData['year']['current'] ?>/">
-                    <?= Yii::t('app', 'Winter') ?>
-                </a>
-                <br>
-                <a href="/<?= Yii::$app->language ?>/calendar/seasons/spring/<?= $dateData['year']['current'] ?>/">
-                    <?= Yii::t('app', 'Spring') ?>
-                </a>
-                <br>
-            </div>
-            <div class="col-xs-6 c-links-mp-months">
-                <a href="/<?= Yii::$app->language ?>/calendar/seasons/summer/<?= $dateData['year']['current'] ?>/">
-                    <?= Yii::t('app', 'Summer') ?>
-                </a>
-                <br>
-                <a href="/<?= Yii::$app->language ?>/calendar/seasons/autumn/<?= $dateData['year']['current'] ?>/">
-                    <?= Yii::t('app', 'Autumn') ?>
-                </a>
-                <br>
 
+            <div class="plate-links">
+                <div class="col-xs-6 plate-links-col">
+                    <a href="/<?= Yii::$app->language ?>/calendar/seasons/winter/<?= $dateData['year']['current'] ?>/"><?= Yii::t('app', 'Winter') ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/seasons/spring/<?= $dateData['year']['current'] ?>/"><?= Yii::t('app', 'Spring') ?></a><br>
+                </div>
+                <div class="col-xs-6 plate-links-col">
+                    <a href="/<?= Yii::$app->language ?>/calendar/seasons/summer/<?= $dateData['year']['current'] ?>/"><?= Yii::t('app', 'Summer') ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/seasons/autumn/<?= $dateData['year']['current'] ?>/"><?= Yii::t('app', 'Autumn') ?></a><br>
+
+                </div>
             </div>
         </div>
-        <div class="c-links-block">
-            <hr class="hr-1">
-        </div>
-
-
     </div>
 </div>
 <br><br>
@@ -102,12 +105,12 @@
 
 <div class="row">
     <div class="col-xxs-12 col-xs-4 c-prev-next-left">
-        <?php if ($dateData['year']['previous'] == '0000'):?>
+        <?php if ($dateData['year']['previous'] == '0000'): ?>
 
         <?php else: ?>
-        <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $dateData['year']['previous'] ?>/">
-            <?= $dateData['year']['previous'] ?>
-        </a>
+            <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $dateData['year']['previous'] ?>/">
+                <?= $dateData['year']['previous'] ?>
+            </a>
         <?php endif; ?>
     </div>
     <div class="col-xxs-12 col-xs-4 c-prev-next-center">
@@ -116,7 +119,7 @@
 
     </div>
     <div class="col-xxs-12 col-xs-4 c-prev-next-right">
-        <?php if ($dateData['year']['current'] == '9999'):?>
+        <?php if ($dateData['year']['current'] == '9999'): ?>
 
         <?php else: ?>
             <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $dateData['year']['next'] ?>/">

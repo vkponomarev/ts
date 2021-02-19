@@ -48,69 +48,112 @@
             </div>
         </div>
     </div>
-    <?php /** Выберите страну */ ?>
-    <div class="col-xxs-12 col-xs-6 c-links-mp">
-        <?php if ($dateData['year']['current'] >= 2000 && $dateData['year']['current'] <= 2030): ?>
-            <div class="c-links-block c-links-mp-header c-links-mp-header-link">
-                <?= Yii::t('app', 'Choose the country'); ?>
+
+    <?php /***************************** */ ?>
+    <?php /***************************** Ссылки на основной календарь*/ ?>
+    <?php /***************************** */ ?>
+
+    <div class="col-xxs-12 col-xs-6 plates">
+        <div class="plate">
+            <div class="plate-header">
+                <?php if ($countryURL['url'] <> '') : ?>
+                    <a href="/<?= Yii::$app->language ?>/calendar/business/six-days/years/<?= $dateData['year']['current'] ?>/
+                <?= ($countryURL['url'] <> '') ? $countryURL['url'] . '/' : ''; ?>">
+                        <?= Yii::t('app', 'Six day work week'); ?>
+                    </a>
+                <?php else: ?>
+                    <a href="/<?= Yii::$app->language ?>/calendar/business/six-days/years/<?= $dateData['year']['current'] ?>/">
+                        <?= Yii::t('app', 'Six day work week'); ?>
+                    </a>
+                <?php endif; ?>
+            </div>
+            <div class="plate-links">
+                <div class="col-xs-6 plate-links-col ">
+                    <a href="/<?= Yii::$app->language ?>/calendar/business/six-days/months/<?= $dateData['year']['current'] ?>-01/
+                <?= ($countryURL['url'] <> '') ? $countryURL['url'] . '/' : ''; ?>"><?= $calendarNameOfMonths[1] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/business/six-days/months/<?= $dateData['year']['current'] ?>-02/
+                <?= ($countryURL['url'] <> '') ? $countryURL['url'] . '/' : ''; ?>"><?= $calendarNameOfMonths[2] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/business/six-days/months/<?= $dateData['year']['current'] ?>-03/
+                <?= ($countryURL['url'] <> '') ? $countryURL['url'] . '/' : ''; ?>"><?= $calendarNameOfMonths[3] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/business/six-days/months/<?= $dateData['year']['current'] ?>-04/
+                <?= ($countryURL['url'] <> '') ? $countryURL['url'] . '/' : ''; ?>"><?= $calendarNameOfMonths[4] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/business/six-days/months/<?= $dateData['year']['current'] ?>-05/
+                <?= ($countryURL['url'] <> '') ? $countryURL['url'] . '/' : ''; ?>"><?= $calendarNameOfMonths[5] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/business/six-days/months/<?= $dateData['year']['current'] ?>-06/
+                <?= ($countryURL['url'] <> '') ? $countryURL['url'] . '/' : ''; ?>"><?= $calendarNameOfMonths[6] ?></a><br>
+                </div>
+                <div class="col-xs-6 plate-links-col">
+                    <a href="/<?= Yii::$app->language ?>/calendar/business/six-days/months/<?= $dateData['year']['current'] ?>-07/
+                <?= ($countryURL['url'] <> '') ? $countryURL['url'] . '/' : ''; ?>"><?= $calendarNameOfMonths[7] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/business/six-days/months/<?= $dateData['year']['current'] ?>-08/
+                <?= ($countryURL['url'] <> '') ? $countryURL['url'] . '/' : ''; ?>"><?= $calendarNameOfMonths[8] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/business/six-days/months/<?= $dateData['year']['current'] ?>-09/
+                <?= ($countryURL['url'] <> '') ? $countryURL['url'] . '/' : ''; ?>"><?= $calendarNameOfMonths[9] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/business/six-days/months/<?= $dateData['year']['current'] ?>-10/
+                <?= ($countryURL['url'] <> '') ? $countryURL['url'] . '/' : ''; ?>"><?= $calendarNameOfMonths[10] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/business/six-days/months/<?= $dateData['year']['current'] ?>-11/
+                <?= ($countryURL['url'] <> '') ? $countryURL['url'] . '/' : ''; ?>"><?= $calendarNameOfMonths[11] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/business/six-days/months/<?= $dateData['year']['current'] ?>-12/
+                <?= ($countryURL['url'] <> '') ? $countryURL['url'] . '/' : ''; ?>"><?= $calendarNameOfMonths[12] ?></a><br>
+                </div>
+            </div>
+            <div class="plate-links">
+                <hr>
             </div>
             <div class="c-links-block">
-                <form method="get" id="form">
-                    <div class="form-group">
-                        <script>
-                            let url = '<?php echo \yii\helpers\Url::home(true) . Yii::$app->language . '/calendar/business/six-days/months/' . $dateData['year']['current'] . '-' . $dateData['month']['number'] . '/';?>';
-                        </script>
-                        <select id="selectCountry" class="form-control">
-                            <option><?= $countryData['name'] ?></option>
-                            <?php foreach ($countriesData as $country) : ?>
-                                <option value="<?= $country['url'] ?>"><?= $country['name'] ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                </form>
+                <div class="col-xs-6 c-links-mp-months">
+                    <a href="/<?= Yii::$app->language ?>/calendar/business/quarters/<?= $dateData['year']['current'] ?>/1/
+                <?= ($countryURL['url'] <> '') ? $countryURL['url'] . '/' : ''; ?>">
+                        <?= '1 ' . Yii::t('app', 'quarter') ?>
+                    </a>
+                    <br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/business/quarters/<?= $dateData['year']['current'] ?>/2/
+                <?= ($countryURL['url'] <> '') ? $countryURL['url'] . '/' : ''; ?>">
+                        <?= '2 ' . Yii::t('app', 'quarter') ?>
+                    </a>
+                    <br>
+                </div>
+                <div class="col-xs-6 c-links-mp-months">
+                    <a href="/<?= Yii::$app->language ?>/calendar/business/quarters/<?= $dateData['year']['current'] ?>/3/
+                <?= ($countryURL['url'] <> '') ? $countryURL['url'] . '/' : ''; ?>">
+                        <?= '3 ' . Yii::t('app', 'quarter') ?>
+                    </a>
+                    <br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/business/quarters/<?= $dateData['year']['current'] ?>/4/
+                <?= ($countryURL['url'] <> '') ? $countryURL['url'] . '/' : ''; ?>">
+                        <?= '4 ' . Yii::t('app', 'quarter') ?>
+                    </a>
+                    <br>
+
+                </div>
             </div>
+
             <div class="c-links-block">
                 <hr>
             </div>
-        <?php endif; ?>
-        <div class="c-links-block c-links-mp-header c-links-mp-header-link">
-            <?= Yii::t('app', 'Quarters of the year'); ?>
-        </div>
-        <div class="c-links-block">
-            <div class="col-xs-6 c-links-mp-months">
-                <a href="/<?= Yii::$app->language ?>/calendar/business/quarters/<?= $dateData['year']['current'] ?>/1/
-                <?= ($countryURL['url'] <> '') ? $countryURL['url'] . '/' : ''; ?>">
-                    <?= '1 ' . Yii::t('app', 'quarter') ?>
-                </a>
-                <br>
-                <a href="/<?= Yii::$app->language ?>/calendar/business/quarters/<?= $dateData['year']['current'] ?>/2/
-                <?= ($countryURL['url'] <> '') ? $countryURL['url'] . '/' : ''; ?>">
-                    <?= '2 ' . Yii::t('app', 'quarter') ?>
-                </a>
-                <br>
-            </div>
-            <div class="col-xs-6 c-links-mp-months">
-                <a href="/<?= Yii::$app->language ?>/calendar/business/quarters/<?= $dateData['year']['current'] ?>/3/
-                <?= ($countryURL['url'] <> '') ? $countryURL['url'] . '/' : ''; ?>">
-                    <?= '3 ' . Yii::t('app', 'quarter') ?>
-                </a>
-                <br>
-                <a href="/<?= Yii::$app->language ?>/calendar/business/quarters/<?= $dateData['year']['current'] ?>/4/
-                <?= ($countryURL['url'] <> '') ? $countryURL['url'] . '/' : ''; ?>">
-                    <?= '4 ' . Yii::t('app', 'quarter') ?>
-                </a>
-                <br>
+            <?php if ($dateData['year']['current'] >= 2000 && $dateData['year']['current'] <= 2030): ?>
+                <div class="plate-links">
+                    <form method="get" id="form">
+                        <div class="form-group">
+                            <script>
+                                let url = '<?php echo \yii\helpers\Url::home(true) . Yii::$app->language . '/calendar/business/six-days/months/' . $dateData['year']['current'] . '-' . $dateData['month']['number'] . '/';?>';
+                            </script>
+                            <select id="selectCountry" class="form-control">
+                                <option><?= $countryData['name'] ?></option>
+                                <?php foreach ($countriesData as $country) : ?>
+                                    <option value="<?= $country['url'] ?>"><?= $country['name'] ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                    </form>
+                </div>
 
-            </div>
-        </div>
-        <div class="c-links-block">
-            <hr class="hr-1">
-        </div>
+            <?php endif; ?>
 
-
+        </div>
     </div>
+
 </div>
-<br><br>
 <hr>
 
 <?php /***************************** */ ?>

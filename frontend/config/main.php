@@ -180,6 +180,9 @@ return [
                     'defaults' => ['yearURL' => '', 'countryURL' => ''],
                 ],
 
+
+
+
                 [
                     'pattern' => '/calendar/seasons/<seasonURL:(winter|spring|summer|autumn)>/<yearURL:\d{4}>/<countryURL:[\w_-]+>',
                     'route' => 'calendar/seasons/season',
@@ -288,6 +291,10 @@ return [
                     'route' => 'zodiac/zodiac-days/zodiac-day-page',
                     'defaults' => ['dayNameURL' => '', 'dayURL' => ''],
                 ],
+
+                '/calendar' => 'calendar/calendar/calendar-page',
+
+
                 /*[
                     'pattern' => '/calendar/weeks/<yearURL:\d{4}>/<weekURL:\d{2}>',
                     'route' => 'weeks/week-page',
