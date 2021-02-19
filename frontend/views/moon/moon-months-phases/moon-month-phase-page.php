@@ -52,41 +52,92 @@ $moon = new \common\components\moon\Moon();
         </div>
     </div>
     <?php /***************************** */ ?>
-    <?php /***************************** Выберите страну*/ ?>
+    <?php /***************************** Ссылки на основной календарь*/ ?>
     <?php /***************************** */ ?>
 
-    <div class="col-xxs-12 col-xs-6 c-links-mp">
-
-        <div class="c-links-block">
-            <div class="col-xs-6 c-links-mp-months">
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/months/<?= $dateData['year']['current'] ?>-<?= $dateData['month']['number'] ?>/new-moon/">
-                    <?= Yii::t('app', 'New moon') ?>
+    <div class="col-xxs-12 col-xs-6 plates">
+        <div class="plate">
+            <div class="plate-header">
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/years/<?= $dateData['year']['current'] ?>/<?= $phaseURL; ?>/">
+                    <?php if ($phaseURL == 'full-moon') : ?>
+                        <?= Yii::t('app', 'Full moon'); ?>
+                    <?php endif; ?>
+                    <?php if ($phaseURL == 'new-moon') : ?>
+                        <?= Yii::t('app', 'New moon'); ?>
+                    <?php endif; ?>
+                    <?php if ($phaseURL == 'waxing-moon') : ?>
+                        <?= Yii::t('app', 'Growing moon'); ?>
+                    <?php endif; ?>
+                    <?php if ($phaseURL == 'waning-moon') : ?>
+                        <?= Yii::t('app', 'Waning moon'); ?>
+                    <?php endif; ?>
                 </a>
-                <br>
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/months/<?= $dateData['year']['current'] ?>-<?= $dateData['month']['number'] ?>/waxing-moon/">
-                    <?= Yii::t('app', 'Waxing moon') ?>
-                </a>
-                <br>
             </div>
-            <div class="col-xs-6 c-links-mp-months">
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/months/<?= $dateData['year']['current'] ?>-<?= $dateData['month']['number'] ?>/full-moon/">
-                    <?= Yii::t('app', 'Full moon') ?>
-                </a>
-                <br>
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/months/<?= $dateData['year']['current'] ?>-<?= $dateData['month']['number'] ?>/waning-moon/">
-                    <?= Yii::t('app', 'Waning moon') ?>
-                </a>
-                <br>
+            <div class="plate-links">
+                <div class="col-xs-6 plate-links-col ">
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/months/<?= $dateData['year']['current'] ?>-01/<?= $phaseURL; ?>/"><?= $calendarNameOfMonths[1] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/months/<?= $dateData['year']['current'] ?>-02/<?= $phaseURL; ?>/"><?= $calendarNameOfMonths[2] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/months/<?= $dateData['year']['current'] ?>-03/<?= $phaseURL; ?>/"><?= $calendarNameOfMonths[3] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/months/<?= $dateData['year']['current'] ?>-04/<?= $phaseURL; ?>/"><?= $calendarNameOfMonths[4] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/months/<?= $dateData['year']['current'] ?>-05/<?= $phaseURL; ?>/"><?= $calendarNameOfMonths[5] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/months/<?= $dateData['year']['current'] ?>-06/<?= $phaseURL; ?>/"><?= $calendarNameOfMonths[6] ?></a><br>
+                </div>
+                <div class="col-xs-6 plate-links-col">
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/months/<?= $dateData['year']['current'] ?>-07/<?= $phaseURL; ?>/"><?= $calendarNameOfMonths[7] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/months/<?= $dateData['year']['current'] ?>-08/<?= $phaseURL; ?>/"><?= $calendarNameOfMonths[8] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/months/<?= $dateData['year']['current'] ?>-09/<?= $phaseURL; ?>/"><?= $calendarNameOfMonths[9] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/months/<?= $dateData['year']['current'] ?>-10/<?= $phaseURL; ?>/"><?= $calendarNameOfMonths[10] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/months/<?= $dateData['year']['current'] ?>-11/<?= $phaseURL; ?>/"><?= $calendarNameOfMonths[11] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/months/<?= $dateData['year']['current'] ?>-12/<?= $phaseURL; ?>/"><?= $calendarNameOfMonths[12] ?></a><br>
+                </div>
             </div>
-        </div>
-        <div class="c-links-block">
-            <hr class="hr-1">
-        </div>
+            <div class="plate-links">
+                <hr>
+            </div>
+            <div class="plate-links">
+                <div class="col-xs-6 c-links-mp-months">
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/years/<?= $dateData['year']['current'] ?>/new-moon/">
+                        <?= Yii::t('app', 'New moon') ?>
+                    </a>
+                    <br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/years/<?= $dateData['year']['current'] ?>/waxing-moon/">
+                        <?= Yii::t('app', 'Waxing moon') ?>
+                    </a>
+                    <br>
+                </div>
+                <div class="col-xs-6 c-links-mp-months">
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/years/<?= $dateData['year']['current'] ?>/full-moon/">
+                        <?= Yii::t('app', 'Full moon') ?>
+                    </a>
+                    <br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/years/<?= $dateData['year']['current'] ?>/waning-moon/">
+                        <?= Yii::t('app', 'Waning moon') ?>
+                    </a>
+                    <br>
+                </div>
+            </div>
+
+            <div class="plate-links">
+                <hr>
+            </div>
+            <div class="plate-links">
+                <div class="col-xs-6 c-links-mp-months">
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/">
+                        <?= Yii::t('app', 'Auspicious days') ?>
+                    </a>
+                </div>
+                <div class="col-xs-6 c-links-mp-months">
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/gardener/years/<?= $dateData['year']['current'] ?>/">
+                        <?= Yii::t('app', 'Sowing calendar') ?>
+                    </a>
+                </div>
+            </div>
 
 
+        </div>
     </div>
+
 </div>
-<br><br>
 <hr>
 
 <?php /***************************** */ ?>
@@ -185,10 +236,10 @@ $moon = new \common\components\moon\Moon();
                             <div class="mday
                             <?= ($week[$i]['newMoon'] == 1 && $phaseURL == 'new-moon') ? ' md-one' : '' ?>
                             <?= ($week[$i]['fullMoon'] == 1 && $phaseURL == 'full-moon') ? ' md-one' : '' ?>
-                            <?= ($week[$i]['waningCrescent'] == 1  && $phaseURL == 'waning-moon' && $week[$i]['newMoon'] == 0 && $week[$i]['fullMoon'] == 0) ? ' md-one' : '' ?>
-                            <?= ($week[$i]['waningMoon'] == 1  && $phaseURL == 'waning-moon' && $week[$i]['newMoon'] == 0 && $week[$i]['fullMoon'] == 0) ? ' md-one' : '' ?>
-                            <?= ($week[$i]['waxingCrescent'] == 1  && $phaseURL == 'waxing-moon' && $week[$i]['newMoon'] == 0 && $week[$i]['fullMoon'] == 0) ? ' md-one' : '' ?>
-                            <?= ($week[$i]['waxingMoon'] == 1  && $phaseURL == 'waxing-moon' && $week[$i]['newMoon'] == 0 && $week[$i]['fullMoon'] == 0) ? ' md-one' : '' ?>
+                            <?= ($week[$i]['waningCrescent'] == 1 && $phaseURL == 'waning-moon' && $week[$i]['newMoon'] == 0 && $week[$i]['fullMoon'] == 0) ? ' md-one' : '' ?>
+                            <?= ($week[$i]['waningMoon'] == 1 && $phaseURL == 'waning-moon' && $week[$i]['newMoon'] == 0 && $week[$i]['fullMoon'] == 0) ? ' md-one' : '' ?>
+                            <?= ($week[$i]['waxingCrescent'] == 1 && $phaseURL == 'waxing-moon' && $week[$i]['newMoon'] == 0 && $week[$i]['fullMoon'] == 0) ? ' md-one' : '' ?>
+                            <?= ($week[$i]['waxingMoon'] == 1 && $phaseURL == 'waxing-moon' && $week[$i]['newMoon'] == 0 && $week[$i]['fullMoon'] == 0) ? ' md-one' : '' ?>
                             ">
                                     <span>
                                    <?= $week[$i]['monthDay']; ?><br>
@@ -214,10 +265,10 @@ $moon = new \common\components\moon\Moon();
                             <div class="mday-off
                             <?= ($week[$i]['newMoon'] == 1 && $phaseURL == 'new-moon') ? ' md-one' : '' ?>
                             <?= ($week[$i]['fullMoon'] == 1 && $phaseURL == 'full-moon') ? ' md-one' : '' ?>
-                            <?= ($week[$i]['waningCrescent'] == 1  && $phaseURL == 'waning-moon' && $week[$i]['newMoon'] == 0 && $week[$i]['fullMoon'] == 0) ? ' md-one' : '' ?>
-                            <?= ($week[$i]['waningMoon'] == 1  && $phaseURL == 'waning-moon' && $week[$i]['newMoon'] == 0 && $week[$i]['fullMoon'] == 0) ? ' md-one' : '' ?>
-                            <?= ($week[$i]['waxingCrescent'] == 1  && $phaseURL == 'waxing-moon' && $week[$i]['newMoon'] == 0 && $week[$i]['fullMoon'] == 0) ? ' md-one' : '' ?>
-                            <?= ($week[$i]['waxingMoon'] == 1  && $phaseURL == 'waxing-moon' && $week[$i]['newMoon'] == 0 && $week[$i]['fullMoon'] == 0) ? ' md-one' : '' ?>
+                            <?= ($week[$i]['waningCrescent'] == 1 && $phaseURL == 'waning-moon' && $week[$i]['newMoon'] == 0 && $week[$i]['fullMoon'] == 0) ? ' md-one' : '' ?>
+                            <?= ($week[$i]['waningMoon'] == 1 && $phaseURL == 'waning-moon' && $week[$i]['newMoon'] == 0 && $week[$i]['fullMoon'] == 0) ? ' md-one' : '' ?>
+                            <?= ($week[$i]['waxingCrescent'] == 1 && $phaseURL == 'waxing-moon' && $week[$i]['newMoon'] == 0 && $week[$i]['fullMoon'] == 0) ? ' md-one' : '' ?>
+                            <?= ($week[$i]['waxingMoon'] == 1 && $phaseURL == 'waxing-moon' && $week[$i]['newMoon'] == 0 && $week[$i]['fullMoon'] == 0) ? ' md-one' : '' ?>
                             ">
                                     <span>
                                     <?= $week[$i]['monthDay']; ?><br>

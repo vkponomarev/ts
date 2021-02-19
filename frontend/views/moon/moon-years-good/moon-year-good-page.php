@@ -50,141 +50,199 @@ $moon = new \common\components\moon\Moon();
     </div>
 
     <?php /***************************** */ ?>
-    <?php /***************************** Ссылки на различеные направления благоприятных дней*/ ?>
+    <?php /***************************** Ссылки на основной календарь*/ ?>
     <?php /***************************** */ ?>
 
-    <div class="col-xxs-12 col-xs-6 c-links-mp">
-
-        <div class="c-links-block">
-            <div class="col-xs-6 c-links-mp-months">
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/communication/">
-                    <?= Yii::t('app', 'Communication') ?>
+    <div class="col-xxs-12 col-xs-6 plates">
+        <div class="plate">
+            <div class="plate-header">
+            <?php if ($dayNameURL <> 'daysByRatingCount') : ?>
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/">
+                    <?= Yii::t('app', 'Auspicious days'); ?>
                 </a>
-                <br>
-
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/money/">
-                    <?= Yii::t('app', 'Money') ?>
-                </a>
-                <br>
-
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/bosses/">
-                    <?= Yii::t('app', 'Bosses') ?>
-                </a>
-                <br>
-
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/job-change/">
-                    <?= Yii::t('app', 'Job change') ?>
-                </a>
-                <br>
-
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/property/">
-                    <?= Yii::t('app', 'The property') ?>
-                </a>
-                <br>
-
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/creativity/">
-                    <?= Yii::t('app', 'Creation') ?>
-                </a>
-                <br>
-
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/science/">
-                    <?= Yii::t('app', 'The science') ?>
-                </a>
-                <br>
-
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/art/">
-                    <?= Yii::t('app', 'Art') ?>
-                </a>
-                <br>
-
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/education/">
-                    <?= Yii::t('app', 'Education') ?>
-                </a>
-                <br>
-
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/travel/">
-                    <?= Yii::t('app', 'Travels') ?>
-                </a>
-                <br>
-
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/vacation/">
-                    <?= Yii::t('app', 'Relaxation') ?>
-                </a>
-                <br>
-
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/celebration/">
-                    <?= Yii::t('app', 'Celebration') ?>
-                </a>
-                <br>
-
-
+            <?php else: ?>
+                <?= Yii::t('app', 'Auspicious days'); ?>
+            <?php endif; ?>
             </div>
-            <div class="col-xs-6 c-links-mp-months">
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/alcohol/">
-                    <?= Yii::t('app', 'Alcohol') ?>
-                </a>
-                <br>
-
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/dispute/">
-                    <?= Yii::t('app', 'Dispute') ?>
-                </a>
-                <br>
-
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/relations/">
-                    <?= Yii::t('app', 'Relations') ?>
-                </a>
-                <br>
-
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/marriage/">
-                    <?= Yii::t('app', 'Marriage') ?>
-                </a>
-                <br>
-
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/conception/">
-                    <?= Yii::t('app', 'Conception') ?>
-                </a>
-                <br>
-
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/training/">
-                    <?= Yii::t('app', 'Trainings') ?>
-                </a>
-                <br>
-
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/housework/">
-                    <?= Yii::t('app', 'Housework') ?>
-                </a>
-                <br>
-
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/dreams/">
-                    <?= Yii::t('app', 'Interpretation of dreams') ?>
-                </a>
-                <br>
-
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/hair/">
-                    <?= Yii::t('app', 'A haircut') ?>
-                </a>
-                <br>
-
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/garden-work/">
-                    <?= Yii::t('app', 'Work in the garden') ?>
-                </a>
-                <br>
-
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/beginning/">
-                    <?= Yii::t('app', 'Beginnings') ?>
-                </a>
-                <br>
-
+            <div class="plate-links">
+                <div class="col-xs-6 plate-links-col ">
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/good/months/<?= $dateData['year']['current'] ?>-01/
+                    <?= ($dayNameURL <> 'daysByRatingCount') ? $dayNameURL . '/' : '' ?>
+                    "><?= $calendarNameOfMonths[1] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/good/months/<?= $dateData['year']['current'] ?>-02/
+                    <?= ($dayNameURL <> 'daysByRatingCount') ? $dayNameURL . '/' : '' ?>"><?= $calendarNameOfMonths[2] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/good/months/<?= $dateData['year']['current'] ?>-03/
+                    <?= ($dayNameURL <> 'daysByRatingCount') ? $dayNameURL . '/' : '' ?>"><?= $calendarNameOfMonths[3] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/good/months/<?= $dateData['year']['current'] ?>-04/
+                    <?= ($dayNameURL <> 'daysByRatingCount') ? $dayNameURL . '/' : '' ?>"><?= $calendarNameOfMonths[4] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/good/months/<?= $dateData['year']['current'] ?>-05/
+                    <?= ($dayNameURL <> 'daysByRatingCount') ? $dayNameURL . '/' : '' ?>"><?= $calendarNameOfMonths[5] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/good/months/<?= $dateData['year']['current'] ?>-06/
+                    <?= ($dayNameURL <> 'daysByRatingCount') ? $dayNameURL . '/' : '' ?>"><?= $calendarNameOfMonths[6] ?></a><br>
+                </div>
+                <div class="col-xs-6 plate-links-col">
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/good/months/<?= $dateData['year']['current'] ?>-07/
+                    <?= ($dayNameURL <> 'daysByRatingCount') ? $dayNameURL . '/' : '' ?>"><?= $calendarNameOfMonths[7] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/good/months/<?= $dateData['year']['current'] ?>-08/
+                    <?= ($dayNameURL <> 'daysByRatingCount') ? $dayNameURL . '/' : '' ?>"><?= $calendarNameOfMonths[8] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/good/months/<?= $dateData['year']['current'] ?>-09/
+                    <?= ($dayNameURL <> 'daysByRatingCount') ? $dayNameURL . '/' : '' ?>"><?= $calendarNameOfMonths[9] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/good/months/<?= $dateData['year']['current'] ?>-10/
+                    <?= ($dayNameURL <> 'daysByRatingCount') ? $dayNameURL . '/' : '' ?>"><?= $calendarNameOfMonths[10] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/good/months/<?= $dateData['year']['current'] ?>-11/
+                    <?= ($dayNameURL <> 'daysByRatingCount') ? $dayNameURL . '/' : '' ?>"><?= $calendarNameOfMonths[11] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/good/months/<?= $dateData['year']['current'] ?>-12/
+                    <?= ($dayNameURL <> 'daysByRatingCount') ? $dayNameURL . '/' : '' ?>"><?= $calendarNameOfMonths[12] ?></a><br>
+                </div>
             </div>
-        </div>
-        <div class="c-links-block">
-            <hr class="hr-1">
-        </div>
+            <div class="plate-links">
+                <hr>
+            </div>
+            <div class="plate-links">
+                <div class="col-xs-6 c-links-mp-months">
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/years/<?= $dateData['year']['current'] ?>/new-moon/">
+                        <?= Yii::t('app', 'New moon') ?>
+                    </a>
+                    <br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/years/<?= $dateData['year']['current'] ?>/waxing-moon/">
+                        <?= Yii::t('app', 'Waxing moon') ?>
+                    </a>
+                    <br>
+                </div>
+                <div class="col-xs-6 c-links-mp-months">
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/years/<?= $dateData['year']['current'] ?>/full-moon/">
+                        <?= Yii::t('app', 'Full moon') ?>
+                    </a>
+                    <br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/years/<?= $dateData['year']['current'] ?>/waning-moon/">
+                        <?= Yii::t('app', 'Waning moon') ?>
+                    </a>
+                    <br>
+                </div>
+            </div>
+
+            <div class="plate-links">
+                <hr>
+            </div>
+            <div class="plate-links">
+                <div class="col-xs-6 c-links-mp-months">
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/">
+                        <?= Yii::t('app', 'Auspicious days') ?>
+                    </a>
+                </div>
+                <div class="col-xs-6 c-links-mp-months">
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/gardener/years/<?= $dateData['year']['current'] ?>/">
+                        <?= Yii::t('app', 'Sowing calendar') ?>
+                    </a>
+                </div>
+            </div>
 
 
+        </div>
     </div>
 </div>
-<br><br>
+<?php /***************************** */ ?>
+<?php /***************************** Ссылки на различеные направления благоприятных дней*/ ?>
+<?php /***************************** */ ?>
+<div class="row rflex">
+    <div class="col-xxs-12 plates">
+        <div class="plate-long">
+            <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/communication/">
+                <?= Yii::t('app', 'Communication') ?>
+            </a>
+            <?= ' / ' ?>
+            <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/money/">
+                <?= Yii::t('app', 'Money') ?>
+            </a>
+            <?= ' / ' ?>
+            <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/bosses/">
+                <?= Yii::t('app', 'Bosses') ?>
+            </a>
+            <?= ' / ' ?>
+            <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/job-change/">
+                <?= Yii::t('app', 'Job change') ?>
+            </a>
+            <?= ' / ' ?>
+            <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/property/">
+                <?= Yii::t('app', 'The property') ?>
+            </a>
+            <?= ' / ' ?>
+            <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/creativity/">
+                <?= Yii::t('app', 'Creation') ?>
+            </a>
+            <?= ' / ' ?>
+            <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/science/">
+                <?= Yii::t('app', 'The science') ?>
+            </a>
+            <?= ' / ' ?>
+            <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/art/">
+                <?= Yii::t('app', 'Art') ?>
+            </a>
+            <?= ' / ' ?>
+            <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/education/">
+                <?= Yii::t('app', 'Education') ?>
+            </a>
+            <?= ' / ' ?>
+            <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/travel/">
+                <?= Yii::t('app', 'Travels') ?>
+            </a>
+            <?= ' / ' ?>
+            <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/vacation/">
+                <?= Yii::t('app', 'Relaxation') ?>
+            </a>
+            <?= ' / ' ?>
+            <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/celebration/">
+                <?= Yii::t('app', 'Celebration') ?>
+            </a>
+            <?= ' / ' ?>
+            <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/alcohol/">
+                <?= Yii::t('app', 'Alcohol') ?>
+            </a>
+            <?= ' / ' ?>
+            <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/dispute/">
+                <?= Yii::t('app', 'Dispute') ?>
+            </a>
+            <?= ' / ' ?>
+            <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/relations/">
+                <?= Yii::t('app', 'Relations') ?>
+            </a>
+            <?= ' / ' ?>
+            <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/marriage/">
+                <?= Yii::t('app', 'Marriage') ?>
+            </a>
+            <?= ' / ' ?>
+            <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/conception/">
+                <?= Yii::t('app', 'Conception') ?>
+            </a>
+            <?= ' / ' ?>
+            <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/training/">
+                <?= Yii::t('app', 'Trainings') ?>
+            </a>
+            <?= ' / ' ?>
+            <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/housework/">
+                <?= Yii::t('app', 'Housework') ?>
+            </a>
+            <?= ' / ' ?>
+            <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/dreams/">
+                <?= Yii::t('app', 'Interpretation of dreams') ?>
+            </a>
+            <?= ' / ' ?>
+            <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/hair/">
+                <?= Yii::t('app', 'A haircut') ?>
+            </a>
+            <?= ' / ' ?>
+            <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/garden-work/">
+                <?= Yii::t('app', 'Work in the garden') ?>
+            </a>
+            <?= ' / ' ?>
+            <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/beginning/">
+                <?= Yii::t('app', 'Beginnings') ?>
+            </a>
+
+        </div>
+    </div>
+</div>
+
 <hr>
 
 
@@ -275,7 +333,6 @@ $moon = new \common\components\moon\Moon();
                     <?php for ($i = 1; $i <= 5; $i++): ?>
 
                         <?php if (isset($week[$i]['monthDay'])): ?>
-
 
 
                             <div class="day

@@ -48,90 +48,123 @@ $moon = new \common\components\moon\Moon();
     </div>
 
     <?php /***************************** */ ?>
-    <?php /***************************** Выберите город*/ ?>
+    <?php /***************************** Ссылки на основной календарь*/ ?>
     <?php /***************************** */ ?>
 
-    <div class="col-xxs-12 col-xs-6 c-links-mp">
-        <div class="c-links-block c-links-mp-header c-links-mp-header-link">
-            <?= Yii::t('app', 'Choose the city'); ?>
-        </div>
-        <div>
-            <?php
-            $template = '<div class="search-value-div"><p class="search-value">{{value}}</p>';
-            echo \kartik\typeahead\Typeahead::widget([
-                'name' => 'typeahead',
-                'options' => ['placeholder' => $cityData['name']
-                ],
-                'pluginOptions' => ['hint' => true, 'highlight' => true, 'minLength' => 3],
-                'pluginEvents' => [
-                    "typeahead:select" => "function(ev, suggestion) {
-                        if (typeof suggestion.id === \"undefined\" || suggestion.id === null || suggestion.id ===  \"\") {
-                            //here u can open search page
-                        } else {
-                            window.location = '/" . Yii::$app->language . "/calendar/moon/years/" . $dateData['year']['current'] . "/?city=' + suggestion.id + '';
-                        }
-                    }"
-                ],
-                'dataset' => [
-                    [
-                        'datumTokenizer' => "Bloodhound.tokenizers.obj.whitespace('value')",
-                        'display' => 'value',
-                        'limit' => 10,
-                        'templates' => [
-                            'notFound' => '<div class="text-danger" style="padding:0 8px">' . Yii::t('app', 'No matches found.') . '</div>',
-                            'suggestion' => new \yii\web\JsExpression("Handlebars.compile('{$template}')")
-                        ],
-                        'remote' => [
-                            'url' => \yii\helpers\Url::to(['search/search-city']) . '?q=%QUERY',
-                            'wildcard' => '%QUERY'
-                        ]
-                    ],
-                ]
-            ]);
-            ?>
-
-
-        </div>
-        <hr>
-        <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/">
-            <?= Yii::t('app', 'Auspicious days') ?>
-        </a>
-        <br>
-        <hr>
-
-
-        <div class="c-links-block">
-            <div class="col-xs-6 c-links-mp-months">
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/years/<?= $dateData['year']['current'] ?>/new-moon/">
-                    <?= Yii::t('app', 'New moon') ?>
-                </a>
-                <br>
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/years/<?= $dateData['year']['current'] ?>/waxing-moon/">
-                    <?= Yii::t('app', 'Waxing moon') ?>
-                </a>
-                <br>
+    <div class="col-xxs-12 col-xs-6 plates">
+        <div class="plate">
+            <div class="plate-header">
+                <?= Yii::t('app', 'Lunar Calendar'); ?>
             </div>
-            <div class="col-xs-6 c-links-mp-months">
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/years/<?= $dateData['year']['current'] ?>/full-moon/">
-                    <?= Yii::t('app', 'Full moon') ?>
-                </a>
-                <br>
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/years/<?= $dateData['year']['current'] ?>/waning-moon/">
-                    <?= Yii::t('app', 'Waning moon') ?>
-                </a>
-                <br>
+            <div class="plate-links">
+                <div class="col-xs-6 plate-links-col ">
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $dateData['year']['current'] ?>-01/"><?= $calendarNameOfMonths[1] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $dateData['year']['current'] ?>-02/"><?= $calendarNameOfMonths[2] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $dateData['year']['current'] ?>-03/"><?= $calendarNameOfMonths[3] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $dateData['year']['current'] ?>-04/"><?= $calendarNameOfMonths[4] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $dateData['year']['current'] ?>-05/"><?= $calendarNameOfMonths[5] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $dateData['year']['current'] ?>-06/"><?= $calendarNameOfMonths[6] ?></a><br>
+                </div>
+                <div class="col-xs-6 plate-links-col">
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $dateData['year']['current'] ?>-07/"><?= $calendarNameOfMonths[7] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $dateData['year']['current'] ?>-08/"><?= $calendarNameOfMonths[8] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $dateData['year']['current'] ?>-09/"><?= $calendarNameOfMonths[9] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $dateData['year']['current'] ?>-10/"><?= $calendarNameOfMonths[10] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $dateData['year']['current'] ?>-11/"><?= $calendarNameOfMonths[11] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $dateData['year']['current'] ?>-12/"><?= $calendarNameOfMonths[12] ?></a><br>
+                </div>
             </div>
+            <div class="plate-links">
+                <hr>
+            </div>
+            <div class="plate-links">
+                <div class="col-xs-6 c-links-mp-months">
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/years/<?= $dateData['year']['current'] ?>/new-moon/">
+                        <?= Yii::t('app', 'New moon') ?>
+                    </a>
+                    <br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/years/<?= $dateData['year']['current'] ?>/waxing-moon/">
+                        <?= Yii::t('app', 'Waxing moon') ?>
+                    </a>
+                    <br>
+                </div>
+                <div class="col-xs-6 c-links-mp-months">
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/years/<?= $dateData['year']['current'] ?>/full-moon/">
+                        <?= Yii::t('app', 'Full moon') ?>
+                    </a>
+                    <br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/years/<?= $dateData['year']['current'] ?>/waning-moon/">
+                        <?= Yii::t('app', 'Waning moon') ?>
+                    </a>
+                    <br>
+                </div>
+            </div>
+
+            <div class="plate-links">
+                <hr>
+            </div>
+            <div class="plate-links">
+                <div class="col-xs-6 c-links-mp-months">
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/">
+                        <?= Yii::t('app', 'Auspicious days') ?>
+                    </a>
+                </div>
+                <div class="col-xs-6 c-links-mp-months">
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/gardener/years/<?= $dateData['year']['current'] ?>/">
+                        <?= Yii::t('app', 'Sowing calendar') ?>
+                    </a>
+                </div>
+            </div>
+
+
         </div>
-
-
-        <div class="c-links-block">
-            <hr class="hr-1">
-        </div>
-
-
     </div>
+
+
+    <?php
+    /*
+     *
+     * <div class="col-xxs-12 col-xs-6 c-links-mp">
+<div class="c-links-block c-links-mp-header c-links-mp-header-link">
+    <?= Yii::t('app', 'Choose the city'); ?>
 </div>
-<br><br>
+<div>
+    $template = '<div class="search-value-div"><p class="search-value">{{value}}</p>';
+    echo \kartik\typeahead\Typeahead::widget([
+        'name' => 'typeahead',
+        'options' => ['placeholder' => $cityData['name']
+        ],
+        'pluginOptions' => ['hint' => true, 'highlight' => true, 'minLength' => 3],
+        'pluginEvents' => [
+            "typeahead:select" => "function(ev, suggestion) {
+                if (typeof suggestion.id === \"undefined\" || suggestion.id === null || suggestion.id ===  \"\") {
+                    //here u can open search page
+                } else {
+                    window.location = '/" . Yii::$app->language . "/calendar/moon/years/" . $dateData['year']['current'] . "/?city=' + suggestion.id + '';
+                }
+            }"
+        ],
+        'dataset' => [
+            [
+                'datumTokenizer' => "Bloodhound.tokenizers.obj.whitespace('value')",
+                'display' => 'value',
+                'limit' => 10,
+                'templates' => [
+                    'notFound' => '<div class="text-danger" style="padding:0 8px">' . Yii::t('app', 'No matches found.') . '</div>',
+                    'suggestion' => new \yii\web\JsExpression("Handlebars.compile('{$template}')")
+                ],
+                'remote' => [
+                    'url' => \yii\helpers\Url::to(['search/search-city']) . '?q=%QUERY',
+                    'wildcard' => '%QUERY'
+                ]
+            ],
+        ]
+    ]);</div>*/
+
+    ?>
+
+
+</div>
 <hr>
 
 
