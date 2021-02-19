@@ -78,6 +78,7 @@
                     <a href="/<?= Yii::$app->language ?>/holidays/years/<?= $date->year->current ?>/<?= $holiday['countryUrl'] ?>/">
                         <?= $holiday['countryName'] ?>
                     </a>
+                    <br>
                     <?php if ($holidaysCount >= 8) {
                         break;
                     } ?>
@@ -302,6 +303,43 @@
                 <a href="/<?= Yii::$app->language ?>/calendar/moon/gardener/years/<?= $date->year->current ?>/">
                     <?= Yii::t('app', 'Sowing calendar') ?>
                 </a>
+                <?php if ($holidaysCount >= 4) : ?>
+                    <div class="plate-links">
+                        <hr>
+                    </div>
+                    <a href="/<?= Yii::$app->language ?>/calendar/weeks/days/today/">
+                        <?= Yii::t('app', 'What week is {date}', [
+                            'date' => Yii::t('app', 'today')
+                        ]) ?>
+                    </a>
+                    <br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/zodiac/days/today/">
+                        <?= Yii::t('app', 'What is the zodiac sign {day-name}', [
+                            'day-name' => Yii::t('app', 'today')
+                        ]) ?>
+                    </a>
+                    <br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/days/today/">
+                        <?= Yii::t('app', 'What lunar day {day-name}', [
+                            'day-name' => Yii::t('app', 'today')
+                        ]) ?>
+                    </a>
+                    <br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/days/today/">
+                        <?= Yii::t('app', 'What is the phase of the moon {day-name}', [
+                            'day-name' => Yii::t('app', 'today')
+                        ])
+                        ?>
+                    </a>
+                    <br>
+                    <a href="/<?= Yii::$app->language ?>/holidays/days/today/">
+                        <?= Yii::t('app', 'What are the holidays {day-name}', [
+                            'day-name' => Yii::t('app', 'today')
+                        ])
+                        ?>
+                    </a>
+                <?php endif; ?>
+
             </div>
 
 

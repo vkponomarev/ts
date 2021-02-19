@@ -32,12 +32,8 @@ $moon = new \common\components\moon\Moon();
     <div class="col-xxs-12 col-xs-6 current-date">
         <div class="current-date-div">
             <div class="current-date-one">
-                <div class="current-date-year">
+                <div class="current-date-year current-date-big">
                     <?= $date->week->current ?>
-                    <br>
-                    <span class="current-date-month">
-                    <?= Yii::t('app', 'week'); ?>
-                </span>
 
                 </div>
             </div>

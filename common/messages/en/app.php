@@ -626,6 +626,7 @@ return [
     'Other' => 'Other',
 
     'moon day' => 'moon day',
+    'Calendar' => 'Calendar',
 
     ];
 
