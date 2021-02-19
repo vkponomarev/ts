@@ -85,7 +85,7 @@
                 <?php endif; ?>
             <?php endif; ?>
 
-            <div class="c-links-block">
+            <div class="plate-links">
                 <div class="col-xs-6 c-links-mp-months ">
                     <a href="/<?= Yii::$app->language ?>/holidays/months/<?= $date->year->current ?>-01/<?= ($countryURL['url'] <> '') ? $countryURL['url'] . '/' : '' ?>"><?= $calendarNameOfMonths[1] ?>
                     </a><br>

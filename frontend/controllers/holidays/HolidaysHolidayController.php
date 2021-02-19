@@ -84,6 +84,7 @@ class HolidaysHolidayController extends Controller
                 $breadCrumbs = new Breadcrumbs();
                 Yii::$app->params['breadcrumbs'] = $breadCrumbs->year($yearData);
         */
+
         return $this->render('holidays-holiday-page.min.php', [
 
             'date' => $date,

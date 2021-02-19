@@ -13,6 +13,7 @@ class HolidayByID
             ->createCommand('
             select
             h.id,
+            h.url,
             h.name as holidayNameOriginal,
             htxt.name as holidayName
             from

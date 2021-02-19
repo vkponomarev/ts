@@ -21,47 +21,46 @@
 ?>
 
 
-    <a name="calendar-<?= $date->year->current ?>"></a><h1
+<a name="calendar-<?= $date->year->current ?>"></a><h1
         class="main-page-h1"><?= Yii::$app->params['text']['h1'] ?></h1>
-    <hr>
+<hr>
 
-    <div class="row">
+<div class="row">
 
-        <?php /***************************** */ ?>
-        <?php /***************************** Сегодняшний год*/ ?>
-        <?php /***************************** */ ?>
+    <?php /***************************** */ ?>
+    <?php /***************************** Сегодняшний год*/ ?>
+    <?php /***************************** */ ?>
 
-        <div class="col-xxs-12 col-xs-6 current-date">
-            <div class="current-date-div">
-                <div class="current-date-one">
-                    <div class="current-date-year">
-                        <?= $date->year->current ?>
-                        <br>
-                        <span class="current-date-month">
+    <div class="col-xxs-12 col-xs-6 current-date">
+        <div class="current-date-div">
+            <div class="current-date-one">
+                <div class="current-date-year">
+                    <?= $date->year->current ?>
+                    <br>
+                    <span class="current-date-month">
                     <?= Yii::t('app', 'year'); ?>
                 </span>
 
-                    </div>
-                </div>
-                <div class="current-date-text">
-
-                    <?= Yii::$app->params['text']['text1'] ?>
                 </div>
             </div>
+            <div class="current-date-text">
+
+                <?= Yii::$app->params['text']['text1'] ?>
+            </div>
         </div>
+    </div>
 
-        <?php /***************************** */ ?>
-        <?php /***************************** Выберите страну*/ ?>
-        <?php /***************************** */ ?>
-
-
-        <div class="col-xxs-12 col-xs-6 c-links-mp">
+    <?php /***************************** */ ?>
+    <?php /***************************** Выберите страну*/ ?>
+    <?php /***************************** */ ?>
 
 
+    <div class="col-xxs-12 col-xs-6 plates">
+
+        <div class="plate">
             <?php if ($countryURL['url'] <> '') : ?>
-                <div class="c-links-block c-links-mp-header">
-                    <a class="c-links-mp-header-link"
-                       href="/<?= Yii::$app->language ?>/holidays/years/<?= $date->year->current ?>/">
+                <div class="plate-header">
+                    <a href="/<?= Yii::$app->language ?>/holidays/years/<?= $date->year->current ?>/">
                         <?= Yii::t('app', 'Holidays'); ?>
                         <?= ' ' . Yii::t('app', 'in the world'); ?>
                     </a>
@@ -69,7 +68,7 @@
             <?php endif; ?>
 
 
-            <div class="c-links-block">
+            <div class="plate-links">
                 <div class="col-xs-6 c-links-mp-months ">
                     <a href="/<?= Yii::$app->language ?>/holidays/months/<?= $date->year->current ?>-01/<?= ($countryURL['url'] <> '') ? $countryURL['url'] . '/' : '' ?>"><?= $calendarNameOfMonths[1] ?>
                     </a><br>
@@ -88,26 +87,26 @@
                     <a href="/<?= Yii::$app->language ?>/holidays/months/<?= $date->year->current ?>-12/<?= ($countryURL['url'] <> '') ? $countryURL['url'] . '/' : '' ?>"><?= $calendarNameOfMonths[12] ?></a><br>
                 </div>
             </div>
-            <div class="c-links-block">
+            <div class="plate-links">
                 <hr>
             </div>
-            <div class="c-links-block">
+            <div class="plate-links">
                 <div class="col-xs-6 c-links-mp-months ">
                     <a href="/<?= Yii::$app->language ?>/holidays/seasons/winter/<?= $date->year->current ?>/"><?= Yii::t('app', 'Winter'); ?>
                     </a><br>
                     <a href="/<?= Yii::$app->language ?>/holidays/seasons/spring/<?= $date->year->current ?>/"><?= Yii::t('app', 'Spring'); ?></a><br>
-                    </div>
+                </div>
                 <div class="col-xs-6 c-links-mp-months">
                     <a href="/<?= Yii::$app->language ?>/holidays/seasons/summer/<?= $date->year->current ?>/"><?= Yii::t('app', 'Summer'); ?></a><br>
                     <a href="/<?= Yii::$app->language ?>/holidays/seasons/autumn/<?= $date->year->current ?>/"><?= Yii::t('app', 'Autumn'); ?></a><br>
-                    </div>
+                </div>
             </div>
-            <div class="c-links-block">
+            <div class="plate-links">
                 <hr>
             </div>
             <?php if ($date->year->current >= 2000 && $date->year->current <= 2030): ?>
 
-                <div class="c-links-block">
+                <div class="plate-links">
                     <form method="get" id="form">
                         <div class="form-group">
                             <script>
@@ -128,50 +127,47 @@
                         </div>
                     </form>
                 </div>
-                <div class="c-links-block">
-                    <hr class="hr-1">
-                </div>
             <?php endif; ?>
-
         </div>
     </div>
-    <hr>
+</div>
+<hr>
 <?php /***************************** */ ?>
 <?php /***************************** Верхняя плашка календаря с годами туда сюда*/ ?>
 <?php /***************************** */ ?>
 
 
-    <div class="row">
-        <div class="col-xxs-12 col-xs-4 c-prev-next-left">
-            <?php if ($date->year->previous == $holidaysRange['start'] - 1): ?>
-            <?php else: ?>
-                <a href="/<?= Yii::$app->language ?>/holidays/years/<?= $date->year->previous ?>/
+<div class="row">
+    <div class="col-xxs-12 col-xs-4 c-prev-next-left">
+        <?php if ($date->year->previous == $holidaysRange['start'] - 1): ?>
+        <?php else: ?>
+            <a href="/<?= Yii::$app->language ?>/holidays/years/<?= $date->year->previous ?>/
             <?= (($countryURL['url'] <> '')
-                    && ($date->year->previous >= $holidaysRange['start'] && $date->year->previous <= $holidaysRange['end']))
-                    ? $countryURL['url'] . '/' : '' ?>">
-                    <?= $date->year->previous ?>
-                </a>
-            <?php endif; ?>
-        </div>
-        <div class="col-xxs-12 col-xs-4 c-prev-next-center">
-            <?= $date->year->current ?>
-        </div>
-        <div class="col-xxs-12 col-xs-4 c-prev-next-right">
-
-            <?php if ($date->year->current == $holidaysRange['end']): ?>
-
-            <?php else: ?>
-                <a href="/<?= Yii::$app->language ?>/holidays/years/<?= $date->year->next ?>/
-            <?= (($countryURL['url'] <> '')
-                    && ($date->year->next >= $holidaysRange['start'] && $date->year->next <= $holidaysRange['end']))
-                    ? $countryURL['url'] . '/' : '' ?>">
-                    <?= $date->year->next ?>
-                </a>
-            <?php endif; ?>
-        </div>
+                && ($date->year->previous >= $holidaysRange['start'] && $date->year->previous <= $holidaysRange['end']))
+                ? $countryURL['url'] . '/' : '' ?>">
+                <?= $date->year->previous ?>
+            </a>
+        <?php endif; ?>
     </div>
-    <hr>
-    <br>
+    <div class="col-xxs-12 col-xs-4 c-prev-next-center">
+        <?= $date->year->current ?>
+    </div>
+    <div class="col-xxs-12 col-xs-4 c-prev-next-right">
+
+        <?php if ($date->year->current == $holidaysRange['end']): ?>
+
+        <?php else: ?>
+            <a href="/<?= Yii::$app->language ?>/holidays/years/<?= $date->year->next ?>/
+            <?= (($countryURL['url'] <> '')
+                && ($date->year->next >= $holidaysRange['start'] && $date->year->next <= $holidaysRange['end']))
+                ? $countryURL['url'] . '/' : '' ?>">
+                <?= $date->year->next ?>
+            </a>
+        <?php endif; ?>
+    </div>
+</div>
+<hr>
+<br>
 <?php /***************************** */ ?>
 <?php /***************************** Список всех праздников*/ ?>
 <?php /***************************** */ ?>
