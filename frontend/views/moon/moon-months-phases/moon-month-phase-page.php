@@ -114,6 +114,23 @@ $moon = new \common\components\moon\Moon();
 <div class="row rflex">
     <div class="col-xxs-12 plates">
         <div class="plate-long">
+            <?php $linksCount = 0 ?>
+            <?php foreach ($calendars->links as $link): ?>
+                <?php $linksCount++ ?>
+                <a class="plate-a-margin" href="<?= $link['url'] ?>">
+                    <?= $link['name'] ?>
+                </a>
+                <?php if ($linksCount == count($calendars->links)) : ?>
+                <?php else: ?>
+                    <?= ' / ' ?>
+                <?php endif; ?>
+            <?php endforeach ?>
+        </div>
+    </div>
+</div>
+<div class="row rflex">
+    <div class="col-xxs-12 plates">
+        <div class="plate-long">
             <?php $moonLinksCount = 0 ?>
             <?php foreach ($calendars->moonLinks as $link): ?>
                 <?php $moonLinksCount++ ?>
