@@ -11,6 +11,7 @@ use common\components\holidays\Holidays;
 use common\components\main\Main;
 use common\components\pageTexts\PageTexts;
 use common\components\urlCheck\UrlCheck;
+use common\componentsV2\calendars\Calendars;
 use common\componentsV2\date\Date;
 use common\componentsV2\zodiacs\Zodiacs;
 use Yii;
@@ -52,8 +53,9 @@ class DaysController extends Controller
 
 
         ($date = new Date($check['date']))->date()->year()->month()->day()->week();
-        ($dateToday = new Date((new \DateTime())->format('Y-m-d')))->date();
+        ($dateToday = new Date((new \DateTime())->format('Y-m-d')))->date()->year();
 
+        $calendars = new Calendars($dateToday->year->current);
 
         $holidaysData = $holidays->byDay($date, $languageID, 0);
 
@@ -92,7 +94,7 @@ class DaysController extends Controller
             'holidaysData' => $holidaysData,
             'dateToday' => $dateToday,
             'zodiacs' => $zodiacs,
-
+            'calendars' => $calendars,
             'calendarByMoonMonth' => $calendarByMoonMonth,
             'calendarByMonth' => $calendarByMonth,
             'calendarNameOfMonths' => $calendarNameOfMonths,

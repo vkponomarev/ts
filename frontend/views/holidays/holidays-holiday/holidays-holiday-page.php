@@ -62,12 +62,20 @@
                         <?= Yii::t('app', 'Holidays'); ?>
                         <?= ($countryURL['url'] <> '') ? ' ' . $countryData['name_in'] : ' ' . Yii::t('app', 'in the world'); ?>
                     </a>
+                    <?= ' / ' ?>
+                    <a href="/<?= Yii::$app->language ?>/holidays/days/today/">
+                       <?= Yii::t('app', 'Today') ?>
+                    </a>
                 </div>
             <?php else: ?>
             <div class="plate-header">
                 <a href="/<?= Yii::$app->language ?>/holidays/years/<?= $date->year->current ?>/<?= ($countryURL['url'] <> '') ? $countryURL['url'] . '/' : '' ?>">
                     <?= Yii::t('app', 'Holidays'); ?>
                     <?= ($countryURL['url'] <> '') ? ' ' . $countryData['name_in'] : ' ' . Yii::t('app', 'in the world'); ?>
+                </a>
+                <?= ' / ' ?>
+                <a href="/<?= Yii::$app->language ?>/holidays/days/today/">
+                    <?= Yii::t('app', 'Today') ?>
                 </a>
             </div>
             <?php endif; ?>
@@ -102,8 +110,11 @@
                 <div class="col-xs-6 c-links-mp-months">
                     <a href="/<?= Yii::$app->language ?>/holidays/seasons/summer/<?= $date->year->current ?>/"><?= Yii::t('app', 'Summer'); ?></a><br>
                     <a href="/<?= Yii::$app->language ?>/holidays/seasons/autumn/<?= $date->year->current ?>/"><?= Yii::t('app', 'Autumn'); ?></a><br>
+
                 </div>
             </div>
+
+
 
         </div>
 

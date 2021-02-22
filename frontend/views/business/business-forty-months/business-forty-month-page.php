@@ -66,6 +66,10 @@
                         <?= Yii::t('app', '40 hour work week'); ?>
                     </a>
                 <?php endif; ?>
+                <?= ' / ' ?>
+                <a href="/<?= Yii::$app->language ?>/calendar/days/today/">
+                    <?= Yii::t('app', 'Today') ?>
+                </a>
             </div>
             <div class="plate-links">
                 <div class="col-xs-6 plate-links-col ">
@@ -153,6 +157,40 @@
         </div>
     </div>
 
+</div>
+<div class="row rflex">
+    <div class="col-xxs-12 plates">
+        <div class="plate-long">
+            <?php $linksCount = 0 ?>
+            <?php foreach ($calendars->links as $link): ?>
+                <?php $linksCount++ ?>
+                <a class="plate-a-margin" href="<?= $link['url'] ?>">
+                    <?= $link['name'] ?>
+                </a>
+                <?php if ($linksCount == count($calendars->links)) : ?>
+                <?php else: ?>
+                    <?= ' / ' ?>
+                <?php endif; ?>
+            <?php endforeach ?>
+        </div>
+    </div>
+</div>
+<div class="row rflex">
+    <div class="col-xxs-12 plates">
+        <div class="plate-long">
+            <?php $businessLinksCount = 0 ?>
+            <?php foreach ($calendars->businessLinks as $link): ?>
+                <?php $businessLinksCount++ ?>
+                <a class="plate-a-margin" href="<?= $link['url'] ?>">
+                    <?= $link['name'] ?>
+                </a>
+                <?php if ($businessLinksCount == count($calendars->businessLinks)) : ?>
+                <?php else: ?>
+                    <?= ' / ' ?>
+                <?php endif; ?>
+            <?php endforeach ?>
+        </div>
+    </div>
 </div>
 <hr>
 

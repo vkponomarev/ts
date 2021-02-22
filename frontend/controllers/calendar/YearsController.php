@@ -13,6 +13,7 @@ use common\components\main\Main;
 use common\components\pageTexts\PageTexts;
 use common\components\pdfCalendars\PDFCalendars;
 use common\components\urlCheck\UrlCheck;
+use common\componentsV2\calendars\Calendars;
 use Yii;
 use yii\web\Controller;
 
@@ -58,6 +59,8 @@ class YearsController extends Controller
         $date = new Date();
         $dateData = $date->data($yearURL . '-01-01');
 
+        $calendars = new Calendars($yearURL);
+
         $countries = new Countries();
         $countriesData = $countries->data($languageID);
 
@@ -87,6 +90,7 @@ class YearsController extends Controller
         return $this->render('year-page.min.php', [
 
             'dateData' => $dateData,
+            'calendars' => $calendars,
             'countriesData' => $countriesData,
             'countryData' => $countryData,
             'holidaysData' => $holidaysData,

@@ -22,6 +22,7 @@ use common\components\song\Song;
 use common\components\songs\Songs;
 use common\components\translation\Translation;
 use common\components\urlCheck\UrlCheck;
+use common\componentsV2\calendars\Calendars;
 use Yii;
 use yii\web\Controller;
 
@@ -66,6 +67,8 @@ class BusinessQuartersController extends Controller
         $date = new Date();
         $dateData = $date->byQuarter($yearURL . '-01-01');
 
+        ($dateToday = new \common\componentsV2\date\Date((new \DateTime())->format('Y-m-d')))->date()->year();
+        $calendars = new Calendars($dateToday->year->current);
         $countries = new Countries();
         $countriesData = $countries->data($languageID);
 
@@ -107,6 +110,7 @@ class BusinessQuartersController extends Controller
             'calendarNameOfDaysInWeek' => $calendarNameOfDaysInWeek,
             'countryURL' => $countryURL,
             'pageTextsMessages' => $pageTextsMessages,
+            'calendars' => $calendars,
 
         ]);
 

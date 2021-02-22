@@ -54,7 +54,11 @@
     <div class="col-xxs-12 col-xs-6 plates">
         <div class="plate">
             <div class="plate-header">
-                    <?= Yii::t('app', 'Calendar'); ?>
+                <?= Yii::t('app', 'Calendar'); ?>
+                <?= ' / ' ?>
+                <a href="/<?= Yii::$app->language ?>/calendar/days/today/">
+                    <?= Yii::t('app', 'Today') ?>
+                </a>
             </div>
             <div class="plate-links">
                 <div class="col-xs-6 plate-links-col ">
@@ -131,9 +135,26 @@
     </div>
 
 
-
 </div>
 
+
+<div class="row rflex">
+    <div class="col-xxs-12 plates">
+        <div class="plate-long">
+            <?php $linksCount = 0 ?>
+            <?php foreach ($calendars->links as $link): ?>
+                <?php $linksCount++ ?>
+                <a class="plate-a-margin" href="<?= $link['url'] ?>">
+                    <?= $link['name'] ?>
+                </a>
+                <?php if ($linksCount == count($calendars->links)) : ?>
+                <?php else: ?>
+                <?= ' / ' ?>
+                <?php endif; ?>
+            <?php endforeach ?>
+        </div>
+    </div>
+</div>
 <hr>
 
 <?php /***************************** */ ?>
@@ -143,7 +164,7 @@
 
 <div class="row">
     <div class="col-xxs-12 col-xs-4 c-prev-next-left">
-        <?php if ($dateData['year']['previous'] == '0000'):?>
+        <?php if ($dateData['year']['previous'] == '0000'): ?>
 
         <?php else: ?>
             <a href="/<?= Yii::$app->language ?>/calendar/years/<?= $dateData['year']['previous'] ?>/
@@ -161,15 +182,15 @@
     </div>
     <div class="col-xxs-12 col-xs-4 c-prev-next-right">
 
-        <?php if ($dateData['year']['current'] == '9999'):?>
+        <?php if ($dateData['year']['current'] == '9999'): ?>
 
         <?php else: ?>
-        <a href="/<?= Yii::$app->language ?>/calendar/years/<?= $dateData['year']['next'] ?>/
+            <a href="/<?= Yii::$app->language ?>/calendar/years/<?= $dateData['year']['next'] ?>/
             <?= (($countryURL['url'] <> '')
-            && ($dateData['year']['next'] >= $holidaysRange['start'] && $dateData['year']['next'] <= $holidaysRange['end']))
-            ? $countryURL['url'] . '/' : '' ?>">
-            <?= $dateData['year']['next'] ?>
-        </a>
+                && ($dateData['year']['next'] >= $holidaysRange['start'] && $dateData['year']['next'] <= $holidaysRange['end']))
+                ? $countryURL['url'] . '/' : '' ?>">
+                <?= $dateData['year']['next'] ?>
+            </a>
         <?php endif; ?>
     </div>
 </div>

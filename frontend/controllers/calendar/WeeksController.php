@@ -13,6 +13,7 @@ use common\components\main\Main;
 use common\components\pageTexts\PageTexts;
 use common\components\pdfCalendars\PDFCalendars;
 use common\components\urlCheck\UrlCheck;
+use common\componentsV2\calendars\Calendars;
 use Yii;
 use yii\web\Controller;
 
@@ -53,7 +54,8 @@ class WeeksController extends Controller
 
         $date = new Date();
         $dateData = $date->yearWeeks($yearURL . '-01-01');
-
+        ($dateToday = new \common\componentsV2\date\Date((new \DateTime())->format('Y-m-d')))->date()->year();
+        $calendars = new Calendars($dateToday->year->current);
         $country = new Country();
         $countryData = $country->data($languageID, $countryURL['defaultID']);
 
@@ -82,6 +84,7 @@ class WeeksController extends Controller
             'calendarByYear' => $calendarByYear,
             'calendarNameOfMonths' => $calendarNameOfMonths,
             'calendarNameOfDaysInWeek' => $calendarNameOfDaysInWeek,
+            'calendars' => $calendars,
 
         ]);
 
@@ -123,6 +126,10 @@ class WeeksController extends Controller
         $date = new Date();
         $dateData = $date->yearWeeks($yearURL . '-01-01');
 
+        ($date = new \common\componentsV2\date\Date($yearURL . '-01-01'))->date()->year()->month()->day()->week();
+        ($dateToday = new \common\componentsV2\date\Date((new \DateTime())->format('Y-m-d')))->date()->year()->month()->day()->week();
+        $calendars = new Calendars($dateToday->year->current);
+
         $country = new Country();
         $countryData = $country->data($languageID, $countryURL['defaultID']);
 
@@ -161,6 +168,8 @@ class WeeksController extends Controller
         return $this->render('week-page.min.php', [
 
             'dateData' => $dateData,
+            'date' => $date,
+            'dateToday' => $dateToday,
             'countryData' => $countryData,
             'holidaysData' => $holidaysData,
             'PDFCalendarsData' => $PDFCalendarsDataMerged,
@@ -168,6 +177,7 @@ class WeeksController extends Controller
             'calendarNameOfMonths' => $calendarNameOfMonths,
             'calendarNameOfDaysInWeek' => $calendarNameOfDaysInWeek,
             'weekURL' => $weekURL,
+            'calendars' => $calendars,
         ]);
 
     }

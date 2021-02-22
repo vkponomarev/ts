@@ -33,7 +33,7 @@
             <div class="current-date-one">
                 <div class="current-date-year">
                     <?php if ($seasonURL == 'winter') : ?>
-                       <?= Yii::t('app', 'Winter') ?>
+                        <?= Yii::t('app', 'Winter') ?>
                     <?php endif; ?>
                     <?php if ($seasonURL == 'spring') : ?>
                         <?= Yii::t('app', 'Spring') ?>
@@ -63,7 +63,10 @@
                 <a href="/<?= Yii::$app->language ?>/holidays/years/<?= $date->year->current ?>/">
                     <?= Yii::t('app', 'Holidays') ?>
                     <?= ' ' . Yii::t('app', 'in the world') ?>
-
+                </a>
+                <?= ' / ' ?>
+                <a href="/<?= Yii::$app->language ?>/holidays/days/today/">
+                    <?= Yii::t('app', 'Today') ?>
                 </a>
             </div>
             <div class="plate-links">

@@ -58,6 +58,10 @@
                 <a href="/<?= Yii::$app->language ?>/calendar/years/<?= $dateData['year']['current'] ?>/">
                     <?= Yii::t('app', 'Calendar'); ?>
                 </a>
+                <?= ' / ' ?>
+                <a href="/<?= Yii::$app->language ?>/calendar/weeks/days/today/">
+                    <?= Yii::t('app', 'Today') ?>
+                </a>
             </div>
             <div class="plate-links">
                 <div class="col-xs-6 plate-links-col ">
@@ -95,7 +99,23 @@
         </div>
     </div>
 </div>
-<br><br>
+<div class="row rflex">
+    <div class="col-xxs-12 plates">
+        <div class="plate-long">
+            <?php $linksCount = 0 ?>
+            <?php foreach ($calendars->links as $link): ?>
+                <?php $linksCount++ ?>
+                <a class="plate-a-margin" href="<?= $link['url'] ?>">
+                    <?= $link['name'] ?>
+                </a>
+                <?php if ($linksCount == count($calendars->links)) : ?>
+                <?php else: ?>
+                    <?= ' / ' ?>
+                <?php endif; ?>
+            <?php endforeach ?>
+        </div>
+    </div>
+</div>
 <hr>
 
 

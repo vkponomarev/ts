@@ -64,7 +64,10 @@
                     <a href="/<?= Yii::$app->language ?>/holidays/years/<?= $date->year->current ?>/<?= ($countryURL['url'] <> '') ? $countryURL['url'] . '/' : '' ?>/">
                         <?= Yii::t('app', 'Holidays'); ?>
                         <?= ($countryURL['url'] <> '') ? ' ' . $countryData['name_in'] : ' ' . Yii::t('app', 'in the world'); ?>
-
+                    </a>
+                    <?= ' / ' ?>
+                    <a href="/<?= Yii::$app->language ?>/holidays/days/today/">
+                        <?= Yii::t('app', 'Today') ?>
                     </a>
                 </div>
             <?php else: ?>

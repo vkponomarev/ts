@@ -5,6 +5,7 @@ namespace frontend\controllers\business;
 use common\components\calendar\Calendar;
 use common\components\countries\Countries;
 use common\components\country\Country;
+use common\componentsV2\calendars\Calendars;
 use common\componentsV2\date\Date;
 use common\components\getParams\GetParams;
 use common\components\holidays\Holidays;
@@ -29,7 +30,6 @@ class BusinessYearsController extends Controller
      */
     public function actionBusinessYearPage($yearURL, $countryURL)
     {
-
 
         $textID = '93'; // ID из таблицы pages
         $table = 'm_years'; // К какой таблице отностся данная страница
@@ -71,6 +71,8 @@ class BusinessYearsController extends Controller
         //$dateData = $date->yearBusiness($yearURL . '-01-01');
 
         ($date = new Date($yearURL . '-01-01'))->date()->year();
+        ($dateToday = new Date((new \DateTime())->format('Y-m-d')))->date()->year();
+        $calendars = new Calendars($dateToday->year->current);
 
         $countries = new Countries();
         $countriesData = $countries->data($languageID);
@@ -113,6 +115,7 @@ class BusinessYearsController extends Controller
             'calendarNameOfMonths' => $calendarNameOfMonths,
             'calendarNameOfDaysInWeek' => $calendarNameOfDaysInWeek,
             'countryURL' => $countryURL,
+            'calendars' => $calendars,
 
         ]);
 

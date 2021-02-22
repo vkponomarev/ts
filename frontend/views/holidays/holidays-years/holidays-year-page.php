@@ -64,9 +64,24 @@
                         <?= Yii::t('app', 'Holidays'); ?>
                         <?= ' ' . Yii::t('app', 'in the world'); ?>
                     </a>
+                    <?= ' / ' ?>
+                    <a href="/<?= Yii::$app->language ?>/holidays/days/today/">
+                        <?= Yii::t('app', 'Today') ?>
+                    </a>
                 </div>
-            <?php endif; ?>
+            <?php else: ?>
+                <div class="plate-header">
 
+                        <?= Yii::t('app', 'Holidays'); ?>
+                        <?= ' ' . Yii::t('app', 'in the world'); ?>
+                    
+                    <?= ' / ' ?>
+                    <a href="/<?= Yii::$app->language ?>/holidays/days/today/">
+                        <?= Yii::t('app', 'Today') ?>
+                    </a>
+                </div>
+
+            <?php endif; ?>
 
             <div class="plate-links">
                 <div class="col-xs-6 c-links-mp-months ">

@@ -24,6 +24,7 @@ use common\components\songs\Songs;
 use common\components\translation\Translation;
 use common\components\urlCheck\UrlCheck;
 use common\components\years\Years;
+use common\componentsV2\calendars\Calendars;
 use Yii;
 use yii\web\Controller;
 
@@ -79,6 +80,9 @@ class BusinessFortyMonthsController extends Controller
         $date = new Date();
         $dateData = $date->byMonthBusiness($monthURL['url'] . '-01');
 
+        ($dateToday = new \common\componentsV2\date\Date((new \DateTime())->format('Y-m-d')))->date()->year();
+        $calendars = new Calendars($dateToday->year->current);
+
         $countries = new Countries();
         $countriesData = $countries->data($languageID);
 
@@ -118,6 +122,7 @@ class BusinessFortyMonthsController extends Controller
             'calendarNameOfMonths' => $calendarNameOfMonths,
             'calendarNameOfDaysInWeek' => $calendarNameOfDaysInWeek,
             'countryURL' => $countryURL,
+            'calendars' => $calendars,
 
         ]);
 
