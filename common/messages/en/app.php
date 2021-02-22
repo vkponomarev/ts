@@ -628,5 +628,9 @@ return [
     'moon day' => 'moon day',
     'Calendar' => 'Calendar',
 
+    'Moon phases' => 'Moon phases',
+
+
+
     ];
 

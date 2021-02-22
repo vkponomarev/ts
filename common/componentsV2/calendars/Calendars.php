@@ -8,11 +8,14 @@ class Calendars
 
     public $links;
     public $businessLinks;
+    public $moonLinks;
+
 
     function __construct($year)
     {
         $this->links($year);
         $this->businessLinks($year);
+        $this->moonLinks($year);
     }
 
     private function links($year){
@@ -25,5 +28,9 @@ class Calendars
         return $this;
     }
 
+    private  function moonLinks($year){
+        $this->moonLinks = (new CalendarsMoonLinks())->calendars($year);
+        return $this;
+    }
 }
 

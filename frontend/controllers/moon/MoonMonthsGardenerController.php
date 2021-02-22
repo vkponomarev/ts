@@ -26,6 +26,7 @@ use common\components\songs\Songs;
 use common\components\translation\Translation;
 use common\components\urlCheck\UrlCheck;
 use common\components\years\Years;
+use common\componentsV2\calendars\Calendars;
 use Yii;
 use yii\web\Controller;
 
@@ -71,6 +72,9 @@ class MoonMonthsGardenerController extends Controller
         $date = new Date();
         $dateData = $date->byMonth($monthURL['url'] . '-01');
 
+        ($dateToday = new \common\componentsV2\date\Date((new \DateTime())->format('Y-m-d')))->date()->year();
+        $calendars = new Calendars($dateToday->year->current);
+
         $city = new City();
         $cityData = $city->byMoonCalendar($languageID, $getParams['city']);
 
@@ -105,7 +109,7 @@ class MoonMonthsGardenerController extends Controller
             'calendarByMonth' => $calendarByMonth,
             'calendarNameOfMonths' => $calendarNameOfMonths,
             'calendarNameOfDaysInWeek' => $calendarNameOfDaysInWeek,
-
+            'calendars' => $calendars,
         ]);
 
     }

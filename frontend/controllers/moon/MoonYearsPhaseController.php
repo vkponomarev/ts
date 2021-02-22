@@ -2,75 +2,59 @@
 
 namespace frontend\controllers\moon;
 
-use common\components\albums\Albums;
-use common\components\artist\Artist;
-use common\components\artists\Artists;
 use common\components\calendar\Calendar;
 use common\components\city\City;
 use common\components\countries\Countries;
 use common\components\country\Country;
 use common\components\date\Date;
-use common\components\featuring\Featuring;
-use common\components\firstLetter\FirstLetter;
-use common\components\genre\Genre;
-use common\components\genres\Genres;
 use common\components\getParams\GetParams;
 use common\components\holidays\Holidays;
+use common\components\holidaysTypes\HolidaysTypes;
 use common\components\main\Main;
-use common\components\moon\Moon;
-use common\components\noDB\NoDB;
 use common\components\pageTexts\PageTexts;
 use common\components\pdfCalendars\PDFCalendars;
-use common\components\song\Song;
-use common\components\songs\Songs;
-use common\components\translation\Translation;
 use common\components\urlCheck\UrlCheck;
-use common\components\years\Years;
 use common\componentsV2\calendars\Calendars;
 use Yii;
 use yii\web\Controller;
 
 
-class MoonMonthsGoodController extends Controller
+
+class MoonYearsPhaseController extends Controller
 {
 
-    public function actionMoonMonthGoodPage($monthURL, $dayNameURL)
+    public function actionMoonYearPhasePage($yearURL)
     {
 
 
-        $textID = '98'; // ID из таблицы pages
+        $textID = '198'; // ID из таблицы pages
         $table = 'm_years'; // К какой таблице отностся данная страница
         $mainUrl = 'years'; // Основной урл
 
         $urlCheck = new UrlCheck();
-        /**
-         * $monthURL['year']
-         * $monthURL['month']
-         * $monthURL['url']
-         */
-        $monthURL = $urlCheck->month($monthURL);
-        $urlCheck->moonGoodDay($dayNameURL);
+        $urlCheck->yearMoon($yearURL);
 
         $main = new Main();
         Yii::$app->params['language'] = $main->language(Yii::$app->language);
         Yii::$app->params['language']['all'] = $main->languages();
-        Yii::$app->params['canonical'] = $main->Canonical($monthURL['url'], $mainUrl);
-        Yii::$app->params['alternate'] = $main->Alternate($monthURL['url'], $mainUrl);
+        Yii::$app->params['canonical'] = $main->Canonical($yearURL, $mainUrl);
+        Yii::$app->params['alternate'] = $main->Alternate($yearURL, $mainUrl);
         Yii::$app->params['menu'] = $main->menu();
-
+        Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['current']['id']);
 
         $languageID = Yii::$app->params['language']['current']['id'];
         $citiesDefaultID = Yii::$app->params['language']['current']['cities_id'];
+        $year = $yearURL;
         $language = Yii::$app->params['language']['current']['url'];
 
-        $goodDays = new Moon();
-        $goodDays = $goodDays->days();
+        $holidays = new Holidays();
+        $holidaysRange = $holidays->range();
 
         $getParams = new GetParams();
-        $getParams = $getParams->byCalendarMonthsMoon($citiesDefaultID);
+        $getParams = $getParams->byCalendarYearsMoon($citiesDefaultID);
 
         $date = new Date();
-        $dateData = $date->byMonth($monthURL['url'] . '-01');
+        $dateData = $date->data($yearURL . '-01-01');
 
         ($dateToday = new \common\componentsV2\date\Date((new \DateTime())->format('Y-m-d')))->date()->year();
         $calendars = new Calendars($dateToday->year->current);
@@ -79,38 +63,31 @@ class MoonMonthsGoodController extends Controller
         $cityData = $city->byMoonCalendar($languageID, $getParams['city']);
 
         $calendar = new Calendar();
-        $calendarByMonth = $calendar->byMoonMonths($monthURL, $cityData);
-
+        $calendarByYear = $calendar->byMoonYears($year, $cityData);
+        $calendarChinese = $calendar->chineseByYear($year);
         $calendarNameOfMonths = $calendar->nameOfMonths();
         $calendarNameOfDaysInWeek = $calendar->nameOfDaysInWeek();
 
-        $PDFCalendars = new PDFCalendars();
-        $PDFCalendarsData = $PDFCalendars->yearlyMoonExists($monthURL['year'], $language);
-
         $pageTexts = new PageTexts();
-        $pageTextsID = $pageTexts->defineIdByCalendarMonthMoonGood($dayNameURL);
-        Yii::$app->params['text'] = $main->text($pageTextsID, $languageID);
-
-        $pageTextsMessages = $pageTexts->messagesByCalendarMonthMoon($dateData);
-        $pageTexts->updateByCalendarMonthMoon($pageTextsMessages, $dateData, $calendarNameOfMonths);
+        $pageTextsMessages = $pageTexts->messagesByCalendarYearMoon($calendarChinese, $dateData);
+        $pageTexts->updateByCalendarYearMoon($pageTextsMessages, $dateData);
 
         /*
                 $breadCrumbs = new Breadcrumbs();
                 Yii::$app->params['breadcrumbs'] = $breadCrumbs->year($yearData);
         */
 
-        if ($dayNameURL ==''){
-            $dayNameURL = 'daysByRatingCount';
-        }
+        $PDFCalendars = new PDFCalendars();
+        $PDFCalendarsData = $PDFCalendars->yearlyMoonExists($year, $language);
 
-        return $this->render('moon-month-good-page.min.php', [
+
+        return $this->render('moon-year-phase-page.min.php', [
 
             'dateData' => $dateData,
             'cityData' => $cityData,
-            'goodDays' => $goodDays,
-            'dayNameURL' => $dayNameURL,
             'PDFCalendarsData' => $PDFCalendarsData,
-            'calendarByMonth' => $calendarByMonth,
+            //'holidaysTypesData' => $holidaysTypesData,
+            'calendarByYear' => $calendarByYear,
             'calendarNameOfMonths' => $calendarNameOfMonths,
             'calendarNameOfDaysInWeek' => $calendarNameOfDaysInWeek,
             'calendars' => $calendars,

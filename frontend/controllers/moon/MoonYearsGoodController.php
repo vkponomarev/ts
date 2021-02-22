@@ -4,20 +4,17 @@ namespace frontend\controllers\moon;
 
 use common\components\calendar\Calendar;
 use common\components\city\City;
-use common\components\countries\Countries;
-use common\components\country\Country;
 use common\components\date\Date;
 use common\components\getParams\GetParams;
 use common\components\holidays\Holidays;
-use common\components\holidaysTypes\HolidaysTypes;
 use common\components\main\Main;
 use common\components\moon\Moon;
 use common\components\pageTexts\PageTexts;
 use common\components\pdfCalendars\PDFCalendars;
 use common\components\urlCheck\UrlCheck;
+use common\componentsV2\calendars\Calendars;
 use Yii;
 use yii\web\Controller;
-
 
 
 class MoonYearsGoodController extends Controller
@@ -60,6 +57,9 @@ class MoonYearsGoodController extends Controller
         $date = new Date();
         $dateData = $date->data($yearURL . '-01-01');
 
+        ($dateToday = new \common\componentsV2\date\Date((new \DateTime())->format('Y-m-d')))->date()->year();
+        $calendars = new Calendars($dateToday->year->current);
+
         $city = new City();
         $cityData = $city->byMoonCalendar($languageID, $getParams['city']);
 
@@ -84,11 +84,11 @@ class MoonYearsGoodController extends Controller
         $PDFCalendars = new PDFCalendars();
         $PDFCalendarsData = $PDFCalendars->yearlyMoonExists($year, $language);
 
-        if ($dayNameURL ==''){
+        if ($dayNameURL == '') {
             $dayNameURL = 'daysByRatingCount';
         }
 
-             return $this->render('moon-year-good-page.min.php', [
+        return $this->render('moon-year-good-page.min.php', [
 
             'dateData' => $dateData,
             'cityData' => $cityData,
@@ -99,6 +99,7 @@ class MoonYearsGoodController extends Controller
             'calendarByYear' => $calendarByYear,
             'calendarNameOfMonths' => $calendarNameOfMonths,
             'calendarNameOfDaysInWeek' => $calendarNameOfDaysInWeek,
+            'calendars' => $calendars,
         ]);
 
     }

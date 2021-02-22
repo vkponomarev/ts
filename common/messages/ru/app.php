@@ -628,5 +628,6 @@ return [
     'moon day' => 'лунный день',
     'Calendar' => 'Календарь',
 
+    'Moon phases' => 'Фазы луны',
 
 ];

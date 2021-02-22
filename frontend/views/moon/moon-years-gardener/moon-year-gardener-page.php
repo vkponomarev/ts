@@ -99,40 +99,14 @@ $moon = new \common\components\moon\Moon();
                 <hr>
             </div>
             <div class="plate-links">
-                <div class="col-xs-6 c-links-mp-months">
-                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/years/<?= $dateData['year']['current'] ?>/new-moon/">
-                        <?= Yii::t('app', 'New moon') ?>
-                    </a>
-                    <br>
-                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/years/<?= $dateData['year']['current'] ?>/waxing-moon/">
-                        <?= Yii::t('app', 'Waxing moon') ?>
-                    </a>
-                    <br>
-                </div>
-                <div class="col-xs-6 c-links-mp-months">
-                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/years/<?= $dateData['year']['current'] ?>/full-moon/">
-                        <?= Yii::t('app', 'Full moon') ?>
-                    </a>
-                    <br>
-                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/years/<?= $dateData['year']['current'] ?>/waning-moon/">
-                        <?= Yii::t('app', 'Waning moon') ?>
-                    </a>
-                    <br>
-                </div>
-            </div>
-
-            <div class="plate-links">
-                <hr>
-            </div>
-            <div class="plate-links">
-                <div class="col-xs-6 c-links-mp-months">
-                    <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $dateData['year']['current'] ?>/">
-                        <?= Yii::t('app', 'Auspicious days') ?>
+                <div class="col-xs-6 plate-links-col">
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/days/today/">
+                        <?= Yii::t('app', 'Moon day today') ?>
                     </a>
                 </div>
-                <div class="col-xs-6 c-links-mp-months">
-                    <a href="/<?= Yii::$app->language ?>/calendar/moon/gardener/years/<?= $dateData['year']['current'] ?>/">
-                        <?= Yii::t('app', 'Sowing calendar') ?>
+                <div class="col-xs-6 plate-links-col">
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/days/today/">
+                        <?= Yii::t('app', 'Moon phases today') ?>
                     </a>
                 </div>
             </div>
@@ -142,6 +116,25 @@ $moon = new \common\components\moon\Moon();
     </div>
 
 </div>
+
+<div class="row rflex">
+    <div class="col-xxs-12 plates">
+        <div class="plate-long">
+            <?php $moonLinksCount = 0 ?>
+            <?php foreach ($calendars->moonLinks as $link): ?>
+                <?php $moonLinksCount++ ?>
+                <a class="plate-a-margin" href="<?= $link['url'] ?>">
+                    <?= $link['name'] ?>
+                </a>
+                <?php if ($moonLinksCount == count($calendars->moonLinks)) : ?>
+                <?php else: ?>
+                    <?= ' / ' ?>
+                <?php endif; ?>
+            <?php endforeach ?>
+        </div>
+    </div>
+</div>
+
 <?php /***************************** */ ?>
 <?php /***************************** Ссылки на различеные направления благоприятных дней*/ ?>
 <?php /***************************** */ ?>

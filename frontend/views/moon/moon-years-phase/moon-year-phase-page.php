@@ -3,7 +3,7 @@
 /**
  * @var $this frontend\controllers\YearsController
  *
- * @var $calendarByMonth common\components\calendar\CalendarByMonth
+ * @var $calendarByYear common\components\calendar\CalendarByYear
  * @var $dateData common\components\date\DateData
  * @var $countriesData common\components\countries\CountriesData
  * @var $holidaysData common\components\holidays\HolidaysByCountryByYear array
@@ -14,12 +14,11 @@
  * @var $PDFCalendarsData common\components\PDFCalendars\PDFCalendarsYearlyExists
  * @var $getParamsByCalendarYears common\components\getParams\GetParamsByCalendarYears
  * @var $holidaysRange common\components\holidays\HolidaysRange
- * @var $countryURL array ['url','id','defaultID']
- *
- *
  */
 
+
 $moon = new \common\components\moon\Moon();
+
 ?>
 
 
@@ -28,19 +27,15 @@ $moon = new \common\components\moon\Moon();
 <hr>
 
 <div class="row">
-    <?php /***************************** */ ?>
-    <?php /***************************** Сегодняшний месяц*/ ?>
-    <?php /***************************** */ ?>
-
+    <?php /** Сегодняшний год */ ?>
     <div class="col-xxs-12 col-xs-6 current-date">
         <div class="current-date-div">
             <div class="current-date-one">
                 <div class="current-date-year">
-                    <?= $calendarNameOfMonths[$dateData['month']['numberSimple']] ?>
-
+                    <?= $dateData['year']['current'] ?>
                     <br>
                     <span class="current-date-month">
-                    <?= $dateData['year']['current'] ?>&nbsp;<?= Yii::t('app', 'year'); ?>
+                    <?= Yii::t('app', 'year'); ?>
                 </span>
 
                 </div>
@@ -59,26 +54,24 @@ $moon = new \common\components\moon\Moon();
     <div class="col-xxs-12 col-xs-6 plates">
         <div class="plate">
             <div class="plate-header">
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/years/<?= $dateData['year']['current'] ?>/">
-                    <?= Yii::t('app', 'Lunar Calendar'); ?>
-                </a>
+                <?= Yii::t('app', 'Moon phases'); ?>
             </div>
             <div class="plate-links">
                 <div class="col-xs-6 plate-links-col ">
-                    <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $dateData['year']['current'] ?>-01/"><?= $calendarNameOfMonths[1] ?></a><br>
-                    <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $dateData['year']['current'] ?>-02/"><?= $calendarNameOfMonths[2] ?></a><br>
-                    <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $dateData['year']['current'] ?>-03/"><?= $calendarNameOfMonths[3] ?></a><br>
-                    <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $dateData['year']['current'] ?>-04/"><?= $calendarNameOfMonths[4] ?></a><br>
-                    <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $dateData['year']['current'] ?>-05/"><?= $calendarNameOfMonths[5] ?></a><br>
-                    <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $dateData['year']['current'] ?>-06/"><?= $calendarNameOfMonths[6] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phase/months/<?= $dateData['year']['current'] ?>-01/"><?= $calendarNameOfMonths[1] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phase/months/<?= $dateData['year']['current'] ?>-02/"><?= $calendarNameOfMonths[2] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phase/months/<?= $dateData['year']['current'] ?>-03/"><?= $calendarNameOfMonths[3] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phase/months/<?= $dateData['year']['current'] ?>-04/"><?= $calendarNameOfMonths[4] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phase/months/<?= $dateData['year']['current'] ?>-05/"><?= $calendarNameOfMonths[5] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phase/months/<?= $dateData['year']['current'] ?>-06/"><?= $calendarNameOfMonths[6] ?></a><br>
                 </div>
                 <div class="col-xs-6 plate-links-col">
-                    <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $dateData['year']['current'] ?>-07/"><?= $calendarNameOfMonths[7] ?></a><br>
-                    <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $dateData['year']['current'] ?>-08/"><?= $calendarNameOfMonths[8] ?></a><br>
-                    <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $dateData['year']['current'] ?>-09/"><?= $calendarNameOfMonths[9] ?></a><br>
-                    <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $dateData['year']['current'] ?>-10/"><?= $calendarNameOfMonths[10] ?></a><br>
-                    <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $dateData['year']['current'] ?>-11/"><?= $calendarNameOfMonths[11] ?></a><br>
-                    <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $dateData['year']['current'] ?>-12/"><?= $calendarNameOfMonths[12] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phase/months/<?= $dateData['year']['current'] ?>-07/"><?= $calendarNameOfMonths[7] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phase/months/<?= $dateData['year']['current'] ?>-08/"><?= $calendarNameOfMonths[8] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phase/months/<?= $dateData['year']['current'] ?>-09/"><?= $calendarNameOfMonths[9] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phase/months/<?= $dateData['year']['current'] ?>-10/"><?= $calendarNameOfMonths[10] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phase/months/<?= $dateData['year']['current'] ?>-11/"><?= $calendarNameOfMonths[11] ?></a><br>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/phase/months/<?= $dateData['year']['current'] ?>-12/"><?= $calendarNameOfMonths[12] ?></a><br>
                 </div>
             </div>
             <div class="plate-links">
@@ -97,12 +90,55 @@ $moon = new \common\components\moon\Moon();
                 </div>
             </div>
 
-
         </div>
     </div>
 
 
+    <?php
+    /*
+     *
+     * <div class="col-xxs-12 col-xs-6 c-links-mp">
+<div class="c-links-block c-links-mp-header c-links-mp-header-link">
+    <?= Yii::t('app', 'Choose the city'); ?>
 </div>
+<div>
+    $template = '<div class="search-value-div"><p class="search-value">{{value}}</p>';
+    echo \kartik\typeahead\Typeahead::widget([
+        'name' => 'typeahead',
+        'options' => ['placeholder' => $cityData['name']
+        ],
+        'pluginOptions' => ['hint' => true, 'highlight' => true, 'minLength' => 3],
+        'pluginEvents' => [
+            "typeahead:select" => "function(ev, suggestion) {
+                if (typeof suggestion.id === \"undefined\" || suggestion.id === null || suggestion.id ===  \"\") {
+                    //here u can open search page
+                } else {
+                    window.location = '/" . Yii::$app->language . "/calendar/moon/years/" . $dateData['year']['current'] . "/?city=' + suggestion.id + '';
+                }
+            }"
+        ],
+        'dataset' => [
+            [
+                'datumTokenizer' => "Bloodhound.tokenizers.obj.whitespace('value')",
+                'display' => 'value',
+                'limit' => 10,
+                'templates' => [
+                    'notFound' => '<div class="text-danger" style="padding:0 8px">' . Yii::t('app', 'No matches found.') . '</div>',
+                    'suggestion' => new \yii\web\JsExpression("Handlebars.compile('{$template}')")
+                ],
+                'remote' => [
+                    'url' => \yii\helpers\Url::to(['search/search-city']) . '?q=%QUERY',
+                    'wildcard' => '%QUERY'
+                ]
+            ],
+        ]
+    ]);</div>*/
+
+    ?>
+
+
+</div>
+
 <div class="row rflex">
     <div class="col-xxs-12 plates">
         <div class="plate-long">
@@ -120,50 +156,38 @@ $moon = new \common\components\moon\Moon();
         </div>
     </div>
 </div>
+
 <hr>
 
-<?php /***************************** */ ?>
-<?php /***************************** Верхняя плашка календаря с месяцами туда сюда*/ ?>
-<?php /***************************** */ ?>
 
+<?php /***************************** */ ?>
+<?php /***************************** Верхняя плашка календаря с годами туда сюда*/ ?>
+<?php /***************************** */ ?>
 
 <div class="row">
     <div class="col-xxs-12 col-xs-4 c-prev-next-left">
-        <?php if ($dateData['year']['previous'] == '0000' && $dateData['month']['numberSimple'] == 1):?>
+        <?php if ($dateData['year']['previous'] == '0100'): ?>
 
         <?php else: ?>
-            <?php if ($dateData['month']['numberSimple'] == 1): ?>
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $dateData['year']['previous'] ?>-<?= str_pad(12, 2, '0', STR_PAD_LEFT) ?>/">
-                    <?= $calendarNameOfMonths[12] ?>
-                </a>
-            <?php else: ?>
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $dateData['year']['current'] ?>-<?= str_pad($dateData['month']['numberSimple'] - 1, 2, '0', STR_PAD_LEFT) ?>/">
-                    <?= $calendarNameOfMonths[$dateData['month']['numberSimple'] - 1] ?>
-                </a>
-            <?php endif; ?>
+            <a href="/<?= Yii::$app->language ?>/calendar/moon/years/<?= $dateData['year']['previous'] ?>/">
+                <?= $dateData['year']['previous'] ?>
+            </a>
         <?php endif; ?>
     </div>
     <div class="col-xxs-12 col-xs-4 c-prev-next-center">
-        <?= $calendarNameOfMonths[$dateData['month']['numberSimple']] ?>
-    </div>
 
+        <?= $dateData['year']['current'] ?>
+
+    </div>
     <div class="col-xxs-12 col-xs-4 c-prev-next-right">
 
-        <?php if ($dateData['year']['current'] == '9999' && $dateData['month']['numberSimple'] == 12):?>
+        <?php if ($dateData['year']['current'] == '9998'): ?>
 
         <?php else: ?>
-            <?php if ($dateData['month']['numberSimple'] == 12): ?>
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $dateData['year']['next'] ?>-<?= str_pad(1, 2, '0', STR_PAD_LEFT) ?>/">
-                    <?= $calendarNameOfMonths[1] ?>
-                </a>
-            <?php else: ?>
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $dateData['year']['current'] ?>-<?= str_pad($dateData['month']['numberSimple'] + 1, 2, '0', STR_PAD_LEFT) ?>/">
-                    <?= $calendarNameOfMonths[$dateData['month']['numberSimple'] + 1] ?>
-                </a>
-            <?php endif; ?>
+            <a href="/<?= Yii::$app->language ?>/calendar/moon/years/<?= $dateData['year']['next'] ?>/">
+                <?= $dateData['year']['next'] ?>
+            </a>
         <?php endif; ?>
-
-
     </div>
 </div>
 <hr>
@@ -177,31 +201,33 @@ $moon = new \common\components\moon\Moon();
     </div>
     <br>
 <?php endif; ?>
+
 <?php /***************************** */ ?>
-<?php /***************************** Календарь с отмеченными праздниками конкретнрой страны*/ ?>
+<?php /***************************** Лунный календарь*/ ?>
 <?php /***************************** */ ?>
 
-
-<div class="row rflex myear">
+<div class="row rflex year">
     <?php
-    $countMonths = $dateData['month']['numberSimple'] - 1;
+    $countMonths = 0;
     $countWeeks = 0;
-    //(new \common\components\dump\Dump())->printR($calendarByMonth);die;
-
-
-    foreach ($calendarByMonth['calendar'] as $months) :?>
-
+    $countMoonDay = 0;
+    //(new \common\components\dump\Dump())->printR($calendarByYear['moonPhases']['moonThirdQuarter']);
+    //number_format($week[$i]['moonPhase']['phase'], 2, '.', ' ');
+    foreach ($calendarByYear['calendar'] as $key => $months) :?>
         <?php $countMonths++; ?>
-        <div class="mmonth col-xxs-12">
-            <div class="mmonth-name">
-
-                <?= $calendarNameOfMonths[$countMonths]; ?>
+        <div class="month col-xxs-12 col-xs-6 col-sm-4 col-md-3">
+            <div class="month-name">
+            <span class="fa fa-calendar">
+                </span>
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $dateData['year']['current'] ?>-<?= str_pad($countMonths, 2, '0', STR_PAD_LEFT) ?>/">
+                    <?= $calendarNameOfMonths[$countMonths]; ?>
+                </a>
 
             </div>
 
-            <div class="mweek-name">
+            <div class="week-name">
                 <?php for ($i = 1; $i <= 7; $i++): ?>
-                    <div class="mday-name">
+                    <div class="day-name">
                         <?= $calendarNameOfDaysInWeek[$i]; ?>
                     </div>
                 <?php endfor; ?>
@@ -209,24 +235,25 @@ $moon = new \common\components\moon\Moon();
 
 
             <?php foreach ($months as $week): ?>
-                <div class="mweek">
+                <?php $countWeeks++; ?>
+                <div class="week">
                     <?php for ($i = 1; $i <= 5; $i++): ?>
 
                         <?php if (isset($week[$i]['monthDay'])): ?>
 
 
-                                <div class="mday">
+                            <div class="day">
                                     <span>
-                                   <?= $week[$i]['monthDay']; ?><br>
+                                    <?= $week[$i]['monthDay']; ?><br>
                                          <img width="18"
-                                              src="/pictures/moon-phases/<?= $moon->pictures($week[$i], $calendarByMonth['moonPhases']) ?>"><br>
-                                    <?= $calendarByMonth['moonDay'][$week[$i]['date']]; ?>
+                                              src="/pictures/moon-phases/<?= $moon->pictures($week[$i], $calendarByYear['moonPhases']) ?>"><br>
+                                    <?= $calendarByYear['moonDay'][$week[$i]['date']]; ?>
 
                                     </span>
-                                </div>
+                            </div>
 
                         <?php else: ?>
-                            <div class="mno-day">
+                            <div class="no-day">
                             <span>
 
                             </span>
@@ -237,18 +264,16 @@ $moon = new \common\components\moon\Moon();
                     <?php for ($i = 6; $i <= 7; $i++): ?>
                         <?php if (isset($week[$i]['monthDay'])): ?>
 
-                                <div class="mday-off">
+                            <div class="day-off">
                                     <span>
                                     <?= $week[$i]['monthDay']; ?><br>
                                          <img width="18"
-                                              src="/pictures/moon-phases/<?= $moon->pictures($week[$i], $calendarByMonth['moonPhases']) ?>"><br>
-                                    <?= $calendarByMonth['moonDay'][$week[$i]['date']]; ?>
-
+                                              src="/pictures/moon-phases/<?= $moon->pictures($week[$i], $calendarByYear['moonPhases']) ?>"><br>
+                                    <?= $calendarByYear['moonDay'][$week[$i]['date']]; ?>
                                     </span>
-                                </div>
-
+                            </div>
                         <?php else: ?>
-                            <div class="mno-day">
+                            <div class="no-day">
                             <span>
 
                             </span>
@@ -273,24 +298,23 @@ $moon = new \common\components\moon\Moon();
 
 <a name="moon-phases-<?= $dateData['year']['current'] ?>"></a>
 <h2 class="main-page-h1">
-    <?= Yii::t('app', 'Moon phases for {month} {year}', [
+    <?= Yii::t('app', 'Moon phases for {year}', [
         'year' => $dateData['year']['current'],
-        'month' => $calendarNameOfMonths[$dateData['month']['numberSimple']],
     ]) ?>
 </h2>
 
 <br><br>
 <div class="row rflex">
 
-    <?php foreach ($calendarByMonth['moonMonth'] as $moonMonth): ?>
+    <?php foreach ($calendarByYear['moonMonth'] as $moonMonth): ?>
         <?php if (isset($moonMonth['start']) && isset($moonMonth['end'])) : ?>
             <?php //$moonMonthStart = (new \DateTime($moonMonth['start']))->format('Y-m-d'); ?>
             <?php //$moonMonthEnd = (new \DateTime($moonMonth['end']))->format('Y-m-d'); ?>
 
-            <div class="col-xxs-12 col-xs-6 col-sm-6 moon-month">
+            <div class="col-xxs-12 col-xs-6 col-md-6 moon-month">
                 <table class="moon-phases-table">
 
-                    <?php foreach ($calendarByMonth['moonPhases'] as $moonPhaseName => $moonPhase): ?>
+                    <?php foreach ($calendarByYear['moonPhases'] as $moonPhaseName => $moonPhase): ?>
 
                         <?php foreach ($moonPhase as $moonPhaseDate => $value): ?>
                             <?php //$moonPhaseDate = (new \DateTime($moonPhaseDate))->format('Y-m-d'); ?>
@@ -469,23 +493,20 @@ $moon = new \common\components\moon\Moon();
 <br>
 <hr>
 
-
-
 <?php /***************************** */ ?>
 <?php /***************************** Ссылки на PDF календари*/ ?>
 <?php /***************************** */ ?>
 
+
 <?php if ($PDFCalendarsData['exists']): ?>
     <br>
 
-        <a name="download-calendar-<?= $dateData['year']['current'] ?>"></a>
-        <h2 class="main-page-h1">
-            <?= Yii::t('app', 'Download and print PDF lunar calendar (moon phases) for {month} {year}', [
-                'year' => $dateData['year']['current'],
-                'month' => $calendarNameOfMonths[$dateData['month']['numberSimple']],
-            ]) ?>
-        </h2>
-
+    <a name="download-calendar-<?= $dateData['year']['current'] ?>"></a>
+    <h2 class="main-page-h1">
+        <?= Yii::t('app', 'Download and print PDF lunar calendar (moon phases) for {year}', [
+            'year' => $dateData['year']['current'],
+        ]) ?>
+    </h2>
     <br><br>
 
     <div class="row rflex">
@@ -498,6 +519,7 @@ $moon = new \common\components\moon\Moon();
                     <?php if ($key == 'moonLNoHolidays'): ?>
                         <div class="pdf-header"><?= Yii::t('app', 'Landscape lunar calendar for the year') ?></div>
                     <?php endif; ?>
+
 
                     <a href="<?= $pdf['imgPathRelative'] ?>" class="lightzoom">
                         <img class="c-download-img " alt="" src="<?= $pdf['imgPathRelative'] ?>" width="100%">

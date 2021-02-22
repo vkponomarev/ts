@@ -11,6 +11,7 @@ use common\components\holidays\Holidays;
 use common\components\main\Main;
 use common\components\pageTexts\PageTexts;
 use common\components\urlCheck\UrlCheck;
+use common\componentsV2\calendars\Calendars;
 use common\componentsV2\date\Date;
 use Yii;
 use yii\web\Controller;
@@ -51,7 +52,9 @@ class MoonDaysPhasesController extends Controller
 
 
         ($date = new Date($check['date']))->date()->year()->month()->week();
-        ($dateToday = new Date((new \DateTime())->format('Y-m-d')))->date();
+        ($dateToday = new Date((new \DateTime())->format('Y-m-d')))->date()->year();
+
+        $calendars = new Calendars($dateToday->year->current);
 
         $monthURL['year'] = $date->year->current;
         $monthURL['month'] = $date->month->current;
@@ -88,7 +91,7 @@ class MoonDaysPhasesController extends Controller
             'holidaysRange' => $holidaysRange,
             'calendarNameOfMonths' => $calendarNameOfMonths,
             'calendarNameOfDaysInWeek' => $calendarNameOfDaysInWeek,
-
+            'calendars' => $calendars,
 
         ]);
 

@@ -17,7 +17,6 @@ use common\components\genres\Genres;
 use common\components\getParams\GetParams;
 use common\components\holidays\Holidays;
 use common\components\main\Main;
-use common\components\moon\Moon;
 use common\components\noDB\NoDB;
 use common\components\pageTexts\PageTexts;
 use common\components\pdfCalendars\PDFCalendars;
@@ -31,16 +30,18 @@ use Yii;
 use yii\web\Controller;
 
 
-class MoonMonthsGoodController extends Controller
+class MoonMonthsPhaseController extends Controller
 {
 
-    public function actionMoonMonthGoodPage($monthURL, $dayNameURL)
+    public function actionMoonMonthPhasePage($monthURL)
     {
 
 
-        $textID = '98'; // ID из таблицы pages
+        $textID = '203'; // ID из таблицы pages
         $table = 'm_years'; // К какой таблице отностся данная страница
         $mainUrl = 'years'; // Основной урл
+
+
 
         $urlCheck = new UrlCheck();
         /**
@@ -49,7 +50,11 @@ class MoonMonthsGoodController extends Controller
          * $monthURL['url']
          */
         $monthURL = $urlCheck->month($monthURL);
-        $urlCheck->moonGoodDay($dayNameURL);
+        /**
+         * $countryURL['url']
+         * $countryURL['id']
+         */
+
 
         $main = new Main();
         Yii::$app->params['language'] = $main->language(Yii::$app->language);
@@ -62,9 +67,6 @@ class MoonMonthsGoodController extends Controller
         $languageID = Yii::$app->params['language']['current']['id'];
         $citiesDefaultID = Yii::$app->params['language']['current']['cities_id'];
         $language = Yii::$app->params['language']['current']['url'];
-
-        $goodDays = new Moon();
-        $goodDays = $goodDays->days();
 
         $getParams = new GetParams();
         $getParams = $getParams->byCalendarMonthsMoon($citiesDefaultID);
@@ -88,8 +90,8 @@ class MoonMonthsGoodController extends Controller
         $PDFCalendarsData = $PDFCalendars->yearlyMoonExists($monthURL['year'], $language);
 
         $pageTexts = new PageTexts();
-        $pageTextsID = $pageTexts->defineIdByCalendarMonthMoonGood($dayNameURL);
-        Yii::$app->params['text'] = $main->text($pageTextsID, $languageID);
+        //$pageTextsID = $pageTexts->defineIdByCalendarMonth($holidaysData, $PDFCalendarsData);
+        Yii::$app->params['text'] = $main->text($textID, $languageID);
 
         $pageTextsMessages = $pageTexts->messagesByCalendarMonthMoon($dateData);
         $pageTexts->updateByCalendarMonthMoon($pageTextsMessages, $dateData, $calendarNameOfMonths);
@@ -99,16 +101,10 @@ class MoonMonthsGoodController extends Controller
                 Yii::$app->params['breadcrumbs'] = $breadCrumbs->year($yearData);
         */
 
-        if ($dayNameURL ==''){
-            $dayNameURL = 'daysByRatingCount';
-        }
-
-        return $this->render('moon-month-good-page.min.php', [
+        return $this->render('moon-month-phase-page.min.php', [
 
             'dateData' => $dateData,
             'cityData' => $cityData,
-            'goodDays' => $goodDays,
-            'dayNameURL' => $dayNameURL,
             'PDFCalendarsData' => $PDFCalendarsData,
             'calendarByMonth' => $calendarByMonth,
             'calendarNameOfMonths' => $calendarNameOfMonths,

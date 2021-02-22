@@ -81,18 +81,11 @@ $moon = new \common\components\moon\Moon();
             <div class="plate-links">
                 <hr>
             </div>
-
             <div class="plate-links">
                 <div class="col-xs-6 plate-links-col">
-                    <a href="/<?= Yii::$app->language ?>/calendar/moon/good/years/<?= $date->year->current ?>/">
-                        <?= Yii::t('app', 'Auspicious days') ?>
+                    <a href="/<?= Yii::$app->language ?>/calendar/moon/days/today/">
+                        <?= Yii::t('app', 'Moon day today') ?>
                     </a>
-                    <br>
-                    <a href="/<?= Yii::$app->language ?>/calendar/moon/gardener/years/<?= $date->year->current ?>/">
-                        <?= Yii::t('app', 'Sowing calendar') ?>
-                    </a>
-                    <br>
-
                    </div>
                 <div class="col-xs-6 plate-links-col">
                     <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/days/today/">
@@ -103,6 +96,23 @@ $moon = new \common\components\moon\Moon();
 
         </div>
 
+    </div>
+</div>
+<div class="row rflex">
+    <div class="col-xxs-12 plates">
+        <div class="plate-long">
+            <?php $moonLinksCount = 0 ?>
+            <?php foreach ($calendars->moonLinks as $link): ?>
+                <?php $moonLinksCount++ ?>
+                <a class="plate-a-margin" href="<?= $link['url'] ?>">
+                    <?= $link['name'] ?>
+                </a>
+                <?php if ($moonLinksCount == count($calendars->moonLinks)) : ?>
+                <?php else: ?>
+                    <?= ' / ' ?>
+                <?php endif; ?>
+            <?php endforeach ?>
+        </div>
     </div>
 </div>
 <hr>

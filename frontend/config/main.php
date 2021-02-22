@@ -268,6 +268,9 @@ return [
                 '/calendar/moon/months/<monthURL>' => 'moon/moon-months/moon-month-page',
                 '/calendar/moon/years/<yearURL:\d{4}>' => 'moon/moon-years/moon-year-page',
 
+                '/calendar/moon/phase/months/<monthURL>' => 'moon/moon-months-phase/moon-month-phase-page',
+                '/calendar/moon/phase/years/<yearURL:\d{4}>' => 'moon/moon-years-phase/moon-year-phase-page',
+
                 '/calendar/weeks/<yearURL:\d{4}>' => 'calendar/weeks/year-weeks-page',
                 '/calendar/weeks/<yearURL:\d{4}>/<weekURL:\d{2}>' => 'calendar/weeks/week-page',
 
