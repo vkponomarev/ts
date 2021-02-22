@@ -53,8 +53,10 @@ class WeeksDaysController extends Controller
 
 
         ($date = new Date($check['date']))->date()->year()->month()->day()->week();
+
         ($dateToday = new Date((new \DateTime())->format('Y-m-d')))->date()->year();
         $calendars = new Calendars($dateToday->year->current);
+
         $zodiacs = new Zodiacs();
         $zodiacs->zodiacByDay('2021-' . $date->month->current . '-' . $date->day->current);
         $zodiacs->zodiac($zodiacs->zodiacByDay->url);

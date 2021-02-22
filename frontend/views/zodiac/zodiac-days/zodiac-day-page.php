@@ -37,7 +37,7 @@ $moon = new \common\components\moon\Moon();
                     <img class="eastern-pic" width="80"
                          src="/pictures/zodiac/<?= $zodiacs->zodiac->picture; ?>.png"
                          alt="<?= Yii::$app->params['text']['h1'] ?>">
-                </span>
+                    </span>
 
                 </div>
             </div>
@@ -79,7 +79,14 @@ $moon = new \common\components\moon\Moon();
                     <a href="/<?= Yii::$app->language ?>/calendar/zodiac/months/<?= $date->year->current ?>-12/"><?= $calendarNameOfMonths[12] ?></a><br>
                 </div>
             </div>
-
+            <div class="plate-links">
+                <hr>
+            </div>
+            <div class="plate-links">
+                <a href="/<?= Yii::$app->language ?>/zodiac/">
+                    <?= Yii::t('app', 'Zodiac signs') ?>
+                </a>
+            </div>
         </div>
     </div>
 </div>
@@ -91,14 +98,16 @@ $moon = new \common\components\moon\Moon();
                      src="/pictures/zodiac/<?= $zodiacs->pictures[$zodiacID]; ?>.png"
                      alt="<?= $zodiacs->texts->namesCapital[$zodiacID]; ?>">
                 <?php if ($zodiacs->zodiac->id == $zodiacID) : ?>
-                    <a class="plate-piece-current" href="/<?= Yii::$app->language ?>/zodiac/<?= $zodiacs->urls->ids[$zodiacID]; ?>/">
+                    <a class="plate-piece-current"
+                       href="/<?= Yii::$app->language ?>/zodiac/<?= $zodiacs->urls->ids[$zodiacID]; ?>/">
                         <?= $zodiacs->texts->namesCapital[$zodiacID]; ?>
                     </a>
                 <?php else: ?>
 
-                <a class="plate-a-margin" href="/<?= Yii::$app->language ?>/zodiac/<?= $zodiacs->urls->ids[$zodiacID]; ?>/">
-                    <?= $zodiacs->texts->namesCapital[$zodiacID]; ?>
-                </a>
+                    <a class="plate-a-margin"
+                       href="/<?= Yii::$app->language ?>/zodiac/<?= $zodiacs->urls->ids[$zodiacID]; ?>/">
+                        <?= $zodiacs->texts->namesCapital[$zodiacID]; ?>
+                    </a>
                 <?php endif; ?>
             <?php endforeach ?>
         </div>

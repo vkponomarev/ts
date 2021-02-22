@@ -49,36 +49,57 @@
             </div>
         </div>
     </div>
-    <div class="col-xxs-12 col-xs-6 c-links-mp">
-        <div class="c-links-block">
-            <div class="col-xs-6 c-links-mp-months">
-                <?php foreach (range(1, 6) as $id): ?>
-                    <div>
-                        <img class="eastern-pic" width="30"
-                             src="/pictures/eastern-animals/<?= $eastern->animals->pictures[$id]; ?>.png"
-                             alt="<?= $eastern->text->names[$id]; ?>">
-                        <a href="/calendar/eastern/animals/<?= $eastern->animals->urls[$id] ?>/">
-                            <?= $eastern->text->names[$id]; ?>
-                        </a>
-                    </div>
-                <?php endforeach ?>
+    <div class="col-xxs-12 col-xs-6 plates">
+        <div class="plate">
+            <div class="plate-header">
+                <?= Yii::t('app', 'Eastern calendar'); ?>
             </div>
-            <div class="col-xs-6 c-links-mp-months">
-                <?php foreach (range(7, 12) as $id): ?>
-                    <div>
-                        <img class="eastern-pic" width="30"
-                             src="/pictures/eastern-animals/<?= $eastern->animals->pictures[$id]; ?>.png"
-                             alt="<?= $eastern->text->names[$id]; ?>">
-                        <a href="/calendar/eastern/animals/<?= $eastern->animals->urls[$id] ?>/">
-                            <?= $eastern->text->names[$id]; ?>
-                        </a>
-                    </div>
-                <?php endforeach ?>
+            <div class="plate-links">
+                <div class="col-xs-6 c-links-mp-months">
+                    <?php foreach (range(1, 6) as $id): ?>
+                        <div>
+                            <img class="eastern-pic" width="25"
+                                 src="/pictures/eastern-animals/<?= $eastern->animals->pictures[$id]; ?>.png"
+                                 alt="<?= $eastern->text->names[$id]; ?>">
+                            <a href="/calendar/eastern/animals/<?= $eastern->animals->urls[$id] ?>/">
+                                <?= $eastern->text->names[$id]; ?>
+                            </a>
+                        </div>
+                    <?php endforeach ?>
+                </div>
+                <div class="col-xs-6 c-links-mp-months">
+                    <?php foreach (range(7, 12) as $id): ?>
+                        <div>
+                            <img class="eastern-pic" width="25"
+                                 src="/pictures/eastern-animals/<?= $eastern->animals->pictures[$id]; ?>.png"
+                                 alt="<?= $eastern->text->names[$id]; ?>">
+                            <a href="/calendar/eastern/animals/<?= $eastern->animals->urls[$id] ?>/">
+                                <?= $eastern->text->names[$id]; ?>
+                            </a>
+                        </div>
+                    <?php endforeach ?>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
+<div class="row rflex">
+    <div class="col-xxs-12 plates">
+        <div class="plate-long">
+            <?php $linksCount = 0 ?>
+            <?php foreach ($calendars->links as $link): ?>
+                <?php $linksCount++ ?>
+                <a class="plate-a-margin" href="<?= $link['url'] ?>">
+                    <?= $link['name'] ?>
+                </a>
+                <?php if ($linksCount == count($calendars->links)) : ?>
+                <?php else: ?>
+                    <?= ' / ' ?>
+                <?php endif; ?>
+            <?php endforeach ?>
+        </div>
+    </div>
+</div>
 <hr>
 
 <br>

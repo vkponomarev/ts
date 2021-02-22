@@ -5,6 +5,7 @@ namespace frontend\controllers\eastern;
 use common\components\calendar\Calendar;
 use common\components\countries\Countries;
 use common\components\country\Country;
+use common\componentsV2\calendars\Calendars;
 use common\componentsV2\date\Date;
 use common\components\getParams\GetParams;
 use common\components\holidays\Holidays;
@@ -25,7 +26,6 @@ class EasternController extends Controller
     public function actionEasternPage()
     {
 
-
         $textID = '229'; // ID из таблицы pages
         $table = 'm_years'; // К какой таблице отностся данная страница
         $mainUrl = 'calendar/eastern'; // Основной урл
@@ -42,6 +42,10 @@ class EasternController extends Controller
 
         ($eastern = new Eastern())->range()->calendar()->text()->animals();
 
+
+        ($dateToday = new \common\componentsV2\date\Date((new \DateTime())->format('Y-m-d')))->date()->year();
+        $calendars = new Calendars($dateToday->year->current);
+
         Yii::$app->params['text'] = $main->text($textID, $languageID);
 
 
@@ -55,6 +59,7 @@ class EasternController extends Controller
 
 
             'eastern' => $eastern,
+            'calendars' => $calendars,
 
 
         ]);

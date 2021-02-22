@@ -5,6 +5,7 @@ namespace frontend\controllers\eastern;
 use common\components\calendar\Calendar;
 use common\components\countries\Countries;
 use common\components\country\Country;
+use common\componentsV2\calendars\Calendars;
 use common\componentsV2\date\Date;
 use common\components\getParams\GetParams;
 use common\components\holidays\Holidays;
@@ -61,6 +62,9 @@ class EasternAnimalsController extends Controller
         Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['current']['id']);
         $pageTexts->updateByCalendarEasternAnimal($eastern);
 
+        ($dateToday = new \common\componentsV2\date\Date((new \DateTime())->format('Y-m-d')))->date()->year();
+        $calendars = new Calendars($dateToday->year->current);
+
         /*
                 $breadCrumbs = new Breadcrumbs();
                 Yii::$app->params['breadcrumbs'] = $breadCrumbs->year($yearData);
@@ -73,7 +77,7 @@ class EasternAnimalsController extends Controller
         return $this->render('eastern-animal-page.min.php', [
 
             'eastern' => $eastern,
-
+            'calendars' => $calendars,
 
         ]);
 

@@ -5,6 +5,7 @@ namespace frontend\controllers\zodiac;
 use common\components\calendar\Calendar;
 use common\components\countries\Countries;
 use common\components\country\Country;
+use common\componentsV2\calendars\Calendars;
 use common\componentsV2\date\Date;
 use common\components\getParams\GetParams;
 use common\components\holidays\Holidays;
@@ -51,8 +52,15 @@ class ZodiacMonthsController extends Controller
         Yii::$app->params['alternate'] = $main->Alternate('', $mainUrl);
         Yii::$app->params['menu'] = $main->menu();
 
-        $zodiacs = new Zodiacs();
+
         ($date = new Date($url['url'] . '-01'))->date()->year()->month();
+
+        ($dateToday = new Date((new \DateTime())->format('Y-m-d')))->date()->year()->month()->day();
+        $zodiacs = new Zodiacs();
+        $zodiacs->zodiacByDay('2021-' . $dateToday->month->current . '-' . $dateToday->day->current);
+        $zodiacs->zodiac($zodiacs->zodiacByDay->url);
+
+        $calendars = new Calendars($dateToday->year->current);
 
         $calendar = new Calendar();
         $calendarByMonth = $calendar->byZodiacMonth($url, $zodiacs->ranges);
@@ -81,7 +89,7 @@ class ZodiacMonthsController extends Controller
             'calendarByMonth' => $calendarByMonth,
             'calendarNameOfMonths' => $calendarNameOfMonths,
             'calendarNameOfDaysInWeek' => $calendarNameOfDaysInWeek,
-
+            'calendars' => $calendars,
         ]);
 
     }

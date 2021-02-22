@@ -5,6 +5,7 @@ namespace frontend\controllers\zodiac;
 use common\components\calendar\Calendar;
 use common\components\countries\Countries;
 use common\components\country\Country;
+use common\componentsV2\calendars\Calendars;
 use common\componentsV2\colors\Colors;
 use common\componentsV2\date\Date;
 use common\components\getParams\GetParams;
@@ -65,6 +66,13 @@ class ZodiacSignsController extends Controller
         $pageTexts->updateByCalendarZodiacSign($zodiacs);
 
         ($date = new Date((new \DateTime())->format('Y-m-d')))->year();
+
+        ($dateToday = new Date((new \DateTime())->format('Y-m-d')))->date()->year()->month()->day();
+        $zodiacs->zodiacByDay('2021-' . $dateToday->month->current . '-' . $dateToday->day->current);
+
+        $calendars = new Calendars($dateToday->year->current);
+
+
         $planets = new Planets();
         $elements = new Elements();
         $stones = new Stones();
@@ -96,7 +104,7 @@ class ZodiacSignsController extends Controller
             'calendarByWeek' => $calendarByWeek,
             'calendarNameOfMonths' => $calendarNameOfMonths,
             'calendarNameOfDaysInWeek' => $calendarNameOfDaysInWeek,
-
+            'calendars' => $calendars,
         ]);
 
     }

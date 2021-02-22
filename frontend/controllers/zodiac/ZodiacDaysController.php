@@ -11,6 +11,7 @@ use common\components\holidays\Holidays;
 use common\components\main\Main;
 use common\components\pageTexts\PageTexts;
 use common\components\urlCheck\UrlCheck;
+use common\componentsV2\calendars\Calendars;
 use common\componentsV2\date\Date;
 use common\componentsV2\zodiacs\Zodiacs;
 use Yii;
@@ -52,11 +53,13 @@ class ZodiacDaysController extends Controller
 
 
         ($date = new Date($check['date']))->date()->year()->month()->day();
-        ($dateToday = new Date((new \DateTime())->format('Y-m-d')))->date();
+        ($dateToday = new Date((new \DateTime())->format('Y-m-d')))->date()->year()->month()->day();
 
         $zodiacs = new Zodiacs();
-        $zodiacs->zodiacByDay('2021-' . $date->month->current . '-' . $date->day->current);
+        $zodiacs->zodiacByDay('2021-' . $dateToday->month->current . '-' . $dateToday->day->current);
         $zodiacs->zodiac($zodiacs->zodiacByDay->url);
+
+        $calendars = new Calendars($dateToday->year->current);
 
         $monthURL['year'] = $date->year->current;
         $monthURL['month'] = $date->month->current;
@@ -89,7 +92,7 @@ class ZodiacDaysController extends Controller
             'calendarByMonth' => $calendarByMonth,
             'calendarNameOfMonths' => $calendarNameOfMonths,
             'calendarNameOfDaysInWeek' => $calendarNameOfDaysInWeek,
-
+            'calendars' => $calendars,
 
         ]);
 

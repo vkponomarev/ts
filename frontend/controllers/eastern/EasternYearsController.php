@@ -5,6 +5,7 @@ namespace frontend\controllers\eastern;
 use common\components\calendar\Calendar;
 use common\components\countries\Countries;
 use common\components\country\Country;
+use common\componentsV2\calendars\Calendars;
 use common\componentsV2\date\Date;
 use common\components\getParams\GetParams;
 use common\components\holidays\Holidays;
@@ -58,6 +59,9 @@ class EasternYearsController extends Controller
 
         ($date = new Date($yearURL . '-01-01'))->date()->year();
 
+        ($dateToday = new \common\componentsV2\date\Date((new \DateTime())->format('Y-m-d')))->date()->year();
+        $calendars = new Calendars($dateToday->year->current);
+
         $calendar = new Calendar();
 
         $pageTexts = new PageTexts();
@@ -73,11 +77,11 @@ class EasternYearsController extends Controller
         //$PDFCalendars = new PDFCalendars();
         //$PDFCalendarsData = $PDFCalendars->businessExists($year, $language, $countryData['url']);
 
-
         return $this->render('eastern-year-page.min.php', [
 
             'eastern' => $eastern,
             'date' => $date,
+            'calendars' => $calendars,
 
         ]);
 

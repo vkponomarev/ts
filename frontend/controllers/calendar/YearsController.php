@@ -59,7 +59,8 @@ class YearsController extends Controller
         $date = new Date();
         $dateData = $date->data($yearURL . '-01-01');
 
-        $calendars = new Calendars($yearURL);
+        ($dateToday = new \common\componentsV2\date\Date((new \DateTime())->format('Y-m-d')))->date()->year();
+        $calendars = new Calendars($dateToday->year->current);
 
         $countries = new Countries();
         $countriesData = $countries->data($languageID);

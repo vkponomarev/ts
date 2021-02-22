@@ -1348,6 +1348,7 @@ tr {
   padding: 15px 20px 15px 20px;
   box-shadow: 0 0px 20px 0px rgba(0, 0, 0, 0.11);
   font-size: 18px;
+  min-height: 140px;
 }
 .day-plate a {
   font-size: 16px;

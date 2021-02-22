@@ -29,7 +29,7 @@ class CalendarsLinks
         ];
         $calendars[5] = [
             'name' => Yii::t('app', 'Eastern calendar'),
-            'url' => '/' . Yii::$app->language . '/calendar/eastern/years/' . $year . '/',
+            'url' => '/' . Yii::$app->language . '/calendar/eastern/',
         ];
         $calendars[6] = [
             'name' => Yii::t('app', 'Zodiac Signs Calendar'),
