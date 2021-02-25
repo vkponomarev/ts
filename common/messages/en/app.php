@@ -24,9 +24,6 @@ return [
 
     // main menu
     'Sign in' => 'Sign in',
-    'Artists' => 'Artists',
-    'Albums' => 'Albums',
-    'Songs' => 'Songs',
     'Translations' => 'Translations',
     // main menu
 

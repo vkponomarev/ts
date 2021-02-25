@@ -338,7 +338,9 @@ return [
                 '/cms/user-agreement/' => 'cms/user-agreement',
                 '/cms/copyright/' => 'cms/copyright',
 
-                '/script' => 'scripts/script',
+                //'/script' => 'scripts/script',
+
+                '/scripts' => 'scripts/scripts',
 
                 '/script/translation' => 'scripts/translation',
                 '/script/translation2' => 'scripts/translation2',

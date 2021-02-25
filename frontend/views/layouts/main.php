@@ -118,14 +118,10 @@ AppAsset::register($this);
                 </span>
                 <span class="footer-brand">
                     <br><br>
-                    &#169; Flowlez.com <br>
+                    &#169; timesles.com <br>
                 </span>
 
-                <span class="footer-brand-down-text">
 
-                    <?= Yii::t('app', 'True way of music') ?>
-
-                </span>
 
 
             </div>
@@ -135,17 +131,6 @@ AppAsset::register($this);
                 <ul class="contact">
                     <li>
                         <span><?= Yii::t('app', 'Read') ?></span>
-                    </li>
-
-
-                    <li>
-                        <a href="/<?= Yii::$app->language ?>/cms/user-agreement/"
-                           rel="nofollow"><?= Yii::t('app', 'User agreement') ?></a>
-                    </li>
-
-                    <li>
-                        <a href="/<?= Yii::$app->language ?>/cms/copyright/"
-                           rel="nofollow"><?= Yii::t('app', 'Copyright holders') ?></a>
                     </li>
 
                     <li>

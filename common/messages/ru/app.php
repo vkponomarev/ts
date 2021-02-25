@@ -27,9 +27,6 @@ return [
 
     // main menu
     'Sign in' => 'Sign in',
-    'Artists' => 'Артисты',
-    'Albums' => 'Альбомы',
-    'Songs' => 'Песни',
     // main menu
 
     'Search ...' => 'Поиск ...',

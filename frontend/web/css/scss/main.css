@@ -728,7 +728,7 @@ a.lightzoom {
 }
 
 footer {
-  background-color: #317e84;
+  background-color: #f4f8ff;
   padding: 0;
 }
 footer div hr {
@@ -740,18 +740,18 @@ footer div hr {
   }
 }
 footer div .fmy div > ul li > a {
-  color: #fff;
+  color: #666666;
   margin-left: 0px;
 }
 footer div .fmy div > ul li > a:hover {
-  color: #fef88b;
+  color: #9e9e9e;
 }
 footer div div div {
   text-align: center;
   width: 100%;
 }
 footer div div div > a {
-  color: #fff6b3;
+  color: #666666;
   margin-left: 6px;
   margin-right: 6px;
   cursor: pointer;
@@ -769,11 +769,11 @@ footer div div div > a:hover {
   align-items: center;
   font-size: 13px;
   width: 90px;
-  color: #f7f7f7;
+  color: #666666;
 }
 .cl .fa-globe {
   font-size: 20px;
-  color: #f7f7f7;
+  color: #666666;
   margin-right: 6px;
 }
 .cl:hover ul {
@@ -791,7 +791,7 @@ footer div div div > a:hover {
 }
 .cl ul {
   position: absolute;
-  bottom: 106px;
+  bottom: 90px;
   left: 0;
   -webkit-column-count: 2;
   -moz-column-count: 2;
@@ -816,17 +816,17 @@ footer div div div > a:hover {
 
 .footer-brand {
   line-height: 30px;
-  color: #fff6b3;
+  color: #666666;
   font-size: 18px;
 }
 
 .footer-brand-down-text {
-  color: #fff6b3;
+  color: #666666;
   font-size: 18px;
 }
 
 .contact span {
-  color: #fff6b3;
+  color: #666666;
   padding-top: 20px;
   padding-bottom: 20px;
   display: block;
