@@ -12,6 +12,7 @@ use common\components\main\Main;
 use common\components\pageTexts\PageTexts;
 use common\components\pdfCalendars\PDFCalendars;
 use common\components\urlCheck\UrlCheck;
+use common\componentsV2\calendars\Calendars;
 use common\componentsV2\date\Date;
 use Yii;
 use yii\web\Controller;
@@ -59,6 +60,9 @@ class ReligionYearsController extends Controller
 
         ($date = new Date($yearURL . '-01-01'))->date()->year();
 
+        ($dateToday = new \common\componentsV2\date\Date((new \DateTime())->format('Y-m-d')))->date()->year();
+        $calendars = new Calendars($dateToday->year->current);
+
         $countries = new Countries();
         $countriesData = $countries->data($languageID);
 
@@ -93,6 +97,7 @@ class ReligionYearsController extends Controller
             'calendarByYear' => $calendarByYear,
             'calendarNameOfMonths' => $calendarNameOfMonths,
             'calendarNameOfDaysInWeek' => $calendarNameOfDaysInWeek,
+            'calendars' => $calendars,
         ]);
 
     }

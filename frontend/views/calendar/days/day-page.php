@@ -454,7 +454,7 @@ $moon = new \common\components\moon\Moon();
     <div class="col-xxs-12 col-xs-12">
         <?php if ($holidaysData): ?>
 
-            <a class="header-a day-plate-header"
+            <a class="main-header-a"
                href="/<?= Yii::$app->language ?>/holidays/days/<?= ($dayNameURL <> '') ? $dayNameURL : $date->current ?>/">
                 <?= ($dayNameURL <> '')
                     ? Yii::t('app', 'What are the holidays {day-name}', [

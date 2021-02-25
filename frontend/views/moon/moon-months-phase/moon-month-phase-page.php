@@ -150,11 +150,11 @@ $moon = new \common\components\moon\Moon();
 
         <?php else: ?>
             <?php if ($dateData['month']['numberSimple'] == 1): ?>
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $dateData['year']['previous'] ?>-<?= str_pad(12, 2, '0', STR_PAD_LEFT) ?>/">
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/phase/months/<?= $dateData['year']['previous'] ?>-<?= str_pad(12, 2, '0', STR_PAD_LEFT) ?>/">
                     <?= $calendarNameOfMonths[12] ?>
                 </a>
             <?php else: ?>
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $dateData['year']['current'] ?>-<?= str_pad($dateData['month']['numberSimple'] - 1, 2, '0', STR_PAD_LEFT) ?>/">
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/phase/months/<?= $dateData['year']['current'] ?>-<?= str_pad($dateData['month']['numberSimple'] - 1, 2, '0', STR_PAD_LEFT) ?>/">
                     <?= $calendarNameOfMonths[$dateData['month']['numberSimple'] - 1] ?>
                 </a>
             <?php endif; ?>
@@ -170,11 +170,11 @@ $moon = new \common\components\moon\Moon();
 
         <?php else: ?>
             <?php if ($dateData['month']['numberSimple'] == 12): ?>
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $dateData['year']['next'] ?>-<?= str_pad(1, 2, '0', STR_PAD_LEFT) ?>/">
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/phase/months/<?= $dateData['year']['next'] ?>-<?= str_pad(1, 2, '0', STR_PAD_LEFT) ?>/">
                     <?= $calendarNameOfMonths[1] ?>
                 </a>
             <?php else: ?>
-                <a href="/<?= Yii::$app->language ?>/calendar/moon/months/<?= $dateData['year']['current'] ?>-<?= str_pad($dateData['month']['numberSimple'] + 1, 2, '0', STR_PAD_LEFT) ?>/">
+                <a href="/<?= Yii::$app->language ?>/calendar/moon/phase/months/<?= $dateData['year']['current'] ?>-<?= str_pad($dateData['month']['numberSimple'] + 1, 2, '0', STR_PAD_LEFT) ?>/">
                     <?= $calendarNameOfMonths[$dateData['month']['numberSimple'] + 1] ?>
                 </a>
             <?php endif; ?>
