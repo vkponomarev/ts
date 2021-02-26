@@ -87,9 +87,11 @@ on Thursday
 on Friday
 on Saturday
 on Sunday
+Russia
 Official public holidays and religious days in Russia in 2020
 Year 2020 calendar. ({country})
 Year 2020 calendar.
+for the winter
 Calendar for the winter 2020. ({country})
 Calendar for the winter 2020.
 Calendar of holidays and weekends in 2020 for Rusisa
@@ -136,7 +138,7 @@ PDF calendar for 2020 by seasons
 30 days
 31 days
 Holidays and Weekends Calendar for december 2020 for Russia
-Download and print PDF calendar with holidays and weekends for december  for Russia
+Download and print PDF calendar with holidays and weekends for december 2020 for Russia
 Download and print PDF calendar for december 2020
 {n,plural, one{# holiday and day off} few{# holidays and days off} other{# holidays and days off}}
 PDF calendar of holidays and weekends for december 2020 for Russia
@@ -153,10 +155,10 @@ Landscape calendar for the year with weeks
 Download and print PDF calendar for 2020 with week numbers
 PDF weekly for the 52 week of 2020
 Calendar weekly for the 52 week of 2020
-34 week from {from} to {to}
+34 week from 20 december to 25 december
 Portrait calendar weekly
 Landscape calendar weekly
-Download and print PDF calendar weekly for the 52 week of 2020, from  to
+Download and print PDF calendar weekly for the 52 week of 2020, from 20 december to 25 december
 quarter
 Quarters of the year
 Business days calendar with holidays and weekends in 2020 for Russia
@@ -181,9 +183,9 @@ Days off
 
 Portrait business calendar for the year
 Landscape business calendar for the year
-lunar calendar for {year}
-Moon phases for {year}
-Moon phases for {month} {year}
+lunar calendar for 2020
+Moon phases for 2020
+Moon phases for december 2020
 Choose the city
 New moon
 Waxing crescent
@@ -196,9 +198,9 @@ Waning crescent
 Waxing moon
 from
 to
-Year {year} PDF lunar calendar
-Download and print PDF lunar calendar (moon phases) for {year}
-Download and print PDF lunar calendar (moon phases) for {month} {year}
+Year 2020 PDF lunar calendar
+Download and print PDF lunar calendar (moon phases) for 2020
+Download and print PDF lunar calendar (moon phases) for december 2020
 Portrait lunar calendar for the year
 Landscape lunar calendar for the year
 Auspicious days
@@ -263,9 +265,11 @@ New moon phases for december 2020
 Waxing moon phases for december 2020
 Full moon phases for december 2020
 Waning moon phases for december 2020
+
 Working days calendar for 2020 for Russia
 Download and print PDF working days calendar for 2020 for Russia
 Working days calendar for december 2020 for Russia
+
 Download and print PDF working days calendar for december 2020 for Russia
 Portrait working days calendar for the year
 Landscape working days calendar for the year
@@ -286,10 +290,10 @@ Calendar for the 40 hour work week for december 2020 for Russia
 Download and print PDF calendar for the 40 hour work week for december 2020 for Russia
 Portrait calendar for the 40 hour work week for the year
 Landscape calendar for the 40 hour work week for the year
-Calendar for the 36 hour work week for {year} {country_for}
-Download and print PDF calendar for the 36 hour work week for {year} {country_for}
-Calendar for the 36 hour work week for {month} {year} {country_for}
-Download and print PDF calendar for the 36 hour work week for {month} {year} {country_for}
+Calendar for the 36 hour work week for 2020 for Russia
+Download and print PDF calendar for the 36 hour work week for 2020 for Russia
+Calendar for the 36 hour work week for december 2020 for Russia
+Download and print PDF calendar for the 36 hour work week for december 2020 for Russia
 Portrait calendar for the 36 hour work week for the year
 Landscape calendar for the 36 hour work week for the year
 Religious calendars for 2020
@@ -367,11 +371,11 @@ Neptune
 Pluto
 Moon
 Table of zodiac signs
-Planet suitable for the zodiac sign Geminis
-Elements of the sign of Geminis
-Stones of the zodiac sign Geminis
-Mascots of the zodiac sign Geminis
-Color of the zodiac sign Geminis
+Planet suitable for the zodiac sign leo
+Elements of the sign of leo
+Stones of the zodiac sign leo
+Mascots of the zodiac sign leo
+Color of the zodiac sign leo
 
 
 Water
@@ -448,6 +452,7 @@ White
 Upcoming holidays in the world in 2020
 Upcoming holidays in Russia in 2020
 Upcoming holidays in Russia for december 2020
+New Year Day
 New Year Day upcoming holiday dates in the world in 2020
 New Year Day upcoming holiday dates in Russia
 Date
@@ -456,7 +461,7 @@ Type
 Country
 in the world
 What are the holidays today 20 december 2020 in the world
-What are the holidays today {date} {country-in}
+What are the holidays today 20 december 2020 in Russia
 What are the holidays will be tomorrow 20 december 2020 in the world
 What are the holidays were yesterday 20 december 2020 in the world
 What are the holidays on 20 december 2020 in the world
