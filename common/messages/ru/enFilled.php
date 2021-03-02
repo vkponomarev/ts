@@ -452,9 +452,9 @@ White
 Upcoming holidays in the world in 2020
 Upcoming holidays in Russia in 2020
 Upcoming holidays in Russia for december 2020
-New Year Day
-New Year Day upcoming holiday dates in the world in 2020
-New Year Day upcoming holiday dates in Russia
+Independence Day
+Independence Day upcoming holiday dates in the world in 2020
+Independence Day upcoming holiday dates in Russia
 Date
 Title
 Type
