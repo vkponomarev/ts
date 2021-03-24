@@ -2,6 +2,7 @@
 
 namespace frontend\controllers\holidays;
 
+use common\components\breadcrumbs\Breadcrumbs;
 use common\components\calendar\Calendar;
 use common\components\countries\Countries;
 use common\components\country\Country;
@@ -79,10 +80,9 @@ class HolidaysYearsController extends Controller
         //$pageTextsMessages = $pageTexts->messagesByCalendarYear($calendarChinese, $dateData, count($holidaysData));
         Yii::$app->params['text'] = $main->text($pageTextsID, $languageID);
         $pageTexts->updateByHolidaysWorld($date, $countryData);
-        /*
-                $breadCrumbs = new Breadcrumbs();
-                Yii::$app->params['breadcrumbs'] = $breadCrumbs->year($yearData);
-        */
+
+        $breadCrumbs = new Breadcrumbs();
+        Yii::$app->params['breadcrumbs'] = $breadCrumbs->calendarYears($date);
 
         return $this->render('holidays-year-page.min.php', [
 

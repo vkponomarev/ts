@@ -2,6 +2,7 @@
 
 namespace frontend\controllers\zodiac;
 
+use common\components\breadcrumbs\Breadcrumbs;
 use common\components\calendar\Calendar;
 use common\components\city\City;
 use common\components\countries\Countries;
@@ -78,10 +79,9 @@ class ZodiacDaysController extends Controller
         //$pageTextsMessages = $pageTexts->messagesByCalendarYear($calendarChinese, $dateData, count($holidaysData));
         Yii::$app->params['text'] = $main->text($pageTextsID, $languageID);
         $pageTexts->updateByZodiacDays($dayNameURL, $date, $zodiacs->zodiac->name);
-        /*
-                $breadCrumbs = new Breadcrumbs();
-                Yii::$app->params['breadcrumbs'] = $breadCrumbs->year($yearData);
-        */
+
+        $breadCrumbs = new Breadcrumbs();
+        Yii::$app->params['breadcrumbs'] = $breadCrumbs->zodiacDays($date);
 
         return $this->render('zodiac-day-page.min.php', [
 

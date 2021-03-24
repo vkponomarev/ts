@@ -2,6 +2,7 @@
 
 namespace frontend\controllers\religion;
 
+use common\components\breadcrumbs\Breadcrumbs;
 use common\components\calendar\Calendar;
 use common\components\countries\Countries;
 use common\components\country\Country;
@@ -79,10 +80,8 @@ class ReligionMonthsController extends Controller
         $pageTextsMessages = $pageTexts->messagesByCalendarMonthReligion($date, count($holidaysData));
         $pageTexts->updateByCalendarMonthReligion($pageTextsMessages, $date, $calendarNameOfMonths);
 
-        /*
-                $breadCrumbs = new Breadcrumbs();
-                Yii::$app->params['breadcrumbs'] = $breadCrumbs->year($yearData);
-        */
+        $breadCrumbs = new Breadcrumbs();
+        Yii::$app->params['breadcrumbs'] = $breadCrumbs->religionMonths($date, $religionURL);
 
         return $this->render('religion-month-page.min.php', [
 

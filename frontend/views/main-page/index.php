@@ -446,9 +446,9 @@
 <hr>
 <br>
 
-<?php echo Yii::$app->formatter->asDate((new \DateTime()), 'medium') ?>
-<?= '<br>' ?>
-<?php echo Yii::$app->formatter->asDate((new \DateTime()), 'full') ?>
+<?php //echo Yii::$app->formatter->asDate((new \DateTime()), 'medium') ?>
+<?php //echo '<br>' ?>
+<?php //echo Yii::$app->formatter->asDate((new \DateTime()), 'full') ?>
 
 
 

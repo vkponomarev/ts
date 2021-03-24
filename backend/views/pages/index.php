@@ -1,8 +1,9 @@
 <?php
 
-use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\helpers\Html;
 use yii\widgets\Pjax;
+
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\PagesSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -18,7 +19,7 @@ $test = '';
 
 
     <p>
-        <?= Html::a('Создать', ['create','parentId' =>$parentId], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Создать', ['create', 'parentId' => $parentId], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -29,7 +30,7 @@ $test = '';
         'columns' => [
 
 
-                ['class' => 'yii\grid\SerialColumn'],
+            ['class' => 'yii\grid\SerialColumn'],
 
             'id',
             'parent_id',
@@ -44,23 +45,27 @@ $test = '';
             ],
 
 
-
-
-
-   [
+            /*[
+                'attribute' => 'translations',
                 'label' => 'Переводы',
-                'format'    => ['html'],
-                'value'     => function($data) {
-
-
-                       return $data->translateButtons($data);
-
+                'format' => ['html'],
+                'value' => function ($data) {
+                    return Html::(Html::encode($data->name), \yii\helpers\Url::to(['parent', 'id' => $data->id]));
                 },
-],
-            
-            ['attribute'=>'active','filter'=>\common\models\Pages::getStatusList(),'value'=>'statusName'],
-            ['attribute'=>'menu_active','filter'=>\common\models\Pages::getStatusList(),'value'=>'statusNameMenu'],
-            ['attribute'=>'main_page_active','filter'=>\common\models\Pages::getStatusList(),'value'=>'statusNameMainPage'],
+            ],*/
+
+            [
+                'attribute' => 'translations',
+                'label' => 'Переводы',
+                'format' => ['html'],
+                'value' => function ($data) {
+                    return $data->translateButtons($data);
+                },
+            ],
+
+            ['attribute' => 'active', 'filter' => \common\models\Pages::getStatusList(), 'value' => 'statusName'],
+            ['attribute' => 'menu_active', 'filter' => \common\models\Pages::getStatusList(), 'value' => 'statusNameMenu'],
+            ['attribute' => 'main_page_active', 'filter' => \common\models\Pages::getStatusList(), 'value' => 'statusNameMainPage'],
             'sort',
             'embed',
             ['class' => 'yii\grid\ActionColumn'],
@@ -71,52 +76,50 @@ $test = '';
 
 
     <?php
-   /* foreach (\common\models\Pages::getAllLanguages() as $one){
 
-    [    Рабочий вариант передачи данных.
+    /* foreach (\common\models\Pages::getAllLanguages() as $one){
 
-                'format'    => ['html'],
-                'value'     => function($data) {
-                   if($data->languages) return 'selected';
-                   else return 'Not selected';
-                },
-],
+     [    Рабочий вариант передачи данных.
 
-
-'value' => function($data){
-                $url = "http://www.mysite.ru";
+                 'format'    => ['html'],
+                 'value'     => function($data) {
+                    if($data->languages) return 'selected';
+                    else return 'Not selected';
+                 },
+ ],
 
 
-
-                 return Html::a('Перейти', $url, ['title' => 'Перейти']);
-             }
-
-     'buttons' => [
-                'paid' => function ($url,$model,$key) {
-                    return Html::a('Оплаченный заказ', $url, ['class' => 'btn btn-success btn-xs']);
-                },
-                'confirm' => function ($url,$model,$key) {
-                    return Html::a('Подтвердить заказ', $url, ['class' => 'btn btn-success btn-xs']);
-                },
-                'clear' => function ($url,$model,$key) {
-                    return Html::a('Очистить заказ', $url, ['class' => 'btn btn-danger btn-xs']);
-                },
-            ],
-
-
-    }*/
-
-   /* foreach ((\common\models\Languages::getAllLanguages()) as $one) {
-
-        echo $one->id;
-        echo $one->name . "<br>";
-    }*/
+ 'value' => function($data){
+                 $url = "http://www.mysite.ru";
 
 
 
-   // echo \common\models\Languages::getLanguages();
+                  return Html::a('Перейти', $url, ['title' => 'Перейти']);
+              }
+
+      'buttons' => [
+                 'paid' => function ($url,$model,$key) {
+                     return Html::a('Оплаченный заказ', $url, ['class' => 'btn btn-success btn-xs']);
+                 },
+                 'confirm' => function ($url,$model,$key) {
+                     return Html::a('Подтвердить заказ', $url, ['class' => 'btn btn-success btn-xs']);
+                 },
+                 'clear' => function ($url,$model,$key) {
+                     return Html::a('Очистить заказ', $url, ['class' => 'btn btn-danger btn-xs']);
+                 },
+             ],
 
 
+     }*/
+
+    /* foreach ((\common\models\Languages::getAllLanguages()) as $one) {
+
+         echo $one->id;
+         echo $one->name . "<br>";
+     }*/
+
+
+    // echo \common\models\Languages::getLanguages();
 
 
     ?>
@@ -125,7 +128,6 @@ $test = '';
 
 
     <?php Pjax::end(); ?>
-
 
 
 </div>

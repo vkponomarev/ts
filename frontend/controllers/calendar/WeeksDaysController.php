@@ -2,6 +2,7 @@
 
 namespace frontend\controllers\calendar;
 
+use common\components\breadcrumbs\Breadcrumbs;
 use common\components\calendar\Calendar;
 use common\components\city\City;
 use common\components\countries\Countries;
@@ -77,10 +78,9 @@ class WeeksDaysController extends Controller
         $pageTextsID = $pageTexts->defineIdByWeekDays($dayNameURL, $dayURL);
         Yii::$app->params['text'] = $main->text($pageTextsID, $languageID);
         $pageTexts->updateByWeekDays($date, $calendarNameOfDaysInWeek);
-        /*
-                $breadCrumbs = new Breadcrumbs();
-                Yii::$app->params['breadcrumbs'] = $breadCrumbs->year($yearData);
-        */
+
+        $breadCrumbs = new Breadcrumbs();
+        Yii::$app->params['breadcrumbs'] = $breadCrumbs->calendarWeeksToday($date);
 
         return $this->render('week-day-page.min.php', [
 

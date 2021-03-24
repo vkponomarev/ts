@@ -199,7 +199,7 @@ return [
         '下載並打印{year}年{month}的PDF日曆',
 
     '{n,plural, one{# holiday and day off} few{# holidays and days off} other{# holidays and days off}}' =>
-        '{n,plural, one{# 假期和休假} few{# 假期和休假} other{# 假期和休假}}}',
+        '{n,plural, one{# 假期和休假} few{# 假期和休假} other{# 假期和休假}}',
 
     'PDF calendar of holidays and weekends for {month} {year} {country_for}' =>
         '{year}年{month}{country_for}節假日和周末的PDF日曆',

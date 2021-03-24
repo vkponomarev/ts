@@ -5,6 +5,7 @@ namespace frontend\controllers\calendar;
 use common\components\albums\Albums;
 use common\components\artist\Artist;
 use common\components\artists\Artists;
+use common\components\breadcrumbs\Breadcrumbs;
 use common\components\calendar\Calendar;
 use common\components\countries\Countries;
 use common\components\country\Country;
@@ -66,6 +67,8 @@ class SeasonsController extends Controller
         $date = new Date();
         $dateData = $date->bySeason($yearURL . '-01-01');
         ($dateToday = new \common\componentsV2\date\Date((new \DateTime())->format('Y-m-d')))->date()->year();
+        ($dateDataObj = new \common\componentsV2\date\Date($yearURL . '-01-01'))->date()->year()->month()->season();
+
         $calendars = new Calendars($dateToday->year->current);
 
         $countries = new Countries();
@@ -87,10 +90,8 @@ class SeasonsController extends Controller
         Yii::$app->params['text'] = $main->text($pageTextsID, $languageID);
         $pageTexts->updateByCalendarSeason($pageTextsMessages, $dateData, $countryData, count($holidaysData));
 
-        /*
-                $breadCrumbs = new Breadcrumbs();
-                Yii::$app->params['breadcrumbs'] = $breadCrumbs->year($yearData);
-        */
+        $breadCrumbs = new Breadcrumbs();
+        Yii::$app->params['breadcrumbs'] = $breadCrumbs->calendarSeasons($dateDataObj, $seasonURL, $countryURL['url']);
 
         $PDFCalendars = new PDFCalendars();
         $PDFCalendarsData = $PDFCalendars->seasonsExists($yearURL, $language, $countryData['url'], $seasonURL);

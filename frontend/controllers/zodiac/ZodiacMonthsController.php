@@ -2,6 +2,7 @@
 
 namespace frontend\controllers\zodiac;
 
+use common\components\breadcrumbs\Breadcrumbs;
 use common\components\calendar\Calendar;
 use common\components\countries\Countries;
 use common\components\country\Country;
@@ -73,10 +74,8 @@ class ZodiacMonthsController extends Controller
         Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['current']['id']);
         $pageTexts->updateByCalendarZodiacMonth($date, $calendarNameOfMonths);
 
-        /*
-                $breadCrumbs = new Breadcrumbs();
-                Yii::$app->params['breadcrumbs'] = $breadCrumbs->year($yearData);
-        */
+        $breadCrumbs = new Breadcrumbs();
+        Yii::$app->params['breadcrumbs'] = $breadCrumbs->zodiacMonths($date);
 
         //$PDFCalendars = new PDFCalendars();
         //$PDFCalendarsData = $PDFCalendars->businessExists($year, $language, $countryData['url']);

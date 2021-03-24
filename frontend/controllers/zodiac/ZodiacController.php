@@ -2,6 +2,7 @@
 
 namespace frontend\controllers\zodiac;
 
+use common\components\breadcrumbs\Breadcrumbs;
 use common\components\calendar\Calendar;
 use common\components\countries\Countries;
 use common\components\country\Country;
@@ -60,10 +61,8 @@ class ZodiacController extends Controller
         $calendarNameOfMonths = $calendar->nameOfMonths();
         $calendarNameOfDaysInWeek = $calendar->nameOfDaysInWeek();
 
-        /*
-                $breadCrumbs = new Breadcrumbs();
-                Yii::$app->params['breadcrumbs'] = $breadCrumbs->year($yearData);
-        */
+        $breadCrumbs = new Breadcrumbs();
+        Yii::$app->params['breadcrumbs'] = $breadCrumbs->zodiac();
 
 
         return $this->render('zodiac-page.min.php', [

@@ -2,6 +2,7 @@
 
 namespace frontend\controllers\holidays;
 
+use common\components\breadcrumbs\Breadcrumbs;
 use common\components\calendar\Calendar;
 use common\components\countries\Countries;
 use common\components\country\Country;
@@ -54,7 +55,7 @@ class HolidaysDaysController extends Controller
             $dateTmp = new \DateTime($yearURL . '-01-01');
         }
 
-        ($date = new Date($check['date']))->date()->year()->month();
+        ($date = new Date($check['date']))->date()->year()->month()->season()->day();
         ($dateToday = new Date((new \DateTime())->format('Y-m-d')))->date();
         $getParams = new GetParams();
 
@@ -79,10 +80,9 @@ class HolidaysDaysController extends Controller
         //$pageTextsMessages = $pageTexts->messagesByCalendarYear($calendarChinese, $dateData, count($holidaysData));
         Yii::$app->params['text'] = $main->text($pageTextsID, $languageID);
         $pageTexts->updateByHolidaysDays($dayNameURL, $date, $countryData);
-        /*
-                $breadCrumbs = new Breadcrumbs();
-                Yii::$app->params['breadcrumbs'] = $breadCrumbs->year($yearData);
-        */
+
+        $breadCrumbs = new Breadcrumbs();
+        Yii::$app->params['breadcrumbs'] = $breadCrumbs->holidaysDays($date, $countryURL['url']);
 
         return $this->render('holidays-day-page.min.php', [
 

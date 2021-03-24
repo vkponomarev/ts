@@ -2,6 +2,7 @@
 
 namespace frontend\controllers\eastern;
 
+use common\components\breadcrumbs\Breadcrumbs;
 use common\components\calendar\Calendar;
 use common\components\countries\Countries;
 use common\components\country\Country;
@@ -49,10 +50,8 @@ class EasternController extends Controller
         Yii::$app->params['text'] = $main->text($textID, $languageID);
 
 
-        /*
-                $breadCrumbs = new Breadcrumbs();
-                Yii::$app->params['breadcrumbs'] = $breadCrumbs->year($yearData);
-        */
+        $breadCrumbs = new Breadcrumbs();
+        Yii::$app->params['breadcrumbs'] = $breadCrumbs->calendarEastern($dateToday);
 
 
         return $this->render('eastern-page.min.php', [

@@ -2,6 +2,7 @@
 
 namespace frontend\controllers\moon;
 
+use common\components\breadcrumbs\Breadcrumbs;
 use common\components\calendar\Calendar;
 use common\components\city\City;
 use common\components\countries\Countries;
@@ -55,7 +56,7 @@ class MoonYearsController extends Controller
 
         $date = new Date();
         $dateData = $date->data($yearURL . '-01-01');
-
+        ($dateDataObj = new \common\componentsV2\date\Date($yearURL . '-01-01'))->date()->year();
         ($dateToday = new \common\componentsV2\date\Date((new \DateTime())->format('Y-m-d')))->date()->year();
         $calendars = new Calendars($dateToday->year->current);
 
@@ -72,10 +73,8 @@ class MoonYearsController extends Controller
         $pageTextsMessages = $pageTexts->messagesByCalendarYearMoon($calendarChinese, $dateData);
         $pageTexts->updateByCalendarYearMoon($pageTextsMessages, $dateData);
 
-        /*
-                $breadCrumbs = new Breadcrumbs();
-                Yii::$app->params['breadcrumbs'] = $breadCrumbs->year($yearData);
-        */
+        $breadCrumbs = new Breadcrumbs();
+        Yii::$app->params['breadcrumbs'] = $breadCrumbs->calendarYears($dateDataObj);
 
         $PDFCalendars = new PDFCalendars();
         $PDFCalendarsData = $PDFCalendars->yearlyMoonExists($year, $language);

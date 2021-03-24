@@ -2,6 +2,7 @@
 
 namespace frontend\controllers\eastern;
 
+use common\components\breadcrumbs\Breadcrumbs;
 use common\components\calendar\Calendar;
 use common\components\countries\Countries;
 use common\components\country\Country;
@@ -65,10 +66,8 @@ class EasternAnimalsController extends Controller
         ($dateToday = new \common\componentsV2\date\Date((new \DateTime())->format('Y-m-d')))->date()->year();
         $calendars = new Calendars($dateToday->year->current);
 
-        /*
-                $breadCrumbs = new Breadcrumbs();
-                Yii::$app->params['breadcrumbs'] = $breadCrumbs->year($yearData);
-        */
+        $breadCrumbs = new Breadcrumbs();
+        Yii::$app->params['breadcrumbs'] = $breadCrumbs->calendarEasternAnimals($eastern);
 
         //$PDFCalendars = new PDFCalendars();
         //$PDFCalendarsData = $PDFCalendars->businessExists($year, $language, $countryData['url']);

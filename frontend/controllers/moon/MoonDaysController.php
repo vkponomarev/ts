@@ -2,6 +2,7 @@
 
 namespace frontend\controllers\moon;
 
+use common\components\breadcrumbs\Breadcrumbs;
 use common\components\calendar\Calendar;
 use common\components\city\City;
 use common\components\countries\Countries;
@@ -51,7 +52,7 @@ class MoonDaysController extends Controller
         $language = Yii::$app->params['language']['current']['url'];
 
 
-        ($date = new Date($check['date']))->date()->year()->month();
+        ($date = new Date($check['date']))->date()->year()->month()->day();
         ($dateToday = new Date((new \DateTime())->format('Y-m-d')))->date()->year();
 
         $calendars = new Calendars($dateToday->year->current);
@@ -75,10 +76,9 @@ class MoonDaysController extends Controller
         //$pageTextsMessages = $pageTexts->messagesByCalendarYear($calendarChinese, $dateData, count($holidaysData));
         Yii::$app->params['text'] = $main->text($pageTextsID, $languageID);
         $pageTexts->updateByMoonDays($dayNameURL, $date, $calendarByMonth['moonDay'][$date->current]);
-        /*
-                $breadCrumbs = new Breadcrumbs();
-                Yii::$app->params['breadcrumbs'] = $breadCrumbs->year($yearData);
-        */
+
+        $breadCrumbs = new Breadcrumbs();
+        Yii::$app->params['breadcrumbs'] = $breadCrumbs->moonDays($date);
 
         return $this->render('moon-day-page.min.php', [
 

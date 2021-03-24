@@ -2,6 +2,7 @@
 
 namespace frontend\controllers\business;
 
+use common\components\breadcrumbs\Breadcrumbs;
 use common\components\calendar\Calendar;
 use common\components\countries\Countries;
 use common\components\country\Country;
@@ -57,7 +58,7 @@ class BusinessSixDaysYearsController extends Controller
 
         $date = new Date();
         $dateData = $date->yearBusiness($yearURL . '-01-01');
-
+        ($dateDataObj = new \common\componentsV2\date\Date($yearURL . '-01-01'))->date()->year()->month();
         ($dateToday = new \common\componentsV2\date\Date((new \DateTime())->format('Y-m-d')))->date()->year();
         $calendars = new Calendars($dateToday->year->current);
 
@@ -79,10 +80,8 @@ class BusinessSixDaysYearsController extends Controller
         Yii::$app->params['text'] = $main->text($textID, $languageID);
         $pageTexts->updateByCalendarYear($pageTextsMessages, $dateData, $countryData, count($holidaysData));
 
-        /*
-                $breadCrumbs = new Breadcrumbs();
-                Yii::$app->params['breadcrumbs'] = $breadCrumbs->year($yearData);
-        */
+        $breadCrumbs = new Breadcrumbs();
+        Yii::$app->params['breadcrumbs'] = $breadCrumbs->calendarYears($dateDataObj);
 
         $PDFCalendars = new PDFCalendars();
         $PDFCalendarsData = $PDFCalendars->businessExists($year, $language, $countryData['url']);

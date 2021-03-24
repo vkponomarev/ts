@@ -2,6 +2,7 @@
 
 namespace frontend\controllers\calendar;
 
+use common\components\breadcrumbs\Breadcrumbs;
 use common\components\calendar\Calendar;
 use common\components\countries\Countries;
 use common\components\country\Country;
@@ -60,6 +61,7 @@ class YearsController extends Controller
         $dateData = $date->data($yearURL . '-01-01');
 
         ($dateToday = new \common\componentsV2\date\Date((new \DateTime())->format('Y-m-d')))->date()->year();
+        ($dateDataObj = new \common\componentsV2\date\Date($yearURL . '-01-01'))->date()->year();
         $calendars = new Calendars($dateToday->year->current);
 
         $countries = new Countries();
@@ -79,10 +81,9 @@ class YearsController extends Controller
         $pageTextsMessages = $pageTexts->messagesByCalendarYear($calendarChinese, $dateData, count($holidaysData));
         Yii::$app->params['text'] = $main->text($pageTextsID, $languageID);
         $pageTexts->updateByCalendarYear($pageTextsMessages, $dateData, $countryData, count($holidaysData));
-        /*
-                $breadCrumbs = new Breadcrumbs();
-                Yii::$app->params['breadcrumbs'] = $breadCrumbs->year($yearData);
-        */
+
+        $breadCrumbs = new Breadcrumbs();
+        Yii::$app->params['breadcrumbs'] = $breadCrumbs->calendarYears($dateDataObj);
 
         $PDFCalendars = new PDFCalendars();
         $PDFCalendarsData = $PDFCalendars->yearlyExists($year, $language, $countryData['url']);

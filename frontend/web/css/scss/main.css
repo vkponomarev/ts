@@ -1394,7 +1394,6 @@ tr {
 
 .week-name {
   display: flex;
-  height: 35px;
 }
 
 .day, .day-off, .no-day, .no-day-off, .day-name, .day-holiday {
@@ -1483,7 +1482,7 @@ tr {
   background-color: white;
   border-bottom: 2px solid #46648b;
   z-index: 2;
-  font-size: 14px;
+  font-size: 10px;
 }
 
 .myear {
@@ -1643,7 +1642,6 @@ tr {
 
 .wweek-name {
   display: flex;
-  height: 35px;
 }
 
 .wday, .wday-off, .wno-day, .wno-day-off, .wday-name, .wday-holiday {
@@ -1732,7 +1730,7 @@ tr {
   background-color: white;
   border-bottom: 2px solid #46648b;
   z-index: 2;
-  font-size: 14px;
+  font-size: 10px;
 }
 
 .owyear {

@@ -2,6 +2,7 @@
 
 namespace frontend\controllers\calendar;
 
+use common\components\breadcrumbs\Breadcrumbs;
 use common\components\calendar\Calendar;
 use common\components\city\City;
 use common\components\countries\Countries;
@@ -52,7 +53,7 @@ class DaysController extends Controller
         $language = Yii::$app->params['language']['current']['url'];
 
 
-        ($date = new Date($check['date']))->date()->year()->month()->day()->week();
+        ($date = new Date($check['date']))->date()->year()->month()->day()->week()->season();
         ($dateToday = new Date((new \DateTime())->format('Y-m-d')))->date()->year();
 
         $calendars = new Calendars($dateToday->year->current);
@@ -82,10 +83,9 @@ class DaysController extends Controller
 
         Yii::$app->params['text'] = $main->text($pageTextsID, $languageID);
         $pageTexts->updateByCalendarDays($date, $calendarNameOfMonths);
-        /*
-                $breadCrumbs = new Breadcrumbs();
-                Yii::$app->params['breadcrumbs'] = $breadCrumbs->year($yearData);
-        */
+
+        $breadCrumbs = new Breadcrumbs();
+        Yii::$app->params['breadcrumbs'] = $breadCrumbs->calendarDays($date);
 
         return $this->render('day-page.min.php', [
 
@@ -100,9 +100,6 @@ class DaysController extends Controller
             'calendarNameOfMonths' => $calendarNameOfMonths,
             'calendarNameOfDaysInWeek' => $calendarNameOfDaysInWeek,
 
-
         ]);
-
     }
-
 }

@@ -42,6 +42,16 @@ class Date
     public $week;
 
     /**
+     * @var \common\componentsV2\date\DateSeason
+     */
+    public $season;
+
+    /**
+     * @var \common\componentsV2\date\DateQuarter
+     */
+    public $quarter;
+
+    /**
      * Date constructor.
      * @param $date string format 'Y-m-d'
      * @throws \Exception
@@ -104,6 +114,20 @@ class Date
     function week(){
 
         $this->week = (new DateWeek($this->date));
+        return $this;
+
+    }
+
+    function season(){
+
+        $this->season = (new DateSeason($this->date));
+        return $this;
+
+    }
+
+    function quarter(){
+
+        $this->quarter = (new DateQuarter($this->date));
         return $this;
 
     }

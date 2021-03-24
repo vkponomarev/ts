@@ -5,6 +5,7 @@ namespace frontend\controllers\moon;
 use common\components\albums\Albums;
 use common\components\artist\Artist;
 use common\components\artists\Artists;
+use common\components\breadcrumbs\Breadcrumbs;
 use common\components\calendar\Calendar;
 use common\components\city\City;
 use common\components\countries\Countries;
@@ -71,7 +72,7 @@ class MoonMonthsGoodController extends Controller
 
         $date = new Date();
         $dateData = $date->byMonth($monthURL['url'] . '-01');
-
+        ($dateDataObj = new \common\componentsV2\date\Date($monthURL['url'] . '-01'))->date()->year()->month()->season();
         ($dateToday = new \common\componentsV2\date\Date((new \DateTime())->format('Y-m-d')))->date()->year();
         $calendars = new Calendars($dateToday->year->current);
 
@@ -94,10 +95,8 @@ class MoonMonthsGoodController extends Controller
         $pageTextsMessages = $pageTexts->messagesByCalendarMonthMoon($dateData);
         $pageTexts->updateByCalendarMonthMoon($pageTextsMessages, $dateData, $calendarNameOfMonths);
 
-        /*
-                $breadCrumbs = new Breadcrumbs();
-                Yii::$app->params['breadcrumbs'] = $breadCrumbs->year($yearData);
-        */
+        $breadCrumbs = new Breadcrumbs();
+        Yii::$app->params['breadcrumbs'] = $breadCrumbs->moonMonthsGood($dateDataObj, $dayNameURL);
 
         if ($dayNameURL ==''){
             $dayNameURL = 'daysByRatingCount';

@@ -2,6 +2,7 @@
 
 namespace frontend\controllers\calendar;
 
+use common\components\breadcrumbs\Breadcrumbs;
 use common\components\calendar\Calendar;
 use common\components\countries\Countries;
 use common\components\country\Country;
@@ -66,8 +67,8 @@ class MonthsController extends Controller
 
         $date = new Date();
         $dateData = $date->byMonth($monthURL['url'] . '-01');
-        ($dateToday = new \common\componentsV2\date\Date((new \DateTime())->format('Y-m-d')))->date()->year();
-
+        ($dateToday = new \common\componentsV2\date\Date((new \DateTime())->format('Y-m-d')))->date()->year()->month();
+        ($dateDataObj = new \common\componentsV2\date\Date($monthURL['url'] . '-01'))->date()->year()->month()->season();
         $calendars = new Calendars($dateToday->year->current);
 
         $countries = new Countries();
@@ -88,14 +89,11 @@ class MonthsController extends Controller
         $pageTexts = new PageTexts();
         $pageTextsID = $pageTexts->defineIdByCalendarMonth($holidaysData, $PDFCalendarsData);
         Yii::$app->params['text'] = $main->text($pageTextsID, $languageID);
-
         $pageTextsMessages = $pageTexts->messagesByCalendarMonth($dateData, count($holidaysData));
         $pageTexts->updateByCalendarMonth($pageTextsMessages, $dateData, $countryData, count($holidaysData), $calendarNameOfMonths);
 
-        /*
-                $breadCrumbs = new Breadcrumbs();
-                Yii::$app->params['breadcrumbs'] = $breadCrumbs->year($yearData);
-        */
+        $breadCrumbs = new Breadcrumbs();
+        Yii::$app->params['breadcrumbs'] = $breadCrumbs->calendarMonths($dateDataObj, $countryURL['url']);
 
         return $this->render('month-page.min.php', [
 
