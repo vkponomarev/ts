@@ -11,12 +11,17 @@ class BreadcrumbsCalendarEasternAnimals
      * @param $eastern \common\componentsV2\eastern\Eastern
      * @return mixed
      */
-    public function breadcrumbs($eastern)
+    public function breadcrumbs($eastern, $dateData)
     {
 
         $count = 0;
 
-        $breadcrumbs['urls'][$count] = [
+        $breadcrumbs['urls'][$count] =  [
+            'url' => 'calendar/years/' . $dateData->year->current,
+            'text' => Yii::t('app', 'Calendar'),
+        ];
+
+        $breadcrumbs['urls'][++$count] = [
             'url' => 'calendar/eastern',
             'text' => Yii::t('app', 'Eastern calendar'),
         ];

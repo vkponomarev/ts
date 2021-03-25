@@ -330,7 +330,7 @@
     <?php if ($PDFCalendarsData['exists']): ?>
         <br>
 
-        <a name="download-calendar-<?= $dateData['year']['current'] ?>"></a>
+        <a name="download-calendar"></a>
         <h2 class="main-page-h1">
             <?= Yii::t('app', 'Download and print PDF calendar weekly for the {week} week of {year}, from {from} to {to}', [
                 'week' => $weekURL['url'],

@@ -8,17 +8,17 @@ class Breadcrumbs
      * @param $dateData \common\componentsV2\date\Date
      * @return mixed
      */
-    public function calendarYears($dateData)
+    public function calendarYears($dateData, $countryURL, $countryData)
     {
 
-        return (new BreadcrumbsCalendarYears())->breadcrumbs($dateData);
+        return (new BreadcrumbsCalendarYears())->breadcrumbs($dateData, $countryURL, $countryData);
 
     }
 
-    public function calendarMonths($dateData, $countryURL)
+    public function calendarMonths($dateData, $countryURL, $countryData)
     {
 
-        return (new BreadcrumbsCalendarMonths())->breadcrumbs($dateData, $countryURL);
+        return (new BreadcrumbsCalendarMonths())->breadcrumbs($dateData, $countryURL, $countryData);
 
     }
 
@@ -29,10 +29,10 @@ class Breadcrumbs
 
     }
 
-    public function calendarSeasons($dateData, $seasonURL, $countryURL)
+    public function calendarSeasons($dateData, $seasonURL, $countryURL, $countryData)
     {
 
-        return (new BreadcrumbsCalendarSeasons())->breadcrumbs($dateData, $seasonURL, $countryURL);
+        return (new BreadcrumbsCalendarSeasons())->breadcrumbs($dateData, $seasonURL, $countryURL, $countryData);
 
     }
 
@@ -59,56 +59,97 @@ class Breadcrumbs
     }
 
 
-    public function  calendarBusinessMonths($dateData, $countryURL)
+    public function  calendarBusinessMonths($dateData, $countryURL, $countryData)
     {
 
-        return (new BreadcrumbsCalendarBusinessMonths())->breadcrumbs($dateData, $countryURL);
+        return (new BreadcrumbsCalendarBusinessMonths())->breadcrumbs($dateData, $countryURL, $countryData);
 
     }
 
-    public function  calendarBusinessQuarters($dateData, $quarter, $countryURL)
+    public function  calendarBusinessQuarters($dateData, $quarter, $countryURL, $countryData)
     {
 
-        return (new BreadcrumbsCalendarBusinessQuarters())->breadcrumbs($dateData, $quarter, $countryURL);
+        return (new BreadcrumbsCalendarBusinessQuarters())->breadcrumbs($dateData, $quarter, $countryURL, $countryData);
 
     }
 
 
-    public function  calendarBusinessDaysOffMonths($dateData, $countryURL)
+    public function  calendarBusinessDaysOffMonths($dateData, $countryURL, $countryData)
     {
 
-        return (new BreadcrumbsCalendarBusinessDaysOffMonths())->breadcrumbs($dateData, $countryURL);
+        return (new BreadcrumbsCalendarBusinessDaysOffMonths())->breadcrumbs($dateData, $countryURL, $countryData);
 
     }
 
-    public function  calendarBusinessWorkingDaysMonths($dateData, $countryURL)
+    public function  calendarBusinessWorkingDaysMonths($dateData, $countryURL, $countryData)
     {
 
-        return (new BreadcrumbsCalendarBusinessWorkingDaysMonths())->breadcrumbs($dateData, $countryURL);
+        return (new BreadcrumbsCalendarBusinessWorkingDaysMonths())->breadcrumbs($dateData, $countryURL, $countryData);
 
     }
 
-    public function  calendarBusinessFortyMonths($dateData, $countryURL)
+    public function  calendarBusinessFortyMonths($dateData, $countryURL, $countryData)
     {
 
-        return (new BreadcrumbsCalendarBusinessFortyMonths())->breadcrumbs($dateData, $countryURL);
+        return (new BreadcrumbsCalendarBusinessFortyMonths())->breadcrumbs($dateData, $countryURL, $countryData);
 
     }
 
-    public function  calendarBusinessThirtyMonths($dateData, $countryURL)
+    public function  calendarBusinessThirtyMonths($dateData, $countryURL, $countryData)
     {
 
-        return (new BreadcrumbsCalendarBusinessThirtyMonths())->breadcrumbs($dateData, $countryURL);
+        return (new BreadcrumbsCalendarBusinessThirtyMonths())->breadcrumbs($dateData, $countryURL, $countryData);
 
     }
 
-    public function  calendarBusinessSixDaysMonths($dateData, $countryURL)
+    public function  calendarBusinessSixDaysMonths($dateData, $countryURL, $countryData)
     {
 
-        return (new BreadcrumbsCalendarBusinessSixDaysMonths())->breadcrumbs($dateData, $countryURL);
+        return (new BreadcrumbsCalendarBusinessSixDaysMonths())->breadcrumbs($dateData, $countryURL, $countryData);
 
     }
 
+    public function  calendarBusinessYears($dateData, $countryURL, $countryData)
+    {
+
+        return (new BreadcrumbsCalendarBusinessYears())->breadcrumbs($dateData, $countryURL, $countryData);
+
+    }
+
+    public function  calendarBusinessWorkingDaysYears($dateData, $countryURL, $countryData)
+    {
+
+        return (new BreadcrumbsCalendarBusinessWorkingDaysYears())->breadcrumbs($dateData, $countryURL, $countryData);
+
+    }
+
+    public function  calendarBusinessDaysOffYears($dateData, $countryURL, $countryData)
+    {
+
+        return (new BreadcrumbsCalendarBusinessDaysOffYears())->breadcrumbs($dateData, $countryURL, $countryData);
+
+    }
+
+    public function  calendarBusinessSixDaysYears($dateData, $countryURL, $countryData)
+    {
+
+        return (new BreadcrumbsCalendarBusinessSixDaysYears())->breadcrumbs($dateData, $countryURL, $countryData);
+
+    }
+
+    public function  calendarBusinessThirtyYears($dateData, $countryURL, $countryData)
+    {
+
+        return (new BreadcrumbsCalendarBusinessThirtyYears())->breadcrumbs($dateData, $countryURL, $countryData);
+
+    }
+
+    public function  calendarBusinessFortyYears($dateData, $countryURL, $countryData)
+    {
+
+        return (new BreadcrumbsCalendarBusinessFortyYears())->breadcrumbs($dateData, $countryURL, $countryData);
+
+    }
 
     public function  calendarEastern($dateData)
     {
@@ -124,17 +165,24 @@ class Breadcrumbs
 
     }
 
-    public function  calendarEasternAnimals($eastern)
+    public function  calendarEasternAnimals($eastern, $dateData)
     {
 
-        return (new BreadcrumbsCalendarEasternAnimals())->breadcrumbs($eastern);
+        return (new BreadcrumbsCalendarEasternAnimals())->breadcrumbs($eastern, $dateData);
 
     }
 
-    public function  holidaysMonths($dateData, $countryURL)
+    public function  holidaysMonths($dateData, $countryURL, $countryData)
     {
 
-        return (new BreadcrumbsHolidaysMonths())->breadcrumbs($dateData, $countryURL);
+        return (new BreadcrumbsHolidaysMonths())->breadcrumbs($dateData, $countryURL, $countryData);
+
+    }
+
+    public function  holidaysYears($dateData, $countryURL, $countryData)
+    {
+
+        return (new BreadcrumbsHolidaysYears())->breadcrumbs($dateData, $countryURL, $countryData);
 
     }
 
@@ -145,17 +193,17 @@ class Breadcrumbs
 
     }
 
-    public function  holidaysDays($dateData, $countryURL)
+    public function  holidaysDays($dateData, $countryURL, $countryData)
     {
 
-        return (new BreadcrumbsHolidaysDays())->breadcrumbs($dateData, $countryURL);
+        return (new BreadcrumbsHolidaysDays())->breadcrumbs($dateData, $countryURL, $countryData);
 
     }
 
-    public function  holidaysHoliday($dateData, $countryURL, $holidayData)
+    public function  holidaysHoliday($dateData, $countryURL, $holidayData, $countryData)
     {
 
-        return (new BreadcrumbsHolidaysHoliday())->breadcrumbs($dateData, $countryURL, $holidayData);
+        return (new BreadcrumbsHolidaysHoliday())->breadcrumbs($dateData, $countryURL, $holidayData, $countryData);
 
     }
 
@@ -191,6 +239,20 @@ class Breadcrumbs
     {
 
         return (new BreadcrumbsMoonMonthsPhases())->breadcrumbs($dateData, $phaseURL);
+
+    }
+
+    public function  moonYears($dateData)
+    {
+
+        return (new BreadcrumbsMoonYears())->breadcrumbs($dateData);
+
+    }
+
+    public function  moonYearsPhase($dateData)
+    {
+
+        return (new BreadcrumbsMoonYearsPhase())->breadcrumbs($dateData);
 
     }
 

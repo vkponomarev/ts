@@ -22,7 +22,7 @@
 ?>
 
 
-<a name="calendar-<?= $date->year->current ?>"></a><h1
+<a name="holidays-calendar-<?= $date->year->current ?>"></a><h1
         class="main-page-h1"><?= Yii::$app->params['text']['h1'] ?></h1>
 <hr>
 
@@ -255,7 +255,7 @@
 <?php /***************************** */ ?>
 
 <?php if ($holidaysData): ?>
-    <a name="holidays-and-weekends-in-<?= $date->current ?>-<?= $countryData['name_en'] ?>"></a>
+    <a name="holidays-and-weekends"></a>
 
 
     <?php if ($dayNameURL == 'today') : ?>

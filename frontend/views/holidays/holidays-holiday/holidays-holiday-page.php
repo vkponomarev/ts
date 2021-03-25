@@ -21,7 +21,7 @@
 ?>
 
 
-<a name="calendar-<?= $date->year->current ?>"></a><h1
+<a name="holiday"></a><h1
         class="main-page-h1"><?= Yii::$app->params['text']['h1'] ?></h1>
 <hr>
 
@@ -128,7 +128,7 @@
 <?php /***************************** */ ?>
 
 <?php if ($holidaysData): ?>
-    <a name="calendar-of-holidays-and-weekends-in-<?= $date->year->current ?>-<?= $countryData['name_en'] ?>"></a>
+    <a name="calendar-of-holidays-and-weekends"></a>
     <?php if ($countryData) : ?>
         <h2 class="main-page-h1">
             <?= Yii::t('app', '{holiday} upcoming holiday dates {country_in}', [

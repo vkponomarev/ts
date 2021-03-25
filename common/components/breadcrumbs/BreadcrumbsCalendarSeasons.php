@@ -10,7 +10,7 @@ class BreadcrumbsCalendarSeasons
      * @param $dateData \common\componentsV2\date\Date
      * @return mixed
      */
-    public function breadcrumbs($dateData, $seasonURL, $countryURL)
+    public function breadcrumbs($dateData, $seasonURL, $countryURL, $countryData)
     {
 
         $count = 0;
@@ -27,12 +27,31 @@ class BreadcrumbsCalendarSeasons
         if ($seasonURL == 'autumn')
             $seasonNow = Yii::t('app', 'Autumn');
 
-        $breadcrumbs['urls'][$count] = [
-            'url' => 'calendar/years/' . $dateData->year->current . (($countryURL)? '/' .  $countryURL : ''),
-            'text' => $dateData->year->current,
-        ];
+        if ($countryURL){
+            $breadcrumbs['urls'][$count] = [
+                'url' => 'calendar/years/' . $dateData->year->current,
+                'text' => Yii::t('app', 'Calendar'),
+            ];
 
-        $breadcrumbs['last'] = $seasonNow;
+            $breadcrumbs['urls'][++$count] = [
+                'url' => 'calendar/years/' . $dateData->year->current . (($countryURL)? '/' .  $countryURL : ''),
+                'text' => $countryData['name'],
+            ];
+
+            $breadcrumbs['last'] = $seasonNow;
+
+        } else {
+
+            $breadcrumbs['urls'][$count] = [
+                'url' => 'calendar/years/' . $dateData->year->current . (($countryURL)? '/' .  $countryURL : ''),
+                'text' => Yii::t('app', 'Calendar'),
+            ];
+
+            $breadcrumbs['last'] = $seasonNow;
+
+        }
+
+
 
         return $breadcrumbs;
 

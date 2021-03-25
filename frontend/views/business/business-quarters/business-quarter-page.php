@@ -435,7 +435,7 @@
 <?php /***************************** */ ?>
 
 <?php if ($holidaysData): ?>
-    <a name="calendar-of-holidays-and-weekends-in-<?= $dateData['year']['current'] ?>-<?= $countryData['name_en'] ?>"></a>
+    <a name="calendar-of-holidays-and-weekends"></a>
     <h2 class="main-page-h1">
         <?= Yii::t('app', 'Business days calendar with holidays and weekends for the {quarter} quarter of {year} {country_for}', [
             'country_for' => $countryData['name_for'],
@@ -469,7 +469,7 @@
 
 <?php if ($PDFCalendarsData['exists']): ?>
     <br>
-    <a name="download-calendar-<?= $dateData['year']['current'] ?>"></a>
+    <a name="download-calendar"></a>
     <h2 class="main-page-h1">
         <?= Yii::t('app', 'Download and print PDF business days calendar with holidays and weekends for the {quarter} quarter of {year} {country_for}', [
             'country_for' => $countryData['name_for'],

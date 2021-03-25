@@ -22,7 +22,7 @@
 ?>
 
 
-<a name="calendar-<?= $date->year->current ?>"></a><h1
+<a name="holidays-calendar-<?= $date->year->current ?>"></a><h1
         class="main-page-h1"><?= Yii::$app->params['text']['h1'] ?></h1>
 <hr>
 
@@ -153,7 +153,7 @@
 <?php /***************************** */ ?>
 
 <?php if ($holidaysData): ?>
-    <a name="calendar-of-holidays-and-weekends-in-<?= $date->year->current ?>-"></a>
+    <a name="calendar-of-holidays-and-weekends"></a>
     <br>
     <?php if ($seasonURL == 'winter') : ?>
         <h2 class="main-page-h1">

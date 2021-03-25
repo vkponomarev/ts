@@ -16,8 +16,13 @@ class BreadcrumbsMoonYearsGardener
         $count = 0;
 
         $breadcrumbs['urls'][$count] =  [
+            'url' => 'calendar/years/' . $dateData->year->current,
+            'text' => Yii::t('app', 'Calendar'),
+        ];
+
+        $breadcrumbs['urls'][++$count] =  [
             'url' => 'calendar/moon/years/' . $dateData->year->current,
-            'text' => $dateData->year->current,
+            'text' => Yii::t('app', 'Lunar Calendar'),
         ];
 
         if ($gardenerNameURL){

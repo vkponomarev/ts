@@ -20,7 +20,7 @@ $moon = new \common\components\moon\Moon();
 ?>
 
 
-<a name="calendar-<?= $date->year->current ?>"></a><h1
+<a name="calendar"></a><h1
         class="main-page-h1"><?= Yii::$app->params['text']['h1'] ?></h1>
 <hr>
 

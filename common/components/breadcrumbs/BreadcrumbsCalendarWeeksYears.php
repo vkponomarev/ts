@@ -15,7 +15,12 @@ class BreadcrumbsCalendarWeeksYears
 
         $count = 0;
 
-        $breadcrumbs['last'] = $dateData->year->current;
+        $breadcrumbs['urls'][$count] =  [
+            'url' => 'calendar/years/' . $dateData->year->current,
+            'text' => Yii::t('app', 'Calendar'),
+        ];
+
+        $breadcrumbs['last'] = Yii::t('app', 'Calendar with week numbers');
 
         return $breadcrumbs;
 

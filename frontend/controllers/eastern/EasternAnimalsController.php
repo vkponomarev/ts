@@ -67,7 +67,7 @@ class EasternAnimalsController extends Controller
         $calendars = new Calendars($dateToday->year->current);
 
         $breadCrumbs = new Breadcrumbs();
-        Yii::$app->params['breadcrumbs'] = $breadCrumbs->calendarEasternAnimals($eastern);
+        Yii::$app->params['breadcrumbs'] = $breadCrumbs->calendarEasternAnimals($eastern, $dateToday);
 
         //$PDFCalendars = new PDFCalendars();
         //$PDFCalendarsData = $PDFCalendars->businessExists($year, $language, $countryData['url']);

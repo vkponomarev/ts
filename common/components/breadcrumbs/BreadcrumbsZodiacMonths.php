@@ -23,7 +23,7 @@ class BreadcrumbsZodiacMonths
 
         $breadcrumbs['urls'][++$count] =  [
             'url' => 'calendar/zodiac/years/' . $dateData->year->current,
-            'text' => $dateData->year->current,
+            'text' => Yii::t('app', 'Calendar'),
         ];
 
 

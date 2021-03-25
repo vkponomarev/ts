@@ -23,7 +23,7 @@
 ?>
 
 
-<a name="calendar"></a><h1
+<a name="animal"></a><h1
         class="main-page-h1"><?= Yii::$app->params['text']['h1'] ?></h1>
 <hr>
 

@@ -74,7 +74,7 @@ class MoonYearsPhaseController extends Controller
         $pageTexts->updateByCalendarYearMoon($pageTextsMessages, $dateData);
 
         $breadCrumbs = new Breadcrumbs();
-        Yii::$app->params['breadcrumbs'] = $breadCrumbs->calendarYears($dateDataObj);
+        Yii::$app->params['breadcrumbs'] = $breadCrumbs->moonYearsPhase($dateDataObj);
 
         $PDFCalendars = new PDFCalendars();
         $PDFCalendarsData = $PDFCalendars->yearlyMoonExists($year, $language);

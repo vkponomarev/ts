@@ -11,18 +11,36 @@ class BreadcrumbsCalendarBusinessQuarters
      * @param $quarter
      * @return mixed
      */
-    public function breadcrumbs($dateData, $quarter, $countryURL)
+    public function breadcrumbs($dateData, $quarter, $countryURL, $countryData)
     {
 
         $count = 0;
 
-
         $breadcrumbs['urls'][$count] =  [
-            'url' => 'calendar/business/years/' . $dateData->year->current . (($countryURL)? '/' .  $countryURL : ''),
-            'text' => $dateData->year->current,
+            'url' => 'calendar/years/' . $dateData->year->current,
+            'text' => Yii::t('app', 'Calendar'),
         ];
 
-        $breadcrumbs['last'] = $quarter . ' ' . Yii::t('app', 'quarter');
+        $breadcrumbs['urls'][++$count] =  [
+            'url' => 'calendar/business/years/' . $dateData->year->current,
+            'text' => Yii::t('app', 'Business days calendar'),
+        ];
+
+
+        if ($countryURL){
+
+            $breadcrumbs['urls'][++$count] =  [
+                'url' => 'calendar/business/quarters/' . $dateData->year->current . '/' . $dateData->quarter->current,
+                'text' => $dateData->quarter->currentName,
+            ];
+
+            $breadcrumbs['last'] = $countryData['name'];
+
+        } else {
+
+            $breadcrumbs['last'] = $dateData->quarter->currentName;
+
+        }
 
         return $breadcrumbs;
 

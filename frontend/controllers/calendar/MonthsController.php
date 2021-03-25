@@ -93,7 +93,7 @@ class MonthsController extends Controller
         $pageTexts->updateByCalendarMonth($pageTextsMessages, $dateData, $countryData, count($holidaysData), $calendarNameOfMonths);
 
         $breadCrumbs = new Breadcrumbs();
-        Yii::$app->params['breadcrumbs'] = $breadCrumbs->calendarMonths($dateDataObj, $countryURL['url']);
+        Yii::$app->params['breadcrumbs'] = $breadCrumbs->calendarMonths($dateDataObj, $countryURL['url'], $countryData);
 
         return $this->render('month-page.min.php', [
 

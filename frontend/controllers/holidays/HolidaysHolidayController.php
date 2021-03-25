@@ -82,7 +82,7 @@ class HolidaysHolidayController extends Controller
         $pageTexts->updateByHolidaysWorldHoliday($date, $countryData, $holidayData, $holidaysData);
 
         $breadCrumbs = new Breadcrumbs();
-        Yii::$app->params['breadcrumbs'] = $breadCrumbs->holidaysHoliday($date, $countryURL['url'], $holidayData);
+        Yii::$app->params['breadcrumbs'] = $breadCrumbs->holidaysHoliday($date, $countryURL['url'], $holidayData, $countryData);
 
         return $this->render('holidays-holiday-page.min.php', [
 

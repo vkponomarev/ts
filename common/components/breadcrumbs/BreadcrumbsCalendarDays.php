@@ -17,7 +17,7 @@ class BreadcrumbsCalendarDays
 
         $breadcrumbs['urls'][$count] =  [
             'url' => 'calendar/years/' . $dateData->year->current,
-            'text' => $dateData->year->current,
+            'text' => Yii::t('app', 'Calendar'),
         ];
 
         $breadcrumbs['urls'][++$count] =  [
@@ -27,7 +27,7 @@ class BreadcrumbsCalendarDays
 
         $breadcrumbs['urls'][++$count] =  [
             'url' => 'calendar/months/' . $dateData->year->current . '-' . $dateData->month->current,
-            'text' => $dateData->month->current,
+            'text' => $dateData->month->nameFullSimple,
         ];
 
 

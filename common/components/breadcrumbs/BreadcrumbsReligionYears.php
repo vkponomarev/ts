@@ -38,7 +38,7 @@ class BreadcrumbsReligionYears
 
         $breadcrumbs['urls'][$count] =  [
             'url' => 'calendar/years/' . $dateData->year->current,
-            'text' => $dateData->year->current,
+            'text' => Yii::t('app', 'Calendar'),
         ];
 
         $breadcrumbs['last'] = $religion;

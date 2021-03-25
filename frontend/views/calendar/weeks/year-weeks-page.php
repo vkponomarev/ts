@@ -281,7 +281,7 @@
 <?php if ($PDFCalendarsData['exists']): ?>
     <br>
     <?php if ($holidaysData): ?>
-        <a name="download-calendar-<?= $dateData['year']['current'] ?>"></a>
+        <a name="download-calendar"></a>
         <h2 class="main-page-h1">
             <?= Yii::t('app', 'Download and print PDF calendar for {year} with week numbers', [
                 'country_for' => $countryData['name_for'],
@@ -289,7 +289,7 @@
             ]) ?>
         </h2>
     <?php else: ?>
-        <a name="download-calendar-<?= $dateData['year']['current'] ?>"></a>
+        <a name="download-calendar"></a>
         <h2 class="main-page-h1">
             <?= Yii::t('app', 'Download and print PDF calendar for {year} with week numbers', [
                 'year' => $dateData['year']['current'],

@@ -616,7 +616,7 @@ return [
     'What is the phase of the moon on {date}' => 'Какая фаза луны на {date}',
 
     'Calendar with week numbers' => 'Календарь с номерами недель',
-    'Business days calendar' => 'Производственный календаь',
+    'Business days calendar' => 'Производственный календарь',
     'Lunar Calendar' => 'Лунный календарь',
     'Zodiac signs calendar' => 'Календарь знаков зодиака',
     'Other calendars' => 'Другие календари',

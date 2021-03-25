@@ -22,7 +22,7 @@ $moon = new \common\components\moon\Moon();
 ?>
 
 
-<a name="calendar-<?= $dateData['year']['current'] ?>"></a><h1
+<a name="calendar"></a><h1
         class="main-page-h1"><?= Yii::$app->params['text']['h1'] ?></h1>
 <hr>
 
@@ -288,7 +288,7 @@ $moon = new \common\components\moon\Moon();
 <?php /***************************** */ ?>
 
 
-<a name="moon-phases-<?= $dateData['year']['current'] ?>"></a>
+<a name="moon-phases"></a>
 <h2 class="main-page-h1">
 
     <?php if ($phaseURL == 'new-moon') : ?>
@@ -524,7 +524,7 @@ $moon = new \common\components\moon\Moon();
 <?php if ($PDFCalendarsData['exists']): ?>
     <br>
 
-    <a name="download-calendar-<?= $dateData['year']['current'] ?>"></a>
+    <a name="download-calendar"></a>
     <h2 class="main-page-h1">
         <?= Yii::t('app', 'Download and print PDF lunar calendar (moon phases) for {year}', [
             'year' => $dateData['year']['current'],

@@ -91,7 +91,7 @@ class SeasonsController extends Controller
         $pageTexts->updateByCalendarSeason($pageTextsMessages, $dateData, $countryData, count($holidaysData));
 
         $breadCrumbs = new Breadcrumbs();
-        Yii::$app->params['breadcrumbs'] = $breadCrumbs->calendarSeasons($dateDataObj, $seasonURL, $countryURL['url']);
+        Yii::$app->params['breadcrumbs'] = $breadCrumbs->calendarSeasons($dateDataObj, $seasonURL, $countryURL['url'], $countryData);
 
         $PDFCalendars = new PDFCalendars();
         $PDFCalendarsData = $PDFCalendars->seasonsExists($yearURL, $language, $countryData['url'], $seasonURL);

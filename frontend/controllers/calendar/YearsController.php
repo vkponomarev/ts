@@ -83,7 +83,7 @@ class YearsController extends Controller
         $pageTexts->updateByCalendarYear($pageTextsMessages, $dateData, $countryData, count($holidaysData));
 
         $breadCrumbs = new Breadcrumbs();
-        Yii::$app->params['breadcrumbs'] = $breadCrumbs->calendarYears($dateDataObj);
+        Yii::$app->params['breadcrumbs'] = $breadCrumbs->calendarYears($dateDataObj, $countryURL['url'], $countryData);
 
         $PDFCalendars = new PDFCalendars();
         $PDFCalendarsData = $PDFCalendars->yearlyExists($year, $language, $countryData['url']);

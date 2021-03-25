@@ -21,7 +21,7 @@ class BreadcrumbsZodiacYears
             'text' => Yii::t('app', 'Zodiac signs'),
         ];
 
-        $breadcrumbs['last'] = $dateData->year->current;
+        $breadcrumbs['last'] = Yii::t('app', 'Calendar');
 
         return $breadcrumbs;
 
