@@ -153,7 +153,7 @@
 <?php if ($PDFCalendarsData['exists']): ?>
     <div class="row">
         <div class="col-xxs-12 c-prev-next-right">
-            <a href="#download-calendar-<?= $dateData['year']['current'] ?>" class="btn btn-default">
+            <a href="#download-calendar" class="btn btn-default">
                 <span class="fa fa-print fa-lg"></span>&nbsp;<?= Yii::t('app', 'Print'); ?>
             </a>
         </div>

@@ -154,14 +154,18 @@ class WeeksController extends Controller
         $PDFCalendarsData = $PDFCalendars->weeklyExists($year, $language, $weekURL['url']);
         $PDFCalendarsDataYearly = $PDFCalendars->yearlyWithWeeksExists($yearURL, $language, $weekURL['url']);
         $PDFCalendarsDataMerged = array_merge_recursive($PDFCalendarsData, $PDFCalendarsDataYearly);
-        if ($PDFCalendarsData['exists'] == 1 or $PDFCalendarsDataYearly['exists'] == 1){
-            $PDFCalendarsDataMerged['exists'] = 1;
+
+        $isOn = 0;
+        foreach ($PDFCalendarsDataMerged['exists'] as $one){
+            if ($one==1){
+                $PDFCalendarsDataMerged['exists'] = 1;
+                $isOn = 1;
+            } else {
+                if ($isOn == 0){
+                    $PDFCalendarsDataMerged['exists'] = 0;
+                }
+            }
         }
-
-
-
-
-
 
         return $this->render('week-page.min.php', [
 
