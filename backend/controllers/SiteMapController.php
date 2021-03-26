@@ -37,6 +37,9 @@ class SiteMapController extends Controller
     public function actionIndex()
     {
 
+        set_time_limit(500000);
+        ini_set("memory_limit", "10000M");
+
         if ($name = Yii::$app->request->post('name')) {
 
             $siteMap = new SiteMap();
@@ -310,8 +313,8 @@ class SiteMapController extends Controller
 
             if ($name == 'sitemap-calendar-holidays-all') {
                 $siteMap->generateCalendarHolidays($languagesData);
-                $siteMap->generateCalendarHolidaysMonths($languagesData);
-                $siteMap->generateCalendarHolidaysYears($languagesData);
+                //$siteMap->generateCalendarHolidaysMonths($languagesData);
+                //$siteMap->generateCalendarHolidaysYears($languagesData);
             }
 
             if ($name == 'sitemap-calendar-holidays-ru') {
