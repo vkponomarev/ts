@@ -26,7 +26,7 @@ class SiteMapGenerateCalendarZodiacYearsRU
         ($zodiacs = new Zodiacs());
 
         // Проходим по всем годам.
-        foreach (range(1, 9999) as $year) {
+        foreach (range(2000, 2030) as $year) {
 
             if ($year < 1000) {
                 $year = str_pad($year, 4, '0', STR_PAD_LEFT);
@@ -48,7 +48,7 @@ class SiteMapGenerateCalendarZodiacYearsRU
                     'year' => $year,
                 ]);
 
-                if (($countLimit >= 49998) or (($year == 9999) )) {
+                if (($countLimit >= 49998) or (($year == 2030) )) {
 
                     $countFiles++;
 
