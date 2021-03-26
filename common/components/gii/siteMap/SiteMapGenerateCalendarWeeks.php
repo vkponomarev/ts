@@ -27,7 +27,7 @@ class SiteMapGenerateCalendarWeeks
         $date = new Date();
 
 
-        foreach (range(1, 9999) as $year) {
+        foreach (range(2000, 2030) as $year) {
 
             $dateData = $date->yearWeeks($year . '-01-01');
 
@@ -56,7 +56,7 @@ class SiteMapGenerateCalendarWeeks
                         'week' => $week,
                     ]);
 
-                    if (($countLimit >= 49998) or (($year == 9999) and ($languagesDataCount == $countLang) and ($countWeeks == $dateData['week']['count']))) {
+                    if (($countLimit >= 49998) or (($year == 2030) and ($languagesDataCount == $countLang) and ($countWeeks == $dateData['week']['count']))) {
 
                         $countFiles++;
 
