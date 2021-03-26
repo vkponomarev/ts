@@ -328,6 +328,14 @@ class SiteMapController extends Controller
             }
 
 
+            if ($name == 'sitemap-all') {
+                $siteMap->generateMainFilesAll();
+            }
+
+            if ($name == 'sitemap-ru') {
+                $siteMap->generateMainFilesRU();
+            }
+
 
 
         }

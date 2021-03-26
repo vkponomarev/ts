@@ -14,6 +14,17 @@ class SiteMap
 
     }
 
+    function generateMainFilesAll(){
+
+        (new SiteMapGenerateMainFilesAll())->generate();
+
+    }
+
+    function generateMainFilesRU(){
+
+        (new SiteMapGenerateMainFilesRU())->generate();
+
+    }
 
     function generate($name){
 
@@ -425,13 +436,6 @@ class SiteMap
     function generateCalendarZodiacDaysRU($languagesData){
 
         (new SiteMapGenerateCalendarZodiacDaysRU())->generate($languagesData);
-
-    }
-
-
-    function generateMainFiles(){
-
-        (new SiteMapGenerateMainFiles())->generate();
 
     }
 
