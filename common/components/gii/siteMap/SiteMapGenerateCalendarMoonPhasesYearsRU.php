@@ -28,7 +28,7 @@ class SiteMapGenerateCalendarMoonPhasesYearsRU
         $moonPhases = $moon->phasesArray();
         $moonPhasesCount = count($moonPhases);
 
-        foreach (range(101, 9998) as $year) {
+        foreach (range(2000, 2030) as $year) {
 
             if ($year < 1000) {
                 $year = str_pad($year, 4, '0', STR_PAD_LEFT);
@@ -57,7 +57,7 @@ class SiteMapGenerateCalendarMoonPhasesYearsRU
                         'phase' => $phaseURL,
                     ]);
 
-                    if (($countLimit >= 49998) or (($year == 9998) and ($countPhases == $moonPhasesCount))) {
+                    if (($countLimit >= 49998) or (($year == 2030) and ($countPhases == $moonPhasesCount))) {
 
                         $countFiles++;
 

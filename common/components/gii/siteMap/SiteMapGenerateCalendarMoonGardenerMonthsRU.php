@@ -29,7 +29,7 @@ class SiteMapGenerateCalendarMoonGardenerMonthsRU
         $moonGardener = $moon->gardener();
         $moonGardenerCount = count($moonGardener);
 
-        foreach (range(101, 9999) as $year) {
+        foreach (range(2000, 2030) as $year) {
 
             if ($year < 1000) {
                 $year = str_pad($year, 4, '0', STR_PAD_LEFT);
@@ -70,7 +70,7 @@ class SiteMapGenerateCalendarMoonGardenerMonthsRU
                         ]);
 
                         if (($countLimit >= 49998) or
-                            (($year == 9998) and
+                            (($year == 2030) and
                                 ($countMonths == 12) and
                                 ($countGardener == $moonGardenerCount))
                         ) {
