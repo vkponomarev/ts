@@ -12,7 +12,7 @@ class SiteMapGenerateCalendarMonthsRU
 
     function generate($languagesData)
     {
-
+        ini_set("memory_limit", "10000M");
         $countries = new Countries();
         $countriesData = $countries->bySiteMapGeneration();
         $countriesDataCount = count($countriesData);
