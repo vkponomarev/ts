@@ -46,6 +46,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         Создание PDF Календаря на ГОД<br>
         Создается календраь на год с праздниками(если есть праздники для года и страны) и без праздников.<br>
+        Остановлился на создании с 2000 по 2030 год так как долго делается.<br>
         С праздниками : frontend/web/calendars-pdf/country-name-1223/yearly/name-of-calendar.pdf<br>
         Без праздников : frontend/web/calendars-pdf/no-holidays/yearly/name-of-calendar.pdf<br>
         <br><br>
