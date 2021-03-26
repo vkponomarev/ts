@@ -29,12 +29,11 @@ class SiteMapGenerateCalendarBusinessMonthsRU
             $bigData = new BigData();
             $bigData->saveData($count, 'sitemap');
 
-            $countLang = 0;
+
             foreach ($languagesData as $language) {
                 if ($language['url'] <> 'ru') {
                     continue;
                 }
-                $countLang++;
 
                 $countMonths = 0;
                 foreach (range(1, 12) as $month) {
@@ -45,7 +44,6 @@ class SiteMapGenerateCalendarBusinessMonthsRU
                         'year' => $year,
                         'month' => str_pad($month, 2, '0', STR_PAD_LEFT),
                     ]);
-
 
                     $countCountries = 0;
                     foreach ($countriesData as $country) {

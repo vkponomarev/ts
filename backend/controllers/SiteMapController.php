@@ -134,6 +134,12 @@ class SiteMapController extends Controller
 
             }
 
+            if ($name == 'sitemap-calendar-business-months-ru') {
+
+                $siteMap->generateCalendarBusinessMonthsRU($languagesData);
+
+            }
+
             if ($name == 'sitemap-calendar-moon-years-all') {
 
                 $siteMap->generateCalendarMoonYears($languagesData);
