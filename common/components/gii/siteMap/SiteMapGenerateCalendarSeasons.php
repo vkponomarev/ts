@@ -18,7 +18,7 @@ class SiteMapGenerateCalendarSeasons
         $countriesDataCount = count($countriesData);
         $languagesDataCount = count($languagesData);
         $countLimit = 0;
-        $countFiles = 0;
+        $countFiles = 48;
         $count = 0;
         $siteMapUrls = '';
 
@@ -30,7 +30,7 @@ class SiteMapGenerateCalendarSeasons
         ];
 
         // Проходим по всем годам.
-        foreach (range(1, 5000) as $year) {
+        foreach (range(8920, 9999) as $year) {
 
             if ($year < 1000) {
                 $year = str_pad($year, 4, '0', STR_PAD_LEFT);
