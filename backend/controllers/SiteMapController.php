@@ -312,8 +312,8 @@ class SiteMapController extends Controller
             }
 
             if ($name == 'sitemap-calendar-holidays-all') {
-                $siteMap->generateCalendarHolidays($languagesData);
-                //$siteMap->generateCalendarHolidaysMonths($languagesData);
+                //$siteMap->generateCalendarHolidays($languagesData);
+                $siteMap->generateCalendarHolidaysMonths($languagesData);
                 //$siteMap->generateCalendarHolidaysYears($languagesData);
             }
 
