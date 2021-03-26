@@ -37,6 +37,10 @@ class GenerateController extends Controller
     public function actionGeneratePdf($languageID, $countryID, $yearURL, $orientation, $language, $pageName)
     {
 
+
+
+
+
         Yii::$app->language = $language;
         Yii::$app->formatter->locale = Yii::$app->language;
         $this->layout = "print";
@@ -126,7 +130,6 @@ class GenerateController extends Controller
         }
 
         $giiPDF = new GiiPDF();
-
         if ($doPDF) {
 
             $render = $this->render('@frontend/views/print/' . $pageName . '.min.php', [

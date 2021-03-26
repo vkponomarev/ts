@@ -5,6 +5,7 @@ namespace common\components\gii\giiPDF;
 
 use common\components\countries\Countries;
 use common\components\gii\Gii;
+use common\components\holidays\Holidays;
 use Yii;
 
 /**
@@ -24,9 +25,12 @@ class GiiPDFGeneratePDFCalendarYearly
     function generate($languagesData)
     {
         set_time_limit(500000);
-
+        ini_set("memory_limit", "20000M");
         $gii = new Gii();
         $bigData = new \common\components\bigData\BigData();
+
+        $holidays = new Holidays();
+        $holidaysRange = $holidays->range();
 
         $countries = new Countries();
         $countriesByPDFGeneration = $countries->byPDFGeneration();
@@ -42,32 +46,48 @@ class GiiPDFGeneratePDFCalendarYearly
         ];
 
         $count = 0;
-        foreach (range(0001, 9999) as $eachYear) {
+        foreach (range(2000, 2030) as $eachYear) {
 
             foreach ($languagesData as $language) {
                 //$count++;
                 //if ($count <= 11) {continue;};
 
-                foreach ($countriesByPDFGeneration as $eachCountry) {
+                if ($eachYear >= $holidaysRange['start'] && $eachYear <= $holidaysRange['end']){
+                    foreach ($countriesByPDFGeneration as $eachCountry) {
 
+                        foreach ($PDFCalendarYearlyOrientation as $orientation) {
+
+                            $count++;
+                            $bigData->saveData($count, 'work');
+
+                            $params['languageID'] = $language['id'];
+                            $params['countryID'] = $eachCountry['id'];
+                            $params['yearURL'] = str_pad($eachYear, 4, '0', STR_PAD_LEFT);
+                            $params['orientation'] = $orientation;
+                            $params['language'] = $language['url'];
+                            $params['pageName'] = $PDFCalendarYearlyPages[$orientation];
+
+                            $gii->makeAction($params, 'frontend\controllers', 'generate/generate-pdf');
+
+                        }
+                    }
+                } else {
                     foreach ($PDFCalendarYearlyOrientation as $orientation) {
 
                         $count++;
                         $bigData->saveData($count, 'work');
 
                         $params['languageID'] = $language['id'];
-                        $params['countryID'] = $eachCountry['id'];
-                        $params['yearURL'] = $eachYear;
+                        $params['countryID'] = 171;
+                        $params['yearURL'] = str_pad($eachYear, 4, '0', STR_PAD_LEFT);
                         $params['orientation'] = $orientation;
                         $params['language'] = $language['url'];
                         $params['pageName'] = $PDFCalendarYearlyPages[$orientation];
 
                         $gii->makeAction($params, 'frontend\controllers', 'generate/generate-pdf');
-
                     }
                 }
             }
         }
     }
-
 }

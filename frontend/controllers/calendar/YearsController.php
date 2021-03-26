@@ -85,9 +85,13 @@ class YearsController extends Controller
         $breadCrumbs = new Breadcrumbs();
         Yii::$app->params['breadcrumbs'] = $breadCrumbs->calendarYears($dateDataObj, $countryURL['url'], $countryData);
 
+
+
+
+
         $PDFCalendars = new PDFCalendars();
         $PDFCalendarsData = $PDFCalendars->yearlyExists($year, $language, $countryData['url']);
-
+        //(new \common\components\dump\Dump())->printR($PDFCalendarsData);die;
 
         return $this->render('year-page.min.php', [
 
