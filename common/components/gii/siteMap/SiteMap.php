@@ -38,6 +38,12 @@ class SiteMap
 
     }
 
+    function generateCalendarYearsRU($languagesData){
+
+        (new SiteMapGenerateCalendarYearsRU())->generate($languagesData);
+
+    }
+
     function generateCalendarYearsWithWeeks($languagesData){
 
         (new SiteMapGenerateCalendarYearsWithWeeks())->generate($languagesData);

@@ -46,8 +46,13 @@ class SiteMapController extends Controller
 
             if ($name == 'sitemap-calendar-yearly-all') {
 
-                //$gii->cleanPath($gii->realPath() . '/gii/sitemap/artists/');
                 $siteMap->generateCalendarYears($languagesData);
+
+            }
+
+            if ($name == 'sitemap-calendar-yearly-ru') {
+
+                $siteMap->generateCalendarYearsRU($languagesData);
 
             }
 
