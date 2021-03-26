@@ -42,7 +42,7 @@ class GiiPDFGeneratePDFCalendarYearly
         ];
 
         $count = 0;
-        foreach (range(2022, 2022) as $eachYear) {
+        foreach (range(0001, 9999) as $eachYear) {
 
             foreach ($languagesData as $language) {
                 //$count++;
