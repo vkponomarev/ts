@@ -24,7 +24,7 @@ class SiteMapGenerateCalendarYearsWithWeeksRU
         $siteMapUrls = '';
         // Проходим по всем годам.
 
-        foreach (range(1, 9999) as $year) {
+        foreach (range(2000, 2030) as $year) {
 
             if ($year < 1000) {
                 $year = str_pad($year, 4, '0', STR_PAD_LEFT);
