@@ -27,6 +27,7 @@
                                 if (false !== $key): ?><td class="cpdf-yl1-day cpdf-yl1-day-holiday"><?= $week[$i]['monthDay']; ?></td><?php else: ?><td class="cpdf-yl1-day cpdf-yl1-day-weekend"><?= $week[$i]['monthDay']; ?></td><?php endif; ?><?php else: ?><td class=cpdf-yl1-no-day><span></span></td><?php endif; ?><?php endfor; ?></tr><?php endforeach; ?></table></td><?php if (($countMonths == 4) or ($countMonths == 8) or ($countMonths == 12)): ?></tr><?php endif; ?><?php endforeach; ?></table><div class=cpdf-yl1-holidays-table-border><table class=cpdf-yl1-holidays-table><tr><td><table class=cpdf-yl1-holidays-table-inside><?php
                     $count = 0;
                     $countHolidays = count($holidaysData);
+                    $countHolidays = ($countHolidays > 21 ? 21 : $countHolidays);
                     $countHolidaysThree = ceil($countHolidays / 3);
 
                     for ($i = $count; $i < $countHolidaysThree; $i++) :

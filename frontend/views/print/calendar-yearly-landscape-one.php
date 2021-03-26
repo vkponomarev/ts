@@ -151,6 +151,7 @@
                     <?php
                     $count = 0;
                     $countHolidays = count($holidaysData);
+                    $countHolidays = ($countHolidays > 21 ? 21 : $countHolidays);
                     $countHolidaysThree = ceil($countHolidays / 3);
 
                     for ($i = $count; $i < $countHolidaysThree; $i++) :
