@@ -50,6 +50,14 @@ class SiteMapGenerateCalendarSeasonsRU
                 foreach ($PDFCalendarSeasons as $season) {
                     $countSeasons++;
 
+                    $countLimit++;
+
+                    $siteMapUrls .= \Yii::$app->view->render('@common/components/gii/siteMap/templates/_calendar-seasons.php', [
+                        'language' => $language,
+                        'year' => $year,
+                        'season' => $season,
+                    ]);
+
                     if ($year >= 2000 && $year <= 2030) {
 
                         $countCountries = 0;
