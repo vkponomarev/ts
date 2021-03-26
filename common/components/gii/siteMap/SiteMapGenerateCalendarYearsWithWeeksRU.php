@@ -47,7 +47,7 @@ class SiteMapGenerateCalendarYearsWithWeeksRU
                         'year' => $year,
                     ]);
 
-                    if (($countLimit >= 49998) or (($year == 9999))) {
+                    if (($countLimit >= 49998) or (($year == 2030))) {
 
                         $countFiles++;
 
