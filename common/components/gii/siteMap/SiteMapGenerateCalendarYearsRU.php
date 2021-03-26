@@ -39,6 +39,13 @@ class SiteMapGenerateCalendarYearsRU
 
                 if ($year >= 2000 && $year <= 2030) {
 
+                    $countLimit++;
+
+                    $siteMapUrls .= \Yii::$app->view->render('@common/components/gii/siteMap/templates/_calendar-years.php',[
+                        'language' => $language,
+                        'year' => $year,
+                    ]);
+
                     $countCountries = 0;
                     foreach ($countriesData as $country) {
                         $countCountries++;
