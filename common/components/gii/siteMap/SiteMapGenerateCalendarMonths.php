@@ -42,6 +42,14 @@ class SiteMapGenerateCalendarMonths
 
                     if ($year >= 2000 && $year <= 2030) {
 
+                        $countLimit++;
+
+                        $siteMapUrls .= \Yii::$app->view->render('@common/components/gii/siteMap/templates/_calendar-months.php', [
+                            'language' => $language,
+                            'year' => $year,
+                            'month' => str_pad($month, 2, '0', STR_PAD_LEFT),
+                        ]);
+
                         $countCountries = 0;
                         foreach ($countriesData as $country) {
                             $countCountries++;
