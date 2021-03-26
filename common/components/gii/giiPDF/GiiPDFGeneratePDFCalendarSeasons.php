@@ -29,7 +29,7 @@ class GiiPDFGeneratePDFCalendarSeasons
     function generate($languagesData)
     {
         set_time_limit(500000);
-
+        ini_set("memory_limit", "20000M");
         $gii = new Gii();
         $giiPDF = new GiiPDF();
         $bigData = new \common\components\bigData\BigData();
@@ -58,7 +58,7 @@ class GiiPDFGeneratePDFCalendarSeasons
 
 
         $count = 0;
-        foreach (range(2024, 2024) as $eachYear) {
+        foreach (range(2019, 2022) as $eachYear) {
 
             foreach ($languagesData as $language) {
                 //$count++;
