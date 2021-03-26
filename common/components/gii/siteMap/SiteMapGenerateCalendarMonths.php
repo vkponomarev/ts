@@ -18,7 +18,7 @@ class SiteMapGenerateCalendarMonths
         $countriesDataCount = count($countriesData);
         $languagesDataCount = count($languagesData);
         $countLimit = 0;
-        $countFiles = 46;
+        $countFiles = 0;
         $count = 0;
         $siteMapUrls = '';
         $countMonths = 0;
