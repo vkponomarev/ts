@@ -139,6 +139,7 @@
                     <?php
                     $count = 0;
                     $countHolidays = count($holidaysData);
+                    $countHolidays = ($countHolidays > 20 ? 20 : $countHolidays);
                     $countHolidaysHalf = ceil($countHolidays / 2);
 
                     for ($i = $count; $i < $countHolidaysHalf; $i++) :

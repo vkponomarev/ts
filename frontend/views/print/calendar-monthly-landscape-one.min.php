@@ -26,6 +26,7 @@
                                     if (false !== $key): ?><td class="cpdf-ml1-day cpdf-ml1-day-holiday"><?= $week[$i]['monthDay']; ?></td><?php else: ?><td class="cpdf-ml1-day cpdf-ml1-day-weekend"><?= $week[$i]['monthDay']; ?></td><?php endif; ?><?php else: ?><td class="cpdf-ml1-day cpdf-mp1-no-day"><span></span></td><?php endif; ?><?php endfor; ?></tr><?php endforeach; ?></table></tr><?php endforeach; ?></table><div class=cpdf-ml1-holidays-table-border><table class=cpdf-ml1-holidays-table><tr><td><table class=cpdf-ml1-holidays-table-inside><?php
                     $count = 0;
                     $countHolidays = count($holidaysData);
+                    $countHolidays = ($countHolidays > 20 ? 20 : $countHolidays);
                     $countHolidaysHalf = ceil($countHolidays / 2);
 
                     for ($i = $count; $i < $countHolidaysHalf; $i++) :
