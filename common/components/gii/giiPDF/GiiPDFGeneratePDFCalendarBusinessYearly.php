@@ -15,7 +15,7 @@ class GiiPDFGeneratePDFCalendarBusinessYearly
     function generate($languagesData)
     {
         set_time_limit(500000);
-
+        ini_set("memory_limit", "20000M");
         $gii = new Gii();
         $bigData = new \common\components\bigData\BigData();
 
@@ -33,7 +33,7 @@ class GiiPDFGeneratePDFCalendarBusinessYearly
         ];
 
         $count = 0;
-        foreach (range(2021, 2021) as $eachYear) {
+        foreach (range(2022, 2022) as $eachYear) {
 
             foreach ($languagesData as $language) {
                 //$count++;

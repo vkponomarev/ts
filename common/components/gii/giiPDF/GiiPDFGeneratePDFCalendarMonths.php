@@ -18,6 +18,11 @@ class GiiPDFGeneratePDFCalendarMonths
     /**
      * Генерация PDF календаря по месяцам
      * @param $languagesData
+     * @throws \ImagickException
+     * @throws \Mpdf\MpdfException
+     * @throws \setasign\Fpdi\PdfParser\CrossReference\CrossReferenceException
+     * @throws \setasign\Fpdi\PdfParser\PdfParserException
+     * @throws \setasign\Fpdi\PdfParser\Type\PdfTypeException
      * @throws \yii\base\InvalidConfigException
      * @throws \yii\db\Exception
      */
@@ -43,7 +48,6 @@ class GiiPDFGeneratePDFCalendarMonths
             1 => 'P',
             2 => 'L',
         ];
-
 
         $PDFCalendarMonths = [
             1 => 1,
