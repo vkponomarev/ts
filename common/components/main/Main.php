@@ -34,15 +34,15 @@ class Main
 
     }
 
-    function canonical($url, $mainUrl){
+    function canonical(){
 
-        return (new MainCanonical())->canonical($url, $mainUrl);
+        return (new MainCanonical())->canonical();
 
     }
 
-    function alternate($url, $mainUrl){
+    function alternate(){
 
-        return (new MainAlternate())->alternate($url, $mainUrl);
+        return (new MainAlternate())->alternate();
 
     }
 

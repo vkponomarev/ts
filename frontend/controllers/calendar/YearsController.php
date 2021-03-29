@@ -30,17 +30,22 @@ class YearsController extends Controller
 
         $textID = '74'; // ID из таблицы pages
         $table = 'm_years'; // К какой таблице отностся данная страница
-        $mainUrl = 'years'; // Основной урл
+        $mainUrl = 'calendar/years'; // Основной урл
 
         $urlCheck = new UrlCheck();
         $urlCheck->year($yearURL);
         $countryURL = $urlCheck->country($countryURL);
 
+        //(new \common\components\dump\Dump())->printR(Yii::$app->request->url);
+        //(new \common\components\dump\Dump())->printR(\yii\helpers\Url::to());
+        //(new \common\components\dump\Dump())->printR(\yii\helpers\Url::current([]));die;
+
+
         $main = new Main();
         Yii::$app->params['language'] = $main->language(Yii::$app->language);
         Yii::$app->params['language']['all'] = $main->languages();
-        Yii::$app->params['canonical'] = $main->Canonical($yearURL, $mainUrl);
-        Yii::$app->params['alternate'] = $main->Alternate($yearURL, $mainUrl);
+        Yii::$app->params['canonical'] = $main->Canonical();
+        Yii::$app->params['alternate'] = $main->Alternate();
         Yii::$app->params['menu'] = $main->menu();
 
         $languageID = Yii::$app->params['language']['current']['id'];

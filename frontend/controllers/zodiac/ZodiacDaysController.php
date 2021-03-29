@@ -42,8 +42,8 @@ class ZodiacDaysController extends Controller
         $main = new Main();
         Yii::$app->params['language'] = $main->language(Yii::$app->language);
         Yii::$app->params['language']['all'] = $main->languages();
-        Yii::$app->params['canonical'] = $main->Canonical($yearURL, $mainUrl);
-        Yii::$app->params['alternate'] = $main->Alternate($yearURL, $mainUrl);
+        Yii::$app->params['canonical'] = $main->Canonical();
+        Yii::$app->params['alternate'] = $main->Alternate();
         Yii::$app->params['menu'] = $main->menu();
 
         $languageID = Yii::$app->params['language']['current']['id'];

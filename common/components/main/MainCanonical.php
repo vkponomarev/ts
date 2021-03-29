@@ -3,32 +3,18 @@
 namespace common\components\main;
 
 
-
 use Yii;
 
 class MainCanonical
 {
 
-    function canonical($url, $mainUrl){
+    function canonical()
+    {
 
-
-        if ($mainUrl){
-
-            if (!$url){
-
-                $canonical = Yii::$app->language . '/' . $mainUrl . '/';
-
-            }else{
-
-                $canonical = Yii::$app->language . '/' . $mainUrl . '/' . $url . '/';
-
-            }
-
-        }else{
-
-            $canonical = Yii::$app->language . '/';
-
-        }
+        $canonical = Yii::$app->language. '/' .Yii::$app->request->pathInfo;
+        //$canonical = substr(\yii\helpers\Url::base(''), 1);
+        //$canonical = substr(\yii\helpers\Url::current([], false), 1);
+        //$canonical = substr(Yii::$app->request->url, 1);
 
         return $canonical;
 
