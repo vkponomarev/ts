@@ -23,8 +23,6 @@ class GenerateMoonYearsController extends Controller
 
         //(new \common\components\dump\Dump())->printR('aewfw');die;
 
-
-
         Yii::$app->language = $language;
         Yii::$app->formatter->locale = Yii::$app->language;
         $this->layout = "print";
