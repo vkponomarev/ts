@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+User-agent: Yandex
+Sitemap: https://timesles.com/sitemap_ru.xml
+
+User-agent: Googlebot
+Sitemap: https://timesles.com/sitemap_all.xml
