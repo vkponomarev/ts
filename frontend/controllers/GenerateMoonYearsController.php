@@ -21,6 +21,10 @@ class GenerateMoonYearsController extends Controller
     public function actionGeneratePdf($languageID, $countryID, $yearURL, $orientation, $language, $pageName, $test = 0)
     {
 
+        //(new \common\components\dump\Dump())->printR('aewfw');die;
+
+
+
         Yii::$app->language = $language;
         Yii::$app->formatter->locale = Yii::$app->language;
         $this->layout = "print";

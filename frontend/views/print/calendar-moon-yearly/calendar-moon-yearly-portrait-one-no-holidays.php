@@ -96,6 +96,8 @@ $moon = new \common\components\moon\Moon();
                                     <?= $week[$i]['monthDay']; ?><br>
                                     <img class="cpdf-myp1-nh-moon-img" width="10"
                                          src="/pictures/moon-phases/<?= $moon->pictures($week[$i], $calendarByYear['moonPhases']) ?>">
+                                    <?php (new \common\components\dump\Dump())->printR($moon->pictures($week[$i], $calendarByYear['moonPhases']));die;?>
+
                                     <?= $calendarByYear['moonDay'][$week[$i]['date']]; ?>
                                 </td>
 
