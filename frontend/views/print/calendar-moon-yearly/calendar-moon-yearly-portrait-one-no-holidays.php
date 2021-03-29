@@ -114,7 +114,7 @@ $moon = new \common\components\moon\Moon();
                             <span>
                                 <?= $week[$i]['monthDay']; ?><br>
                                          <img class="cpdf-myp1-nh-moon-img" width="10"
-                                              src="/pictures/moon-phases/<?= $moon->pictures($week[$i], $calendarByYear['moonPhases']) ?>">
+                                              src="https://timesles.com/pictures/moon-phases/<?= $moon->pictures($week[$i], $calendarByYear['moonPhases']) ?>">
                                     <?= $calendarByYear['moonDay'][$week[$i]['date']]; ?>
                             </span>
                                 </td>
