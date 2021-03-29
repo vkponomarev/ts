@@ -24,7 +24,7 @@ class GiiPDFGeneratePDFCalendarWeekly
     function generate($languagesData)
     {
         set_time_limit(500000);
-
+        ini_set("memory_limit", "20000M");
         $gii = new Gii();
         $bigData = new \common\components\bigData\BigData();
 
@@ -45,7 +45,7 @@ class GiiPDFGeneratePDFCalendarWeekly
 
 
         $count = 0;
-        foreach (range(2026, 2026) as $eachYear) {
+        foreach (range(2021, 2022) as $eachYear) {
 
             $dateData = $date->yearWeeks($eachYear);
             //(new \common\components\dump\Dump())->printR($dateData);die;
