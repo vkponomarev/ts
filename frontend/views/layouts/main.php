@@ -175,10 +175,10 @@ AppAsset::register($this);
         isWindowClickClosing: true,
         isEscClosing: true
     });</script>
-<?php $this->endBody() ?>
+
 
 <?= $this->render('/partials/counters/_counters.min.php') ?>
-
+<?php $this->endBody() ?>
 </body>
 </html>
 <?php $this->endPage() ?>
