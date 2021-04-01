@@ -180,9 +180,6 @@ return [
                     'defaults' => ['yearURL' => '', 'countryURL' => ''],
                 ],
 
-
-
-
                 [
                     'pattern' => '/calendar/seasons/<seasonURL:(winter|spring|summer|autumn)>/<yearURL:\d{4}>/<countryURL:[\w_-]+>',
                     'route' => 'calendar/seasons/season',
@@ -295,8 +292,14 @@ return [
                     'defaults' => ['dayNameURL' => '', 'dayURL' => ''],
                 ],
 
+                /*
+                [
+                    'pattern' => 'time/<yearURL:\d{4}>/<countryURL:[\w_-]+>',
+                    'route' => 'time/time/time-page',
+                    'defaults' => ['yearURL' => '', 'countryURL' => ''],
+                ],
+                */
 
-                //'/time' => 'calendar/calendar/calendar-page',
                 //'/calendar' => 'calendar/calendar/calendar-page',
 
 
