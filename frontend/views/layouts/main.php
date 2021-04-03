@@ -34,13 +34,13 @@ AppAsset::register($this);
 
             <div class="navigation">
                 <div class="navigation-header">
-                    <a href="/" >
+                    <a href="/<?= Yii::$app->language ?>/" >
                     TIMESLES
                     </a>
                 </div>
                 <div class="navigation-items">
                     <div class="navigation-item">
-                        <a href="/calendar/years/<?= Yii::$app->params['menu']['dateData']['year']['now']?>/" >
+                        <a href="/<?= Yii::$app->language ?>/calendar/years/<?= Yii::$app->params['menu']['dateData']['year']['now']?>/" >
 
                             <?= Yii::$app->params['menu']['dateData']['year']['now']?>
 
@@ -50,14 +50,14 @@ AppAsset::register($this);
                         |
                     </div>
                     <div class="navigation-item">
-                        <a href="/calendar/days/today/" >
+                        <a href="/<?= Yii::$app->language ?>/calendar/days/today/" >
                             <?= Yii::t('app', 'Today') ?></a>
                     </div>
                     <div class="navigation-separator">
                         |
                     </div>
                     <div class="navigation-item">
-                        <a href="/holidays/years/<?= Yii::$app->params['menu']['dateData']['year']['now']?>/" >
+                        <a href="/<?= Yii::$app->language ?>/holidays/years/<?= Yii::$app->params['menu']['dateData']['year']['now']?>/" >
                             <?= Yii::t('app', 'Holidays') ?></a>
                     </div>
 
