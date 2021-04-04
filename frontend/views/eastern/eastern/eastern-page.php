@@ -61,7 +61,7 @@
                             <img class="eastern-pic" width="25"
                                  src="/pictures/eastern-animals/<?= $eastern->animals->pictures[$id]; ?>.png"
                                  alt="<?= $eastern->text->names[$id]; ?>">
-                            <a href="/calendar/eastern/animals/<?= $eastern->animals->urls[$id] ?>/">
+                            <a href="/<?= Yii::$app->language ?>/calendar/eastern/animals/<?= $eastern->animals->urls[$id] ?>/">
                                 <?= $eastern->text->names[$id]; ?>
                             </a>
                         </div>
@@ -73,7 +73,7 @@
                             <img class="eastern-pic" width="25"
                                  src="/pictures/eastern-animals/<?= $eastern->animals->pictures[$id]; ?>.png"
                                  alt="<?= $eastern->text->names[$id]; ?>">
-                            <a href="/calendar/eastern/animals/<?= $eastern->animals->urls[$id] ?>/">
+                            <a href="/<?= Yii::$app->language ?>/calendar/eastern/animals/<?= $eastern->animals->urls[$id] ?>/">
                                 <?= $eastern->text->names[$id]; ?>
                             </a>
                         </div>
@@ -122,7 +122,7 @@
                 <?= $eastern->text->elements[$data['element']] ?>
             </div>
             <div>
-                <a class="eastern-year-link" href="/calendar/eastern/years/<?= $year ?>/"><?= $year ?></a>
+                <a class="eastern-year-link" href="/<?= Yii::$app->language ?>/calendar/eastern/years/<?= $year ?>/"><?= $year ?></a>
             </div>
         </div>
     <?php endforeach ?>

@@ -67,7 +67,7 @@
                             <img class="eastern-pic" width="25"
                                  src="/pictures/eastern-animals/<?= $eastern->animals->pictures[$id]; ?>.png"
                                  alt="<?= $eastern->text->names[$id]; ?>">
-                            <a href="/calendar/eastern/animals/<?= $eastern->animals->urls[$id] ?>/">
+                            <a href="/<?= Yii::$app->language ?>/calendar/eastern/animals/<?= $eastern->animals->urls[$id] ?>/">
                                 <?= $eastern->text->names[$id]; ?>
                             </a>
                         </div>
@@ -79,7 +79,7 @@
                             <img class="eastern-pic" width="25"
                                  src="/pictures/eastern-animals/<?= $eastern->animals->pictures[$id]; ?>.png"
                                  alt="<?= $eastern->text->names[$id]; ?>">
-                            <a href="/calendar/eastern/animals/<?= $eastern->animals->urls[$id] ?>/">
+                            <a href="/<?= Yii::$app->language ?>/calendar/eastern/animals/<?= $eastern->animals->urls[$id] ?>/">
                                 <?= $eastern->text->names[$id]; ?>
                             </a>
                         </div>
@@ -128,7 +128,7 @@
                 <div class="eastern-years col-xxs-6 col-xs-6 col-xs-4 col-sm-3">
                     <div class="eastern-years-inside">
                         <a class="eastern-year-link"
-                           href="/calendar/eastern/years/<?= $year ?>/"><?= $year ?></a><br>
+                           href="/<?= Yii::$app->language ?>/calendar/eastern/years/<?= $year ?>/"><?= $year ?></a><br>
                         <?= Yii::t('app', 'Color:') ?><?= ' ' . $eastern->text->colors[$data['color']] ?><br>
                         <?= Yii::t('app', 'Element:') ?><?= ' ' . $eastern->text->elements[$data['element']] ?><br>
                         <?php if ($data['startDate']) : ?>
@@ -161,7 +161,7 @@
                 <?= $eastern->text->elements[$data['element']] ?>
             </div>
             <div>
-                <a class="eastern-year-link" href="/calendar/eastern/years/<?= $year ?>/"><?= $year ?></a>
+                <a class="eastern-year-link" href="/<?= Yii::$app->language ?>/calendar/eastern/years/<?= $year ?>/"><?= $year ?></a>
             </div>
         </div>
     <?php endforeach ?>
