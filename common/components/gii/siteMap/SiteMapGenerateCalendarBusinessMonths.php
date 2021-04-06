@@ -43,6 +43,8 @@ class SiteMapGenerateCalendarBusinessMonths
                         'month' => str_pad($month, 2, '0', STR_PAD_LEFT),
                     ]);
 
+                    $countLimit++;
+
                     $countCountries = 0;
                     foreach ($countriesData as $country) {
                         $countCountries++;

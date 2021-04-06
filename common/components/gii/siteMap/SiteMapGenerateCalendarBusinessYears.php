@@ -34,11 +34,11 @@ class SiteMapGenerateCalendarBusinessYears
             foreach ($languagesData as $language) {
                 $countLang++;
 
-
                 $siteMapUrls .= \Yii::$app->view->render('@common/components/gii/siteMap/templates/_calendar-business-years.php', [
                     'language' => $language,
                     'year' => $year,
                 ]);
+                $countLimit++;
 
                 $countCountries = 0;
                 foreach ($countriesData as $country) {

@@ -53,6 +53,7 @@ class SiteMapGenerateCalendarBusinessQuartersRU
                         'quarter' => $quarter,
                     ]);
 
+                    $countLimit++;
 
                     $countCountries = 0;
                     foreach ($countriesData as $country) {
