@@ -57,7 +57,7 @@ class SiteMapGenerateCalendarReligionMonthsRU
                         $countLimit++;
 
 
-                        if (($countLimit >= 49998) or
+                        if (($countLimit >= 49990) or
                             (($year == 2030) and
                                 ($countMonths == 12) and
                                 ($countReligion == 5))

@@ -34,7 +34,7 @@ class SiteMapGenerateCalendarEastern
 
             $countLimit++;
 
-            if (($countLimit >= 49998) or ($languagesDataCount == $countLang)) {
+            if (($countLimit >= 49990) or ($languagesDataCount == $countLang)) {
 
                 $countFiles++;
                 $siteMapContent = \Yii::$app->view->render('@common/components/gii/siteMap/templates/_sitemap-file.php', [

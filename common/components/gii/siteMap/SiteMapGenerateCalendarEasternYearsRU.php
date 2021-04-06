@@ -45,7 +45,7 @@ class SiteMapGenerateCalendarEasternYearsRU
 
                 $countLimit++;
 
-                if (($countLimit >= 49998) or (($year == $eastern->range->end))) {
+                if (($countLimit >= 49990) or (($year == $eastern->range->end))) {
 
                     $countFiles++;
                     $siteMapContent = \Yii::$app->view->render('@common/components/gii/siteMap/templates/_sitemap-file.php', [

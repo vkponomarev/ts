@@ -65,7 +65,7 @@ class SiteMapGenerateCalendarMoonDaysRU
                 ]);
 
                 
-                if (($countLimit >= 49998) or (
+                if (($countLimit >= 49990) or (
                         ($eachDay->format('Y-m-d') == $endDayFormatted)
                     )
                 ) {

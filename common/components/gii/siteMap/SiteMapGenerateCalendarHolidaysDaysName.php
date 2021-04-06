@@ -65,7 +65,7 @@ class SiteMapGenerateCalendarHolidaysDaysName
                     'country' => $country['url'],
                 ]);
 
-                if (($countLimit >= 49998) or
+                if (($countLimit >= 49990) or
                     (   ($languagesDataCount == $countLang) and
                         ($countriesDataCount == $countCountry)
                     )) {

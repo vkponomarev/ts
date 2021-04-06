@@ -102,7 +102,7 @@ class SiteMapGenerateCalendarWorkingYears
                     ]);
 
 
-                    if (($countLimit >= 49998) or (($year == 2030) and ($languagesDataCount == $countLang) and ($countriesDataCount == $countCountries))) {
+                    if (($countLimit >= 49990) or (($year == 2030) and ($languagesDataCount == $countLang) and ($countriesDataCount == $countCountries))) {
 
                         $countFiles++;
                         $siteMapContent = \Yii::$app->view->render('@common/components/gii/siteMap/templates/_sitemap-file.php', [

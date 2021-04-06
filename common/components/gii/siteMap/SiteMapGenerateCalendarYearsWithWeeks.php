@@ -44,7 +44,7 @@ class SiteMapGenerateCalendarYearsWithWeeks
                     'year' => $year,
                 ]);
 
-                if (($countLimit >= 49998) or (($year == 2030) and ($languagesDataCount == $countLang))) {
+                if (($countLimit >= 49990) or (($year == 2030) and ($languagesDataCount == $countLang))) {
 
                     $countFiles++;
 

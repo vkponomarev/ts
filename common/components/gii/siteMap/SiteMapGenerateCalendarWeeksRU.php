@@ -59,7 +59,7 @@ class SiteMapGenerateCalendarWeeksRU
                         'week' => $week,
                     ]);
 
-                    if (($countLimit >= 49998) or (($year == 2030) and ($countWeeks == $dateData['week']['count']))) {
+                    if (($countLimit >= 49990) or (($year == 2030) and ($countWeeks == $dateData['week']['count']))) {
 
                         $countFiles++;
 

@@ -63,7 +63,7 @@ class SiteMapGenerateCalendarMoonGardenerYearsRU
                     'gardener' => $gardenerURL,
                 ]);
 
-                if (($countLimit >= 49998) or (($year == 2030) and ($countGardener == $moonGardenerCount))) {
+                if (($countLimit >= 49990) or (($year == 2030) and ($countGardener == $moonGardenerCount))) {
 
                     $countFiles++;
 

@@ -64,7 +64,7 @@ class SiteMapGenerateCalendarMoonPhasesDaysRU
                     'date' => $eachDay->format('Y-m-d'),
                 ]);
 
-                if (($countLimit >= 49998) or (($eachDay->format('Y-m-d') == $endDayFormatted))) {
+                if (($countLimit >= 49990) or (($eachDay->format('Y-m-d') == $endDayFormatted))) {
 
                     $countFiles++;
 

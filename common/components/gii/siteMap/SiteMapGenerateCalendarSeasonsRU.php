@@ -73,7 +73,7 @@ class SiteMapGenerateCalendarSeasonsRU
                                 'season' => $season,
                             ]);
 
-                            if (($countLimit >= 49998) or
+                            if (($countLimit >= 49990) or
                                     (($year == 2030)
                                         and ($countriesDataCount == $countCountries)
                                         and ($countSeasons == 4)))
@@ -108,7 +108,7 @@ class SiteMapGenerateCalendarSeasonsRU
                             'season' => $season,
                         ]);
 
-                        if (($countLimit >= 49998) or
+                        if (($countLimit >= 49990) or
                                 (($year == 2030) and
                                 ($countSeasons == 4)
                             )) {

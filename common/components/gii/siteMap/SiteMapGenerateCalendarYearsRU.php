@@ -58,7 +58,7 @@ class SiteMapGenerateCalendarYearsRU
                             'country' => $country,
                         ]);
 
-                        if (($countLimit >= 49998) or (($year == 2030) and ($countriesDataCount == $countCountries))) {
+                        if (($countLimit >= 49990) or (($year == 2030) and ($countriesDataCount == $countCountries))) {
 
                             $countFiles++;
 
@@ -88,7 +88,7 @@ class SiteMapGenerateCalendarYearsRU
                         'year' => $year,
                     ]);
 
-                    if (($countLimit >= 49998) or (($year == 2030) )) {
+                    if (($countLimit >= 49990) or (($year == 2030) )) {
 
                         $countFiles++;
 

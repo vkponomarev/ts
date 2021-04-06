@@ -49,7 +49,7 @@ class SiteMapGenerateCalendarReligionYearsRU
 
                     $countLimit++;
 
-                    if (($countLimit >= 49998) or (($year == 2030) and ($countReligion == 5))) {
+                    if (($countLimit >= 49990) or (($year == 2030) and ($countReligion == 5))) {
 
                         $countFiles++;
                         $siteMapContent = \Yii::$app->view->render('@common/components/gii/siteMap/templates/_sitemap-file.php', [

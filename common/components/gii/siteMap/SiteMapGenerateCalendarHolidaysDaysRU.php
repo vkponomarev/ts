@@ -67,7 +67,7 @@ class SiteMapGenerateCalendarHolidaysDaysRU
                             'day' => str_pad($day, 2, '0', STR_PAD_LEFT),
                         ]);
 
-                        if (($countLimit >= 49998) or
+                        if (($countLimit >= 49990) or
                             (($year == $holidaysRange['end']) and
                                 ($countMonths == 12) and
                                 ($countDays == $date->month->daysCount)

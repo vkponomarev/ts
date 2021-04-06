@@ -44,7 +44,7 @@ class SiteMapGenerateCalendarMoonYearsRU
                     'year' => $year,
                 ]);
 
-                if (($countLimit >= 49998) or (($year == 2030))) {
+                if (($countLimit >= 49990) or (($year == 2030))) {
 
                     $countFiles++;
 

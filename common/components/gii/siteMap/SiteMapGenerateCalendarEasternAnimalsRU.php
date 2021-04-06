@@ -48,7 +48,7 @@ class SiteMapGenerateCalendarEasternAnimalsRU
 
                 $countLimit++;
 
-                if (($countLimit >= 49998) or ($key == 12)) {
+                if (($countLimit >= 49990) or ($key == 12)) {
 
                     $countFiles++;
                     $siteMapContent = \Yii::$app->view->render('@common/components/gii/siteMap/templates/_sitemap-file.php', [

@@ -56,7 +56,7 @@ class SiteMapGenerateCalendarBusinessMonths
                             'country' => $country,
                         ]);
 
-                        if (($countLimit >= 49998) or
+                        if (($countLimit >= 49990) or
                             (($year == 2030) and
                                 ($languagesDataCount == $countLang) and
                                 ($countriesDataCount == $countCountries) and

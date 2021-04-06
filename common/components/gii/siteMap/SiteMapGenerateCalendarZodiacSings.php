@@ -45,7 +45,7 @@ class SiteMapGenerateCalendarZodiacSings
 
                 $countLimit++;
 
-                if (($countLimit >= 49998) or (($zodiacCount == 12) and ($languagesDataCount == $countLang))) {
+                if (($countLimit >= 49990) or (($zodiacCount == 12) and ($languagesDataCount == $countLang))) {
 
                     $countFiles++;
                     $siteMapContent = \Yii::$app->view->render('@common/components/gii/siteMap/templates/_sitemap-file.php', [

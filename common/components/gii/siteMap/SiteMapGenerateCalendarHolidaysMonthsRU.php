@@ -66,7 +66,7 @@ class SiteMapGenerateCalendarHolidaysMonthsRU
                             'month' => str_pad($month, 2, '0', STR_PAD_LEFT),
                         ]);
 
-                        if (($countLimit >= 49998) or (($year == $holidaysRange['end']) and ($countriesDataCount == $countCountry) and ($countMonths == 12))) {
+                        if (($countLimit >= 49990) or (($year == $holidaysRange['end']) and ($countriesDataCount == $countCountry) and ($countMonths == 12))) {
 
                             $countFiles++;
 
