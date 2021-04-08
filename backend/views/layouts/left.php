@@ -45,6 +45,7 @@
                     ['label' => 'Сообщения', 'icon' => 'file-code-o', 'url' => ['/mail']],
                     ['label' => 'Карта сайта', 'icon' => 'file-code-o', 'url' => ['/site-map/index']],
                     ['label' => 'Gii View', 'icon' => 'file-code-o', 'url' => ['/gii-view/index']],
+                    ['label' => 'Скрипты', 'icon' => 'file-code-o', 'url' => ['/scripts/index']],
                     ['label' => 'Menu Yii2', 'options' => ['class' => 'header']],
                     ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii']],
                     ['label' => 'Debug', 'icon' => 'dashboard', 'url' => ['/debug']],

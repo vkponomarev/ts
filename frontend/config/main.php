@@ -292,13 +292,13 @@ return [
                     'defaults' => ['dayNameURL' => '', 'dayURL' => ''],
                 ],
 
-                /*
+
                 [
                     'pattern' => 'time/<yearURL:\d{4}>/<countryURL:[\w_-]+>',
                     'route' => 'time/time/time-page',
                     'defaults' => ['yearURL' => '', 'countryURL' => ''],
                 ],
-                */
+
 
                 //'/calendar' => 'calendar/calendar/calendar-page',
 
