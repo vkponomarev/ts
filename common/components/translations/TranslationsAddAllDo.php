@@ -119,7 +119,7 @@ class TranslationsAddAllDo
             update 
             ' . $tableName . '_text
             set
-            ' . $fieldName . ' = \'' . $translation . ' \'
+            ' . $fieldName . ' = \'' . addslashes($translation) . ' \'
             where
             ' . $tableName . '_id = ' . $item['id'] . '
             and
@@ -138,7 +138,7 @@ class TranslationsAddAllDo
             ' . $tableName . '_text
             (name, name_in, name_for, ' . $tableName . '_id, languages_id)
             values
-            ("' . $translation['name'] . '", "' . $translation['name_in'] . '", "' . $translation['name_for'] . '", '. $item['id'] . ', '. $language['id'] . ')
+            ("' . addslashes($translation['name']) . '", "' . addslashes($translation['name_in']) . '", "' . addslashes($translation['name_for']) . '", '. $item['id'] . ', '. $language['id'] . ')
             ')
             ->execute();
 
