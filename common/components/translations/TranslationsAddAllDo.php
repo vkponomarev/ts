@@ -36,13 +36,13 @@ class TranslationsAddAllDo
             $count++;
             // Сохраняем прогресс обработки данных для того чтобы было понятно на какой страдии мы сейчас находимся
             $bigData->saveData($count, $tableName);
-            $items['name'] = str_replace('"', '', $items['name']);
+            /*$items['name'] = str_replace('"', '', $items['name']);
             $items['name_in'] = str_replace('"', '', $items['name_in']);
             $items['name_for'] = str_replace('"', '', $items['name_for']);
 
             $items['name'] = str_replace("'", "", $items['name']);
             $items['name_in'] = str_replace("'", "", $items['name_in']);
-            $items['name_for'] = str_replace("'", "", $items['name_for']);
+            $items['name_for'] = str_replace("'", "", $items['name_for']);*/
             foreach ($languages as $language) {
                 if ($language['id'] == 2) {
                     continue;
@@ -73,14 +73,11 @@ class TranslationsAddAllDo
                     // Если мы не нешли такую запись то ее нужно создать
                     $countTranslations = 0;
                     // Переводим все данные
-                    $translation['name'] = '';
-                    $translation['name_in'] = '';
-                    $translation['name_for'] = '';
-                    $translation['name'] = $this->doTranslate($language['url'], $items['name']);
-                    $translation['name_in'] = $this->doTranslate($language['url'], $items['name_in']);
-                    $translation['name_for'] = $this->doTranslate($language['url'], $items['name_for']);
+                    $translation2['name'] = $this->doTranslate($language['url'], $items['name']);
+                    $translation2['name_in'] = $this->doTranslate($language['url'], $items['name_in']);
+                    $translation2['name_for'] = $this->doTranslate($language['url'], $items['name_for']);
                     // Сохраняем все переведенные данные.
-                    $this->insert($tableName, $translation, $language, $items);
+                    $this->insert($tableName, $translation2, $language, $items);
                 }
 
 
@@ -175,8 +172,8 @@ class TranslationsAddAllDo
             //echo '$translationText' . $translationText . '<br>';
 
             $translationTextLanguage = $tr->getLastDetectedSource();
-            $translationText = str_replace('"', '', $translationText);
-            $translationText = str_replace("'", "", $translationText);
+            /*$translationText = str_replace('"', '', $translationText);
+            $translationText = str_replace("'", "", $translationText);*/
             return $translationText;
 
 
