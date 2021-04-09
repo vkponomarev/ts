@@ -47,12 +47,12 @@ class TranslationsAddAllDo
                 $data2 = $this->checkExists($tableName, $language, $items);
 
                 $items['name'] = str_replace('"', '', $items['name']);
-                $items['name_in'] = str_replace('"', '', $items['name']);
-                $items['name_for'] = str_replace('"', '', $items['name']);
+                $items['name_in'] = str_replace('"', '', $items['name_in']);
+                $items['name_for'] = str_replace('"', '', $items['name_for']);
 
-                $items['name'] = str_replace("'", '', $items['name']);
-                $items['name_in'] = str_replace("'", '', $items['name']);
-                $items['name_for'] = str_replace("'", '', $items['name']);
+                $items['name'] = str_replace("'", "", $items['name']);
+                $items['name_in'] = str_replace("'", "", $items['name_in']);
+                $items['name_for'] = str_replace("'", "", $items['name_for']);
 
                 if ($data2) {
                     //2. Если мы нашли данные то нужно проверить все ли поля были переведены и перевести если нет.
@@ -66,6 +66,8 @@ class TranslationsAddAllDo
                             $this->update($tableName, $fieldName, $language, $items, $translation);
                         }
                     }
+
+
 
                 } else {
                     // Если мы не нешли такую запись то ее нужно создать
@@ -157,8 +159,6 @@ class TranslationsAddAllDo
 
         sleep(1);
 
-
-
         try {
 
             $tr = new GoogleTranslate($languageUrl, null, [
@@ -172,7 +172,8 @@ class TranslationsAddAllDo
             //echo '$translationText' . $translationText . '<br>';
 
             $translationTextLanguage = $tr->getLastDetectedSource();
-
+            $translationText = str_replace('"', '', $translationText);
+            $translationText = str_replace("'", "", $translationText);
             return $translationText;
 
 
