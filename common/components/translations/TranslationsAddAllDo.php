@@ -53,7 +53,7 @@ class TranslationsAddAllDo
                         $data3 = $this->checkExistsField($tableName, $fieldName, $language, $items);
                         if ($data3){
                             //3. Перевести
-                            $translation = $this->doTranslate($language['url'], $items[$fieldName]);
+                            $translation = $this->doTranslate($language['url'], addslashes($items[$fieldName]));
                             //4. Обновить запись
                             $this->update($tableName, $fieldName, $language, $items, $translation);
                         }
@@ -63,9 +63,9 @@ class TranslationsAddAllDo
                     // Если мы не нешли такую запись то ее нужно создать
                     $countTranslations = 0;
                     // Переводим все данные
-                    $translation['name'] = $this->doTranslate($language['url'], $items['name']);
-                    $translation['name_in'] = $this->doTranslate($language['url'], $items['name_in']);
-                    $translation['name_for'] = $this->doTranslate($language['url'], $items['name_for']);
+                    $translation['name'] = $this->doTranslate($language['url'], addslashes($items['name']));
+                    $translation['name_in'] = $this->doTranslate($language['url'], addslashes($items['name_in']));
+                    $translation['name_for'] = $this->doTranslate($language['url'], addslashes($items['name_for']));
                     // Сохраняем все переведенные данные.
                     $this->insert($tableName, $translation, $language, $items);
                 }
@@ -148,6 +148,8 @@ class TranslationsAddAllDo
     {
 
         sleep(1);
+
+
 
         try {
 
