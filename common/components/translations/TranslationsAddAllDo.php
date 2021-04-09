@@ -36,7 +36,13 @@ class TranslationsAddAllDo
             $count++;
             // Сохраняем прогресс обработки данных для того чтобы было понятно на какой страдии мы сейчас находимся
             $bigData->saveData($count, $tableName);
+            $items['name'] = str_replace('"', '', $items['name']);
+            $items['name_in'] = str_replace('"', '', $items['name_in']);
+            $items['name_for'] = str_replace('"', '', $items['name_for']);
 
+            $items['name'] = str_replace("'", "", $items['name']);
+            $items['name_in'] = str_replace("'", "", $items['name_in']);
+            $items['name_for'] = str_replace("'", "", $items['name_for']);
             foreach ($languages as $language) {
                 if ($language['id'] == 2) {
                     continue;
@@ -46,13 +52,7 @@ class TranslationsAddAllDo
                 // 1. Провреяем есть ли запись с такими данными или еще нет
                 $data2 = $this->checkExists($tableName, $language, $items);
 
-                $items['name'] = str_replace('"', '', $items['name']);
-                $items['name_in'] = str_replace('"', '', $items['name_in']);
-                $items['name_for'] = str_replace('"', '', $items['name_for']);
 
-                $items['name'] = str_replace("'", "", $items['name']);
-                $items['name_in'] = str_replace("'", "", $items['name_in']);
-                $items['name_for'] = str_replace("'", "", $items['name_for']);
 
                 if ($data2) {
                     //2. Если мы нашли данные то нужно проверить все ли поля были переведены и перевести если нет.
