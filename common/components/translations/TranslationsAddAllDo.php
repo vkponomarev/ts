@@ -46,9 +46,13 @@ class TranslationsAddAllDo
                 // 1. Провреяем есть ли запись с такими данными или еще нет
                 $data2 = $this->checkExists($tableName, $language, $items);
 
+                $items['name'] = str_replace('"', '', $items['name']);
+                $items['name_in'] = str_replace('"', '', $items['name']);
+                $items['name_for'] = str_replace('"', '', $items['name']);
 
-
-
+                $items['name'] = str_replace("'", '', $items['name']);
+                $items['name_in'] = str_replace("'", '', $items['name']);
+                $items['name_for'] = str_replace("'", '', $items['name']);
 
                 if ($data2) {
                     //2. Если мы нашли данные то нужно проверить все ли поля были переведены и перевести если нет.
