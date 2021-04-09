@@ -73,6 +73,9 @@ class TranslationsAddAllDo
                     // Если мы не нешли такую запись то ее нужно создать
                     $countTranslations = 0;
                     // Переводим все данные
+                    $translation['name'] = '';
+                    $translation['name_in'] = '';
+                    $translation['name_for'] = '';
                     $translation['name'] = $this->doTranslate($language['url'], $items['name']);
                     $translation['name_in'] = $this->doTranslate($language['url'], $items['name_in']);
                     $translation['name_for'] = $this->doTranslate($language['url'], $items['name_for']);
