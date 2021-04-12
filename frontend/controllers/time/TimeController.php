@@ -24,11 +24,12 @@ class TimeController extends Controller
 {
 
 
-    public function actionTimePage($yearURL, $countryURL)
+    public function actionTimePage()
     {
 
-
-        $textID = '74'; // ID из таблицы pages
+        $yearURL = 2020;
+        $countryURL = '';
+        $textID = '283'; // ID из таблицы pages
         $table = 'm_years'; // К какой таблице отностся данная страница
         $mainUrl = 'calendar/years'; // Основной урл
 
@@ -82,9 +83,9 @@ class TimeController extends Controller
         $calendarNameOfDaysInWeek = $calendar->nameOfDaysInWeek();
 
         $pageTexts = new PageTexts();
-        $pageTextsID = $pageTexts->defineIdByCalendarYear($holidaysData, $calendarChinese);
+        //$pageTextsID = $pageTexts->defineIdByCalendarYear($holidaysData, $calendarChinese);
         $pageTextsMessages = $pageTexts->messagesByCalendarYear($calendarChinese, $dateData, count($holidaysData));
-        Yii::$app->params['text'] = $main->text($pageTextsID, $languageID);
+        Yii::$app->params['text'] = $main->text($textID, $languageID);
         $pageTexts->updateByCalendarYear($pageTextsMessages, $dateData, $countryData, count($holidaysData));
 
         $breadCrumbs = new Breadcrumbs();

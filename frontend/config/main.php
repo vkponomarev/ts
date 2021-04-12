@@ -293,11 +293,17 @@ return [
                 ],
 
 
-                [
-                    'pattern' => 'time/<yearURL:\d{4}>/<countryURL:[\w_-]+>',
+
+                ///////////////////////
+                /////////////////////// ВРЕМЯ
+                ///////////////////////
+
+                //'time/' => 'time/time/time-page',
+                /*[
+                    'pattern' => 'time/',
                     'route' => 'time/time/time-page',
                     'defaults' => ['yearURL' => '', 'countryURL' => ''],
-                ],
+                ],*/
 
 
                 //'/calendar' => 'calendar/calendar/calendar-page',

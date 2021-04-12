@@ -70,6 +70,7 @@ class MoonDaysArray
             28 => 2,
             29 => 5,
             30 => 3,
+            31 => 3,
         ];
 
 
@@ -104,6 +105,7 @@ class MoonDaysArray
             28 => 3,
             29 => 3,
             30 => 4,
+            31 => 4,
         ];
 
 
@@ -138,6 +140,7 @@ class MoonDaysArray
             28 => 5,
             29 => 2,
             30 => 5,
+            31 => 5,
         ];
 
 
@@ -172,6 +175,7 @@ class MoonDaysArray
             28 => 1,
             29 => 5,
             30 => 3,
+            31 => 3,
         ];
 
         $days['housework'] = [
@@ -205,6 +209,7 @@ class MoonDaysArray
             28 => 2,
             29 => 1,
             30 => 3,
+            31 => 3,
         ];
 
         $days['training'] = [
@@ -238,6 +243,8 @@ class MoonDaysArray
             28 => 2,
             29 => 3,
             30 => 3,
+            31 => 3,
+            32 => 3,
         ];
 
         $days['conception'] = [
@@ -271,6 +278,7 @@ class MoonDaysArray
             28 => 1,
             29 => 5,
             30 => 2,
+            31 => 2,
         ];
 
         $days['marriage'] = [
@@ -304,6 +312,7 @@ class MoonDaysArray
             28 => 3,
             29 => 4,
             30 => 3,
+            31 => 3,
         ];
 
         $days['relations'] = [
@@ -337,6 +346,7 @@ class MoonDaysArray
             28 => 3,
             29 => 5,
             30 => 3,
+            31 => 3,
         ];
 
         $days['dispute'] = [
@@ -370,6 +380,7 @@ class MoonDaysArray
             28 => 3,
             29 => 5,
             30 => 4,
+            31 => 4,
         ];
 
         $days['alcohol'] = [
@@ -403,6 +414,7 @@ class MoonDaysArray
             28 => 4,
             29 => 5,
             30 => 4,
+            31 => 4,
         ];
 
         $days['celebration'] = [
@@ -436,6 +448,7 @@ class MoonDaysArray
             28 => 4,
             29 => 5,
             30 => 4,
+            31 => 4,
         ];
 
         $days['vacation'] = [
@@ -469,6 +482,7 @@ class MoonDaysArray
             28 => 3,
             29 => 3,
             30 => 1,
+            31 => 1,
         ];
 
         $days['travel'] = [
@@ -502,6 +516,7 @@ class MoonDaysArray
             28 => 3,
             29 => 4,
             30 => 4,
+            31 => 4,
         ];
         $days['education'] = [
             1 => 3,
@@ -534,6 +549,7 @@ class MoonDaysArray
             28 => 3,
             29 => 4,
             30 => 2,
+            31 => 2,
         ];
 
         $days['art'] = [
@@ -567,6 +583,7 @@ class MoonDaysArray
             28 => 1,
             29 => 4,
             30 => 2,
+            31 => 2,
         ];
 
         $days['science'] = [
@@ -600,6 +617,7 @@ class MoonDaysArray
             28 => 2,
             29 => 4,
             30 => 3,
+            31 => 3,
         ];
 
         $days['creativity'] = [
@@ -633,6 +651,7 @@ class MoonDaysArray
             28 => 1,
             29 => 4,
             30 => 2,
+            31 => 2,
         ];
 
 
@@ -667,6 +686,7 @@ class MoonDaysArray
             28 => 2,
             29 => 5,
             30 => 3,
+            31 => 3,
         ];
 
         $days['job-change'] = [
@@ -700,6 +720,7 @@ class MoonDaysArray
             28 => 2,
             29 => 5,
             30 => 3,
+            31 => 3,
         ];
 
 
@@ -734,6 +755,7 @@ class MoonDaysArray
             28 => 3,
             29 => 5,
             30 => 4,
+            31 => 4,
         ];
 
 
@@ -768,6 +790,7 @@ class MoonDaysArray
             28 => 2,
             29 => 5,
             30 => 3,
+            31 => 3,
         ];
 
 
@@ -802,6 +825,7 @@ class MoonDaysArray
             28 => 3,
             29 => 5,
             30 => 4,
+            31 => 4,
         ];
         $days['daysByRatingCount'] = [
             1 => 3,
@@ -834,6 +858,7 @@ class MoonDaysArray
             28 => 3,
             29 => 5,
             30 => 3,
+            31 => 3,
         ];
         /*
                 $days['111'] = [

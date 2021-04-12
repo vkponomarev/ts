@@ -221,6 +221,9 @@ class CalendarByMoonYears
             if (isset($newMoon[$eachDayMoonDay->format('Y-m-d')])) {
                 $moonDayCount = 1;
             }
+            if ($moonDayCount == 31){
+                $moonDayCount = 1;
+            }
             $moonDay[$eachDayMoonDay->format('Y-m-d')] = $moonDayCount;
             $eachDayMoonDay->modify('+1 day');
 
@@ -234,6 +237,11 @@ class CalendarByMoonYears
             $thisDate = $eachDay->format('Y-m-d');
 
             $moonDayCount++;
+
+            if ($moonDayCount == 31){
+                $moonDayCount = 1;
+            }
+
             $calendar[$eachDay->format('n')][$eachDay->format('W')][$eachDay->format('N')] = [
                 'monthDay' => $eachDay->format('j'),
                 'date' => $eachDay->format('Y-m-d'),

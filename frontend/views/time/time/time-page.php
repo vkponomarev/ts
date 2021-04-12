@@ -16,10 +16,42 @@
  * @var $holidaysRange common\components\holidays\HolidaysRange
  */
 
-phpinfo();
-
 ?>
+<style>
+    object {
+        height: 100%;
+        width: 100%;
+    }
+</style>
+<object data="https://womencalc.com/ru/embed/?embed-url=chinese-conception-calendar&title=1" data-width="100%" data-height="100%">
+<script type="text/javascript">
+    $("#Rectangle").html('<object data="https://womencalc.com/ru/embed/?embed-url=chinese-conception-calendar&title=1">');
+</script>
 
+
+<div id="Rectangle" class="Rectangle" style="width:100%;height:100%">
+tryher
+</div>
+
+<body onload="clock()">
+
+<div class="row rflex">
+
+    <div class="col-xxs-12 col-sm-6">
+    <?= Yii::t('app', 'UTC time') ?>
+    </div>
+
+    <div class="col-xxs-12 col-sm-6">
+
+    </div>
+
+</div>
+<a name="calendar-<?= $dateData['year']['current'] ?>"></a><h1
+        class="main-page-h1"><?= Yii::$app->params['text']['h1'] ?></h1>
+<hr>
+<h2>Current Server Time:</h2>
+<h1><div id="clock"></div></h1>
+<h3><div id="date"></h3>
 <script>
     var nameOfDay = new Array('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday');
     var nameOfMonth = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'Desember');
@@ -42,15 +74,6 @@ phpinfo();
     }
 
 </script>
-<body onload="clock()">
-<h2>Current Server Time:</h2>
-<h1><div id="clock"></div></h1>
-<h3><div id="date"></h3>
-
-<a name="calendar-<?= $dateData['year']['current'] ?>"></a><h1
-        class="main-page-h1"><?= Yii::$app->params['text']['h1'] ?></h1>
-<hr>
-
 <div class="row">
 
     <?php /***************************** */ ?>

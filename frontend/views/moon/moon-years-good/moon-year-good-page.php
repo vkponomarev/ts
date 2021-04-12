@@ -352,6 +352,8 @@ $moon = new \common\components\moon\Moon();
                             <?= ($goodDays[$dayNameURL][$calendarByYear['moonDay'][$week[$i]['date']]] == 5) ? ' md-five' : '' ?>
                                         ">
                                     <span>
+
+
                                     <?= $week[$i]['monthDay']; ?><br>
                                          <img width="18"
                                               src="/pictures/moon-phases/<?= $moon->pictures($week[$i], $calendarByYear['moonPhases']) ?>"><br>
@@ -381,9 +383,12 @@ $moon = new \common\components\moon\Moon();
                                         ">
                                     <span>
                                     <?= $week[$i]['monthDay']; ?><br>
+
                                          <img width="18"
                                               src="/pictures/moon-phases/<?= $moon->pictures($week[$i], $calendarByYear['moonPhases']) ?>"><br>
-                                    <?= $calendarByYear['moonDay'][$week[$i]['date']]; ?>
+
+                                        <?= $calendarByYear['moonDay'][$week[$i]['date']]; ?>
+
                                     </span>
                             </div>
                         <?php else: ?>
@@ -399,7 +404,7 @@ $moon = new \common\components\moon\Moon();
             <?php endforeach; ?>
         </div>
     <?php endforeach; ?>
-
+  
 </div>
 
 <br>

@@ -144,7 +144,7 @@ $moon = new \common\components\moon\Moon();
 
         <?php else: ?>
             <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/years/<?= $dateData['year']['previous'] ?>/
-            <?= $phaseURL; ?>">
+            <?= $phaseURL; ?>/">
                 <?= $dateData['year']['previous'] ?>
             </a>
         <?php endif; ?>
@@ -160,7 +160,7 @@ $moon = new \common\components\moon\Moon();
 
         <?php else: ?>
             <a href="/<?= Yii::$app->language ?>/calendar/moon/phases/years/<?= $dateData['year']['next'] ?>/
-            <?= $phaseURL; ?>">
+            <?= $phaseURL; ?>/">
                 <?= $dateData['year']['next'] ?>
             </a>
         <?php endif; ?>
