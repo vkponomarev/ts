@@ -1382,6 +1382,149 @@ tr {
   cursor: pointer;
 }
 
+.plate-clock {
+  border-radius: 10px;
+  padding: 15px 20px 15px 20px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.11);
+  font-size: 18px;
+  min-height: 290px;
+  word-break: break-word;
+}
+.plate-clock .plate-clock-analog-watch {
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+}
+.plate-clock .plate-clock-digital-watch {
+  color: #416962;
+  font-size: 35px;
+  font-weight: 700;
+  text-align: center;
+}
+.plate-clock .plate-clock-city-name {
+  color: #5b5b5b;
+  font-size: 25px;
+  font-weight: 700;
+  text-align: center;
+}
+.plate-clock .plate-clock-city-name a {
+  color: #5b5b5b;
+  font-weight: bold;
+}
+.plate-clock .plate-clock-city-name a:hover {
+  color: #5b5b5b;
+  text-decoration: underline;
+}
+.plate-clock .plate-clock-date {
+  color: #c6c6c0;
+  font-size: 16px;
+  font-weight: normal;
+  text-align: center;
+}
+.plate-clock .plate-clock-utc {
+  color: #c6c6c0;
+  font-size: 16px;
+  text-align: center;
+}
+
+.digital-watch {
+  color: #000000;
+  font-size: 35px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.digital-watch-utc {
+  color: #980000;
+  font-size: 17px;
+  text-align: center;
+}
+
+.plate-digital-watch {
+  text-align: center;
+  width: 100%;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.plate-digital-watch-text {
+  text-align: right;
+  font-size: 30px;
+}
+
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+  .plate-digital-watch {
+    font-size: 270px;
+  }
+}
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .plate-digital-watch {
+    font-size: 232px;
+  }
+}
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+  .plate-digital-watch {
+    font-size: 180px;
+  }
+}
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+  .plate-digital-watch {
+    font-size: 108px;
+  }
+}
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+  .plate-digital-watch {
+    font-size: 80px;
+  }
+}
+@media (max-width: 360px) {
+  .plate-digital-watch {
+    font-size: 50px;
+  }
+}
+.table-time {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table-time td {
+  padding: 12px 16px;
+}
+.table-time thead tr {
+  color: #ffffff;
+  font-weight: bold;
+  background: #416962;
+}
+.table-time thead tr td {
+  border: 1px solid #416962;
+  word-break: break-word;
+}
+.table-time tbody tr td {
+  border: 1px solid #e8e9eb;
+  font-size: 20px;
+  word-break: break-word;
+}
+.table-time tbody tr:nth-child(2n) {
+  background: #f4f4f4;
+}
+.table-time tbody tr:hover {
+  background: #ebffe8;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#content {
+  flex: 0 0 120px;
+}
+
 .year {
   text-align: center;
   justify-content: center;

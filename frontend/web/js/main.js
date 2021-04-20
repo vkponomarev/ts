@@ -16,6 +16,4 @@ $(function(){
         }
         return false;
     });
-
-
 });

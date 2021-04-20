@@ -198,4 +198,17 @@ class UrlCheck
 
     }
 
+    function checkTimeZones($zoneURL){
+
+        return (new UrlCheckTimeZones())->check($zoneURL);
+
+    }
+
+    function checkTimeZonesUTC($zoneNameURL, $zoneTime){
+
+        return (new UrlCheckTimeZonesUTC())->check($zoneNameURL, $zoneTime);
+
+    }
+
+
 }

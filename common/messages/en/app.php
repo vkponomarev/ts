@@ -627,7 +627,10 @@ return [
 
     'Moon phases' => 'Moon phases',
 
-
-
+    'Time zones' => 'Time zones',
+    'Abbreviation' => 'Abbreviation',
+    'Name' => 'Name',
+    'Difference' => 'Difference',
+    'Time' => 'Time',
     ];
 

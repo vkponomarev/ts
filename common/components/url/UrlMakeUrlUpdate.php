@@ -26,7 +26,7 @@ class UrlMakeUrlUpdate
             update 
             ' . $tableName . '
             set
-            url = \'' . $this->urlTransliteration($item[$fieldName]) . '-' . $item['id'] . ' \'
+            url = \'' . $this->urlTransliteration($item[$fieldName]) . '-' . $item['id'] . '\'
             where
             id = ' . $item['id'] . '
             

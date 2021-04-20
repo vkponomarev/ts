@@ -31,6 +31,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'holidays_id',
             'diff_dates',
             'date',
+            //'count_days_off',
+            //'type',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

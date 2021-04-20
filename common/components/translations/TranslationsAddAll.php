@@ -23,13 +23,10 @@ class TranslationsAddAll
     function __construct($params)
     {
 
-
-
-
-
         $this->start = $params['limitStart'];
         $this->end = $params['limitEnd'];
         $this->tableName = $params['tableName'];
+
         $this->languages = $this->languages();
         //Загружаем основные данные английского языка, с которого будем переводить на другие языки.
         $this->data = (new TranslationsAddAllLoadData($this->tableName, $this->start, $this->end))->data;

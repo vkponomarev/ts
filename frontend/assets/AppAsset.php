@@ -12,6 +12,10 @@ class AppAsset extends AssetBundle
     public $js = [
         'js/main.js',
         'js/lightzoom.js',
+        'js/moment.min.js',
+        'js/moment-timezone-with-data.min.js',
+        //'js/clock.js',
+        'js/clockSecond.js',
         //'/assets/e00d61fc/js/bootstrap.js',
         // '/js/html2canvas.js',
     ];

@@ -7,6 +7,8 @@ use common\components\languages\Languages;
 use common\components\textRedactors\TextNumericCopy;
 use common\components\translations\TranslationsAddAll;
 use common\components\translations\TranslationsAddEng;
+use common\components\translations\TranslationsAddEngOne;
+use common\components\translations\TranslationsAddOneField;
 use common\components\url\UrlMakeUrl;
 use Yii;
 use yii\filters\VerbFilter;
@@ -68,13 +70,77 @@ class ScriptsController extends Controller
 
             }
 
+            if ($name == 'scripts-add-eng-translations-one-field') {
+
+                (new TranslationsAddEngOne([
+                    'tableName' => Yii::$app->request->post('table-name-eng-one-field'),
+                    'fieldName' => Yii::$app->request->post('field-name-eng-one-field'),
+                ]));
+
+            }
+
             if ($name == 'scripts-translations') {
+
 
                 (new TranslationsAddAll([
                     'tableName' => Yii::$app->request->post('tableNameAll'),
                     'limitStart' => Yii::$app->request->post('limitStart'),
                     'limitEnd' => Yii::$app->request->post('limitEnd'),
                 ]));
+
+            }
+
+            if ($name == 'scripts-translations-one-field') {
+
+                (new TranslationsAddOneField([
+                    'tableName' => Yii::$app->request->post('tableNameAll'),
+                    'fieldName' => Yii::$app->request->post('fieldNameAll'),
+                    'limitStart' => Yii::$app->request->post('limitStart'),
+                    'limitEnd' => Yii::$app->request->post('limitEnd'),
+                ]));
+
+            }
+
+
+            if ($name == 'scripts-standard') {
+
+                /*$timeZone = Yii::$app->db
+                    ->createCommand('
+                    select
+                    *
+                    from
+                    time_timezone as tt
+                    ')
+                    ->queryAll();
+
+                foreach ($timeZone as $zone) {
+
+                    $timeZones = Yii::$app->db
+                        ->createCommand('
+                    select
+                    *
+                    from
+                    time_timezones as tt
+                    where
+                    abbreviation = \'' . $zone['abbreviation'] . '\'
+                    ')
+                        ->queryOne();
+
+                    //(new \common\components\dump\Dump())->printR($timeZones);die;
+
+
+                    Yii::$app->db
+                        ->createCommand('
+                    update 
+                    time_timezone
+                    set
+                    offset = ' . $timeZones['gmt_offset'] . '
+                    where
+                    id = ' . $zone['id'] . '
+                    ')
+                        ->execute();
+
+                }*/
 
             }
 

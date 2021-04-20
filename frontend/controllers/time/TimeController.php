@@ -15,6 +15,7 @@ use common\components\pageTexts\PageTexts;
 use common\components\pdfCalendars\PDFCalendars;
 use common\components\urlCheck\UrlCheck;
 use common\componentsV2\calendars\Calendars;
+use common\componentsV2\time\Time;
 use Yii;
 use yii\web\Controller;
 
@@ -23,7 +24,11 @@ use yii\web\Controller;
 class TimeController extends Controller
 {
 
-
+    /**
+     * @route /time/
+     * @return string
+     * @throws \yii\web\NotFoundHttpException
+     */
     public function actionTimePage()
     {
 
@@ -48,67 +53,26 @@ class TimeController extends Controller
         Yii::$app->params['canonical'] = $main->Canonical();
         Yii::$app->params['alternate'] = $main->Alternate();
         Yii::$app->params['menu'] = $main->menu();
+        Yii::$app->params['text'] = $main->text($textID, Yii::$app->params['language']['current']['id']);
 
         $languageID = Yii::$app->params['language']['current']['id'];
         $countryURL['defaultID'] = Yii::$app->params['language']['current']['countries_id'];
         $year = $yearURL;
         $language = Yii::$app->params['language']['current']['url'];
 
-        $holidays = new Holidays();
-        $holidaysRange = $holidays->range();
 
-        $getParams = new GetParams();
-        $countryURL = $getParams->byCalendarYears($countryURL, $year, $holidaysRange);
-
-        $holidaysData = $holidays->byCountryByYear($countryURL['id'], $year, $languageID);
-        $holidaysData = $holidays->arrayReplace($holidaysData);
-
-        $date = new Date();
-        $dateData = $date->data($yearURL . '-01-01');
-
-        ($dateToday = new \common\componentsV2\date\Date((new \DateTime())->format('Y-m-d')))->date()->year();
-        ($dateDataObj = new \common\componentsV2\date\Date($yearURL . '-01-01'))->date()->year();
-        $calendars = new Calendars($dateToday->year->current);
-
-        $countries = new Countries();
-        $countriesData = $countries->data($languageID);
-
-        $country = new Country();
-        $countryData = $country->data($languageID, $countryURL['id']);
-
-        $calendar = new Calendar();
-        $calendarByYear = $calendar->byYear($year);
-        $calendarChinese = $calendar->chineseByYear($year);
-        $calendarNameOfMonths = $calendar->nameOfMonths();
-        $calendarNameOfDaysInWeek = $calendar->nameOfDaysInWeek();
-
-        $pageTexts = new PageTexts();
-        //$pageTextsID = $pageTexts->defineIdByCalendarYear($holidaysData, $calendarChinese);
-        $pageTextsMessages = $pageTexts->messagesByCalendarYear($calendarChinese, $dateData, count($holidaysData));
-        Yii::$app->params['text'] = $main->text($textID, $languageID);
-        $pageTexts->updateByCalendarYear($pageTextsMessages, $dateData, $countryData, count($holidaysData));
-
-        $breadCrumbs = new Breadcrumbs();
-        Yii::$app->params['breadcrumbs'] = $breadCrumbs->calendarYears($dateDataObj, $countryURL['url'], $countryData);
+        $time = new Time([
+            'citiesByPopulation' => 1,
+            'timeZones' => 1,
+            //'popularCities' => 1,
+        ], $languageID);
 
 
-        $PDFCalendars = new PDFCalendars();
-        $PDFCalendarsData = $PDFCalendars->yearlyExists($year, $language, $countryData['url']);
-        //(new \common\components\dump\Dump())->printR($PDFCalendarsData);die;
+
 
         return $this->render('time-page.min.php', [
 
-            'dateData' => $dateData,
-            'calendars' => $calendars,
-            'countriesData' => $countriesData,
-            'countryData' => $countryData,
-            'holidaysData' => $holidaysData,
-            'holidaysRange' => $holidaysRange,
-            'PDFCalendarsData' => $PDFCalendarsData,
-            //'holidaysTypesData' => $holidaysTypesData,
-            'calendarByYear' => $calendarByYear,
-            'calendarNameOfMonths' => $calendarNameOfMonths,
-            'calendarNameOfDaysInWeek' => $calendarNameOfDaysInWeek,
+            'time' => $time,
             'countryURL' => $countryURL,
 
 

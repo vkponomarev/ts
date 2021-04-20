@@ -53,3 +53,5 @@ phpunit.phar
 /frontend/views/gii
 /frontend/web/files/albums
 /frontend/web/files/artists
+/frontend/web/calendars-pdf
+/common/components/geoIP

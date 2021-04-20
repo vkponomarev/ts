@@ -9,11 +9,15 @@ $params = array_merge(
 
 return [
     'id' => 'app-frontend',
+
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'frontend\controllers',
     'layout' => 'main.min.php',
     'components' => [
-
+        'geoip' => [
+            'class' => 'lysenkobv\GeoIP\GeoIP',
+            'dbPath' => Yii::getAlias('@common/components/geoIP/GeoLite2-City.mmdb')
+        ],
         'html2pdf' => [
             'class' => 'yii2tech\html2pdf\Manager',
             'viewPath' => '@app/views/pdf',
@@ -211,8 +215,6 @@ return [
                 ],
 
 
-
-
                 [
                     'pattern' => '/calendar/moon/good/years/<yearURL:\d{4}>/<dayNameURL:[\w_-]+>',
                     'route' => 'moon/moon-years-good/moon-year-good-page',
@@ -293,12 +295,17 @@ return [
                 ],
 
 
-
                 ///////////////////////
                 /////////////////////// ВРЕМЯ
                 ///////////////////////
 
-                //'time/' => 'time/time/time-page',
+                'time/' => 'time/time/time-page',
+
+                //'time/timezones/<zoneNameURL:(utc|gmt)>/<zoneTime>' => 'time/time-zones-utc-time/time-zones-utc-time-page',
+                //'time/timezones/<zoneNameURL:(utc|gmt)>' => 'time/time-zones-utc/time-zones-utc-page',
+                //'time/timezones/<zoneURL>' => 'time/time-zones-zone/time-zones-zone-page',
+
+                //'time/timezones' => 'time/time-zones/time-zones-page',
                 /*[
                     'pattern' => 'time/',
                     'route' => 'time/time/time-page',
@@ -378,34 +385,5 @@ return [
                 ],
             ],
         ],
-
-        /*'view' => [
-            'class' => '\rmrevin\yii\minify\View',
-            'enableMinify' => !YII_DEBUG,
-            'concatCss' => true, // concatenate css
-            'minifyCss' => true, // minificate css
-            'concatJs' => true, // concatenate js
-            'minifyJs' => true, // minificate js
-            'minifyOutput' => true, // minificate result html page
-            'webPath' => '@web', // path alias to web base
-            'basePath' => '@webroot', // path alias to web base
-            'minifyPath' => '@webroot/minify', // path alias to save minify result
-            'jsPosition' => [ \yii\web\View::POS_END ], // positions of js files to be minified
-            'forceCharset' => 'UTF-8', // charset forcibly assign, otherwise will use all of the files found charset
-            'expandImports' => true, // whether to change @import on content
-            'compressOptions' => ['extra' => true], // options for compress
-            //'excludeFiles' => [
-            //    'jquery.js', // exclude this file from minification
-            //    'app-[^.].js', // you may use regexp
-            //],
-            //'excludeBundles' => [
-            //    \app\helloworld\AssetBundle::class, // exclude this bundle from minification
-            //],
-        ],*/
-
-
     ],
-    'sourceLanguage' => 'en',
-    'language' => 'en',
-    'params' => $params,
 ];

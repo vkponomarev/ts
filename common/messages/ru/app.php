@@ -627,4 +627,9 @@ return [
 
     'Moon phases' => 'Фазы луны',
 
+    'Time zones' => 'Часовые пояса',
+    'Abbreviation' => 'Аббревиатура',
+    'Name' => 'Наименование',
+    'Difference' => 'Разница',
+    'Time' => 'Время',
 ];
