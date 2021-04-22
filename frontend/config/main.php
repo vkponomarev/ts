@@ -55,7 +55,7 @@ return [
             'showScriptName' => false,
             'enableStrictParsing' => false,
             'class' => 'codemix\localeurls\UrlManager',
-            'languages' => ['en', 'ru', 'es', 'pt', 'ja', 'de', 'ko', 'fr', 'jv', 'vi', 'it', 'tr', 'uk', 'th', 'pl', 'az', 'ro', 'uz', 'hu', 'el', 'cs', 'zh', 'hi', 'bn', 'en' => 'en-us'],
+            'languages' => ['en', 'ru', 'es', 'pt', 'ja', 'de', 'ko', 'fr', 'jv', 'vi', 'it', 'tr', 'uk', 'th', 'pl', 'az', 'ro', 'uz', 'hu', 'el', 'cs', 'zh', 'hi', 'bn'],
             'enableDefaultLanguageUrlCode' => true,
             'rules' => [
                 '/' => 'main-page/index',
@@ -387,4 +387,7 @@ return [
             ],
         ],
     ],
+    'sourceLanguage' => 'en',
+    'language' => 'en',
+    'params' => $params,
 ];
