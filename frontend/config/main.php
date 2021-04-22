@@ -14,10 +14,10 @@ return [
     'controllerNamespace' => 'frontend\controllers',
     'layout' => 'main.min.php',
     'components' => [
-        'geoip' => [
-            'class' => 'lysenkobv\GeoIP\GeoIP',
-            'dbPath' => Yii::getAlias('@common/components/geoIP/GeoLite2-City.mmdb')
-        ],
+        //'geoip' => [
+         //   'class' => 'lysenkobv\GeoIP\GeoIP',
+        //    'dbPath' => Yii::getAlias('@common/components/geoIP/GeoLite2-City.mmdb')
+        //],
         'html2pdf' => [
             'class' => 'yii2tech\html2pdf\Manager',
             'viewPath' => '@app/views/pdf',
@@ -55,7 +55,7 @@ return [
             'showScriptName' => false,
             'enableStrictParsing' => false,
             'class' => 'codemix\localeurls\UrlManager',
-            'languages' => ['en', 'ru', 'es', 'pt', 'ja', 'de', 'ko', 'fr', 'jv', 'vi', 'it', 'tr', 'uk', 'th', 'pl', 'az', 'ro', 'uz', 'hu', 'el', 'cs', 'zh', 'hi', 'bn'],
+            'languages' => ['en', 'ru', 'es', 'pt', 'ja', 'de', 'ko', 'fr', 'jv', 'vi', 'it', 'tr', 'uk', 'th', 'pl', 'az', 'ro', 'uz', 'hu', 'el', 'cs', 'zh', 'hi', 'bn', 'en' => 'en-us'],
             'enableDefaultLanguageUrlCode' => true,
             'rules' => [
                 '/' => 'main-page/index',
