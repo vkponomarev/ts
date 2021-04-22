@@ -27,7 +27,8 @@ class UrlCheckTimeZones
                 ->createCommand('
             select
             id,
-            url
+            url,
+            diff_time
             from
             time_timezone
             where id = :id
@@ -49,6 +50,7 @@ class UrlCheckTimeZones
                 return [
                     'url' => $zoneURL,
                     'id' => $id,
+                    'diffTime' => $zone['diff_time'],
                 ];
 
             }
@@ -58,6 +60,7 @@ class UrlCheckTimeZones
         return [
             'url' => '',
             'id' => 0,
+            'diffTime' => 0,
         ];
     }
 

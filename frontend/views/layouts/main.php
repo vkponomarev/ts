@@ -60,6 +60,13 @@ AppAsset::register($this);
                         <a href="/<?= Yii::$app->language ?>/holidays/years/<?= Yii::$app->params['menu']['dateData']['year']['now']?>/" >
                             <?= Yii::t('app', 'Holidays') ?></a>
                     </div>
+                    <div class="navigation-separator">
+                        |
+                    </div>
+                    <div class="navigation-item">
+                        <a href="/<?= Yii::$app->language ?>/time/" >
+                            <?= Yii::t('app', 'Time') ?></a>
+                    </div>
 
                 </div>
 

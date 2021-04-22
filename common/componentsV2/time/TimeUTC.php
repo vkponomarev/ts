@@ -10,11 +10,7 @@ class TimeUTC
 {
 
     function utc(){
-        return \DateTime::createFromFormat(
-            'Y-m-d G:i',
-            (new \DateTime())->format('Y-m-d G:i'),
-            new \DateTimeZone('UTC')
-        );
+        return (new \DateTime())->setTimezone(new \DateTimeZone('UTC'));
     }
 }
 

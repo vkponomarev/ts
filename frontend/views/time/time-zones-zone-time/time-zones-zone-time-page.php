@@ -14,10 +14,10 @@
                             let clock =
                                 new ClockSecond({
                                     canvasID: 'canvas',
-                                    timeZone: '',
+                                    timeZoneTime: '',
                                     dateID: 'date',
                                     language: '<?= Yii::$app->language; ?>',
-                                    timeZoneUTC: <?= $time->timeZone->current['offset'] / 60 ?>
+                                    timeZoneTimeUTC: <?= $time->timeZoneTime->current['offset'] / 60 ?>
                                 });
                         });
                     </script>
@@ -34,7 +34,7 @@
 <script type="text/javascript">
     setInterval(
         function () {
-            let moments = new moment().utcOffset(<?= $time->timeZone->current['offset'] / 60 ?>);
+            let moments = new moment().utcOffset(<?= ($time->timeZoneTime->date->getOffset()/60) ?>);
             let h = moments.format('H');
             let m = moments.format('mm');
             let s = moments.format('ss');
@@ -45,14 +45,14 @@
 </script>
 <div class="row">
     <div class="col-xs-12 plate-digital-watch">
-        <span id="time" class="time-block"><?= $time->timeZone->date->format('H:i:s') ?></span>
+        <span id="time" class="time-block"><?= $time->timeZoneTime->date->format('H:i:s') ?></span>
     </div>
 </div>
 <div class="row">
     <div class="col-xs-12 plate-digital-watch-text">
         <?= $date->day->name . ', ' ?>
         <a href="/<?= Yii::$app->language ?>/calendar/years/<?= $date->year->current ?>/">
-            <?= Yii::$app->formatter->asDate($time->timeZone->date, 'long') ?>
+            <?= Yii::$app->formatter->asDate($time->timeZoneTime->date, 'long') ?>
         </a>
         <?= ', '?>
         <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $date->year->current ?>/<?= $date->week->current ?>/">
@@ -97,8 +97,8 @@
             <div class="plate-header">
 
 
-                <a href="/<?= Yii::$app->language ?>/holidays/<?= $time->timeZone->current['url'] ?>/">
-                    <?= $time->timeZone->current['name'] ?>
+                <a href="/<?= Yii::$app->language ?>/holidays/<?= $time->timeZoneTime->current['url'] ?>/">
+                    <?= $time->timeZoneTime->current['name'] ?>
                 </a>
                 <?= ' / ' ?>
 

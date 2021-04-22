@@ -204,6 +204,13 @@ class UrlCheck
 
     }
 
+    function checkTimeZonesZoneTime($zoneTime, $zoneURL){
+
+        return (new UrlCheckTimeZonesZoneTime())->check($zoneTime, $zoneURL);
+
+    }
+
+
     function checkTimeZonesUTC($zoneNameURL, $zoneTime){
 
         return (new UrlCheckTimeZonesUTC())->check($zoneNameURL, $zoneTime);

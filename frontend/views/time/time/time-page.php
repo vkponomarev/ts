@@ -4,28 +4,9 @@
  * @var $this frontend\controllers\YearsController
  *
  * @var $time \common\componentsV2\time\Time
+ * @var $date \common\componentsV2\date\Date
  */
 
-$ip = Yii::$app->geoip->ip('192.168.0.110'); // current user ip
-
-
-
-//$ip = Yii::$app->geoip->ip("50.113.83.100");
-
-$ip->city; // "San Francisco"
-$ip->country; // "United States"
-$ip->location->lng; // 37.7898
-$ip->location->lat; // -122.3942
-$ip->isoCode; // "US"
-(new \common\components\dump\Dump())->printR($ip);die;
-$geoip = new \lysenkobv\GeoIP\GeoIP();
-$ip = $geoip->ip("208.113.83.165");
-
-$ip->city; // "San Francisco"
-$ip->country; // "United States"
-$ip->location->lng; // 37.7898
-$ip->location->lat; // -122.3942
-$ip->isoCode;  // "US"
 
 ?>
 <script type="text/javascript">
@@ -35,6 +16,49 @@ $ip->isoCode;  // "US"
 <a name="time"></a>
 <h1 class="main-page-h1"><?= Yii::$app->params['text']['h1'] ?></h1>
 <hr>
+
+<?php if ($time->geoIP->name) : ?>
+
+
+    <div class="row">
+        <div class="col-xs-12 plate-digital-watch">
+            <span id="timeOne" class="time-block"><?= $time->geoIP->date->format('H:i:s') ?></span>
+        </div>
+        <script type="text/javascript">
+            setInterval(
+                function () {
+                    let timeZone = '<?=$time->geoIP->timeZone?>';
+                    let momentGeoIp = new moment();
+                    let hh = momentGeoIp.tz(timeZone).format('H');
+                    let mm = momentGeoIp.tz(timeZone).format('mm');
+                    let ss = momentGeoIp.tz(timeZone).format('ss');
+                    hh = (hh < 10) ? '0' + hh : hh;
+                    document.getElementById('timeOne').innerHTML = hh + ':' + mm + ':' + ss;
+                }
+                , 1000);
+        </script>
+
+    </div>
+    <div class="row">
+        <div class="col-xs-12 plate-digital-watch-text">
+            <?= $time->geoIP->name . ', ' ?>
+            <?= $date->day->name . ', ' ?>
+            <a href="/<?= Yii::$app->language ?>/calendar/years/<?= $date->year->current ?>/">
+                <?= Yii::$app->formatter->asDate($time->geoIP->date, 'long') ?>
+            </a>
+            <?= ', ' ?>
+            <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $date->year->current ?>/<?= $date->week->current ?>/">
+                <?= Yii::t('app', '{week} week', ['week' => $date->week->current]) ?>
+            </a>
+            <?= ', ' ?>
+            <a href="/<?= Yii::$app->language ?>/time/timezones/utc-317/<?= $time->geoIP->offsetSimple ?>/">
+                UTC <?= ' ' . $time->geoIP->offset ?>
+            </a>
+        </div>
+    </div>
+    <br><br>
+<?php endif; ?>
+
 
 <div class="row rflex">
 

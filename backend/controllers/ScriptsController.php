@@ -93,10 +93,10 @@ class ScriptsController extends Controller
             if ($name == 'scripts-translations-one-field') {
 
                 (new TranslationsAddOneField([
-                    'tableName' => Yii::$app->request->post('tableNameAll'),
-                    'fieldName' => Yii::$app->request->post('fieldNameAll'),
-                    'limitStart' => Yii::$app->request->post('limitStart'),
-                    'limitEnd' => Yii::$app->request->post('limitEnd'),
+                    'tableName' => Yii::$app->request->post('tableNameOneField'),
+                    'fieldName' => Yii::$app->request->post('fieldNameOneField'),
+                    'limitStart' => Yii::$app->request->post('limitStartOneField'),
+                    'limitEnd' => Yii::$app->request->post('limitEndOneField'),
                 ]));
 
             }
@@ -104,43 +104,48 @@ class ScriptsController extends Controller
 
             if ($name == 'scripts-standard') {
 
-                /*$timeZone = Yii::$app->db
+                $timeTimezoneOffset = Yii::$app->db
                     ->createCommand('
                     select
                     *
                     from
-                    time_timezone as tt
+                    time_timezone_offset as tt
+                    where active = 1
                     ')
                     ->queryAll();
 
-                foreach ($timeZone as $zone) {
+                foreach ($timeTimezoneOffset as $zone) {
 
                     $timeZones = Yii::$app->db
                         ->createCommand('
                     select
                     *
                     from
-                    time_timezones as tt
+                    time_timezone_offset as tt
                     where
                     abbreviation = \'' . $zone['abbreviation'] . '\'
                     ')
                         ->queryOne();
 
-                    //(new \common\components\dump\Dump())->printR($timeZones);die;
-
+                    $original = (new \DateTime())->setTimezone(new \DateTimeZone('+0200'));
+                    //$timezoneName = timezone_name_from_abbr("", '+0430', true);
+                   // $modified = $original->setTimezone(new \DateTimezone($timezoneName));
+                    (new \common\components\dump\Dump())->printR($original);
+                    //(new \common\components\dump\Dump())->printR($modified->format('O'));
+                    die;
 
                     Yii::$app->db
                         ->createCommand('
                     update 
-                    time_timezone
+                    time_timezone_offset
                     set
-                    offset = ' . $timeZones['gmt_offset'] . '
+                    url = ' . $modified->format('O') . '
                     where
                     id = ' . $zone['id'] . '
                     ')
                         ->execute();
 
-                }*/
+                }
 
             }
 

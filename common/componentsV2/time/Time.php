@@ -6,6 +6,8 @@ namespace common\componentsV2\time;
 class Time
 {
 
+    public $geoIP;
+
     public $citiesByPopulation;
     /**
      * @var \common\componentsV2\time\TimeTimeZones|int
@@ -16,6 +18,10 @@ class Time
      * @var \common\componentsV2\time\TimeTimeZone
      */
     public $timeZone;
+
+
+    public $timeZoneTime;
+
     public $UTC;
 
     /**
@@ -26,6 +32,12 @@ class Time
     function __construct($params, $languageID)
     {
         $this->UTC = (new TimeUTC())->utc();
+
+        if (isset($params['geoIP']) && $params['geoIP'])
+            $this->geoIP = (new TimeGeoIP($params['geoIP'], $languageID));
+
+        if (isset($params['timeZoneTime']['id']) && $params['timeZoneTime']['id'])
+            $this->timeZoneTime = (new TimeTimeZoneTime($params['timeZoneTime']['id'], $params['timeZoneTime']['offset'],  $languageID));
 
         if (isset($params['citiesByPopulation']) && $params['citiesByPopulation'])
             $this->citiesByPopulation = (new TimeUpdateDataTime())->update(

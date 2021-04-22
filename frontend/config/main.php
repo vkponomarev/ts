@@ -299,13 +299,14 @@ return [
                 /////////////////////// ВРЕМЯ
                 ///////////////////////
 
-                'time/' => 'time/time/time-page',
+                //'time/' => 'time/time/time-page',
 
                 //'time/timezones/<zoneNameURL:(utc|gmt)>/<zoneTime>' => 'time/time-zones-utc-time/time-zones-utc-time-page',
                 //'time/timezones/<zoneNameURL:(utc|gmt)>' => 'time/time-zones-utc/time-zones-utc-page',
+                //'time/timezones/<zoneURL>/<zoneTime>' => 'time/time-zones-zone-time/time-zones-zone-time-page',
                 //'time/timezones/<zoneURL>' => 'time/time-zones-zone/time-zones-zone-page',
-
                 //'time/timezones' => 'time/time-zones/time-zones-page',
+
                 /*[
                     'pattern' => 'time/',
                     'route' => 'time/time/time-page',
