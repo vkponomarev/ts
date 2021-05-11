@@ -625,7 +625,7 @@ return [
     '{holiday} upcoming holiday dates in the world in {year}' =>
         '2020 년 세계에서 다가오는 {holiday} 휴일',
     '{holiday} upcoming holiday dates {country_in}' =>
-        '{country_for} {holiday} 다가오는 휴일 날짜',
+        '{country_in} {holiday} 다가오는 휴일 날짜',
 
 
     'Date' => '데이트',
