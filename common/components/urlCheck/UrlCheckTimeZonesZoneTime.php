@@ -13,11 +13,11 @@ class UrlCheckTimeZonesZoneTime
     function check($zoneTime, $zoneURL)
     {
 
-        if (!$zoneURL['diffTime']){
+       /* if (!$zoneURL['diffTime']){
 
             throw new NotFoundHttpException('404');
 
-        }
+        }*/
 
         $zoneTime = \Yii::$app->db
             ->createCommand('
@@ -29,7 +29,6 @@ class UrlCheckTimeZonesZoneTime
             where url = :zoneTime
             ', [':zoneTime' => $zoneTime])
             ->queryOne();
-
 
         if (!$zoneTime) {
 

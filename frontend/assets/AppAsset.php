@@ -14,8 +14,8 @@ class AppAsset extends AssetBundle
         'js/lightzoom.js',
         'js/moment.min.js',
         'js/moment-timezone-with-data.min.js',
-        //'js/clock.js',
-        'js/clockSecond.js',
+        'js/clock.js',
+        //'js/clockSecond.js',
         //'/assets/e00d61fc/js/bootstrap.js',
         // '/js/html2canvas.js',
     ];

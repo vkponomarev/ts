@@ -703,6 +703,21 @@ return [
 
     'Moon phases' => 'चन्द्र कलाएं',
 
+    'Time zones' => 'समय क्षेत्र',
+    'Abbreviation' => 'संक्षिप्त',
+    'Name' => 'नाम',
+    'Difference' => 'अंतर',
+    'Time' => 'समय',
+
+    'Time {countryNameIn}' => 'समय {countryNameIn}',
+
+    'Time in countries' => 'देशों में समय',
+    'Time in cities' => 'शहरों में समय',
+    'Time in capitals' => 'राजधानियों में समय',
+    'Time Zones' => 'समय क्षेत्र',
+
+    'Time difference between {cityName} and major cities' =>
+        '{cityName} और प्रमुख शहरों के बीच समय का अंतर',
 
 
 ];

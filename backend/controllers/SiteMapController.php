@@ -3,8 +3,23 @@
 namespace backend\controllers;
 
 use common\components\gii\siteMap\SiteMap;
+use common\components\gii\siteMap\SiteMapGenerateTimeAbbrs;
+use common\components\gii\siteMap\SiteMapGenerateTimeAbbrsRU;
+use common\components\gii\siteMap\SiteMapGenerateTimeAbbrsTime;
+use common\components\gii\siteMap\SiteMapGenerateTimeAbbrsTimeRU;
+use common\components\gii\siteMap\SiteMapGenerateTimeCities;
+use common\components\gii\siteMap\SiteMapGenerateTimeCitiesRU;
+use common\components\gii\siteMap\SiteMapGenerateTimeContinents;
+use common\components\gii\siteMap\SiteMapGenerateTimeContinentsRU;
+use common\components\gii\siteMap\SiteMapGenerateTimeCountries;
+use common\components\gii\siteMap\SiteMapGenerateTimeCountriesRU;
+use common\components\gii\siteMap\SiteMapGenerateTimeDifferenceCities;
+use common\components\gii\siteMap\SiteMapGenerateTimeDifferenceCitiesCities;
+use common\components\gii\siteMap\SiteMapGenerateTimeDifferenceCitiesCitiesRU;
+use common\components\gii\siteMap\SiteMapGenerateTimeDifferenceCitiesRU;
+use common\components\gii\siteMap\SiteMapGenerateTimeIanas;
+use common\components\gii\siteMap\SiteMapGenerateTimeIanasRU;
 use common\components\languages\Languages;
-use common\components\textRedactors\TextNumericCopy;
 use Yii;
 use yii\filters\VerbFilter;
 use yii\web\Controller;
@@ -339,6 +354,51 @@ class SiteMapController extends Controller
                 $siteMap->generateCalendarWeeksDaysRU($languagesData);
                 $siteMap->generateCalendarZodiacDays($languagesData);
                 $siteMap->generateCalendarZodiacDaysRU($languagesData);
+            }
+
+            if ($name == 'sitemap-time-cities-all') {
+                (new SiteMapGenerateTimeCities())->generate($languagesData);
+                (new SiteMapGenerateTimeCitiesRU())->generate($languagesData);
+            }
+
+            if ($name == 'sitemap-time-countries-all') {
+                (new SiteMapGenerateTimeCountries())->generate($languagesData);
+                (new SiteMapGenerateTimeCountriesRU())->generate($languagesData);
+            }
+
+            if ($name == 'sitemap-time-continents-all') {
+                (new SiteMapGenerateTimeContinents())->generate($languagesData);
+                (new SiteMapGenerateTimeContinentsRU())->generate($languagesData);
+            }
+
+            if ($name == 'sitemap-time-abbr-all') {
+                (new SiteMapGenerateTimeAbbrs())->generate($languagesData);
+                (new SiteMapGenerateTimeAbbrsRU())->generate($languagesData);
+                (new SiteMapGenerateTimeAbbrsTime())->generate($languagesData);
+                (new SiteMapGenerateTimeAbbrsTimeRU())->generate($languagesData);
+            }
+
+            if ($name == 'sitemap-time-iana-all') {
+                (new SiteMapGenerateTimeIanas())->generate($languagesData);
+                (new SiteMapGenerateTimeIanasRU())->generate($languagesData);
+            }
+
+
+/*
+            <option value="">Карта сайта Время РАЗНИЦА ВО ВРЕМЕНИ ГОРОД все языки</option>
+            <option value="sitemap-time-difference-city-all">Карта сайта Время РАЗНИЦА ВО ВРЕМЕНИ ГОРОД только RU</option>
+            <option value="sitemap-time-difference-city-city-all">Карта сайта Время РАЗНИЦА ВО ВРЕМЕНИ ГОРОД + ГОРОДА все языки</option>
+            <option value="sitemap-time-difference-city-city-all">Карта сайта Время РАЗНИЦА ВО ВРЕМЕНИ ГОРОД + ГОРОДА только RU</option>
+*/
+            if ($name == 'sitemap-time-difference-city-all') {
+                (new SiteMapGenerateTimeDifferenceCities())->generate($languagesData);
+                (new SiteMapGenerateTimeDifferenceCitiesRU())->generate($languagesData);
+            }
+
+            if ($name == 'sitemap-time-difference-city-city-all') {
+                (new SiteMapGenerateTimeDifferenceCitiesCities())->generate($languagesData);
+                (new SiteMapGenerateTimeDifferenceCitiesCitiesRU())->generate($languagesData);
+
             }
 
 

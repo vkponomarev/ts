@@ -3,6 +3,8 @@
 namespace frontend\controllers\time;
 
 use common\components\breadcrumbs\Breadcrumbs;
+use common\components\breadcrumbs\BreadcrumbsTimeDifferenceCity;
+use common\components\breadcrumbs\BreadcrumbsTimeZones;
 use common\components\calendar\Calendar;
 use common\components\countries\Countries;
 use common\components\country\Country;
@@ -62,20 +64,28 @@ class TimeZonesController extends Controller
 
 
         $time = new Time([
-            'citiesByPopulation' => 1,
-            'timeZones' => 1,
-            //'popularCities' => 1,
+            'timezone' => [
+                'abbreviations' => 1,
+                'ianas' => 1,
+            ],
+            'geoIP' => 1
         ], $languageID);
 
 
+        if ($time->geoIP->active){
+            ($date = new \common\componentsV2\date\Date(($time->geoIP->city->date->format('Y-m-d'))))->year()->day()->week();
+        } else {
+            ($date = new \common\componentsV2\date\Date(((new \DateTime())->format('Y-m-d'))))->year()->day()->week();
+        }
+
+        Yii::$app->params['breadcrumbs'] = (new BreadcrumbsTimeZones())->breadcrumbs();
 
 
         return $this->render('time-zones-page.min.php', [
 
             'time' => $time,
+            'date' => $date,
             'countryURL' => $countryURL,
-
-
         ]);
 
     }

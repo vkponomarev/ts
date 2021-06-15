@@ -673,6 +673,21 @@ return [
 
     'Moon phases' => '月相',
 
+    'Time zones' => '時區',
+    'Abbreviation' => '縮寫',
+    'Name' => '名稱',
+    'Difference' => '區別',
+    'Time' => '時間',
+
+    'Time {countryNameIn}' => '時間 {countryNameIn}',
+
+    'Time in countries' => '各國時間',
+    'Time in cities' => '城市時間',
+    'Time in capitals' => '首都時間',
+    'Time Zones' => '時區',
+
+    'Time difference between {cityName} and major cities' =>
+        '{cityName}與主要城市的時差',
 
 
 ];

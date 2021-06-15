@@ -691,6 +691,21 @@ return [
 
     'Moon phases' => 'Fase wulan',
 
+    'Time zones' => 'Zona wektu',
+    'Abbreviation' => 'Singkatan',
+    'Name' => 'Jeneng',
+    'Difference' => 'Bedane',
+    'Time' => 'Wektu',
+
+    'Time {countryNameIn}' => 'Wektu {countryNameIn}',
+
+    'Time in countries' => 'Wektu ing negara',
+    'Time in cities' => 'Wektu ing kutha-kutha',
+    'Time in capitals' => 'Wektu ing ibukutha',
+    'Time Zones' => 'Zona Wektu',
+
+    'Time difference between {cityName} and major cities' =>
+        'Bedane wektu antarane {cityName} lan kutha-kutha gedhe',
 
 
 ];

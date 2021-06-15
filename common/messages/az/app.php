@@ -686,6 +686,21 @@ return [
     'Moon phases' => 'Ay fazaları',
 
 
+    'Time zones' => 'Saat qurşaqları',
+    'Abbreviation' => 'Qısaltma',
+    'Name' => 'Ad',
+    'Difference' => 'Fərq',
+    'Time' => 'Vaxt',
+
+    'Time {countryNameIn}' => '{countryNameIn} vaxtı',
+
+    'Time in countries' => 'Ölkələrdə vaxt',
+    'Time in cities' => 'Şəhərlərdə vaxt',
+    'Time in capitals' => 'Paytaxtlarda vaxt',
+    'Time Zones' => 'Saat qurşaqları',
+
+    'Time difference between {cityName} and major cities' =>
+        '{cityName} ilə böyük şəhərlər arasındakı zaman fərqi',
 
 ];
 

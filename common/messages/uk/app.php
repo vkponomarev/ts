@@ -690,6 +690,21 @@ return [
 
     'Moon phases' => 'Фази Місяця',
 
+    'Time zones' => 'Часові зони',
+    'Abbreviation' => 'Абревіатура',
+    'Name' => 'Ім\'я',
+    'Difference' => 'Різниця',
+    'Time' => 'Час',
+
+    'Time {countryNameIn}' => 'Час {countryNameIn}',
+
+    'Time in countries' => 'Час у країнах',
+    'Time in cities' => 'Час у містах',
+    'Time in capitals' => 'Час у столицях',
+    'Time Zones' => 'Часові зони',
+
+    'Time difference between {cityName} and major cities' =>
+        'Різниця в часі між {cityName} та великими містами',
 
 
 ];

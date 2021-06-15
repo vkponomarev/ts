@@ -15,7 +15,7 @@ class TimeUpdateDataTime
 
             $timeZoneSet = $UTC;
             $timeZoneSet->setTimeZone(new \DateTimeZone($item['timezone']));
-            $data[$key]['date'] = $timeZoneSet->format('Y-m-d');
+            $data[$key]['date'] = $timeZoneSet;
 
         }
         return $data;

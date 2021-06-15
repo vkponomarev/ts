@@ -98,6 +98,23 @@ class UrlCheck
 
     }
 
+    function city($cityURL, $cityURL2 = 0){
+
+        return (new UrlCheckTimeCity())->check($cityURL, $cityURL2);
+
+    }
+
+    function timeCountry($countryURL){
+
+        return (new UrlCheckTimeCountry())->check($countryURL);
+
+    }
+
+    function timeContinent($countryURL){
+
+        return (new UrlCheckTimeContinent())->check($countryURL);
+
+    }
 
     /**
      * Проверка URL на сезон года
@@ -203,6 +220,19 @@ class UrlCheck
         return (new UrlCheckTimeZones())->check($zoneURL);
 
     }
+
+    function checkTimeZonesAbbreviation($zoneURL){
+
+        return (new UrlCheckTimeZonesAbbreviation())->check($zoneURL);
+
+    }
+
+    function checkTimeZonesIana($zoneURL){
+
+        return (new UrlCheckTimeZonesIana())->check($zoneURL);
+
+    }
+
 
     function checkTimeZonesZoneTime($zoneTime, $zoneURL){
 

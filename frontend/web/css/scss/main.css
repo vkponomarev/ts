@@ -1447,9 +1447,46 @@ tr {
   line-height: 1.1;
 }
 
+.plate-digital-watch-diff-left {
+  text-align: right;
+  width: 100%;
+  font-weight: 700;
+  line-height: 1.1;
+  padding-top: 30px;
+}
+
+.plate-digital-watch-diff-right {
+  text-align: left;
+  width: 100%;
+  font-weight: 700;
+  line-height: 1.1;
+  padding-top: 30px;
+}
+
+.plate-digital-watch-diff-hours {
+  text-align: center;
+  width: 100%;
+  font-weight: 700;
+  line-height: 1.1;
+  padding-top: 40px;
+  font-size: 120px;
+  /*color: #D2BD96;*/
+  color: #CF949B;
+}
+
 .plate-digital-watch-text {
   text-align: right;
-  font-size: 30px;
+  font-size: 25px;
+}
+
+.plate-digital-watch-text-diff-left {
+  text-align: right;
+  font-size: 20px;
+}
+
+.plate-digital-watch-text-diff-right {
+  text-align: left;
+  font-size: 20px;
 }
 
 /* Large desktops and laptops */
@@ -1457,11 +1494,19 @@ tr {
   .plate-digital-watch {
     font-size: 270px;
   }
+
+  .plate-digital-watch-diff-left, .plate-digital-watch-diff-right {
+    font-size: 90px;
+  }
 }
 /* Landscape tablets and medium desktops */
 @media (min-width: 992px) and (max-width: 1199px) {
   .plate-digital-watch {
     font-size: 232px;
+  }
+
+  .plate-digital-watch-diff-left, .plate-digital-watch-diff-right {
+    font-size: 70px;
   }
 }
 /* Portrait tablets and small desktops */
@@ -1469,10 +1514,18 @@ tr {
   .plate-digital-watch {
     font-size: 180px;
   }
+
+  .plate-digital-watch-diff-left, .plate-digital-watch-diff-right {
+    font-size: 120px;
+  }
 }
 /* Landscape phones and portrait tablets */
 @media (max-width: 767px) {
   .plate-digital-watch {
+    font-size: 108px;
+  }
+
+  .plate-digital-watch-diff-left, .plate-digital-watch-diff-right {
     font-size: 108px;
   }
 }
@@ -1481,9 +1534,17 @@ tr {
   .plate-digital-watch {
     font-size: 80px;
   }
+
+  .plate-digital-watch-diff-left, .plate-digital-watch-diff-right {
+    font-size: 80px;
+  }
 }
 @media (max-width: 360px) {
   .plate-digital-watch {
+    font-size: 50px;
+  }
+
+  .plate-digital-watch-diff-left, .plate-digital-watch-diff-right {
     font-size: 50px;
   }
 }
@@ -1513,6 +1574,114 @@ tr {
 }
 .table-time tbody tr:hover {
   background: #ebffe8;
+}
+
+.plate-clock-min {
+  border-radius: 10px;
+  padding: 15px 20px 15px 20px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.11);
+  font-size: 18px;
+  word-break: break-word;
+}
+.plate-clock-min .plate-clock-min-digital-watch {
+  color: #929292;
+  font-size: 20px;
+  text-align: right;
+}
+.plate-clock-min .plate-clock-min-country-name {
+  color: #1e1e1e;
+  font-size: 22px;
+  text-align: right;
+}
+.plate-clock-min .plate-clock-min-country-name a {
+  color: #1e1e1e;
+  font-weight: bold;
+}
+.plate-clock-min .plate-clock-min-country-name a:hover {
+  color: #5b5b5b;
+  text-decoration: underline;
+}
+.plate-clock-min .plate-clock-min-city-name {
+  color: #1e1e1e;
+  font-size: 22px;
+  text-align: right;
+}
+.plate-clock-min .plate-clock-min-city-name a {
+  color: #1e1e1e;
+  font-weight: bold;
+}
+.plate-clock-min .plate-clock-min-city-name a:hover {
+  color: #5b5b5b;
+  text-decoration: underline;
+}
+.plate-clock-min .plate-clock-min-date {
+  color: #c6c6c0;
+  font-size: 16px;
+  font-weight: normal;
+  text-align: center;
+}
+.plate-clock-min .plate-clock-min-utc {
+  color: #c6c6c0;
+  font-size: 16px;
+  text-align: center;
+}
+
+.difference-cities-hours-color {
+  background-color: #cf949b;
+  width: 16px;
+  height: 33px;
+  display: inline-flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  border: 3px solid #fff;
+}
+
+.difference-cities-city-name-plus,
+.difference-cities-city-name-minus,
+.difference-cities-city-hours-plus,
+.difference-cities-city-hours-minus {
+  border-bottom: 1px solid #e8e8e8;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 24px;
+}
+
+.difference-cities-city-change {
+  text-align: center;
+}
+
+.difference-cities-city-name-plus {
+  text-align: right;
+}
+
+.difference-cities-city-name-minus {
+  text-align: left;
+}
+
+.difference-cities-city-hours-plus {
+  text-align: left;
+  display: flex;
+}
+
+.difference-cities-city-hours-minus {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.difference-cities-city-prev {
+  text-align: left;
+  font-size: 24px;
+}
+
+.difference-cities-city-next {
+  text-align: right;
+  font-size: 24px;
+}
+
+.difference-cities-city-change-a {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  font-size: 24px;
 }
 
 #container {

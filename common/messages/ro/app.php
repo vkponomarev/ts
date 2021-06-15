@@ -688,6 +688,21 @@ return [
     'Moon phases' => 'Fazele lunii',
 
 
+    'Time zones' => 'Fusuri orare',
+    'Abbreviation' => 'Abreviere',
+    'Name' => 'Nume',
+    'Difference' => 'Diferență',
+    'Time' => 'Timp',
+
+    'Time {countryNameIn}' => 'Ora {countryNameIn}',
+
+    'Time in countries' => 'Timpul în țări',
+    'Time in cities' => 'Timpul în orașe',
+    'Time in capitals' => 'Timpul cu majuscule',
+    'Time Zones' => 'Fusuri orare',
+
+    'Time difference between {cityName} and major cities' =>
+        'Diferența de timp între {cityName} și marile orașe',
 
 ];
 

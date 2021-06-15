@@ -7,87 +7,41 @@
  * @var $date \common\componentsV2\date\Date
  */
 
-
 ?>
 <script type="text/javascript">
 
 </script>
-
 <a name="time"></a>
 <h1 class="main-page-h1"><?= Yii::$app->params['text']['h1'] ?></h1>
 <hr>
+<?php if ($time->geoIP->active) : ?>
+    <?= $this->render('../time-partials/_geoIP-row.min.php', [
+        'time' => $time,
+        'date' => $date
+    ]);
+    ?>
 
-<?php if ($time->geoIP->name) : ?>
-
-
-    <div class="row">
-        <div class="col-xs-12 plate-digital-watch">
-            <span id="timeOne" class="time-block"><?= $time->geoIP->date->format('H:i:s') ?></span>
-        </div>
-        <script type="text/javascript">
-            setInterval(
-                function () {
-                    let timeZone = '<?=$time->geoIP->timeZone?>';
-                    let momentGeoIp = new moment();
-                    let hh = momentGeoIp.tz(timeZone).format('H');
-                    let mm = momentGeoIp.tz(timeZone).format('mm');
-                    let ss = momentGeoIp.tz(timeZone).format('ss');
-                    hh = (hh < 10) ? '0' + hh : hh;
-                    document.getElementById('timeOne').innerHTML = hh + ':' + mm + ':' + ss;
-                }
-                , 1000);
-        </script>
-
-    </div>
-    <div class="row">
-        <div class="col-xs-12 plate-digital-watch-text">
-            <?= $time->geoIP->name . ', ' ?>
-            <?= $date->day->name . ', ' ?>
-            <a href="/<?= Yii::$app->language ?>/calendar/years/<?= $date->year->current ?>/">
-                <?= Yii::$app->formatter->asDate($time->geoIP->date, 'long') ?>
-            </a>
-            <?= ', ' ?>
-            <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $date->year->current ?>/<?= $date->week->current ?>/">
-                <?= Yii::t('app', '{week} week', ['week' => $date->week->current]) ?>
-            </a>
-            <?= ', ' ?>
-            <a href="/<?= Yii::$app->language ?>/time/timezones/utc-317/<?= $time->geoIP->offsetSimple ?>/">
-                UTC <?= ' ' . $time->geoIP->offset ?>
-            </a>
-        </div>
-    </div>
-    <br><br>
+<?php else: ?>
+    <?= $this->render('../time-partials/_UTC-row.min.php', [
+        'time' => $time,
+        'date' => $date
+    ]);
+    ?>
 <?php endif; ?>
 
 
+
 <div class="row rflex">
-
-    <?php foreach ($time->citiesByPopulation as $key => $city): ?>
-
+    <?php foreach ($time->location->citiesByPopulation->byPopulation as $key => $city): ?>
         <div class="col-xxs-12 col-xs-6 col-sm-4 col-md-3 plates">
-            <div class="plate-clock">
-                <div class="plate-clock-analog-watch">
-                    <div id="container">
-                        <div id="content">
-                            <canvas id="<?= $key ?>" width="200" height="200">
-                                <script type="text/javascript">
-                                    $(function () {
-                                        let <?= 'clock' . $key ?> =
-                                        new Clock(
-                                            <?= $key ?>,
-                                            '<?= $city['timezone'] ?>',
-                                            '<?= 'date' . $key ?>',
-                                            '<?= Yii::$app->language; ?>'
-                                        );
-                                    });
-                                </script>
-                            </canvas>
-                        </div>
-                    </div>
-
+            <div class="plate-clock-min">
+                <div class="plate-clock-min-city-name">
+                    <a href="/<?= Yii::$app->language ?>/time/cities/<?= $city['url'] ?>/">
+                        <?= $city['name'] ?>
+                    </a>
                 </div>
-                <div class="plate-clock-digital-watch">
-                    <span id="time<?= $key ?>">12:30:35</span>
+                <div class="plate-clock-min-digital-watch">
+                    <span id="timeSecond<?= $key ?>"><?= $city['date']->format('H:i:s') ?></span>
                 </div>
 
                 <script type="text/javascript">
@@ -98,31 +52,75 @@
                             let m = moments.tz('<?= $city['timezone'] ?>').format('mm');
                             let s = moments.tz('<?= $city['timezone'] ?>').format('ss');
                             h = (h < 10) ? '0' + h : h;
-                            document.getElementById('time' + '<?= $key ?>').innerHTML = h + ':' + m + ':' + s;
+                            document.getElementById('timeSecond' + '<?= $key ?>').innerHTML = h + ':' + m + ':' + s;
                         }
                         , 1000);
                 </script>
-                <div class="plate-clock-city-name">
-                    <a href="/">
-                        <?= $city['name'] ?>
+
+            </div>
+        </div>
+    <?php endforeach ?>
+</div>
+
+<hr>
+<div class="row rflex">
+    <?php foreach ($time->location->continents as $key => $continent): ?>
+        <div class="col-xxs-12 col-xs-6 col-sm-4 col-md-3 plates">
+            <div class="plate-clock-min">
+                <div class="plate-clock-min-city-name">
+                    <a href="/<?= Yii::$app->language ?>/time/continents/<?= $continent['url'] ?>/">
+                        <?= $continent['name'] ?>
                     </a>
-                </div>
-                <div class="plate-clock-date">
-                    <?= Yii::$app->formatter->asDate($city['date'], 'long') ?>
-                </div>
-                <div class="plate-clock-utc">
-                    <span id="date<?= $key ?>"></span>
                 </div>
 
             </div>
         </div>
-
-
     <?php endforeach ?>
 </div>
-<br><br>
-<a name=timezones></a>
-<h2 class=main-page-h2>
-    <?= Yii::t('app', 'Time zones') ?>
-</h2>
 <hr>
+
+<div class="row rflex">
+    <div class="col-xxs-12 col-xs-6 col-sm-4 col-md-3 plates">
+        <div class="plate-clock-min">
+            <div class="plate-clock-min-city-name">
+                <a class="plate-a-margin" href="/<?= Yii::$app->language ?>/time/countries/">
+                    <?= Yii::t('app', 'Time in countries') ?>
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-xxs-12 col-xs-6 col-sm-4 col-md-3 plates">
+        <div class="plate-clock-min">
+            <div class="plate-clock-min-city-name">
+                <a class="plate-a-margin" href="/<?= Yii::$app->language ?>/time/cities/">
+                    <?= Yii::t('app', 'Time in cities') ?>
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-xxs-12 col-xs-6 col-sm-4 col-md-3 plates">
+        <div class="plate-clock-min">
+            <div class="plate-clock-min-city-name">
+                <a class="plate-a-margin" href="/<?= Yii::$app->language ?>/time/capitals/">
+                    <?= Yii::t('app', 'Time in capitals') ?>
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-xxs-12 col-xs-6 col-sm-4 col-md-3 plates">
+        <div class="plate-clock-min">
+            <div class="plate-clock-min-city-name">
+                <a class="plate-a-margin" href="/<?= Yii::$app->language ?>/time/timezones/">
+                    <?= Yii::t('app', 'Time Zones') ?>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<hr>
+

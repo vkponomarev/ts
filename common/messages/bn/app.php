@@ -684,6 +684,21 @@ return [
 
     'Moon phases' => 'চাঁদ পর্যায়ক্রমে',
 
+    'Time zones' => 'সময় অঞ্চল',
+    'Abbreviation' => 'সংক্ষিপ্তসার',
+    'Name' => 'নাম',
+    'Difference' => 'পার্থক্য',
+    'Time' => 'সময়',
+
+    'Time {countryNameIn}' => 'সময় {countryNameIn}',
+
+    'Time in countries' => 'দেশে সময়',
+    'Time in cities' => 'শহরে সময়',
+    'Time in capitals' => 'রাজধানীতে সময়',
+    'Time Zones' => 'সময় অঞ্চল',
+
+    'Time difference between {cityName} and major cities' =>
+        '{cityName} এবং বড় শহরগুলির মধ্যে সময়ের পার্থক্য',
 
 
 ];

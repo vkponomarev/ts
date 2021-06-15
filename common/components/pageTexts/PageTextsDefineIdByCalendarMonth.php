@@ -20,7 +20,7 @@ class PageTextsDefineIdByCalendarMonth
 
         if (!$holidays && !$PDFCalendar['exists']){
 
-            $textID = 85;
+            $textID = 87;
 
         }
 
@@ -32,7 +32,7 @@ class PageTextsDefineIdByCalendarMonth
 
         if (!$holidays && $PDFCalendar['exists']){
 
-            $textID = 88;
+            $textID = 86;
 
         }
 

@@ -632,4 +632,14 @@ return [
     'Name' => 'Наименование',
     'Difference' => 'Разница',
     'Time' => 'Время',
+
+    'Time {countryNameIn}' => 'Время {countryNameIn}',
+
+    'Time in countries' => 'Время в странах',
+    'Time in cities' => 'Время в городах',
+    'Time in capitals' => 'Время в столицах',
+    'Time Zones' => 'Часовые пояса',
+
+    'Time difference between {cityName} and major cities' => 'Разница во времени между городом {cityName} и крупными городами',
+
 ];

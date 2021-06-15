@@ -679,6 +679,21 @@ return [
 
     'Moon phases' => 'Holdfázisok',
 
+    'Time zones' => 'Időzónák',
+    'Abbreviation' => 'Rövidítés',
+    'Name' => 'Név',
+    'Difference' => 'Különbség',
+    'Time' => 'Idő',
+
+    'Time {countryNameIn}' => 'Idő {countryNameIn}',
+
+    'Time in countries' => 'Idő országokban',
+    'Time in cities' => 'Idő a városokban',
+    'Time in capitals' => 'Nagybetűs idő',
+    'Time Zones' => 'Időzónák',
+
+    'Time difference between {cityName} and major cities' =>
+        'Időeltolódás {cityName} és a nagyobb városok között',
 
 
 ];

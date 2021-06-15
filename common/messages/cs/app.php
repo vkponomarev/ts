@@ -681,6 +681,21 @@ return [
     'Moon phases' => 'Fáze měsíce',
 
 
+    'Time zones' => 'Časová pásma',
+    'Abbreviation' => 'Zkratka',
+    'Name' => 'název',
+    'Difference' => 'Rozdíl',
+    'Time' => 'Čas',
+
+    'Time {countryNameIn}' => 'Čas {countryNameIn}',
+
+    'Time in countries' => 'Čas v zemích',
+    'Time in cities' => 'Čas ve městech',
+    'Time in capitals' => 'Čas velkými písmeny',
+    'Time Zones' => 'Časová pásma',
+
+    'Time difference between {cityName} and major cities' =>
+        'Časový rozdíl mezi {cityName} a velkými městy',
 
 ];
 

@@ -3,10 +3,21 @@
 namespace common\componentsV2\time;
 
 
+use common\componentsV2\time\timeDifference\TimeDifference;
+use common\componentsV2\time\timeGeoIP\TimeGeoIP;
+use common\componentsV2\time\timeLocation\TimeLocation;
+use common\componentsV2\time\timeTimezone\TimeTimezone;
+
 class Time
 {
 
     public $geoIP;
+
+    public $cities;
+
+    public $location;
+
+    public $city;
 
     public $citiesByPopulation;
     /**
@@ -19,6 +30,10 @@ class Time
      */
     public $timeZone;
 
+    /**
+     * @var \common\componentsV2\time\timeTimezone\TimeTimezone
+     */
+    public $timezone;
 
     public $timeZoneTime;
 
@@ -28,32 +43,37 @@ class Time
      * Time constructor.
      * @param $params
      * @param $languageID
+     * @throws \yii\db\Exception
+     * @throws \Exception
      */
     function __construct($params, $languageID)
     {
         $this->UTC = (new TimeUTC())->utc();
 
+        if (isset($params['location']) && $params['location'])
+            $this->location = (new TimeLocation(['location' => $params['location']], $languageID));
+
         if (isset($params['geoIP']) && $params['geoIP'])
             $this->geoIP = (new TimeGeoIP($params['geoIP'], $languageID));
 
-        if (isset($params['timeZoneTime']['id']) && $params['timeZoneTime']['id'])
-            $this->timeZoneTime = (new TimeTimeZoneTime($params['timeZoneTime']['id'], $params['timeZoneTime']['offset'],  $languageID));
+        if (isset($params['timezone']) && $params['timezone']) {
 
-        if (isset($params['citiesByPopulation']) && $params['citiesByPopulation'])
-            $this->citiesByPopulation = (new TimeUpdateDataTime())->update(
-                (new TimeCitiesByPopulation())->data($languageID),
-                $this->UTC);
+            $this->timezone = (new TimeTimezone($params, $languageID));
 
-        if (isset($params['timeZones']) && $params['timeZones'])
-            $this->timeZones = (new TimeTimeZones($languageID));
+        }
 
-        if (isset($params['timeZoneID']) && $params['timeZoneID'])
-            $this->timeZone = (new TimeTimeZone($params['timeZoneID'], $languageID, $this->UTC));
+        if (isset($params['difference']) && $params['difference']) {
 
-        if (isset($params['timeZoneUpdateText']) && $params['timeZoneUpdateText'])
-            (new TimeTimeZoneTextUpdate($this->timeZone));
+            $this->difference = (new TimeDifference(
+                $params,
+                $this->location,
+                $this->geoIP,
+                $this->timezone,
+                $this->UTC,
+                $languageID
+            ));
 
-
+        }
 
     }
 

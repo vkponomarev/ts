@@ -632,5 +632,17 @@ return [
     'Name' => 'Name',
     'Difference' => 'Difference',
     'Time' => 'Time',
+
+    'Time {countryNameIn}' => 'Time {countryNameIn}',
+
+    'Time in countries' => 'Time in countries',
+    'Time in cities' => 'Time in cities',
+    'Time in capitals' => 'Time in capitals',
+    'Time Zones' => 'Time Zones',
+
+
+    'Time difference between {cityName} and major cities' => 'Time difference between {cityName} and major cities',
+
+    'Time difference' => 'Time difference',
     ];
 

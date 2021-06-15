@@ -677,6 +677,21 @@ return [
     'Moon phases' => 'Fazy​księżyca',
 
 
+    'Time zones' => 'Strefy czasowe',
+    'Abbreviation' => 'Skrót',
+    'Name' => 'Nazwa',
+    'Difference' => 'Różnica',
+    'Time' => 'Czas',
+
+    'Time {countryNameIn}' => 'Czas {countryNameIn}',
+
+    'Time in countries' => 'Czas w krajach',
+    'Time in cities' => 'Czas w miastach',
+    'Time in capitals' => 'Czas w stolicach',
+    'Time Zones' => 'Strefy czasowe',
+
+    'Time difference between {cityName} and major cities' =>
+        'Różnica czasu między {cityName} a większymi miastami',
 
 ];
 

@@ -689,6 +689,21 @@ return [
 
     'Moon phases' => 'Fasi lunari',
 
+    'Time zones' => 'Fusi orari',
+    'Abbreviation' => 'Abbreviazione',
+    'Name' => 'Nome',
+    'Difference' => 'Differenza',
+    'Time' => 'Tempo',
+
+    'Time {countryNameIn}' => 'Ora {countryNameIn}',
+
+    'Time in countries' => 'Ora in paesi',
+    'Time in cities' => 'Ora in città',
+    'Time in capitals' => 'Ora in capitali',
+    'Time Zones' => 'Fusi orari',
+
+    'Time difference between {cityName} and major cities' =>
+        'Differenza oraria tra {cityName} e le principali città',
 
 
 ];

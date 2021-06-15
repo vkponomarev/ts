@@ -17,6 +17,15 @@ $this->params['breadcrumbs'][] = $this->title;
         <select id="cycle-length-from" name="name" class="form-control select-extended">
 
             <option value="---------------">---------------</option>
+            <option value="sitemap-time-cities-all">Карта сайта Время ГОРОДА все языки</option>
+            <option value="sitemap-time-countries-all">Карта сайта Время СТРАНЫ все языки</option>
+            <option value="sitemap-time-continents-all">Карта сайта Время КОНТИНЕНТЫ все языки</option>
+            <option value="sitemap-time-capitals-all">Карта сайта Время СТОЛИЦЫ все языки</option>
+            <option value="sitemap-time-abbr-all">Карта сайта Время ЧАСОВЫЕ ПОЯСА АББРЕВИАТУРЫ все языки</option>
+            <option value="sitemap-time-iana-all">Карта сайта Время ЧАСОВЫЕ ПОЯСА IANA все языки</option>
+            <option value="sitemap-time-difference-city-all">Карта сайта Время РАЗНИЦА ВО ВРЕМЕНИ ГОРОД все языки</option>
+            <option value="sitemap-time-difference-city-city-all">Карта сайта Время РАЗНИЦА ВО ВРЕМЕНИ ГОРОД + ГОРОДА все языки</option>
+
             <option value="sitemap-calendar-yearly-all">Карта сайта для календаря на ГОД все языки</option>
             <option value="sitemap-calendar-yearly-ru">Карта сайта для календаря на ГОД только RU</option>
 

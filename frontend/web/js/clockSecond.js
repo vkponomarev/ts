@@ -14,7 +14,7 @@ class ClockSecond {
         this.ctx.translate(this.radius, this.radius);
         this.radius = this.radius * 0.90;
         this.local = params.language;
-        //console.log(this.local);
+        console.log(this.local);
         this.drawClock(this.ctx, this.radius, params.timeZone, params.timeZoneUTC);
         //this.drawFace(this.ctx, this.radius);
         setInterval(() => this.drawClock(this.ctx, this.radius, params.timeZone, params.timeZoneUTC), 1000);

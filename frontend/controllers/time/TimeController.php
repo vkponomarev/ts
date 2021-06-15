@@ -2,6 +2,8 @@
 
 namespace frontend\controllers\time;
 
+use common\components\breadcrumbs\Breadcrumbs;
+use common\components\breadcrumbs\BreadcrumbsTime;
 use common\components\main\Main;
 use common\components\urlCheck\UrlCheck;
 use common\componentsV2\date\Date;
@@ -35,7 +37,6 @@ class TimeController extends Controller
         //(new \common\components\dump\Dump())->printR(\yii\helpers\Url::to());
         //(new \common\components\dump\Dump())->printR(\yii\helpers\Url::current([]));die;
 
-
         $main = new Main();
         Yii::$app->params['language'] = $main->language(Yii::$app->language);
         Yii::$app->params['language']['all'] = $main->languages();
@@ -49,17 +50,27 @@ class TimeController extends Controller
         $year = $yearURL;
         $language = Yii::$app->params['language']['current']['url'];
 
-        ($date = new Date((new \DateTime())->format('Y-m-d')))->year()->day()->week();
-
-        Yii::$app->session->destroy();
-        $geoIP = (new \lysenkobv\GeoIP\GeoIP())->ip("50.113.83.100");
-
         $time = new Time([
-            'citiesByPopulation' => 1,
+            'location' => [
+                'citiesByPopulation' => 1,
+                'continentsArray' => 1,
+            ],
             'timeZones' => 1,
-            'geoIP' => (isset($geoIP->city['geoname_id'])) ? $geoIP->city['geoname_id'] : 0,
+            'geoIP' => 1,
             //'popularCities' => 1,
         ], $languageID);
+
+        /*$timeDifference = new TimeDifference([
+            'time' => $time,
+
+        ]);*/
+        if ($time->geoIP->active){
+            ($date = new Date(($time->geoIP->city->date->format('Y-m-d'))))->year()->day()->week();
+        } else {
+            ($date = new Date(((new \DateTime())->format('Y-m-d'))))->year()->day()->week();
+        }
+
+         Yii::$app->params['breadcrumbs'] = (new BreadcrumbsTime())->breadcrumbs();
 
         return $this->render('time-page.min.php', [
 

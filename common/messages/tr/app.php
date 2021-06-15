@@ -690,6 +690,21 @@ return [
 
     'Moon phases' => 'Ayın evreleri',
 
+    'Time zones' => 'Zaman dilimleri',
+    'Abbreviation' => 'Kısaltma',
+    'Name' => 'isim',
+    'Difference' => 'fark',
+    'Time' => 'Zaman',
+
+    'Time {countryNameIn}' => 'Saat {countryNameIn}',
+
+    'Time in countries' => 'Ülkelerdeki saat',
+    'Time in cities' => 'Şehirlerde saat',
+    'Time in capitals' => 'Başkentlerde zaman',
+    'Time Zones' => 'Zaman dilimleri',
+
+    'Time difference between {cityName} and major cities' =>
+        '{cityName} ve büyük şehirler arasındaki saat farkı',
 
 
 ];

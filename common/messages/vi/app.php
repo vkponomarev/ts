@@ -676,6 +676,21 @@ return [
 
     'Moon phases' => 'Tuần trăng',
 
+    'Time zones' => 'Múi giờ',
+    'Abbreviation' => 'Viết tắt',
+    'Name' => 'Tên',
+    'Difference' => 'Sự khác biệt',
+    'Time' => 'Thời gian',
+
+    'Time {countryNameIn}' => 'Giờ {countryNameIn}',
+
+    'Time in countries' => 'Thời gian ở các nước',
+    'Time in cities' => 'Thời gian ở các thành phố',
+    'Time in capitals' => 'Thời gian ở thủ đô',
+    'Time Zones' => 'Múi giờ',
+
+    'Time difference between {cityName} and major cities' =>
+        'Chênh lệch múi giờ giữa {cityName} và các thành phố lớn',
 
 
 ];

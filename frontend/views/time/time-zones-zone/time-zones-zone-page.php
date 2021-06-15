@@ -23,14 +23,12 @@
                     </script>
                 </canvas>
  */
-
 ?>
 
 
 <a name="time"></a>
 <h1 class="main-page-h1"><?= Yii::$app->params['text']['h1'] ?></h1>
 <hr>
-
 <script type="text/javascript">
     setInterval(
         function () {
@@ -48,11 +46,12 @@
         <span id="time" class="time-block"><?= $time->timeZone->date->format('H:i:s') ?></span>
     </div>
 </div>
+
 <div class="row">
     <div class="col-xs-12 plate-digital-watch-text">
         <?= $date->day->name . ', ' ?>
         <a href="/<?= Yii::$app->language ?>/calendar/years/<?= $date->year->current ?>/">
-            <?= Yii::$app->formatter->asDate($time->timeZone->date, 'long') ?>
+            <?= Yii::$app->formatter->asDate($time->timeZone->date->format('Y-m-d H:i:s'), 'long') ?>
         </a>
         <?= ', '?>
         <a href="/<?= Yii::$app->language ?>/calendar/weeks/<?= $date->year->current ?>/<?= $date->week->current ?>/">

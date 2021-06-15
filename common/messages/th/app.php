@@ -679,6 +679,21 @@ return [
     'Moon phases' => 'ขั้นตอนของดวงจันทร์',
 
 
+    'Time zones' => 'โซนเวลา',
+    'Abbreviation' => 'ตัวย่อ',
+    'Name' => 'ชื่อ',
+    'Difference' => 'ความแตกต่าง',
+    'Time' => 'เวลา',
+
+    'Time {countryNameIn}' => 'เวลา{countryNameIn}',
+
+    'Time in countries' => 'เวลาในประเทศ',
+    'Time in cities' => 'เวลาในเมือง',
+    'Time in capitals' => 'เวลาในเมืองหลวง',
+    'Time Zones' => 'โซนเวลา',
+
+    'Time difference between {cityName} and major cities' =>
+        'ความแตกต่างของเวลาระหว่าง{cityName}กับเมืองใหญ่',
 
 ];
 

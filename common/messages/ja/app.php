@@ -680,6 +680,21 @@ return [
 
     'Moon phases' => '月の満ち欠け',
 
+    'Time zones' => '時間帯',
+    'Abbreviation' => '略語',
+    'Name' => '名前',
+    'Difference' => '差',
+    'Time' => '時間',
+
+    'Time {countryNameIn}' => '時間{countryNameIn}',
+
+    'Time in countries' => '国での時間',
+    'Time in cities' => '都市での時間',
+    'Time in capitals' => '首都での時間',
+    'Time Zones' => '時間帯',
+
+    'Time difference between {cityName} and major cities' =>
+        '{cityName}と主要都市の時差',
 
 
 ];

@@ -674,6 +674,21 @@ return [
     'Moon phases' => 'Φάσεις της Σελήνης',
 
 
+    'Time zones' => 'Ζώνες ώρας',
+    'Abbreviation' => 'Συντομογραφία',
+    'Name' => 'Ονομα',
+    'Difference' => 'Διαφορά',
+    'Time' => 'χρόνος',
+
+    'Time {countryNameIn}' => 'Ώρα {countryNameIn}',
+
+    'Time in countries' => 'Ώρα σε χώρες',
+    'Time in cities' => 'Ώρα στις πόλεις',
+    'Time in capitals' => 'Χρόνος σε πρωτεύουσες',
+    'Time Zones' => 'Ζώνες ώρας',
+
+    'Time difference between {cityName} and major cities' =>
+        'Διαφορά ώρας μεταξύ {cityName} και μεγάλων πόλεων',
 
 ];
 

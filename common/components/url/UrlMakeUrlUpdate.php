@@ -34,15 +34,21 @@ class UrlMakeUrlUpdate
                 ->execute();
         }
 
+
     }
 
 
     function urlTransliteration($url){
 
         $UrlTransliterated = preg_replace("/-/"," ",$url);
+
+        $UrlTransliterated = preg_replace("~/~","a1b1c1",$UrlTransliterated);
+
         $UrlTransliterated = transliterator_transliterate("Any-Latin; Latin-ASCII; [\\u0100-\\u7fff] remove ; NFD; [:Nonspacing Mark:] Remove; NFC; [:Punctuation:] Remove; Lower();", $UrlTransliterated);
+
+        $UrlTransliterated = preg_replace("~a1b1c1~","-",$UrlTransliterated);
+
         $UrlTransliterated = preg_replace('/[^\\pL\\d._]+/u', '-', $UrlTransliterated);
-        //echo $UrlTransliterated . "<br>";
 
         return $UrlTransliterated;
 

@@ -20,7 +20,7 @@ class PageTextsDefineIdByCalendarSeason
 
         if (!$holidays && !$calendarChinese['active']){
 
-            $textID = 78;
+            $textID = 80;
 
         }
 
@@ -32,7 +32,7 @@ class PageTextsDefineIdByCalendarSeason
 
         if (!$holidays && $calendarChinese['active']){
 
-            $textID = 81;
+            $textID = 79;
 
         }
 

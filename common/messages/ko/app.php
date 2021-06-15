@@ -683,6 +683,21 @@ return [
 
     'Moon phases' => '달의 위상',
 
+    'Time zones' => '시간대',
+    'Abbreviation' => '약어',
+    'Name' => '이름',
+    'Difference' => '차',
+    'Time' => '시각',
+
+    'Time {countryNameIn}' => '타임 {countryNameIn}',
+
+    'Time in countries' => '국가의 시간',
+    'Time in cities' => '도시의 시간',
+    'Time in capitals' => '수도의 시간',
+    'Time Zones' => '시간대',
+
+    'Time difference between {cityName} and major cities' =>
+        '{cityName}와 주요 도시 간의 시차',
 
 
 ];
