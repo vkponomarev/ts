@@ -24,6 +24,9 @@ AppAsset::register($this);
     <?= $this->render('/partials/link-prev-next/_link-prev-next.min.php') ?>
     <?php $this->registerCsrfMetaTags() ?>
     <?php $this->head() ?>
+
+    <script data-ad-client="ca-pub-6533211636627045" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
 </head>
 <body role="document">
 <?php $this->beginBody() ?>
