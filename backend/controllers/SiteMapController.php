@@ -3,6 +3,14 @@
 namespace backend\controllers;
 
 use common\components\gii\siteMap\SiteMap;
+use common\components\gii\siteMap\SiteMapGenerateNamazCities;
+use common\components\gii\siteMap\SiteMapGenerateNamazCitiesMonths;
+use common\components\gii\siteMap\SiteMapGenerateNamazCitiesMonthsRU;
+use common\components\gii\siteMap\SiteMapGenerateNamazCitiesRU;
+use common\components\gii\siteMap\SiteMapGenerateNamazCitiesTimes;
+use common\components\gii\siteMap\SiteMapGenerateNamazCitiesTimesRU;
+use common\components\gii\siteMap\SiteMapGenerateNamazCitiesYears;
+use common\components\gii\siteMap\SiteMapGenerateNamazCitiesYearsRU;
 use common\components\gii\siteMap\SiteMapGenerateTimeAbbrs;
 use common\components\gii\siteMap\SiteMapGenerateTimeAbbrsRU;
 use common\components\gii\siteMap\SiteMapGenerateTimeAbbrsTime;
@@ -399,6 +407,33 @@ class SiteMapController extends Controller
                 (new SiteMapGenerateTimeDifferenceCitiesCities())->generate($languagesData);
                 (new SiteMapGenerateTimeDifferenceCitiesCitiesRU())->generate($languagesData);
 
+            }
+
+            /*
+            <option value="">Карта сайта Время ГОРОДА все языки</option>
+            <option value="">Карта сайта Время ГОРОДА все языки</option>
+            <option value="">Карта сайта Время ГОРОДА все языки</option>
+            <option value="">Карта сайта Время ГОРОДА все языки</option>
+             */
+
+            if ($name == 'sitemap-namaz-cities-all') {
+                (new SiteMapGenerateNamazCities())->generate($languagesData);
+                (new SiteMapGenerateNamazCitiesRU())->generate($languagesData);
+            }
+
+            if ($name == 'sitemap-namaz-cities-months-all') {
+                (new SiteMapGenerateNamazCitiesMonths())->generate($languagesData);
+                (new SiteMapGenerateNamazCitiesMonthsRU())->generate($languagesData);
+            }
+
+            if ($name == 'sitemap-namaz-cities-years-all') {
+                (new SiteMapGenerateNamazCitiesYears())->generate($languagesData);
+                (new SiteMapGenerateNamazCitiesYearsRU())->generate($languagesData);
+            }
+
+            if ($name == 'sitemap-namaz-cities-times-all') {
+                (new SiteMapGenerateNamazCitiesTimes())->generate($languagesData);
+                (new SiteMapGenerateNamazCitiesTimesRU())->generate($languagesData);
             }
 
 

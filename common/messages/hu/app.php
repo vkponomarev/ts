@@ -695,6 +695,20 @@ return [
     'Time difference between {cityName} and major cities' =>
         'Időeltolódás {cityName} és a nagyobb városok között',
 
+    'Namaz' => 'Namaz',
+    'Prayer time for a month' => 'Imádság egy hónapig',
 
+
+    'Fajr' => 'Fajr',
+    'Sunrise' => 'Napkelte',
+    'Dhuhr' => 'Dhuhr',
+    'Asr' => 'Asr',
+    'Maghrib' => 'Maghrib',
+    'Isha' => 'Isha',
+
+    'Morning' => 'Reggel',
+    'Evening' => 'Este',
+    'Year' => 'Év',
+    'Namaz time' => 'Namaz idő',
 ];
 

@@ -690,5 +690,21 @@ return [
     'Time difference between {cityName} and major cities' =>
         'Διαφορά ώρας μεταξύ {cityName} και μεγάλων πόλεων',
 
+    'Namaz' => 'Ναμάζ',
+    'Prayer time for a month' => 'Χρόνος προσευχής για ένα μήνα',
+
+
+    'Fajr' => 'Fajr',
+    'Sunrise' => 'Ανατολή ηλίου',
+    'Dhuhr' => 'Dhuhr',
+    'Asr' => 'ΑΣΡ',
+    'Maghrib' => 'Μαγκρίμ',
+    'Isha' => 'Έσα',
+
+    'Morning' => 'Πρωί',
+    'Evening' => 'Απόγευμα',
+    'Year' => 'Ετος',
+    'Namaz time' => 'Ώρα Ναμάζ',
+
 ];
 

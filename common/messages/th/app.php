@@ -695,5 +695,20 @@ return [
     'Time difference between {cityName} and major cities' =>
         'ความแตกต่างของเวลาระหว่าง{cityName}กับเมืองใหญ่',
 
+    'Namaz' => 'นามาซ',
+    'Prayer time for a month' => 'เวลาละหมาดเป็นเวลาหนึ่งเดือน',
+
+
+    'Fajr' => 'Fajr',
+    'Sunrise' => 'พระอาทิตย์ขึ้น',
+    'Dhuhr' => 'Dhuhr',
+    'Asr' => 'อัสรี',
+    'Maghrib' => 'มักริบ',
+    'Isha' => 'อิชา',
+
+    'Morning' => 'เช้า',
+    'Evening' => 'ตอนเย็น',
+    'Year' => 'ปี',
+    'Namaz time' => 'เวลานามาซ',
 ];
 

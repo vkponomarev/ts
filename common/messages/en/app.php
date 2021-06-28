@@ -644,5 +644,22 @@ return [
     'Time difference between {cityName} and major cities' => 'Time difference between {cityName} and major cities',
 
     'Time difference' => 'Time difference',
+
+    'Namaz' => 'Namaz',
+    'Prayer time for a month' => 'Prayer time for a month',
+
+
+    'Fajr' => 'Fajr',
+    'Sunrise' => 'Sunrise',
+    'Dhuhr' => 'Dhuhr',
+    'Asr' => 'Asr',
+    'Maghrib' => 'Maghrib',
+    'Isha' => 'Isha',
+
+    'Morning' => 'Morning',
+    'Evening' => 'Evening',
+    'Year' => 'Year',
+    'Namaz time' => 'Namaz time',
+
     ];
 

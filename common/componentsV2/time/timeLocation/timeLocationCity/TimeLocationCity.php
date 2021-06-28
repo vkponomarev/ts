@@ -18,6 +18,8 @@ class TimeLocationCity
     public $url;
     public $country;
     public $countryCode;
+    public $latitude;
+    public $longitude;
     private $city;
 
     /**
@@ -47,7 +49,8 @@ class TimeLocationCity
         $this->date = $this->city->data->date;
         $this->dateReal = new \DateTime($this->city->data->date->format('Y-m-d H:i:s'));
 
-
+        $this->latitude = $this->city->data->cityData['latitude'];
+        $this->longitude = $this->city->data->cityData['longitude'];
 
     }
 }

@@ -120,6 +120,17 @@
 
         </div>
     </div>
+
+    <div class="col-xxs-12 col-xs-6 col-sm-4 col-md-3 plates">
+        <div class="plate-clock-min">
+            <div class="plate-clock-min-city-name">
+                <a class="plate-a-margin" href="/<?= Yii::$app->language ?>/namaz/">
+                    <?= Yii::t('app', 'Namaz') ?>
+                </a>
+            </div>
+
+        </div>
+    </div>
 </div>
 
 <hr>

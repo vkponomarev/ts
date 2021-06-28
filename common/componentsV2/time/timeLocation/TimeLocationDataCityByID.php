@@ -28,6 +28,8 @@ class TimeLocationDataCityByID
             tc.timezone,
             tc.url,
             tc.population,
+            tc.latitude,
+            tc.longitude,
             tc.name as cityNameOriginal,
             tct.name as cityName,
             tct.name_in as cityNameIn,

@@ -707,5 +707,21 @@ return [
     'Time difference between {cityName} and major cities' =>
         '{cityName} va yirik shaharlar o\'rtasidagi vaqt farqi',
 
+    'Namaz' => 'Namoz',
+    'Prayer time for a month' => 'Bir oy davomida ibodat vaqti',
+
+
+    'Fajr' => 'Bomdod',
+    'Sunrise' => 'Quyosh chiqishi',
+    'Dhuhr' => 'Zuhr',
+    'Asr' => 'Asr',
+    'Maghrib' => 'Magrib',
+    'Isha' => 'Isha',
+
+    'Morning' => 'Tong',
+    'Evening' => 'Oqshom',
+    'Year' => 'Yil',
+    'Namaz time' => 'Namoz vaqti',
+
 ];
 

@@ -711,5 +711,21 @@ return [
     'Time difference between {cityName} and major cities' =>
         'Décalage horaire entre {cityName} et les grandes villes',
 
+    'Namaz' => 'Namaz',
+    'Prayer time for a month' => 'Temps de prière pendant un mois',
+
+
+    'Fajr' => 'Fajr',
+    'Sunrise' => 'Lever du soleil',
+    'Dhuhr' => 'Dhuhr',
+    'Asr' => 'Asr',
+    'Maghrib' => 'Maghreb',
+    'Isha' => 'Isha',
+
+    'Morning' => 'Matin',
+    'Evening' => 'Soir',
+    'Year' => 'An',
+    'Namaz time' => 'Heure de Namaz',
+
 ];
 

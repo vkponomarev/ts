@@ -689,6 +689,20 @@ return [
     'Time difference between {cityName} and major cities' =>
         '{cityName}與主要城市的時差',
 
+    'Namaz' => '納馬茲',
+    'Prayer time for a month' => '一個月的禱告時間',
 
+
+    'Fajr' => '晨練',
+    'Sunrise' => '日出',
+    'Dhuhr' => '杜爾',
+    'Asr' => '阿斯爾',
+    'Maghrib' => '馬格里布',
+    'Isha' => '伊莎',
+
+    'Morning' => '早晨',
+    'Evening' => '晚上',
+    'Year' => '年',
+    'Namaz time' => '納瑪茲時間',
 ];
 

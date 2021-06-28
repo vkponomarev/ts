@@ -17,6 +17,12 @@ $this->params['breadcrumbs'][] = $this->title;
         <select id="cycle-length-from" name="name" class="form-control select-extended">
 
             <option value="---------------">---------------</option>
+
+            <option value="sitemap-namaz-cities-all">Карта сайта НАМАЗ ГОРОДА все языки</option>
+            <option value="sitemap-namaz-cities-months-all">Карта сайта НАМАЗ ГОРОДА МЕСЯЦЫ все языки</option>
+            <option value="sitemap-namaz-cities-years-all">Карта сайта НАМАЗ ГОРОДА ГОДА все языки</option>
+            <option value="sitemap-namaz-cities-times-all">Карта сайта НАМАЗ УТРО ВЕЧЕР все языки</option>
+
             <option value="sitemap-time-cities-all">Карта сайта Время ГОРОДА все языки</option>
             <option value="sitemap-time-countries-all">Карта сайта Время СТРАНЫ все языки</option>
             <option value="sitemap-time-continents-all">Карта сайта Время КОНТИНЕНТЫ все языки</option>

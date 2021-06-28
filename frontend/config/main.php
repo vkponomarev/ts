@@ -65,6 +65,7 @@ return [
                 require __DIR__ . '/../../frontend/config/route/calendar-moon.php',
                 require __DIR__ . '/../../frontend/config/route/holidays.php',
                 require __DIR__ . '/../../frontend/config/route/time.php',
+                require __DIR__ . '/../../frontend/config/route/namaz.php',
                 require __DIR__ . '/../../frontend/config/route/cms.php',
                 require __DIR__ . '/../../frontend/config/route/other.php'
             ),

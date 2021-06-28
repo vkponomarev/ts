@@ -719,6 +719,22 @@ return [
     'Time difference between {cityName} and major cities' =>
         '{cityName} और प्रमुख शहरों के बीच समय का अंतर',
 
+    'Namaz' => 'नमाज',
+    'Prayer time for a month' => 'एक महीने के लिए प्रार्थना का समय',
+
+
+    'Fajr' => 'फज्र',
+    'Sunrise' => 'सूर्योदय',
+    'Dhuhr' => 'धुहरी',
+    'Asr' => 'अस्र',
+    'Maghrib' => 'मग़रिब',
+    'Isha' => 'ईशा',
+
+    'Morning' => 'सुबह',
+    'Evening' => 'शाम',
+    'Year' => 'साल',
+    'Namaz time' => 'नमाज का समय',
+
 
 ];
 

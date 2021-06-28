@@ -14,6 +14,7 @@ use common\components\pageTexts\PageTexts;
 use common\components\pdfCalendars\PDFCalendars;
 use common\components\urlCheck\UrlCheck;
 use common\componentsV2\date\Date;
+use common\componentsV2\time\Time;
 use Yii;
 use yii\web\Controller;
 
@@ -83,6 +84,15 @@ class HolidaysYearsController extends Controller
 
         $breadCrumbs = new Breadcrumbs();
         Yii::$app->params['breadcrumbs'] = $breadCrumbs->holidaysYears($date, $countryURL['url'], $countryData);
+
+        /*$time = new Time([
+            'location' => [
+                'cityID' => $cityURL['id'],
+                'citiesByPopulation' => 1,
+            ],
+            'geoIP' => 1,
+            'difference' => 1,
+        ], $languageID);*/
 
         return $this->render('holidays-year-page.min.php', [
 

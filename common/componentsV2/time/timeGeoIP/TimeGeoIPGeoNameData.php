@@ -27,10 +27,13 @@ class TimeGeoIPGeoNameData
             $this->data = \Yii::$app->db
                 ->createCommand('
             select
+            tc.id,
             tc.timezone as timezone,
             tc.name as cityNameOriginal,
             tc.url as cityUrl,
             tc.population,
+            tc.latitude,
+            tc.longitude,
             tct.name as cityName,
             tct.name_in as cityNameIn,
             tct.name_for as cityNameFor,

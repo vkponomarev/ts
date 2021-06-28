@@ -17,7 +17,7 @@ class TimeCountriesCountryController extends Controller
 {
 
     /**
-     * @route /time/cities/city
+     * @route /time/countries/country
      * @return string
      * @throws \yii\web\NotFoundHttpException
      */

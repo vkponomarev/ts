@@ -1,3 +1,13 @@
+<?php
+
+/**
+ * @var $this frontend\controllers\YearsController
+ *
+ * @var $time \common\componentsV2\time\Time
+ * @var $date \common\componentsV2\date\Date
+ */
+
+?>
 
     <div class="row">
         <div class="col-xs-12 plate-digital-watch">
@@ -9,6 +19,7 @@
                     let timeZone = '<?=$time->geoIP->city->timezone?>';
                     let momentGeoIp = new moment();
                     let hh = momentGeoIp.tz(timeZone).format('H');
+                    //console.log(momentGeoIp.tz(timeZone));
                     let mm = momentGeoIp.tz(timeZone).format('mm');
                     let ss = momentGeoIp.tz(timeZone).format('ss');
                     hh = (hh < 10) ? '0' + hh : hh;

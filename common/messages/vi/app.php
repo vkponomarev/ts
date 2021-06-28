@@ -692,6 +692,21 @@ return [
     'Time difference between {cityName} and major cities' =>
         'Chênh lệch múi giờ giữa {cityName} và các thành phố lớn',
 
+    'Namaz' => 'Namaz',
+    'Prayer time for a month' => 'Thời gian cầu nguyện trong một tháng',
+
+
+    'Fajr' => 'Fajr',
+    'Sunrise' => 'bình Minh',
+    'Dhuhr' => 'Dhuhr',
+    'Asr' => 'Asr',
+    'Maghrib' => 'Maghrib',
+    'Isha' => 'Isha',
+
+    'Morning' => 'Buổi sáng',
+    'Evening' => 'Tối',
+    'Year' => 'Năm',
+    'Namaz time' => 'Thời gian Namaz',
 
 ];
 

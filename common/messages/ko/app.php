@@ -699,6 +699,21 @@ return [
     'Time difference between {cityName} and major cities' =>
         '{cityName}와 주요 도시 간의 시차',
 
+    'Namaz' => 'Namaz',
+    'Prayer time for a month' => '한 달 동안의기도 시간',
+
+
+    'Fajr' => '파즈 르',
+    'Sunrise' => '해돋이',
+    'Dhuhr' => 'Dhuhr',
+    'Asr' => 'Asr',
+    'Maghrib' => '마그 리브',
+    'Isha' => '이샤',
+
+    'Morning' => '아침',
+    'Evening' => '저녁',
+    'Year' => '년',
+    'Namaz time' => 'Namaz 시간',
 
 ];
 

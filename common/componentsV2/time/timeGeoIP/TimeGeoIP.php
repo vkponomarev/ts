@@ -2,8 +2,6 @@
 
 namespace common\componentsV2\time\timeGeoIP;
 
-use yii\base\Component;
-
 class TimeGeoIP
 {
 
@@ -23,21 +21,20 @@ class TimeGeoIP
     public function __construct($geoIP, $languageID)
     {
 
-        $this->geoNameData =
-            new TimeGeoIPGeoNameData(
-                new TimeGeoIPReader(
-                    new TimeGeoIPSession(
-                        new TimeGeoIPIPAddress($geoIP)
-                    )), $languageID);
-
-        $this->active = $this->geoNameData->active;
+        $this->active =
+            ($this->geoNameData =
+                new TimeGeoIPGeoNameData(
+                    new TimeGeoIPReader(
+                        new TimeGeoIPSession(
+                            new TimeGeoIPIPAddress($geoIP)
+                        )), $languageID))->active;
 
         if ($this->geoNameData->active) {
-            $this->city = new TimeGeoIPCity (
+            $this->city = new TimeGeoIPCity(
                 $this->geoNameData
             );
 
-            $this->country = new TimeGeoIPCountry (
+            $this->country = new TimeGeoIPCountry(
                 $this->geoNameData
             );
             $this->active = 1;

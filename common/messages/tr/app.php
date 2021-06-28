@@ -706,6 +706,20 @@ return [
     'Time difference between {cityName} and major cities' =>
         '{cityName} ve büyük şehirler arasındaki saat farkı',
 
+    'Namaz' => 'Namaz',
+    'Prayer time for a month' => 'Ayda bir namaz vakti',
 
+
+    'Fajr' => 'sabah namazı',
+    'Sunrise' => 'gündoğumu',
+    'Dhuhr' => 'öğle',
+    'Asr' => 'ikindi',
+    'Maghrib' => 'akşam yemeği',
+    'Isha' => 'yatsı',
+
+    'Morning' => 'Sabah',
+    'Evening' => 'Akşam',
+    'Year' => 'Yıl',
+    'Namaz time' => 'Namaz vakti',
 ];
 

@@ -15,6 +15,9 @@ class TimeLocation
 {
 
     public $city;
+    public $defaultCity;
+    public $defaultLocationData;
+    public $defaultCountry;
     public $cities;
     public $citiesByPopulation;
     public $countries;
@@ -35,6 +38,18 @@ class TimeLocation
     public function __construct($params, $languageID)
     {
 
+        if (isset($params['location']['defaultCityID']) && $params['location']['defaultCityID']){
+
+            $this->defaultLocationData =
+                new TimeLocationData(['cityID' => $params['location']['defaultCityID']], $languageID);
+
+            $this->defaultCity =
+                new TimeLocationCity($this->defaultLocationData, $languageID);
+
+            $this->defaultCountry =
+                new TimeLocationCountry($this->defaultLocationData, $languageID);
+
+        }
 
         if (isset($params['location']['cityID']) && $params['location']['cityID']) {
 
@@ -93,7 +108,6 @@ class TimeLocation
             $this->continents =
                 (new TimeLocationContinents($params, $languageID))->data;
         }
-
 
         if (isset($params['location']['continent']) && $params['location']['continent']) {
             $this->continent =

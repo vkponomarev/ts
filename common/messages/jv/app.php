@@ -707,6 +707,21 @@ return [
     'Time difference between {cityName} and major cities' =>
         'Bedane wektu antarane {cityName} lan kutha-kutha gedhe',
 
+    'Namaz' => 'Namaz',
+    'Prayer time for a month' => 'Wektu sholat sewulan',
+
+
+    'Fajr' => 'Fajr',
+    'Sunrise' => 'Sunrise',
+    'Dhuhr' => 'Dhuhr',
+    'Asr' => 'Asr',
+    'Maghrib' => 'Maghrib',
+    'Isha' => 'Isha',
+
+    'Morning' => 'Esuk',
+    'Evening' => 'Sore',
+    'Year' => 'Taun',
+    'Namaz time' => 'Namaz wektu',
 
 ];
 
