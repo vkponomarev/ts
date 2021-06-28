@@ -75,7 +75,7 @@ class SiteMapGenerateNamazCitiesTimesRU
 
                     // Создаем файл
                     $gii = new Gii();
-                    $fileName = 'sitemap_namaz_cities_times_' . $countFiles;
+                    $fileName = 'sitemap_namaz_cities_times_ru_' . $countFiles;
                     $gii->generateFile($siteMapContent, $fileName . '.xml', $gii->realPath() . '/frontend/views/gii/sitemap/');
 
                     $siteMapContent = '';

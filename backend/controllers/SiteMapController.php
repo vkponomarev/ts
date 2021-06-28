@@ -436,7 +436,6 @@ class SiteMapController extends Controller
                 (new SiteMapGenerateNamazCitiesTimesRU())->generate($languagesData);
             }
 
-
             if ($name == 'sitemap-all') {
                 $siteMap->generateMainFilesAll();
             }
