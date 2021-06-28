@@ -6,7 +6,7 @@ namespace common\componentsV2\namaz;
 /**
  *
  * https://github.com/GeniusTS/prayer-times показывает совсем не то время которое должно быть
- * https://github.com/islamic-network/prayer-times
+ * https://github.com/islamic-network/prayer-times работает
  * Class Namaz
  * @package common\componentsV2\namaz
  */
