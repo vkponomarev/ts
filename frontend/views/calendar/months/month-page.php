@@ -264,6 +264,7 @@
 
                             <?php $key = array_search($week[$i]['date'], array_column($holidaysData, 'date'));
                             if (false !== $key && $holidaysData[$key]['holiday'] == 1): ?>
+
                                 <div class="mday-holiday" data-title="<?= $holidaysData[$key]['name'] ?>">
                                      <span>
                                          <?php if (($dateData['year']['current'] >= $holidaysRange['start'] && $dateData['year']['current'] <= $holidaysRange['end'])) : ?>
@@ -273,10 +274,14 @@
                                              <?= str_pad($week[$i]['monthDay'], 2, '0', STR_PAD_LEFT) ?>/">
                                                  <?= $week[$i]['monthDay']; ?>
                                             </a>
+                                         <?php else: ?>
+                                                <?= $week[$i]['monthDay']; ?>
+
                                          <?php endif; ?>
                                      </span>
                                 </div>
                             <?php else: ?>
+
                                 <div class="mday">
                                     <span>
                                     <?php if (($dateData['year']['current'] >= $holidaysRange['start'] && $dateData['year']['current'] <= $holidaysRange['end'])) : ?>
@@ -286,6 +291,9 @@
                                              <?= str_pad($week[$i]['monthDay'], 2, '0', STR_PAD_LEFT) ?>/">
                                                  <?= $week[$i]['monthDay']; ?>
                                             </a>
+                                    <?php else: ?>
+                                                 <?= $week[$i]['monthDay']; ?>
+
                                     <?php endif; ?>
                                     </span>
                                 </div>
@@ -313,6 +321,8 @@
                                              <?= str_pad($week[$i]['monthDay'], 2, '0', STR_PAD_LEFT) ?>/">
                                                  <?= $week[$i]['monthDay']; ?>
                                             </a>
+                                    <?php else: ?>
+                                               <?= $week[$i]['monthDay']; ?>
                                     <?php endif; ?>
                                      </span>
                                 </div>
@@ -326,6 +336,8 @@
                                              <?= str_pad($week[$i]['monthDay'], 2, '0', STR_PAD_LEFT) ?>/">
                                                  <?= $week[$i]['monthDay']; ?>
                                             </a>
+                                    <?php else: ?>
+                                                 <?= $week[$i]['monthDay']; ?>
                                     <?php endif; ?>
                                     </span>
                                 </div>
