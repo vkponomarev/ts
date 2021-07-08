@@ -723,5 +723,62 @@ return [
     'Year' => 'Taun',
     'Namaz time' => 'Namaz wektu',
 
+    'Addition' => 'Tambahan',
+    'Subtraction' => 'Pangirangan',
+    'Multiplication' => 'Multiplikasi',
+    'Division' => 'Divisi',
+
+    'Calculate time' => 'Ngetung wektu',
+    'Calculate time between dates' => 'Ngetung wektu antarane tanggal',
+
+    '{n,plural, one{# hour} few{# hours} other{# hours}}' => '{n,plural, one{# jam} few{# jam} other{# jam}}',
+    '{n,plural, one{# minute} few{# minutes} other{# minutes}}' => '{n,plural, one{# menit} few{# menit} other{# menit}}',
+    '{n,plural, one{# second} few{# seconds} other{# seconds}}' => '{n,plural, one{# detik} few{# detik} other{# detik}}',
+    '{n,plural, one{# day} few{# days} other{# days}}' => '{n,plural, one{# dina} few{# dina} other{# dina}}',
+    '{n,plural, one{# month} few{# months} other{# months}}' => '{n,plural, one{# wulan} few{# wulan} other{# wulan}}',
+    '{n,plural, one{# year} few{# years} other{# years}}' => '{n,plural, one{# taun} few{# taun} other{# taun}}',
+
+    'You cannot divide by zero' => 'Sampeyan ora bisa dibagi dadi nol',
+
+    'Adding time' => 'Nambahake wektu',
+    'Subtracting time' => 'Nyuda wektu',
+    'Time multiplication' => 'Multiplikasi wektu',
+    'Divide time' => 'Dibagi wektu',
+
+    'Seconds calculator' => 'Kalkulator detik',
+    'Minutes calculator' => 'Kalkulator menit',
+    'Hours calculator' => 'Kalkulator jam',
+    'Days calculator' => 'Kalkulator dina',
+    'Weeks calculator' => 'Kalkulator minggu',
+    'Months calculator' => 'Kalkulator wulan',
+    'Years calculator' => 'Kalkulator taun',
+
+    'Seconds' => 'Detik',
+    'Minutes' => 'Menit',
+    'Hours' => 'Jam',
+    'Days' => 'Dina-dina',
+    'Weeks' => 'Minggu',
+    'Months' => 'Wulan',
+    'Years' => 'Taun',
+
+    'Convert seconds' => 'Ngonversi detik',
+    'Convert minutes' => 'Ngonversi menit',
+    'Convert hours' => 'Ngonversi jam',
+    'Convert days' => 'Ngonversi dina',
+    'Convert weeks' => 'Ngonversi minggu',
+    'Convert months' => 'Ngonversi wulan',
+    'Convert years' => 'Ngonversi taun',
+
+    '{n,plural, one{# week} few{# weeks} other{# weeks}}' => '{n,plural, one{# minggu} few{# minggu} other{# minggu}}',
+
+    'Calculators' => 'Kalkulator',
+    'Date calculator' => 'Kalkulator tanggal',
+    'Days between dates calculator' => 'Dina ing antarane kalkulator tanggal',
+    'Time calculator' => 'Kalkulator wektu',
+
+    'Difference between date <span class="picker-result-red">{date1}</span> and date <span class="picker-result-red">{date2}</span>' =>
+        'Bedane tanggal <span class="picker-result-red">{date1}</span> karo tanggal <span class="picker-result-red">{date2}</span>',
+
+    'Calculate' => 'Ngetung',
 ];
 

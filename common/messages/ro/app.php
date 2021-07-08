@@ -719,5 +719,63 @@ return [
     'Evening' => 'Seară',
     'Year' => 'An',
     'Namaz time' => 'Ora Namaz',
+
+    'Addition' => 'Plus',
+    'Subtraction' => 'Scădere',
+    'Multiplication' => 'Multiplicare',
+    'Division' => 'Divizia',
+
+    'Calculate time' => 'Calculați timpul',
+    'Calculate time between dates' => 'Calculați timpul dintre date',
+
+    '{n,plural, one{# hour} few{# hours} other{# hours}}' => '{n,plural, one{# oră} few{# ore} other{# ore}}',
+    '{n,plural, one{# minute} few{# minutes} other{# minutes}}' => '{n,plural, one{# minut} few{# minute} other{# minute}}',
+    '{n,plural, one{# second} few{# seconds} other{# seconds}}' => '{n,plural, one{# secunda} few{# secunde} other{# secunde}}',
+    '{n,plural, one{# day} few{# days} other{# days}}' => '{n,plural, one{# zi} few{# zile} other{# zile}}',
+    '{n,plural, one{# month} few{# months} other{# months}}' => '{n,plural, one{# lună} few{# luni} other{# luni}}',
+    '{n,plural, one{# year} few{# years} other{# years}}' => '{n,plural, one{# an} few{# ani} other{# ani}}',
+
+    'You cannot divide by zero' => 'Nu puteți împărți la zero',
+
+    'Adding time' => 'Adăugarea timpului',
+    'Subtracting time' => 'Scăderea timpului',
+    'Time multiplication' => 'Multiplicarea timpului',
+    'Divide time' => 'Împarte timpul',
+
+    'Seconds calculator' => 'Calculator de secunde',
+    'Minutes calculator' => 'Calculator de minute',
+    'Hours calculator' => 'Calculator de ore',
+    'Days calculator' => 'Calculator de zile',
+    'Weeks calculator' => 'Calculator săptămâni',
+    'Months calculator' => 'Calculator de luni',
+    'Years calculator' => 'Calculator de ani',
+
+    'Seconds' => 'Secunde',
+    'Minutes' => 'Minute',
+    'Hours' => 'Ore',
+    'Days' => 'Zile',
+    'Weeks' => 'Săptămâni',
+    'Months' => 'Luni',
+    'Years' => 'Ani',
+
+    'Convert seconds' => 'Convertiți secunde',
+    'Convert minutes' => 'Convertiți minutele',
+    'Convert hours' => 'Conversia orelor',
+    'Convert days' => 'Convertiți zilele',
+    'Convert weeks' => 'Conversia săptămânilor',
+    'Convert months' => 'Conversia lunilor',
+    'Convert years' => 'Convertiți anii',
+
+    '{n,plural, one{# week} few{# weeks} other{# weeks}}' => '{n,plural, one{# săptămână} few{# saptamani} other{# saptamani}}',
+
+    'Calculators' => 'Calculatoare',
+    'Date calculator' => 'Calculator de date',
+    'Days between dates calculator' => 'Calculator de zile între date',
+    'Time calculator' => 'Calculator de timp',
+
+    'Difference between date <span class="picker-result-red">{date1}</span> and date <span class="picker-result-red">{date2}</span>' =>
+        'Diferența dintre data <span class="picker-result-red">{date1}</span> și data <span class="picker-result-red">{date2}</span>',
+
+    'Calculate' => 'calculati',
 ];
 

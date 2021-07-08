@@ -708,5 +708,62 @@ return [
     'Year' => 'Năm',
     'Namaz time' => 'Thời gian Namaz',
 
+    'Addition' => 'Thêm vào',
+    'Subtraction' => 'Phép trừ',
+    'Multiplication' => 'Phép nhân',
+    'Division' => 'Sư đoàn',
+
+    'Calculate time' => 'Tính toán thời gian',
+    'Calculate time between dates' => 'Tính toán thời gian giữa các ngày',
+
+    '{n,plural, one{# hour} few{# hours} other{# hours}}' => '{n,plural, one{# giờ} few{# giờ} other{# giờ}}',
+    '{n,plural, one{# minute} few{# minutes} other{# minutes}}' => '{n,plural, one{# phút} few{# phút} other{# phút}}',
+    '{n,plural, one{# second} few{# seconds} other{# seconds}}' => '{n,plural, one{# giây} few{# giây} other{# giây}}',
+    '{n,plural, one{# day} few{# days} other{# days}}' => '{n,plural, one{# ngày} few{# ngày} other{# ngày}}',
+    '{n,plural, one{# month} few{# months} other{# months}}' => '{n,plural, one{# tháng} few{# tháng} other{# tháng}}',
+    '{n,plural, one{# year} few{# years} other{# years}}' => '{n,plural, one{# năm} few{# năm} other{# năm}}',
+
+    'You cannot divide by zero' => 'Bạn không thể chia cho 0',
+
+    'Adding time' => 'Thêm thời gian',
+    'Subtracting time' => 'Trừ thời gian',
+    'Time multiplication' => 'Nhân thời gian',
+    'Divide time' => 'Chia thời gian',
+
+    'Seconds calculator' => 'Máy tính giây',
+    'Minutes calculator' => 'Máy tính phút',
+    'Hours calculator' => 'Máy tính giờ',
+    'Days calculator' => 'Máy tính ngày',
+    'Weeks calculator' => 'Máy tính tuần',
+    'Months calculator' => 'Máy tính tháng',
+    'Years calculator' => 'Máy tính năm',
+
+    'Seconds' => 'Giây',
+    'Minutes' => 'Phút',
+    'Hours' => 'Giờ',
+    'Days' => 'Ngày',
+    'Weeks' => 'Tuần',
+    'Months' => 'Tháng',
+    'Years' => 'Năm',
+
+    'Convert seconds' => 'Chuyển đổi giây',
+    'Convert minutes' => 'Chuyển đổi phút',
+    'Convert hours' => 'Chuyển đổi giờ',
+    'Convert days' => 'Chuyển đổi ngày',
+    'Convert weeks' => 'Chuyển đổi tuần',
+    'Convert months' => 'Chuyển đổi tháng',
+    'Convert years' => 'Chuyển đổi năm',
+
+    '{n,plural, one{# week} few{# weeks} other{# weeks}}' => '{n,plural, one{# tuần} few{# tuần} other{# tuần}}',
+
+    'Calculators' => 'Máy tính',
+    'Date calculator' => 'Máy tính ngày',
+    'Days between dates calculator' => 'Số ngày giữa các máy tính ngày',
+    'Time calculator' => 'Máy tính thời gian',
+
+    'Difference between date <span class="picker-result-red">{date1}</span> and date <span class="picker-result-red">{date2}</span>' =>
+        'Sự khác biệt giữa ngày <span class="picker-result-red">{date1}</span> mười hai và ngày <span class="picker-result-red">{date2}</span> mười hai',
+
+    'Calculate' => 'Tính toán',
 ];
 

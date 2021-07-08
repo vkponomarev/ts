@@ -275,7 +275,7 @@
                                                  <?= $week[$i]['monthDay']; ?>
                                             </a>
                                          <?php else: ?>
-                                                <?= $week[$i]['monthDay']; ?>
+                                             <?= $week[$i]['monthDay']; ?>
 
                                          <?php endif; ?>
                                      </span>
@@ -292,7 +292,7 @@
                                                  <?= $week[$i]['monthDay']; ?>
                                             </a>
                                     <?php else: ?>
-                                                 <?= $week[$i]['monthDay']; ?>
+                                        <?= $week[$i]['monthDay']; ?>
 
                                     <?php endif; ?>
                                     </span>
@@ -322,7 +322,7 @@
                                                  <?= $week[$i]['monthDay']; ?>
                                             </a>
                                     <?php else: ?>
-                                               <?= $week[$i]['monthDay']; ?>
+                                        <?= $week[$i]['monthDay']; ?>
                                     <?php endif; ?>
                                      </span>
                                 </div>
@@ -337,7 +337,7 @@
                                                  <?= $week[$i]['monthDay']; ?>
                                             </a>
                                     <?php else: ?>
-                                                 <?= $week[$i]['monthDay']; ?>
+                                        <?= $week[$i]['monthDay']; ?>
                                     <?php endif; ?>
                                     </span>
                                 </div>

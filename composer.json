@@ -26,7 +26,9 @@
         "fortawesome/font-awesome": "*",
         "mpdf/mpdf": "^8.0",
         "kartik-v/yii2-widget-typeahead" : "dev-master",
-        "lysenkobv/yii2-geoip": "~1.0"
+        "kartik-v/yii2-widget-datetimepicker": "dev-master",
+        "geoip2/geoip2": "~2.0",
+        "islamic-network/prayer-times": "^1.0"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

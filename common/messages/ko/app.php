@@ -715,5 +715,62 @@ return [
     'Year' => '년',
     'Namaz time' => 'Namaz 시간',
 
+    'Addition' => '부가',
+    'Subtraction' => '빼기',
+    'Multiplication' => '곱셈',
+    'Division' => '분할',
+
+    'Calculate time' => '시간 계산',
+    'Calculate time between dates' => '날짜 사이의 시간 계산',
+
+    '{n,plural, one{# hour} few{# hours} other{# hours}}' => '{n,plural, one{# 시간} few{# 시간} other{# 시간}}',
+    '{n,plural, one{# minute} few{# minutes} other{# minutes}}' => '{n,plural, one{# 분} few{# 분} other{# 분}}',
+    '{n,plural, one{# second} few{# seconds} other{# seconds}}' => '{n,plural, one{# 초} few{# 초} other{# 초}}',
+    '{n,plural, one{# day} few{# days} other{# days}}' => '{n,plural, one{# 일} few{# 일} other{# 일}}',
+    '{n,plural, one{# month} few{# months} other{# months}}' => '{n,plural, one{# 개월} few{# 개월} other{# 개월}}',
+    '{n,plural, one{# year} few{# years} other{# years}}' => '{n,plural, one{# 년} few{# 년} other{# 년}}',
+
+    'You cannot divide by zero' => '0으로 나눌 수 없습니다',
+
+    'Adding time' => '시간 추가',
+    'Subtracting time' => '시간 빼기',
+    'Time multiplication' => '시간 곱셈',
+    'Divide time' => '시간 나누기',
+
+    'Seconds calculator' => '초 계산기',
+    'Minutes calculator' => '분 계산기',
+    'Hours calculator' => '시간 계산기',
+    'Days calculator' => '일 계산기',
+    'Weeks calculator' => '주 계산기',
+    'Months calculator' => '개월 계산기',
+    'Years calculator' => '년 계산기',
+
+    'Seconds' => '초',
+    'Minutes' => '의사록',
+    'Hours' => '시간',
+    'Days' => '일',
+    'Weeks' => '주',
+    'Months' => '개월',
+    'Years' => '연령',
+
+    'Convert seconds' => '초 변환',
+    'Convert minutes' => '분 변환',
+    'Convert hours' => '시간 변환',
+    'Convert days' => '일 변환',
+    'Convert weeks' => '주 변환',
+    'Convert months' => '월 변환',
+    'Convert years' => '연도 변환',
+
+    '{n,plural, one{# week} few{# weeks} other{# weeks}}' => '{n,plural, one{# 주} few{# 주} other{# 주}}',
+
+    'Calculators' => '계산기',
+    'Date calculator' => '날짜 계산기',
+    'Days between dates calculator' => '날짜 계산기 사이 일',
+    'Time calculator' => '시간 계산기',
+
+    'Difference between date <span class="picker-result-red">{date1}</span> and date <span class="picker-result-red">{date2}</span>' =>
+        '날짜 <span class="picker-result-red">{date1}</span> 과 날짜 <span class="picker-result-red">{date2}</span> 의 차이',
+
+    'Calculate' => '계산하다',
 ];
 

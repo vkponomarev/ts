@@ -59,6 +59,7 @@ class Date
     function __construct($date)
     {
         $this->date = new \DateTime($date);
+        $this->time = (new \DateTime())->setTimezone(new \DateTimeZone('UTC'));
     }
 
     /**
@@ -74,6 +75,7 @@ class Date
         $this->afterPrevious = $dateMain->modify('-1 day')->format('Y-m-d');
         $this->plusTwoMonths = $dateMain->modify('+2 month')->format('Y-m-d');
         $this->plusOneMonth = $dateMain->modify('-1 month')->format('Y-m-d');
+
         return $this;
     }
 

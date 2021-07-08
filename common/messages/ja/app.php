@@ -712,5 +712,62 @@ return [
     'Year' => '年',
     'Namaz time' => 'ナマズ時間',
 
+    'Addition' => '添加',
+    'Subtraction' => '減算',
+    'Multiplication' => '乗算',
+    'Division' => '分割',
+
+    'Calculate time' => '時間を計算する',
+    'Calculate time between dates' => '日付間の時間を計算する',
+
+    '{n,plural, one{# hour} few{# hours} other{# hours}}' => '{n,plural, one{# 時間} few{# 時間} other{# 時間}}',
+    '{n,plural, one{# minute} few{# minutes} other{# minutes}}' => '{n,plural, one{# 分} few{# 分} other{# 分}}',
+    '{n,plural, one{# second} few{# seconds} other{# seconds}}' => '{n,plural, one{# 秒} few{# 秒} other{# 秒}}',
+    '{n,plural, one{# day} few{# days} other{# days}}' => '{n,plural, one{# 日} few{# 日} other{# 日}}',
+    '{n,plural, one{# month} few{# months} other{# months}}' => '{n,plural, one{# ヶ月} few{# ヶ月} other{# ヶ月}}',
+    '{n,plural, one{# year} few{# years} other{# years}}' => '{n,plural, one{# 年} few{# 年} other{# 年}}',
+
+    'You cannot divide by zero' => 'ゼロ除算はできません',
+
+    'Adding time' => '時間を追加する',
+    'Subtracting time' => '時間を引く',
+    'Time multiplication' => '時間の掛け算',
+    'Divide time' => '時間を分割する',
+
+    'Seconds calculator' => '秒計算機',
+    'Minutes calculator' => '分計算機',
+    'Hours calculator' => '時間計算機',
+    'Days calculator' => '日計算機',
+    'Weeks calculator' => '週計算機',
+    'Months calculator' => '月計算機',
+    'Years calculator' => '年計算機',
+
+    'Seconds' => '秒',
+    'Minutes' => '議事録',
+    'Hours' => '時間',
+    'Days' => '日々',
+    'Weeks' => '週',
+    'Months' => '月',
+    'Years' => '年',
+
+    'Convert seconds' => '秒を変換する',
+    'Convert minutes' => '分を変換する',
+    'Convert hours' => '時間の変換',
+    'Convert days' => '日を変換する',
+    'Convert weeks' => '週を変換する',
+    'Convert months' => '月を変換する',
+    'Convert years' => '年を変換する',
+
+    '{n,plural, one{# week} few{# weeks} other{# weeks}}' => '{n,plural, one{# 週間} few{# 数週間} other{# 数週間}}',
+
+    'Calculators' => '電卓',
+    'Date calculator' => '日付計算機',
+    'Days between dates calculator' => '日付計算機間の日数',
+    'Time calculator' => '時間計算機',
+
+    'Difference between date <span class="picker-result-red">{date1}</span> and date <span class="picker-result-red">{date2}</span>' =>
+        '<span class="picker-result-red">{date1}</span> と <span class="picker-result-red">{date2}</span> の違い',
+
+    'Calculate' => '計算する',
 ];
 

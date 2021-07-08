@@ -710,5 +710,63 @@ return [
     'Evening' => 'ตอนเย็น',
     'Year' => 'ปี',
     'Namaz time' => 'เวลานามาซ',
+
+    'Addition' => 'ส่วนที่เพิ่มเข้าไป',
+    'Subtraction' => 'การลบ',
+    'Multiplication' => 'การคูณ',
+    'Division' => 'แผนก',
+
+    'Calculate time' => 'คำนวณเวลา',
+    'Calculate time between dates' => 'คำนวณเวลาระหว่างวันที่',
+
+    '{n,plural, one{# hour} few{# hours} other{# hours}}' => '{n,plural, one{# ชั่วโมง} few{# ชั่วโมง} other{# ชั่วโมง}}',
+    '{n,plural, one{# minute} few{# minutes} other{# minutes}}' => '{n,plural, one{# นาที} few{# นาที} other{# นาที}}',
+    '{n,plural, one{# second} few{# seconds} other{# seconds}}' => '{n,plural, one{# วินาที} few{# วินาที} other{# วินาที}}',
+    '{n,plural, one{# day} few{# days} other{# days}}' => '{n,plural, one{# วัน} few{# วัน} other{# วัน}}',
+    '{n,plural, one{# month} few{# months} other{# months}}' => '{n,plural, one{# เดือน} few{# เดือน} other{# เดือน}}',
+    '{n,plural, one{# year} few{# years} other{# years}}' => '{n,plural, one{# ปี} few{# ปี} other{# ปี}}',
+
+    'You cannot divide by zero' => 'คุณไม่สามารถหารด้วยศูนย์',
+
+    'Adding time' => 'เพิ่มเวลา',
+    'Subtracting time' => 'การลบเวลา',
+    'Time multiplication' => 'การคูณเวลา',
+    'Divide time' => 'แบ่งเวลา',
+
+    'Seconds calculator' => 'เครื่องคิดเลขวินาที',
+    'Minutes calculator' => 'เครื่องคิดเลขนาที',
+    'Hours calculator' => 'เครื่องคิดเลขชั่วโมง',
+    'Days calculator' => 'เครื่องคิดเลขวัน',
+    'Weeks calculator' => 'เครื่องคิดเลขสัปดาห์',
+    'Months calculator' => 'เครื่องคิดเลขเดือน',
+    'Years calculator' => 'เครื่องคิดเลขปี',
+
+    'Seconds' => 'วินาที',
+    'Minutes' => 'นาที',
+    'Hours' => 'ชั่วโมง',
+    'Days' => 'วัน',
+    'Weeks' => 'สัปดาห์',
+    'Months' => 'เดือน',
+    'Years' => 'ปี',
+
+    'Convert seconds' => 'แปลงวินาที',
+    'Convert minutes' => 'แปลงนาที',
+    'Convert hours' => 'แปลงชั่วโมง',
+    'Convert days' => 'แปลงวัน',
+    'Convert weeks' => 'แปลงสัปดาห์',
+    'Convert months' => 'แปลงเดือน',
+    'Convert years' => 'แปลงปี',
+
+    '{n,plural, one{# week} few{# weeks} other{# weeks}}' => '{n,plural, one{# สัปดาห์} few{# สัปดาห์} other{# สัปดาห์}}',
+
+    'Calculators' => 'เครื่องคิดเลข',
+    'Date calculator' => 'เครื่องคิดเลขวันที่',
+    'Days between dates calculator' => 'วันระหว่างวันที่ เครื่องคิดเลข',
+    'Time calculator' => 'เครื่องคิดเลขเวลา',
+
+    'Difference between date <span class="picker-result-red">{date1}</span> and date <span class="picker-result-red">{date2}</span>' =>
+        'ความแตกต่างระหว่างวันที่ <span class="picker-result-red">{date1}</span> และวันที่ <span class="picker-result-red">{date2}</span>',
+
+    'Calculate' => 'คำนวณ',
 ];
 

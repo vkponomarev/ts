@@ -723,6 +723,62 @@ return [
     'Year' => 'Ano',
     'Namaz time' => 'Hora Namaz',
 
+    'Addition' => 'Adição',
+    'Subtraction' => 'Subtração',
+    'Multiplication' => 'Multiplicação',
+    'Division' => 'Divisão',
 
+    'Calculate time' => 'Calcule o tempo',
+    'Calculate time between dates' => 'Calcule o tempo entre as datas',
+
+    '{n,plural, one{# hour} few{# hours} other{# hours}}' => '{n,plural, one{# hora} few{# horas} other{# horas}}',
+    '{n,plural, one{# minute} few{# minutes} other{# minutes}}' => '{n,plural, one{# minuto} few{# minutos} other{# minutos}}',
+    '{n,plural, one{# second} few{# seconds} other{# seconds}}' => '{n,plural, one{# segundo} few{# segundos} other{# segundos}}',
+    '{n,plural, one{# day} few{# days} other{# days}}' => '{n,plural, one{# dia} few{# dias} other{# dias}}',
+    '{n,plural, one{# month} few{# months} other{# months}}' => '{n,plural, one{# mês} few{# meses} other{# meses}}',
+    '{n,plural, one{# year} few{# years} other{# years}}' => '{n,plural, one{# ano} few{# anos} other{# anos}}',
+
+    'You cannot divide by zero' => 'Você não pode dividir por zero',
+
+    'Adding time' => 'Adicionando tempo',
+    'Subtracting time' => 'Subtraindo tempo',
+    'Time multiplication' => 'Multiplicação de tempo',
+    'Divide time' => 'Divida o tempo',
+
+    'Seconds calculator' => 'Calculadora de segundos',
+    'Minutes calculator' => 'Calculadora de minutos',
+    'Hours calculator' => 'Calculadora de horas',
+    'Days calculator' => 'Calculadora de dias',
+    'Weeks calculator' => 'Calculadora de semanas',
+    'Months calculator' => 'Calculadora de meses',
+    'Years calculator' => 'Calculadora de anos',
+
+    'Seconds' => 'Segundos',
+    'Minutes' => 'Minutos',
+    'Hours' => 'Horas',
+    'Days' => 'Dias',
+    'Weeks' => 'Semanas',
+    'Months' => 'Meses',
+    'Years' => 'Anos',
+
+    'Convert seconds' => 'Converter segundos',
+    'Convert minutes' => 'Converter minutos',
+    'Convert hours' => 'Converter horas',
+    'Convert days' => 'Converter dias',
+    'Convert weeks' => 'Converter semanas',
+    'Convert months' => 'Converter meses',
+    'Convert years' => 'Converter anos',
+
+    '{n,plural, one{# week} few{# weeks} other{# weeks}}' => '{n,plural, one{# semana} few{# semanas} other{# semanas}}',
+
+    'Calculators' => 'Calculadoras',
+    'Date calculator' => 'Calculadora de data',
+    'Days between dates calculator' => 'Calculadora de dias entre datas',
+    'Time calculator' => 'Calculadora de tempo',
+
+    'Difference between date <span class="picker-result-red">{date1}</span> and date <span class="picker-result-red">{date2}</span>' =>
+        'Diferença entre a data <span class="picker-result-red">{date1}</span> e a data <span class="picker-result-red">{date2}</span>',
+
+    'Calculate' => 'Calcular',
 ];
 

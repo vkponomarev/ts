@@ -661,5 +661,66 @@ return [
     'Year' => 'Year',
     'Namaz time' => 'Namaz time',
 
-    ];
+
+    'Addition' => 'Addition',
+    'Subtraction' => 'Subtraction',
+    'Multiplication' => 'Multiplication',
+    'Division' => 'Division',
+
+    'Calculate time' => 'Calculate time',
+    'Calculate time between dates' => 'Calculate time between dates',
+
+    '{n,plural, one{# hour} few{# hours} other{# hours}}' => '{n,plural, one{# hour} few{# hours} other{# hours}}',
+    '{n,plural, one{# minute} few{# minutes} other{# minutes}}' => '{n,plural, one{# minute} few{# minutes} other{# minutes}}',
+    '{n,plural, one{# second} few{# seconds} other{# seconds}}' => '{n,plural, one{# second} few{# seconds} other{# seconds}}',
+    '{n,plural, one{# day} few{# days} other{# days}}' => '{n,plural, one{# day} few{# days} other{# days}}',
+    '{n,plural, one{# month} few{# months} other{# months}}' => '{n,plural, one{# month} few{# months} other{# months}}',
+    '{n,plural, one{# year} few{# years} other{# years}}' => '{n,plural, one{# year} few{# years} other{# years}}',
+
+    'You cannot divide by zero' => 'You cannot divide by zero',
+
+    'Adding time' => 'Adding time',
+    'Subtracting time' => 'Subtracting time',
+    'Time multiplication' => 'Time multiplication',
+    'Divide time' => 'Divide time',
+
+    'Seconds calculator' => 'Seconds calculator',
+    'Minutes calculator' => 'Minutes calculator',
+    'Hours calculator' => 'Hours calculator',
+    'Days calculator' => 'Days calculator',
+    'Weeks calculator' => 'Weeks calculator',
+    'Months calculator' => 'Months calculator',
+    'Years calculator' => 'Years calculator',
+
+    'Seconds' => 'Seconds',
+    'Minutes' => 'Minutes',
+    'Hours' => 'Hours',
+    'Days' => 'Days',
+    'Weeks' => 'Weeks',
+    'Months' => 'Months',
+    'Years' => 'Years',
+
+    'Convert seconds' => 'Convert seconds',
+    'Convert minutes' => 'Convert minutes',
+    'Convert hours' => 'Convert hours',
+    'Convert days' => 'Convert days',
+    'Convert weeks' => 'Convert weeks',
+    'Convert months' => 'Convert months',
+    'Convert years' => 'Convert years',
+
+    '{n,plural, one{# week} few{# weeks} other{# weeks}}' => '{n,plural, one{# week} few{# weeks} other{# weeks}}',
+
+    'Calculators' => 'Calculators',
+    'Date calculator' => 'Date calculator',
+    'Days between dates calculator' => 'Days between dates calculator',
+    'Time calculator' => 'Time calculator',
+
+    'Difference between date <span class="picker-result-red">{date1}</span> and date <span class="picker-result-red">{date2}</span>' =>
+        'Difference between date <span class="picker-result-red">{date1}</span> and date <span class="picker-result-red">{date2}</span>',
+
+
+    'Calculate' => 'Calculate',
+
+
+];
 

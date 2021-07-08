@@ -1,4 +1,14 @@
 
+Необходимые компоненты:
+https://github.com/maxmind/GeoIP2-php
+composer require --prefer-dist geoip2/geoip2:~2.0
+
+https://github.com/islamic-network/prayer-times
+
+composer require --prefer-dist islamic-network/prayer-times
+
+
+
 <h1>Доки</h1>
 <h2 align="left">Введение </h2>
 

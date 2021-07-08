@@ -303,6 +303,14 @@
                 <a href="/<?= Yii::$app->language ?>/calendar/moon/gardener/years/<?= $date->year->current ?>/">
                     <?= Yii::t('app', 'Sowing calendar') ?>
                 </a>
+                <br>
+                <a href="/<?= Yii::$app->language ?>/namaz/">
+                    <?= Yii::t('app', 'Namaz time') ?>
+                </a>
+                <br>
+                <a href="/<?= Yii::$app->language ?>/calculators/">
+                    <?= Yii::t('app', 'Calculators') ?>
+                </a>
                 <?php if ($holidaysCount >= 4) : ?>
                     <div class="plate-links">
                         <hr>

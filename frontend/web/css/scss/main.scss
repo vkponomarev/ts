@@ -30,12 +30,14 @@
 @import "pages/time";
 @import "pages/time-clock";
 @import "pages/namaz";
-
+@import "pages/calculators";
 
 @import "calendar/calendar-yearly"; //
+
 @import "calendar/calendar-seasonly"; //
 @import "calendar/calendar-monthly"; //
 @import "calendar/calendar-weekly"; //
+
 @import "calendar/calendar-weekly-one"; // Стили календрая на одну неделю (один или 2 месяца)
 @import "calendar/calendar-monthly-business"; // Стили календрая на одну неделю (один или 2 месяца)
 @import "calendar/calendar-zodiac";

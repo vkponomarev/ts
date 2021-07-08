@@ -735,6 +735,62 @@ return [
     'Year' => 'साल',
     'Namaz time' => 'नमाज का समय',
 
+    'Addition' => 'इसके अलावा',
+    'Subtraction' => 'घटाव',
+    'Multiplication' => 'गुणा',
+    'Division' => 'विभाजन',
 
+    'Calculate time' => 'समय की गणना करें',
+    'Calculate time between dates' => 'तिथियों के बीच समय की गणना करें',
+
+    '{n,plural, one{# hour} few{# hours} other{# hours}}' => '{n,plural, one{# घंटा} few{# घंटे} other{# घंटे}}',
+    '{n,plural, one{# minute} few{# minutes} other{# minutes}}' => '{n,plural, one{# मिनट} few{# मिनट} other{# मिनट}}',
+    '{n,plural, one{# second} few{# seconds} other{# seconds}}' => '{n,plural, one{# सेकंड} few{# सेकेंड} other{# सेकेंड}}',
+    '{n,plural, one{# day} few{# days} other{# days}}' => '{n,plural, one{# दिन} few{# दिन} other{# दिन}}',
+    '{n,plural, one{# month} few{# months} other{# months}}' => '{n,plural, one{# महीना} few{# महीना} other{# महीना}}',
+    '{n,plural, one{# year} few{# years} other{# years}}' => '{n,plural, one{# वर्ष} few{# साल} other{# साल}}',
+
+    'You cannot divide by zero' => 'आप शून्य से विभाजित नहीं कर सकते',
+
+    'Adding time' => 'समय जोड़ना',
+    'Subtracting time' => 'समय घटाना',
+    'Time multiplication' => 'समय गुणन',
+    'Divide time' => 'समय विभाजित करें',
+
+    'Seconds calculator' => 'सेकंड कैलकुलेटर',
+    'Minutes calculator' => 'मिनट कैलकुलेटर',
+    'Hours calculator' => 'घंटे कैलकुलेटर',
+    'Days calculator' => 'दिन कैलकुलेटर',
+    'Weeks calculator' => 'सप्ताह कैलकुलेटर',
+    'Months calculator' => 'महीने कैलकुलेटर',
+    'Years calculator' => 'साल कैलकुलेटर',
+
+    'Seconds' => 'सेकंड',
+    'Minutes' => 'मिनट',
+    'Hours' => 'घंटे',
+    'Days' => 'दिन',
+    'Weeks' => 'हफ्तों',
+    'Months' => 'v',
+    'Years' => 'वर्षों',
+
+    'Convert seconds' => 'सेकंड कनवर्ट करें',
+    'Convert minutes' => 'मिनटों में कनवर्ट करें',
+    'Convert hours' => 'घंटे बदलें',
+    'Convert days' => 'दिन परिवर्तित करें',
+    'Convert weeks' => 'सप्ताह परिवर्तित करें',
+    'Convert months' => 'महीने कनवर्ट करें',
+    'Convert years' => 'कन्वर्ट साल',
+
+    '{n,plural, one{# week} few{# weeks} other{# weeks}}' => '{n,plural, one{# सप्ताह} few{# हफ्तों} other{# हफ्तों}}',
+
+    'Calculators' => 'कैलकुलेटर',
+    'Date calculator' => 'तिथि कैलकुलेटर',
+    'Days between dates calculator' => 'तारीखों के बीच के दिन कैलकुलेटर',
+    'Time calculator' => 'समय कैलकुलेटर',
+
+    'Difference between date <span class="picker-result-red">{date1}</span> and date <span class="picker-result-red">{date2}</span>' =>
+        'तारीख <span class="picker-result-red">{date1}</span> और तारीख <span class="picker-result-red">{date2}</span> के बीच का अंतर',
+
+    'Calculate' => 'गणना',
 ];
 

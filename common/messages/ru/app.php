@@ -657,4 +657,66 @@ return [
     'Evening' => 'Вечер',
     'Year' => 'Год',
     'Namaz time' => 'Время намаза',
+
+
+    'Addition' => 'Сложение',
+    'Subtraction' => 'Вычитание',
+    'Multiplication' => 'Умножение',
+    'Division' => 'Деление',
+
+    'Calculate time' => 'Рассчитать время',
+    'Calculate time between dates' => 'Рассчитать время между датами',
+
+    '{n,plural, one{# hour} few{# hours} other{# hours}}' => '{n,plural, one{# час} few{# часа} other{# часов}}',
+    '{n,plural, one{# minute} few{# minutes} other{# minutes}}' => '{n,plural, one{# минута} few{# минуты} other{# минут}}',
+    '{n,plural, one{# second} few{# seconds} other{# seconds}}' => '{n,plural, one{# секунда} few{# секунды} other{# секунд}}',
+    '{n,plural, one{# day} few{# days} other{# days}}' => '{n,plural, one{# день} few{# дня} other{# дней}}',
+    '{n,plural, one{# month} few{# months} other{# months}}' => '{n,plural, one{# месяц} few{# месяца} other{# месяцев}}',
+    '{n,plural, one{# year} few{# years} other{# years}}' => '{n,plural, one{# год} few{# года} other{# лет}}',
+
+    'You cannot divide by zero' => 'Делить на ноль нельзя',
+
+
+    'Adding time' => 'Сложение времени',
+    'Subtracting time' => 'Вычитание времени',
+    'Time multiplication' => 'Умножение времени',
+    'Divide time' => 'Разделение времени',
+
+
+    'Seconds calculator' => 'Калькулятор секунд',
+    'Minutes calculator' => 'Калькулятор минут',
+    'Hours calculator' => 'Калькулятор часов',
+    'Days calculator' => 'Калькулятор дней',
+    'Weeks calculator' => 'Калькулятор недель',
+    'Months calculator' => 'Калькулятор месяцев',
+    'Years calculator' => 'Калькулятор лет',
+
+    'Seconds' => 'секунд',
+    'Minutes' => 'минут',
+    'Hours' => 'часов',
+    'Days' => 'дней',
+    'Weeks' => 'недель',
+    'Months' => 'месяцев',
+    'Years' => 'лет',
+
+    'Convert seconds' => 'Перевести секунды',
+    'Convert minutes' => 'Перевести минуты',
+    'Convert hours' => 'Перевести часы',
+    'Convert days' => 'Перевести дни',
+    'Convert weeks' => 'Перевести недели',
+    'Convert months' => 'Перевести месяцы',
+    'Convert years' => 'Перевести года',
+
+    '{n,plural, one{# week} few{# weeks} other{# weeks}}' => '{n,plural, one{# неделя} few{# недели} other{# недель}}',
+
+    'Calculators' => 'Калькуляторы',
+    'Date calculator' => 'Калькулятор дат',
+    'Days between dates calculator' => 'Калькулятор дней между датами',
+    'Time calculator' => 'Калькулятор времени',
+
+    'Difference between date <span class="picker-result-red">{date1}</span> and date <span class="picker-result-red">{date2}</span>' =>
+        'Разница между датой <span class="picker-result-red">{date1}</span> и датой <span class="picker-result-red">{date2}</span>',
+
+    'Calculate' => 'Рассчитать',
+
 ];

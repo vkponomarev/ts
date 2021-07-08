@@ -706,5 +706,63 @@ return [
     'Year' => 'Ετος',
     'Namaz time' => 'Ώρα Ναμάζ',
 
+    'Addition' => 'Πρόσθεση',
+    'Subtraction' => 'Αφαίρεση',
+    'Multiplication' => 'Πολλαπλασιασμός',
+    'Division' => 'Διαίρεση',
+
+    'Calculate time' => 'Υπολογίστε το χρόνο',
+    'Calculate time between dates' => 'Υπολογίστε την ώρα μεταξύ ημερομηνιών',
+
+    '{n,plural, one{# hour} few{# hours} other{# hours}}' => '{n,plural, one{# ώρα} few{# ώρες} other{# ώρες}}',
+    '{n,plural, one{# minute} few{# minutes} other{# minutes}}' => '{n,plural, one{# λεπτό} few{# λεπτά} other{# λεπτά}}',
+    '{n,plural, one{# second} few{# seconds} other{# seconds}}' => '{n,plural, one{# δευτερόλεπτο} few{# δευτερόλεπτα} other{# δευτερόλεπτα}}',
+    '{n,plural, one{# day} few{# days} other{# days}}' => '{n,plural, one{# μέρα} few{# μέρες} other{# μέρες}}',
+    '{n,plural, one{# month} few{# months} other{# months}}' => '{n,plural, one{# μήνα} few{# μήνες} other{# μήνες}}',
+    '{n,plural, one{# year} few{# years} other{# years}}' => '{n,plural, one{# χρόνος} few{# χρόνια} other{# χρόνια}}',
+
+    'You cannot divide by zero' => 'Δεν μπορείτε να διαιρέσετε με μηδέν',
+
+    'Adding time' => 'Προσθήκη χρόνου',
+    'Subtracting time' => 'Αφαιρώντας το χρόνο',
+    'Time multiplication' => 'Πολλαπλασιασμός χρόνου',
+    'Divide time' => 'Χωρίστε το χρόνο',
+
+    'Seconds calculator' => 'Αριθμομηχανή δευτερολέπτων',
+    'Minutes calculator' => 'Αριθμομηχανή λεπτών',
+    'Hours calculator' => 'Αριθμομηχανή ωρών',
+    'Days calculator' => 'Αριθμομηχανή ημερών',
+    'Weeks calculator' => 'Αριθμομηχανή εβδομάδων',
+    'Months calculator' => 'Αριθμομηχανή μηνών',
+    'Years calculator' => 'Αριθμομηχανή ετών',
+
+    'Seconds' => 'Δευτερόλεπτα',
+    'Minutes' => 'Λεπτά',
+    'Hours' => 'Ωρες',
+    'Days' => 'Μέρες',
+    'Weeks' => 'Εβδομάδες',
+    'Months' => 'Μήνες',
+    'Years' => 'Χρόνια',
+
+    'Convert seconds' => 'Μετατροπή δευτερολέπτων',
+    'Convert minutes' => 'Μετατροπή λεπτών',
+    'Convert hours' => 'Μετατροπή ωρών',
+    'Convert days' => 'Μετατροπή ημερών',
+    'Convert weeks' => 'Μετατροπή εβδομάδων',
+    'Convert months' => 'Μετατροπή μηνών',
+    'Convert years' => 'Μετατρέψτε χρόνια',
+
+    '{n,plural, one{# week} few{# weeks} other{# weeks}}' => '{n,plural, one{# εβδομάδα} few{# εβδομάδες} other{# εβδομάδες}}',
+
+    'Calculators' => 'Αριθμομηχανές',
+    'Date calculator' => 'Αριθμομηχανή ημερομηνίας',
+    'Days between dates calculator' => 'Υπολογιστής ημερών μεταξύ ημερομηνιών',
+    'Time calculator' => 'Υπολογιστής χρόνου',
+
+    'Difference between date <span class="picker-result-red">{date1}</span> and date <span class="picker-result-red">{date2}</span>' =>
+        'Διαφορά μεταξύ ημερομηνίας <span class="picker-result-red">{date1}</span> και ημερομηνίας <span class="picker-result-red">{date2}</span>',
+
+
+    'Calculate' => 'Υπολογίζω',
 ];
 

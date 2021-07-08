@@ -721,5 +721,63 @@ return [
     'Evening' => 'Вечір',
     'Year' => 'Рік',
     'Namaz time' => 'Час намаза',
+
+    'Addition' => 'Додавання',
+    'Subtraction' => 'Віднімання',
+    'Multiplication' => 'Множення',
+    'Division' => 'Відділ',
+
+    'Calculate time' => 'Обчислити час',
+    'Calculate time between dates' => 'Обчисліть час між датами',
+
+    '{n,plural, one{# hour} few{# hours} other{# hours}}' => '{n,plural, one{# год} few{# години} other{# годин}}',
+    '{n,plural, one{# minute} few{# minutes} other{# minutes}}' => '{n,plural, one{# хвилина} few{# хвилини} other{# хвилин}}',
+    '{n,plural, one{# second} few{# seconds} other{# seconds}}' => '{n,plural, one{# секунда} few{# секунди} other{# секунд}}',
+    '{n,plural, one{# day} few{# days} other{# days}}' => '{n,plural, one{# день} few{# дні} other{# днів}}',
+    '{n,plural, one{# month} few{# months} other{# months}}' => '{n,plural, one{# місяць} few{# місяці} other{# місяців}}',
+    '{n,plural, one{# year} few{# years} other{# years}}' => '{n,plural, one{# рік} few{# роки} other{# років}}',
+
+    'You cannot divide by zero' => 'Не можна ділити на нуль',
+
+    'Adding time' => 'Додавання часу',
+    'Subtracting time' => 'Віднімання часу',
+    'Time multiplication' => 'Множення часу',
+    'Divide time' => 'Розділіть час',
+
+    'Seconds calculator' => 'Калькулятор секунд',
+    'Minutes calculator' => 'Калькулятор хвилин',
+    'Hours calculator' => 'Калькулятор годин',
+    'Days calculator' => 'Калькулятор днів',
+    'Weeks calculator' => 'Тижні калькулятор',
+    'Months calculator' => 'Калькулятор місяців',
+    'Years calculator' => 'Калькулятор років',
+
+    'Seconds' => 'Секунди',
+    'Minutes' => 'Хвилини',
+    'Hours' => 'Годин',
+    'Days' => 'Днів',
+    'Weeks' => 'Тижні',
+    'Months' => 'Місяці',
+    'Years' => 'Роки',
+
+    'Convert seconds' => 'Перетворення секунд',
+    'Convert minutes' => 'Перетворення хвилин',
+    'Convert hours' => 'Перевести години',
+    'Convert days' => 'Перетворення днів',
+    'Convert weeks' => 'Перетворення тижнів',
+    'Convert months' => 'Перетворення місяців',
+    'Convert years' => 'Перетворення років',
+
+    '{n,plural, one{# week} few{# weeks} other{# weeks}}' => '{n,plural, one{# тиждень} few{# тижні} other{# тижнів}}',
+
+    'Calculators' => 'Калькулятори',
+    'Date calculator' => 'Калькулятор дати',
+    'Days between dates calculator' => 'Калькулятор днів між датами',
+    'Time calculator' => 'Калькулятор часу',
+
+    'Difference between date <span class="picker-result-red">{date1}</span> and date <span class="picker-result-red">{date2}</span>' =>
+        'Різниця між датою <span class="picker-result-red">{date1}</span> та датою <span class="picker-result-red">{date2}</span>',
+
+    'Calculate' => 'Обчислити',
 ];
 

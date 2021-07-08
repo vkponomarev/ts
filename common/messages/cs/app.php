@@ -712,5 +712,63 @@ return [
     'Evening' => 'Večer',
     'Year' => 'Rok',
     'Namaz time' => 'Namaz čas',
+
+    'Addition' => 'Přidání',
+    'Subtraction' => 'Odčítání',
+    'Multiplication' => 'Násobení',
+    'Division' => 'Divize',
+
+    'Calculate time' => 'Vypočítejte čas',
+    'Calculate time between dates' => 'Vypočítejte čas mezi daty',
+
+    '{n,plural, one{# hour} few{# hours} other{# hours}}' => '{n,plural, one{# hodina} few{# hodiny} other{# hodin}}',
+    '{n,plural, one{# minute} few{# minutes} other{# minutes}}' => '{n,plural, one{# minuta} few{# minuty} other{# minut}}',
+    '{n,plural, one{# second} few{# seconds} other{# seconds}}' => '{n,plural, one{# sekunda} few{# sekundy} other{# sekund}}',
+    '{n,plural, one{# day} few{# days} other{# days}}' => '{n,plural, one{# den} few{# dny} other{# dní}}',
+    '{n,plural, one{# month} few{# months} other{# months}}' => '{n,plural, one{# měsíc} few{# měsíce} other{# měsíců}}',
+    '{n,plural, one{# year} few{# years} other{# years}}' => '{n,plural, one{# rok} few{# roky} other{# let}}',
+
+    'You cannot divide by zero' => 'Nelze dělit nulou',
+
+    'Adding time' => 'Přidání času',
+    'Subtracting time' => 'Odečtení času',
+    'Time multiplication' => 'Násobení času',
+    'Divide time' => 'Rozdělte čas',
+
+    'Seconds calculator' => 'Sekundová kalkulačka',
+    'Minutes calculator' => 'Kalkulačka minut',
+    'Hours calculator' => 'Kalkulačka hodin',
+    'Days calculator' => 'Kalkulačka dnů',
+    'Weeks calculator' => 'Kalkulačka týdnů',
+    'Months calculator' => 'Měsíční kalkulačka',
+    'Years calculator' => 'Kalkulačka let',
+
+    'Seconds' => 'Sekundy',
+    'Minutes' => 'Minut',
+    'Hours' => 'Hodin',
+    'Days' => 'Dny',
+    'Weeks' => 'Týdny',
+    'Months' => 'Měsíce',
+    'Years' => 'Let',
+
+    'Convert seconds' => 'Převést sekundy',
+    'Convert minutes' => 'Převést minuty',
+    'Convert hours' => 'Převést hodiny',
+    'Convert days' => 'Převést dny',
+    'Convert weeks' => 'Převést týdny',
+    'Convert months' => 'Převést měsíce',
+    'Convert years' => 'Převést roky',
+
+    '{n,plural, one{# week} few{# weeks} other{# weeks}}' => '{n,plural, one{# týden} few{# týdny} other{# týdnů}}',
+
+    'Calculators' => 'Kalkulačky',
+    'Date calculator' => 'Kalkulačka data',
+    'Days between dates calculator' => 'Kalkulačka dnů mezi daty',
+    'Time calculator' => 'Časová kalkulačka',
+
+    'Difference between date <span class="picker-result-red">{date1}</span> and date <span class="picker-result-red">{date2}</span>' =>
+        'Rozdíl mezi datem <span class="picker-result-red">{date1}</span> a datem <span class="picker-result-red">{date2}</span>',
+
+    'Calculate' => 'Vypočítat',
 ];
 

@@ -721,5 +721,64 @@ return [
     'Evening' => 'Akşam',
     'Year' => 'Yıl',
     'Namaz time' => 'Namaz vakti',
+
+
+    'Addition' => 'İlave',
+    'Subtraction' => 'Çıkarma',
+    'Multiplication' => 'Çarpma işlemi',
+    'Division' => 'Bölünme',
+
+    'Calculate time' => 'Zamanı hesapla',
+    'Calculate time between dates' => 'Tarihler arasındaki süreyi hesaplayın',
+
+    '{n,plural, one{# hour} few{# hours} other{# hours}}' => '{n,plural, one{# saat} few{# saat} other{# saat}}',
+    '{n,plural, one{# minute} few{# minutes} other{# minutes}}' => '{n,plural, one{# dakika} few{# dakika} other{# dakika}}',
+    '{n,plural, one{# second} few{# seconds} other{# seconds}}' => '{n,plural, one{# saniye} few{# saniye} other{# saniye}}',
+    '{n,plural, one{# day} few{# days} other{# days}}' => '{n,plural, one{# gün} few{# gün} other{# gün}}',
+    '{n,plural, one{# month} few{# months} other{# months}}' => '{n,plural, one{# ay} few{# ay} other{# ay}}',
+    '{n,plural, one{# year} few{# years} other{# years}}' => '{n,plural, one{# yıl} few{# yıl} other{# yıl}}',
+
+    'You cannot divide by zero' => 'Sıfıra bölemezsin',
+
+    'Adding time' => 'Zaman ekleme',
+    'Subtracting time' => 'çıkarma zamanı',
+    'Time multiplication' => 'Zaman çarpımı',
+    'Divide time' => 'Zamanı böl',
+
+    'Seconds calculator' => 'Saniye hesaplayıcı',
+    'Minutes calculator' => 'Dakika hesaplayıcı',
+    'Hours calculator' => 'Saat hesaplayıcı',
+    'Days calculator' => 'Gün hesaplayıcı',
+    'Weeks calculator' => 'Hafta hesaplayıcı',
+    'Months calculator' => 'Ay hesaplayıcı',
+    'Years calculator' => 'yıl hesaplayıcı',
+
+    'Seconds' => 'Saniye',
+    'Minutes' => 'Dakika',
+    'Hours' => 'Saatler',
+    'Days' => 'Günler',
+    'Weeks' => 'Haftalar',
+    'Months' => 'Ay',
+    'Years' => 'Yıllar',
+
+    'Convert seconds' => 'Saniyeyi dönüştür',
+    'Convert minutes' => 'Dakikaları dönüştür',
+    'Convert hours' => 'Saatleri dönüştür',
+    'Convert days' => 'Günleri dönüştür',
+    'Convert weeks' => 'Haftaları dönüştür',
+    'Convert months' => 'Ayları dönüştür',
+    'Convert years' => 'Yılları dönüştür',
+
+    '{n,plural, one{# week} few{# weeks} other{# weeks}}' => '{n,plural, one{# hafta} few{# haftalar} other{# haftalar}}',
+
+    'Calculators' => 'Hesap makineleri',
+    'Date calculator' => 'Tarih hesaplayıcı',
+    'Days between dates calculator' => 'Tarihler arası gün hesaplayıcısı',
+    'Time calculator' => 'Zaman hesaplayıcı',
+
+    'Difference between date <span class="picker-result-red">{date1}</span> and date <span class="picker-result-red">{date2}</span>' =>
+        '<span class="picker-result-red">{date1}</span> tarihi ile <span class="picker-result-red">{date2}</span> tarihi arasındaki fark',
+
+    'Calculate' => 'Hesaplamak',
 ];
 

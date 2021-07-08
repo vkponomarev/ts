@@ -723,5 +723,64 @@ return [
     'Year' => 'Yil',
     'Namaz time' => 'Namoz vaqti',
 
+
+    'Addition' => 'Qo\'shish',
+    'Subtraction' => 'Chiqarish',
+    'Multiplication' => 'Ko\'paytirish',
+    'Division' => 'Bo\'lim',
+
+    'Calculate time' => 'Vaqtni hisoblang',
+    'Calculate time between dates' => 'Xurmolar orasidagi vaqtni hisoblang',
+
+    '{n,plural, one{# hour} few{# hours} other{# hours}}' => '{n,plural, one{# soat} few{# soat} other{# soat}}',
+    '{n,plural, one{# minute} few{# minutes} other{# minutes}}' => '{n,plural, one{# daqiqa} few{# daqiqa} other{# daqiqa}}',
+    '{n,plural, one{# second} few{# seconds} other{# seconds}}' => '{n,plural, one{# soniya} few{# soniya} other{# soniya}}',
+    '{n,plural, one{# day} few{# days} other{# days}}' => '{n,plural, one{# kun} few{# kun} other{# kun}}',
+    '{n,plural, one{# month} few{# months} other{# months}}' => '{n,plural, one{# oy} few{# oy} other{# oy}}',
+    '{n,plural, one{# year} few{# years} other{# years}}' => '{n,plural, one{# yil} few{# yil} other{# yil}}',
+
+    'You cannot divide by zero' => 'Siz nolga bo\'linmaysiz',
+
+    'Adding time' => 'Vaqt qo\'shilmoqda',
+    'Subtracting time' => 'Vaqtni olib tashlash',
+    'Time multiplication' => 'Vaqtni ko\'paytirish',
+    'Divide time' => 'Vaqtni ajratish',
+
+    'Seconds calculator' => 'Soniya kalkulyatori',
+    'Minutes calculator' => 'Daqiqa kalkulyatori',
+    'Hours calculator' => 'Soat kalkulyatori',
+    'Days calculator' => 'Kunlar kalkulyatori',
+    'Weeks calculator' => 'Hafta kalkulyatori',
+    'Months calculator' => 'Oylar kalkulyatori',
+    'Years calculator' => 'Yillar kalkulyatori',
+
+    'Seconds' => 'Soniyalar',
+    'Minutes' => 'Daqiqalar',
+    'Hours' => 'Soatlar',
+    'Days' => 'Kunlar',
+    'Weeks' => 'Haftalar',
+    'Months' => 'Oylar',
+    'Years' => 'Yillar',
+
+    'Convert seconds' => 'Bir necha soniyani o\'zgartiring',
+    'Convert minutes' => 'Daqiqalarni aylantirish',
+    'Convert hours' => 'Soatlarni aylantirish',
+    'Convert days' => 'Kunlarni aylantirish',
+    'Convert weeks' => 'Haftalarni aylantirish',
+    'Convert months' => 'Oylarni aylantirish',
+    'Convert years' => 'Yillarni aylantirish',
+
+    '{n,plural, one{# week} few{# weeks} other{# weeks}}' => '{n,plural, one{# hafta} few{# hafta} other{# hafta}}',
+
+    'Calculators' => 'Kalkulyatorlar',
+    'Date calculator' => 'Sana kalkulyatori',
+    'Days between dates calculator' => 'Xurmo kalkulyatori orasidagi kunlar',
+    'Time calculator' => 'Vaqt kalkulyatori',
+
+    'Difference between date <span class="picker-result-red">{date1}</span> and date <span class="picker-result-red">{date2}</span>' =>
+        '<span class="picker-result-red">{date1}</span> va <span class="picker-result-red">{date2}</span> kunlari o\'rtasidagi farq',
+
+
+    'Calculate' => 'Hisoblang',
 ];
 

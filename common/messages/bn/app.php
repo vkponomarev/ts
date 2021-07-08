@@ -717,5 +717,62 @@ return [
     'Year' => 'বছর',
     'Namaz time' => 'নামাজের সময়',
 
+    'Addition' => 'যোগ',
+    'Subtraction' => 'বিয়োগ',
+    'Multiplication' => 'গুণ',
+    'Division' => 'বিভাগ',
+
+    'Calculate time' => 'সময় গণনা',
+    'Calculate time between dates' => 'তারিখগুলির মধ্যে সময় গণনা করুন',
+
+    '{n,plural, one{# hour} few{# hours} other{# hours}}' => '{n,plural, one{# ঘন্টা} few{# ঘন্টা} other{# ঘন্টা}}',
+    '{n,plural, one{# minute} few{# minutes} other{# minutes}}' => '{n,plural, one{# মিনিট} few{# মিনিট} other{# মিনিট}}',
+    '{n,plural, one{# second} few{# seconds} other{# seconds}}' => '{n,plural, one{# সেকেন্ড} few{# সেকেন্ড} other{# সেকেন্ড}}',
+    '{n,plural, one{# day} few{# days} other{# days}}' => '{n,plural, one{# দিন} few{# দিন} other{# দিন}}',
+    '{n,plural, one{# month} few{# months} other{# months}}' => '{n,plural, one{# মাস} few{# মাস} other{# মাস}}',
+    '{n,plural, one{# year} few{# years} other{# years}}' => '{n,plural, one{# বছর} few{# বছর} other{# বছর}}',
+
+    'You cannot divide by zero' => 'আপনি শূন্য দ্বারা ভাগ করতে পারবেন না',
+
+    'Adding time' => 'সময় যোগ করা হচ্ছে',
+    'Subtracting time' => 'বিয়োগ সময়',
+    'Time multiplication' => 'সময় গুণ',
+    'Divide time' => 'সময় বিভক্ত',
+
+    'Seconds calculator' => 'সেকেন্ডস ক্যালকুলেটর',
+    'Minutes calculator' => 'মিনিটস ক্যালকুলেটর',
+    'Hours calculator' => 'ঘন্টা ক্যালকুলেটর',
+    'Days calculator' => 'দিন ক্যালকুলেটর',
+    'Weeks calculator' => 'সপ্তাহের ক্যালকুলেটর',
+    'Months calculator' => 'মাস গণক',
+    'Years calculator' => 'বছরের গণক',
+
+    'Seconds' => 'সেকেন্ডস',
+    'Minutes' => 'মিনিট',
+    'Hours' => 'ঘন্টার',
+    'Days' => 'দিনগুলি',
+    'Weeks' => 'সপ্তাহ',
+    'Months' => 'মাস',
+    'Years' => 'বছর',
+
+    'Convert seconds' => 'সেকেন্ডে রূপান্তর করুন',
+    'Convert minutes' => 'মিনিট রূপান্তর করুন',
+    'Convert hours' => 'রূপান্তর ঘন্টা',
+    'Convert days' => 'দিন রূপান্তর',
+    'Convert weeks' => 'রূপান্তর সপ্তাহ',
+    'Convert months' => 'রূপান্তর মাস',
+    'Convert years' => 'বছর রূপান্তর',
+
+    '{n,plural, one{# week} few{# weeks} other{# weeks}}' => '{n,plural, one{# সপ্তাহ} few{# সপ্তাহ} other{# সপ্তাহ}}',
+
+    'Calculators' => 'ক্যালকুলেটর',
+    'Date calculator' => 'তারিখ ক্যালকুলেটর',
+    'Days between dates calculator' => 'তারিখ ক্যালকুলেটর এর মধ্যে দিনগুলি',
+    'Time calculator' => 'সময় ক্যালকুলেটর',
+
+    'Difference between date <span class="picker-result-red">{date1}</span> and date <span class="picker-result-red">{date2}</span>' =>
+        'তারিখ <span class="picker-result-red">{date1}</span> এবং <span class="picker-result-red">{date2}</span> মধ্যে পার্থক্য',
+
+    'Calculate' => 'গণনা',
 ];
 

@@ -11,6 +11,8 @@ class MainText
 
     public function text($textID, $languageID)
     {
+
+
         //echo $languageId;
         $text = Yii::$app->db
             ->createCommand('
@@ -26,6 +28,7 @@ class MainText
             where pages.id = :textID and pages_text.languages_id = :languageID
             ',[':textID' => $textID, ':languageID' => $languageID])
             ->queryOne();
+
 
         //echo '<pre>';
         //var_dump($texts);

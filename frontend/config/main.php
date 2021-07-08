@@ -66,6 +66,7 @@ return [
                 require __DIR__ . '/../../frontend/config/route/holidays.php',
                 require __DIR__ . '/../../frontend/config/route/time.php',
                 require __DIR__ . '/../../frontend/config/route/namaz.php',
+                require __DIR__ . '/../../frontend/config/route/calculators.php',
                 require __DIR__ . '/../../frontend/config/route/cms.php',
                 require __DIR__ . '/../../frontend/config/route/other.php'
             ),
@@ -86,6 +87,7 @@ return [
                     'sourceLanguage' => 'en',
 
                 ],
+
             ],
         ],
     ],

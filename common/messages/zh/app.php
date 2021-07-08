@@ -704,5 +704,63 @@ return [
     'Evening' => '晚上',
     'Year' => '年',
     'Namaz time' => '納瑪茲時間',
+
+    'Addition' => '添加',
+    'Subtraction' => '減法',
+    'Multiplication' => '乘法',
+    'Division' => '分配',
+
+    'Calculate time' => '計算時間',
+    'Calculate time between dates' => '計算日期之間的時間',
+
+    '{n,plural, one{# hour} few{# hours} other{# hours}}' => '{n,plural, one{# 小時} few{# 小時} other{# 個小時}}',
+    '{n,plural, one{# minute} few{# minutes} other{# minutes}}' => '{n,plural, one{# 分鐘} few{# 分鐘} other{# 分鐘}}',
+    '{n,plural, one{# second} few{# seconds} other{# seconds}}' => '{n,plural, one{# 秒} few{# 秒} other{# 秒}}',
+    '{n,plural, one{# day} few{# days} other{# days}}' => '{n,plural, one{# 天} few{# 天} other{# 天}}',
+    '{n,plural, one{# month} few{# months} other{# months}}' => '{n,plural, one{# 個月} few{# 個月} other{# 個月}}',
+    '{n,plural, one{# year} few{# years} other{# years}}' => '{n,plural, one{# 年} few{# 年} other{# 年}}',
+
+    'You cannot divide by zero' => '你不能除以零',
+
+    'Adding time' => '添加時間',
+    'Subtracting time' => '減去時間',
+    'Time multiplication' => '時間乘法',
+    'Divide time' => '劃分時間',
+
+    'Seconds calculator' => '秒計算器',
+    'Minutes calculator' => '分鐘計算器',
+    'Hours calculator' => '小時計算器',
+    'Days calculator' => '天數計算器',
+    'Weeks calculator' => '週計算器',
+    'Months calculator' => '月份計算器',
+    'Years calculator' => '年計算器',
+
+    'Seconds' => '秒',
+    'Minutes' => '分鐘',
+    'Hours' => '小時',
+    'Days' => '天',
+    'Weeks' => '週',
+    'Months' => '月',
+    'Years' => '年',
+
+    'Convert seconds' => '轉換秒',
+    'Convert minutes' => '轉換分鐘',
+    'Convert hours' => '轉換小時',
+    'Convert days' => '轉換天數',
+    'Convert weeks' => '轉換週數',
+    'Convert months' => '轉換月份',
+    'Convert years' => '轉換年份',
+
+    '{n,plural, one{# week} few{# weeks} other{# weeks}}' => '{n,plural, one{# 週} few{# 週} other{# 週}}',
+
+    'Calculators' => '計算器',
+    'Date calculator' => '日期計算器',
+    'Days between dates calculator' => '日期之間的天數計算器',
+    'Time calculator' => '時間計算器',
+
+    'Difference between date <span class="picker-result-red">{date1}</span> and date <span class="picker-result-red">{date2}</span>' =>
+        '<span class="picker-result-red">{date1}</span> 和 <span class="picker-result-red">{date2}</span> 之間的差異',
+
+    'Calculate' => '計算',
 ];
 

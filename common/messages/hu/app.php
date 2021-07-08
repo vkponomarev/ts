@@ -710,5 +710,63 @@ return [
     'Evening' => 'Este',
     'Year' => 'Év',
     'Namaz time' => 'Namaz idő',
+
+    'Addition' => 'Kiegészítés',
+    'Subtraction' => 'Kivonás',
+    'Multiplication' => 'Szorzás',
+    'Division' => 'Osztály',
+
+    'Calculate time' => 'Számolja ki az időt',
+    'Calculate time between dates' => 'Számítsa ki a dátumok közötti időt',
+
+    '{n,plural, one{# hour} few{# hours} other{# hours}}' => '{n,plural, one{# óra} few{# óra} other{# óra}}',
+    '{n,plural, one{# minute} few{# minutes} other{# minutes}}' => '{n,plural, one{# perc} few{# perc} other{# perc}}',
+    '{n,plural, one{# second} few{# seconds} other{# seconds}}' => '{n,plural, one{# másodperc} few{# másodpercig} other{# másodpercig}}',
+    '{n,plural, one{# day} few{# days} other{# days}}' => '{n,plural, one{# nap} few{# nap} other{# nap}}',
+    '{n,plural, one{# month} few{# months} other{# months}}' => '{n,plural, one{# hónap} few{# hónap} other{# hónap}}',
+    '{n,plural, one{# year} few{# years} other{# years}}' => '{n,plural, one{# év} few{# év} other{# év}}',
+
+    'You cannot divide by zero' => 'Nem lehet osztani nullával',
+
+    'Adding time' => 'Idő hozzáadása',
+    'Subtracting time' => 'Idő levonása',
+    'Time multiplication' => 'Az idő szorzása',
+    'Divide time' => 'Osszátok el az időt',
+
+    'Seconds calculator' => 'Másodperc kalkulátor',
+    'Minutes calculator' => 'Perc kalkulátor',
+    'Hours calculator' => 'Óraszámoló',
+    'Days calculator' => 'Napok kalkulátor',
+    'Weeks calculator' => 'Hetek kalkulátor',
+    'Months calculator' => 'Hónap kalkulátor',
+    'Years calculator' => 'Éves számológép',
+
+    'Seconds' => 'Másodpercek',
+    'Minutes' => 'Percek',
+    'Hours' => 'Órák',
+    'Days' => 'Napok',
+    'Weeks' => 'Hetek',
+    'Months' => 'Hónapok',
+    'Years' => 'Évek',
+
+    'Convert seconds' => 'Konvertálja a másodperceket',
+    'Convert minutes' => 'Konvertálja a perceket',
+    'Convert hours' => 'Órák konvertálása',
+    'Convert days' => 'Napok konvertálása',
+    'Convert weeks' => 'Hetek konvertálása',
+    'Convert months' => 'Hónapok konvertálása',
+    'Convert years' => 'Éveket konvertálni',
+
+    '{n,plural, one{# week} few{# weeks} other{# weeks}}' => '{n,plural, one{# hét} few{# hét} other{# hét}}',
+
+    'Calculators' => 'Számológépek',
+    'Date calculator' => 'Dátum kalkulátor',
+    'Days between dates calculator' => 'A dátumok közötti nap számológép',
+    'Time calculator' => 'Idő kalkulátor',
+
+    'Difference between date <span class="picker-result-red">{date1}</span> and date <span class="picker-result-red">{date2}</span>' =>
+        'Különbség a <span class="picker-result-red">{date1}</span> és a <span class="picker-result-red">{date2}</span> dátum között',
+
+    'Calculate' => 'Kiszámítja',
 ];
 
