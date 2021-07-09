@@ -18,6 +18,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
             <option value="---------------">---------------</option>
 
+            <option value="sitemap-calculators-all">Карта сайта КАЛЬКУЛЯТОРЫ все языки</option>
+
             <option value="sitemap-namaz-cities-all">Карта сайта НАМАЗ ГОРОДА все языки</option>
             <option value="sitemap-namaz-cities-months-all">Карта сайта НАМАЗ ГОРОДА МЕСЯЦЫ все языки</option>
             <option value="sitemap-namaz-cities-years-all">Карта сайта НАМАЗ ГОРОДА ГОДА все языки</option>

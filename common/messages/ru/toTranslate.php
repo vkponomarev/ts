@@ -1,4 +1,4 @@
-<?php
+
 Addition
 Subtraction
 Multiplication

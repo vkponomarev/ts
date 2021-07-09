@@ -3,6 +3,8 @@
 namespace backend\controllers;
 
 use common\components\gii\siteMap\SiteMap;
+use common\components\gii\siteMap\SiteMapGenerateCalculators;
+use common\components\gii\siteMap\SiteMapGenerateCalculatorsRU;
 use common\components\gii\siteMap\SiteMapGenerateNamazCities;
 use common\components\gii\siteMap\SiteMapGenerateNamazCitiesMonths;
 use common\components\gii\siteMap\SiteMapGenerateNamazCitiesMonthsRU;
@@ -435,6 +437,14 @@ class SiteMapController extends Controller
                 (new SiteMapGenerateNamazCitiesTimes())->generate($languagesData);
                 (new SiteMapGenerateNamazCitiesTimesRU())->generate($languagesData);
             }
+
+
+            if ($name == 'sitemap-calculators-all') {
+                (new SiteMapGenerateCalculators())->generate($languagesData);
+                (new SiteMapGenerateCalculatorsRU())->generate($languagesData);
+
+            }
+
 
             if ($name == 'sitemap-all') {
                 $siteMap->generateMainFilesAll();
